@@ -1,0 +1,204 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+/* _functions.scss */
+/*
+* Respond To
+* Copied from UtilityBelt- https://github.com/dmtintner/UtilityBelt
+*
+* Example:
+* @include respondTo(smartphone){ display: none; }
+*
+*/
+/* line 12, scss/index.scss */
+BODY {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 18px;
+  color: #212121;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 21, scss/index.scss */
+DIV {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 25, scss/index.scss */
+A {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 30, scss/index.scss */
+H1, H2, H3, H4, H5, H6 {
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 38, scss/index.scss */
+H1 {
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: 4px;
+}
+
+/* line 39, scss/index.scss */
+H2 {
+  font-size: 36px;
+  line-height: 48px;
+  letter-spacing: 4px;
+}
+
+/* line 40, scss/index.scss */
+H3 {
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 3px;
+}
+
+/* line 41, scss/index.scss */
+H4 {
+  font-size: 26px;
+  line-height: 34px;
+  letter-spacing: 3px;
+}
+
+/* line 42, scss/index.scss */
+H5 {
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 2px;
+}
+
+/* line 43, scss/index.scss */
+H6 {
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0px;
+  display: inline-block;
+}
+
+/* line 45, scss/index.scss */
+.clear-fix {
+  zoom: 1;
+}
+
+/* line 49, scss/index.scss */
+.clear-fix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 58, scss/index.scss */
+.float-right {
+  float: right;
+  z-index: 100;
+}
+
+/* line 63, scss/index.scss */
+#content-area {
+  height: auto;
+  margin: 0;
+  margin-left: 60px;
+  position: relative;
+  width: auto;
+  display: block;
+  color: #212121;
+}
+/* line 72, scss/index.scss */
+#content-area.height-100 {
+  height: 97.6%;
+}
+/* line 76, scss/index.scss */
+#content-area .aligncenter {
+  text-align: center;
+}
+/* line 80, scss/index.scss */
+#content-area .fluid-row {
+  margin: 0;
+  position: relative;
+  padding: 22px 33px;
+  display: block;
+  width: auto;
+  z-index: 10;
+}
+/* line 88, scss/index.scss */
+#content-area .fluid-row.dark {
+  color: #fff;
+  background: #313131;
+}
+/* line 93, scss/index.scss */
+#content-area .fluid-row.width-50 {
+  width: -webkit-calc(49.5% - 30px - 66px);
+  width: -moz-calc(49.5% - 30px - 66px);
+  width: -o-calc(49.5% - 30px - 66px);
+  width: calc(49.5% - 30px - 66px);
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 99, scss/index.scss */
+#content-area .fluid-row.height-100 {
+  height: 97.6%;
+}
+/* line 104, scss/index.scss */
+#content-area .scale-img {
+  max-width: 90%;
+  height: auto;
+  margin: 2% 2%;
+  display: inline-block;
+}
+
+/* line 112, scss/index.scss */
+#main-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  background: #313131;
+  color: #fff;
+}
+/* line 124, scss/index.scss */
+#main-nav #logo {
+  position: relative;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+/* line 132, scss/index.scss */
+#main-nav ul {
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+/* line 139, scss/index.scss */
+#main-nav ul li {
+  margin: 0px;
+  padding: 15px;
+  text-align: left;
+  font-size: 30px;
+  line-height: 30px;
+  display: block;
+  margin-bottom: 1px;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
+  cursor: pointer;
+}

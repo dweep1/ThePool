@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="" />
+    <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/nfl.iml" afterPath="$PROJECT_DIR$/.idea/nfl.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1378879353173" ignored="false" />
@@ -33,7 +37,7 @@
     <file path="/tpl.game.table.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380009159660" ignored="false" />
     <file path="/tpl.game.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380019999440" ignored="false" />
     <file path="/tpl.picks.teaminfo.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380705604083" ignored="false" />
-    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380413843535" ignored="false" />
+    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404728852775" ignored="false" />
     <file path="/login.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380417535350" ignored="false" />
     <file path="/_header.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384032688" ignored="false" />
     <file path="/login.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380421702757" ignored="false" />
@@ -47,6 +51,10 @@
     <file path="/tpl.settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383426391468" ignored="false" />
     <file path="/a.dummy" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384006371" ignored="false" />
     <file path="/style.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384182363" ignored="false" />
+    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404719153480" ignored="false" />
+    <file path="/index.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404729006883" ignored="false" />
+    <file path="/style_guide.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404726989587" ignored="false" />
+    <file path="/_functions.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404728402052" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,48 +79,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="listn.admin.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/admin/com/listn.admin.php">
+      <file leaf-file-name="index.scss" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="369" column="17" selection-start="11230" selection-end="11230" vertical-scroll-proportion="0.3106576">
-              <folding>
-                <marker date="1383426554336" expanded="true" signature="10467:10613" placeholder="SELECT usern..pick..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listn.index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_listeners/listn.index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="7" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0">
+            <state line="149" column="21" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.8060166">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.settings.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/tpl.settings.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="6" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.0">
+            <state line="23" column="47" selection-start="624" selection-end="624" vertical-scroll-proportion="-12.538462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_header.php">
+      <file leaf-file-name="style_guide.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style_guide.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="20" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+            <state line="23" column="27" selection-start="566" selection-end="566" vertical-scroll-proportion="-15.038462">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tpl.picks.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl.picks.php">
+      <file leaf-file-name="_functions.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="28" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0">
+            <state line="17" column="40" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -125,13 +122,17 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/print.picks.php" />
-        <option value="$PROJECT_DIR$/tpl.standings.php" />
-        <option value="$PROJECT_DIR$/admin/admin.php" />
-        <option value="$PROJECT_DIR$/admin/css/scss/style.scss" />
         <option value="$PROJECT_DIR$/admin/js/admin.js" />
         <option value="$PROJECT_DIR$/admin/com/admin.header.php" />
         <option value="$PROJECT_DIR$/tpl._footer.php" />
@@ -144,6 +145,10 @@
         <option value="$PROJECT_DIR$/css/scss/style.scss" />
         <option value="$PROJECT_DIR$/_header.php" />
         <option value="$PROJECT_DIR$/tpl.picks.php" />
+        <option value="$PROJECT_DIR$/style_guide.php" />
+        <option value="$PROJECT_DIR$/css/scss/_functions.scss" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/css/scss/index.scss" />
       </list>
     </option>
   </component>
@@ -159,10 +164,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="41" />
-    <option name="width" value="1918" />
-    <option name="height" value="1104" />
+    <option name="x" value="-8" />
+    <option name="y" value="32" />
+    <option name="width" value="1936" />
+    <option name="height" value="1122" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -183,7 +188,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -209,6 +214,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -223,7 +229,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
+              <option name="myItemId" value="ThePool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -233,21 +239,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
+              <option name="myItemId" value="ThePool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -261,7 +253,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
+              <option name="myItemId" value="ThePool" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -273,64 +265,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_objects" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_listeners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="_functions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="EasyPHP" serverId="e59fded9-a830-44fb-8646-0ad96828f6e7" />
   <component name="RunManager" selected="PHPUnit on Server.nfl on EasyPHP">
@@ -344,10 +293,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -439,14 +388,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="41" width="1918" height="1104" extended-state="0" />
+    <frame x="-8" y="32" width="1936" height="1122" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11283422" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1799569" sideWeight="0.67082036" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1796875" sideWeight="0.67082036" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2596054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19251336" sideWeight="0.40290758" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1015873" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -536,95 +485,31 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.header.php">
+    <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="315" selection-end="394" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/com/admin.header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="203" selection-end="203" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl._header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="109" selection-start="466" selection-end="466" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/dashboard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="345" column="25" selection-start="7722" selection-end="7722" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/tpl.settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="6" selection-start="1042" selection-end="1042" vertical-scroll-proportion="0.0">
+        <state line="17" column="40" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.index.php">
+    <entry file="file://$PROJECT_DIR$/style_guide.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="7" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0">
+        <state line="23" column="27" selection-start="566" selection-end="566" vertical-scroll-proportion="-15.038462">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_header.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="20" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0">
+        <state line="23" column="47" selection-start="624" selection-end="624" vertical-scroll-proportion="-12.538462">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/combiner.php">
+    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="4" selection-start="355" selection-end="420" vertical-scroll-proportion="0.20156775" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/scss/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="384" column="21" selection-start="6567" selection-end="6567" vertical-scroll-proportion="0.016357688" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="63" selection-end="63" vertical-scroll-proportion="0.06718925" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl._footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="42" selection-start="752" selection-end="752" vertical-scroll-proportion="0.52071667" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl.picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="28" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0">
+        <state line="149" column="21" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.8060166">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_objects/class.user.stats.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="0" selection-start="10080" selection-end="10080" vertical-scroll-proportion="-11.815193" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_objects/class.thepool.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1499" column="38" selection-start="37545" selection-end="37545" vertical-scroll-proportion="25.110615" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/com/listn.admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="369" column="17" selection-start="11230" selection-end="11230" vertical-scroll-proportion="0.3106576">
-          <folding>
-            <marker date="1383426554336" expanded="true" signature="10467:10613" placeholder="SELECT usern..pick..." />
-          </folding>
         </state>
       </provider>
     </entry>

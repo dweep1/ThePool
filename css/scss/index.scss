@@ -1,0 +1,155 @@
+@import "functions";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+
+$orange: #DD4B39;
+$lightblue: #7EC8EE;
+$yellow: #F7E777;
+$green: #7AFF88;
+$red: #f12a27;
+
+BODY {
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+  font-size: 12px;
+  line-height:18px;
+  color: #212121;
+  @include zero;
+}
+
+DIV	{
+  @include zero;
+}
+
+A	{
+  text-decoration:none;
+  color: rgba(0,0,0,1);
+}
+
+H1,H2,H3,H4,H5,H6{
+  font-family: 'Quicksand', sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:0;
+  margin:0;
+}
+
+H1{font-size:48px;line-height:58px;letter-spacing: 4px;}
+H2{font-size:36px;line-height:48px;letter-spacing: 4px;}
+H3{font-size:30px;line-height:40px;letter-spacing: 3px;}
+H4{font-size:26px;line-height:34px;letter-spacing: 3px;}
+H5{font-size:20px;line-height:28px;letter-spacing: 2px;}
+H6{font-size:16px;line-height:26px;letter-spacing: 0px;display:inline-block;}
+
+.clear-fix{
+  zoom: 1;
+}
+
+.clear-fix:after{
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.float-right{
+  float:right;
+  z-index: 100;
+}
+
+#content-area{
+  height:auto;
+  margin:0;
+  margin-left:60px;
+  position: relative;
+  width:auto;
+  display:block;
+  color: #212121;
+
+  &.height-100{
+    height:97.6%;
+  }
+
+  .aligncenter{
+    text-align: center;
+  }
+
+  .fluid-row{
+    margin:0;
+    position: relative;
+    padding:22px 33px;
+    display:block;
+    width:auto;
+    z-index: 10;
+
+    &.dark{
+      color:#fff;
+      background: #313131;
+    }
+
+    &.width-50{
+      @include calc(width, "49.5% - 30px - 66px");
+      display:inline-block;
+      vertical-align: top;
+    }
+
+    &.height-100{
+      height:97.6%;
+    }
+  }
+
+  .scale-img{
+    max-width: 90%;
+    height:auto;
+    margin:2% 2%;
+    display: inline-block;
+  }
+}
+
+#main-nav{
+  position: fixed;
+  left:0;
+  top:0;
+  bottom:0;
+  height:100%;
+  margin:0;
+  padding:0;
+  width:60px;
+  background:#313131;
+  color:#fff;
+
+  #logo{
+    position:relative;
+    padding:10px;
+    width:40px;
+    height:40px;
+    text-align: center;
+  }
+
+  ul{
+
+    position:relative;
+    margin:0px;
+    padding:0px;
+    list-style: none;
+
+    li{
+      margin:0px;
+      padding:15px;
+      text-align: left;
+      font-size:30px;
+      line-height:30px;
+      display:block;
+      margin-bottom:1px;
+      border-top:1px solid #aaa;
+      border-bottom:1px solid #aaa;
+      @include box-shadow(rgba(0,0,0,0.5) 0px 1px 0px);
+      cursor:pointer;
+    }
+  }
+
+}
+

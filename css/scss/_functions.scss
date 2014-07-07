@@ -1,0 +1,50 @@
+/* _functions.scss */
+@import "compass";
+@import "compass/support";
+
+@mixin zero($margin: 0, $padding: 0){
+	margin: $margin;
+	padding: $padding;
+}
+
+@mixin linear-gradient($from, $to, $direction: top){
+	@include filter-gradient($from, $to, vertical); // IE6-9
+	@include linear-gradient($direction, $from 0%, $to 100%);
+}
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -o-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+/*
+* Respond To
+* Copied from UtilityBelt- https://github.com/dmtintner/UtilityBelt
+*
+* Example:
+* @include respondTo(smartphone){ display: none; }
+*
+*/
+
+$smartphone: 480px;
+$tabletPortrait: 767px;
+$tabletLandscape: 1024px;
+$desktop: 1174px;
+$largeScreen: 1400px;
+
+@mixin respondTo($media) {
+  @if $media == smartphone {
+    @media (max-width: $smartphone) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $tabletPortrait) and (max-width: $tabletLandscape) { @content; }
+  }
+  @else if $media == smallScreen {
+    @media (max-width: $desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop) { @content; }
+  }
+}
