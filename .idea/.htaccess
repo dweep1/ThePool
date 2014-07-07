@@ -1,0 +1,19 @@
+#Gzip
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript text/javascript
+</ifmodule>
+#End Gzip
+<IfModule mod_headers.c>
+    <FilesMatch "\.(bmp|css|flv|gif|ico|jpg|jpeg|js|pdf|png|svg|swf|tif|tiff)$">
+        Header set Last-Modified "Thu, 17 Oct 2013 20:00:00 GMT"
+    </FilesMatch>
+</IfModule>
+# Begin cache control #
+Header unset ETag
+FileETag None
+<FilesMatch "(?i)^.*.(ico|flv|jpg|jpeg|png|gif|js|css)$">
+Header unset Last-Modified
+Header set Expires "Thu, 17 Oct 2013 20:00:00 GMT"
+Header set Cache-Control "public, no-transform"
+</FilesMatch>
+# End cache control #
