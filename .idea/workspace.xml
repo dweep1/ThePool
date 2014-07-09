@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/nfl.iml" afterPath="$PROJECT_DIR$/.idea/nfl.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/_functions.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/_functions.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/HellsAn631.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/HellsAn631.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/_functions.scss" afterPath="$PROJECT_DIR$/css/scss/_functions.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style_guide.php" afterPath="$PROJECT_DIR$/style_guide.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -37,7 +43,7 @@
     <file path="/tpl.game.table.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380009159660" ignored="false" />
     <file path="/tpl.game.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380019999440" ignored="false" />
     <file path="/tpl.picks.teaminfo.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380705604083" ignored="false" />
-    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404728852775" ignored="false" />
+    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404786443763" ignored="false" />
     <file path="/login.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380417535350" ignored="false" />
     <file path="/_header.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384032688" ignored="false" />
     <file path="/login.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380421702757" ignored="false" />
@@ -51,10 +57,10 @@
     <file path="/tpl.settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383426391468" ignored="false" />
     <file path="/a.dummy" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384006371" ignored="false" />
     <file path="/style.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384182363" ignored="false" />
-    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404719153480" ignored="false" />
-    <file path="/index.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404729006883" ignored="false" />
+    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404776236652" ignored="false" />
+    <file path="/index.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404787900956" ignored="false" />
     <file path="/style_guide.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404726989587" ignored="false" />
-    <file path="/_functions.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404728402052" ignored="false" />
+    <file path="/_functions.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404782597696" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +88,7 @@
       <file leaf-file-name="index.scss" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="21" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.8060166">
+            <state line="231" column="14" selection-start="4051" selection-end="4051" vertical-scroll-proportion="0.4888179">
               <folding />
             </state>
           </provider>
@@ -91,8 +97,13 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="47" selection-start="624" selection-end="624" vertical-scroll-proportion="-12.538462">
-              <folding />
+            <state line="30" column="41" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-13.192307">
+              <folding>
+                <element signature="n#style#0;n#i#0;n#h2#0;n#li#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#h2#0;n#li#1;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#h2#0;n#li#2;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,8 +111,10 @@
       <file leaf-file-name="style_guide.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style_guide.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="27" selection-start="566" selection-end="566" vertical-scroll-proportion="-15.038462">
-              <folding />
+            <state line="28" column="26" selection-start="709" selection-end="709" vertical-scroll-proportion="-15.153846">
+              <folding>
+                <element signature="n#style#0;n#i#0;n#h2#0;n#li#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,7 +122,7 @@
       <file leaf-file-name="_functions.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="40" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
+            <state line="34" column="21" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -145,8 +158,8 @@
         <option value="$PROJECT_DIR$/css/scss/style.scss" />
         <option value="$PROJECT_DIR$/_header.php" />
         <option value="$PROJECT_DIR$/tpl.picks.php" />
-        <option value="$PROJECT_DIR$/style_guide.php" />
         <option value="$PROJECT_DIR$/css/scss/_functions.scss" />
+        <option value="$PROJECT_DIR$/style_guide.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/scss/index.scss" />
       </list>
@@ -272,14 +285,14 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig" serverName="EasyPHP" serverId="e59fded9-a830-44fb-8646-0ad96828f6e7" />
   <component name="RunManager" selected="PHPUnit on Server.nfl on EasyPHP">
@@ -293,10 +306,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -388,7 +401,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1122" extended-state="6" />
+    <frame x="-8" y="32" width="1936" height="1122" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -485,6 +498,34 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="21" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="47" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#1;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#2;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style_guide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="27" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="40" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
@@ -492,23 +533,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style_guide.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="27" selection-start="566" selection-end="566" vertical-scroll-proportion="-15.038462">
+        <state line="3736" column="0" selection-start="69748" selection-end="69748" vertical-scroll-proportion="0.33298755">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="21" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="47" selection-start="624" selection-end="624" vertical-scroll-proportion="-12.538462">
-          <folding />
+        <state line="30" column="41" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-13.192307">
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#1;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#2;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style_guide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="26" selection-start="709" selection-end="709" vertical-scroll-proportion="-15.153846">
+          <folding>
+            <element signature="n#style#0;n#i#0;n#h2#0;n#li#0;n#ul#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="21" selection-start="2521" selection-end="2521" vertical-scroll-proportion="0.8060166">
+        <state line="231" column="14" selection-start="4051" selection-end="4051" vertical-scroll-proportion="0.4888179">
           <folding />
         </state>
       </provider>

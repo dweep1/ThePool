@@ -1,6 +1,6 @@
 @import "functions";
 
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 
 $orange: #DD4B39;
@@ -12,10 +12,15 @@ $red: #f12a27;
 BODY {
   font-family: 'Roboto', sans-serif;
   font-weight:300;
-  font-size: 12px;
-  line-height:18px;
+  font-size: 100%;
+  line-height: 1.2em;
   color: #212121;
   @include zero;
+
+  @include respondTo(smallScreen) { font-size: 80%; }
+  @include respondTo(retina) { font-size: 135%; }
+  @include respondTo(tablet) { font-size: 70%; }
+  @include respondTo(smartphone) { font-size: 50%; }
 }
 
 DIV	{
@@ -40,41 +45,86 @@ H2{font-size:36px;line-height:48px;letter-spacing: 4px;}
 H3{font-size:30px;line-height:40px;letter-spacing: 3px;}
 H4{font-size:26px;line-height:34px;letter-spacing: 3px;}
 H5{font-size:20px;line-height:28px;letter-spacing: 2px;}
-H6{font-size:16px;line-height:26px;letter-spacing: 0px;display:inline-block;}
+H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
 
-.clear-fix{
-  zoom: 1;
-}
-
-.clear-fix:after{
+.clear-fix:after {
   content: ".";
   display: block;
+  height: 0;
   clear: both;
   visibility: hidden;
-  line-height: 0;
-  height: 0;
+  font-size: 0;
 }
+/* IE Mac/Win fixes below */
+.clear-fix {
+  display: inline-block; /* For IE/Mac */
+}
+/* Hides from IE/Mac \*/
+* html .clear-fix { height: 1%; }
+.clear-fix { display: block; }
+/* End hide from IE/Mac */
 
 .float-right{
   float:right;
   z-index: 100;
 }
 
+
+.aligncenter{
+  text-align: center;
+}
+
+
+.alignleft{
+  text-align: left;
+}
+
 #content-area{
   height:auto;
   margin:0;
   margin-left:60px;
+  padding:0px;
   position: relative;
   width:auto;
   display:block;
   color: #212121;
 
-  &.height-100{
-    height:97.6%;
+  .intro-word-con{
+    margin-top:20%;
+    margin-left:30%;
+  }
+  .intro-word{
+    padding:20px 30px;
+    font-size:3em;
+    line-height:1em;
+    background:#212121;
+    color:#fff;
+    display:inline-block;
+    font-family: 'Quicksand', sans-serif;
+    text-transform:uppercase;
+    font-weight:400;
+    letter-spacing: 4px;
+    margin-bottom:15%;
+    white-space: nowrap;
   }
 
-  .aligncenter{
-    text-align: center;
+  .secondary{
+
+    @include respondTo(smallScreen) {
+      float:none;
+      display:block;
+    }
+
+    @include respondTo(tablet) {
+      float:none;
+      display:block;
+    }
+
+    @include respondTo(smartphone) {
+      float:none;
+      display:block;
+    }
+
   }
 
   .fluid-row{
@@ -87,18 +137,69 @@ H6{font-size:16px;line-height:26px;letter-spacing: 0px;display:inline-block;}
 
     &.dark{
       color:#fff;
-      background: #313131;
+      background: #212121;
+    }
+
+    &.width-90{
+      @include calc(width, "80%");
+      display:inline-block;
+      vertical-align: top;
     }
 
     &.width-50{
       @include calc(width, "49.5% - 30px - 66px");
       display:inline-block;
       vertical-align: top;
-    }
 
-    &.height-100{
-      height:97.6%;
+      @include respondTo(smallScreen) {
+        width:auto;
+        display:block;
+      }
+
+      @include respondTo(tablet) {
+        width:auto;
+        display:block;
+      }
+
+      @include respondTo(smartphone) {
+        width:auto;
+        display:block;
+      }
     }
+  }
+
+
+  p.number{
+    font-size: 2.5em;
+    line-height: 1em;
+    font-weight:500;
+    padding:0;
+    margin:5px 0px;
+  }
+
+  p.desc{
+    font-size: 1.6em;
+    line-height: 1em;
+    font-weight:300;
+    padding:0;
+    margin:5px 0px;
+  }
+
+  p.c-right{
+    font-size: 0.75em;
+    line-height: 1.3em;
+    font-weight:300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding:0;
+    margin:5px 0px;
+  }
+
+  #logo-banner{
+    width:50%;
+    min-width:200px;
+    max-width:500px;
+    margin-top:5%;
   }
 
   .scale-img{
@@ -118,8 +219,33 @@ H6{font-size:16px;line-height:26px;letter-spacing: 0px;display:inline-block;}
   margin:0;
   padding:0;
   width:60px;
-  background:#313131;
+  background:#212121;
   color:#fff;
+  z-index:1000;
+  @include box-shadow(rgba(#fff,0.2) 0px 0px 2px);
+
+  .faux-row{
+    padding: 10px 20px;
+    display:block;
+  }
+
+  #login-area{
+    padding:10px;
+    width:260px;
+    height:auto;
+    background:#212121;
+    margin-left:63px;
+    margin-top:-128px;
+  }
+
+  input[type="text"]{
+    padding:10px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight:400;
+
+  }
 
   #logo{
     position:relative;
@@ -138,16 +264,20 @@ H6{font-size:16px;line-height:26px;letter-spacing: 0px;display:inline-block;}
 
     li{
       margin:0px;
-      padding:15px;
-      text-align: left;
-      font-size:30px;
-      line-height:30px;
-      display:block;
+      @include box-shadow(rgba(0,0,0,0.9) 0px 1px 0px);
+      border-top:1px solid #444;
+      border-bottom:1px solid #444;
       margin-bottom:1px;
-      border-top:1px solid #aaa;
-      border-bottom:1px solid #aaa;
-      @include box-shadow(rgba(0,0,0,0.5) 0px 1px 0px);
-      cursor:pointer;
+      display:block;
+
+      h2{
+        margin:0px;
+        padding:15px;
+        text-align: left;
+        font-size:30px;
+        line-height:30px;
+        cursor:pointer;
+      }
     }
   }
 

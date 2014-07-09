@@ -32,7 +32,7 @@ $smartphone: 480px;
 $tabletPortrait: 767px;
 $tabletLandscape: 1024px;
 $desktop: 1174px;
-$largeScreen: 1400px;
+$largeScreen: 1940px;
 
 @mixin respondTo($media) {
   @if $media == smartphone {
@@ -46,5 +46,8 @@ $largeScreen: 1400px;
   }
   @else if $media == desktop {
     @media (min-width: $desktop) { @content; }
+  }
+  @else if $media == retina {
+    @media (min-width: $largeScreen) { @content; }
   }
 }

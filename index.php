@@ -3,6 +3,7 @@
 <head>
 
     <title>The Pool</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -15,19 +16,63 @@
 
     <div id="logo"><h3>TP</h3></div>
     <ul>
-        <li><i class="fa fa-bars"></i></li>
+        <li><h2><i class="fa fa-bars" style="padding-left:1px;"></i></h2></li>
+        <li><h2><i class="fa fa-user" style="padding-left:2px;"></i></h2></li>
+        <li><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i></i></h2></li>
     </ul>
+
+    <div id="login-area" class="aligncenter">
+        <h6>Login</h6>
+        <div class="faux-row"><input type="text" value="Username" /></div>
+        <div class="faux-row"><input type="text" value="Password" /></div>
+        <div class="faux-row">
+            <button class="alignleft">Register</button>
+            <button class="alignleft">Login</button>
+            <div class="clear-fix"></div>
+        </div>
+
+    </div>
 
 </nav>
 
-<div id="content-area" class="height-100">
+<div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center;">
     <div class="width-50 height-100 fluid-row">
-        <h1>Style Guide</h1>
+        <div class="intro-word-con">
+            <div class="intro-word">
+                Plan &#62;
+            </div> <br/>
+            <div class="intro-word">
+                Pick &#62;
+            </div> <br/>
+            <div class="intro-word">
+                Play &#62;
+            </div>
+        </div>
+
     </div>
 
-    <div class="fluid-row width-50 height-100 dark float-right">
-        <h2>Hierarchy</h2>
+    <div class="fluid-row width-50 height-100 dark float-right secondary">
+
+        <div class="fluid-row aligncenter"><img id="logo-banner" src="./images/poolbanner.png" /></div>
+
+        <div class="fluid-row aligncenter">
+            <div class="fluid-row width-90 alignleft"><i>At vero eos et accusamus et iusto odio dignissimos ducimus
+                    qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                    excepturi sint occaecati cupiditate non provident.</i></div>
+
+            <div class="fluid-row width-90 alignleft"><p class="number">01</p><p class="desc">Quisque vel euismod risus. Cras eget dui vulputate</p></div>
+
+            <div class="fluid-row width-90 alignleft"><p class="number">02</p><p class="desc">Sed et lacus nibh. Ut sed felis ut nulla tincidunt faucibus vel eu mauris</p></div>
+
+            <div class="fluid-row width-90 alignleft"><p class="number">03</p><p class="desc">Vivamus aliquet tellus eros, id venenatis ante venenatis tempus.</p></div>
+
+            <div class="fluid-row width-90 alignleft"><p class="c-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus consequat nunc. Sed
+                    convallis, ipsum et commodo scelerisque, nunc risus euismod orci, eu auctor mi sapien tincidunt lacus. Mauris in pulvinar risus.</p></div>
+        </div>
+
     </div>
+
+    <div class="clear-fix"></div>
 
 </div>
 
@@ -43,11 +88,16 @@
         });
 
         function resize(){
-            var $content = $("#content-area");
+            var $content = $(".height-100");
 
-            var $height = ($(window).height())*0.976;
+            $.each($content, function(){
 
-            $content.css({"height": $height});
+                var $height = $(window).height() - (parseInt($(this).css("padding-top")) + parseInt($(this).css("padding-bottom")));
+
+                $(this).css({"min-height": $height});
+
+            });
+
         }
     });
 

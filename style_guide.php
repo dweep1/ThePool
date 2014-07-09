@@ -15,7 +15,7 @@
 
     <div id="logo"><h3>TP</h3></div>
     <ul>
-        <li><i class="fa fa-bars"></i></li>
+        <li><h2><i class="fa fa-bars" style="padding-left:1px;"></i></h2></li>
     </ul>
 
 </nav>

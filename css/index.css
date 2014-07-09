@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
 @import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 /* _functions.scss */
 /*
@@ -13,26 +13,50 @@
 BODY {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 100%;
+  line-height: 1.2em;
   color: #212121;
   margin: 0;
   padding: 0;
 }
+@media (max-width: 1174px) {
+  /* line 12, scss/index.scss */
+  BODY {
+    font-size: 80%;
+  }
+}
+@media (min-width: 1940px) {
+  /* line 12, scss/index.scss */
+  BODY {
+    font-size: 135%;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 12, scss/index.scss */
+  BODY {
+    font-size: 70%;
+  }
+}
+@media (max-width: 480px) {
+  /* line 12, scss/index.scss */
+  BODY {
+    font-size: 50%;
+  }
+}
 
-/* line 21, scss/index.scss */
+/* line 26, scss/index.scss */
 DIV {
   margin: 0;
   padding: 0;
 }
 
-/* line 25, scss/index.scss */
+/* line 30, scss/index.scss */
 A {
   text-decoration: none;
   color: black;
 }
 
-/* line 30, scss/index.scss */
+/* line 35, scss/index.scss */
 H1, H2, H3, H4, H5, H6 {
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
@@ -41,89 +65,147 @@ H1, H2, H3, H4, H5, H6 {
   margin: 0;
 }
 
-/* line 38, scss/index.scss */
+/* line 43, scss/index.scss */
 H1 {
   font-size: 48px;
   line-height: 58px;
   letter-spacing: 4px;
 }
 
-/* line 39, scss/index.scss */
+/* line 44, scss/index.scss */
 H2 {
   font-size: 36px;
   line-height: 48px;
   letter-spacing: 4px;
 }
 
-/* line 40, scss/index.scss */
+/* line 45, scss/index.scss */
 H3 {
   font-size: 30px;
   line-height: 40px;
   letter-spacing: 3px;
 }
 
-/* line 41, scss/index.scss */
+/* line 46, scss/index.scss */
 H4 {
   font-size: 26px;
   line-height: 34px;
   letter-spacing: 3px;
 }
 
-/* line 42, scss/index.scss */
+/* line 47, scss/index.scss */
 H5 {
   font-size: 20px;
   line-height: 28px;
   letter-spacing: 2px;
 }
 
-/* line 43, scss/index.scss */
+/* line 48, scss/index.scss */
 H6 {
   font-size: 16px;
-  line-height: 26px;
+  line-height: 24px;
   letter-spacing: 0px;
   display: inline-block;
 }
 
-/* line 45, scss/index.scss */
-.clear-fix {
-  zoom: 1;
-}
-
-/* line 49, scss/index.scss */
+/* line 50, scss/index.scss */
 .clear-fix:after {
   content: ".";
   display: block;
+  height: 0;
   clear: both;
   visibility: hidden;
-  line-height: 0;
-  height: 0;
+  font-size: 0;
 }
 
-/* line 58, scss/index.scss */
+/* IE Mac/Win fixes below */
+/* line 59, scss/index.scss */
+.clear-fix {
+  display: inline-block;
+  /* For IE/Mac */
+}
+
+/* Hides from IE/Mac \*/
+/* line 63, scss/index.scss */
+* html .clear-fix {
+  height: 1%;
+}
+
+/* line 64, scss/index.scss */
+.clear-fix {
+  display: block;
+}
+
+/* End hide from IE/Mac */
+/* line 67, scss/index.scss */
 .float-right {
   float: right;
   z-index: 100;
 }
 
-/* line 63, scss/index.scss */
+/* line 73, scss/index.scss */
+.aligncenter {
+  text-align: center;
+}
+
+/* line 78, scss/index.scss */
+.alignleft {
+  text-align: left;
+}
+
+/* line 82, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
   margin-left: 60px;
+  padding: 0px;
   position: relative;
   width: auto;
   display: block;
   color: #212121;
 }
-/* line 72, scss/index.scss */
-#content-area.height-100 {
-  height: 97.6%;
+/* line 92, scss/index.scss */
+#content-area .intro-word-con {
+  margin-top: 20%;
+  margin-left: 30%;
 }
-/* line 76, scss/index.scss */
-#content-area .aligncenter {
-  text-align: center;
+/* line 96, scss/index.scss */
+#content-area .intro-word {
+  padding: 20px 30px;
+  font-size: 3em;
+  line-height: 1em;
+  background: #212121;
+  color: #fff;
+  display: inline-block;
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 4px;
+  margin-bottom: 15%;
+  white-space: nowrap;
 }
-/* line 80, scss/index.scss */
+@media (max-width: 1174px) {
+  /* line 111, scss/index.scss */
+  #content-area .secondary {
+    float: none;
+    display: block;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 111, scss/index.scss */
+  #content-area .secondary {
+    float: none;
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  /* line 111, scss/index.scss */
+  #content-area .secondary {
+    float: none;
+    display: block;
+  }
+}
+/* line 130, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -132,12 +214,21 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 88, scss/index.scss */
+/* line 138, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
-  background: #313131;
+  background: #212121;
 }
-/* line 93, scss/index.scss */
+/* line 143, scss/index.scss */
+#content-area .fluid-row.width-90 {
+  width: -webkit-calc(80%);
+  width: -moz-calc(80%);
+  width: -o-calc(80%);
+  width: calc(80%);
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 149, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(49.5% - 30px - 66px);
   width: -moz-calc(49.5% - 30px - 66px);
@@ -146,11 +237,61 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 99, scss/index.scss */
-#content-area .fluid-row.height-100 {
-  height: 97.6%;
+@media (max-width: 1174px) {
+  /* line 149, scss/index.scss */
+  #content-area .fluid-row.width-50 {
+    width: auto;
+    display: block;
+  }
 }
-/* line 104, scss/index.scss */
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 149, scss/index.scss */
+  #content-area .fluid-row.width-50 {
+    width: auto;
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  /* line 149, scss/index.scss */
+  #content-area .fluid-row.width-50 {
+    width: auto;
+    display: block;
+  }
+}
+/* line 172, scss/index.scss */
+#content-area p.number {
+  font-size: 2.5em;
+  line-height: 1em;
+  font-weight: 500;
+  padding: 0;
+  margin: 5px 0px;
+}
+/* line 180, scss/index.scss */
+#content-area p.desc {
+  font-size: 1.6em;
+  line-height: 1em;
+  font-weight: 300;
+  padding: 0;
+  margin: 5px 0px;
+}
+/* line 188, scss/index.scss */
+#content-area p.c-right {
+  font-size: 0.75em;
+  line-height: 1.3em;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 5px 0px;
+}
+/* line 198, scss/index.scss */
+#content-area #logo-banner {
+  width: 50%;
+  min-width: 200px;
+  max-width: 500px;
+  margin-top: 5%;
+}
+/* line 205, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -158,7 +299,7 @@ H6 {
   display: inline-block;
 }
 
-/* line 112, scss/index.scss */
+/* line 213, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -168,10 +309,36 @@ H6 {
   margin: 0;
   padding: 0;
   width: 60px;
-  background: #313131;
+  background: #212121;
   color: #fff;
+  z-index: 1000;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
 }
-/* line 124, scss/index.scss */
+/* line 227, scss/index.scss */
+#main-nav .faux-row {
+  padding: 10px 20px;
+  display: block;
+}
+/* line 232, scss/index.scss */
+#main-nav #login-area {
+  padding: 10px;
+  width: 260px;
+  height: auto;
+  background: #212121;
+  margin-left: 63px;
+  margin-top: -128px;
+}
+/* line 241, scss/index.scss */
+#main-nav input[type="text"] {
+  padding: 10px 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 400;
+}
+/* line 250, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -179,26 +346,30 @@ H6 {
   height: 40px;
   text-align: center;
 }
-/* line 132, scss/index.scss */
+/* line 258, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-/* line 139, scss/index.scss */
+/* line 265, scss/index.scss */
 #main-nav ul li {
+  margin: 0px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  margin-bottom: 1px;
+  display: block;
+}
+/* line 273, scss/index.scss */
+#main-nav ul li h2 {
   margin: 0px;
   padding: 15px;
   text-align: left;
   font-size: 30px;
   line-height: 30px;
-  display: block;
-  margin-bottom: 1px;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
   cursor: pointer;
 }
