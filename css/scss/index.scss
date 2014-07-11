@@ -66,9 +66,11 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
 
 .float-right{
   float:right;
-  z-index: 100;
 }
 
+.float-left{
+  float:left;
+}
 
 .aligncenter{
   text-align: center;
@@ -77,6 +79,35 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
 
 .alignleft{
   text-align: left;
+}
+
+.ui-button{
+
+  color:#fff;
+  background: rgba(0,0,0,0);
+  font-family: 'Roboto', sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  font-size:11px;
+  line-height:12px;
+
+  @include border-radius(3px);
+  border:2px solid rgba(255,255,255,0.7);
+
+  margin:0;
+  padding: 10px 15px;
+  outline:none;
+  cursor: pointer;
+
+  &:hover{
+    @include box-shadow(rgba(#fff,0.6) 0px 0px 2px);
+    border:2px solid rgba(255,255,255,1);
+  }
+
+  &:active{
+    @include box-shadow(rgba(#fff,0.6) 0px 0px 3px);
+    border:2px solid rgba(255,255,255,0.5);
+  }
 }
 
 #content-area{
@@ -93,6 +124,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     margin-top:20%;
     margin-left:30%;
   }
+
   .intro-word{
     padding:20px 30px;
     font-size:3em;
@@ -236,9 +268,14 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     background:#212121;
     margin-left:63px;
     margin-top:-128px;
+
+    h5{
+      padding:5px 10px;
+    }
+
   }
 
-  input[type="text"]{
+  input[type="text"], input[type="password"]{
     padding:10px 15px;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
