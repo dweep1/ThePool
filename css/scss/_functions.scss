@@ -3,13 +3,13 @@
 @import "compass/support";
 
 @mixin zero($margin: 0, $padding: 0){
-	margin: $margin;
-	padding: $padding;
+  margin: $margin;
+  padding: $padding;
 }
 
 @mixin linear-gradient($from, $to, $direction: top){
-	@include filter-gradient($from, $to, vertical); // IE6-9
-	@include linear-gradient($direction, $from 0%, $to 100%);
+  @include filter-gradient($from, $to, vertical); // IE6-9
+  @include linear-gradient($direction, $from 0%, $to 100%);
 }
 
 @mixin calc($property, $expression) {
@@ -50,4 +50,27 @@ $largeScreen: 1940px;
   @else if $media == retina {
     @media (min-width: $largeScreen) { @content; }
   }
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animation($expression) {
+   -webkit-animation: #{$expression};
+      -moz-animation: #{$expression};
+        -o-animation: #{$expression};
+           animation: #{$expression};
 }

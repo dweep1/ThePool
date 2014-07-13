@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/_functions.scss" afterPath="$PROJECT_DIR$/css/scss/_functions.scss" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,7 +49,7 @@
     <file path="/tpl.settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383426391468" ignored="false" />
     <file path="/a.dummy" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384006371" ignored="false" />
     <file path="/style.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384182363" ignored="false" />
-    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405009658143" ignored="false" />
+    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405274127042" ignored="false" />
     <file path="/index.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404876754121" ignored="false" />
     <file path="/style_guide.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404726989587" ignored="false" />
     <file path="/_functions.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404782597696" ignored="false" />
@@ -91,12 +87,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="0" selection-start="2486" selection-end="2739" vertical-scroll-proportion="0.782516">
+            <state line="61" column="0" selection-start="2486" selection-end="2739" vertical-scroll-proportion="-28.23077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bug_report.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/bug_report.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="125" selection-start="1252" selection-end="1252" vertical-scroll-proportion="0.24688797">
               <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1405274140350" expanded="true" signature="85:128" placeholder="..." />
+                <marker date="1405274140350" expanded="true" signature="347:378" placeholder="..." />
+                <marker date="1405274140350" expanded="true" signature="673:759" placeholder="..." />
+                <marker date="1405274140350" expanded="true" signature="829:860" placeholder="..." />
+                <marker date="1405274140350" expanded="true" signature="922:1000" placeholder="..." />
+                <marker date="1405274140350" expanded="true" signature="1168:1249" placeholder="..." />
+                <marker date="1405274140350" expanded="true" signature="1426:1559" placeholder="..." />
+                <marker date="1405274140350" expanded="false" signature="5167:5217" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -123,7 +135,7 @@
       <file leaf-file-name="_functions.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="21" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
+            <state line="34" column="21" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,7 +159,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/admin/com/admin.header.php" />
         <option value="$PROJECT_DIR$/tpl._footer.php" />
         <option value="$PROJECT_DIR$/tpl._header.php" />
         <option value="$PROJECT_DIR$/css/style.php" />
@@ -163,6 +174,7 @@
         <option value="$PROJECT_DIR$/css/scss/index.scss" />
         <option value="$PROJECT_DIR$/js/general.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/bug_report.js" />
       </list>
     </option>
   </component>
@@ -228,7 +240,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -295,19 +306,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../praxus/Praxus" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig" serverName="EasyPHP" serverId="0edfedb1-5a75-4748-bb16-b995a0731305">
     <servers>
@@ -331,10 +343,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -524,15 +536,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="37" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style_guide.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="26" selection-start="709" selection-end="709" vertical-scroll-proportion="0.0">
@@ -550,9 +553,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="41" selection-start="1205" selection-end="1205" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -580,9 +581,7 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="47" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -614,7 +613,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="21" selection-start="793" selection-end="793" vertical-scroll-proportion="0.0">
+        <state line="34" column="21" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -635,9 +634,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="2486" selection-end="2739" vertical-scroll-proportion="0.782516">
+        <state line="61" column="0" selection-start="2486" selection-end="2739" vertical-scroll-proportion="-28.23077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/bug_report.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="125" selection-start="1252" selection-end="1252" vertical-scroll-proportion="0.24688797">
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1405274140350" expanded="true" signature="85:128" placeholder="..." />
+            <marker date="1405274140350" expanded="true" signature="347:378" placeholder="..." />
+            <marker date="1405274140350" expanded="true" signature="673:759" placeholder="..." />
+            <marker date="1405274140350" expanded="true" signature="829:860" placeholder="..." />
+            <marker date="1405274140350" expanded="true" signature="922:1000" placeholder="..." />
+            <marker date="1405274140350" expanded="true" signature="1168:1249" placeholder="..." />
+            <marker date="1405274140350" expanded="true" signature="1426:1559" placeholder="..." />
+            <marker date="1405274140350" expanded="false" signature="5167:5217" placeholder="..." />
           </folding>
         </state>
       </provider>

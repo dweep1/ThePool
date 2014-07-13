@@ -1,0 +1,637 @@
+@import "functions";
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+
+$orange: #DD4B39;
+$lightblue: #7EC8EE;
+$yellow: #F7E777;
+$green: #7AFF88;
+$red: #f12a27;
+
+BODY {
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+  font-size: 100%;
+  line-height: 1.2em;
+  color: #212121;
+  @include zero;
+
+  @include respondTo(smallScreen) { font-size: 80%; }
+  @include respondTo(retina) { font-size: 135%; }
+  @include respondTo(tablet) { font-size: 70%; }
+  @include respondTo(smartphone) { font-size: 50%; }
+}
+
+DIV	{
+  @include zero;
+}
+
+A	{
+  text-decoration:none;
+  color: rgba(0,0,0,1);
+}
+
+H1,H2,H3,H4,H5,H6{
+  font-family: 'Quicksand', sans-serif;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:0;
+  margin:0;
+}
+
+H1{font-size:3em;line-height:1.2em;letter-spacing: 4px;}
+H2{font-size:2.5em;line-height:1.2em;letter-spacing: 4px;}
+H3{font-size:2.0em;line-height:1.2em;letter-spacing: 3px;}
+H4{font-size:1.7em;line-height:1.2em;letter-spacing: 3px;}
+H5{font-size:1.5em;line-height:1.2em;letter-spacing: 2px;}
+H6{font-size:1.25em;line-height:1.2em;letter-spacing: 0px;display:inline-block;}
+
+.clear-fix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  font-size: 0;
+}
+/* IE Mac/Win fixes below */
+.clear-fix {
+  display: inline-block; /* For IE/Mac */
+}
+/* Hides from IE/Mac \*/
+* html .clear-fix { height: 1%; }
+.clear-fix { display: block; }
+/* End hide from IE/Mac */
+
+.float-right, .right{
+  float:right;
+}
+
+.float-left, .left{
+  float:left;
+}
+
+.aligncenter{
+  text-align: center;
+}
+
+.alignleft{
+  text-align: left;
+}
+
+.alignright{
+  text-align: right;
+}
+
+.help{
+  background:#222;
+  z-index:99999;
+  color:#fff;
+  padding:10px 15px;
+  position: absolute;
+  right:-210px;
+  width:160px;
+  top:0px;
+  opacity:0;
+
+  &:before{
+    content: " ";
+    background:$red;
+    color:#fff;
+    padding:5px;
+    position: absolute;
+    z-index:10;
+    left:-5px;
+    width:0px;
+    top:5px;
+    opacity:1;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+    transition: 0.3s;
+    transform-style: preserve-3d;
+  }
+}
+
+#header{
+  background: #1f1f1f;
+  color:#fff;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:9995;
+  overflow: visible;
+  height:32px;
+  padding:5px 20px;
+
+  .con{
+    vertical-align:middle;
+    padding-top:5px;
+  }
+
+  a{
+    color: rgb(255,255,255);
+  }
+
+  h3{
+    font-size:20px;
+    line-height:32px;
+    text-transform:uppercase;
+    display:inline-block;
+    color: rgb(255,255,255);
+  }
+}
+
+#content-area{
+  height:auto;
+  margin:0;
+  margin-left:255px;
+  margin-top:62px;
+  padding:0px;
+  position: relative;
+  width:auto;
+  display:block;
+  color: #212121;
+}
+
+#side-nav{
+  background: #3d3d3d;
+  height: auto !important;
+  overflow: visible !important;
+  padding:0;
+  margin:0;
+  display:inline-block;
+  width:225px;
+  color: #fff;
+  position: fixed;
+  z-index:1;
+  top:26px;
+  left:0px;
+  bottom:0px;
+  height:100%;
+
+  a{
+    color: #fff;
+  }
+
+  ul{
+    padding:0;
+    display:block;
+
+    li{
+      width:auto;
+      padding:15px 20px;
+      padding-right:0;
+      font-size:14px;
+      display:block;
+      //border-top:1px solid #595959;
+      line-height:14px;
+      cursor:pointer;
+
+      i{
+        padding-right:10px;
+        font-size:18px;
+        line-height:18px;
+        vertical-align:middle;
+      }
+
+      &:after{
+        content: ' ';
+        float:right;
+        opacity:0;
+        margin-top:-4px;
+        margin-left:-8px;
+        background: url("../images/ui/sidebar-menu-arrow.png");
+        width:8px;
+        height:25px;
+      }
+
+      &:hover{
+        background: #fff;
+        color:#000;
+      }
+
+      &.selected{
+        background: #e02222 !important;
+        color:#fff  !important;
+        @include box-shadow(rgba(0,0,0,0.2) 0px 1px 0px, rgba(0,0,0,0.1) 0px 2px 0px, rgba(0,0,0,0.2) 0px -1px 0px);
+
+        &:after{
+          opacity:1;
+        }
+      }
+    }
+
+  }
+}
+
+#background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  @include transition(opacity 0.7s ease);
+
+  input[type="text"], .datetime{
+    margin-bottom:15px;
+    width:100%;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    width: auto;
+    padding: 20px;
+    min-width: 400px;
+    max-width: 800px;
+    height: auto;
+    color: #222;
+
+    background: url("../images/bg/noise.png");
+    @include box-shadow(rgba(0,0,0,1) 0px 0px 5px);
+
+    b {
+      font-weight: 600;
+    }
+
+  }
+}
+
+input[type="text"], input[type="password"], .ui-date-time{
+  padding:10px 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight:400;
+  background:#e8e8e8;
+  border:1px solid #565656;
+  @include border-radius(2px);
+  outline:none;
+  border-right: 3px solid $red;
+  display:block;
+  width:auto;
+}
+
+.ui-button{
+  background:#313131;
+  color:rgba(#fff,0.7);
+  font-family: 'Quicksand', sans-serif;
+  text-transform:uppercase;
+  font-weight: 600;
+  font-size:12px;
+  letter-spacing: 3px;
+  padding: 10px 20px;
+  padding-bottom:8px;
+  line-height:12px;
+  margin:0;
+  margin-top:20px;
+  border:none;
+  outline:none;
+  border-bottom:2px solid rgba(#313131, 1);
+  @include transition(all 0.2s ease);
+  cursor: pointer;
+
+  &:hover{
+    color:rgba(#fff,1);
+    border-bottom:2px solid rgba($red, 1);
+  }
+
+  &.active{
+    color:rgba(#fff,0.8);
+    border-bottom:2px solid rgba($red, 0.8);
+  }
+}
+
+.fluid-row{
+  margin:0;
+  position: relative;
+  padding:22px 33px;
+  display:block;
+  width:auto;
+  z-index: 10;
+
+  &.dark{
+    color:#fff;
+    background: #212121;
+  }
+
+  &.no-padding{
+    padding:0px;
+  }
+
+  &.width-90{
+    @include calc(width, "80%");
+    display:inline-block;
+    vertical-align: top;
+  }
+
+  &.width-40{
+    @include calc(width, "39.5% - 30px - 66px");
+    display:inline-block;
+    vertical-align: top;
+
+    @include respondTo(smallScreen) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(tablet) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(smartphone) {
+      width:auto;
+      display:block;
+    }
+  }
+
+  &.width-60{
+    @include calc(width, "59.5% - 30px - 66px");
+    display:inline-block;
+    vertical-align: top;
+
+    @include respondTo(smallScreen) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(tablet) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(smartphone) {
+      width:auto;
+      display:block;
+    }
+  }
+
+  &.width-50{
+    @include calc(width, "49.5% - 30px - 66px");
+    display:inline-block;
+    vertical-align: top;
+
+    @include respondTo(smallScreen) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(tablet) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(smartphone) {
+      width:auto;
+      display:block;
+    }
+  }
+}
+
+ul.data-row{
+  list-style: none;
+  padding:0px;
+  margin:0px;
+
+  li{
+    width:auto;
+    display:block;
+    padding:10px;
+    font-size:0.8em;
+    line-height:1.2em;
+
+    &:hover{
+      background:$red;
+      color:#fff;
+    }
+  }
+}
+
+ul.pages-list{
+  list-style: none;
+  padding:0px;
+  margin:0px;
+
+  li{
+    width:auto;
+    display:block;
+    padding:15px;
+    font-size:1em;
+    line-height:1.2em;
+    background: $red;
+    color:#fff;
+    cursor:pointer;
+    margin: 3px 0px;
+
+    i{
+      font-size:1.2em;
+      line-height:0.7em;
+      cursor:pointer;
+      padding:5px;
+    }
+
+  }
+
+}
+
+.ui-a-box{
+	position:absolute;
+	top:10%;
+	left:30%;
+	width:auto;
+	height:auto;
+	padding:20px;
+	border:5px solid $lightblue;
+}
+
+#closePopup{
+  margin-right:-40px;
+  margin-top:-40px;
+  background: #fff;
+  padding:4px;
+  @include border-radius(26px);
+  font-size:26px;
+  line-height:26px;
+  text-align: center;
+  width:24px;
+  height:24px;
+  @include box-shadow(rgba(0,0,0,0.7) 0px 1px 3px);
+  cursor:pointer;
+}
+
+#admin-login{
+
+	text-align:center;
+
+	#resultlog{
+		height:1em;
+		padding:5px 10px;
+		width:89%;
+		background:rgb(235,235,235);
+		border:1px solid rgba($lightblue, 0.7);
+		margin-top:10px;
+		opacity:0.7;
+		color: rgb(30,30,30);
+		@include transition(all 0.7s ease);
+
+		&:hover{
+			border:1px solid rgba($orange, 0.5);
+			@include transition(all 0.7s ease);
+			opacity:0.95;
+		}
+	}
+
+	input{
+		width:89%;
+		border:none;
+		padding:5px 10px;
+		border:1px solid rgb(255,255,255);
+		border-bottom:1px solid rgba($orange,0.4);
+		font-family: 'Roboto', sans-serif;
+		font-weight:300;
+		font-size:14px;
+		line-height:18px;
+		color: rgb(80,80,80);
+
+		&:hover{
+			border:1px solid rgba($orange, 0.6);
+			@include transition(all 0.7s ease);
+		}
+	}
+
+	button{
+		padding:5px 15px;
+		font-family: 'Roboto', sans-serif;
+		font-weight:400;
+		font-size:14px;
+		line-height:20px;
+		border:none;
+		color:rgb(80,80,80);
+		border:1px solid rgba($lightblue, 0.9);
+		background:none;
+		margin-top:10px;
+		cursor:pointer;
+		@include transition(all 0.1s ease);
+		opacity:0.7;
+
+		&:active{
+			border:1px solid rgba($orange, 0.5);
+			@include transition(all 0.1s ease);
+			opacity:0.95;
+		}
+	}
+
+}
+
+#fieldbody{
+  position:absolute;
+
+  left:240px;
+  top:40px;
+  z-index:100;
+  height:auto;
+  width:auto;
+  overflow:hidden;
+
+}
+
+.fieldmessage{
+
+  position:relative;
+  display:block;
+
+  left:0px;
+  top:-400px;
+  z-index:100;
+
+  max-height:300px;
+  height:auto;
+
+  width:auto;
+  min-width:200px;
+  max-width:400px;
+  padding:15px;
+  color:#fff;
+  background:#444;
+  @include box-shadow(rgba(0,0,0,0.3) 0px 1px 3px, rgba(255,255,255,0.7) 0px 1px 0px inset);
+
+  @include transition(all 1.3s ease);
+
+}
+
+/*
+NG Animate
+*/
+
+//sets up class for animate events
+.animate-left-left{
+  position: relative;
+  display: block;
+}
+
+.animate-left-left.ng-enter-stagger,
+.animate-left-left.ng-leave-stagger,
+.animate-left-left.ng-move-stagger {
+  /* 50ms between each item being animated after the other */
+  -webkit-transition-delay:0.07s;
+  transition-delay:0.07s;
+
+  /* this is required for animation staggering */
+  -webkit-animation-delay:0.07s;
+  animation-delay:0.07s;
+
+  /* this is required here to prevent any CSS inheritance issues */
+  -webkit-transition-duration:0;
+  transition-duration:0;
+}
+
+/*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+.animate-left-left.ng-enter,
+.animate-left-left.ng-move {
+  @include transition(0.125s ease all);
+  left: -300px;
+  opacity: 0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+.animate-left-left.ng-enter.ng-enter-active,
+.animate-left-left.ng-move.ng-move-active {
+  left: 0px;
+  opacity:1;
+}
+
+/*
+  We're using CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+.animate-left-left.ng-leave{
+  @include transition(0.2s ease all);
+  @include animation(0.2s to_left_destroy);
+}
+
+// use of keyframes mixin
+@include keyframes(to_left_destroy) {
+  0% { opacity:1; margin-left:0px; }
+  50%{ opacity:0; margin-left:-300px; }
+  85% { display:none; }
+}
