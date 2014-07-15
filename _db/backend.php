@@ -67,7 +67,12 @@ abstract class DatabaseObject{
             $this->load($id);
 
 
+        $this->classDataSetup();
+
     }
+
+    //Force Extending class to define this method
+    abstract protected function classDataSetup();
 
 
     // Common methods
@@ -666,6 +671,12 @@ class Core{
             return date('Y-m-d H:i:s', $timestamp);
 
         return date('Y-m-d H:i:s', strtotime($timestamp));
+
+    }
+
+    public static function getTimestamp(){
+
+        return new DateTimeZone('America/New_York');
 
     }
 

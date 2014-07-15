@@ -11,6 +11,7 @@
         <h5>Login</h5>
         <div class="faux-row"><input type="text" value="Email" /></div>
         <div class="faux-row"><input type="text" value="Password" data-password /></div>
+        <div class="faux-row hidden"><input type="text" value="Confirm Password" data-password /></div>
         <div class="faux-row">
             <button class="ui-button float-left">Register</button>
             <button class="ui-button float-right">Login</button>

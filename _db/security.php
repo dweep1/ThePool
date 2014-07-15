@@ -8,7 +8,6 @@ if(!session_id()) {
 
 define('SITEKEY', "ce6b20ee7f7797e102f68d15099e7d5b0e8d4c50f98a7865ea168717539ec3aa");
 
-
 class Cipher {
     private $secureKey;
     private $iv;
@@ -23,16 +22,20 @@ class Cipher {
 
     }
 
-    function encrypt($input) {
+    public function encrypt($input) {
         return base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, $this->secureKey, $input, MCRYPT_MODE_ECB, $this->iv));
     }
 
-    function decrypt($input) {
+    public function decrypt($input) {
         return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, $this->secureKey, base64_decode($input), MCRYPT_MODE_ECB, $this->iv));
     }
 
-    function getIV(){
+    public function getIV(){
         return base64_encode($this->iv);
+    }
+
+    public static function getRandomKey($length = 22, $cost = 128){
+        return substr(str_replace('+', '.', base64_encode(openssl_random_pseudo_bytes ($cost))), 0, $length);
     }
 
 }
