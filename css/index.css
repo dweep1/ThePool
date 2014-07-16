@@ -158,6 +158,12 @@ H6 {
 }
 
 /* line 84, scss/index.scss */
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+/* line 89, scss/index.scss */
 .ui-button {
   color: #fff;
   background: rgba(0, 0, 0, 0);
@@ -177,14 +183,14 @@ H6 {
   outline: none;
   cursor: pointer;
 }
-/* line 102, scss/index.scss */
+/* line 107, scss/index.scss */
 .ui-button:hover {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   border: 2px solid white;
 }
-/* line 107, scss/index.scss */
+/* line 112, scss/index.scss */
 .ui-button:active {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
@@ -192,7 +198,7 @@ H6 {
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-/* line 113, scss/index.scss */
+/* line 118, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
@@ -203,12 +209,12 @@ H6 {
   display: block;
   color: #212121;
 }
-/* line 123, scss/index.scss */
+/* line 128, scss/index.scss */
 #content-area .intro-word-con {
   margin-top: 20%;
   margin-left: 30%;
 }
-/* line 128, scss/index.scss */
+/* line 133, scss/index.scss */
 #content-area .intro-word {
   padding: 20px 30px;
   font-size: 3em;
@@ -224,27 +230,27 @@ H6 {
   white-space: nowrap;
 }
 @media (max-width: 1174px) {
-  /* line 143, scss/index.scss */
+  /* line 148, scss/index.scss */
   #content-area .secondary {
     float: none;
     display: block;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 143, scss/index.scss */
+  /* line 148, scss/index.scss */
   #content-area .secondary {
     float: none;
     display: block;
   }
 }
 @media (max-width: 480px) {
-  /* line 143, scss/index.scss */
+  /* line 148, scss/index.scss */
   #content-area .secondary {
     float: none;
     display: block;
   }
 }
-/* line 162, scss/index.scss */
+/* line 167, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -253,12 +259,12 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 170, scss/index.scss */
+/* line 175, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
   background: #212121;
 }
-/* line 175, scss/index.scss */
+/* line 180, scss/index.scss */
 #content-area .fluid-row.width-90 {
   width: -webkit-calc(80%);
   width: -moz-calc(80%);
@@ -267,7 +273,7 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 181, scss/index.scss */
+/* line 186, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(49.5% - 30px - 66px);
   width: -moz-calc(49.5% - 30px - 66px);
@@ -277,27 +283,27 @@ H6 {
   vertical-align: top;
 }
 @media (max-width: 1174px) {
-  /* line 181, scss/index.scss */
+  /* line 186, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 181, scss/index.scss */
+  /* line 186, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
 @media (max-width: 480px) {
-  /* line 181, scss/index.scss */
+  /* line 186, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
-/* line 204, scss/index.scss */
+/* line 209, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -305,7 +311,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 212, scss/index.scss */
+/* line 217, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -313,7 +319,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 220, scss/index.scss */
+/* line 225, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -323,14 +329,14 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 230, scss/index.scss */
+/* line 235, scss/index.scss */
 #content-area #logo-banner {
   width: 50%;
   min-width: 200px;
   max-width: 500px;
   margin-top: 5%;
 }
-/* line 237, scss/index.scss */
+/* line 242, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -338,7 +344,7 @@ H6 {
   display: inline-block;
 }
 
-/* line 245, scss/index.scss */
+/* line 250, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -355,12 +361,12 @@ H6 {
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
 }
-/* line 259, scss/index.scss */
+/* line 264, scss/index.scss */
 #main-nav .faux-row {
   padding: 10px 20px;
   display: block;
 }
-/* line 264, scss/index.scss */
+/* line 269, scss/index.scss */
 #main-nav #login-area {
   padding: 10px;
   width: 260px;
@@ -368,12 +374,26 @@ H6 {
   background: #212121;
   margin-left: 63px;
   margin-top: -128px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
 }
-/* line 272, scss/index.scss */
+/* line 278, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 278, scss/index.scss */
+/* line 284, scss/index.scss */
+#main-nav [data-menu] {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/* line 287, scss/index.scss */
+#main-nav [data-menu].hidden {
+  oapcity: 0;
+}
+/* line 292, scss/index.scss */
 #main-nav input[type="text"], #main-nav input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -381,7 +401,7 @@ H6 {
   line-height: 15px;
   font-weight: 400;
 }
-/* line 287, scss/index.scss */
+/* line 301, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -389,14 +409,14 @@ H6 {
   height: 40px;
   text-align: center;
 }
-/* line 295, scss/index.scss */
+/* line 309, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-/* line 302, scss/index.scss */
+/* line 316, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -407,7 +427,7 @@ H6 {
   margin-bottom: 1px;
   display: block;
 }
-/* line 310, scss/index.scss */
+/* line 324, scss/index.scss */
 #main-nav ul li h2 {
   margin: 0px;
   padding: 15px;

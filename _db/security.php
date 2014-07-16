@@ -77,7 +77,6 @@ class FormValidation{
 
     }
 
-
 }
 
 
@@ -119,10 +118,7 @@ class Password{
     }
 
     public function checkPassword($password){
-        if(password_verify($password, $this->key))
-            return true;
-
-        return false;
+        return password_verify($password, $this->key);
     }
 
     public function getKey(){

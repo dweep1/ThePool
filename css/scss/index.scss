@@ -273,11 +273,20 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     background:#212121;
     margin-left:63px;
     margin-top:-128px;
+    @include box-shadow(rgba(#000,0.6) 0px 0px 2px);
 
     h5{
       padding:5px 10px;
     }
 
+  }
+
+  [data-menu]{
+    @include transition(all 0.2s ease);
+
+    &.hidden{
+      oapcity:0;
+    }
   }
 
   input[type="text"], input[type="password"]{

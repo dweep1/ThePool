@@ -3,7 +3,7 @@
 require_once "backend.php";
 
 Config::write('db.host', 'localhost');
-Config::write('db.base', 'dimlitl_sidekick');
+Config::write('db.base', 'thepool');
 Config::write('db.user', 'dimlitl_prax');
 Config::write('db.password', 'Radegast123/*');
 Config::write('salt', 'qSfUi0iwXretE3A0waLekjdINi6S97hNMfu/rPNQcis=');

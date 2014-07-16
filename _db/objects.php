@@ -18,9 +18,7 @@ class users extends DatabaseObject{
     public $login_count;
     public $access_level; //if the user has verified their email and is not banned
 
-    protected function classDataSetup(){
-
-    }
+    protected function classDataSetup(){ }
 
     //checks to see if a given password is legit
     public function verifyLogin($password){
@@ -53,6 +51,8 @@ class users extends DatabaseObject{
 
     public function verifyAdmin(){
 
+        $this->expireAuth();
+
         if(!isset($_SESSION['admin_key']))
             return false;
 
@@ -70,6 +70,9 @@ class users extends DatabaseObject{
     }
 
     public function doAuth($password, $level = -1){
+
+        if($this->verifyAuth())
+            return true;
 
         if($this->verifyLogin($password) === false)
             return false;
