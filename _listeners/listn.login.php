@@ -22,8 +22,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!isset($_SESSION['login_attempts']))
         $_SESSION['login_attempts'] = 0;
 
-    var_dump($_POST);
-
     if((int)$submitType === 0){
 
         $response = doLogin($_POST);
@@ -84,7 +82,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         else
             $_SESSION['result'] = "Database Error";
 
-
     }
 
     header("Location: ../index.php");
@@ -131,9 +128,6 @@ function doRegister($POST){
 
     $user = new users();
 
-    if(verifyRegInfo($POST) !== false)
-        return -1;
-
     if($user->load($POST['email'], 'email'))
         return -2;
 
@@ -143,10 +137,14 @@ function doRegister($POST){
     $POST['password'] = $password->getKey();
     $POST['salt'] = $password->getSalt();
     $POST['security_key'] = Cipher::getRandomKey(16);
+    $POST['auth_key'] = Cipher::getRandomKey(16);
 
     $user = new users($POST);
 
-    if($user->save())
+    if(verifyRegInfo($POST) !== false)
+        return -1;
+
+    if($user->save(true))
         return true;
 
     return false;
@@ -188,23 +186,25 @@ function verifyRegInfo($POST){
     $errors = 0;
     $password = $POST['password'];
 
+    var_dump($POST);
+
     foreach($POST as $key => $value){
 
-        if($key == "username"){
+        if($key === "username"){
             if(filter_var($value, FILTER_SANITIZE_STRING) == false ||  strlen($value) < 3 ){
                 $errors++;
                 $_SESSION['result'] = 'Invalid Username. Usernames must be longer then 3 characters';
             }
         }
 
-        if($key == "email"){
+        if($key === "email"){
             if(filter_var($value, FILTER_VALIDATE_EMAIL) == false){
                 $errors++;
                 $_SESSION['result'] = 'Invalid Email Address';
             }
         }
 
-        if($key == "password"){
+        if($key === "password"){
             $password = $value;
             if(0 === preg_match("/.{6,}/", $value)){
                 $errors++;
@@ -213,13 +213,15 @@ function verifyRegInfo($POST){
             }
         }
 
-        if($key == "confirm"){
+        if($key === "confirm"){
             if(0 !== strcmp($password, $value)){
                 $errors++;
                 $_SESSION['result'] = 'Passwords do not match';
             }
         }
     }
+
+    var_dump($_SESSION['result']);
 
     if($errors > 0){
         return false;

@@ -10,7 +10,6 @@ $(document).ready(function(){
                 this.type = 'password';
             }
         }
-
     }).blur(function() {
         if (this.value === '') {
             this.value = this.defaultValue;

@@ -1,7 +1,6 @@
 <?php
 
     global $si;
-    global $user;
 
     @include_once "./admin.header.php";
 
@@ -9,11 +8,8 @@
 
     $menu_items = $menu_items->getList('id ASC');
 
-    if(isset($_SESSION['sidekick'])){
-        $sidekickUser = $_SESSION['sidekick'];
-    }else{
-        $sidekickUser = getSidekickUser();
-    }
+    if(!checkPermissions(users::returnCurrentUser()))
+        exit;
 
 ?>
 
@@ -27,17 +23,13 @@
 
                     foreach($menu_items as $menu_item){
 
-                        if(checkPermissions($menu_item, $sidekickUser)){
+                        $selected = "";
 
-                            $selected = "";
-
-                            if($si == $menu_item->id)
-                                $selected = 'class="selected"';
+                        if($si == $menu_item->id)
+                            $selected = 'class="selected"';
 
 
-                            echo "<li data-link=\"index.php?si={$menu_item->id}\" $selected >{$menu_item->icon} {$menu_item->title}</li>";
-
-                        }
+                        echo "<li data-link=\"index.php?si={$menu_item->id}\" $selected >{$menu_item->icon} {$menu_item->title}</li>";
 
                     }
                 }

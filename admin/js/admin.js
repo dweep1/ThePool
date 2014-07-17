@@ -184,23 +184,6 @@ function ajaxSubmit($data){
 
 }
 
-$(document).on("focus blur", "input[type='text']", function(event){
-
-    if (event.type === "focusin") {
-        if (this.value === this.defaultValue) {
-
-            if(!$(this).hasClass('non')){
-                this.value = '';
-            }
-
-        }
-    }else{
-        if (this.value === '') {
-            this.value = this.defaultValue;
-        }
-    }
-});
-
 $(document).resize(function(){
     popupResize();
 });

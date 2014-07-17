@@ -68,27 +68,29 @@ class users extends DatabaseObject{
 
     }
 
-    public function doAuth($password, $level = -1){
+    public function doAuth($password, $level = 0){
 
-        if($this->verifyAuth())
-            return true;
+        if((int) $level === -1){
+            if($this->verifyAdmin())
+                return true;
+        }else{
+            if($this->verifyAuth())
+                return true;
+        }
 
         if($this->verifyLogin($password) === false)
             return false;
 
         $_SESSION['auth_key'] = $this->auth_key = Cipher::getRandomKey();
 
-        if($level === 0)
-            $_SESSION['admin_key'] = $_SESSION['auth_key'];
+        if((int) $level === -1)
+            $_SESSION['admin_key'] = $this->auth_key;
 
         $this->last_login_date = strtotime("now");
         $this->last_ip = $_SERVER['REMOTE_ADDR'];
         $this->login_count++;
 
-        if($this->update() === false)
-            return false;
-
-        return true;
+        return ($this->update() !== false) ? true : false;
 
     }
 
@@ -107,12 +109,34 @@ class users extends DatabaseObject{
 
         $today = new Datetime("now", Core::getTimezone());
 
-        if($today >= $expireDate)
-            return self::deAuth();
-
-        return false;
+        return ($today >= $expireDate) ? self::deAuth() : false;
 
     }
+
+    public static function returnCurrentUser(){
+        return isset($_SESSION['user']) ? new users($_SESSION['user']) : false;
+    }
+
+}
+
+class admin_pages extends DatabaseObject{
+
+    public $title;
+    public $icon;
+    public $template_file;
+    public $permission_level;
+    public $parent_id;
+
+}
+
+class bugs extends DatabaseObject{
+
+    public $ip_address;
+    public $browser;
+    public $page_header;
+    public $report;
+    public $email;
+    public $date;
 
 }
 

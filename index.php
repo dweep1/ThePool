@@ -111,7 +111,7 @@
             <div class="fluid-row aligncenter"><img id="logo-banner" src="./images/poolbanner.png" /></div>
 
             <div class="fluid-row aligncenter">
-                <div class="fluid-row width-90 alignleft"><i><?php var_dump($_SESSION['login_attempts']); ?> At vero eos et accusamus et iusto odio dignissimos ducimus
+                <div class="fluid-row width-90 alignleft"><i>At vero eos et accusamus et iusto odio dignissimos ducimus
                         qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
                         excepturi sint occaecati cupiditate non provident.</i></div>
 

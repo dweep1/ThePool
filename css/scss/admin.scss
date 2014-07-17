@@ -301,12 +301,16 @@ input[type="text"], input[type="password"], .ui-date-time{
 
   &:hover{
     color:rgba(#fff,1);
+    border: none;
     border-bottom:2px solid rgba($red, 1);
+    @include box-shadow(none !important);
   }
 
   &.active{
     color:rgba(#fff,0.8);
+    border: none;
     border-bottom:2px solid rgba($red, 0.8);
+    @include box-shadow(none !important);
   }
 }
 
