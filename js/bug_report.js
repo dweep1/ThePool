@@ -1,11 +1,11 @@
 $(document).ready(function(){
     var $body = $('body');
 
-    var $icon = '<i style="position: fixed; bottom: 30px; right: 50px;' +
+    var $icon = '<i style="position: fixed; bottom: 30px; right: 50px; z-index: 999;' +
         'padding 20px; font-size:40px; color: rgba(44,44,44,0.8); text-shadow: 0px 0px 2px #fff; cursor:pointer" ' +
         'class="fa fa-bug bug-ui-report"></i>';
 
-    var $popup = '<div id="bugReportForm" style="position: fixed; z-index: 9999;' +
+    var $popup = '<div id="bugReportForm" style="position: fixed; z-index: 999;' +
         '-webkit-transition: all 1.2s ease; padding:20px; -moz-transition: all 1.2s ease; -o-transition: all 1.2s ease;  transition: all 1.2s ease; ' +
         'bottom:-400px; right: 60px; opacity:0; width:300px; text-align: center; background: #333333; color: #fff;">' +
         '<i style="position: absolute; font-size:20px; right:0px; cursor:pointer; top: 0px; padding:10px;" class="fa fa-times-circle bug-ui-close"></i>' +

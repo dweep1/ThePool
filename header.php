@@ -14,4 +14,9 @@
     include_once "{$ROOT_DB_PATH}security.php";
     include_once "{$ROOT_DB_PATH}objects.php";
 
+    if(isset($_SESSION['user']))
+        $currentUser = new users($_SESSION['user']);
+    else
+        $currentUser = false;
+
 ?>

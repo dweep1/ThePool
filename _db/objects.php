@@ -37,12 +37,13 @@ class users extends DatabaseObject{
     //@TODO permissions system syncing
     public function verifyAuth(){
 
-        $this->expireAuth();
-
         if(!isset($_SESSION['auth_key']))
             return false;
 
         if($this->auth_key !== $_SESSION['auth_key'])
+            return false;
+
+        if($this->expireAuth())
             return false;
 
         return true;
@@ -51,15 +52,13 @@ class users extends DatabaseObject{
 
     public function verifyAdmin(){
 
-        $this->expireAuth();
-
         if(!isset($_SESSION['admin_key']))
             return false;
 
-        if($this->load($this->id) === false)
+        if($this->auth_key !== $_SESSION['admin_key'])
             return false;
 
-        if($this->auth_key !== $_SESSION['admin_key'])
+        if($this->expireAuth())
             return false;
 
         if($this->user_level !== 0)
@@ -82,14 +81,18 @@ class users extends DatabaseObject{
         if($level === 0)
             $_SESSION['admin_key'] = $_SESSION['auth_key'];
 
-        if($this->save() === false)
+        $this->last_login_date = strtotime("now");
+        $this->last_ip = $_SERVER['REMOTE_ADDR'];
+        $this->login_count++;
+
+        if($this->update() === false)
             return false;
 
         return true;
 
     }
 
-    public function deAuth(){
+    public static function deAuth(){
 
         session_unset();
 
@@ -99,13 +102,13 @@ class users extends DatabaseObject{
 
     public function expireAuth($days = 7){
 
-        $expireDate = new DateTime($this->last_login_date, Core::getTimestamp());
-        $expireDate->add(new DateInterval("PT{$days}D"));
+        $expireDate = new DateTime($this->last_login_date, Core::getTimezone());
+        $expireDate->add(new DateInterval("P{$days}D"));
 
-        $today = new Datetime("now", Core::getTimestamp());
+        $today = new Datetime("now", Core::getTimezone());
 
         if($today >= $expireDate)
-            return deAuth();
+            return self::deAuth();
 
         return false;
 

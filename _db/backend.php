@@ -61,14 +61,14 @@ abstract class DatabaseObject{
 
         if(is_array($id)){
 
-            if($this->toObject($id) === false)
+            if($this->updateObject($id) === false)
                 throw new Exception("Object failed to set new variables");
             else
                 $this->loaded = true;
 
         }else if(Core::isJson($id)){
 
-            if($this->toObject(json_decode($id)) === false)
+            if($this->updateObject(json_decode($id)) === false)
                 throw new Exception("Object Wasn't JSON or failed to set new variables");
             else
                 $this->loaded = true;
@@ -95,7 +95,7 @@ abstract class DatabaseObject{
         $prepareStatement = "INSERT INTO ".get_class($this)." (";
 
         foreach($keyChain as $val){
-            if($val != "id")//since this is a new object, we don't want to save the ID, rather letting the DB generate an ID
+            if($val !== "id")//since this is a new object, we don't want to save the ID, rather letting the DB generate an ID
                 $prepareStatement .= "$val, ";
 
         }
@@ -153,34 +153,32 @@ abstract class DatabaseObject{
 
     /**
      * Updates an Database Object
-     *
-     * @deprecated
-     */
-    public function saveNew(){
-        return $this->save();
-    }
-
-    /**
-     * Updates an Database Object
      * @param String $identifier, if an ID isn't being used to update an object, the WHERE clause would go here
+     * @param String $reserve_id, if the identifier is an object, then we check for this ID
      * @return Boolean true/false based on success of DB insert
      * @throws PDO error if database is unreachable
-     * @todo might want to allow update on a param object
      */
-    public function update($identifier = null){
+    public function update($identifier = null, $reserve_id = null){
+
+        if(is_array($identifier)){
+            $this->updateObject($identifier);
+            $identifier = $reserve_id;
+        }
+
         $keyChain = $this->getKeyChain();
 
         $prepareStatement = "UPDATE ".get_class($this)." SET ";
 
         foreach($keyChain as $val){
-            if($val != "id")
-                $prepareStatement .= "$val = :$val, ";
-
-        }
+            if($val !== "id"){
+                if($this->{$val} !== null)
+                    $prepareStatement .= "$val = :$val, ";
+            }
+          }
 
         $prepareStatement = rtrim($prepareStatement, ", ");
 
-        if($identifier != null){
+        if($identifier !== null){
 
             foreach($keyChain as $value){
 
@@ -189,6 +187,7 @@ abstract class DatabaseObject{
 
 
             }
+
         }else{
             $prepareStatement .= " WHERE id = :id";
         }
@@ -201,12 +200,10 @@ abstract class DatabaseObject{
 
             if (strpos($val,'date') !== false)
                 $executeArray[':'.$val] =  Core::unixToMySQL($dataArray[$val]);
-            else
+            else if($this->{$val} !== null)
                 $executeArray[':'.$val] = $dataArray[$val];
 
         }
-
-
 
         //string should look like this:
         //UPDATE fruit SET color = :color, count = :count WHERE id = :id
@@ -234,18 +231,24 @@ abstract class DatabaseObject{
     }
 
     /**
-     * Updates an Database Object
-     *
-     * @deprecated
+     * Erases an object from the database
+     * @param String $identifier, the id by which to kill an object
+     * @param String $paramName, the name of the thing to kill an object
+     * @return Boolean true/false based on success of DB delete
+     * @throws PDO error if database is unreachable
+     * @TODO give this an options array OR allow for the arrays of each of the params and add to the delete clause
+     * @TODO create a static version of this method
      */
-    public function saveOld(){
-        return $this->update();
-    }
+    public function erase($identifier = null, $paramName = null){
 
-    public function erase(){
+        if($identifier === null)
+            $identifier = $this->id;
 
-        $prepareStatement = "DELETE FROM ".get_class($this)." WHERE id = :id";
-        $executeArray = array(':id' => $this->id);
+        if($paramName === null)
+            $paramName = "id";
+
+        $prepareStatement = "DELETE FROM ".get_class($this)." WHERE $paramName = :id";
+        $executeArray = array(':id' => $identifier);
 
         try {
 
@@ -270,13 +273,21 @@ abstract class DatabaseObject{
 
     }
 
+    /**
+     * Loads an object from the database
+     * @param String $data, is the thing to be checked, (1, pizza)
+     * @param Array $options, the name of the thing to kill an object
+        * type is the name of the thing in the DB, (id, food_name)
+        * limit is the number of returned results
+        * return_object is if the object should be loaded into the current object, or if it should return a new instance.
+     * @return Boolean true/false based on success of DB delete, or an OBJECT if return object is true;
+     * @throws PDO error if database is unreachable
+     * @defaults
+        * $options = array($type = null, $limit = 1, $return_object = true)
+     *
+     * @TODO one should be able to load with $data = null, using the data inside the current object
+     */
 
-    //data is the thing to be checked, (1, pizza)
-    //type is the name of the thing in the DB, (id, food_name)
-    //limit is the number of returned results
-    //return_object is if the object should be loaded into the current object, or if it should return a new instance.
-    //$options = array('salt' => null, 'cost' => 11, 'hashed' => false)
-    //$type = null, $limit = 1, $return_object = true
     public function load($data, $options = array('type' => null, 'limit' => 1, 'return_object' => false)){
 
         if(!is_array($options)){
@@ -386,10 +397,8 @@ abstract class DatabaseObject{
             $execArray = array(':var' => $data);
         }
 
-
         if($condition === null || $execArray === null)
             return false;
-
 
         try {
 
@@ -398,9 +407,8 @@ abstract class DatabaseObject{
 
             $query->execute($execArray);
 
-            if($query->rowCount() == 0)
+            if($query->rowCount() === 0)
                 return false;
-
 
             if($options['return_object']){
 
@@ -408,7 +416,6 @@ abstract class DatabaseObject{
 
                 if(!is_object($newInstance) && !is_array($newInstance))
                     return false;
-
 
                 $newInstance->loaded = true;
 
@@ -439,16 +446,6 @@ abstract class DatabaseObject{
 
     /**
      * Loads an object with a given ID
-     * Since its deprecated, this is only going to handle a single ID var.
-     *
-     * @deprecated
-     */
-    public function loadInstance($id){
-        return $this->load($id);
-    }
-
-    /**
-     * Loads an object with a given ID
      * returns the object loaded, instead of setting ($this) to the loaded object
      */
     public function returnInstance($data, $options = array('return_object' => true)){
@@ -459,7 +456,21 @@ abstract class DatabaseObject{
 
     }
 
-    public function getNext($last_id){
+    /**
+     * returns a new instance of the next object from an id sorted list
+     * @param String $last_id, is the ID of the object to start the Next Comparison
+     * @return Boolean false based on success of DB delete, an OBJECT
+     * @throws PDO error if database is unreachable
+     * @defaults
+        * $last_id = $this->id
+     *
+     * @TODO better configuration and more customizability in regards to generating the list via sorting and more where clauses
+     */
+
+    public function getNext($last_id = null){
+
+        if($last_id === null)
+            $last_id = $this->id;
 
         try {
 
@@ -483,22 +494,12 @@ abstract class DatabaseObject{
         return false;
     }
 
-    /**
-     * Loads an object with a given ID
-     *
-     * @deprecated
-     */
-    public function getNextInstance($last_id){
-        return $this->getNext($last_id);
-    }
-
-
     public function getList($sorting = null, $condition = null){
 
         $prepareStatement = "SELECT * FROM ".get_class($this);
         $conditionValue = null;
 
-        if($condition != null){
+        if($condition !== null){
             $keyChain = $this->getKeyChain();
 
             foreach($keyChain as $value){
@@ -526,7 +527,6 @@ abstract class DatabaseObject{
                         $prepareStatement .= " ORDER BY {$value} DESC";
                     else
                         $prepareStatement .= " ORDER BY {$value} DESC";
-
 
                 }
             }
@@ -592,12 +592,11 @@ abstract class DatabaseObject{
         return $array;
     }
 
-    public function toObject($array){
-
+    public function updateObject($array){
         $keyChain = $this->toArray();
 
-        if(is_object($array))
-            $array = (array) $array;
+        if(is_object($array))//converts json to an array
+        $array = (array) $array;
 
         foreach($array as $key => $value){
 
@@ -623,7 +622,15 @@ abstract class DatabaseObject{
         }
 
         return true;
+    }
 
+    /**
+     * Updates an object with an array of matched data
+     *
+     * @deprecated
+     */
+    public function toObject($array){
+       return $this->updateObject($array);
     }
 
     //grabs a json string and converts it to the object
@@ -667,7 +674,7 @@ class Core{
 			';connect_timeout=15';
 
 		$this->dbh = new PDO($dsn, Config::read('db.user'), Config::read('db.password'), array(PDO::ATTR_PERSISTENT => true));
-		$this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDO::ERRMODE_SILENT
 		$this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
 	}
 
@@ -699,7 +706,7 @@ class Core{
 
         $date = DateTime::createFromFormat($str_dateFormat, $str_dt, $str_timezone);
 
-        return $date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0;
+        return ($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0);
 
     }
 
@@ -712,8 +719,7 @@ class Core{
 
     }
 
-    public static function isJson($string)
-    {
+    public static function isJson($string){
         // make sure provided input is of type string
         if (!is_string($string))
             return false;
@@ -733,7 +739,6 @@ class Core{
         if ($firstChar !== '{' && $firstChar !== '[')
             return false;
 
-
         // make sure last character is either } or ]
         if ($lastChar !== '}' && $lastChar !== ']')
             return false;
@@ -743,6 +748,23 @@ class Core{
         json_decode($string);
 
         return (json_last_error() === JSON_ERROR_NONE);
+    }
+
+    public static function sendEmail($subject, $message, $recipient){
+
+        $headers = "From: no-reply<noreply@whats-your-confidence.com>\r\n";
+        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+        if(@mail($recipient, $subject, $message, $headers)){
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public static function getTimezone(){
+        return new DateTimeZone('America/New_York');
     }
 
 

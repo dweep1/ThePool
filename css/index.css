@@ -53,7 +53,7 @@ DIV {
 /* line 30, scss/index.scss */
 A {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 /* line 35, scss/index.scss */
@@ -345,6 +345,74 @@ H6 {
 }
 
 /* line 250, scss/index.scss */
+.ui-message-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 9998;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+/* line 261, scss/index.scss */
+.ui-message-background.hidden {
+  display: none;
+}
+
+/* line 266, scss/index.scss */
+.ui-message-box {
+  position: fixed;
+  top: -400px;
+  width: 280px;
+  padding: 10px;
+  left: -webkit-calc(50% - 160px);
+  left: -moz-calc(50% - 160px);
+  left: -o-calc(50% - 160px);
+  left: calc(50% - 160px);
+  background: #212121;
+  color: #fff;
+  z-index: 9999;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  -webkit-transition: all 1.3s ease-out;
+  -moz-transition: all 1.3s ease-out;
+  -o-transition: all 1.3s ease-out;
+  transition: all 1.3s ease-out;
+}
+
+/* line 279, scss/index.scss */
+.ui-message-close {
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* line 285, scss/index.scss */
+.faux-row {
+  padding: 5px;
+  display: block;
+}
+/* line 289, scss/index.scss */
+.faux-row input[type="text"], .faux-row input[type="password"] {
+  margin: 5px 15px;
+}
+
+/* line 295, scss/index.scss */
+input[type="text"], input[type="password"] {
+  padding: 10px 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 400;
+}
+
+/* line 303, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -361,12 +429,7 @@ H6 {
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
 }
-/* line 264, scss/index.scss */
-#main-nav .faux-row {
-  padding: 10px 20px;
-  display: block;
-}
-/* line 269, scss/index.scss */
+/* line 317, scss/index.scss */
 #main-nav #login-area {
   padding: 10px;
   width: 260px;
@@ -377,31 +440,24 @@ H6 {
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  color: #fff;
 }
-/* line 278, scss/index.scss */
+/* line 327, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 284, scss/index.scss */
+/* line 333, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 287, scss/index.scss */
+/* line 336, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 292, scss/index.scss */
-#main-nav input[type="text"], #main-nav input[type="password"] {
-  padding: 10px 15px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
-  line-height: 15px;
-  font-weight: 400;
-}
-/* line 301, scss/index.scss */
+/* line 341, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -409,14 +465,14 @@ H6 {
   height: 40px;
   text-align: center;
 }
-/* line 309, scss/index.scss */
+/* line 349, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
   padding: 0px;
   list-style: none;
 }
-/* line 316, scss/index.scss */
+/* line 356, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -427,7 +483,7 @@ H6 {
   margin-bottom: 1px;
   display: block;
 }
-/* line 324, scss/index.scss */
+/* line 364, scss/index.scss */
 #main-nav ul li h2 {
   margin: 0px;
   padding: 15px;
