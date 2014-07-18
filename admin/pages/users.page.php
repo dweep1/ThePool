@@ -25,7 +25,7 @@
                 <hr />
 
                 <li class="animate-left-left" data-ng-repeat="item in (filtered = (data | filter:search | orderBy:'-id')) | limitTo: 20" data-object='users' data-id='{{ item.id }}' >
-                    {{ item.username }}  <i data-object='users' data-edit-id='{{ item.id }}' class='fa right fa-pencil-square-o'></i>
+                    {{ item.username }}<i data-object='users' data-id='{{ item.id }}' data-custom-edit='{{ item.id }}' class='fa right fa-pencil-square-o'></i>
                 </li>
 
             </ul>

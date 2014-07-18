@@ -25,11 +25,11 @@ global $si;
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>The Pool Admin</title>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/index.css" rel="stylesheet" type="text/css" />
     <link href="../css/admin.css" rel="stylesheet" type="text/css" />
 	<link href="./css/redactor.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
     <script src="./js/modernizr.js"></script>
     <script defer src="./js/redactor.min.js"></script>
     <script defer src="../js/bug_report.js"></script>
@@ -49,11 +49,7 @@ global $si;
     </script>
 
 </head>
-<body >
-
-    <?php
-
-    ?>
+<body data-ng-app="myAdmin">
 
     <div id="fieldbody"></div>
 
@@ -76,9 +72,7 @@ global $si;
 
     <header id="header">
 
-        <a href="javascript:void(0)">
-            <h3>Sidekick Admin</h3>
-        </a>
+        <h3>Sidekick Admin</h3>
         <div class="right con">
             <a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
@@ -88,8 +82,6 @@ global $si;
 	<?php
 		include "menu.php";
 	?>
-
-
 
 	<section id="content-area">
 
@@ -103,6 +95,12 @@ global $si;
         ?>
 
 	</section>
+
+    <script>
+
+        angular.module('myAdmin', ['ngAnimate']);
+
+    </script>
 
 </body>
 </html>

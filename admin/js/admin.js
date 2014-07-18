@@ -43,16 +43,6 @@ function checkSet($obj){
 
 }
 
-function disabledEventPropagation(event){
-
-    if (event.stopPropagation){
-
-        event.stopPropagation();
-
-    }
-
-}
-
 function displayData($projectID, $url, $className){
 
     if(checkSet($projectID) !== true){
@@ -170,7 +160,7 @@ function popupBGResize($time){
 function ajaxSubmit($data){
 
     return $.ajax({
-        url: './admin-listener.php',
+        url: './admin.listener.php',
         type: 'post',
         cache: false,
         data: $data,
@@ -229,6 +219,14 @@ $(document).on("mousedown", "[data-edit-id]", function (e) {
 
 });
 
+$(document).on("mousedown", "[data-custom-edit]", function (e) {
+
+    disabledEventPropagation(e);
+
+    displayPopup($(this).attr('data-edit-id'), $(this).attr('data-custom-edit'), $(this).attr('data-object'));
+
+});
+
 
 $(document).on("mousedown", "[data-id]", function (e) {
 
@@ -254,8 +252,6 @@ $(document).on("mousedown", "#closePopup", function (e) {
 
 });
 
-
-
 function getObjects($scope, $http) {
 
     $scope.url = "admin.json.php";
@@ -263,8 +259,11 @@ function getObjects($scope, $http) {
     // Create the http post request
     // the data holds the keywords
     // The request is a JSON request.
+
+
     $http.post($scope.url, { "data" : $scope.keywords}).
         success(function(data, status) {
+
             $scope.status = status;
             $scope.data = data;
 
@@ -278,6 +277,7 @@ function getObjects($scope, $http) {
             $scope.data = data || "Request failed";
             $scope.status = status;
         });
+
 
 }
 

@@ -30,6 +30,47 @@ $(document).ready(function(){
         resize();
     });
 
+    $(document).on("mousedown", "[data-link]", function (e) {
+
+        disabledEventPropagation(e);
+
+        if( e.which === 2 ) {
+
+            var productLink = $('<a href="' + $(this).attr('data-link') + '" />');
+
+            productLink.attr("target", "_blank");
+            window.open(productLink.attr("href"));
+
+            return false;
+
+        } else if(e.which === 1 ) {
+            window.location.href = $(this).attr('data-link');
+        }
+
+        return false;
+
+    });
+
+    $(document).on("mousedown", "#expand-menu", function (e) {
+
+        disabledEventPropagation(e);
+
+        var $main_menu = $("#main-nav");
+
+        if(!$main_menu.hasClass("full")){
+
+            $main_menu.addClass("full");
+            $(this).children("h2").children("i").addClass("fa-rotate-90");
+
+        }else{
+
+            $main_menu.removeClass("full");
+            $(this).children("h2").children("i").removeClass("fa-rotate-90");
+
+        }
+
+    });
+
     $(document).on("mousedown", "[data-icon]", function (e) {
 
         disabledEventPropagation(e);

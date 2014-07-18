@@ -22,7 +22,7 @@
     <link href="./css/index.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body class="height-100" data-ng-app>
+<body class="height-100" data-ng-app="">
 
 <?php if(isset($_SESSION['result'])): ?>
 
@@ -35,30 +35,18 @@
 
 <?php endif; ?>
 
-<nav id="main-nav">
+<?php
 
-    <div id="logo"><h3>TP</h3></div>
-    <ul>
-        <li><h2><i class="fa fa-bars" style="padding-left:1px;"></i></h2></li>
-        <li><h2 data-icon="" data-id="1"><i class="fa fa-user" style="padding-left:2px;"></i></h2></li>
-        <li><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i></i></h2></li>
-    </ul>
+    include "./menu.php";
 
-</nav>
+?>
 
-<div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center;">
+<div id="content-area" class="height-100" style="background-size: cover; background-position: left center;">
     <div class="width-50 height-100 fluid-row">
-        <div class="intro-word-con">
-            <div class="intro-word">
-                Plan &#62;
-            </div> <br/>
-            <div class="intro-word">
-                Pick &#62;
-            </div> <br/>
-            <div class="intro-word">
-                Play &#62;
-            </div>
-        </div>
+
+        <div class="fluid-row aligncenter"><h2>Testing</h2></div>
+        <div class="fluid-row aligncenter"></div>
+        <div class="fluid-row aligncenter"></div>
 
     </div>
 
@@ -89,6 +77,7 @@
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
 <script src="./js/modernizr.js"></script>
 <script src="./js/general.js"></script>
 <script src="./js/bug_report.js"></script>

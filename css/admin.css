@@ -19,7 +19,7 @@ BODY {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 1174px) {
+@media (max-width: 1274px) {
   /* line 12, scss/admin.scss */
   BODY {
     font-size: 80%;
@@ -449,7 +449,7 @@ input[type="text"], input[type="password"], .ui-date-time {
   display: inline-block;
   vertical-align: top;
 }
-@media (max-width: 1174px) {
+@media (max-width: 1274px) {
   /* line 340, scss/admin.scss */
   .fluid-row.width-40 {
     width: auto;
@@ -479,7 +479,7 @@ input[type="text"], input[type="password"], .ui-date-time {
   display: inline-block;
   vertical-align: top;
 }
-@media (max-width: 1174px) {
+@media (max-width: 1274px) {
   /* line 361, scss/admin.scss */
   .fluid-row.width-60 {
     width: auto;
@@ -509,7 +509,7 @@ input[type="text"], input[type="password"], .ui-date-time {
   display: inline-block;
   vertical-align: top;
 }
-@media (max-width: 1174px) {
+@media (max-width: 1274px) {
   /* line 382, scss/admin.scss */
   .fluid-row.width-50 {
     width: auto;
@@ -611,84 +611,55 @@ ul.pages-list li i {
 }
 
 /* line 475, scss/admin.scss */
-#admin-login {
-  text-align: center;
+.ui-message-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 9998;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  -moz-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
-/* line 479, scss/admin.scss */
-#admin-login #resultlog {
-  height: 1em;
-  padding: 5px 10px;
-  width: 89%;
-  background: #ebebeb;
-  border: 1px solid rgba(126, 200, 238, 0.7);
-  margin-top: 10px;
-  opacity: 0.7;
-  color: #1e1e1e;
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-}
-/* line 490, scss/admin.scss */
-#admin-login #resultlog:hover {
-  border: 1px solid rgba(221, 75, 57, 0.5);
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-  opacity: 0.95;
-}
-/* line 497, scss/admin.scss */
-#admin-login input {
-  width: 89%;
-  border: none;
-  padding: 5px 10px;
-  border: 1px solid white;
-  border-bottom: 1px solid rgba(221, 75, 57, 0.4);
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 18px;
-  color: #505050;
-}
-/* line 509, scss/admin.scss */
-#admin-login input:hover {
-  border: 1px solid rgba(221, 75, 57, 0.6);
-  -webkit-transition: all 0.7s ease;
-  -moz-transition: all 0.7s ease;
-  -o-transition: all 0.7s ease;
-  transition: all 0.7s ease;
-}
-/* line 515, scss/admin.scss */
-#admin-login button {
-  padding: 5px 15px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  border: none;
-  color: #505050;
-  border: 1px solid rgba(126, 200, 238, 0.9);
-  background: none;
-  margin-top: 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  opacity: 0.7;
-}
-/* line 530, scss/admin.scss */
-#admin-login button:active {
-  border: 1px solid rgba(221, 75, 57, 0.5);
-  -webkit-transition: all 0.1s ease;
-  -moz-transition: all 0.1s ease;
-  -o-transition: all 0.1s ease;
-  transition: all 0.1s ease;
-  opacity: 0.95;
+/* line 486, scss/admin.scss */
+.ui-message-background.hidden {
+  display: none;
 }
 
-/* line 539, scss/admin.scss */
+/* line 491, scss/admin.scss */
+.ui-message-box {
+  position: fixed;
+  top: -400px;
+  width: 280px;
+  padding: 10px;
+  left: -webkit-calc(50% - 160px);
+  left: -moz-calc(50% - 160px);
+  left: -o-calc(50% - 160px);
+  left: calc(50% - 160px);
+  background: #212121;
+  color: #fff;
+  z-index: 9999;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
+  -webkit-transition: all 1.3s ease-out;
+  -moz-transition: all 1.3s ease-out;
+  -o-transition: all 1.3s ease-out;
+  transition: all 1.3s ease-out;
+}
+
+/* line 504, scss/admin.scss */
+.ui-message-close {
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+/* line 510, scss/admin.scss */
 #fieldbody {
   position: absolute;
   left: 240px;
@@ -699,7 +670,7 @@ ul.pages-list li i {
   overflow: hidden;
 }
 
-/* line 551, scss/admin.scss */
+/* line 522, scss/admin.scss */
 .fieldmessage {
   position: relative;
   display: block;
@@ -726,13 +697,13 @@ ul.pages-list li i {
 /*
 NG Animate
 */
-/* line 580, scss/admin.scss */
+/* line 551, scss/admin.scss */
 .animate-left-left {
   position: relative;
   display: block;
 }
 
-/* line 587, scss/admin.scss */
+/* line 558, scss/admin.scss */
 .animate-left-left.ng-enter-stagger,
 .animate-left-left.ng-leave-stagger,
 .animate-left-left.ng-move-stagger {
@@ -753,7 +724,7 @@ NG Animate
   for the element that has the .repeated-item
   class
 */
-/* line 608, scss/admin.scss */
+/* line 579, scss/admin.scss */
 .animate-left-left.ng-enter,
 .animate-left-left.ng-move {
   -webkit-transition: 0.125s ease all;
@@ -770,7 +741,7 @@ NG Animate
  are set so that the animation knows what to
  animate.
 */
-/* line 621, scss/admin.scss */
+/* line 592, scss/admin.scss */
 .animate-left-left.ng-enter.ng-enter-active,
 .animate-left-left.ng-move.ng-move-active {
   left: 0px;
@@ -782,7 +753,7 @@ NG Animate
   the leave event is triggered for the element
   that has the .repeated-item class
 */
-/* line 631, scss/admin.scss */
+/* line 602, scss/admin.scss */
 .animate-left-left.ng-leave {
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -795,76 +766,76 @@ NG Animate
 }
 
 @-webkit-keyframes to_left_destroy {
-  /* line 638, scss/admin.scss */
+  /* line 609, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 639, scss/admin.scss */
+  /* line 610, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 640, scss/admin.scss */
+  /* line 611, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @-moz-keyframes to_left_destroy {
-  /* line 638, scss/admin.scss */
+  /* line 609, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 639, scss/admin.scss */
+  /* line 610, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 640, scss/admin.scss */
+  /* line 611, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @-ms-keyframes to_left_destroy {
-  /* line 638, scss/admin.scss */
+  /* line 609, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 639, scss/admin.scss */
+  /* line 610, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 640, scss/admin.scss */
+  /* line 611, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @keyframes to_left_destroy {
-  /* line 638, scss/admin.scss */
+  /* line 609, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 639, scss/admin.scss */
+  /* line 610, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 640, scss/admin.scss */
+  /* line 611, scss/admin.scss */
   85% {
     display: none;
   }

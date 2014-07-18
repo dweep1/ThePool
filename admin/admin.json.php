@@ -18,11 +18,8 @@ include_once "./admin.functions.php";
 
 $objectType = $objData->data;
 
-if(!FormValidation::validate())
-    exit;
+$item = new $objectType();
 
-$users = new $objectType();
-
-echo json_encode($users->getList());
+echo json_encode($item->getList());
 
 ?>

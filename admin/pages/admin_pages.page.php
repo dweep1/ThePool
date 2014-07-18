@@ -25,7 +25,7 @@
                 <hr />
 
                 <li ng-animate="'animate-left-left'" data-ng-repeat="item in (filtered = (data | filter:search | orderBy:'-id')) | limitTo: 20" data-object='admin_pages' data-id='{{ item.id }}' >
-                    {{ item.title }}  <i data-object='admin_pages' data-edit-id='{{ item.id }}' class='fa right fa-pencil-square-o'></i>
+                    {{ item.title }} <i data-object='admin_pages' data-edit-id='{{ item.id }}' class='fa right fa-pencil-square-o'></i>
                 </li>
 
             </ul>
@@ -49,3 +49,4 @@
 
     }
 </script>
+

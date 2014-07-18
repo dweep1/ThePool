@@ -61,7 +61,7 @@ class users extends DatabaseObject{
         if($this->expireAuth())
             return false;
 
-        if($this->user_level !== 0)
+        if($this->user_level === 0)
             trigger_error("You are not authorized to view this page");
 
         return true;
@@ -140,5 +140,81 @@ class bugs extends DatabaseObject{
 
 }
 
+class game extends DatabaseObject{
+
+    public $home_team;
+    public $away_team;
+    public $date;
+    public $home_score;
+    public $away_score;
+    public $season_id;
+    public $week_id;
+
+}
+
+class options extends DatabaseObject{
+
+    public $name;
+    public $value;
+
+}
+
+class pick extends DatabaseObject{
+
+    public $season_id;
+    public $week_id;
+    public $game_id;
+    public $team_id;
+    public $user_id;
+    public $date;
+    public $value;
+    public $result;
+
+}
+
+class season extends DatabaseObject{
+
+    public $year;
+    public $game_count;
+    public $text_id;
+    public $week_count;
+    public $date_start;
+    public $date_end;
+
+}
+
+class stat_log extends DatabaseObject{
+
+    public $season_id;
+    public $week_id;
+    public $team_id;
+    public $user_id;
+    public $stat_id;
+    public $stat_var;
+    public $note;
+}
+
+class teams extends DatabaseObject{
+
+    public $team_name;
+    public $city;
+    public $abbr;
+    public $conference;
+    public $division;
+    public $wins;
+    public $losses;
+    public $games;
+    public $total_c_points;
+
+}
+
+class week extends DatabaseObject{
+
+    public $season_id;
+    public $date_start;
+    public $date_end;
+    public $week_number;
+
+}
 
 ?>

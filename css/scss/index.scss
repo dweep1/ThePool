@@ -17,10 +17,13 @@ BODY {
   color: #212121;
   @include zero;
 
-  @include respondTo(smallScreen) { font-size: 80%; }
+  @include respondTo(desktop) { font-size: 100%; }
   @include respondTo(retina) { font-size: 135%; }
   @include respondTo(tablet) { font-size: 70%; }
+  @include respondTo(smallScreen) { font-size: 80%; }
+  @include respondTo(laptop) { font-size: 80%; }
   @include respondTo(smartphone) { font-size: 50%; }
+
 }
 
 DIV	{
@@ -313,6 +316,14 @@ input[type="text"], input[type="password"]{
   color:#fff;
   z-index:1000;
   @include box-shadow(rgba(#fff,0.2) 0px 0px 2px);
+  overflow: hidden;
+  @include transition(all 0.6s ease);
+
+  &.full{
+    width:13%;
+    min-width:190px;
+    max-width:320px;
+  }
 
   #login-area{
     padding:10px;
@@ -356,18 +367,38 @@ input[type="text"], input[type="password"]{
     li{
       margin:0px;
       @include box-shadow(rgba(0,0,0,0.9) 0px 1px 0px);
-      border-top:1px solid #444;
-      border-bottom:1px solid #444;
+      border-top:1px solid #333;
+      border-bottom:1px solid #333;
       margin-bottom:1px;
       display:block;
+      white-space: nowrap;
+
+      &:hover:not(.spacer){
+        background:#444;
+      }
 
       h2{
+        font-family: "Roboto", sans-serif;
         margin:0px;
         padding:15px;
         text-align: left;
-        font-size:30px;
-        line-height:30px;
+        font-size:18px;
+        line-height:32px;
+        letter-spacing: 1px;
+        text-transform: none;
         cursor:pointer;
+        font-weight:300;
+
+        i{
+          @include transition(all, 0.6s ease);
+          font-size:30px;
+          line-height:30px;
+          vertical-align: middle;
+        }
+
+        i:not(.fa-bars){
+          padding-right:20px;
+        }
       }
     }
   }
