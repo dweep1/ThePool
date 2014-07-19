@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['login_attempts'] = $_SESSION['login_attempts'] + 1;
 
         }else if($response === false)//incorrect email or account doesn't exist
-            $_SESSION['result'] = "That email isn't in our database";
+            $_SESSION['result'] = "That email/username isn't in our database";
         else{//login works
             $_SESSION['login_attempts'] = 0;
             $_SESSION['user'] = $response->toArray();
@@ -114,8 +114,10 @@ function doLogin($POST){
 
     $user = new users();
 
-    if(!$user->load($POST['email'], 'email'))
-        return false;
+    if(!$user->load($POST['email'], 'email')){
+        if(!$user->load($POST['email'], 'username'))
+            return false;
+    }
 
     if(!$user->doAuth($POST['password']))
         return -1;
@@ -138,16 +140,14 @@ function doRegister($POST){
     $POST['salt'] = $password->getSalt();
     $POST['security_key'] = Cipher::getRandomKey(16);
     $POST['auth_key'] = Cipher::getRandomKey(16);
+    $POST['user_level'] = -1;
 
     $user = new users($POST);
 
     if(verifyRegInfo($POST) !== false)
         return -1;
 
-    if($user->save(true))
-        return true;
-
-    return false;
+    return ($user->save(true)) ? true : false;
 
 }
 
@@ -158,7 +158,7 @@ function doForgotPass($POST){
     if(!$user->load($POST['email'], 'email'))
         return -1;
 
-    $user->security_key = Cipher::getRandomKey();
+    $user->security_key = Cipher::getRandomKey(true);
 
     if(!$user->update())
         return -2;
@@ -185,8 +185,6 @@ function verifyRegInfo($POST){
 
     $errors = 0;
     $password = $POST['password'];
-
-    var_dump($POST);
 
     foreach($POST as $key => $value){
 
@@ -221,13 +219,7 @@ function verifyRegInfo($POST){
         }
     }
 
-    var_dump($_SESSION['result']);
-
-    if($errors > 0){
-        return false;
-    }
-
-    return true;
+    return ($errors > 0) ? false : true;
 
 }
 

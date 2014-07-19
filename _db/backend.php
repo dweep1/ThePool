@@ -472,23 +472,26 @@ abstract class DatabaseObject{
      * @TODO better configuration and more customizability in regards to generating the list via sorting and more where clauses
      */
 
-    public function getNext($last_id = null){
+    public function getAdjacent($current_id = null, $mode = "next"){
 
-        if($last_id === null)
-            $last_id = $this->id;
+        if($current_id === null)
+            $current_id = $this->id;
+
+        $prepare = "SELECT * FROM ".get_class($this)." WHERE id = ";
+
+        if($mode === "next")
+            $prepare .= "(SELECT MIN(id) FROM ".get_class($this)." WHERE id > :cur_id) LIMIT 1";
+        else if($mode === "prev")
+            $prepare .= "(SELECT MAX(id) FROM ".get_class($this)." WHERE id < :cur_id) LIMIT 1";
 
         try {
 
             $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare("SELECT * FROM ".get_class($this)." WHERE id = (SELECT MIN(id) FROM ".get_class($this)." WHERE id > :last_id)");
-            $query->execute(array(':last_id' => $last_id));
+            $query = $pdo->dbh->prepare($prepare);
+            $query->execute(array(':cur_id' => $current_id));
             $newInstance = $query->fetchObject(get_class($this));
 
-            if(!is_object($newInstance))
-                return false;
-
-
-            return $newInstance;
+            return (is_object($newInstance)) ? $newInstance : false;
 
         }catch(PDOException $pe) {
 
@@ -497,6 +500,14 @@ abstract class DatabaseObject{
         }
 
         return false;
+    }
+
+    public function getPrev($current_id = null){
+        return $this->getAdjacent($current_id, "prev");
+    }
+
+    public function getNext($current_id = null){
+        return $this->getAdjacent($current_id, "next");
     }
 
     public function getList($sorting = null, $condition = null){
@@ -770,6 +781,10 @@ class Core{
 
     public static function getTimezone(){
         return new DateTimeZone('America/New_York');
+    }
+
+    public static function base64_url_encode($input){
+        return strtr(base64_encode($input), '+/=', '-_,');
     }
 
 

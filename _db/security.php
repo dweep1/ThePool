@@ -35,7 +35,17 @@ class Cipher {
     }
 
     public static function getRandomKey($length = 22, $cost = 128){
-        return substr(str_replace('+', '.', base64_encode(openssl_random_pseudo_bytes ($cost))), 0, $length);
+
+        $baseEncode = false;
+
+        if(is_bool($length)){
+            $baseEncode = true;
+            $length = 22;
+        }
+
+        $random = substr(str_replace('+', '.', base64_encode(openssl_random_pseudo_bytes ($cost))), 0, $length);
+
+        return ($baseEncode) ? Core::base64_url_encode($random) : $random;
     }
 
 }

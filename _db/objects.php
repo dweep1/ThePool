@@ -12,7 +12,7 @@ class users extends DatabaseObject{
     public $last_name;
     public $last_ip;
     public $last_login_date;
-    public $user_level;
+    public $user_level; //if user is admin, user level = -1
     public $security_key; //key associated with lost passwords
     public $favorite_team_id;
     public $login_count;
@@ -61,16 +61,16 @@ class users extends DatabaseObject{
         if($this->expireAuth())
             return false;
 
-        if($this->user_level === 0)
+        if($this->user_level === -1)
             trigger_error("You are not authorized to view this page");
 
         return true;
 
     }
 
-    public function doAuth($password, $level = 0){
+    public function doAuth($password, $level = -1){
 
-        if((int) $level === -1){
+        if((int) $level === 0){
             if($this->verifyAdmin())
                 return true;
         }else{
@@ -83,7 +83,7 @@ class users extends DatabaseObject{
 
         $_SESSION['auth_key'] = $this->auth_key = Cipher::getRandomKey();
 
-        if((int) $level === -1)
+        if((int) $level === 0)
             $_SESSION['admin_key'] = $this->auth_key;
 
         $this->last_login_date = strtotime("now");
@@ -170,6 +170,40 @@ class pick extends DatabaseObject{
     public $value;
     public $result;
 
+    public static function getPickCount($week_id = null, $user_id = null, $complete = false){
+
+        if($week_id === null)
+            $week_id = week::getCurrentWeek();
+
+        if($user_id === null)
+            $user_id = users::returnCurrentUser();
+
+        $prepare = "SELECT COUNT(*) AS pick_count FROM pick WHERE week_id = :week_id AND user_id = :user_id";
+
+        if($complete === true){
+            $prepare .= " AND value > 0";
+        }
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare($prepare);
+
+            $query->execute(array(":week_id" => $week_id, ":user_id" => $user_id));
+
+            $object = $query->fetch(PDO::FETCH_ASSOC);
+
+        }catch(PDOException $pe){
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        return (isset($object) && $object !== false) ? $object['pick_count'] : false;
+
+    }
+
+
 }
 
 class season extends DatabaseObject{
@@ -214,6 +248,46 @@ class week extends DatabaseObject{
     public $date_start;
     public $date_end;
     public $week_number;
+
+    protected function classDataSetup(){ }
+
+    public static function getCurrentWeek(){
+
+        $now = new DateTime("now", Core::getTimezone());
+        $now = $now->format("Y-m-d");
+
+        if(isset($_SESSION['current_week'])){
+
+            $object = new week($_SESSION['current_week']);
+
+            if($object->date_end >= $now)
+                return $object;
+
+        }
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare("SELECT * FROM week WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1");
+
+            $query->execute(array(":today" => $now));
+
+            $object = $query->fetchAll(PDO::FETCH_CLASS, __CLASS__);
+
+        }catch(PDOException $pe) {
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        if(isset($object) && $object !== false){
+            $_SESSION['current_week'] = $object;
+            return $object;
+        }
+
+        return false;
+
+    }
 
 }
 

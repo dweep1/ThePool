@@ -67,6 +67,15 @@ global $si;
             </form>
         </div>
 
+        <script>
+
+            angular.module('myAdmin', ['ngAnimate']);
+
+        </script>
+
+    </body>
+    </html>
+
     <?php exit; endif; ?>
 
 

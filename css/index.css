@@ -440,26 +440,26 @@ input[type="text"], input[type="password"] {
   -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
   box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 2px;
-  overflow: hidden;
   -webkit-transition: all 0.6s ease;
   -moz-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 322, scss/index.scss */
+/* line 321, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 328, scss/index.scss */
+/* line 327, scss/index.scss */
 #main-nav #login-area {
+  position: absolute;
   padding: 10px;
   width: 260px;
   height: auto;
   background: #212121;
-  margin-left: 63px;
-  margin-top: -128px;
+  right: -290px;
+  top: 128px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
@@ -494,8 +494,9 @@ input[type="text"], input[type="password"] {
   margin: 0px;
   padding: 0px;
   list-style: none;
+  overflow: hidden;
 }
-/* line 367, scss/index.scss */
+/* line 368, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -507,11 +508,11 @@ input[type="text"], input[type="password"] {
   display: block;
   white-space: nowrap;
 }
-/* line 376, scss/index.scss */
+/* line 377, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 380, scss/index.scss */
+/* line 381, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -524,7 +525,7 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 392, scss/index.scss */
+/* line 393, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -534,7 +535,7 @@ input[type="text"], input[type="password"] {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 399, scss/index.scss */
+/* line 400, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

@@ -9,6 +9,13 @@
     if($user === false || !$user->verifyAuth())
         header("Location: ./logout.php");
 
+    global $time;
+    global $mem;
+    global $memTwo;
+
+    $time = microtime(TRUE);
+    $mem = memory_get_usage();
+
 
 ?>
 <!DOCTYPE html>
@@ -46,8 +53,66 @@
     <div class="width-50 height-100 fluid-row">
 
         <div class="fluid-row aligncenter"><h2>Testing</h2></div>
-        <div class="fluid-row aligncenter"></div>
-        <div class="fluid-row aligncenter"></div>
+        <div class="fluid-row aligncenter">
+            <?php
+
+            $memTemp = number_format(((memory_get_usage() - $mem) / 1024), 2);
+            $memTwoTemp = number_format(((memory_get_usage() - $memTwo) / 1024), 2);
+            $timeTemp =  number_format((microtime(TRUE) - $time), 6);
+
+            echo "Memory 1: $memTemp KB<br/>";
+            echo "Memory 2: $memTwoTemp KB <br/>";
+            echo "Time: $timeTemp sec";
+
+            ?>
+        </div>
+        <div class="fluid-row aligncenter"><!--<?php
+
+            $week = new week();
+            $class = get_class($week);
+
+            for($i = 0; $i < 10000; $i++){
+                echo get_class($week);
+            }
+
+            ?>--></div>
+        <div class="fluid-row aligncenter">
+                <?php
+
+                $memTemp = number_format(((memory_get_usage() - $mem) / 1024), 2);
+                $memTwoTemp = number_format(((memory_get_usage() - $memTwo) / 1024), 2);
+                $timeTemp =  number_format((microtime(TRUE) - $time), 6);
+
+                echo "Memory 1: $memTemp KB<br/>";
+                echo "Memory 2: $memTwoTemp KB <br/>";
+                echo "Time: $timeTemp sec";
+
+                ?>
+         </div>
+
+        <div class="fluid-row aligncenter"><!--<?php
+
+            $week = new week();
+            $class = get_class($week);
+
+            for($i = 0; $i < 10000; $i++){
+                echo $class;
+            }
+
+            ?>--></div>
+        <div class="fluid-row aligncenter">
+            <?php
+
+            $memTemp = number_format(((memory_get_usage() - $mem) / 1024), 2);
+            $memTwoTemp = number_format(((memory_get_usage() - $memTwo) / 1024), 2);
+            $timeTemp =  number_format((microtime(TRUE) - $time), 6);
+
+            echo "Memory 1: $memTemp KB<br/>";
+            echo "Memory 2: $memTwoTemp KB <br/>";
+            echo "Time: $timeTemp sec";
+
+            ?>
+        </div>
 
     </div>
 
