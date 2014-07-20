@@ -119,6 +119,83 @@ class users extends DatabaseObject{
 
 }
 
+class event extends DatabaseObject{
+
+    public $date_start;
+    public $date_end;
+
+    public static function selected($id = null){
+
+        $className = get_called_class();
+
+        if($id === null){
+            $selected = (isset($_SESSION['selected_'.$className])) ? new season($_SESSION['selected_'.$className]) : false;
+        }else{
+            $selected = new $className($id);
+            $_SESSION['selected_'.$className] = $selected->toArray();
+        }
+
+        return $selected;
+
+    }
+
+    public static function getCurrent(){
+
+        $className = get_called_class();
+
+        $now = new DateTime("now", Core::getTimezone());
+
+        if(isset($_SESSION['current_'.$className])){
+
+            $object = new season($_SESSION['current_'.$className]);
+
+            if($object->date_end >= $now)
+                return $object;
+
+        }
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare("SELECT * FROM $className WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1");
+
+            $query->execute(array(":today" => $now->format("Y-m-d")));
+
+            $object = $query->fetchAll(PDO::FETCH_CLASS, $className);
+
+        }catch(PDOException $pe) {
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        if(isset($object) && $object !== false){
+            $_SESSION['current_'.$className] = $object->toArray();
+            return $object;
+        }
+
+        return false;
+
+    }
+
+}
+
+class season extends event{
+
+    public $year;
+    public $game_count;
+    public $text_id;
+    public $week_count;
+
+}
+
+class week extends event{
+
+    public $season_id;
+    public $week_number;
+
+}
+
 class admin_pages extends DatabaseObject{
 
     public $title;
@@ -149,6 +226,30 @@ class game extends DatabaseObject{
     public $away_score;
     public $season_id;
     public $week_id;
+
+    public function played($id = null){
+
+        if($id !== null)
+            $this->load($id);
+
+        $now = new DateTime("now", Core::getTimezone());
+        $now->add(new DateInterval("P1D"));
+
+        return ($this->date <= $now) ? false : true;
+
+    }
+
+    public function getTeamData($id = null){
+
+        if($id !== null)
+            $this->load($id);
+
+        $game['away'] = new teams($this->away_team);
+        $game['home'] = new teams($this->home_team);
+
+        return $game;
+
+    }
 
 }
 
@@ -206,17 +307,6 @@ class pick extends DatabaseObject{
 
 }
 
-class season extends DatabaseObject{
-
-    public $year;
-    public $game_count;
-    public $text_id;
-    public $week_count;
-    public $date_start;
-    public $date_end;
-
-}
-
 class stat_log extends DatabaseObject{
 
     public $season_id;
@@ -238,57 +328,8 @@ class teams extends DatabaseObject{
     public $wins;
     public $losses;
     public $games;
-    public $total_c_points;
 
 }
 
-class week extends DatabaseObject{
-
-    public $season_id;
-    public $date_start;
-    public $date_end;
-    public $week_number;
-
-    protected function classDataSetup(){ }
-
-    public static function getCurrentWeek(){
-
-        $now = new DateTime("now", Core::getTimezone());
-        $now = $now->format("Y-m-d");
-
-        if(isset($_SESSION['current_week'])){
-
-            $object = new week($_SESSION['current_week']);
-
-            if($object->date_end >= $now)
-                return $object;
-
-        }
-
-        try {
-
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare("SELECT * FROM week WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1");
-
-            $query->execute(array(":today" => $now));
-
-            $object = $query->fetchAll(PDO::FETCH_CLASS, __CLASS__);
-
-        }catch(PDOException $pe) {
-
-            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
-
-        }
-
-        if(isset($object) && $object !== false){
-            $_SESSION['current_week'] = $object;
-            return $object;
-        }
-
-        return false;
-
-    }
-
-}
 
 ?>

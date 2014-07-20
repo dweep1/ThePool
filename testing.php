@@ -114,8 +114,7 @@
             ?>
         </div>
 
-    </div>
-
+   
     <div class="fluid-row width-50 height-100 dark float-right secondary">
 
         <div class="fluid-row aligncenter"><img id="logo-banner" src="./images/poolbanner.png" /></div>
