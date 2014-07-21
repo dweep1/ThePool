@@ -30,7 +30,10 @@ global $si;
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
-    <script src="./js/modernizr.js"></script>
+    <script src="../js/jquery.velocity.min.js"></script>
+    <script src="../js/velocity.ui.min.js"></script>
+    <script src="../js/angular-velocity.min.js"></script>
+    <script src="../js/modernizr.min.js"></script>
     <script defer src="./js/redactor.min.js"></script>
     <script defer src="../js/bug_report.js"></script>
     <script src="../js/general.js"></script>
@@ -107,7 +110,7 @@ global $si;
 
     <script>
 
-        angular.module('myAdmin', ['ngAnimate']);
+        angular.module('myHome', ['angular-velocity']);
 
     </script>
 

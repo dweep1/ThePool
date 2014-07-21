@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+    if (Modernizr.localstorage) {
+        // window.localStorage is available!
+    } else {
+        alert("There is no local storage on this browser, and it is not HTML5 compatible.\n " +
+            "The game will not function. Please update browsers or use a different one. Sorry!");
+    }
+
     $("input[type='text'], input[type='hidden']").focus(function() {
         if (this.value === this.defaultValue) {
             this.value = '';
@@ -121,7 +128,46 @@ $(document).ready(function(){
 
     });
 
+    $(document).on("mousedown", "[data-trans-for]", function (e) {
+
+        var $for = $(this).attr('data-trans-for');
+
+        $for = $('[data-trans-id="'+$for+'"]');
+
+        if($for.hasClass("slideHidden")){
+            $for.velocity("slideDown", { duration: 1000, delay: 100 });
+            $for.removeClass("slideHidden");
+        }else{
+            $for.velocity("slideUp", { duration: 1000, delay: 100 });
+            $for.addClass("slideHidden");
+        }
+
+    });
+
+
+
 });
+
+var indexOf = function(needle) {
+    if(typeof Array.prototype.indexOf === 'function') {
+        indexOf = Array.prototype.indexOf;
+    } else {
+        indexOf = function(needle) {
+            var i = -1, index = -1;
+
+            for(i = 0; i < this.length; i++) {
+                if(this[i] === needle) {
+                    index = i;
+                    break;
+                }
+            }
+
+            return index;
+        };
+    }
+
+    return indexOf.call(this, needle);
+};
 
 function toggleDisplayMessageBox(){
 

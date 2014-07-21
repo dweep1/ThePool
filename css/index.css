@@ -183,7 +183,7 @@ H6 {
 /* line 95, scss/index.scss */
 .ui-button {
   color: #fff;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(34, 34, 34, 0.3);
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -195,7 +195,7 @@ H6 {
   -o-border-radius: 3px;
   border-radius: 3px;
   border: 2px solid rgba(255, 255, 255, 0.7);
-  margin: 0;
+  margin: 0px 5px;
   padding: 10px 15px;
   outline: none;
   cursor: pointer;
@@ -214,8 +214,28 @@ H6 {
   box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
+/* line 123, scss/index.scss */
+.ui-button.dark {
+  color: #fff;
+  background: rgba(34, 34, 34, 0.9);
+  border: 2px solid rgba(68, 68, 68, 0.7);
+}
+/* line 128, scss/index.scss */
+.ui-button.dark:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
+  border-bottom: 2px solid black;
+}
+/* line 133, scss/index.scss */
+.ui-button.dark:active {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
+  border-bottom: 2px solid #222222;
+}
 
-/* line 124, scss/index.scss */
+/* line 140, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
@@ -226,12 +246,12 @@ H6 {
   display: block;
   color: #212121;
 }
-/* line 134, scss/index.scss */
+/* line 150, scss/index.scss */
 #content-area .intro-word-con {
   margin-top: 20%;
   margin-left: 30%;
 }
-/* line 139, scss/index.scss */
+/* line 155, scss/index.scss */
 #content-area .intro-word {
   padding: 20px 30px;
   font-size: 3em;
@@ -246,28 +266,7 @@ H6 {
   margin-bottom: 15%;
   white-space: nowrap;
 }
-@media (max-width: 1274px) {
-  /* line 154, scss/index.scss */
-  #content-area .secondary {
-    float: none;
-    display: block;
-  }
-}
-@media (min-width: 767px) and (max-width: 1024px) {
-  /* line 154, scss/index.scss */
-  #content-area .secondary {
-    float: none;
-    display: block;
-  }
-}
-@media (max-width: 480px) {
-  /* line 154, scss/index.scss */
-  #content-area .secondary {
-    float: none;
-    display: block;
-  }
-}
-/* line 173, scss/index.scss */
+/* line 170, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -276,16 +275,16 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 181, scss/index.scss */
+/* line 178, scss/index.scss */
 #content-area .fluid-row.slim {
-  padding: 11px 22px;
+  padding: 11px 33px;
 }
-/* line 185, scss/index.scss */
+/* line 182, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
   background: #212121;
 }
-/* line 190, scss/index.scss */
+/* line 187, scss/index.scss */
 #content-area .fluid-row.width-90 {
   width: -webkit-calc(80%);
   width: -moz-calc(80%);
@@ -294,37 +293,37 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 196, scss/index.scss */
+/* line 193, scss/index.scss */
 #content-area .fluid-row.width-50 {
-  width: -webkit-calc(49.5% - 30px - 66px);
-  width: -moz-calc(49.5% - 30px - 66px);
-  width: -o-calc(49.5% - 30px - 66px);
-  width: calc(49.5% - 30px - 66px);
+  width: -webkit-calc(49% - 96px);
+  width: -moz-calc(49% - 96px);
+  width: -o-calc(49% - 96px);
+  width: calc(49% - 96px);
   display: inline-block;
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 196, scss/index.scss */
+  /* line 193, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 196, scss/index.scss */
+  /* line 193, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
 @media (max-width: 480px) {
-  /* line 196, scss/index.scss */
+  /* line 193, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
-/* line 219, scss/index.scss */
+/* line 216, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -332,7 +331,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 227, scss/index.scss */
+/* line 224, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -340,7 +339,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 235, scss/index.scss */
+/* line 232, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -350,14 +349,14 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 245, scss/index.scss */
+/* line 242, scss/index.scss */
 #content-area #logo-banner {
   width: 50%;
   min-width: 200px;
   max-width: 500px;
   margin-top: 5%;
 }
-/* line 252, scss/index.scss */
+/* line 249, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -365,13 +364,26 @@ H6 {
   display: inline-block;
 }
 
-/* line 260, scss/index.scss */
+/* line 257, scss/index.scss */
+[data-trans-for] {
+  cursor: pointer;
+}
+
+/* line 261, scss/index.scss */
+[data-bad-value="true"] {
+  -webkit-box-shadow: red 0px 1px 10px;
+  -moz-box-shadow: red 0px 1px 10px;
+  box-shadow: red 0px 1px 10px;
+  border: 2px solid red;
+}
+
+/* line 266, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 265, scss/index.scss */
+/* line 271, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -379,66 +391,115 @@ H6 {
   width: auto;
   margin: 10px;
 }
-/* line 272, scss/index.scss */
+/* line 278, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
   width: 39%;
   display: inline-block;
   vertical-align: middle;
-  text-shadow: black 0px 1px 2px;
+  text-shadow: black 0px 1px 5px;
   cursor: pointer;
 }
-/* line 282, scss/index.scss */
+/* line 288, scss/index.scss */
+.ui-games-list li .team h5 {
+  font-weight: 400;
+}
+/* line 292, scss/index.scss */
+.ui-games-list li .team h6 {
+  font-weight: 400;
+}
+/* line 296, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 286, scss/index.scss */
+/* line 300, scss/index.scss */
+.ui-games-list li .team.picked {
+  text-shadow: green 0px 2px 7px;
+}
+/* line 303, scss/index.scss */
+.ui-games-list li .team.picked h5 {
+  font-weight: 700;
+}
+/* line 307, scss/index.scss */
+.ui-games-list li .team.picked h6 {
+  font-weight: 700;
+}
+/* line 311, scss/index.scss */
+.ui-games-list li .team.picked .gradient-left {
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(34, 34, 34, 0.5)), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: -moz-linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: -o-linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+}
+/* line 315, scss/index.scss */
+.ui-games-list li .team.picked .gradient-right {
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(34, 34, 34, 0.5)), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: -moz-linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: -o-linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+}
+/* line 320, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 8%;
   width: auto;
   display: block;
   height: 80%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(34, 34, 34, 0.6)), color-stop(80%, #222222));
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
-  background-image: -moz-linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
-  background-image: -o-linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
-  background-image: linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(34, 34, 34, 0.7)), color-stop(80%, #222222));
+  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: -moz-linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: -o-linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 294, scss/index.scss */
+/* line 328, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
-  text-shadow: yellow 0px 2px 10px;
+  text-shadow: yellow 0px 1px 5px;
 }
-/* line 299, scss/index.scss */
+/* line 333, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 303, scss/index.scss */
+/* line 337, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 8%;
   width: auto;
   display: block;
   height: 80%;
-  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(34, 34, 34, 0.6)), color-stop(80%, #222222));
-  background-image: -webkit-linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
-  background-image: -moz-linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
-  background-image: -o-linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
-  background-image: linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(34, 34, 34, 0.7)), color-stop(80%, #222222));
+  background-image: -webkit-linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: -moz-linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: -o-linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 311, scss/index.scss */
+/* line 345, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
-  text-shadow: yellow 0px 2px 10px;
+  text-shadow: yellow 0px 1px 5px;
 }
-/* line 317, scss/index.scss */
+/* line 351, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 20%;
   text-align: center;
 }
+/* line 356, scss/index.scss */
+.ui-games-list li .middle i {
+  font-size: 1.3em;
+  line-height: 1em;
+  cursor: pointer;
+}
+/* line 362, scss/index.scss */
+.ui-games-list li .middle .small {
+  width: 15%;
+  min-width: 18px;
+  text-align: center;
+  margin: 0px 5%;
+}
 
-/* line 325, scss/index.scss */
+/* line 372, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -453,12 +514,12 @@ H6 {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 336, scss/index.scss */
+/* line 383, scss/index.scss */
 .ui-message-background.hidden {
   display: none;
 }
 
-/* line 341, scss/index.scss */
+/* line 388, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -480,24 +541,24 @@ H6 {
   transition: all 1.3s ease-out;
 }
 
-/* line 354, scss/index.scss */
+/* line 401, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 360, scss/index.scss */
+/* line 407, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 364, scss/index.scss */
+/* line 411, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 370, scss/index.scss */
+/* line 417, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -506,7 +567,7 @@ input[type="text"], input[type="password"] {
   font-weight: 400;
 }
 
-/* line 378, scss/index.scss */
+/* line 425, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -527,13 +588,13 @@ input[type="text"], input[type="password"] {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 393, scss/index.scss */
+/* line 440, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 399, scss/index.scss */
+/* line 446, scss/index.scss */
 #main-nav #login-area {
   position: absolute;
   padding: 10px;
@@ -547,22 +608,22 @@ input[type="text"], input[type="password"] {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   color: #fff;
 }
-/* line 410, scss/index.scss */
+/* line 457, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 416, scss/index.scss */
+/* line 463, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 419, scss/index.scss */
+/* line 466, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 424, scss/index.scss */
+/* line 471, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -570,7 +631,7 @@ input[type="text"], input[type="password"] {
   height: 40px;
   text-align: center;
 }
-/* line 432, scss/index.scss */
+/* line 479, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -578,7 +639,7 @@ input[type="text"], input[type="password"] {
   list-style: none;
   overflow: hidden;
 }
-/* line 440, scss/index.scss */
+/* line 487, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -590,11 +651,11 @@ input[type="text"], input[type="password"] {
   display: block;
   white-space: nowrap;
 }
-/* line 449, scss/index.scss */
+/* line 496, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 453, scss/index.scss */
+/* line 500, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -607,7 +668,7 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 465, scss/index.scss */
+/* line 512, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -617,154 +678,7 @@ input[type="text"], input[type="password"] {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 472, scss/index.scss */
+/* line 519, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
-}
-
-/*
-NG Animate
-*/
-/* line 486, scss/index.scss */
-.animate-left-left {
-  position: relative;
-  display: block;
-}
-
-/* line 493, scss/index.scss */
-.animate-left-left.ng-enter-stagger,
-.animate-left-left.ng-leave-stagger,
-.animate-left-left.ng-move-stagger {
-  /* 50ms between each item being animated after the other */
-  -webkit-transition-delay: 0.07s;
-  transition-delay: 0.07s;
-  /* this is required for animation staggering */
-  -webkit-animation-delay: 0.07s;
-  animation-delay: 0.07s;
-  /* this is required here to prevent any CSS inheritance issues */
-  -webkit-transition-duration: 0;
-  transition-duration: 0;
-}
-
-/*
-  We're using CSS transitions for when
-  the enter and move events are triggered
-  for the element that has the .repeated-item
-  class
-*/
-/* line 514, scss/index.scss */
-.animate-left-left.ng-enter,
-.animate-left-left.ng-move {
-  -webkit-transition: 0.125s ease all;
-  -moz-transition: 0.125s ease all;
-  -o-transition: 0.125s ease all;
-  transition: 0.125s ease all;
-  left: -300px;
-  opacity: 0;
-}
-
-/*
- The ng-enter-active and ng-move-active
- are where the transition destination properties
- are set so that the animation knows what to
- animate.
-*/
-/* line 527, scss/index.scss */
-.animate-left-left.ng-enter.ng-enter-active,
-.animate-left-left.ng-move.ng-move-active {
-  left: 0px;
-  opacity: 1;
-}
-
-/*
-  We're using CSS keyframe animations for when
-  the leave event is triggered for the element
-  that has the .repeated-item class
-*/
-/* line 537, scss/index.scss */
-.animate-left-left.ng-leave {
-  -webkit-transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -o-transition: 0.2s ease all;
-  transition: 0.2s ease all;
-  -webkit-animation: 0.2s to_left_destroy;
-  -moz-animation: 0.2s to_left_destroy;
-  -o-animation: 0.2s to_left_destroy;
-  animation: 0.2s to_left_destroy;
-}
-
-@-webkit-keyframes to_left_destroy {
-  /* line 544, scss/index.scss */
-  0% {
-    opacity: 1;
-    margin-left: 0px;
-  }
-
-  /* line 545, scss/index.scss */
-  50% {
-    opacity: 0;
-    margin-left: -300px;
-  }
-
-  /* line 546, scss/index.scss */
-  85% {
-    display: none;
-  }
-}
-
-@-moz-keyframes to_left_destroy {
-  /* line 544, scss/index.scss */
-  0% {
-    opacity: 1;
-    margin-left: 0px;
-  }
-
-  /* line 545, scss/index.scss */
-  50% {
-    opacity: 0;
-    margin-left: -300px;
-  }
-
-  /* line 546, scss/index.scss */
-  85% {
-    display: none;
-  }
-}
-
-@-ms-keyframes to_left_destroy {
-  /* line 544, scss/index.scss */
-  0% {
-    opacity: 1;
-    margin-left: 0px;
-  }
-
-  /* line 545, scss/index.scss */
-  50% {
-    opacity: 0;
-    margin-left: -300px;
-  }
-
-  /* line 546, scss/index.scss */
-  85% {
-    display: none;
-  }
-}
-
-@keyframes to_left_destroy {
-  /* line 544, scss/index.scss */
-  0% {
-    opacity: 1;
-    margin-left: 0px;
-  }
-
-  /* line 545, scss/index.scss */
-  50% {
-    opacity: 0;
-    margin-left: -300px;
-  }
-
-  /* line 546, scss/index.scss */
-  85% {
-    display: none;
-  }
 }

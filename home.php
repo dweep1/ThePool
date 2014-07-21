@@ -46,37 +46,107 @@
 <div id="content-area" class="height-100" style="background-size: cover; background-position: left center;">
     <div class="width-50 height-100 fluid-row" data-ng-controller="RowController">
 
-        <div class="fluid-row slim alignleft"><h2 data-trans-for="current_picks">Current Picks</h2></div>
-        <div data-trans-id="current_picks">
-            <div class="fluid-row slim alignleft">
-                <h6>Search Games:</h6>  <input type="text" data-ng-model="search" />
-            </div>
+        <div class="fluid-row slim alignleft">
+            <h6>Search Games:</h6>  <input type="text" data-ng-model="search" />
+            <button class="ui-button dark float-right">Save Picks</button>
+            <button class="ui-button dark float-right" ng-click="doRefresh()">Discard Changes</button>
+        </div>
 
-            <div class="fluid-row slim aligncenter">
+        <div class="fluid-row slim alignleft">
+
+            <h5>Current Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
+
+            <div data-trans-id="current_picks">
 
                 <ul class="ui-games-list">
 
-                    <li ng-view class="velocity-opposites-transition-slideUpBigIn" data-velocity-opts="{ stagger: 150, drag: true }" data-ng-repeat="item in (filtered = (games | filter:search | orderBy:'id'))"  >
-                        <div class="team alignleft" style="background-image: url('{{ item.away_team.image_url }}')">
+                    <li class="velocity-opposites-transition-slideUpBigIn" data-velocity-opts="{ stagger: 100, drag: true }"
+                        data-ng-repeat="item in (filtered = (gamesPicked | filter:search | orderBy:'id'))" data-picked-id="{{ item.pick.team_id }}"
+                        on-finish-render="ngRepeatFinished" >
+
+                        <div mm-pick ng-click="item.pick.team_id = item.away_team.id; changePick();"
+                             data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.away_team.id }}"
+                             class="team alignleft" style="background-image: url('{{ item.away_team.image_url }}')">
+
                             <div class="gradient-left">
                                 <h5>{{ item.away_team.city }}</h5>
                                 <h6>{{ item.away_team.team_name }}</h6>
                             </div>
+
                         </div>
-                        <div class="middle">@</div>
-                        <div class="team alignright" style="background-image: url('{{ item.home_team.image_url }}')">
+
+                        <div class="middle">
+
+                            <i class="fa fa-minus-circle" game-id="{{ item.id }}" mm-minus
+                               ng-click="item.pick.value = item.pick.value - 1; subtractPoints();"></i>
+
+                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}" />
+
+                            <i class="fa fa-plus-circle" game-id="{{ item.id }}" mm-plus
+                               ng-click="item.pick.value = item.pick.value + 1; addPoints();"></i>
+
+                        </div>
+
+                        <div mm-pick ng-click="item.pick.team_id = item.home_team.id; changePick();"
+                             data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.home_team.id }}"
+                             class="team alignright"  style="background-image: url('{{ item.home_team.image_url }}')">
+
+                            <div class="gradient-right">
+                                <h5>{{ item.home_team.city }}</h5>
+                                <h6>{{ item.home_team.team_name }}</h6>
+                            </div>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="fluid-row slim alignleft">
+
+            <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
+
+            <div data-trans-id="open_picks">
+
+                <ul class="ui-games-list">
+
+                    <li class="velocity-opposites-transition-slideUpBigIn" data-velocity-opts="{ stagger: 100, drag: true }"
+                        data-ng-repeat="item in (filtered = (gamesNotPicked | filter:search | orderBy:'id'))" data-picked-id="{{ item.pick.team_id }}" >
+
+                        <div mm-pick ng-click="item.pick.team_id = item.away_team.id; changePick();" data-team-id="{{ item.away_team.id }}"
+                            class="team alignleft" style="background-image: url('{{ item.away_team.image_url }}')">
+
+                            <div class="gradient-left">
+                                <h5>{{ item.away_team.city }}</h5>
+                                <h6>{{ item.away_team.team_name }}</h6>
+                            </div>
+
+                        </div>
+
+                        <div class="middle">
+
+                            <i class="fa fa-minus-circle" game-id="{{ item.id }}" mm-minus
+                               ng-click="item.pick.value = item.pick.value - 1; subtractPoints();"></i>
+
+                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}" />
+
+                            <i class="fa fa-plus-circle" game-id="{{ item.id }}" mm-plus
+                               ng-click="item.pick.value = item.pick.value + 1; addPoints();"></i>
+
+                        </div>
+
+                        <div mm-pick ng-click="item.pick.team_id = item.home_team.id; changePick();" data-team-id="{{ item.home_team.id }}"
+                            class="team alignright" style="background-image: url('{{ item.home_team.image_url }}')">
                             <div class="gradient-right">
                                 <h5>{{ item.home_team.city }}</h5>
                                 <h6>{{ item.home_team.team_name }}</h6>
                             </div>
                         </div>
+
                     </li>
-
                 </ul>
-
             </div>
         </div>
-
     </div>
 
     <div class="fluid-row width-50 height-100 dark float-right secondary">
@@ -108,23 +178,217 @@
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
 <script src="./js/jquery.velocity.min.js"></script>
-<script src="./js/velocity.ui.js"></script>
+<script src="./js/velocity.ui.min.js"></script>
 <script src="./js/angular-velocity.min.js"></script>
-<script src="./js/modernizr.js"></script>
+<script src="./js/modernizr.min.js"></script>
 <script src="./js/general.js"></script>
 <script src="./js/bug_report.js"></script>
 
 <script>
-    angular.module('myHome', ['angular-velocity']);
-    //angular.module('myHome', ['ngAnimate']);
 
-</script>
+    var myApp = angular.module('myHome', ['angular-velocity'])
+        .directive('onFinishRender', function ($timeout) {
+            return {
+                restrict: 'A',
+                link: function (scope, element, attr) {
+                    if (scope.$last === true) {
+                        $timeout(function () {
+                            scope.$emit(attr.onFinishRender);
+                        });
+                    }
+                }
+            }
+        });
 
-<script>
+    myApp.directive("mmPick", function() {
+        return {
+            link: function(scope, elem, attrs) {
+                scope.doChangePick = function() {
+
+                    //each game needs a pick object when its given.
+                    //if there is no team_id, then pick isn't valid.
+
+                    refreshGames(scope);
+
+                    refreshStoreLocal(scope);
+
+                    setTimeout(function(){
+                        changePickUI(elem);
+                    }, 200);
+                }
+            }
+        }
+    });
+
+    myApp.directive("mmMinus", function() {
+        return {
+            link: function(scope, elem, attrs) {
+                scope.doPointsSubtract = function() {
+
+                    refreshGames(scope);
+
+                    refreshStoreLocal(scope);
+
+                }
+            }
+        }
+    });
+
+    myApp.directive("mmPlus", function() {
+        return {
+            link: function(scope, elem, attrs) {
+                scope.doPointsAdd = function() {
+
+                    refreshGames(scope);
+
+                    refreshStoreLocal(scope);
+
+                }
+            }
+        }
+    });
+
     function RowController($scope, $http) {
 
-        //$scope.week_id = <?php echo week::getCurrent(); ?>;
-        $scope.week_id = 29;
+        $scope.force = false;
+
+        getLiveData($scope, $http);
+
+        $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+            setTimeout(refreshPicks, 50);
+        });
+
+        $scope.subtractPoints = function() {
+            this.doPointsSubtract();
+        };
+
+        $scope.addPoints = function() {
+            this.doPointsAdd();
+        };
+
+        $scope.changePick = function() {
+            this.doChangePick();
+        };
+
+        $scope.doRefresh = function() {
+            $scope.force = true;
+
+            getLiveData($scope, $http);
+        };
+
+    }
+
+    function buildPicks($scope, $callback){
+
+        var $picks = [];
+
+        refreshGames($scope, function(){
+
+            $scope.games.forEach(function(entity){
+                if(checkSet(entity.pick) !== false)
+                    $picks.push(entity.pick);
+            });
+
+            $scope.picks = JSON.parse(JSON.stringify($picks));
+
+            if(checkSet($callback))
+                $callback();
+
+        });
+
+    }
+
+    function refreshGames($scope, $callback){
+
+        var $games = [];
+
+        $scope.gamesPicked.forEach(function(entity){
+            $games.push(entity);
+        });
+
+        $scope.gamesNotPicked.forEach(function(entity){
+            $games.push(entity);
+        });
+
+        $scope.games = JSON.parse(JSON.stringify($games));
+
+        if(checkSet($callback))
+            $callback();
+
+    }
+
+    function changePickUI(elem){
+
+        var $parentElem = $(elem).parent("li");
+
+        var $children = $parentElem.children("[data-team-id]");
+        var $pick_id_attr = $parentElem.attr("data-picked-id");
+
+        $.each($children, function(){
+
+            if(parseInt($(this).attr("data-team-id")) === parseInt($pick_id_attr)){
+                $(this).addClass("picked");
+                console.log("pik");
+            }else{
+                $(this).removeClass("picked");
+            }
+        });
+
+    }
+
+    function refreshPicks(){
+
+        var $content = $(".picked");
+
+        console.log("refreshing Picks");
+
+        $.each($content, function(){
+
+            $(this).removeClass("picked");
+
+        });
+
+        var $content = $("[data-picked-id]");
+
+        $.each($content, function(){
+
+            var $pick_id_attr = $(this).attr("data-picked-id");
+
+            $('[data-team-id="'+$pick_id_attr+'"]').addClass("picked");
+
+        });
+
+    }
+
+    function refreshStoreLocal($scope){
+
+        localStorage["week_id"] = $scope.week_id;
+        localStorage["week_data"] = JSON.stringify($scope.week);
+        localStorage["game_data"] = JSON.stringify($scope.games);
+
+    }
+
+    function storeLocalGames($scope, data){
+
+        if(parseInt(localStorage["week_id"]) !== parseInt($scope.week_id) || $scope.force === true){
+
+            $scope.week = data;
+            $scope.games = data.games;
+
+            refreshStoreLocal($scope);
+
+        }else{
+
+            $scope.week = JSON.parse(localStorage["week_data"]);
+            $scope.games = JSON.parse(localStorage["game_data"]);
+
+        }
+
+    }
+
+    function getLiveData($scope, $http){
+
+        $scope.week_id = <?php echo week::getCurrent()->id; ?>;
 
         $scope.url = "./_listeners/listn.picks.php?method=GET";
 
@@ -132,19 +396,86 @@
         // the data holds the keywords
         // The request is a JSON request.
 
-        $http.post($scope.url, { "week_id" : $scope.week_id}).
-            success(function(data, status) {
+        if(parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
 
-                $scope.status = status;
-                $scope.week = data;
-                $scope.games = data.games;
+            storeLocalGames($scope, null);
+            getGamesPicked($scope);
 
-            })
-            .
-            error(function(data, status) {
-                $scope.data = data || "Request failed";
-                $scope.status = status;
-            });
+            return true;
+
+        }else{
+
+            return $http.post($scope.url, { "week_id" : $scope.week_id}).
+                success(function(data, status) {
+
+                    $scope.status = status;
+                    storeLocalGames($scope, data);
+                    getGamesPicked($scope);
+
+                    if($scope.force === true)
+                        $scope.force = false;
+
+                    return true;
+
+                })
+                .
+                error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+
+                    if($scope.force === true)
+                        $scope.force = false;
+
+                    return false;
+                });
+
+        }
+
+    }
+
+    function getGamesPicked($scope){
+
+        var $games = $scope.games;
+
+        var $picked = [];
+        var $notPicked = [];
+
+        var $values = [];
+        var $dupes = [];
+
+        var $i = 0;
+        var $k = 0;
+
+        $games.forEach(function(entity){
+
+            if(parseInt(entity.pick.team_id) !== -1){
+                if(indexOf.call($values, parseInt(entity.pick.value)) == -1)
+                    $values.push(parseInt(entity.pick.value));
+                else
+                    $dupes.push(parseInt(entity.pick.value));
+            }
+
+        });
+
+        $games.forEach(function(entity){
+
+           if(parseInt(entity.pick.team_id) !== -1){
+
+               if(indexOf.call($dupes, parseInt(entity.pick.value)) > -1)
+                   entity.pick.bad = "true";
+               else
+                   entity.pick.bad = "false";
+
+               $picked.push(entity);
+
+           }else{
+               $notPicked.push(entity);
+           }
+
+        });
+
+        $scope.gamesPicked = JSON.parse(JSON.stringify($picked));
+        $scope.gamesNotPicked = JSON.parse(JSON.stringify($notPicked));
 
     }
 </script>

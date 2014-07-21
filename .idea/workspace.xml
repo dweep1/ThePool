@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\js\modernizr.js" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\js\velocity.ui.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/admin.json.php" afterPath="$PROJECT_DIR$/admin/admin.json.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_db/backend.php" afterPath="$PROJECT_DIR$/_db/backend.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/general.js" afterPath="$PROJECT_DIR$/js/general.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.header.php" afterPath="$PROJECT_DIR$/_listeners/listn.header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.login.php" afterPath="$PROJECT_DIR$/_listeners/listn.login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_db/objects.php" afterPath="$PROJECT_DIR$/_db/objects.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testing.php" afterPath="$PROJECT_DIR$/testing.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -46,7 +44,7 @@
     <file path="/tpl.game.table.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380009159660" ignored="false" />
     <file path="/tpl.game.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380019999440" ignored="false" />
     <file path="/tpl.picks.teaminfo.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380705604083" ignored="false" />
-    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405730038752" ignored="false" />
+    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405903006864" ignored="false" />
     <file path="/login.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380417535350" ignored="false" />
     <file path="/_header.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384032688" ignored="false" />
     <file path="/login.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380421702757" ignored="false" />
@@ -60,19 +58,19 @@
     <file path="/tpl.settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383426391468" ignored="false" />
     <file path="/a.dummy" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405810309695" ignored="false" />
     <file path="/style.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1383384182363" ignored="false" />
-    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405873268462" ignored="false" />
-    <file path="/index.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405895276084" ignored="false" />
+    <file path="/Dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405950441351" ignored="false" />
+    <file path="/index.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405970590392" ignored="false" />
     <file path="/style_guide.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404726989587" ignored="false" />
     <file path="/_functions.scss" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405714647261" ignored="false" />
     <file path="/dummy.txt" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1404874359087" ignored="false" />
     <file path="/security.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405776746644" ignored="false" />
-    <file path="/objects.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405891925264" ignored="false" />
+    <file path="/objects.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405986302313" ignored="false" />
     <file path="/backend.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405878134004" ignored="false" />
     <file path="/menu.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405729388870" ignored="false" />
-    <file path="/general.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405887744657" ignored="false" />
+    <file path="/general.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405967122924" ignored="false" />
     <file path="/header.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405500796225" ignored="false" />
     <file path="/listn.header.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405874140181" ignored="false" />
-    <file path="/home.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405900222601" ignored="false" />
+    <file path="/home.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405986292562" ignored="false" />
     <file path="/logout.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405535051402" ignored="false" />
     <file path="/admin.functions.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405634860560" ignored="false" />
     <file path="/admin.login.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405635673996" ignored="false" />
@@ -108,24 +106,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/home.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="130" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.38918918">
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="110" column="12" selection-start="2918" selection-end="2918" vertical-scroll-proportion="-51.115383">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_functions.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
+      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="390" column="63" selection-start="13084" selection-end="13084" vertical-scroll-proportion="-7.2352943">
+              <folding>
+                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,16 +133,7 @@
       <file leaf-file-name="index.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="0" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin_pages.page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/pages/admin_pages.page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="-3.7307692">
+            <state line="150" column="19" selection-start="2913" selection-end="2913" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,7 +142,7 @@
       <file leaf-file-name="general.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/general.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="0" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
+            <state line="169" column="2" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -175,23 +166,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backend.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_db/backend.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="535" column="0" selection-start="16704" selection-end="16704" vertical-scroll-proportion="-13.192307">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="objects.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="objects.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_db/objects.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="410" column="77" selection-start="9477" selection-end="9477" vertical-scroll-proportion="-143.96153">
+            <state line="210" column="33" selection-start="5092" selection-end="5092" vertical-scroll-proportion="0.89445627">
               <folding>
-                <marker date="1405893881572" expanded="true" signature="4181:4293" placeholder="SELECT * FRO..$className..." />
-                <marker date="1405893881572" expanded="true" signature="8152:8239" placeholder="SELECT COUNT..pick..." />
-                <marker date="1405893881572" expanded="true" signature="8300:8314" placeholder="SELECT COUNT..pick..." />
+                <marker date="1405986310453" expanded="true" signature="4181:4293" placeholder="SELECT * FRO..$className..." />
+                <marker date="1405986310453" expanded="true" signature="9152:9239" placeholder="SELECT COUNT..pick..." />
+                <marker date="1405986310453" expanded="true" signature="9300:9314" placeholder="SELECT COUNT..pick..." />
               </folding>
             </state>
           </provider>
@@ -226,20 +208,20 @@
       <list>
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/_db/security.php" />
-        <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.header.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.rest.php" />
         <option value="$PROJECT_DIR$/admin/admin.json.php" />
         <option value="$PROJECT_DIR$/_db/backend.php" />
         <option value="$PROJECT_DIR$/testing.php" />
-        <option value="$PROJECT_DIR$/js/general.js" />
         <option value="$PROJECT_DIR$/_listeners/listn.teams.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
         <option value="$PROJECT_DIR$/css/scss/admin.scss" />
-        <option value="$PROJECT_DIR$/_db/objects.php" />
+        <option value="$PROJECT_DIR$/admin/index.php" />
+        <option value="$PROJECT_DIR$/js/general.js" />
         <option value="$PROJECT_DIR$/css/scss/index.scss" />
         <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/_db/objects.php" />
       </list>
     </option>
   </component>
@@ -455,14 +437,14 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="Configurable.PHP.Servers" />
     <property name="recentsLimit" value="5" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="options.lastSelected" value="Configurable.PHP.Servers" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../praxus/Praxus" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="PublishConfig" serverName="EasyPHP" serverId="0edfedb1-5a75-4748-bb16-b995a0731305">
     <servers>
@@ -486,10 +468,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -691,25 +673,9 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="5" selection-start="564" selection-end="564" vertical-scroll-proportion="-17.653847">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/users.page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="47" selection-start="208" selection-end="242" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="31" selection-start="2580" selection-end="2580" vertical-scroll-proportion="-26.153847">
-          <folding />
-        </state>
+        <state line="12" column="47" selection-start="208" selection-end="242" vertical-scroll-proportion="-7.8461537" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/js/admin.js">
@@ -740,48 +706,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="39" selection-start="637" selection-end="637" vertical-scroll-proportion="-18.961538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_db/objects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="410" column="77" selection-start="9477" selection-end="9477" vertical-scroll-proportion="-143.96153">
-          <folding>
-            <marker date="1405893881572" expanded="true" signature="4181:4293" placeholder="SELECT * FRO..$className..." />
-            <marker date="1405893881572" expanded="true" signature="8152:8239" placeholder="SELECT COUNT..pick..." />
-            <marker date="1405893881572" expanded="true" signature="8300:8314" placeholder="SELECT COUNT..pick..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/_functions.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pages/admin_pages.page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="140" selection-end="140" vertical-scroll-proportion="-3.7307692">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/general.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="730" selection-end="730" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.teams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="38" selection-start="45" selection-end="45" vertical-scroll-proportion="-1.3076923">
           <folding />
         </state>
       </provider>
@@ -793,20 +720,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pages/admin_pages.page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="60" selection-start="386" selection-end="386" vertical-scroll-proportion="0.25692964">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="39" selection-start="637" selection-end="637" vertical-scroll-proportion="-18.961538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="0" selection-start="2379" selection-end="2379" vertical-scroll-proportion="0.0">
+        <state line="150" column="19" selection-start="2913" selection-end="2913" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.teams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="38" selection-start="45" selection-end="45" vertical-scroll-proportion="-1.3076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/general.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="2" selection-start="4183" selection-end="4183" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="110" column="12" selection-start="2918" selection-end="2918" vertical-scroll-proportion="-51.115383">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="130" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.38918918">
+        <state line="390" column="63" selection-start="13084" selection-end="13084" vertical-scroll-proportion="-7.2352943">
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_db/objects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="210" column="33" selection-start="5092" selection-end="5092" vertical-scroll-proportion="0.89445627">
+          <folding>
+            <marker date="1405986310453" expanded="true" signature="4181:4293" placeholder="SELECT * FRO..$className..." />
+            <marker date="1405986310453" expanded="true" signature="9152:9239" placeholder="SELECT COUNT..pick..." />
+            <marker date="1405986310453" expanded="true" signature="9300:9314" placeholder="SELECT COUNT..pick..." />
           </folding>
         </state>
       </provider>

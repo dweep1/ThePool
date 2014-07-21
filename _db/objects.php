@@ -207,6 +207,11 @@ class week extends event{
     public $season_id;
     public $week_number;
 
+    public static function getCurrent(){
+        $instance = new week(29);
+        return $instance;
+    }
+
     public function getStructured($user_id = null, $noIndex = false){
 
         $this->games = $this->getGames($noIndex);
@@ -220,7 +225,24 @@ class week extends event{
                 $this->games[$key]->away_team = $teams[$this->games[$key]->away_team];
                 $this->games[$key]->home_team = $teams[$this->games[$key]->home_team];
 
-                $this->games[$key]->pick = $picks[$val->id];
+                $gameDate = new DateTime($this->games[$key]->date, Core::getTimezone());
+                $gameDate->setTime(0,0,0);
+                $gameDate = $gameDate->format('l');
+
+                $this->games[$key]->date_name = $gameDate;
+
+                if(isset($picks[$val->id]))
+                    $this->games[$key]->pick = $picks[$val->id];
+                else{
+                    $user = users::returnCurrentUser();
+
+                    $dataArray = array("season_id" => $this->season_id, "week_id" => $this->id, "game_id" => $val->id
+                                      ,"team_id" => -1, "user_id" => $user->id, "value" => 0);
+
+                    $newPick = new pick($dataArray);
+
+                    $this->games[$key]->pick = $newPick;
+                }
 
             }
         }
@@ -257,6 +279,7 @@ class week extends event{
 
         if(!is_bool($picks)){
             foreach($picks as $value){
+                $value->value = (int) $value->value;
                 $tempStore[$value->game_id] = $value;
             }
         }
@@ -264,6 +287,15 @@ class week extends event{
         return (!is_bool($picks)) ? ((isset($tempStore)) ? $tempStore : false ) : $picks;
 
     }
+
+}
+
+class credit extends DatabaseObject{
+
+    public $date;
+    public $user_id;
+    public $nid;
+    public $used = false;
 
 }
 

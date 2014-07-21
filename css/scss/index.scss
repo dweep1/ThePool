@@ -95,7 +95,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
 .ui-button{
 
   color:#fff;
-  background: rgba(0,0,0,0);
+  background: rgba(#222,0.3);
   font-family: 'Roboto', sans-serif;
   text-transform:uppercase;
   font-weight:700;
@@ -105,7 +105,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   @include border-radius(3px);
   border:2px solid rgba(255,255,255,0.7);
 
-  margin:0;
+  margin:0px 5px;
   padding: 10px 15px;
   outline:none;
   cursor: pointer;
@@ -118,6 +118,22 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   &:active{
     @include box-shadow(rgba(#fff,0.6) 0px 0px 3px);
     border:2px solid rgba(255,255,255,0.5);
+  }
+
+  &.dark{
+    color:#fff;
+    background: rgba(#222,0.9);
+    border:2px solid rgba(#444,0.7);
+
+    &:hover{
+      @include box-shadow(rgba(#000,0.9) 0px 0px 5px);
+      border-bottom:2px solid rgba(#000,1);
+    }
+
+    &:active{
+      @include box-shadow(rgba(#000,0.9) 0px 0px 2px);
+      border-bottom:2px solid rgba(#222,1);
+    }
   }
 }
 
@@ -151,25 +167,6 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     white-space: nowrap;
   }
 
-  .secondary{
-
-    @include respondTo(smallScreen) {
-      float:none;
-      display:block;
-    }
-
-    @include respondTo(tablet) {
-      float:none;
-      display:block;
-    }
-
-    @include respondTo(smartphone) {
-      float:none;
-      display:block;
-    }
-
-  }
-
   .fluid-row{
     margin:0;
     position: relative;
@@ -179,7 +176,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     z-index: 10;
 
     &.slim{
-      padding:11px 22px;
+      padding:11px 33px;
     }
 
     &.dark{
@@ -194,7 +191,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     }
 
     &.width-50{
-      @include calc(width, "49.5% - 30px - 66px");
+      @include calc(width, "49% - 96px");
       display:inline-block;
       vertical-align: top;
 
@@ -257,6 +254,15 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   }
 }
 
+[data-trans-for]{
+  cursor:pointer;
+}
+
+[data-bad-value="true"]{
+  @include box-shadow(red 0px 1px 10px);
+  border: 2px solid red;
+}
+
 .ui-games-list{
   padding:0;
   margin:0;
@@ -276,11 +282,39 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       width: 39%;
       display:inline-block;
       vertical-align: middle;
-      @include text-shadow(#000 0px 1px 2px);
+      @include text-shadow(#000 0px 1px 5px);
       cursor:pointer;
+
+      h5{
+        font-weight:400;
+      }
+
+      h6{
+        font-weight:400;
+      }
 
       &.alignleft{
         background-position: center left;
+      }
+
+      &.picked{
+        @include text-shadow(green 0px 2px 7px);
+
+        h5{
+          font-weight:700;
+        }
+
+        h6{
+          font-weight:700;
+        }
+
+        .gradient-left{
+          @include background-image(linear-gradient(left, rgba(#222,0.5) 0%, #222 100%));
+        }
+
+        .gradient-right{
+          @include background-image(linear-gradient(right, rgba(#222,0.5) 0%, #222 100%));
+        }
       }
 
       .gradient-left{
@@ -288,11 +322,11 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         width:auto;
         display:block;
         height:80%;
-        @include background-image(linear-gradient(left, rgba(#222,0.6) 0%, #222 80%));
+        @include background-image(linear-gradient(left, rgba(#222,0.7) 0%, #222 80%));
         white-space: nowrap;
 
         &:hover{
-          @include text-shadow(yellow 0px 2px 10px);
+          @include text-shadow(yellow 0px 1px 5px);
         }
       }
 
@@ -305,11 +339,11 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         width:auto;
         display:block;
         height:80%;
-        @include background-image(linear-gradient(right, rgba(#222,0.6) 0%, #222 80%));
+        @include background-image(linear-gradient(right, rgba(#222,0.7) 0%, #222 80%));
         white-space: nowrap;
 
         &:hover{
-          @include text-shadow(yellow 0px 2px 10px);
+          @include text-shadow(yellow 0px 1px 5px);
         }
       }
     }
@@ -318,6 +352,19 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       display:inline-block;
       width:20%;
       text-align: center;
+
+      i{
+        font-size:1.3em;
+        line-height:1em;
+        cursor:pointer;
+      }
+
+      .small{
+        width:15%;
+        min-width:18px;
+        text-align: center;
+        margin:0px 5%;
+      }
     }
   }
 }
@@ -476,72 +523,4 @@ input[type="text"], input[type="password"]{
     }
   }
 
-}
-
-/*
-NG Animate
-*/
-
-//sets up class for animate events
-.animate-left-left{
-  position: relative;
-  display: block;
-}
-
-.animate-left-left.ng-enter-stagger,
-.animate-left-left.ng-leave-stagger,
-.animate-left-left.ng-move-stagger {
-  /* 50ms between each item being animated after the other */
-  -webkit-transition-delay:0.07s;
-  transition-delay:0.07s;
-
-  /* this is required for animation staggering */
-  -webkit-animation-delay:0.07s;
-  animation-delay:0.07s;
-
-  /* this is required here to prevent any CSS inheritance issues */
-  -webkit-transition-duration:0;
-  transition-duration:0;
-}
-
-/*
-  We're using CSS transitions for when
-  the enter and move events are triggered
-  for the element that has the .repeated-item
-  class
-*/
-.animate-left-left.ng-enter,
-.animate-left-left.ng-move {
-  @include transition(0.125s ease all);
-  left: -300px;
-  opacity: 0;
-}
-
-/*
- The ng-enter-active and ng-move-active
- are where the transition destination properties
- are set so that the animation knows what to
- animate.
-*/
-.animate-left-left.ng-enter.ng-enter-active,
-.animate-left-left.ng-move.ng-move-active {
-  left: 0px;
-  opacity:1;
-}
-
-/*
-  We're using CSS keyframe animations for when
-  the leave event is triggered for the element
-  that has the .repeated-item class
-*/
-.animate-left-left.ng-leave{
-  @include transition(0.2s ease all);
-  @include animation(0.2s to_left_destroy);
-}
-
-// use of keyframes mixin
-@include keyframes(to_left_destroy) {
-  0% { opacity:1; margin-left:0px; }
-  50%{ opacity:0; margin-left:-300px; }
-  85% { display:none; }
 }
