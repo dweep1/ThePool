@@ -152,6 +152,28 @@ function toggleDisplayMessageBox(){
 
 }
 
+function getTeams(){
+
+    if(!checkSet(localStorage["teams"])){
+
+        $.ajax({
+            url: './_listeners/listn.teams.php',
+            type: 'post',
+            cache: true,
+            async: false,
+            success: function(data) {
+
+                localStorage["teams"] = JSON.stringify(data);
+
+            }
+        });
+
+    }
+
+    return JSON.parse(localStorage["teams"]);
+
+}
+
 function calculateTop($object){
 
     var $height = ($(window).outerHeight()/2) - ($object.outerHeight()/2);
@@ -228,6 +250,18 @@ function toggleMenuItemOverlay($menu_item){
             $menu_item.css("display", "block");
         }, 300);
     }
+
+}
+
+function checkSet($obj){
+
+    if(typeof($obj) === 'undefined'){return false;}
+    else if($obj === ""){return false;}
+    else if($obj === " "){return false;}
+    else if($obj === null){return false;}
+    else if($obj === false){return false;}
+
+    return true;
 
 }
 

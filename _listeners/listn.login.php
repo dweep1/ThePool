@@ -1,8 +1,5 @@
 <?php
 
-global $ROOT_DB_PATH;
-$ROOT_DB_PATH = "../_db/";
-
 include_once "./listn.header.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){

@@ -7,7 +7,6 @@
     }
 
     global $ROOT_DB_PATH;
-    global $currentUser;
 
     $ROOT_DB_PATH = "../_db/";
 

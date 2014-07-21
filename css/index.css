@@ -164,18 +164,23 @@ H6 {
   text-align: center;
 }
 
-/* line 83, scss/index.scss */
+/* line 82, scss/index.scss */
+.alignright {
+  text-align: right;
+}
+
+/* line 86, scss/index.scss */
 .alignleft {
   text-align: left;
 }
 
-/* line 87, scss/index.scss */
+/* line 90, scss/index.scss */
 .hidden {
   opacity: 0;
   display: none;
 }
 
-/* line 92, scss/index.scss */
+/* line 95, scss/index.scss */
 .ui-button {
   color: #fff;
   background: rgba(0, 0, 0, 0);
@@ -195,14 +200,14 @@ H6 {
   outline: none;
   cursor: pointer;
 }
-/* line 110, scss/index.scss */
+/* line 113, scss/index.scss */
 .ui-button:hover {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   border: 2px solid white;
 }
-/* line 115, scss/index.scss */
+/* line 118, scss/index.scss */
 .ui-button:active {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
@@ -210,7 +215,7 @@ H6 {
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-/* line 121, scss/index.scss */
+/* line 124, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
@@ -221,12 +226,12 @@ H6 {
   display: block;
   color: #212121;
 }
-/* line 131, scss/index.scss */
+/* line 134, scss/index.scss */
 #content-area .intro-word-con {
   margin-top: 20%;
   margin-left: 30%;
 }
-/* line 136, scss/index.scss */
+/* line 139, scss/index.scss */
 #content-area .intro-word {
   padding: 20px 30px;
   font-size: 3em;
@@ -242,27 +247,27 @@ H6 {
   white-space: nowrap;
 }
 @media (max-width: 1274px) {
-  /* line 151, scss/index.scss */
+  /* line 154, scss/index.scss */
   #content-area .secondary {
     float: none;
     display: block;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 151, scss/index.scss */
+  /* line 154, scss/index.scss */
   #content-area .secondary {
     float: none;
     display: block;
   }
 }
 @media (max-width: 480px) {
-  /* line 151, scss/index.scss */
+  /* line 154, scss/index.scss */
   #content-area .secondary {
     float: none;
     display: block;
   }
 }
-/* line 170, scss/index.scss */
+/* line 173, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -271,12 +276,16 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 178, scss/index.scss */
+/* line 181, scss/index.scss */
+#content-area .fluid-row.slim {
+  padding: 11px 22px;
+}
+/* line 185, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
   background: #212121;
 }
-/* line 183, scss/index.scss */
+/* line 190, scss/index.scss */
 #content-area .fluid-row.width-90 {
   width: -webkit-calc(80%);
   width: -moz-calc(80%);
@@ -285,7 +294,7 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 189, scss/index.scss */
+/* line 196, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(49.5% - 30px - 66px);
   width: -moz-calc(49.5% - 30px - 66px);
@@ -295,27 +304,27 @@ H6 {
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 189, scss/index.scss */
+  /* line 196, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 189, scss/index.scss */
+  /* line 196, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
 @media (max-width: 480px) {
-  /* line 189, scss/index.scss */
+  /* line 196, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
   }
 }
-/* line 212, scss/index.scss */
+/* line 219, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -323,7 +332,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 220, scss/index.scss */
+/* line 227, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -331,7 +340,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 228, scss/index.scss */
+/* line 235, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -341,14 +350,14 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 238, scss/index.scss */
+/* line 245, scss/index.scss */
 #content-area #logo-banner {
   width: 50%;
   min-width: 200px;
   max-width: 500px;
   margin-top: 5%;
 }
-/* line 245, scss/index.scss */
+/* line 252, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -356,7 +365,80 @@ H6 {
   display: inline-block;
 }
 
-/* line 253, scss/index.scss */
+/* line 260, scss/index.scss */
+.ui-games-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+/* line 265, scss/index.scss */
+.ui-games-list li {
+  background: #222;
+  color: #fff;
+  display: block;
+  width: auto;
+  margin: 10px;
+}
+/* line 272, scss/index.scss */
+.ui-games-list li .team {
+  background-repeat: no-repeat;
+  background-size: 80%;
+  width: 39%;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: black 0px 1px 2px;
+  cursor: pointer;
+}
+/* line 282, scss/index.scss */
+.ui-games-list li .team.alignleft {
+  background-position: center left;
+}
+/* line 286, scss/index.scss */
+.ui-games-list li .team .gradient-left {
+  padding: 8%;
+  width: auto;
+  display: block;
+  height: 80%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(34, 34, 34, 0.6)), color-stop(80%, #222222));
+  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: -moz-linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: -o-linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: linear-gradient(left, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  white-space: nowrap;
+}
+/* line 294, scss/index.scss */
+.ui-games-list li .team .gradient-left:hover {
+  text-shadow: yellow 0px 2px 10px;
+}
+/* line 299, scss/index.scss */
+.ui-games-list li .team.alignright {
+  background-position: center right;
+}
+/* line 303, scss/index.scss */
+.ui-games-list li .team .gradient-right {
+  padding: 8%;
+  width: auto;
+  display: block;
+  height: 80%;
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(34, 34, 34, 0.6)), color-stop(80%, #222222));
+  background-image: -webkit-linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: -moz-linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: -o-linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  background-image: linear-gradient(right, rgba(34, 34, 34, 0.6) 0%, #222222 80%);
+  white-space: nowrap;
+}
+/* line 311, scss/index.scss */
+.ui-games-list li .team .gradient-right:hover {
+  text-shadow: yellow 0px 2px 10px;
+}
+/* line 317, scss/index.scss */
+.ui-games-list li .middle {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+}
+
+/* line 325, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -371,12 +453,12 @@ H6 {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 264, scss/index.scss */
+/* line 336, scss/index.scss */
 .ui-message-background.hidden {
   display: none;
 }
 
-/* line 269, scss/index.scss */
+/* line 341, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -398,24 +480,24 @@ H6 {
   transition: all 1.3s ease-out;
 }
 
-/* line 282, scss/index.scss */
+/* line 354, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 288, scss/index.scss */
+/* line 360, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 292, scss/index.scss */
+/* line 364, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 298, scss/index.scss */
+/* line 370, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -424,7 +506,7 @@ input[type="text"], input[type="password"] {
   font-weight: 400;
 }
 
-/* line 306, scss/index.scss */
+/* line 378, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -445,13 +527,13 @@ input[type="text"], input[type="password"] {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 321, scss/index.scss */
+/* line 393, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 327, scss/index.scss */
+/* line 399, scss/index.scss */
 #main-nav #login-area {
   position: absolute;
   padding: 10px;
@@ -465,22 +547,22 @@ input[type="text"], input[type="password"] {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   color: #fff;
 }
-/* line 338, scss/index.scss */
+/* line 410, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 344, scss/index.scss */
+/* line 416, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 347, scss/index.scss */
+/* line 419, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 352, scss/index.scss */
+/* line 424, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -488,7 +570,7 @@ input[type="text"], input[type="password"] {
   height: 40px;
   text-align: center;
 }
-/* line 360, scss/index.scss */
+/* line 432, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -496,7 +578,7 @@ input[type="text"], input[type="password"] {
   list-style: none;
   overflow: hidden;
 }
-/* line 368, scss/index.scss */
+/* line 440, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -508,11 +590,11 @@ input[type="text"], input[type="password"] {
   display: block;
   white-space: nowrap;
 }
-/* line 377, scss/index.scss */
+/* line 449, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 381, scss/index.scss */
+/* line 453, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -525,7 +607,7 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 393, scss/index.scss */
+/* line 465, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -535,7 +617,154 @@ input[type="text"], input[type="password"] {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 400, scss/index.scss */
+/* line 472, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
+}
+
+/*
+NG Animate
+*/
+/* line 486, scss/index.scss */
+.animate-left-left {
+  position: relative;
+  display: block;
+}
+
+/* line 493, scss/index.scss */
+.animate-left-left.ng-enter-stagger,
+.animate-left-left.ng-leave-stagger,
+.animate-left-left.ng-move-stagger {
+  /* 50ms between each item being animated after the other */
+  -webkit-transition-delay: 0.07s;
+  transition-delay: 0.07s;
+  /* this is required for animation staggering */
+  -webkit-animation-delay: 0.07s;
+  animation-delay: 0.07s;
+  /* this is required here to prevent any CSS inheritance issues */
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+}
+
+/*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+/* line 514, scss/index.scss */
+.animate-left-left.ng-enter,
+.animate-left-left.ng-move {
+  -webkit-transition: 0.125s ease all;
+  -moz-transition: 0.125s ease all;
+  -o-transition: 0.125s ease all;
+  transition: 0.125s ease all;
+  left: -300px;
+  opacity: 0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+/* line 527, scss/index.scss */
+.animate-left-left.ng-enter.ng-enter-active,
+.animate-left-left.ng-move.ng-move-active {
+  left: 0px;
+  opacity: 1;
+}
+
+/*
+  We're using CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+/* line 537, scss/index.scss */
+.animate-left-left.ng-leave {
+  -webkit-transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+  -webkit-animation: 0.2s to_left_destroy;
+  -moz-animation: 0.2s to_left_destroy;
+  -o-animation: 0.2s to_left_destroy;
+  animation: 0.2s to_left_destroy;
+}
+
+@-webkit-keyframes to_left_destroy {
+  /* line 544, scss/index.scss */
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+
+  /* line 545, scss/index.scss */
+  50% {
+    opacity: 0;
+    margin-left: -300px;
+  }
+
+  /* line 546, scss/index.scss */
+  85% {
+    display: none;
+  }
+}
+
+@-moz-keyframes to_left_destroy {
+  /* line 544, scss/index.scss */
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+
+  /* line 545, scss/index.scss */
+  50% {
+    opacity: 0;
+    margin-left: -300px;
+  }
+
+  /* line 546, scss/index.scss */
+  85% {
+    display: none;
+  }
+}
+
+@-ms-keyframes to_left_destroy {
+  /* line 544, scss/index.scss */
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+
+  /* line 545, scss/index.scss */
+  50% {
+    opacity: 0;
+    margin-left: -300px;
+  }
+
+  /* line 546, scss/index.scss */
+  85% {
+    display: none;
+  }
+}
+
+@keyframes to_left_destroy {
+  /* line 544, scss/index.scss */
+  0% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+
+  /* line 545, scss/index.scss */
+  50% {
+    opacity: 0;
+    margin-left: -300px;
+  }
+
+  /* line 546, scss/index.scss */
+  85% {
+    display: none;
+  }
 }

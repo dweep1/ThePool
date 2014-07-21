@@ -79,6 +79,9 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   text-align: center;
 }
 
+.alignright{
+  text-align: right;
+}
 
 .alignleft{
   text-align: left;
@@ -175,6 +178,10 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     width:auto;
     z-index: 10;
 
+    &.slim{
+      padding:11px 22px;
+    }
+
     &.dark{
       color:#fff;
       background: #212121;
@@ -247,6 +254,71 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     height:auto;
     margin:2% 2%;
     display: inline-block;
+  }
+}
+
+.ui-games-list{
+  padding:0;
+  margin:0;
+  list-style: none;
+
+  li{
+    background: #222;
+    color: #fff;
+    display:block;
+    width:auto;
+    margin: 10px;
+
+    .team{
+      background-repeat: no-repeat;
+      background-size: 80%;
+      //@include calc(width, "36%");
+      width: 39%;
+      display:inline-block;
+      vertical-align: middle;
+      @include text-shadow(#000 0px 1px 2px);
+      cursor:pointer;
+
+      &.alignleft{
+        background-position: center left;
+      }
+
+      .gradient-left{
+        padding:8%;
+        width:auto;
+        display:block;
+        height:80%;
+        @include background-image(linear-gradient(left, rgba(#222,0.6) 0%, #222 80%));
+        white-space: nowrap;
+
+        &:hover{
+          @include text-shadow(yellow 0px 2px 10px);
+        }
+      }
+
+      &.alignright{
+        background-position: center right;
+      }
+
+      .gradient-right{
+        padding:8%;
+        width:auto;
+        display:block;
+        height:80%;
+        @include background-image(linear-gradient(right, rgba(#222,0.6) 0%, #222 80%));
+        white-space: nowrap;
+
+        &:hover{
+          @include text-shadow(yellow 0px 2px 10px);
+        }
+      }
+    }
+
+    .middle{
+      display:inline-block;
+      width:20%;
+      text-align: center;
+    }
   }
 }
 
@@ -406,3 +478,70 @@ input[type="text"], input[type="password"]{
 
 }
 
+/*
+NG Animate
+*/
+
+//sets up class for animate events
+.animate-left-left{
+  position: relative;
+  display: block;
+}
+
+.animate-left-left.ng-enter-stagger,
+.animate-left-left.ng-leave-stagger,
+.animate-left-left.ng-move-stagger {
+  /* 50ms between each item being animated after the other */
+  -webkit-transition-delay:0.07s;
+  transition-delay:0.07s;
+
+  /* this is required for animation staggering */
+  -webkit-animation-delay:0.07s;
+  animation-delay:0.07s;
+
+  /* this is required here to prevent any CSS inheritance issues */
+  -webkit-transition-duration:0;
+  transition-duration:0;
+}
+
+/*
+  We're using CSS transitions for when
+  the enter and move events are triggered
+  for the element that has the .repeated-item
+  class
+*/
+.animate-left-left.ng-enter,
+.animate-left-left.ng-move {
+  @include transition(0.125s ease all);
+  left: -300px;
+  opacity: 0;
+}
+
+/*
+ The ng-enter-active and ng-move-active
+ are where the transition destination properties
+ are set so that the animation knows what to
+ animate.
+*/
+.animate-left-left.ng-enter.ng-enter-active,
+.animate-left-left.ng-move.ng-move-active {
+  left: 0px;
+  opacity:1;
+}
+
+/*
+  We're using CSS keyframe animations for when
+  the leave event is triggered for the element
+  that has the .repeated-item class
+*/
+.animate-left-left.ng-leave{
+  @include transition(0.2s ease all);
+  @include animation(0.2s to_left_destroy);
+}
+
+// use of keyframes mixin
+@include keyframes(to_left_destroy) {
+  0% { opacity:1; margin-left:0px; }
+  50%{ opacity:0; margin-left:-300px; }
+  85% { display:none; }
+}

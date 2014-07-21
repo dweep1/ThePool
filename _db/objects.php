@@ -119,17 +119,26 @@ class users extends DatabaseObject{
 
 }
 
+/**
+ * The Class basis of a dated object, with a start and end date.
+ */
 class event extends DatabaseObject{
 
     public $date_start;
     public $date_end;
 
+    /**
+     * Loads a selected week from the database
+     * @param Int $id is the ID of the selected object which to load from a DB
+     * @return Object of selected class name;
+     * @throws PDO error if database is unreachable
+     */
     public static function selected($id = null){
 
         $className = get_called_class();
 
         if($id === null){
-            $selected = (isset($_SESSION['selected_'.$className])) ? new season($_SESSION['selected_'.$className]) : false;
+            $selected = (isset($_SESSION['selected_'.$className])) ? new $className($_SESSION['selected_'.$className]) : false;
         }else{
             $selected = new $className($id);
             $_SESSION['selected_'.$className] = $selected->toArray();
@@ -147,7 +156,7 @@ class event extends DatabaseObject{
 
         if(isset($_SESSION['current_'.$className])){
 
-            $object = new season($_SESSION['current_'.$className]);
+            $object = new $className($_SESSION['current_'.$className]);
 
             if($object->date_end >= $now)
                 return $object;
@@ -169,7 +178,7 @@ class event extends DatabaseObject{
 
         }
 
-        if(isset($object) && $object !== false){
+        if(isset($object) && is_object($object)){
             $_SESSION['current_'.$className] = $object->toArray();
             return $object;
         }
@@ -187,12 +196,74 @@ class season extends event{
     public $text_id;
     public $week_count;
 
+    public function createNew(){
+
+    }
+
 }
 
 class week extends event{
 
     public $season_id;
     public $week_number;
+
+    public function getStructured($user_id = null, $noIndex = false){
+
+        $this->games = $this->getGames($noIndex);
+
+        $picks = $this->getPicks($user_id);
+        $teams = teams::getTeamsList();
+
+        if(!is_bool($this->games)){
+            foreach($this->games as $key => $val){
+
+                $this->games[$key]->away_team = $teams[$this->games[$key]->away_team];
+                $this->games[$key]->home_team = $teams[$this->games[$key]->home_team];
+
+                $this->games[$key]->pick = $picks[$val->id];
+
+            }
+        }
+
+    }
+
+    public function getGames($noIndex = false){
+
+        $games = new game();
+
+        $games = $games->getList("week_id asc", array("week_id" => $this->id));
+
+        foreach($games as $value){
+
+            if((int) $value->home_team !== 0)
+                $tempStore[$value->id] = $value;
+
+        }
+
+        if($noIndex)
+            $tempStore = array_values($tempStore);
+
+        return (!is_bool($games)) ? ((isset($tempStore)) ? $tempStore : false ) : $games;
+
+    }
+
+    public function getPicks($user_id = null){
+
+        if($user_id === null)
+            $user_id = users::returnCurrentUser()->id;
+
+        $picks = new pick;
+        $picks = $picks->getList("game_id asc", array("week_id" => $this->id, "user_id" => $user_id));
+
+        if(!is_bool($picks)){
+            foreach($picks as $value){
+                $tempStore[$value->game_id] = $value;
+            }
+        }
+
+        return (!is_bool($picks)) ? ((isset($tempStore)) ? $tempStore : false ) : $picks;
+
+    }
 
 }
 
@@ -328,6 +399,23 @@ class teams extends DatabaseObject{
     public $wins;
     public $losses;
     public $games;
+
+    public static function getTeamsList(){
+
+        $instance = new self();
+
+        $teams = $instance->getList();
+
+        if(!is_bool($teams)){
+            foreach($teams as $value){
+                $value->image_url = "./_storage/teams/{$value->id}/logo.png";
+                $tempStore[$value->id] = $value;
+            }
+        }
+
+        return ((isset($tempStore)) ? $tempStore : false );
+
+    }
 
 }
 

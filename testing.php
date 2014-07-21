@@ -66,40 +66,16 @@
 
             ?>
         </div>
-        <div class="fluid-row aligncenter"><!--<?php
+        <div class="fluid-row aligncenter"><?php
 
-            $week = new week();
-            $class = get_class($week);
+            $obj = new week(29);
 
-            for($i = 0; $i < 10000; $i++){
-                echo get_class($week);
-            }
+            $obj->getStructured();
 
-            ?>--></div>
-        <div class="fluid-row aligncenter">
-                <?php
+            var_dump($obj);
 
-                $memTemp = number_format(((memory_get_usage() - $mem) / 1024), 2);
-                $memTwoTemp = number_format(((memory_get_usage() - $memTwo) / 1024), 2);
-                $timeTemp =  number_format((microtime(TRUE) - $time), 6);
+            ?></div>
 
-                echo "Memory 1: $memTemp KB<br/>";
-                echo "Memory 2: $memTwoTemp KB <br/>";
-                echo "Time: $timeTemp sec";
-
-                ?>
-         </div>
-
-        <div class="fluid-row aligncenter"><!--<?php
-
-            $week = new week();
-            $class = get_class($week);
-
-            for($i = 0; $i < 10000; $i++){
-                echo $class;
-            }
-
-            ?>--></div>
         <div class="fluid-row aligncenter">
             <?php
 
