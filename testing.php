@@ -68,9 +68,12 @@
         </div>
         <div class="fluid-row aligncenter"><?php
 
-            $obj = new week(29);
+            $obj = ["testing", "this", "function"];
 
-            $obj->getStructured();
+            foreach($obj as $key => $value){
+                if($value == "this")
+                    unset($obj[$key]);
+            }
 
             var_dump($obj);
 

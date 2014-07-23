@@ -114,11 +114,27 @@ $(document).ready(function(){
 
     });
 
-    $(document).on("mousedown", ".ui-message-close", function (e) {
+    $(document).on("mousedown", "[data-close-id]", function (e) {
 
-        toggleDisplayMessageBox();
+        toggleDisplayMessageBox($(this).attr("data-close-id"), function(){
+           destroyMessageBox($(this).attr("data-close-id"));
+        });
 
     });
+
+    $(document).keyup(function(e) {
+
+        if (e.keyCode == 27) {
+
+            $.each($("[data-close-id]"), function(){
+                toggleDisplayMessageBox($(this).attr("data-close-id"), function(){
+                    destroyMessageBox($(this).attr("data-close-id"));
+                });
+            })
+
+        }
+    });
+
 
     $(document).on("mousedown", "[data-button-type]", function (e) {
 
@@ -169,32 +185,89 @@ var indexOf = function(needle) {
     return indexOf.call(this, needle);
 };
 
-function toggleDisplayMessageBox(){
+function createMessageBox($data, $callback){
 
-    var $box = $(".ui-message-box");
-    var $background = $(".ui-message-background");
+    //{firstName:"John", lastName:"Doe", age:46};
 
-    if($background.hasClass("hidden") && $box.attr("data-type") === "overlay"){
+    if(!checkSet($data.type)){
+        $data.type = "overlay";
+    }
+    if(!checkSet($data.title)){
+        $data.title = "Result";
+    }
+    if(!checkSet($data.message)){
+        return false;
+    }
+
+    var $randomID = Math.floor(Math.random()*1001);
+
+    while($("[data-background-id='"+$randomID+"']").size() > 0){
+        $randomID = Math.floor(Math.random()*1001);
+    }
+
+    var $message =  '<div class="ui-message-background hidden" data-background-id="'+$randomID+'"></div>' +
+                        '<div class="ui-message-box" data-type="'+$data.type+'" data-message-id="'+$randomID+'">' +
+                        '<i class="fa fa-times-circle float-right ui-message-close" data-close-id="'+$randomID+'"></i>' +
+                        '<h5>'+$data.title+'</h5>' +
+                    '<div class="faux-row">'+$data.message+'</div>' +
+                    '</div>';
+
+
+    $("body").append($message);
+
+    if(checkSet($callback))
+        $callback($randomID);
+
+}
+
+function destroyMessageBox($id){
+
+    var $box = $("[data-message-id='"+$id+"']");
+    var $background = $("[data-background-id='"+$id+"']");
+
+    $box.remove();
+    $background.remove();
+
+}
+
+function toggleDisplayMessageBox($id, $callback){
+
+    var $box = $("[data-message-id='"+$id+"']");
+    var $background = $("[data-background-id='"+$id+"']");
+
+    var $top = calculateTop($box);
+
+    if($background.hasClass("hidden")){
 
         $background.removeClass("hidden");
 
-        setTimeout(function(){
-            $background.css("opacity", "1");
-        }, 50);
+        if($box.attr("data-type") === "overlay")
+            $background.velocity({ opacity: 1 },{ display: "block", duration: 1000 });
+        else if($box.attr("data-type") === "result")
+            $background.velocity({ opacity: 0, zIndex: -1 },{ display: "block", duration: 1000 });
+        else
+            $background.velocity({ opacity: 1 },{ display: "block", duration: 1000 });
 
-    }else if(!$background.hasClass("hidden") && $box.attr("data-type") === "overlay" && parseInt($background.css("opacity")) > 0){
+        $box.velocity({ top: $top }, { duration: 1000, delay: 300,
+            complete: function(){if(checkSet($callback)){$callback();}}
+        });
 
-        $background.css("opacity", "0");
+    }else if(!$background.hasClass("hidden")){
 
-        setTimeout(function(){
-            $background.addClass("hidden");
-        }, 300);
+        $background.addClass("hidden");
+
+        $box.velocity({ top: -400}, 1000);
+
+        if($box.attr("data-type") === "overlay"){
+            $background.velocity({ opacity: 0 },{ display: "none", delay: 300 ,
+                complete: function(){if(checkSet($callback)){$callback();}}
+            });
+        }else{
+            $background.velocity({ opacity: 0 },{ display: "none", delay: 300,
+                complete: function(){if(checkSet($callback)){$callback();}}
+            });
+        }
     }
-
-    if(parseInt($box.css("top")) < 0)
-        $box.css("top", calculateTop($box));
-    else
-        $box.css("top", "-400px");
 
 }
 
@@ -321,6 +394,16 @@ function resize(){
         $(this).css({"min-height": $height});
 
     });
+}
+
+function objLength(obj){
+    var i=0;
+    for (var x in obj){
+        if(obj.hasOwnProperty(x)){
+            i++;
+        }
+    }
+    return i;
 }
 
 function hideMenuItems(){

@@ -237,7 +237,7 @@ class week extends event{
                     $user = users::returnCurrentUser();
 
                     $dataArray = array("season_id" => $this->season_id, "week_id" => $this->id, "game_id" => $val->id
-                                      ,"team_id" => -1, "user_id" => $user->id, "value" => 0);
+                                      ,"team_id" => -1, "user_id" => $user->id, "value" => 0, "result" => -1);
 
                     $newPick = new pick($dataArray);
 
@@ -252,6 +252,7 @@ class week extends event{
     public function getGames($noIndex = false){
 
         $games = new game();
+        $tempStore = [];
 
         $games = $games->getList("week_id asc", array("week_id" => $this->id));
 
@@ -295,7 +296,62 @@ class credit extends DatabaseObject{
     public $date;
     public $user_id;
     public $nid;
-    public $used = false;
+    public $week_id = -1;
+
+    public static function useCredit($user_id = null, $week_id = null){
+
+        if($user_id === null)
+            $user_id = users::returnCurrentUser()->id;
+
+        if($week_id === null)
+            $week_id = week::getCurrent()->id;
+
+        $credit = self::validCredit($user_id, $week_id);
+
+        if($credit !== false){
+            return true;
+        }else{
+
+            $credit = self::validCredit($user_id, -1);
+
+            if($credit !== false){
+
+                $elem = false;
+
+                foreach($credit as $value){
+                    $elem = $value;
+                }
+
+                $elem->week_id = $week_id;
+                return $credit->update();
+            }
+
+        }
+
+        return false;
+
+    }
+
+    public static function validCredit($user_id = null, $week_id = null){
+
+        if($user_id === null)
+            $user_id = users::returnCurrentUser()->id;
+
+        if($week_id === null)
+            $week_id = week::getCurrent()->id;
+
+        return self::returnInstance([$user_id, $week_id], array("type" => ["user_id", "week_id"]));
+
+    }
+
+    public static function generateCredit($data){
+
+        $newInstance = new self($data);
+
+        return $newInstance->save();
+
+    }
+
 
 }
 
@@ -371,8 +427,8 @@ class pick extends DatabaseObject{
     public $team_id;
     public $user_id;
     public $date;
-    public $value;
-    public $result;
+    public $value = 0;
+    public $result = -1;
 
     public static function getPickCount($week_id = null, $user_id = null, $complete = false){
 
@@ -440,7 +496,7 @@ class teams extends DatabaseObject{
 
         if(!is_bool($teams)){
             foreach($teams as $value){
-                $value->image_url = "./_storage/teams/{$value->id}/logo.png";
+                $value->image_url = "./_storage/teams/{$value->id}/logo_150.png";
                 $tempStore[$value->id] = $value;
             }
         }

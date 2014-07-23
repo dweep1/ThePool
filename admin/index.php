@@ -110,7 +110,7 @@ global $si;
 
     <script>
 
-        angular.module('myHome', ['angular-velocity']);
+        angular.module('myAdmin', ['angular-velocity']);
 
     </script>
 

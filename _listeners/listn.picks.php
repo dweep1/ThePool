@@ -15,15 +15,10 @@
 
     }
 
-    if(isset($_GET['method']))
-        $method = $_GET['method'];
-    else
+    if(!isset($_GET['method']))
         exit;
 
-    if($method === 'GET'){
-
-        $data = file_get_contents("php://input");
-        $objData = json_decode($data);
+    if($_GET['method'] === 'GET'){
 
         $obj = new week($objData->week_id);
 
@@ -31,6 +26,66 @@
 
         echo json_encode($obj);
 
+    }else if($_GET['method'] === 'PUT'){
+
+        $currentWeek = week::getCurrent();
+
+        $gamesList = $currentWeek->getGames();
+
+        $result = array("result" => "");
+        $errors = 0;
+
+        if(!credit::useCredit(null,$currentWeek->id)){
+
+            //$result["result"] .= "You don't have a valid credit to use currently. ";
+            //$errors++;
+
+        }
+
+        foreach($objData as $key => $value){
+
+            if((int) $value->value > count($gamesList) || $value->value <= 0){
+                $result["result"] .= "The value of a pick was either too high or too low. ";
+                $errors++;
+            }
+
+            if($value->team_id <= 0){
+               unset($objData[$key]);
+            }
+
+        }
+
+        if($errors === 0){
+
+            foreach($objData as $value){
+
+                $savePick = new pick($value);
+
+                if($savePick->id === null || $savePick->id < 0){
+                    if($savePick->save() === false){
+                        $result["result"] .= "Unable to save new pick. ";
+                        $errors++;
+                    }
+                }else{
+
+                    if($savePick->update() === false){
+                        $result["result"] .= "Unable to update old pick. ";
+                        $errors++;
+                    }
+                }
+            }
+        }
+
+        $result["errors"] = $errors;
+
+        if($errors === 0){
+            $result["result"] .= "Successfully Update Picks!";
+        }
+
+        echo json_encode($result);
+
     }
+
+
 
 ?>

@@ -32,9 +32,9 @@
 
     <?php if(isset($_SESSION['result'])): ?>
 
-        <div class="ui-message-background hidden"></div>
-        <div class="ui-message-box" data-type="result">
-            <i class="fa fa-times-circle float-right ui-message-close"></i>
+        <div class="ui-message-background hidden" data-background-id="1"></div>
+        <div class="ui-message-box" data-type="result" data-message-id="1">
+            <i class="fa fa-times-circle float-right ui-message-close" data-close-id="1"></i>
             <h5>Result</h5>
             <div class="faux-row"><?php echo $_SESSION['result']; ?></div>
         </div>
@@ -133,7 +133,7 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-    <script src="./js/modernizr.js"></script>
+    <script src="./js/modernizr.min.js"></script>
     <script src="./js/general.js"></script>
     <script src="./js/bug_report.js"></script>
 
