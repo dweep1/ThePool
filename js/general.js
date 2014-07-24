@@ -245,6 +245,8 @@ function toggleDisplayMessageBox($id, $callback){
             $background.velocity({ opacity: 1 },{ display: "block", duration: 1000 });
         else if($box.attr("data-type") === "result")
             $background.velocity({ opacity: 0, zIndex: -1 },{ display: "block", duration: 1000 });
+        else if($box.attr("data-type") === "error")
+            $background.velocity({ opacity: 0.3 },{ display: "block", duration: 1000 });
         else
             $background.velocity({ opacity: 1 },{ display: "block", duration: 1000 });
 

@@ -56,8 +56,8 @@
 
 ?>
 
-<div id="content-area" style="background-size: cover; background-position: left center;">
-    <div class="width-50 fluid-row" data-ng-controller="RowController">
+<div id="content-area" style="background-size: cover; background-position: left center;" data-ng-controller="RowController">
+    <div class="width-50 fluid-row">
 
         <div class="fluid-row slim alignleft">
             <h6>Search:</h6> <input type="text" data-ng-model="search" />
@@ -73,7 +73,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="velocity-opposites-transition-slideUpBigIn"
+                    <li class="velocity-opposites-transition-slideUpBigIn" data-velocity-opts="{ stagger: 150 }"
                         data-ng-repeat="item in (filtered = (gamesPicked | filter:search | orderBy:'id'))" data-picked-id="{{ item.pick.team_id }}"
                         on-finish-render="ngRepeatFinished" data-bad-value="{{ item.pick.bad }}" >
 
@@ -103,7 +103,7 @@
 
                         <div mm-pick ng-click="item.pick.team_id = item.home_team.id; changePick();"
                              data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.home_team.id }}"
-                             class="team alignright"  style="background-image: url('{{ item.home_team.image_url }}')">
+                             class="team alignright float-right"  style="background-image: url('{{ item.home_team.image_url }}')">
 
                             <div class="gradient-right">
                                 <h5>{{ item.home_team.city }}</h5>
@@ -151,7 +151,7 @@
                         </div>
 
                         <div mm-pick ng-click="item.pick.team_id = item.home_team.id; changePick();" data-team-id="{{ item.home_team.id }}"
-                            class="team alignright" style="background-image: url('{{ item.home_team.image_url }}')">
+                            class="team alignright float-right" style="background-image: url('{{ item.home_team.image_url }}')">
                             <div class="gradient-right">
                                 <h5>{{ item.home_team.city }}</h5>
                                 <h6>{{ item.home_team.team_name }}</h6>
@@ -164,23 +164,44 @@
         </div>
     </div>
 
-    <div class="fluid-row width-50 dark float-right secondary">
-
-        <div class="fluid-row aligncenter"><img id="logo-banner" src="./images/poolbanner.png" /></div>
+    <div class="fluid-row width-50 float-right secondary">
 
         <div class="fluid-row aligncenter">
-            <div class="fluid-row width-90 alignleft"><i>At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi sint occaecati cupiditate non provident.</i></div>
+            <div class="ui-mini-screen"></div>
+        </div>
 
-            <div class="fluid-row width-90 alignleft"><p class="number">01</p><p class="desc">Quisque vel euismod risus. Cras eget dui vulputate</p></div>
+        <div class="fluid-row aligncenter">
+            <ul class="ui-games-list">
 
-            <div class="fluid-row width-90 alignleft"><p class="number">02</p><p class="desc">Sed et lacus nibh. Ut sed felis ut nulla tincidunt faucibus vel eu mauris</p></div>
+                <li class="velocity-opposites-transition-slideUpIn"
+                    data-ng-repeat="item in (filtered = (gamessOld | orderBy:'id'))" data-picked-id="{{ item.pick.team_id }}" >
 
-            <div class="fluid-row width-90 alignleft"><p class="number">03</p><p class="desc">Vivamus aliquet tellus eros, id venenatis ante venenatis tempus.</p></div>
+                    <div mm-pick ng-click="item.pick.team_id = item.away_team.id; changePick();" data-team-id="{{ item.away_team.id }}"
+                         class="team alignleft" style="background-image: url('{{ item.away_team.image_url }}')">
 
-            <div class="fluid-row width-90 alignleft"><p class="c-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus consequat nunc. Sed
-                    convallis, ipsum et commodo scelerisque, nunc risus euismod orci, eu auctor mi sapien tincidunt lacus. Mauris in pulvinar risus.</p></div>
+                        <div class="gradient-left">
+                            <h5>{{ item.away_team.city }}</h5>
+                            <h6>{{ item.away_team.team_name }}</h6>
+                        </div>
+
+                    </div>
+
+                    <div class="middle">
+
+                        @
+
+                    </div>
+
+                    <div mm-pick ng-click="item.pick.team_id = item.home_team.id; changePick();" data-team-id="{{ item.home_team.id }}"
+                         class="team alignright" style="background-image: url('{{ item.home_team.image_url }}')">
+                        <div class="gradient-right">
+                            <h5>{{ item.home_team.city }}</h5>
+                            <h6>{{ item.home_team.team_name }}</h6>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
         </div>
 
     </div>

@@ -307,6 +307,7 @@ H6 {
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
+    float: none;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -314,6 +315,7 @@ H6 {
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
+    float: none;
   }
 }
 @media (max-width: 480px) {
@@ -321,9 +323,10 @@ H6 {
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
+    float: none;
   }
 }
-/* line 216, scss/index.scss */
+/* line 219, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -331,7 +334,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 224, scss/index.scss */
+/* line 227, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -339,7 +342,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 232, scss/index.scss */
+/* line 235, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -349,14 +352,14 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 242, scss/index.scss */
+/* line 245, scss/index.scss */
 #content-area #logo-banner {
   width: 50%;
   min-width: 200px;
   max-width: 500px;
   margin-top: 5%;
 }
-/* line 249, scss/index.scss */
+/* line 252, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -364,134 +367,140 @@ H6 {
   display: inline-block;
 }
 
-/* line 257, scss/index.scss */
+/* line 260, scss/index.scss */
 [data-trans-for] {
   cursor: pointer;
 }
 
-/* line 261, scss/index.scss */
+/* line 264, scss/index.scss */
 [data-bad-value="true"] {
   -webkit-box-shadow: red 0px 1px 10px;
   -moz-box-shadow: red 0px 1px 10px;
   box-shadow: red 0px 1px 10px;
-  border: 2px solid red;
+  border: 3px solid red;
+  border-radius: 3px;
 }
 
-/* line 266, scss/index.scss */
+/* line 271, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 271, scss/index.scss */
+/* line 276, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
   display: block;
   width: auto;
-  margin: 10px;
+  margin: 15px 10px;
 }
-/* line 278, scss/index.scss */
+/* line 283, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
   width: 39%;
   display: inline-block;
   vertical-align: middle;
-  text-shadow: black 0px 1px 5px;
+  text-shadow: black 0px 0px 2px;
   cursor: pointer;
 }
-/* line 288, scss/index.scss */
+/* line 293, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 292, scss/index.scss */
+/* line 297, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 400;
 }
-/* line 296, scss/index.scss */
+/* line 301, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 300, scss/index.scss */
+/* line 305, scss/index.scss */
 .ui-games-list li .team.picked {
-  text-shadow: green 0px 2px 7px;
+  text-shadow: black 0px 2px 7px;
 }
-/* line 303, scss/index.scss */
+/* line 308, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 700;
 }
-/* line 307, scss/index.scss */
+/* line 312, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
 }
-/* line 311, scss/index.scss */
+/* line 316, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(34, 34, 34, 0.5)), color-stop(100%, #222222));
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-  background-image: -moz-linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-  background-image: -o-linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-  background-image: linear-gradient(left, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-}
-/* line 315, scss/index.scss */
-.ui-games-list li .team.picked .gradient-right {
-  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(34, 34, 34, 0.5)), color-stop(100%, #222222));
-  background-image: -webkit-linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-  background-image: -moz-linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-  background-image: -o-linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
-  background-image: linear-gradient(right, rgba(34, 34, 34, 0.5) 0%, #222222 100%);
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: -moz-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: -o-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
 }
 /* line 320, scss/index.scss */
+.ui-games-list li .team.picked .gradient-right {
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
+  background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: -moz-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: -o-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+}
+/* line 325, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 7% 8%;
   width: auto;
   display: block;
   height: 80%;
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(34, 34, 34, 0.7)), color-stop(80%, #222222));
-  background-image: -webkit-linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
-  background-image: -moz-linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
-  background-image: -o-linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
-  background-image: linear-gradient(left, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(17, 17, 17, 0.7)), color-stop(80%, #222222));
+  background-image: -webkit-linear-gradient(left, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
+  background-image: -moz-linear-gradient(left, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
+  background-image: -o-linear-gradient(left, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
+  background-image: linear-gradient(left, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 328, scss/index.scss */
+/* line 333, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
 }
-/* line 333, scss/index.scss */
+/* line 338, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 337, scss/index.scss */
+/* line 342, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 7% 8%;
   width: auto;
   display: block;
   height: 80%;
-  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(34, 34, 34, 0.7)), color-stop(80%, #222222));
-  background-image: -webkit-linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
-  background-image: -moz-linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
-  background-image: -o-linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
-  background-image: linear-gradient(right, rgba(34, 34, 34, 0.7) 0%, #222222 80%);
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(17, 17, 17, 0.7)), color-stop(80%, #222222));
+  background-image: -webkit-linear-gradient(right, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
+  background-image: -moz-linear-gradient(right, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
+  background-image: -o-linear-gradient(right, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
+  background-image: linear-gradient(right, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 345, scss/index.scss */
+/* line 350, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
 }
-/* line 351, scss/index.scss */
+/* line 356, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 20%;
   text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
 }
-/* line 356, scss/index.scss */
+/* line 363, scss/index.scss */
 .ui-games-list li .middle i {
+  position: relative;
+  z-index: 100;
   font-size: 1.5em;
   line-height: 1em;
   cursor: pointer;
+  padding: 10px;
 }
-/* line 362, scss/index.scss */
+/* line 372, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -499,7 +508,7 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 372, scss/index.scss */
+/* line 382, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -512,7 +521,7 @@ H6 {
   display: none;
 }
 
-/* line 384, scss/index.scss */
+/* line 394, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -530,24 +539,24 @@ H6 {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
 }
 
-/* line 396, scss/index.scss */
+/* line 406, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 402, scss/index.scss */
+/* line 412, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 406, scss/index.scss */
+/* line 416, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 412, scss/index.scss */
+/* line 422, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -556,7 +565,7 @@ input[type="text"], input[type="password"] {
   font-weight: 400;
 }
 
-/* line 420, scss/index.scss */
+/* line 430, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -577,13 +586,13 @@ input[type="text"], input[type="password"] {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 435, scss/index.scss */
+/* line 445, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 441, scss/index.scss */
+/* line 451, scss/index.scss */
 #main-nav #login-area {
   position: absolute;
   padding: 10px;
@@ -597,22 +606,22 @@ input[type="text"], input[type="password"] {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   color: #fff;
 }
-/* line 452, scss/index.scss */
+/* line 462, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 458, scss/index.scss */
+/* line 468, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 461, scss/index.scss */
+/* line 471, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 466, scss/index.scss */
+/* line 476, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -620,7 +629,7 @@ input[type="text"], input[type="password"] {
   height: 40px;
   text-align: center;
 }
-/* line 474, scss/index.scss */
+/* line 484, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -628,7 +637,7 @@ input[type="text"], input[type="password"] {
   list-style: none;
   overflow: hidden;
 }
-/* line 482, scss/index.scss */
+/* line 492, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -640,11 +649,11 @@ input[type="text"], input[type="password"] {
   display: block;
   white-space: nowrap;
 }
-/* line 491, scss/index.scss */
+/* line 501, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 495, scss/index.scss */
+/* line 505, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -657,7 +666,7 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 507, scss/index.scss */
+/* line 517, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -667,7 +676,7 @@ input[type="text"], input[type="password"] {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 514, scss/index.scss */
+/* line 524, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

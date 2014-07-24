@@ -80,6 +80,7 @@ function RowController($scope, $http) {
     $scope.force = false;
 
     getLiveData($scope, $http);
+    getOldData($scope,$http);
 
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
         setTimeout(refreshPicks, 50);
@@ -140,7 +141,7 @@ function savePicks($scope, $http){
 
         if($pickBoundary){
             createMessageBox(
-                {title: "error", message: "One of your pick's values is too high or too low. Please check your picks!"},
+                {type: "error", title: "error", message: "One of your pick's values is too high or too low. Please check your picks!"},
                 function($messageID){toggleDisplayMessageBox($messageID);}
             );
 
@@ -240,6 +241,37 @@ function getLiveData($scope, $http){
 
 }
 
+function getOldData($scope, $http){
+
+    $scope.last_week_id = parseInt(week_id)-1;
+
+    $scope.url = "./_listeners/listn.picks.php?method=GET";
+
+    // Create the http post request
+    // the data holds the keywords
+    // The request is a JSON request.
+
+    return $http.post($scope.url, { "week_id" : $scope.last_week_id}).
+        success(function(data, status) {
+
+            $scope.status = status;
+            storeLocalGamesOld($scope, data);
+
+            return true;
+
+        })
+        .
+        error(function(data, status) {
+            $scope.data = data || "Request failed";
+            $scope.status = status;
+
+            if($scope.force === true)
+                $scope.force = false;
+
+            return false;
+        });
+
+}
 
 function buildPicks($scope, $callback){
 
@@ -277,6 +309,32 @@ function refreshGames($scope, $callback){
 
     if(checkSet($callback))
         $callback();
+
+}
+
+function refreshStoreLocalOld($scope){
+
+    localStorage["week_data_old"] = JSON.stringify($scope.weekOld);
+    localStorage["game_data_old"] = JSON.stringify($scope.gamesOld);
+
+}
+
+
+function storeLocalGamesOld($scope, data){
+
+    if(data === null){
+
+        $scope.weekOld = data;
+        $scope.gamesOld = data.games;
+
+        refreshStoreLocalOld($scope);
+
+    }else{
+
+        $scope.weekOld = JSON.parse(localStorage["week_data_old"]);
+        $scope.gamesOld = JSON.parse(localStorage["game_data_old"]);
+
+    }
 
 }
 
@@ -327,7 +385,6 @@ function getGamesPicked($scope){
             else
                 $dupes.push(parseInt(entity.pick.value));
         }
-
 
     });
 

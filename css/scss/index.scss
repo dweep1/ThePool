@@ -198,16 +198,19 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       @include respondTo(smallScreen) {
         width:auto;
         display:block;
+        float:none;
       }
 
       @include respondTo(tablet) {
         width:auto;
         display:block;
+        float:none;
       }
 
       @include respondTo(smartphone) {
         width:auto;
         display:block;
+        float:none;
       }
     }
   }
@@ -260,8 +263,10 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
 
 [data-bad-value="true"]{
   @include box-shadow(red 0px 1px 10px);
-  border: 2px solid red;
+  border: 3px solid red;
+  border-radius: 3px;
 }
+
 
 .ui-games-list{
   padding:0;
@@ -273,7 +278,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     color: #fff;
     display:block;
     width:auto;
-    margin: 10px;
+    margin: 15px 10px;
 
     .team{
       background-repeat: no-repeat;
@@ -282,7 +287,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       width: 39%;
       display:inline-block;
       vertical-align: middle;
-      @include text-shadow(#000 0px 1px 5px);
+      @include text-shadow(#000 0px 0px 2px);
       cursor:pointer;
 
       h5{
@@ -298,7 +303,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       }
 
       &.picked{
-        @include text-shadow(green 0px 2px 7px);
+        @include text-shadow(#000 0px 2px 7px);
 
         h5{
           font-weight:700;
@@ -309,11 +314,11 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         }
 
         .gradient-left{
-          @include background-image(linear-gradient(left, rgba(#222,0.5) 0%, #222 100%));
+          @include background-image(linear-gradient(left, rgba(#555,0.5) 0%, #222 100%));
         }
 
         .gradient-right{
-          @include background-image(linear-gradient(right, rgba(#222,0.5) 0%, #222 100%));
+          @include background-image(linear-gradient(right, rgba(#555,0.5) 0%, #222 100%));
         }
       }
 
@@ -322,7 +327,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         width:auto;
         display:block;
         height:80%;
-        @include background-image(linear-gradient(left, rgba(#222,0.7) 0%, #222 80%));
+        @include background-image(linear-gradient(left, rgba(#111,0.7) 0%, #222 80%));
         white-space: nowrap;
 
         &:hover{
@@ -339,7 +344,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         width:auto;
         display:block;
         height:80%;
-        @include background-image(linear-gradient(right, rgba(#222,0.7) 0%, #222 80%));
+        @include background-image(linear-gradient(right, rgba(#111,0.7) 0%, #222 80%));
         white-space: nowrap;
 
         &:hover{
@@ -352,11 +357,16 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       display:inline-block;
       width:20%;
       text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
 
       i{
+        position: relative;
+        z-index:100;
         font-size:1.5em;
         line-height:1em;
         cursor:pointer;
+        padding: 10px;
       }
 
       .small{
