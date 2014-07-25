@@ -44,7 +44,7 @@
 
         foreach($objData as $key => $value){
 
-            if((int) $value->value > count($gamesList) || $value->value <= 0){
+            if((int) $value->value > count($gamesList) || $value->value < 0){
                 $result["result"] .= "The value of a pick was either too high or too low. ";
                 $errors++;
             }

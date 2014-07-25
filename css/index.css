@@ -181,6 +181,39 @@ H6 {
 }
 
 /* line 95, scss/index.scss */
+.ui-mini-screen {
+  width: 80%;
+  background: #222;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+/* line 103, scss/index.scss */
+.ui-mini-screen .current-title {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+/* line 109, scss/index.scss */
+.ui-mini-screen .last-title {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+/* line 115, scss/index.scss */
+.ui-mini-screen .current-data {
+  display: inline-block;
+  padding: 20% 16%;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+/* line 121, scss/index.scss */
+.ui-mini-screen .last-data {
+  display: inline-block;
+  padding: 20% 16%;
+}
+
+/* line 127, scss/index.scss */
 .ui-button {
   color: #fff;
   background: rgba(34, 34, 34, 0.3);
@@ -200,34 +233,34 @@ H6 {
   outline: none;
   cursor: pointer;
 }
-/* line 113, scss/index.scss */
+/* line 145, scss/index.scss */
 .ui-button:hover {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   border: 2px solid white;
 }
-/* line 118, scss/index.scss */
+/* line 150, scss/index.scss */
 .ui-button:active {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
-/* line 123, scss/index.scss */
+/* line 155, scss/index.scss */
 .ui-button.dark {
   color: #fff;
   background: rgba(34, 34, 34, 0.9);
   border: 2px solid rgba(68, 68, 68, 0.7);
 }
-/* line 128, scss/index.scss */
+/* line 160, scss/index.scss */
 .ui-button.dark:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
   box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
   border-bottom: 2px solid black;
 }
-/* line 133, scss/index.scss */
+/* line 165, scss/index.scss */
 .ui-button.dark:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
@@ -235,7 +268,7 @@ H6 {
   border-bottom: 2px solid #222222;
 }
 
-/* line 140, scss/index.scss */
+/* line 172, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
@@ -246,12 +279,12 @@ H6 {
   display: block;
   color: #212121;
 }
-/* line 150, scss/index.scss */
+/* line 182, scss/index.scss */
 #content-area .intro-word-con {
   margin-top: 20%;
   margin-left: 30%;
 }
-/* line 155, scss/index.scss */
+/* line 187, scss/index.scss */
 #content-area .intro-word {
   padding: 20px 30px;
   font-size: 3em;
@@ -266,7 +299,7 @@ H6 {
   margin-bottom: 15%;
   white-space: nowrap;
 }
-/* line 170, scss/index.scss */
+/* line 202, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -275,16 +308,16 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 178, scss/index.scss */
+/* line 210, scss/index.scss */
 #content-area .fluid-row.slim {
   padding: 11px 1%;
 }
-/* line 182, scss/index.scss */
+/* line 214, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
   background: #212121;
 }
-/* line 187, scss/index.scss */
+/* line 219, scss/index.scss */
 #content-area .fluid-row.width-90 {
   width: -webkit-calc(80%);
   width: -moz-calc(80%);
@@ -293,7 +326,7 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 193, scss/index.scss */
+/* line 225, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(47.5%);
   width: -moz-calc(47.5%);
@@ -303,7 +336,7 @@ H6 {
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 193, scss/index.scss */
+  /* line 225, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -311,7 +344,7 @@ H6 {
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 193, scss/index.scss */
+  /* line 225, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -319,14 +352,14 @@ H6 {
   }
 }
 @media (max-width: 480px) {
-  /* line 193, scss/index.scss */
+  /* line 225, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
     float: none;
   }
 }
-/* line 219, scss/index.scss */
+/* line 251, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -334,7 +367,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 227, scss/index.scss */
+/* line 259, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -342,7 +375,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 235, scss/index.scss */
+/* line 267, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -352,14 +385,14 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 245, scss/index.scss */
+/* line 277, scss/index.scss */
 #content-area #logo-banner {
   width: 50%;
   min-width: 200px;
   max-width: 500px;
   margin-top: 5%;
 }
-/* line 252, scss/index.scss */
+/* line 284, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -367,12 +400,12 @@ H6 {
   display: inline-block;
 }
 
-/* line 260, scss/index.scss */
+/* line 292, scss/index.scss */
 [data-trans-for] {
   cursor: pointer;
 }
 
-/* line 264, scss/index.scss */
+/* line 296, scss/index.scss */
 [data-bad-value="true"] {
   -webkit-box-shadow: red 0px 1px 10px;
   -moz-box-shadow: red 0px 1px 10px;
@@ -381,13 +414,13 @@ H6 {
   border-radius: 3px;
 }
 
-/* line 271, scss/index.scss */
+/* line 303, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 276, scss/index.scss */
+/* line 308, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -395,7 +428,11 @@ H6 {
   width: auto;
   margin: 15px 10px;
 }
-/* line 283, scss/index.scss */
+/* line 315, scss/index.scss */
+.ui-games-list li .loss {
+  text-decoration: line-through;
+}
+/* line 319, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
@@ -405,31 +442,31 @@ H6 {
   text-shadow: black 0px 0px 2px;
   cursor: pointer;
 }
-/* line 293, scss/index.scss */
+/* line 329, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 297, scss/index.scss */
+/* line 333, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 400;
 }
-/* line 301, scss/index.scss */
+/* line 337, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 305, scss/index.scss */
+/* line 341, scss/index.scss */
 .ui-games-list li .team.picked {
   text-shadow: black 0px 2px 7px;
 }
-/* line 308, scss/index.scss */
+/* line 344, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 700;
 }
-/* line 312, scss/index.scss */
+/* line 348, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
 }
-/* line 316, scss/index.scss */
+/* line 352, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -437,7 +474,7 @@ H6 {
   background-image: -o-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
 }
-/* line 320, scss/index.scss */
+/* line 356, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
   background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -445,7 +482,7 @@ H6 {
   background-image: -o-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
 }
-/* line 325, scss/index.scss */
+/* line 361, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 7% 8%;
   width: auto;
@@ -458,15 +495,15 @@ H6 {
   background-image: linear-gradient(left, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 333, scss/index.scss */
+/* line 369, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
 }
-/* line 338, scss/index.scss */
+/* line 374, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 342, scss/index.scss */
+/* line 378, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 7% 8%;
   width: auto;
@@ -479,11 +516,11 @@ H6 {
   background-image: linear-gradient(right, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 350, scss/index.scss */
+/* line 386, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
 }
-/* line 356, scss/index.scss */
+/* line 392, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 20%;
@@ -491,7 +528,7 @@ H6 {
   vertical-align: middle;
   white-space: nowrap;
 }
-/* line 363, scss/index.scss */
+/* line 399, scss/index.scss */
 .ui-games-list li .middle i {
   position: relative;
   z-index: 100;
@@ -499,8 +536,9 @@ H6 {
   line-height: 1em;
   cursor: pointer;
   padding: 10px;
+  font-style: normal;
 }
-/* line 372, scss/index.scss */
+/* line 409, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -508,7 +546,7 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 382, scss/index.scss */
+/* line 419, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -521,7 +559,7 @@ H6 {
   display: none;
 }
 
-/* line 394, scss/index.scss */
+/* line 431, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -539,24 +577,24 @@ H6 {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
 }
 
-/* line 406, scss/index.scss */
+/* line 443, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 412, scss/index.scss */
+/* line 449, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 416, scss/index.scss */
+/* line 453, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 422, scss/index.scss */
+/* line 459, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -565,7 +603,7 @@ input[type="text"], input[type="password"] {
   font-weight: 400;
 }
 
-/* line 430, scss/index.scss */
+/* line 467, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -586,13 +624,13 @@ input[type="text"], input[type="password"] {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 445, scss/index.scss */
+/* line 482, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 451, scss/index.scss */
+/* line 488, scss/index.scss */
 #main-nav #login-area {
   position: absolute;
   padding: 10px;
@@ -606,22 +644,22 @@ input[type="text"], input[type="password"] {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   color: #fff;
 }
-/* line 462, scss/index.scss */
+/* line 499, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 468, scss/index.scss */
+/* line 505, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 471, scss/index.scss */
+/* line 508, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 476, scss/index.scss */
+/* line 513, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -629,7 +667,7 @@ input[type="text"], input[type="password"] {
   height: 40px;
   text-align: center;
 }
-/* line 484, scss/index.scss */
+/* line 521, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -637,7 +675,7 @@ input[type="text"], input[type="password"] {
   list-style: none;
   overflow: hidden;
 }
-/* line 492, scss/index.scss */
+/* line 529, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -649,11 +687,11 @@ input[type="text"], input[type="password"] {
   display: block;
   white-space: nowrap;
 }
-/* line 501, scss/index.scss */
+/* line 538, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 505, scss/index.scss */
+/* line 542, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -666,7 +704,7 @@ input[type="text"], input[type="password"] {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 517, scss/index.scss */
+/* line 554, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -676,7 +714,7 @@ input[type="text"], input[type="password"] {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 524, scss/index.scss */
+/* line 561, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

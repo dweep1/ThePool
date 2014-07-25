@@ -381,6 +381,7 @@ function checkSet($obj){
     else if($obj === " "){return false;}
     else if($obj === null){return false;}
     else if($obj === false){return false;}
+    else if($obj === 'undefined'){return false;}
 
     return true;
 

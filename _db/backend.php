@@ -801,6 +801,15 @@ class Core{
         return strtr(base64_encode($input), '+/=', '-_,');
     }
 
+    public static function formatNumber($number, $type = "ordinal"){//ordinal suffix
+
+        $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+
+        return (($number %100) >= 11 && ($number%100) <= 13) ? $number.'th' : $number.$ends[$number % 10];
+
+    }
+
+
 
 }
 

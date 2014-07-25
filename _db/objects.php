@@ -117,6 +117,88 @@ class users extends DatabaseObject{
         return isset($_SESSION['user']) ? new users($_SESSION['user']) : false;
     }
 
+    /*
+     * Returns the player rank for the indicated week. if Week is -1, then
+     * returns the player rank data for the season.
+     *
+     * @todo rewrite this to use pick data instead, using possible GROUP BY user_id clause
+     */
+    public static function getPlayerRanking($user_id = null, $week_id = -1, $season_id = -1){
+
+        $season_id = (!isset($season_id) || (int) $season_id == -1) ? season::getCurrent()->id : $season_id;
+        $user_id = (!isset($user_id) || $user_id === null) ? users::returnCurrentUser()->id : $user_id;
+
+        $prepare = "SELECT SUM(value) as value, user_id FROM pick WHERE season_id = :season_id";
+
+        if($week_id !== -1){
+            $prepare .= " AND week_id = :week_id";
+            $execArray[":week_id"] = $week_id;
+        }
+
+        $prepare .= " AND result = 1 GROUP BY user_id ORDER BY value DESC";
+
+        $execArray[":season_id"] = $season_id;
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare($prepare);
+
+            $query->execute($execArray);
+
+            $object = $query->fetchAll(PDO::FETCH_ASSOC);
+
+
+            if($object !== false){
+
+                $rankCount = 0;
+
+                forEach($object as $value){
+                    $rankCount++;
+
+                    if($value['user_id'] == $user_id){
+                          return $rankCount;
+                    }
+
+                }
+            }
+
+        }catch(PDOException $pe){
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        return false;
+
+    }
+    /*
+     * Returns the player's ranks in a list for a given season
+     */
+    public static function getPlayerRankData($user_id = -1, $season_id = -1){
+
+        $user_id = ($user_id == -1) ? users::returnCurrentUser()->id : $user_id;
+        $season_id = ($season_id == -1) ? season::getCurrent()->id : $season_id;
+
+        $query = DB::sql("SELECT * FROM stat_log WHERE stat_id = 6 AND season_id = '$season_id' AND user_id = '$user_id' ORDER BY week_id ASC");
+
+        if(DB::sql_row_count($query) > 0){
+
+            $array = array();
+
+            while($result = DB::sql_fetch($query)){
+
+                $array[$result['week_id']] = $result;
+
+            }
+
+            return $array;
+        }
+
+        return false;
+
+    }
+
 }
 
 /**
@@ -200,6 +282,11 @@ class season extends event{
 
     }
 
+    public static function getCurrent(){
+        $instance = new season(3);
+        return $instance;
+    }
+
 }
 
 class week extends event{
@@ -218,6 +305,12 @@ class week extends event{
 
         $picks = $this->getPicks($user_id);
         $teams = teams::getTeamsList();
+
+        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id));
+        $this->week_rank = Core::formatNumber(users::getPlayerRanking(null, $this->id));
+
+        $this->total_score = stat_log::getUserStats(6);
+        $this->total_rank = Core::formatNumber(users::getPlayerRanking());
 
         if(!is_bool($this->games)){
             foreach($this->games as $key => $val){
@@ -246,7 +339,6 @@ class week extends event{
 
             }
         }
-
     }
 
     public function getGames($noIndex = false){
@@ -475,6 +567,115 @@ class stat_log extends DatabaseObject{
     public $stat_id;
     public $stat_var;
     public $note;
+
+    //
+    //
+    /* statID's
+     * 6 = point totals
+        * w/ Week_id get that weeks stats
+        * w/o week_id get the season stats
+     * 15 = team point totals, earned points with a given team over a season
+     * 16 = possible points with a given team over a season
+     * 1 = The percentage that a user gets their picks rights
+        * w/ Week_id get that weeks stats
+        * w/o week_id get the season stats
+     * 14 = the percentage of points a user gains per N time. total points/possible points
+        * w/ Week_id get that weeks stats
+        * w/o week_id get the season stats
+     */
+
+    public static function getUserStats($stat_id, $dataArray = array('user_id' => -1, 'week_id' => -1, 'team_id' => -1, 'season_id' => -1)){
+
+        $dataArray['user_id'] = (!isset($dataArray['user_id']) || $dataArray['user_id'] == -1) ? @users::returnCurrentUser()->id : $dataArray['user_id'];
+        $dataArray['season_id'] = (!isset($dataArray['season_id']) || $dataArray['season_id'] == -1) ? @season::getCurrent()->id : $dataArray['season_id'];
+
+        $prepare = "";
+        $execArray = [];
+
+        if($stat_id == 6){//user point totals
+
+            if(!isset($dataArray['week_id']) || $dataArray['week_id'] == -1){//global point total
+
+                $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1";
+                $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
+
+            }else{//weekly point total
+
+                $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND week_id = :week_id AND result = 1";
+                $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id'], ':week_id' => $dataArray['week_id']);
+
+            }
+
+
+        }else if($stat_id == 15){//team point total
+
+            $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND team_id = :team_id AND result = 1";
+            $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id'], ':team_id' => $dataArray['team_id']);
+
+        }else if($stat_id == 16){//team possible points
+
+            $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND team_id = :team_id";
+            $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id'], ':team_id' => $dataArray['team_id']);
+
+        }else if($stat_id == 1){//pick percentage
+
+            if(!isset($dataArray['week_id']) || $dataArray['week_id'] == -1){
+
+                $prepare = "SELECT ((SELECT COUNT(*) FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1)/ COUNT(*)) AS value
+				FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result <> -1";
+
+                $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
+
+            }else{
+
+                $prepare = "SELECT ((SELECT COUNT(*) FROM pick WHERE user_id = :user_id AND season_id = :season_id AND week_id = :week_id AND result = 1)/ COUNT(*)) AS value
+				FROM pick WHERE user_id = :user_id AND season_id = :season_id AND week_id = :week_id AND result <> -1";
+
+                $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id'], ':week_id' => $dataArray['week_id']);
+
+            }
+
+        }else if($stat_id == 14){//point percentage
+
+            if(!isset($dataArray['week_id']) || $dataArray['week_id'] == -1){
+
+                $prepare = "SELECT ((SELECT SUM(value) FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1)/ SUM(value)) AS value
+				FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result <> -1";
+
+                $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
+
+            }else{
+
+                $prepare = "SELECT ((SELECT SUM(value) FROM pick WHERE user_id = :user_id AND season_id = :season_id AND week_id = :week_id AND result = 1)/ SUM(value)) AS value
+				FROM pick WHERE user_id = :user_id AND season_id = :season_id AND week_id = :week_id AND result <> -1";
+
+                $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id'], ':week_id' => $dataArray['week_id']);
+
+            }
+
+        }
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare($prepare);
+
+            $query->execute($execArray);
+
+            $object = $query->fetch(PDO::FETCH_ASSOC);
+
+            return (isset($object['value'])) ? $object['value'] : false;
+
+        }catch(PDOException $pe){
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        return false;
+
+    }
+
 }
 
 class teams extends DatabaseObject{

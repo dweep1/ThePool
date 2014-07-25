@@ -92,6 +92,38 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   display:none;
 }
 
+.ui-mini-screen{
+  width:80%;
+  background:#222;
+  color:#fff;
+  position:relative;
+  display:inline-block;
+  white-space: nowrap;
+
+  .current-title{
+    position:absolute;
+    top:2%;
+    left:2%;
+  }
+
+  .last-title{
+    position:absolute;
+    top:2%;
+    right:2%;
+  }
+
+  .current-data{
+    display:inline-block;
+    padding:20% 16%;
+    border-right: 1px solid rgba(#fff, 0.2);
+  }
+
+  .last-data{
+    display:inline-block;
+    padding:20% 16%;
+  }
+}
+
 .ui-button{
 
   color:#fff;
@@ -280,6 +312,10 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     width:auto;
     margin: 15px 10px;
 
+    .loss{
+      text-decoration: line-through;
+    }
+
     .team{
       background-repeat: no-repeat;
       background-size: 80%;
@@ -367,6 +403,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         line-height:1em;
         cursor:pointer;
         padding: 10px;
+        font-style: normal;
       }
 
       .small{

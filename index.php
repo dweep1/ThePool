@@ -147,6 +147,10 @@
         },3000);
     </script>
 
+    <script>
+        localStorage.clear();
+    </script>
+
 <?php if(isset($_SESSION['result'])) unset($_SESSION['result']); ?>
 
 </body>

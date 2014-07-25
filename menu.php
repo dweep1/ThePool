@@ -18,7 +18,7 @@
         <li><h2><i class="fa fa-bar-chart-o" style="margin-left:-1px;"></i> Results</h2></li>
         <li class="spacer" style="height:60px; width:60px;"></li>
         <li><h2><i class="fa fa-gavel" style="padding-left:0px;"></i> Rules</h2></li>
-        <li><h2><i class="fa fa-cogs" style="padding-left:0px;"></i> Settings</h2></li>
+        <li data-link="./settings.php"><h2><i class="fa fa-cogs" style="padding-left:0px;"></i> Settings</h2></li>
         <li data-link="./logout.php"><h2><i class="fa fa-sign-out" style="padding-left:2px;"></i> Logout</h2></li>
     </ul>
 

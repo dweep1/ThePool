@@ -1,79 +1,4 @@
-
-var myApp = angular.module('myHome', ['angular-velocity'])
-    .directive('onFinishRender', function ($timeout) {
-        return {
-            restrict: 'A',
-            link: function (scope, element, attr) {
-                if (scope.$last === true) {
-                    $timeout(function () {
-                        scope.$emit(attr.onFinishRender);
-                    });
-                }
-            }
-        }
-    });
-
-myApp.directive("mmPick", function() {
-    return {
-        link: function(scope, elem, attrs) {
-            scope.doChangePick = function() {
-
-                //each game needs a pick object when its given.
-                //if there is no team_id, then pick isn't valid.
-
-                refreshGames(scope);
-
-                refreshStoreLocal(scope);
-
-                setTimeout(function(){
-                    changePickUI(elem);
-                }, 200);
-            }
-        }
-    }
-});
-
-myApp.directive("mmValue", function() {
-    return {
-        link: function(scope, elem, attrs) {
-            scope.doChangeValue = function() {
-
-                refreshGames(scope);
-
-                refreshStoreLocal(scope);
-
-            }
-        }
-    }
-});
-
-myApp.directive("mmMinus", function() {
-    return {
-        link: function(scope, elem, attrs) {
-            scope.doPointsSubtract = function() {
-
-                refreshGames(scope);
-
-                refreshStoreLocal(scope);
-
-            }
-        }
-    }
-});
-
-myApp.directive("mmPlus", function() {
-    return {
-        link: function(scope, elem, attrs) {
-            scope.doPointsAdd = function() {
-
-                refreshGames(scope);
-
-                refreshStoreLocal(scope);
-
-            }
-        }
-    }
-});
+var myApp = angular.module('myHome', ['angular-velocity']);
 
 function RowController($scope, $http) {
 
@@ -82,28 +7,10 @@ function RowController($scope, $http) {
     getLiveData($scope, $http);
     getOldData($scope,$http);
 
-    $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-        setTimeout(refreshPicks, 50);
-    });
-
-    $scope.subtractPoints = function() {
-        this.doPointsSubtract();
-    };
-
-    $scope.addPoints = function() {
-        this.doPointsAdd();
-    };
-
-    $scope.changePick = function() {
-        this.doChangePick();
-    };
-
-    $scope.changeValue = function() {
-        this.doChangeValue();
-    };
-
     $scope.doRefresh = function() {
         $scope.force = true;
+
+        localStorage.clear();
 
         getLiveData($scope, $http);
     };
@@ -112,7 +19,12 @@ function RowController($scope, $http) {
         savePicks($scope, $http);
     };
 
+    $scope.$watch('games', function() {
+        refreshStoreLocal($scope);
+    }, true);
+
 }
+
 
 function savePicks($scope, $http){
 
@@ -134,7 +46,7 @@ function savePicks($scope, $http){
         var $pickBoundary = false;
 
         $scope.picks.forEach(function(entity){
-            if(parseInt(entity.value) > $scope.games.length || parseInt(entity.value) < 1){
+            if(parseInt(entity.value) > $scope.games.length || parseInt(entity.value) < 0){
                 $pickBoundary = true;
             }
         });
@@ -186,13 +98,7 @@ function getLiveData($scope, $http){
 
     $scope.week_id = week_id;
 
-    $scope.url = "./_listeners/listn.picks.php?method=GET";
-
-    // Create the http post request
-    // the data holds the keywords
-    // The request is a JSON request.
-
-    if(parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
+    if(checkSet(localStorage["week_data"]) && checkSet(localStorage["game_data"]) && checkSet(localStorage["week_id"]) && parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
 
         storeLocalGames($scope, null);
 
@@ -202,42 +108,32 @@ function getLiveData($scope, $http){
 
             getLiveData($scope, $http);
 
-        }else{
+        }
 
+        return true;
+
+    }
+
+    $scope.force = false;
+
+    return $http.post( "./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.week_id}).
+        success(function(data, status) {
+
+            $scope.status = status;
+            storeLocalGames($scope, data);
             getGamesPicked($scope);
 
             return true;
-        }
 
-        return false;
+        })
+        .error(function(data, status) {
+            $scope.data = data || "Request failed";
+            $scope.status = status;
 
-    }else{
+            return false;
+        });
 
-        return $http.post($scope.url, { "week_id" : $scope.week_id}).
-            success(function(data, status) {
 
-                $scope.status = status;
-                storeLocalGames($scope, data);
-                getGamesPicked($scope);
-
-                if($scope.force === true)
-                    $scope.force = false;
-
-                return true;
-
-            })
-            .
-            error(function(data, status) {
-                $scope.data = data || "Request failed";
-                $scope.status = status;
-
-                if($scope.force === true)
-                    $scope.force = false;
-
-                return false;
-            });
-
-    }
 
 }
 
@@ -245,13 +141,27 @@ function getOldData($scope, $http){
 
     $scope.last_week_id = parseInt(week_id)-1;
 
-    $scope.url = "./_listeners/listn.picks.php?method=GET";
+    if(checkSet(localStorage["week_data_old"]) && checkSet(localStorage["game_data_old"]) && parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
+
+        storeLocalGamesOld($scope, null);
+
+        if(objLength($scope.gamesOld) <= 0){
+
+            $scope.force = true;
+
+            getOldData($scope, $http);
+
+        }
+
+        return true;
+
+    }
 
     // Create the http post request
     // the data holds the keywords
     // The request is a JSON request.
 
-    return $http.post($scope.url, { "week_id" : $scope.last_week_id}).
+    return $http.post("./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.last_week_id}).
         success(function(data, status) {
 
             $scope.status = status;
@@ -277,35 +187,12 @@ function buildPicks($scope, $callback){
 
     var $picks = [];
 
-    refreshGames($scope, function(){
-
-        $scope.games.forEach(function(entity){
-            if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1)
-                $picks.push(entity.pick);
-        });
-
-        $scope.picks = JSON.parse(JSON.stringify($picks));
-
-        if(checkSet($callback))
-            $callback();
-
+    $scope.games.forEach(function(entity){
+        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1)
+            $picks.push(entity.pick);
     });
 
-}
-
-function refreshGames($scope, $callback){
-
-    var $games = [];
-
-    $scope.gamesPicked.forEach(function(entity){
-        $games.push(entity);
-    });
-
-    $scope.gamesNotPicked.forEach(function(entity){
-        $games.push(entity);
-    });
-
-    $scope.games = JSON.parse(JSON.stringify($games));
+    $scope.picks = JSON.parse(JSON.stringify($picks));
 
     if(checkSet($callback))
         $callback();
@@ -322,7 +209,7 @@ function refreshStoreLocalOld($scope){
 
 function storeLocalGamesOld($scope, data){
 
-    if(data === null){
+    if(data !== null || checkSet(localStorage["week_data"]) === false || $scope.force === true){
 
         $scope.weekOld = data;
         $scope.gamesOld = data.games;
@@ -348,7 +235,7 @@ function refreshStoreLocal($scope){
 
 function storeLocalGames($scope, data){
 
-    if(parseInt(localStorage["week_id"]) !== parseInt($scope.week_id) || $scope.force === true){
+    if(checkSet(localStorage["week_data"]) === false || $scope.force === true){
 
         $scope.week = data;
         $scope.games = data.games;
@@ -368,16 +255,10 @@ function getGamesPicked($scope){
 
     var $games = $scope.games;
 
-    var $picked = [];
-    var $notPicked = [];
-
     var $values = [];
     var $dupes = [];
 
-    var $i = 0;
-    var $k = 0;
-
-    $games.forEach(function(entity){
+    $scope.games.forEach(function(entity){
 
         if(parseInt(entity.pick.team_id) !== -1){
             if(indexOf.call($values, parseInt(entity.pick.value)) == -1)
@@ -388,7 +269,7 @@ function getGamesPicked($scope){
 
     });
 
-    $games.forEach(function(entity){
+    $scope.games.forEach(function(entity){
 
         if(parseInt(entity.pick.team_id) !== -1){
 
@@ -397,44 +278,10 @@ function getGamesPicked($scope){
             else
                 entity.pick.bad = "false";
 
-            $picked.push(entity);
-
-        }else{
-            $notPicked.push(entity);
         }
 
     });
-
-    $scope.gamesPicked = JSON.parse(JSON.stringify($picked));
-    $scope.gamesNotPicked = JSON.parse(JSON.stringify($notPicked));
 
     return $dupes;
-
-}
-
-function changePickUI(elem){
-
-    var $parentElem = $(elem).parent("li");
-
-    var $children = $parentElem.children("[data-team-id]");
-    var $pick_id_attr = $parentElem.attr("data-picked-id");
-
-    $.each($children, function(){
-        if(parseInt($(this).attr("data-team-id")) === parseInt($pick_id_attr)){
-            $(this).addClass("picked");
-        }else{
-            $(this).removeClass("picked");
-        }
-    });
-
-}
-
-function refreshPicks(){
-
-    $.each($("[data-team-id]"), function(){
-
-        changePickUI(this);
-
-    });
 
 }
