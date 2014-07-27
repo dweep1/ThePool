@@ -1,0 +1,91 @@
+
+<html>
+<head>
+<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type='text/javascript' src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+<script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
+<script type='text/javascript' src="http://mathew-kleppin.com/storage/velocity/jquery.velocity.min.js"></script>
+<script type='text/javascript' src="http://mathew-kleppin.com/storage/velocity/velocity.ui.min.js"></script>
+<script type='text/javascript' src="http://mathew-kleppin.com/storage/velocity/angular-velocity.min.js"></script>
+<style>
+ul{
+    padding:40px;
+    margin:20px 0px;
+    list-style:none;
+	border:2px solid #000;
+	border-radius:3px;
+	display:inline-block;
+	vertical-align:top;
+}
+
+li{
+    margin:10px;
+    padding:20px 40px;
+    width:250px;
+    background:#222;
+    font-size:15px;
+    line-height:15px;
+    color:#fff;
+}
+
+input{
+	display:inline-block;
+	margin: 0px 10px;
+}
+</style>
+</head>
+<body data-ng-app="myHome">
+    <div data-ng-controller="myController">
+
+        <ul>
+			Velocity Opposites Transition UpIn: <input type="text" data-ng-model="search" />
+            <li data-ng-repeat="item in data.starks | filter:search" class="velocity-opposites-transition-slideUpIn" data-velocity-opts="{ duration: 1000, stagger: 1000 }">
+				{{ item.name }}
+            </li>
+        </ul>
+		
+		<ul>
+			Velocity FadeOut: <input type="text" data-ng-model="searchs" />
+            <li data-ng-repeat="item in data.starks | filter:searchs" class="velocity-fadeOut" data-velocity-opts="{ duration: 1000, stagger: 1000 }">
+				{{ item.name }}
+            </li>
+        </ul>
+
+        <ul>
+			<button id="hidethem">Velocity-UI Transition DownOut</button>
+            <li data-ng-repeat="item in data.starks" data-ng-class="{true: '', false: 'slide'}[item.name == 'Jon']"> 
+				{{ item.name }}
+            </li>
+        </ul>
+		
+		<ul>
+			<button id="hideVel">Velocity-UI FadeOut</button>
+            <li data-ng-repeat="item in data.starks" data-ng-class="{true: '', false: 'slideVel'}[item.name == 'Jon']"> 
+				{{ item.name }}
+            </li>
+        </ul>
+    </div>
+
+<script>
+var myApp = angular.module('myHome', ['angular-velocity']);
+
+myApp.controller('myController', ['$scope', function($scope) {
+     $scope.data = {"starks":[{"name":"Eddard"},{"name":"Jon"},{"name":"Robb"},{"name":"Sansa"},{"name":"Arya"},{"name":"Brandon"},{"name":"Rickon"},{"name":"Benjen"},{"name":"Theon"}]};
+	 console.log($scope.data);
+  }]);
+
+$(document).on("mousedown", "#hidethem", function (e) {
+     
+     $('.slide').velocity("transition.slideDownOut", { duration: 1000, stagger: 1000 });
+     
+});
+
+$(document).on("mousedown", "#hideVel", function (e) {
+     
+     $('.slideVel').velocity("fadeOut", { display:"none", duration: 1000, stagger: 1000 });
+     
+});
+</script>
+
+</body>
+</html>

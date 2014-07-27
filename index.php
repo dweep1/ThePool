@@ -71,9 +71,9 @@
             <h5>Login</h5>
             <form action="./_listeners/listn.login.php" method="post">
                 <div class="faux-row"><input type="text" name="email" value="Email" /></div>
-                <div class="faux-row"><input type="text" name="password" value="Password" data-password /></div>
+                <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
                 <div class="faux-row">
-                    <input type="hidden" name="confirm" value="Confirm Password" data-password />
+                    <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
                     <?php if(isset($_SESSION['login_attempts']) && (int) $_SESSION['login_attempts'] >= 2): ?>
                         <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
                     <?php endif; ?>

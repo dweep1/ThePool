@@ -468,6 +468,15 @@ class bugs extends DatabaseObject{
 
 }
 
+class rivals extends DatabaseObject{
+
+    public $user_id;
+    public $rival_id;
+    public $rival_name;
+    public $rival_custom_name;
+
+}
+
 class game extends DatabaseObject{
 
     public $home_team;

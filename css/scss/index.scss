@@ -222,6 +222,12 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       vertical-align: top;
     }
 
+    &.width-60{
+      width: 60%;
+      display:inline-block;
+      vertical-align: top;
+    }
+
     &.width-50{
       @include calc(width, "47.5%");
       display:inline-block;
@@ -461,8 +467,36 @@ input[type="text"], input[type="password"]{
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   line-height: 15px;
-  font-weight:400
+  font-weight:400;
+  border: 2px solid #222;
+  border-radius: 3px;
 }
+
+label{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight:400;
+  vertical-align: bottom;
+}
+
+select{
+  padding:8px 15px;
+  border: 2px solid #222;
+  border-radius: 3px;
+}
+
+select, option{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  line-height: 15px;
+  font-weight:400;
+}
+
+option{
+  padding:5px 10px;
+}
+
 
 #main-nav{
   position: fixed;
