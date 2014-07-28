@@ -56,7 +56,7 @@
 
 ?>
 
-<div id="content-area" style="background-size: cover; background-position: left center;" data-ng-controller="RowController">
+<div id="content-area" data-ng-controller="RowController">
     <div class="width-50 fluid-row">
 
         <div class="fluid-row slim alignleft">

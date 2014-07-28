@@ -4,7 +4,7 @@
 
     FormValidation::generate();
 
-    global $currentUser;
+    $currentUser = users::returnCurrentUser();
 
     $keyUser = new users();
 
@@ -26,6 +26,11 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="./css/index.css" rel="stylesheet" type="text/css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="./js/jquery.velocity.min.js"></script>
+    <script src="./js/velocity.ui.min.js"></script>
+    <script src="./js/modernizr.min.js"></script>
+    <script src="./js/general.js"></script>
 
 </head>
 <body class="height-100" data-ng-app>
@@ -43,15 +48,15 @@
 
     <?php if($keyUser->id !== null): ?>
 
-    <div class="ui-message-background hidden"></div>
-    <div class="ui-message-box aligncenter" data-type="overlay">
-        <i class="fa fa-times-circle float-right ui-message-close"></i>
+    <div class="ui-message-background hidden" data-background-id="2"></div>
+    <div class="ui-message-box aligncenter" data-type="overlay" data-message-id="2">
+        <i class="fa fa-times-circle float-right ui-message-close" data-close-id="2"></i>
         <h6>Forgot Password</h6>
         <form action="./_listeners/listn.login.php" method="post">
             <input type="hidden" name="submitType" value="3" />
             <input type="hidden" name="security_key" value="<?php echo $keyUser->security_key; ?>" />
-            <div class="faux-row"><input type="text" name="password" value="Password" data-password /></div>
-            <div class="faux-row"><input type="text" name="confirm" value="Confirm Password" data-password /></div>
+            <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off"/></div>
+            <div class="faux-row"><input type="text" name="confirm" value="Confirm Password" data-password autocomplete="off"/></div>
             <div class="faux-row"><button class="ui-button float-right">Submit</button></div>
         </form>
     </div>
@@ -131,10 +136,6 @@
 
     </div>
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
-    <script src="./js/modernizr.min.js"></script>
-    <script src="./js/general.js"></script>
     <script src="./js/bug_report.js"></script>
 
     <script>

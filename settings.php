@@ -51,7 +51,7 @@ include "./menu.php";
 
 ?>
 
-<div id="content-area" style="background-size: cover; background-position: left center;">
+<div id="content-area">
     <div class="width-50 fluid-row aligncenter">
 
         <form action="./_listeners/listn.settings.php" method="post">
@@ -67,7 +67,7 @@ include "./menu.php";
                 <div class="fluid-row"><h4>Change Login Info</h4></div>
 
                 <div class="fluid-row width-60 slim">
-                    <label for="email">Email: </label> <input type="text" class="float-right" id="email" name="email" value="<?php echo $user->email; ?>" />
+                    <label for="email">Email: </label> <input type="text" class="float-right" no-default id="email" name="email" value="<?php echo $user->email; ?>" />
                 </div>
                 <div class="fluid-row slim"></div>
                 <div class="fluid-row width-60 slim">
@@ -84,11 +84,15 @@ include "./menu.php";
                 <div class="fluid-row"><h4>Add/Edit Account Info</h4></div>
 
                 <div class="fluid-row width-60 slim">
-                    <label for="first_name">First Name: </label> <input class="float-right" type="text" id="first_name" name="first_name" value="<?php echo $user->first_name; ?>" />
+                    <label for="username">Username: </label> <input class="float-right" type="text" no-default id="username" name="username" value="<?php echo $user->username; ?>" />
                 </div>
 
                 <div class="fluid-row width-60 slim">
-                    <label for="last_name">Last Name: </label> <input class="float-right" type="text" id="last_name" name="last_name" value="<?php echo $user->last_name; ?>" />
+                    <label for="first_name">First Name: </label> <input class="float-right" type="text" no-default id="first_name" name="first_name" value="<?php echo $user->first_name; ?>" />
+                </div>
+
+                <div class="fluid-row width-60 slim">
+                    <label for="last_name">Last Name: </label> <input class="float-right" type="text" no-default id="last_name" name="last_name" value="<?php echo $user->last_name; ?>" />
                 </div>
 
                 <div class="fluid-row slim"></div>

@@ -39,9 +39,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $response = doRegister($_POST);
 
-        if($response === -1){//password issue
-            if(!isset($_SESSION['result']))
-                $_SESSION['result'] = "Some information provided was invalid";
+        if($response === -1){//User Information Issue
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Some information provided was invalid" : $_SESSION['result'] ;
         }else if($response === -2)
             $_SESSION['result'] = "User/Email already exists!";
         else if($response === false)//db error
@@ -71,7 +70,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if(!isset($_SESSION['result']))
                 $_SESSION['result'] = "Password Error, please click the link in your email and try again.";
             else
-                $_SESSION['result'] = "<br/>Please click the link in your email and try again.";
+                $_SESSION['result'] .= "<br/>Please click the link in your email and try again.";
         }else if($response === -2)//user doesn't exist
             $_SESSION['result'] = "Invalid Key, please click the link in your email and try again.";
         else if($response === true)
@@ -89,7 +88,7 @@ function doPasswordReset($POST){
 
     $keyUser = new users();
 
-    if(!verifyRegInfo($POST))
+    if(!users::verifyRegInfo($POST))
         return -1;
 
     if($keyUser->load($POST['security_key'], "security_key")){
@@ -130,6 +129,9 @@ function doRegister($POST){
     if($user->load($POST['email'], 'email'))
         return -2;
 
+    if(!users::verifyRegInfo($POST))
+        return -1;
+
     $password = new Password($POST['password']);
 
     $POST['username'] = explode("@", $POST['email'])[0];
@@ -140,9 +142,6 @@ function doRegister($POST){
     $POST['user_level'] = -1;
 
     $user = new users($POST);
-
-    if(verifyRegInfo($POST) !== false)
-        return -1;
 
     return ($user->save(true)) ? true : false;
 

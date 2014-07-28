@@ -203,7 +203,6 @@ abstract class DatabaseObject{
         $executeArray = array();
 
         $dataArray = $this->toArray();
-
         foreach ($keyChain as $val) {
 
             if (strpos($val,'date') !== false)
@@ -216,13 +215,10 @@ abstract class DatabaseObject{
         //string should look like this:
         //UPDATE fruit SET color = :color, count = :count WHERE id = :id
 
-
         try {
 
             $pdo = Core::getInstance();
             $query = $pdo->dbh->prepare($prepareStatement);
-
-            $query->execute($executeArray);
 
             return $query->execute($executeArray);
 

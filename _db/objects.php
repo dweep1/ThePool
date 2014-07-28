@@ -50,6 +50,48 @@ class users extends DatabaseObject{
 
     }
 
+    public static function verifyRegInfo($POST){
+
+        $errors = 0;
+        $password = $POST['password'];
+
+        foreach($POST as $key => $value){
+
+            if($key === "username"){
+                if(filter_var($value, FILTER_SANITIZE_STRING) == false ||  strlen($value) < 3 ){
+                    $errors++;
+                    $_SESSION['result'] = 'Invalid Username. Usernames must be longer then 3 characters';
+                }
+            }
+
+            if($key === "email"){
+                if(filter_var($value, FILTER_VALIDATE_EMAIL) == false){
+                    $errors++;
+                    $_SESSION['result'] = 'Invalid Email Address';
+                }
+            }
+
+            if($key === "password"){
+                $password = $value;
+                if(0 === preg_match("/.{6,}/", $value)){
+                    $errors++;
+
+                    $_SESSION['result'] = 'Invalid Password. Must contain at least 6 characters';
+                }
+            }
+
+            if($key === "confirm"){
+                if(0 !== strcmp($password, $value)){
+                    $errors++;
+                    $_SESSION['result'] = 'Passwords do not match';
+                }
+            }
+        }
+
+        return ($errors > 0) ? false : true;
+
+    }
+
     public function verifyAdmin(){
 
         if(!isset($_SESSION['admin_key']))
@@ -86,7 +128,7 @@ class users extends DatabaseObject{
         if((int) $level === 0)
             $_SESSION['admin_key'] = $this->auth_key;
 
-        $this->last_login_date = strtotime("now");
+        $this->last_login_date = Core::unixToMySQL("now");
         $this->last_ip = $_SERVER['REMOTE_ADDR'];
         $this->login_count++;
 
@@ -96,7 +138,12 @@ class users extends DatabaseObject{
 
     public static function deAuth(){
 
-        session_unset();
+        foreach($_SESSION as $key => $value){
+
+            if($key !== "result" || $key !== "Result" || $key !== "RESULT")
+                unset($_SESSION[$key]);
+
+        }
 
         return true;
 

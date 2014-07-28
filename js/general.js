@@ -7,7 +7,7 @@ $(document).ready(function(){
             "The game will not function. Please update browsers or use a different one. Sorry!");
     }
 
-    $("input[type='text'], input[type='hidden']").focus(function() {
+    $("input[type='text']:not([no-default]), input[type='hidden']:not([no-default])").focus(function() {
         if (this.value === this.defaultValue) {
             this.value = '';
 
@@ -31,7 +31,10 @@ $(document).ready(function(){
 
     resize();
     hideMenuItems();
-    toggleDisplayMessageBox();
+
+    $.each($("[data-close-id]"), function(){
+        toggleDisplayMessageBox($(this).attr("data-close-id"));
+    });
 
     $(window).resize(function () {
         resize();
@@ -193,7 +196,7 @@ function createMessageBox($data, $callback){
         $data.type = "overlay";
     }
     if(!checkSet($data.title)){
-        $data.title = "Result";
+        $data.title = "result";
     }
     if(!checkSet($data.message)){
         return false;

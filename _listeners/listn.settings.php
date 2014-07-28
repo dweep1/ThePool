@@ -18,150 +18,83 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     }
 
+    if(isset($_SESSION['result'])) unset($_SESSION['result']);
+
     if((int)$submitType === 0){
 
-        $user = users::returnCurrentUser();
+        $result = doSettingsChange($_POST);
 
-        //if(Password::)
+        if($result === -1)//wrong password
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Incorrect Password" : $_SESSION['result'];
+        else if($result === -2)//changed password was bad
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Password was poorly formatted" : $_SESSION['result'];
+        else if($result === -3)//error updating user object, most likely due to malformed array data
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Couldn't update user's array" : $_SESSION['result'];
+        else if($result === false)//database error
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Database Error" : $_SESSION['result'];
+        else{
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "User Successfully Updated" : $_SESSION['result'];
+
+        } //success
 
     }
 
-    header("Location: ../index.php");
+    header("Location: ../settings.php");
 
 }
 
-function doPasswordReset($POST){
+//@todo finish email error change
 
-    $keyUser = new users();
+function doSettingsChange($POST){
 
-    if(!verifyRegInfo($POST))
+    $user = users::returnCurrentUser();
+
+    if($user->verifyLogin($POST['confirm_password']) === false)
         return -1;
 
-    if($keyUser->load($POST['security_key'], "security_key")){
+    if(strlen($POST['password']) > 3){
+
+        if(!users::verifyRegInfo($POST))
+            return -2;
+
         $password = new Password($POST['password']);
 
-        $keyUser->password = $password->getKey();
-        $keyUser->salt = $password->getSalt();
+        $user->password = $password->getKey();
+        $user->salt = $password->getSalt();
 
-        if(!$keyUser->update())
-            return false;
-
-    }else
-        return -2;
-
-    return true;
-}
-
-function doLogin($POST){
-
-    $user = new users();
-
-    if(!$user->load($POST['email'], 'email')){
-        if(!$user->load($POST['email'], 'username'))
-            return false;
     }
 
-    if(!$user->doAuth($POST['password']))
-        return -1;
+    if($user->email != $POST['email']){
+        $keyFormat = "{$_SERVER['HTTP_HOST']}/email_change.php?key={$user->security_key}&email={$POST['email']}";
 
-    return $user;
-
-}
-
-function doRegister($POST){
-
-    $user = new users();
-
-    if($user->load($POST['email'], 'email'))
-        return -2;
-
-    $password = new Password($POST['password']);
-
-    $POST['username'] = explode("@", $POST['email'])[0];
-    $POST['password'] = $password->getKey();
-    $POST['salt'] = $password->getSalt();
-    $POST['security_key'] = Cipher::getRandomKey(16);
-    $POST['auth_key'] = Cipher::getRandomKey(16);
-    $POST['user_level'] = -1;
-
-    $user = new users($POST);
-
-    if(verifyRegInfo($POST) !== false)
-        return -1;
-
-    return ($user->save(true)) ? true : false;
-
-}
-
-function doForgotPass($POST){
-
-    $user = new users();
-
-    if(!$user->load($POST['email'], 'email'))
-        return -1;
-
-    $user->security_key = Cipher::getRandomKey(true);
-
-    if(!$user->update())
-        return -2;
-
-    $keyFormat = "{$_SERVER['HTTP_HOST']}/index.php?key={$user->security_key}";
-
-    $message = "<a href='{$keyFormat}'>Click Here</a> to update your password.<br/>
-        <br/>You Recently tried to reset your account password. This is an email notifing you of the request.
-        <br/>If this was not you, then you may ignore this email. Your information is safe with us.
+        $message = "<br/>You recently updated your account email. This is an email notifing you of the request.
+        <br/>If This was you, then click the link below to change your email address.
         <br/>
         <br/>
-        If the link above does not work, then try and copy the following address into your web browser.<br/>
-        <br/>
-        {$keyFormat}<br/>
+        <a href='{$keyFormat}'>Click Here</a> change your email.<br/>
         <br/>
         <br/>
+        OR Copypaste this into your web browser.
+        <br/>
+        $keyFormat
+        <br/>
+        <br/>
+        <b>If this was <i>NOT</i> you</b>, then please reset your password, as your account may have been compromised.
         This is an automated response, please do not reply!<br/>";
 
-    return Core::sendEmail('The Pool - Forgotten Password', $message, $POST['email']);
-
-}
-
-function verifyRegInfo($POST){
-
-    $errors = 0;
-    $password = $POST['password'];
-
-    foreach($POST as $key => $value){
-
-        if($key === "username"){
-            if(filter_var($value, FILTER_SANITIZE_STRING) == false ||  strlen($value) < 3 ){
-                $errors++;
-                $_SESSION['result'] = 'Invalid Username. Usernames must be longer then 3 characters';
-            }
-        }
-
-        if($key === "email"){
-            if(filter_var($value, FILTER_VALIDATE_EMAIL) == false){
-                $errors++;
-                $_SESSION['result'] = 'Invalid Email Address';
-            }
-        }
-
-        if($key === "password"){
-            $password = $value;
-            if(0 === preg_match("/.{6,}/", $value)){
-                $errors++;
-
-                $_SESSION['result'] = 'Invalid Password. Must contain at least 6 characters';
-            }
-        }
-
-        if($key === "confirm"){
-            if(0 !== strcmp($password, $value)){
-                $errors++;
-                $_SESSION['result'] = 'Passwords do not match';
-            }
-        }
+        Core::sendEmail('The Pool - Email Address Change', $message, $user->email);
     }
 
-    return ($errors > 0) ? false : true;
+    unset($POST['password']);
+    unset($POST['email']);
+
+    $response = ($user->updateObject($POST)) ? $user->update() : -3;
+
+    if($response === true)
+        $_SESSION['user'] = $user->toArray();
+
+    return $response;
+
 
 }
 
