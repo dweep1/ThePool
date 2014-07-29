@@ -17,6 +17,7 @@ class users extends DatabaseObject{
     public $favorite_team_id;
     public $login_count;
     public $access_level; //if the user has verified their email and is not banned
+    public $credits;
 
     protected function classDataSetup(){ }
 
@@ -287,6 +288,11 @@ class event extends DatabaseObject{
 
             $object = new $className($_SESSION['current_'.$className]);
 
+            $object->date_end = new DateTime($object->date_end, Core::getTimezone());
+
+            if($className == "season")
+                $object->date_end->add(new DateInterval("P14D"));
+
             if($object->date_end >= $now)
                 return $object;
 
@@ -540,9 +546,10 @@ class game extends DatabaseObject{
             $this->load($id);
 
         $now = new DateTime("now", Core::getTimezone());
-        $now->add(new DateInterval("P1D"));
+        $gameDate = new DateTime($this->date, Core::getTimezone());
+        $gameDate->add(new DateInterval("P1D"));
 
-        return ($this->date <= $now) ? false : true;
+        return ($now >= $gameDate) ? true : false;
 
     }
 
@@ -555,6 +562,15 @@ class game extends DatabaseObject{
         $game['home'] = new teams($this->home_team);
 
         return $game;
+
+    }
+
+    public function getWinner(){
+
+        if($this->played())
+            return ($this->home_score > $this->away_score) ? $this->home_team : (($this->home_score < $this->away_score) ? $this->away_team : null);
+        else
+            return false;
 
     }
 

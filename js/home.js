@@ -21,7 +21,37 @@ function RowController($scope, $http) {
 
     $scope.$watch('games', function() {
         refreshStoreLocal($scope);
+        getRemaining($scope);
     }, true);
+
+    getRemaining($scope);
+
+}
+
+function getRemaining($scope){
+
+    var $remaining = [];
+    $scope.remaining = [];
+
+    var $noPick = [];
+
+    $scope.games.forEach(function(entity){
+        if(checkSet(entity.pick) !== false)
+            $noPick.push(entity.pick.value);
+    });
+
+    for(var $i = 1; $i < ($scope.games.length+1); $i++){
+        if(indexOf.call($noPick, $i) > -1){
+
+        }else{
+            $remaining.push($i);
+        }
+    }
+
+    $remaining.forEach(function(entity){
+        if(checkSet(entity) !== false)
+            $scope.remaining.push({"id": entity, "value": entity});
+    });
 
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-    include_once "./header.php";
+    include_once "./_header.php";
 
     FormValidation::generate();
 
@@ -8,7 +8,6 @@
 
     if($user === false || !$user->verifyAuth())
         header("Location: ./logout.php");
-
 
 ?>
 <!DOCTYPE html>
@@ -67,6 +66,7 @@
 
         <div class="fluid-row slim alignleft">
 
+            <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>
             <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
 
             <div data-trans-id="open_picks">
@@ -93,13 +93,13 @@
                         <div class="middle">
 
                             <i class="fa fa-minus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
+                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1; setRemaining();"></i>
 
                             <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
                                    data-ng-model="item.pick.value" data-game-id="{{ item.id }}" />
 
                             <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
+                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1; setRemaining();"></i>
 
                         </div>
 
@@ -115,6 +115,8 @@
                             </div>
 
                         </div>
+
+                        <div class="clear-fix"></div>
 
                     </li>
                 </ul>
@@ -169,6 +171,8 @@
                             </div>
 
                         </div>
+
+                        <div class="clear-fix"></div>
                     </li>
                 </ul>
             </div>
@@ -200,7 +204,7 @@
 
             <h4>Last Week's Results <i data-trans-for="last_week" class="fa fa-bars"></i></h4>
 
-            <div data-trans-id="last_week">
+            <div data-trans-id="last_week" class="alignleft">
 
                 <ul class="ui-games-list">
 
@@ -241,6 +245,8 @@
                             </div>
                         </div>
 
+                        <div class="clear-fix"></div>
+
                     </li>
                 </ul>
 
@@ -253,9 +259,8 @@
 
 </div>
 
-<script src="./js/bug_report.js"></script>
+<?php
 
-<?php if(isset($_SESSION['result'])) unset($_SESSION['result']); ?>
+    include "./_footer.php";
 
-</body>
-</html>
+?>

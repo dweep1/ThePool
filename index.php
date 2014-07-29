@@ -1,6 +1,6 @@
 <?php
 
-    include_once "./header.php";
+    include_once "./_header.php";
 
     FormValidation::generate();
 
@@ -136,8 +136,6 @@
 
     </div>
 
-    <script src="./js/bug_report.js"></script>
-
     <script>
         setTimeout(function(){
             var $mi = $("[data-menu-id='1']");
@@ -152,7 +150,8 @@
         localStorage.clear();
     </script>
 
-<?php if(isset($_SESSION['result'])) unset($_SESSION['result']); ?>
+<?php
 
-</body>
-</html>
+    include "./_footer.php";
+
+?>

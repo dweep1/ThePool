@@ -2,8 +2,6 @@
 
 include_once "./listn.header.php";
 
-//@TODO settings page.
-
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $submitType = intval($_POST['submitType']);

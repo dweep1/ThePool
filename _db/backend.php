@@ -510,9 +510,11 @@ abstract class DatabaseObject{
     }
 
     //@TODO condition statement should instead be an array, with a key used as the var name.
+    //@todo function should be static
 
     //sorting is how the list is sorted.
     //condition is an array of values to add to there where clause
+
     public function getList($sorting = null, $condition = null){
 
         $prepare = "SELECT * FROM ".get_class($this)." WHERE ";
@@ -531,7 +533,6 @@ abstract class DatabaseObject{
                 $execute[":$key"] = $var;
 
             }
-
 
         }else{
             $prepare = rtrim($prepare, " WHERE ");

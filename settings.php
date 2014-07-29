@@ -1,6 +1,6 @@
 <?php
 
-include_once "./header.php";
+include_once "./_header.php";
 
 FormValidation::generate();
 
@@ -69,10 +69,13 @@ include "./menu.php";
                 <div class="fluid-row width-60 slim">
                     <label for="email">Email: </label> <input type="text" class="float-right" no-default id="email" name="email" value="<?php echo $user->email; ?>" />
                 </div>
+
                 <div class="fluid-row slim"></div>
+
                 <div class="fluid-row width-60 slim">
                     <label for="password">New Password: </label> <input class="float-right" type="password" id="password" name="password" />
                 </div>
+
                 <div class="fluid-row width-60 slim">
                     <label for="confirm">Confirm Password: </label> <input class="float-right" type="password" id="confirm" name="confirm" />
                 </div>
@@ -98,8 +101,8 @@ include "./menu.php";
                 <div class="fluid-row slim"></div>
 
                 <div class="fluid-row width-60 slim">
-                    <label for="favorite_team">Favorite Team: </label>
-                    <select id="favorite_team" class="float-right">
+                    <label for="favorite_team_id">Favorite Team: </label>
+                    <select id="favorite_team_id" name="favorite_team_id" class="float-right">
                         <option value="0" >Favorite Team</option>
                         <?php
                             foreach($teams as $value){
@@ -135,9 +138,8 @@ include "./menu.php";
 
 </div>
 
-<script src="./js/bug_report.js"></script>
+<?php
 
-<?php if(isset($_SESSION['result'])) unset($_SESSION['result']); ?>
+    include "./_footer.php";
 
-</body>
-</html>
+?>

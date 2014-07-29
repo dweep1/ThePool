@@ -43,12 +43,19 @@ H1,H2,H3,H4,H5,H6{
   margin:0;
 }
 
-H1{font-size:48px;line-height:58px;letter-spacing: 4px;}
-H2{font-size:36px;line-height:48px;letter-spacing: 4px;}
-H3{font-size:30px;line-height:40px;letter-spacing: 3px;}
-H4{font-size:26px;line-height:34px;letter-spacing: 3px;}
-H5{font-size:20px;line-height:28px;letter-spacing: 2px;}
-H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
+H1{font-size:2.8em;line-height:1em;letter-spacing: 4px;}
+H2{font-size:2.4em;line-height:1em;letter-spacing: 4px;}
+H3{font-size:2.0em;line-height:1em;letter-spacing: 3px;}
+H4{font-size:1.8em;line-height:1em;letter-spacing: 3px;}
+H5{font-size:1.3em;line-height:1em;letter-spacing: 2px;}
+H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
+
+//H1{font-size:48px;line-height:58px;letter-spacing: 4px;}
+//H2{font-size:36px;line-height:48px;letter-spacing: 4px;}
+//H3{font-size:30px;line-height:40px;letter-spacing: 3px;}
+//H4{font-size:26px;line-height:34px;letter-spacing: 3px;}
+//H5{font-size:20px;line-height:28px;letter-spacing: 2px;}
+//H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
 
 .clear-fix:after {
   content: ".";
@@ -124,6 +131,20 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   }
 }
 
+#debug{
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  padding:20px;
+  font-size:10px;
+  font-weight: 300;
+  line-height: 12px;
+  color:#000;
+  z-index: 2001;
+  background: rgba(#fff, 0.6);
+  display:inline-block;
+}
+
 .ui-button{
 
   color:#fff;
@@ -179,6 +200,12 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
   display:block;
   color: #212121;
 
+  .remaining{
+    b{
+      padding: 0px 3px;
+    }
+  }
+
   .intro-word-con{
     margin-top:20%;
     margin-left:30%;
@@ -217,7 +244,7 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
     }
 
     &.width-90{
-      @include calc(width, "80%");
+      @include calc(min-width, "85%");
       display:inline-block;
       vertical-align: top;
     }
@@ -337,7 +364,8 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       }
 
       h6{
-        font-weight:400;
+        font-weight:300;
+        line-height: 1.8em;
       }
 
       &.alignleft{
@@ -345,14 +373,17 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
       }
 
       &.picked{
-        @include text-shadow(#000 0px 2px 7px);
+        @include text-shadow(#000 0px 1px 2px);
 
         h5{
-          font-weight:700;
+          font-weight:400;
+
         }
 
         h6{
           font-weight:700;
+          font-size: 1.8em;
+          line-height: 1em;
         }
 
         .gradient-left{
@@ -417,6 +448,61 @@ H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
         min-width:18px;
         text-align: center;
         margin:0px 5%;
+      }
+    }
+  }
+}
+
+.ui-globalpicks{
+  width: 100%;
+
+  tr{
+    th{
+      font-weight:600;
+      padding:8px 6px;
+      cursor:pointer;
+
+      i{
+        color:#444;
+      }
+    }
+
+    td{
+      border: 1px solid rgba(180,180,180,0.6);
+      padding: 8px;
+      font-weight:300;
+      white-space: nowrap;
+
+      &.username{
+        font-weight:500;
+        table-layout: fixed;
+        overflow:hidden;
+      }
+
+      small{
+        font-weight:400;
+        font-size: 0.7em;
+        line-height:1em;
+        color: #222;
+
+        b{
+          font-weight:700;
+        }
+      }
+    }
+
+    &.selected{
+
+      td{
+        @include box-shadow(rgba(100,255,0,0.4) 0px 0px 3px inset);
+        border: 1px solid rgba(100,255,0, 0.3);
+      }
+    }
+
+    &.a{
+
+      td{
+        background:rgba(#333, 0.2);
       }
     }
   }
