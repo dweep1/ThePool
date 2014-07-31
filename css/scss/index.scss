@@ -243,10 +243,37 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       background: #212121;
     }
 
+    &.secondary{
+
+      &.fixed{
+        position: fixed;
+        right:0;
+        top:0;
+
+        @include respondTo(smallScreen) {
+          display:none;
+        }
+
+        @include respondTo(tablet) {
+          display:none;
+        }
+
+        @include respondTo(smartphone) {
+          display:none;
+        }
+      }
+
+    }
+
     &.width-90{
-      @include calc(min-width, "85%");
+      @include calc(width, "80%");
       display:inline-block;
       vertical-align: top;
+
+      &.full{
+        width:auto;
+        @include calc(min-width, "85%");
+      }
     }
 
     &.width-60{

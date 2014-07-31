@@ -128,7 +128,9 @@ include "./menu.php";
 
             <div class="fluid-row width-90 alignleft">
 
-                <div class="fluid-row"><h4>Rivals</h4></div>
+                <div class="fluid-row">
+                    <h4>Transactions</h4>
+                </div>
 
             </div>
 

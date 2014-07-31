@@ -65,11 +65,11 @@ foreach($usersList as $key => $tempUser){
 <body class="height-100">
 
     <div id="content-area" style="padding:0; margin:0">
-        <div class="fluid-row width-90 slim alignleft">
+        <div class="fluid-row full width-90 slim alignleft">
             <h5 style="display:inline-block">Week #<?php echo $thisWeek->week_number; ?>'s Results</h5>
         </div>
 
-        <div class="fluid-row width-90 slim aligncenter">
+        <div class="fluid-row full width-90 slim aligncenter">
 
             <table class="ui-globalpicks alignleft" cellpadding="0" cellspacing="0">
                 <thead>

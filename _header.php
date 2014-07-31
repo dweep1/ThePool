@@ -7,11 +7,8 @@
     $time = microtime(TRUE);
     $mem = memory_get_usage();
 
-    if(!session_id()) {
+    if(!session_id())
         session_start();
-    } else {
-
-    }
 
     global $ROOT_DB_PATH;
 

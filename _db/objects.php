@@ -257,27 +257,6 @@ class event extends DatabaseObject{
     public $date_start;
     public $date_end;
 
-    /**
-     * Loads a selected week from the database
-     * @param Int $id is the ID of the selected object which to load from a DB
-     * @return Object of selected class name;
-     * @throws PDO error if database is unreachable
-     */
-    public static function selected($id = null){
-
-        $className = get_called_class();
-
-        if($id === null){
-            $selected = (isset($_SESSION['selected_'.$className])) ? new $className($_SESSION['selected_'.$className]) : false;
-        }else{
-            $selected = new $className($id);
-            $_SESSION['selected_'.$className] = $selected->toArray();
-        }
-
-        return $selected;
-
-    }
-
     public static function getCurrent(){
 
         $className = get_called_class();
@@ -761,6 +740,38 @@ class teams extends DatabaseObject{
     public $losses;
     public $games;
 
+    public function getRecentGames($limit = 3){
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare("SELECT * FROM game WHERE (home_team = :team_id OR away_team = :team_id) AND date < CURDATE() ORDER BY id DESC LIMIT :lim");
+
+            $query->bindValue(':lim', (int) $limit, PDO::PARAM_INT);
+            $query->bindValue(':team_id', (int) $this->id, PDO::PARAM_INT);
+
+            $query->execute();
+
+            $objects = $query->fetchAll(PDO::FETCH_CLASS, 'game');
+
+        }catch(PDOException $pe){
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        $this->recentGames = $objects;
+
+        return $objects;
+
+    }
+
+    public function getTeamStats(){
+
+        $this->stats = true;
+
+    }
+
     public static function getTeamsList(){
 
         $instance = new self();
@@ -770,6 +781,7 @@ class teams extends DatabaseObject{
         if(!is_bool($teams)){
             foreach($teams as $value){
                 $value->image_url = "./_storage/teams/{$value->id}/logo_150.png";
+                $value->image_url_full = "./_storage/teams/{$value->id}/logo.png";
                 $tempStore[$value->id] = $value;
             }
         }

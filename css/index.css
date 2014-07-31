@@ -336,22 +336,54 @@ H6 {
   color: #fff;
   background: #212121;
 }
-/* line 246, scss/index.scss */
+/* line 248, scss/index.scss */
+#content-area .fluid-row.secondary.fixed {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+@media (max-width: 1274px) {
+  /* line 248, scss/index.scss */
+  #content-area .fluid-row.secondary.fixed {
+    display: none;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 248, scss/index.scss */
+  #content-area .fluid-row.secondary.fixed {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  /* line 248, scss/index.scss */
+  #content-area .fluid-row.secondary.fixed {
+    display: none;
+  }
+}
+/* line 268, scss/index.scss */
 #content-area .fluid-row.width-90 {
+  width: -webkit-calc(80%);
+  width: -moz-calc(80%);
+  width: -o-calc(80%);
+  width: calc(80%);
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 273, scss/index.scss */
+#content-area .fluid-row.width-90.full {
+  width: auto;
   min-width: -webkit-calc(85%);
   min-width: -moz-calc(85%);
   min-width: -o-calc(85%);
   min-width: calc(85%);
-  display: inline-block;
-  vertical-align: top;
 }
-/* line 252, scss/index.scss */
+/* line 279, scss/index.scss */
 #content-area .fluid-row.width-60 {
   width: 60%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 258, scss/index.scss */
+/* line 285, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(47.5%);
   width: -moz-calc(47.5%);
@@ -361,7 +393,7 @@ H6 {
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 258, scss/index.scss */
+  /* line 285, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -369,7 +401,7 @@ H6 {
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 258, scss/index.scss */
+  /* line 285, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -377,14 +409,14 @@ H6 {
   }
 }
 @media (max-width: 480px) {
-  /* line 258, scss/index.scss */
+  /* line 285, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
     float: none;
   }
 }
-/* line 284, scss/index.scss */
+/* line 311, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -392,7 +424,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 292, scss/index.scss */
+/* line 319, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -400,7 +432,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 300, scss/index.scss */
+/* line 327, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -410,14 +442,14 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 310, scss/index.scss */
+/* line 337, scss/index.scss */
 #content-area #logo-banner {
   width: 50%;
   min-width: 200px;
   max-width: 500px;
   margin-top: 5%;
 }
-/* line 317, scss/index.scss */
+/* line 344, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -425,12 +457,12 @@ H6 {
   display: inline-block;
 }
 
-/* line 325, scss/index.scss */
+/* line 352, scss/index.scss */
 [data-trans-for] {
   cursor: pointer;
 }
 
-/* line 329, scss/index.scss */
+/* line 356, scss/index.scss */
 [data-bad-value="true"] {
   -webkit-box-shadow: red 0px 1px 10px;
   -moz-box-shadow: red 0px 1px 10px;
@@ -439,13 +471,13 @@ H6 {
   border-radius: 3px;
 }
 
-/* line 336, scss/index.scss */
+/* line 363, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 341, scss/index.scss */
+/* line 368, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -453,11 +485,11 @@ H6 {
   width: auto;
   margin: 15px 10px;
 }
-/* line 348, scss/index.scss */
+/* line 375, scss/index.scss */
 .ui-games-list li .loss {
   text-decoration: line-through;
 }
-/* line 352, scss/index.scss */
+/* line 379, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
@@ -467,34 +499,34 @@ H6 {
   text-shadow: black 0px 0px 2px;
   cursor: pointer;
 }
-/* line 362, scss/index.scss */
+/* line 389, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 366, scss/index.scss */
+/* line 393, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 300;
   line-height: 1.8em;
 }
-/* line 371, scss/index.scss */
+/* line 398, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 375, scss/index.scss */
+/* line 402, scss/index.scss */
 .ui-games-list li .team.picked {
   text-shadow: black 0px 1px 2px;
 }
-/* line 378, scss/index.scss */
+/* line 405, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 400;
 }
-/* line 383, scss/index.scss */
+/* line 410, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
   font-size: 1.8em;
   line-height: 1em;
 }
-/* line 389, scss/index.scss */
+/* line 416, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -502,7 +534,7 @@ H6 {
   background-image: -o-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
 }
-/* line 393, scss/index.scss */
+/* line 420, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
   background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -510,7 +542,7 @@ H6 {
   background-image: -o-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
 }
-/* line 398, scss/index.scss */
+/* line 425, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 7% 8%;
   width: auto;
@@ -523,15 +555,15 @@ H6 {
   background-image: linear-gradient(left, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 406, scss/index.scss */
+/* line 433, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
 }
-/* line 411, scss/index.scss */
+/* line 438, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 415, scss/index.scss */
+/* line 442, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 7% 8%;
   width: auto;
@@ -544,11 +576,11 @@ H6 {
   background-image: linear-gradient(right, rgba(17, 17, 17, 0.7) 0%, #222222 80%);
   white-space: nowrap;
 }
-/* line 423, scss/index.scss */
+/* line 450, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
 }
-/* line 429, scss/index.scss */
+/* line 456, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 20%;
@@ -556,7 +588,7 @@ H6 {
   vertical-align: middle;
   white-space: nowrap;
 }
-/* line 436, scss/index.scss */
+/* line 463, scss/index.scss */
 .ui-games-list li .middle i {
   position: relative;
   z-index: 100;
@@ -566,7 +598,7 @@ H6 {
   padding: 10px;
   font-style: normal;
 }
-/* line 446, scss/index.scss */
+/* line 473, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -574,57 +606,57 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 456, scss/index.scss */
+/* line 483, scss/index.scss */
 .ui-globalpicks {
   width: 100%;
 }
-/* line 460, scss/index.scss */
+/* line 487, scss/index.scss */
 .ui-globalpicks tr th {
   font-weight: 600;
   padding: 8px 6px;
   cursor: pointer;
 }
-/* line 465, scss/index.scss */
+/* line 492, scss/index.scss */
 .ui-globalpicks tr th i {
   color: #444;
 }
-/* line 470, scss/index.scss */
+/* line 497, scss/index.scss */
 .ui-globalpicks tr td {
   border: 1px solid rgba(180, 180, 180, 0.6);
   padding: 8px;
   font-weight: 300;
   white-space: nowrap;
 }
-/* line 476, scss/index.scss */
+/* line 503, scss/index.scss */
 .ui-globalpicks tr td.username {
   font-weight: 500;
   table-layout: fixed;
   overflow: hidden;
 }
-/* line 482, scss/index.scss */
+/* line 509, scss/index.scss */
 .ui-globalpicks tr td small {
   font-weight: 400;
   font-size: 0.7em;
   line-height: 1em;
   color: #222;
 }
-/* line 488, scss/index.scss */
+/* line 515, scss/index.scss */
 .ui-globalpicks tr td small b {
   font-weight: 700;
 }
-/* line 496, scss/index.scss */
+/* line 523, scss/index.scss */
 .ui-globalpicks tr.selected td {
   -webkit-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   -moz-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   border: 1px solid rgba(100, 255, 0, 0.3);
 }
-/* line 504, scss/index.scss */
+/* line 531, scss/index.scss */
 .ui-globalpicks tr.a td {
   background: rgba(51, 51, 51, 0.2);
 }
 
-/* line 511, scss/index.scss */
+/* line 538, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -637,7 +669,7 @@ H6 {
   display: none;
 }
 
-/* line 523, scss/index.scss */
+/* line 550, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -655,24 +687,24 @@ H6 {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
 }
 
-/* line 535, scss/index.scss */
+/* line 562, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 541, scss/index.scss */
+/* line 568, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 545, scss/index.scss */
+/* line 572, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 551, scss/index.scss */
+/* line 578, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -683,7 +715,7 @@ input[type="text"], input[type="password"] {
   border-radius: 3px;
 }
 
-/* line 561, scss/index.scss */
+/* line 588, scss/index.scss */
 label {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -692,14 +724,14 @@ label {
   vertical-align: bottom;
 }
 
-/* line 569, scss/index.scss */
+/* line 596, scss/index.scss */
 select {
   padding: 8px 15px;
   border: 2px solid #222;
   border-radius: 3px;
 }
 
-/* line 575, scss/index.scss */
+/* line 602, scss/index.scss */
 select, option {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -707,12 +739,12 @@ select, option {
   font-weight: 400;
 }
 
-/* line 582, scss/index.scss */
+/* line 609, scss/index.scss */
 option {
   padding: 5px 10px;
 }
 
-/* line 587, scss/index.scss */
+/* line 614, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -733,13 +765,13 @@ option {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 602, scss/index.scss */
+/* line 629, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 608, scss/index.scss */
+/* line 635, scss/index.scss */
 #main-nav #login-area {
   position: absolute;
   padding: 10px;
@@ -753,22 +785,22 @@ option {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   color: #fff;
 }
-/* line 619, scss/index.scss */
+/* line 646, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 625, scss/index.scss */
+/* line 652, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 628, scss/index.scss */
+/* line 655, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 633, scss/index.scss */
+/* line 660, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -776,7 +808,7 @@ option {
   height: 40px;
   text-align: center;
 }
-/* line 641, scss/index.scss */
+/* line 668, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -784,7 +816,7 @@ option {
   list-style: none;
   overflow: hidden;
 }
-/* line 649, scss/index.scss */
+/* line 676, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -796,11 +828,11 @@ option {
   display: block;
   white-space: nowrap;
 }
-/* line 658, scss/index.scss */
+/* line 685, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 662, scss/index.scss */
+/* line 689, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -813,7 +845,7 @@ option {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 674, scss/index.scss */
+/* line 701, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -823,7 +855,7 @@ option {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 681, scss/index.scss */
+/* line 708, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }
