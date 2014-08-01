@@ -10,7 +10,7 @@ $user = users::returnCurrentUser();
 $favoriteTeam = new teams($user->favorite_team_id);
 
 if(isset($_GET['team_id']))
-    $selected_team = teams::selected(null, (int) $_GET['team_id']);
+    $selected_team = teams::selected((int) $_GET['team_id']);
 else
     $selected_team = teams::selected(null, $favoriteTeam);
 
@@ -19,9 +19,6 @@ $selected_team->getRecentGames();
 
 ?>
 
-<!--
-<?php var_dump($selected_team); ?>
--->
 <div class="aligncenter">
 	<br/>
     <div class="fluid-row slim">
@@ -104,6 +101,7 @@ $selected_team->getRecentGames();
 
         </ul>
     </div>
+</div>
 
     <?php exit; ?>;
 	<div class="barHold">

@@ -1,3 +1,11 @@
+$(document).on("mousedown", "[data-team-id]", function (e) {
+
+    var $for = $(this).attr('data-team-id');
+
+   $("#team-info").load("./tpl.picks.teaminfo.php?team_id="+$for);
+
+});
+
 var myApp = angular.module('myHome', ['angular-velocity']);
 
 function RowController($scope, $http) {
