@@ -31,6 +31,25 @@ function getLiveStats($scope, $http){
             var $formatedPicks = [];
             var $formatedLabels = [];
             var $legend = $("#performanceLegend");
+            var $seasonRank = $("#rankInfo");
+
+            //.sort(function(a,b) { return parseFloat(a.price) - parseFloat(b.price) } );
+
+            $scope.myUserID = parseInt(data.myUserID);
+
+            $scope.rankList = [];
+
+            data.userRank[0].list.forEach(function(entity){
+
+                entity.percent = (entity.percent*100).toFixed(2);
+                entity.total = parseInt(entity.total);
+                entity.username = getUsername(data.users,entity.userID);
+                entity.userID = parseInt(entity.userID);
+
+                if(entity.username !== false)
+                    $scope.rankList.push(entity);
+
+            });
 
             data.userPicks.forEach(function(entity){
 
@@ -51,7 +70,19 @@ function getLiveStats($scope, $http){
 
             });
 
-            console.log($formatedPicks);
+            var tempRank = "<div class='ui-spacer-item large'>"+ordinal_suffix_of(data.userRank[0].rankData.rank)+" <small class='ui-super'>rank</small></div>";
+
+            tempRank += "<div class='ui-spacer-item large'>"+data.userRank[0].rankData.total+" <small class='ui-super'>total</small></div>";
+
+            var $average = data.userRank[0].rankData.total/data.weeks.length;
+
+            tempRank += "<div class='ui-spacer-item large'>"+$average.toFixed(2)+" <small class='ui-super'>avg weekly</small></div>";
+
+            var $percent =  data.userRank[0].rankData.percent*100;
+
+            tempRank += "<div class='ui-spacer-item large'>"+$percent.toFixed(2)+"% <small class='ui-super'>pick</small></div>";
+
+            $seasonRank.append(tempRank);
 
             data.weeks.forEach(function(entity){
 
@@ -90,7 +121,7 @@ function getLiveStats($scope, $http){
 
                 chartData.datasets.push($temp);
 
-                var tempLegend = "<div class='ui-legend-item'>"+entity.title+" <i class='fa fa-user' style='color: "+entity.strokeColor+"'></i></div>";
+                var tempLegend = "<div style='border-color: "+entity.strokeColor+"' class='ui-legend-item'>"+entity.title+" <i class='fa fa-user' style='color: "+entity.pointColor+"'></i></div>";
 
                 $legend.append(tempLegend)
 
@@ -112,6 +143,20 @@ function getLiveStats($scope, $http){
 
 
 
+}
+
+function getUsername($data, $user_id){
+
+    var $username = false;
+
+    $data.forEach(function(entity){
+
+        if(parseInt($user_id) == parseInt(entity.id))
+            $username = entity.username;
+
+    });
+
+    return $username;
 }
 
 function resizeCharts($chartData){

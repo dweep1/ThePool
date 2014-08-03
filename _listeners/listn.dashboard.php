@@ -27,7 +27,8 @@
         $return['myUserID'] = $currentUser->id;
 
         //returns a list of player ranks for global list
-        $return['userRank'][0] = stat_log::getGlobalRankData(-1);
+        $return['userRank'][0]['list'] = stat_log::getGlobalRankData(-1);
+        $return['userRank'][0]['rankData'] = stat_log::getPlayerRank($return['userRank'][0]['list']);
 
         //gets the global pick data in terms of points per each week
         $return['userPicks'][0]['data'] = stat_log::getGlobalPointData();

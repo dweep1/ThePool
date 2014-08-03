@@ -257,7 +257,7 @@ class users extends DatabaseObject{
 
             $users[$key]->last_ip = $users[$key]->last_login_date = $users[$key]->user_level = $users[$key]->security_key = null;
             $users[$key]->password = $users[$key]->salt = $users[$key]->auth_key = $users[$key]->login_count = null;
-            $users[$key]->access_level = $users[$key]->credits = null;
+            $users[$key]->access_level = $users[$key]->credits = $users[$key]->email = null;
 
         }
 
@@ -356,7 +356,7 @@ class week extends event{
         $picks = $this->getPicks($user_id);
         $teams = teams::getTeamsList();
 
-        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id));
+        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id))[0];
         $this->week_rank = Core::formatNumber(users::getPlayerRanking(null, $this->id));
 
         $this->total_score = stat_log::getUserStats(6);
@@ -703,24 +703,26 @@ class stat_log extends DatabaseObject{
 
         $count = 1;
 
+        $return = false;
+
         foreach($sort as $value){
 
             $value['rank'] = $count;
 
-            if($value['user_id'] == $user_id)
-                return $value;
+            if($value['userID'] == $user_id)
+                $return = $value;
 
             $count++;
 
         }
 
-        return false;
+        return $return;
 
     }
 
     public static function getPlayerPointData(){
 
-        return self::getUserStats(6);
+        return self::getUserStats(5);
 
     }
 
@@ -761,11 +763,17 @@ class stat_log extends DatabaseObject{
         $prepare = "";
         $execArray = [];
 
-        if($stat_id == 6){//user point totals
+        if($stat_id == 5){//user point totals
+
+            $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1 GROUP BY week_id";
+            $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
+
+
+        }else if($stat_id == 6){//user point totals
 
             if(!isset($dataArray['week_id']) || $dataArray['week_id'] == -1){//global point total
 
-                $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1 GROUP BY week_id";
+                $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1";
                 $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
 
             }else{//weekly point total

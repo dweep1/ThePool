@@ -4,7 +4,7 @@ function RowController($scope, $http) {
 
     $scope.force = false;
 
-    getLiveData($scope, $http);
+    getLiveData($scope, $http, getRemaining($scope));
     getOldData($scope,$http);
 
     $scope.doRefresh = function() {
@@ -24,8 +24,6 @@ function RowController($scope, $http) {
         getRemaining($scope);
     }, true);
 
-    getRemaining($scope);
-
 }
 
 function getRemaining($scope){
@@ -34,6 +32,9 @@ function getRemaining($scope){
     $scope.remaining = [];
 
     var $noPick = [];
+
+    if(!checkSet($scope.games))
+        return false;
 
     $scope.games.forEach(function(entity){
         if(checkSet(entity.pick) !== false)
@@ -52,6 +53,8 @@ function getRemaining($scope){
         if(checkSet(entity) !== false)
             $scope.remaining.push({"id": entity, "value": entity});
     });
+
+    return true;
 
 }
 
@@ -124,23 +127,26 @@ function savePicks($scope, $http){
 
 }
 
-function getLiveData($scope, $http){
+function getLiveData($scope, $http, $callback){
 
     $scope.week_id = week_id;
 
-    if(checkSet(localStorage["week_data"]) && checkSet(localStorage["game_data"]) && checkSet(localStorage["week_id"]) && parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
+    if(checkSet(localStorage["week_data"]) && checkSet(localStorage["game_data"]) && checkSet(localStorage["week_id"])){
 
-        storeLocalGames($scope, null);
+        if(parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
 
-        if(objLength($scope.games) <= 0){
+            storeLocalGames($scope, null, $callback);
 
-            $scope.force = true;
+            if(objLength($scope.games) <= 0){
 
-            getLiveData($scope, $http);
+                $scope.force = true;
 
+                getLiveData($scope, $http, $callback);
+
+            }
+
+            return true;
         }
-
-        return true;
 
     }
 
@@ -150,7 +156,7 @@ function getLiveData($scope, $http){
         success(function(data, status) {
 
             $scope.status = status;
-            storeLocalGames($scope, data);
+            storeLocalGames($scope, data, $callback);
             getGamesPicked($scope);
 
             return true;
@@ -263,7 +269,7 @@ function refreshStoreLocal($scope){
 
 }
 
-function storeLocalGames($scope, data){
+function storeLocalGames($scope, data, $callback){
 
     if(checkSet(localStorage["week_data"]) === false || $scope.force === true){
 
@@ -278,6 +284,10 @@ function storeLocalGames($scope, data){
         $scope.games = JSON.parse(localStorage["game_data"]);
 
     }
+
+    if(checkSet($callback))
+        $callback();
+
 
 }
 

@@ -12,7 +12,6 @@ if($user === false || !$user->verifyAuth())
 
 ?>
 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +65,7 @@ if($user === false || !$user->verifyAuth())
 
         <div class="fluid-row slim alignleft">
 
-            <h5>Pick Performance <i data-trans-for="pick_performance" class="fa fa-bars"></i></h5>
+            <h4>Pick Performance <i data-trans-for="pick_performance" class="fa fa-bars"></i></h4>
 
             <div data-trans-id="pick_performance">
 
@@ -84,24 +83,63 @@ if($user === false || !$user->verifyAuth())
 
         <div class="fluid-row slim alignleft">
 
-            <h5>User Rank <i data-trans-for="rank" class="fa fa-bars"></i></h5>
+            <h4>User Rank <i data-trans-for="rank" class="fa fa-bars"></i></h4>
 
-            <div data-trans-id="rank">
+            <div data-trans-id="rank" class="aligncenter">
+
+                <div class="fluid-row slim"></div>
+
+                <div id="rankInfo" class="fluid-row slim aligncenter">
+
+                </div>
+
+                <div class="fluid-row"></div>
+
+                <div class="fluid-row slim width-50 alignleft">
+                    <h5>Rank by Points</h5>
+                    <div class="fluid-row slim"></div>
+                    <ul class="ui-rank-list">
+                        <li class="title alignleft">
+                            <div class="width-40">Name</div>
+                            <div class="width-25">Rank</div>
+                            <div class="width-25">Points</div>
+                        </li>
+                        <li data-ng-repeat="item in rankList | orderBy:'-total'"
+                            data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
+                            <div class="width-40">{{ item.username }}</div>
+                            <div class="width-25">{{ $index + 1 }}</div>
+                            <div class="width-25">{{ item.total }}</div>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="fluid-row slim width-50 alignleft">
+                    <h5>Rank by Percentage</h5>
+                    <div class="fluid-row slim"></div>
+                    <ul class="ui-rank-list">
+                        <li class="title">
+                            <div class="width-40">Name</div>
+                            <div class="width-25">Rank</div>
+                            <div class="width-25">Percent</div>
+                        </li>
+                        <li data-ng-repeat="item in rankList | orderBy:'-percent'"
+                            data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
+                            <div class="width-40">{{ item.username }}</div>
+                            <div class="width-25">{{ $index + 1 }}</div>
+                            <div class="width-25">{{ item.percent }}%</div>
+                        </li>
+                    </ul>
+
+                </div>
 
             </div>
 
         </div>
 
-        <div class="fluid-row slim alignleft">
-
-
-
-        </div>
-
-
     </div>
 
-    <div class="fluid-row width-50 dark float-right secondary">
+    <div class="fluid-row width-50 dark height-100 float-right secondary">
 
 
 

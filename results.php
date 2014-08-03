@@ -11,8 +11,8 @@
 
     $teams = teams::getTeamsList();
 
-    $thisWeek = (isset($_GET['week'])) ? week::selected($_GET['week']) : ((week::selected() !== false) ? week::selected() :  week::getCurrent());
-    //$games->getList("week_id asc", array("week_id" => $this->id));
+
+    $thisWeek = (isset($_GET['week'])) ? week::selected($_GET['week']) : ((week::selected() !== false && week::selected()->id !== null) ? week::selected() :  week::getCurrent());
     $weeks = $thisWeek->getList("week_id asc", array("season_id" => $thisWeek->season_id));
 
     $games = $thisWeek->getGames();
@@ -71,6 +71,7 @@
     <script src="./js/angular-velocity.min.js"></script>
     <script src="./js/modernizr.min.js"></script>
     <script src="./js/general.js"></script>
+    <script src="./js/stupidtable.min.js"></script>
 
 </head>
 <body class="height-100">
@@ -122,10 +123,10 @@
 
         <div class="fluid-row slim aligncenter">
 
-            <table class="ui-globalpicks alignleft" cellpadding="0" cellspacing="0">
+            <table id="stupid" class="ui-globalpicks alignleft" cellpadding="0" cellspacing="0">
                 <thead>
                     <tr>
-                        <th class="name" style="width:80px;">
+                        <th class="name" style="width:11%;">
                            User <i class="fa fa-info-sign"></i></th>
                         <?php
                             $count = 1;
@@ -137,7 +138,7 @@
                                 $count++;
                             }
                         ?>
-                        <th data-sort="int"> Points</th>
+                        <th data-sort="int"><i class="fa fa-sort"></i> Points</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -187,7 +188,7 @@
 
                             $percentage = number_format((($percentage["correct"]/$percentage["total"])*100), 1);
 
-                            echo "<td>{$total} <small title='Pick Percentage'>({$percentage})</small></td>";
+                            echo "<td data-sort-value='{$total}'>{$total} <small title='Pick Percentage'>({$percentage})</small></td>";
 
                         }
 
@@ -203,6 +204,10 @@
     <div class="clear-fix"></div>
 
 </div>
+
+    <script>
+        $("#stupid").stupidtable();
+    </script>
 
 <?php
 

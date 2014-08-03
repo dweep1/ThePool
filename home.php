@@ -23,17 +23,17 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
+    <script>
+
+        week_id = <?php echo week::getCurrent()->id; ?>;
+
+    </script>
     <script src="./js/jquery.velocity.min.js"></script>
     <script src="./js/velocity.ui.min.js"></script>
     <script src="./js/angular-velocity.min.js"></script>
     <script src="./js/modernizr.min.js"></script>
     <script src="./js/general.js"></script>
     <script src="./js/home.js"></script>
-    <script>
-
-        var week_id = <?php echo week::getCurrent()->id; ?>;
-
-    </script>
 
 </head>
 <body class="height-100" data-ng-app="myHome">
@@ -190,12 +190,12 @@
 
                 <div class="current-data">
                     <h2>{{ weekOld.total_rank }}</h2>
-                    <h6>{{ weekOld.total_score }} points</h6>
+                    <h6>{{ weekOld.total_score.value }} points</h6>
                 </div>
 
                 <div class="last-data">
                     <h2>{{ weekOld.week_rank }}</h2>
-                    <h6>{{ weekOld.week_score }} points</h6>
+                    <h6>{{ weekOld.week_score.value }} points</h6>
                 </div>
             </div>
         </div>

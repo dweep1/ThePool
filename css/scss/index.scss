@@ -11,7 +11,7 @@ $red: #f12a27;
 
 BODY {
   font-family: 'Roboto', sans-serif;
-  font-weight:300;
+  font-weight:400;
   font-size: 100%;
   line-height: 1.2em;
   color: #212121;
@@ -149,16 +149,73 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   min-height:400px;
 }
 
-.ui-legend-item{
+.ui-rank-list{
+  list-style: none;
+  padding:0;
+  margin:0;
 
-  display:block;
-  padding:0.5%;
+  .title{
+    font-weight:700;
+  }
+
+  .highlight{
+    background:#222;
+    color:#fff;
+  }
+
+  li{
+    display:block;
+    margin:0;
+    padding:1.7%;
+
+    .width-40{
+      width:45%;
+      display: inline-block;
+      vertical-align: top;
+      overflow:hidden;
+    }
+    .width-25{
+      width:25%;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+.ui-spacer-item{
+  display:inline-block;
+  padding:0.5% 1.5%;
+  margin: 0.5% 1.5%;
   font-size:1em;
   font-weight:400;
   vertical-align: middle;
 
+  &.large{
+    font-size:1.9em;
+  }
+}
+
+.ui-super{
+  vertical-align: super;
+  font-size:0.5em;
+  font-weight:400;
+}
+
+.ui-legend-item{
+
+  display:inline-block;
+  margin: 0.5% 1%;
+  padding:0.5% 1%;
+  font-size:1em;
+  font-weight:400;
+  vertical-align: middle;
+  border-radius: 3px;
+  line-height:1.5em;
+  border: 3px solid #fff;
+
   i{
     font-size:1.5em;
+    line-height:1.5em;
   }
 
 }
@@ -300,6 +357,12 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       vertical-align: top;
     }
 
+    &.width-30{
+      width: 30%;
+      display:inline-block;
+      vertical-align: top;
+    }
+
     &.width-50{
       @include calc(width, "47.5%");
       display:inline-block;
@@ -324,7 +387,6 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       }
     }
   }
-
 
   p.number{
     font-size: 2.5em;
@@ -409,7 +471,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       }
 
       h6{
-        font-weight:300;
+        font-weight:400;
         line-height: 1.8em;
       }
 
@@ -514,9 +576,10 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
 
     td{
       border: 1px solid rgba(180,180,180,0.6);
-      padding: 8px;
+      padding: 0.7%;
       font-weight:300;
       white-space: nowrap;
+      font-size:1.2em;
 
       &.username{
         font-weight:500;
