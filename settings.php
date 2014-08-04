@@ -52,7 +52,7 @@ include "./menu.php";
 ?>
 
 <div id="content-area">
-    <div class="width-50 fluid-row aligncenter">
+    <div class="width-50 fluid-row aligncenter settings">
 
         <form action="./_listeners/listn.settings.php" method="post">
             <input type="hidden" name="submitType" value="0" />
@@ -66,18 +66,21 @@ include "./menu.php";
 
                 <div class="fluid-row"><h4>Change Login Info</h4></div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="email">Email: </label> <input type="text" class="float-right" no-default id="email" name="email" value="<?php echo $user->email; ?>" />
+                    <div class="clear-fix"></div>
                 </div>
 
                 <div class="fluid-row slim"></div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="password">New Password: </label> <input class="float-right" type="password" id="password" name="password" />
+                    <div class="clear-fix"></div>
                 </div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="confirm">Confirm Password: </label> <input class="float-right" type="password" id="confirm" name="confirm" />
+                    <div class="clear-fix"></div>
                 </div>
 
             </div>
@@ -86,21 +89,29 @@ include "./menu.php";
 
                 <div class="fluid-row"><h4>Add/Edit Account Info</h4></div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="username">Username: </label> <input class="float-right" type="text" no-default id="username" name="username" value="<?php echo $user->username; ?>" />
+                    <div class="clear-fix"></div>
                 </div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="first_name">First Name: </label> <input class="float-right" type="text" no-default id="first_name" name="first_name" value="<?php echo $user->first_name; ?>" />
+                    <div class="clear-fix"></div>
                 </div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="last_name">Last Name: </label> <input class="float-right" type="text" no-default id="last_name" name="last_name" value="<?php echo $user->last_name; ?>" />
+                    <div class="clear-fix"></div>
+                </div>
+
+                <div class="fluid-row width-60 slim over-90 <?php echo (strlen($user->paypal) > 3) ? "" : "error"; ?>">
+                    <label for="username">Paypal Email: </label> <input class="float-right" type="text" no-default id="paypal" name="paypal" value="<?php echo $user->paypal; ?>" />
+                    <div class="clear-fix"></div>
                 </div>
 
                 <div class="fluid-row slim"></div>
 
-                <div class="fluid-row width-60 slim">
+                <div class="fluid-row width-60 slim over-90">
                     <label for="favorite_team_id">Favorite Team: </label>
                     <select id="favorite_team_id" name="favorite_team_id" class="float-right">
                         <option value="0" >Favorite Team</option>
@@ -114,6 +125,7 @@ include "./menu.php";
                             }
                         ?>
                     </select>
+                    <div class="clear-fix"></div>
                 </div>
 
             </div>
@@ -128,9 +140,44 @@ include "./menu.php";
 
             <div class="fluid-row width-90 alignleft">
 
+                <div class="fluid-row width-60 slim">
+                    Paypal Email: <?php echo (strlen($user->paypal) > 3) ? $user->paypal : "NONE"; ?>
+                </div>
+
                 <div class="fluid-row">
                     <h4>Transactions</h4>
                 </div>
+
+                <ul class="ui-rank-list">
+                    <li class="title">
+                        <div class="width-25">Date</div>
+                        <div class="width-25">Used</div>
+                        <div class="width-40">Transaction ID</div>
+                    </li>
+
+                    <?php
+
+                        $credits = new credit;
+                        $credits = $credits->getList("id desc", array("user_id" => $user->id));
+
+                        foreach($credits as $value){
+
+                            $used = ((int) $value->week_id <= -1) ? "No" : "Yes";
+                            $date = new DateTime($value->date);
+                            $result = $date->format('D M jS, Y');
+
+                            echo   "<li>
+                                        <div class='width-25'>{$result}</div>
+                                        <div class='width-25'>{$used}</div>
+                                        <div class='width-40'>{$value->nid}</div>
+                                    </li>";
+
+
+                        }
+
+                    ?>
+
+                </ul>
 
             </div>
 

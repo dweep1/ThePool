@@ -309,6 +309,12 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
     width:auto;
     z-index: 10;
 
+    &.error{
+      background:#F33;
+      color:#fff;
+      font-weight:700;
+    }
+
     &.slim{
       padding:11px 1%;
     }
@@ -386,6 +392,26 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
         float:none;
       }
     }
+
+    &.over-90{
+      @include respondTo(smallScreen) {
+        width:auto;
+        display:block;
+        float:none;
+      }
+
+      @include respondTo(tablet) {
+        width:auto;
+        display:block;
+        float:none;
+      }
+
+      @include respondTo(smartphone) {
+        width:auto;
+        display:block;
+        float:none;
+      }
+    }
   }
 
   p.number{
@@ -438,7 +464,6 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   border: 3px solid red;
   border-radius: 3px;
 }
-
 
 .ui-games-list{
   padding:0;
@@ -666,12 +691,20 @@ input[type="text"], input[type="password"]{
   border-radius: 3px;
 }
 
+.settings{
+  label{
+    position:absolute;
+    top: 28%;
+    left: 5%;
+  }
+}
+
 label{
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   line-height: 26px;
   font-weight:400;
-  vertical-align: bottom;
+  vertical-align: top;
 }
 
 select{

@@ -37,8 +37,8 @@
 
         if(!credit::useCredit(null,$currentWeek->id)){
 
-            //$result["result"] .= "You don't have a valid credit to use currently. ";
-            //$errors++;
+            $result["result"] .= "You don't have a valid credit to use currently. ";
+            $errors++;
 
         }
 

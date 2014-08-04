@@ -5,6 +5,7 @@ class users extends DatabaseObject{
 
     public $username;
     public $email;
+    public $paypal;
     public $password;
     public $salt;
     public $auth_key; //key that provides auth login
@@ -257,7 +258,7 @@ class users extends DatabaseObject{
 
             $users[$key]->last_ip = $users[$key]->last_login_date = $users[$key]->user_level = $users[$key]->security_key = null;
             $users[$key]->password = $users[$key]->salt = $users[$key]->auth_key = $users[$key]->login_count = null;
-            $users[$key]->access_level = $users[$key]->credits = $users[$key]->email = null;
+            $users[$key]->access_level = $users[$key]->credits = $users[$key]->email = $users[$key]->paypal = null;
 
         }
 
@@ -437,8 +438,9 @@ class credit extends DatabaseObject{
 
     public $date;
     public $user_id;
-    public $nid;
     public $week_id = -1;
+    public $nid;
+    public $amount;
 
     public static function useCredit($user_id = null, $week_id = null){
 
@@ -475,6 +477,12 @@ class credit extends DatabaseObject{
     }
 
     public static function validCredit($user_id = null, $week_id = null){
+
+        $useCredit = new options();
+        $useCredit->load("use_credit", "name");
+
+        if((int) $useCredit->value <= 0)
+            return true;
 
         if($user_id === null)
             $user_id = users::returnCurrentUser()->id;
