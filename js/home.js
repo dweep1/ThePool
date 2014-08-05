@@ -7,26 +7,69 @@ function RowController($scope, $http) {
     getLiveData($scope, $http, getRemaining($scope));
     getOldData($scope,$http);
 
+    if(!checkSet(localStorage["changed"]))
+        localStorage["changed"] = "false";
+
+    if(localStorage["changed"] != "false"){
+        if($("#changeBox").is(":hidden"))
+            $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
+
+    }
+
     $scope.doRefresh = function() {
         $scope.force = true;
 
         localStorage.clear();
 
         getLiveData($scope, $http);
+
+        setTimeout(function(){
+            localStorage["changed"] = "false";
+
+            if($("#changeBox").is(":visible"))
+                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 200});
+        },300);
+
     };
 
     $scope.doSave = function() {
         savePicks($scope, $http);
+
+        setTimeout(function(){
+            localStorage["changed"] = "false";
+
+            if($("#changeBox").is(":visible"))
+                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 200});
+        },300);
     };
 
     $scope.$watch('games', function() {
+
+        if(localStorage["game_data"] != JSON.stringify($scope.games) && checkSet($scope.games) && $scope.games.length > 0)
+            localStorage["changed"] = "true";
+        else
+            localStorage["changed"] = "false";
+
         refreshStoreLocal($scope);
         getRemaining($scope);
+
     }, true);
 
 }
 
 function getRemaining($scope){
+
+    setTimeout(function(){
+
+        if(checkSet(localStorage["changed"])){
+            if(localStorage["changed"] != "false"){
+                if($("#changeBox").is(":hidden")){
+                    $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
+                }
+            }
+        }
+
+    }, 600);
 
     var $remaining = [];
     $scope.remaining = [];
