@@ -17,7 +17,7 @@ class users extends DatabaseObject{
     public $security_key; //key associated with lost passwords
     public $favorite_team_id;
     public $login_count;
-    public $access_level; //if the user has verified their email and is not banned
+    public $access_level; //if the user wants to be seen or not
     public $credits;
 
     protected function classDataSetup(){ }
@@ -256,9 +256,13 @@ class users extends DatabaseObject{
 
         foreach($users as $key => $value){
 
-            $users[$key]->last_ip = $users[$key]->last_login_date = $users[$key]->user_level = $users[$key]->security_key = null;
-            $users[$key]->password = $users[$key]->salt = $users[$key]->auth_key = $users[$key]->login_count = null;
-            $users[$key]->access_level = $users[$key]->credits = $users[$key]->email = $users[$key]->paypal = null;
+            if((int) $value->access_level === -1 && (int) $value->id !== (int) self::returnCurrentUser()->id){
+                unset($users[$key]);
+            }else{
+                $users[$key]->last_ip = $users[$key]->last_login_date = $users[$key]->user_level = $users[$key]->security_key = null;
+                $users[$key]->password = $users[$key]->salt = $users[$key]->auth_key = $users[$key]->login_count = null;
+                $users[$key]->access_level = $users[$key]->credits = $users[$key]->email = $users[$key]->paypal = null;
+            }
 
         }
 
@@ -531,7 +535,17 @@ class rivals extends DatabaseObject{
     public $user_id;
     public $rival_id;
     public $rival_name;
-    public $rival_custom_name;
+    public $rival_custom_name = "";
+
+    public static function findRival($userID, $rivalsList){
+
+        foreach($rivalsList as $value){
+            if((int)$userID === (int)$value->rival_id)
+                return $value;
+        }
+
+        return false;
+    }
 
 }
 

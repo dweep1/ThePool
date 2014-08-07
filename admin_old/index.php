@@ -142,28 +142,9 @@ input, textarea {
         <br /><br />
         <input type="text" name="pass" id="pass" value="Password" />
         <br /><br />
-        
-        <button onclick="swap(1)" class="ui-submit">Forgot Password</button>
         <button id="login" class="ui-submit right">Submit</button>
         
 
-    </section> 
-    
-    <section id="forgot-password" class="container">
-    
-        <h2>Forgot Password</h2>
-        
-        <div class="error"></div>
-        <br />
-        
-        <input type="text" name="fusername" id="fusername" value="Username" />
-        <br /><br />
-        <input type="text" name="fpass" id="fpass" value="Email" />
-        <br /><br />
-        
-        <button onclick="swap(0)" class="ui-submit">Back</button>
-        <button id="forgot" class="ui-submit right">Submit</button>
-        
     </section>
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
@@ -215,16 +196,6 @@ function resize(){
 	}
 
 	$resize.css({"margin-top": $top});
-}
-
-function swap($animation){
-	if($animation === 1){
-		$("#login-con").css({"display": "none"});
-		$("#forgot-password").css({"display": "block"});
-	}else{
-		$("#login-con").css({"display": "block"});
-		$("#forgot-password").css({"display": "none"});
-	}
 }
 
 function showResult($result){

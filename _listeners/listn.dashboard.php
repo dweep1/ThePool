@@ -23,7 +23,13 @@
         $currentUser = users::returnCurrentUser();
 
         //returns a list of users that has sensitive information filtered out
-        $return['users'] = users::getFilteredUserList();
+
+        $return['users'] = [];
+
+        foreach(users::getFilteredUserList() as $tempUser){
+            array_push($return['users'], $tempUser);
+        }
+
         $return['myUserID'] = $currentUser->id;
 
         //returns a list of player ranks for global list

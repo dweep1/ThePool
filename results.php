@@ -11,7 +11,6 @@
 
     $teams = teams::getTeamsList();
 
-
     $thisWeek = (isset($_GET['week'])) ? week::selected($_GET['week']) : ((week::selected() !== false && week::selected()->id !== null) ? week::selected() :  week::getCurrent());
     $weeks = $thisWeek->getList("week_id asc", array("season_id" => $thisWeek->season_id));
 
@@ -19,6 +18,9 @@
 
     $picks = new pick();
     $picks = $picks->getList("user_id asc", array("week_id" => $thisWeek->id));
+
+    $rivals = new rivals();
+    $rivals = $rivals->getList("rival_id asc", array("user_id" => $user->id));
 
     $usersList = $user->getList();
     $usersKeys = [];
@@ -48,6 +50,14 @@
 
             }
 
+        }
+
+    }
+
+    foreach($usersList as $key => $tempUser){
+
+        if((int) $tempUser->access_level === -1 && (int) $tempUser->id !== (int) $user->id){
+            unset($usersList[$key]);
         }
 
     }
@@ -152,8 +162,13 @@
                             $total = 0;
                             $percentage = ["correct" => 0, "total" => 0];
 
+                            $rival = rivals::findRival($tempUser->id, $rivals);
+
                             if($tempUser->id == $user->id){
                                 echo "<tr class='$alt selected'><td class='username'>{$tempUser->username}</td>";
+                            }else if($rival !== false){
+                                $tempUser->username = (strlen($rival->rival_custom_name) > 2) ? $rival->rival_custom_name : $tempUser->username;
+                                echo "<tr class='$alt rival'><td class='username'>{$tempUser->username}</td>";
                             }else{
                                 echo "<tr class='$alt'><td class='username'>{$tempUser->username}</td>";
                             }

@@ -5,7 +5,8 @@ include "./admin.header.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     if(!isset($_POST['submitType'])){
-        fail('Submit Type Not Set');
+        echo 'Submit Type Not Set';
+        exit;
     }
     
     $submitType = intval($_POST['submitType']);
@@ -13,13 +14,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($submitType == 0){
     
         if(!isset($_POST['username']) || $_POST['username'] == "Username"){
-            fail('please enter your email');
+            echo('please enter your email');
+            exit;
         }
-        if(!isset($_POST['pass']) || $_POST['pass'] == "Password"){
-            fail('please enter a password');
+
+        if(!isset($_POST['password']) || $_POST['password'] == "Password"){
+            echo('please enter a password');
+            exit;
         }
     
-        $auth = user::check_auth($_POST['username'], $_POST['pass']);
+        $user = users::returnCurrentUser();
     
         if($auth !== false){
     

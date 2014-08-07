@@ -2,37 +2,22 @@
 
 global $time;
 global $mem;
+global $memTwo;
 
 $time = microtime(TRUE);
 $mem = memory_get_usage();
 
-global $require_login; //if the login to this page is required;
-global $require_admin;
+if(!session_id())
+    session_start();
 
-include "../_objects/class.header.php";
+global $ROOT_DB_PATH;
 
-@define('PREFIX', "ADMIN");
+$ROOT_DB_PATH = "../_db/";
 
-header::setup('../');
+include_once "{$ROOT_DB_PATH}header.php";
+include_once "{$ROOT_DB_PATH}security.php";
+include_once "{$ROOT_DB_PATH}objects.php";
 
-include ROOT_PATH.CLASS_PATH."/class.db.php";
-$mysqlDB = new db();
-
-global $pdo;
-
-$pdo = $mysqlDB->newPDO();
-unset($mysqlDB);
-
-include ROOT_PATH.CLASS_PATH."/class.user.php";
-
-if($require_login === true){
-    header::require_login();
-}
-
-if($require_admin === true){
-    header::require_admin("./index.php");
-}
-
-
+$memTwo = memory_get_usage();
 
 ?>

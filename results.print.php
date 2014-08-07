@@ -1,53 +1,61 @@
 <?php
 
-include_once "./_header.php";
+    include_once "./_header.php";
 
-FormValidation::generate();
+    FormValidation::generate();
 
-$user = users::returnCurrentUser();
+    $user = users::returnCurrentUser();
 
-$teams = teams::getTeamsList();
+    $teams = teams::getTeamsList();
 
-$thisWeek = (isset($_GET['week'])) ? week::selected($_GET['week']) : ((week::selected() !== false) ? week::selected() :  week::getCurrent());
-//$games->getList("week_id asc", array("week_id" => $this->id));
-$weeks = $thisWeek->getList("week_id asc", array("season_id" => $thisWeek->season_id));
+    $thisWeek = (isset($_GET['week'])) ? week::selected($_GET['week']) : ((week::selected() !== false) ? week::selected() :  week::getCurrent());
+    //$games->getList("week_id asc", array("week_id" => $this->id));
+    $weeks = $thisWeek->getList("week_id asc", array("season_id" => $thisWeek->season_id));
 
-$games = $thisWeek->getGames();
+    $games = $thisWeek->getGames();
 
-$picks = new pick();
-$picks = $picks->getList("user_id asc", array("week_id" => $thisWeek->id));
+    $picks = new pick();
+    $picks = $picks->getList("user_id asc", array("week_id" => $thisWeek->id));
 
-$usersList = $user->getList();
-$usersKeys = [];
+    $usersList = $user->getList();
+    $usersKeys = [];
 
-foreach($picks as $value){
+    foreach($picks as $value){
 
-    if(!array_key_exists($value->user_id, $usersKeys)){
-        $usersKeys[$value->user_id] = $value->user_id;
+        if(!array_key_exists($value->user_id, $usersKeys)){
+            $usersKeys[$value->user_id] = $value->user_id;
+        }
+
     }
 
-}
+    foreach($usersList as $key => $tempUser){
 
-foreach($usersList as $key => $tempUser){
+        if(!array_key_exists($tempUser->id, $usersKeys)){
+            unset($usersList[$key]);
+        }else{
 
-    if(!array_key_exists($tempUser->id, $usersKeys)){
-        unset($usersList[$key]);
-    }else{
+            $usersList[$key]->picks = [];
 
-        $usersList[$key]->picks = [];
+            foreach($picks as $pickKey => $value){
 
-        foreach($picks as $pickKey => $value){
+                if($value->user_id === $tempUser->id){
+                    $usersList[$key]->picks[$value->game_id] = $value;
+                    unset($picks[$pickKey]);
+                }
 
-            if($value->user_id === $tempUser->id){
-                $usersList[$key]->picks[$value->game_id] = $value;
-                unset($picks[$pickKey]);
             }
 
         }
 
     }
 
-}
+    foreach($usersList as $key => $tempUser){
+
+        if((int) $tempUser->access_level === -1 && (int) $tempUser->id !== (int) $user->id){
+            unset($usersList[$key]);
+        }
+
+    }
 
 ?>
 <!DOCTYPE html>

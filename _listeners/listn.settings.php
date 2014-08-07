@@ -35,9 +35,70 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         } //success
 
-    }
+    }elseif((int)$submitType === 1){
+
+        $result = doRivalChange($_POST);
+
+        if($result === -1)//wrong password
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Couldn't find a user with given email/username" : $_SESSION['result'];
+        else if($result === false)//database error
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Database Error" : $_SESSION['result'];
+        else if($result === true)
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Rival Successfully Added" : $_SESSION['result'];
+        else if($result === -2)//rival is user
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "You cannot add yourself as a rival" : $_SESSION['result'];
+        else if($result === -3)//rival erased
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Rival Removed From List" : $_SESSION['result'];
+        else if($result === -4)//couldn't erase rival
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Couldn't Remove Rival" : $_SESSION['result'];
+        else//database error
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Magical Error" : $_SESSION['result'];
+
+
+    } //success
 
     header("Location: ../settings.php");
+
+}
+
+
+function doRivalChange($POST){
+
+    if((int)$POST['hiddenID'] !== -1){
+
+        $rival = new rivals($POST['hiddenID']);
+
+        if($rival->erase()){
+            return -3;
+        }
+
+        return -4;
+
+    }
+
+    $identifier = $POST['username'];
+
+    $user = new users;
+
+    if(!$user->load($identifier, 'email')){
+        if(!$user->load($identifier, 'username'))
+            return -1;//no user found
+    }
+
+    $rival = new rivals();
+
+    $rival->user_id = users::returnCurrentUser()->id;
+    $rival->rival_id = $user->id;
+    $rival->rival_name = $user->username;
+    $rival->rival_custom_name = $POST['rival_custom_name'];
+
+    if($rival->user_id == $rival->rival_id)
+        return -2;
+
+    if($rival->save())
+        return true;
+
+    return false;//db error
 
 }
 

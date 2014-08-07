@@ -47,8 +47,6 @@ function RowController($scope, $http) {
 
         if(localStorage["game_data"] != JSON.stringify($scope.games) && checkSet($scope.games) && $scope.games.length > 0)
             localStorage["changed"] = "true";
-        else
-            localStorage["changed"] = "false";
 
         refreshStoreLocal($scope);
         getRemaining($scope);

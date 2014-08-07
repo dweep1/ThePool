@@ -54,15 +54,21 @@ include "./menu.php";
 <div id="content-area">
     <div class="width-50 fluid-row aligncenter settings">
 
-        <form action="./_listeners/listn.settings.php" method="post">
+        <form action="./_listeners/listn.settings.php" id="changeUser" method="post">
             <input type="hidden" name="submitType" value="0" />
+            <input type="hidden" id="access_level" name="access_level" value="<?php echo $user->access_level; ?>" />
 
             <div class="fluid-row width-90 alignleft">
                 <h6>Confirm Password</h6>  <input type="password" name="confirm_password" autocomplete="off" />
                 <button class="ui-button dark float-right">Save Account Changes</button>
             </div>
 
-            <div class="fluid-row width-90 alignleft">
+            <div class="fluid-row width-90 slim alignleft">
+                Private Mode Enabled?: <b><?php echo ((int) $user->access_level === -1) ? "YES" : "NO"; ?></b>
+                <button type="button" id="togglePrivate" title="Don't show up on any of the lists or weekly results for anyone but yourself" class="ui-button dark float-right">Toggle Private Mode</button>
+            </div>
+
+            <div class="fluid-row width-90 slim alignleft">
 
                 <div class="fluid-row"><h4>Change Login Info</h4></div>
 
@@ -85,7 +91,7 @@ include "./menu.php";
 
             </div>
 
-            <div class="fluid-row width-90 alignleft">
+            <div class="fluid-row width-90 slim alignleft">
 
                 <div class="fluid-row"><h4>Add/Edit Account Info</h4></div>
 
@@ -136,56 +142,139 @@ include "./menu.php";
     </div>
 
     <div class="fluid-row width-50 dark height-100 float-right secondary aligncenter">
-        <form action="./_listeners/listn.settings.php" method="post">
 
-            <div class="fluid-row width-90 alignleft">
+        <div class="fluid-row width-90 alignleft">
 
-                <div class="fluid-row width-60 slim">
-                    Paypal Email: <?php echo (strlen($user->paypal) > 3) ? $user->paypal : "NONE"; ?>
+            <form action="./_listeners/listn.settings.php" id="rivalForm" method="post">
+                <input type="hidden" name="submitType" value="1" />
+                <input type="hidden" id="hiddenID" name="hiddenID" value="-1" />
+
+                <div class="fluid-row">
+                    <h4 style="display:inline-block;">Add Rival</h4>
+                    <button class="ui-button float-right">Save Rival</button>
+                </div>
+
+                <div class="fluid-row width-60 slim over-90">
+                    <label for="username">Username/Email: </label> <input class="float-right" type="text" no-default name="username" value="" />
+                    <div class="clear-fix"></div>
+                </div>
+
+                <div class="fluid-row width-60 slim over-90">
+                    <label for="first_name">Custom Name: </label> <input class="float-right" type="text" no-default name="rival_custom_name" value="" />
+                    <div class="clear-fix"></div>
                 </div>
 
                 <div class="fluid-row">
-                    <h4>Transactions</h4>
+                    <h4>Your Rivals</h4>
                 </div>
 
                 <ul class="ui-rank-list">
                     <li class="title">
-                        <div class="width-25">Date</div>
-                        <div class="width-25">Used</div>
-                        <div class="width-40">Transaction ID</div>
+                        <div class="width-70">Name</div>
+                        <div class="width-25">Delete</div>
                     </li>
 
                     <?php
 
-                        $credits = new credit;
-                        $credits = $credits->getList("id desc", array("user_id" => $user->id));
+                    $rivals = new rivals;
+                    $rivals = $rivals->getList("id desc", array("user_id" => $user->id));
 
-                        foreach($credits as $value){
+                    if(!is_bool($rivals)){
+                        foreach($rivals as $value){
 
-                            $used = ((int) $value->week_id <= -1) ? "No" : "Yes";
-                            $date = new DateTime($value->date);
-                            $result = $date->format('D M jS, Y');
+                            $name = (strlen($value->rival_custom_name) > 2) ? $value->rival_custom_name : $value->rival_name;
 
                             echo   "<li>
-                                        <div class='width-25'>{$result}</div>
-                                        <div class='width-25'>{$used}</div>
-                                        <div class='width-40'>{$value->nid}</div>
-                                    </li>";
+                                            <div class='width-70'>{$name}</div>
+                                            <div class='width-25'><i data-rival-id='{$value->id}' class='fa fa-times'></i></div>
+                                        </li>";
 
 
                         }
+                    }
 
                     ?>
 
                 </ul>
+            </form>
 
+        </div>
+
+        <div class="fluid-row width-90 alignleft">
+
+            <div class="fluid-row">
+                <h4>Transactions</h4>
             </div>
+
+            <div class="fluid-row width-60 slim">
+                Paypal Email: <?php echo (strlen($user->paypal) > 3) ? $user->paypal : "NONE"; ?>
+            </div>
+
+            <ul class="ui-rank-list">
+                <li class="title">
+                    <div class="width-25">Date</div>
+                    <div class="width-25">Used</div>
+                    <div class="width-40">Transaction ID</div>
+                </li>
+
+                <?php
+
+                    $credits = new credit;
+                    $credits = $credits->getList("id desc", array("user_id" => $user->id));
+
+                    foreach($credits as $value){
+
+                        $used = ((int) $value->week_id <= -1) ? "No" : "Yes";
+                        $date = new DateTime($value->date);
+                        $result = $date->format('D M jS, Y');
+
+                        echo   "<li>
+                                    <div class='width-25'>{$result}</div>
+                                    <div class='width-25'>{$used}</div>
+                                    <div class='width-40'>{$value->nid}</div>
+                                </li>";
+
+
+                    }
+
+                ?>
+
+            </ul>
+
+        </div>
+
 
     </div>
 
     <div class="clear-fix"></div>
 
 </div>
+
+<script>
+
+    $(document).on("mousedown", "[data-rival-id]", function (e) {
+
+        $("#hiddenID").val($(this).attr("data-rival-id"));
+
+        $("#rivalForm").submit();
+
+    });
+
+    $(document).on("mousedown", "#togglePrivate", function (e) {
+
+        var $level = parseInt($("#access_level").val());
+
+        if($level == 0)
+            $("#access_level").val("-1");
+        else
+            $("#access_level").val("0");
+
+
+        $("#changeUser").submit();
+
+    });
+
+</script>
 
 <?php
 

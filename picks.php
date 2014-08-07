@@ -31,7 +31,7 @@
     <script src="./js/pick.js"></script>
     <script>
 
-        var week_id = <?php echo week::getCurrent()->id; ?>;
+        week_id = <?php echo week::getCurrent()->id; ?>;
 
     </script>
 

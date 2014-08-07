@@ -34,7 +34,7 @@ if($user === false || !$user->verifyAuth())
 
     <script>
 
-        var week_id = <?php echo week::getCurrent()->id; ?>;
+        week_id = <?php echo week::getCurrent()->id; ?>;
 
     </script>
 

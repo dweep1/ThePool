@@ -149,6 +149,11 @@ function getUsername($data, $user_id){
 
     var $username = false;
 
+    if(!checkSet($data))
+        return false;
+    else if($data === false)
+        return false;
+
     $data.forEach(function(entity){
 
         if(parseInt($user_id) == parseInt(entity.id))

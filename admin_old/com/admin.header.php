@@ -1,17 +1,23 @@
-<?php 
+<?php
 
-include "../../_objects/class.header.php";
+global $time;
+global $mem;
+global $memTwo;
 
-header::setup('../../');
+$time = microtime(TRUE);
+$mem = memory_get_usage();
 
-include ROOT_PATH.CLASS_PATH."/class.db.php";
-$mysqlDB = new db();
+if(!session_id())
+    session_start();
 
-global $pdo;
+global $ROOT_DB_PATH;
 
-$pdo = $mysqlDB->newPDO();
-unset($mysqlDB);
+$ROOT_DB_PATH = "../../_db/";
 
-include ROOT_PATH.CLASS_PATH."/class.user.php";
+include_once "{$ROOT_DB_PATH}header.php";
+include_once "{$ROOT_DB_PATH}security.php";
+include_once "{$ROOT_DB_PATH}objects.php";
+
+$memTwo = memory_get_usage();
 
 ?>
