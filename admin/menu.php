@@ -6,7 +6,7 @@
 
     $menu_items = new admin_pages();
 
-    $menu_items = $menu_items->getList('id ASC');
+    $menu_items = $menu_items->getList('order_weight ASC');
 
     if(!checkPermissions(users::returnCurrentUser()))
         exit;

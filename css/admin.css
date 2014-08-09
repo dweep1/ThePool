@@ -12,7 +12,7 @@
 /* line 12, scss/admin.scss */
 BODY {
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 100%;
   line-height: 1.2em;
   color: #212121;
@@ -202,7 +202,7 @@ H6 {
   right: 0;
   z-index: 9995;
   overflow: visible;
-  height: 32px;
+  height: 46px;
   padding: 5px 20px;
 }
 /* line 128, scss/admin.scss */
@@ -228,7 +228,7 @@ H6 {
   height: auto;
   margin: 0;
   margin-left: 255px;
-  margin-top: 62px;
+  margin-top: 72px;
   padding: 0px;
   position: relative;
   width: auto;
@@ -248,7 +248,7 @@ H6 {
   color: #fff;
   position: fixed;
   z-index: 1;
-  top: 26px;
+  top: 46px;
   left: 0px;
   bottom: 0px;
   height: 100%;
@@ -372,73 +372,72 @@ input[type="text"], input[type="password"], .ui-date-time {
 }
 
 /* line 283, scss/admin.scss */
-.ui-button {
-  background: #313131;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: 'Quicksand', sans-serif;
+.ui-buttons {
+  color: #fff;
+  background: rgba(34, 34, 34, 0.3);
+  font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
-  font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 3px;
-  padding: 10px 20px;
-  padding-bottom: 8px;
+  font-weight: 700;
+  font-size: 11px;
   line-height: 12px;
-  margin: 0;
-  margin-top: 20px;
-  border: none;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  margin: 0px 5px;
+  padding: 10px 15px;
   outline: none;
-  border-bottom: 2px solid #313131;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   cursor: pointer;
 }
-/* line 302, scss/admin.scss */
-.ui-button:hover {
-  color: white;
-  border: none;
-  border-bottom: 2px solid #f12a27;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
+/* line 301, scss/admin.scss */
+.ui-buttons:hover {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
+  box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
+  border: 2px solid white;
 }
-/* line 309, scss/admin.scss */
-.ui-button.active {
-  color: rgba(255, 255, 255, 0.8);
-  border: none;
-  border-bottom: 2px solid rgba(241, 42, 39, 0.8);
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  box-shadow: none !important;
+/* line 306, scss/admin.scss */
+.ui-buttons:active {
+  -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
+  -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
+  box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+/* line 311, scss/admin.scss */
+.ui-buttons.dark {
+  color: #fff;
+  background: rgba(34, 34, 34, 0.9);
+  border: 2px solid rgba(68, 68, 68, 0.7);
+}
+/* line 316, scss/admin.scss */
+.ui-buttons.dark:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
+  border-bottom: 2px solid black;
+}
+/* line 321, scss/admin.scss */
+.ui-buttons.dark:active {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
+  border-bottom: 2px solid #222222;
 }
 
-/* line 317, scss/admin.scss */
+/* line 328, scss/admin.scss */
 .fluid-row {
   margin: 0;
   position: relative;
-  padding: 22px 33px;
+  padding: 22px 1%;
   display: block;
   width: auto;
   z-index: 10;
 }
-/* line 325, scss/admin.scss */
-.fluid-row.dark {
-  color: #fff;
-  background: #212121;
-}
-/* line 330, scss/admin.scss */
+/* line 336, scss/admin.scss */
 .fluid-row.no-padding {
   padding: 0px;
-}
-/* line 334, scss/admin.scss */
-.fluid-row.width-90 {
-  width: -webkit-calc(80%);
-  width: -moz-calc(80%);
-  width: -o-calc(80%);
-  width: calc(80%);
-  display: inline-block;
-  vertical-align: top;
 }
 /* line 340, scss/admin.scss */
 .fluid-row.width-40 {
@@ -501,43 +500,132 @@ input[type="text"], input[type="password"], .ui-date-time {
   }
 }
 /* line 382, scss/admin.scss */
+.fluid-row.error {
+  background: #F33;
+  color: #fff;
+  font-weight: 700;
+}
+/* line 388, scss/admin.scss */
+.fluid-row.slim {
+  padding: 11px 1%;
+}
+/* line 392, scss/admin.scss */
+.fluid-row.dark {
+  color: #fff;
+  background: #212121;
+}
+/* line 399, scss/admin.scss */
+.fluid-row.secondary.fixed {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+@media (max-width: 1274px) {
+  /* line 399, scss/admin.scss */
+  .fluid-row.secondary.fixed {
+    display: none;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 399, scss/admin.scss */
+  .fluid-row.secondary.fixed {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  /* line 399, scss/admin.scss */
+  .fluid-row.secondary.fixed {
+    display: none;
+  }
+}
+/* line 419, scss/admin.scss */
+.fluid-row.width-90 {
+  width: -webkit-calc(80%);
+  width: -moz-calc(80%);
+  width: -o-calc(80%);
+  width: calc(80%);
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 424, scss/admin.scss */
+.fluid-row.width-90.full {
+  width: auto;
+  min-width: -webkit-calc(85%);
+  min-width: -moz-calc(85%);
+  min-width: -o-calc(85%);
+  min-width: calc(85%);
+}
+/* line 430, scss/admin.scss */
+.fluid-row.width-30 {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 436, scss/admin.scss */
 .fluid-row.width-50 {
-  width: -webkit-calc(49.5% - 30px - 66px);
-  width: -moz-calc(49.5% - 30px - 66px);
-  width: -o-calc(49.5% - 30px - 66px);
-  width: calc(49.5% - 30px - 66px);
+  width: -webkit-calc(47.5%);
+  width: -moz-calc(47.5%);
+  width: -o-calc(47.5%);
+  width: calc(47.5%);
   display: inline-block;
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 382, scss/admin.scss */
+  /* line 436, scss/admin.scss */
   .fluid-row.width-50 {
     width: auto;
     display: block;
+    float: none;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 382, scss/admin.scss */
+  /* line 436, scss/admin.scss */
   .fluid-row.width-50 {
     width: auto;
     display: block;
+    float: none;
   }
 }
 @media (max-width: 480px) {
-  /* line 382, scss/admin.scss */
+  /* line 436, scss/admin.scss */
   .fluid-row.width-50 {
     width: auto;
     display: block;
+    float: none;
+  }
+}
+@media (max-width: 1274px) {
+  /* line 460, scss/admin.scss */
+  .fluid-row.over-90 {
+    width: auto;
+    display: block;
+    float: none;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 460, scss/admin.scss */
+  .fluid-row.over-90 {
+    width: auto;
+    display: block;
+    float: none;
+  }
+}
+@media (max-width: 480px) {
+  /* line 460, scss/admin.scss */
+  .fluid-row.over-90 {
+    width: auto;
+    display: block;
+    float: none;
   }
 }
 
-/* line 404, scss/admin.scss */
+/* line 481, scss/admin.scss */
 ul.data-row {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 409, scss/admin.scss */
+/* line 486, scss/admin.scss */
 ul.data-row li {
   width: auto;
   display: block;
@@ -545,19 +633,19 @@ ul.data-row li {
   font-size: 0.8em;
   line-height: 1.2em;
 }
-/* line 416, scss/admin.scss */
+/* line 493, scss/admin.scss */
 ul.data-row li:hover {
   background: #f12a27;
   color: #fff;
 }
 
-/* line 423, scss/admin.scss */
+/* line 500, scss/admin.scss */
 ul.pages-list {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-/* line 428, scss/admin.scss */
+/* line 505, scss/admin.scss */
 ul.pages-list li {
   width: auto;
   display: block;
@@ -569,7 +657,7 @@ ul.pages-list li {
   cursor: pointer;
   margin: 3px 0px;
 }
-/* line 439, scss/admin.scss */
+/* line 516, scss/admin.scss */
 ul.pages-list li i {
   font-size: 1.2em;
   line-height: 0.7em;
@@ -577,7 +665,7 @@ ul.pages-list li i {
   padding: 5px;
 }
 
-/* line 450, scss/admin.scss */
+/* line 527, scss/admin.scss */
 .ui-a-box {
   position: absolute;
   top: 10%;
@@ -588,7 +676,7 @@ ul.pages-list li i {
   border: 5px solid #7ec8ee;
 }
 
-/* line 460, scss/admin.scss */
+/* line 537, scss/admin.scss */
 #closePopup {
   margin-right: -40px;
   margin-top: -40px;
@@ -610,7 +698,7 @@ ul.pages-list li i {
   cursor: pointer;
 }
 
-/* line 475, scss/admin.scss */
+/* line 552, scss/admin.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -625,12 +713,12 @@ ul.pages-list li i {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 486, scss/admin.scss */
+/* line 563, scss/admin.scss */
 .ui-message-background.hidden {
   display: none;
 }
 
-/* line 491, scss/admin.scss */
+/* line 568, scss/admin.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -652,25 +740,25 @@ ul.pages-list li i {
   transition: all 1.3s ease-out;
 }
 
-/* line 504, scss/admin.scss */
+/* line 581, scss/admin.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 510, scss/admin.scss */
+/* line 587, scss/admin.scss */
 #fieldbody {
   position: absolute;
   left: 240px;
-  top: 40px;
+  top: 54px;
   z-index: 100;
   height: auto;
   width: auto;
   overflow: hidden;
 }
 
-/* line 522, scss/admin.scss */
+/* line 599, scss/admin.scss */
 .fieldmessage {
   position: relative;
   display: block;
@@ -697,13 +785,13 @@ ul.pages-list li i {
 /*
 NG Animate
 */
-/* line 551, scss/admin.scss */
+/* line 628, scss/admin.scss */
 .animate-left-left {
   position: relative;
   display: block;
 }
 
-/* line 558, scss/admin.scss */
+/* line 635, scss/admin.scss */
 .animate-left-left.ng-enter-stagger,
 .animate-left-left.ng-leave-stagger,
 .animate-left-left.ng-move-stagger {
@@ -724,7 +812,7 @@ NG Animate
   for the element that has the .repeated-item
   class
 */
-/* line 579, scss/admin.scss */
+/* line 656, scss/admin.scss */
 .animate-left-left.ng-enter,
 .animate-left-left.ng-move {
   -webkit-transition: 0.125s ease all;
@@ -741,7 +829,7 @@ NG Animate
  are set so that the animation knows what to
  animate.
 */
-/* line 592, scss/admin.scss */
+/* line 669, scss/admin.scss */
 .animate-left-left.ng-enter.ng-enter-active,
 .animate-left-left.ng-move.ng-move-active {
   left: 0px;
@@ -753,7 +841,7 @@ NG Animate
   the leave event is triggered for the element
   that has the .repeated-item class
 */
-/* line 602, scss/admin.scss */
+/* line 679, scss/admin.scss */
 .animate-left-left.ng-leave {
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -766,76 +854,76 @@ NG Animate
 }
 
 @-webkit-keyframes to_left_destroy {
-  /* line 609, scss/admin.scss */
+  /* line 686, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 610, scss/admin.scss */
+  /* line 687, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 611, scss/admin.scss */
+  /* line 688, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @-moz-keyframes to_left_destroy {
-  /* line 609, scss/admin.scss */
+  /* line 686, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 610, scss/admin.scss */
+  /* line 687, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 611, scss/admin.scss */
+  /* line 688, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @-ms-keyframes to_left_destroy {
-  /* line 609, scss/admin.scss */
+  /* line 686, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 610, scss/admin.scss */
+  /* line 687, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 611, scss/admin.scss */
+  /* line 688, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @keyframes to_left_destroy {
-  /* line 609, scss/admin.scss */
+  /* line 686, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 610, scss/admin.scss */
+  /* line 687, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 611, scss/admin.scss */
+  /* line 688, scss/admin.scss */
   85% {
     display: none;
   }

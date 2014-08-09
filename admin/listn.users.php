@@ -31,16 +31,38 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $objectType = $_POST['className'];
 
+    if(isset($_POST['password']) && strlen($_POST['password']) > 2){
+        $password = new Password($_POST['password']);
 
-    //new admin_pages
+        $_POST['password'] = $password->getKey();
+        $_POST['salt'] = $password->getSalt();
+    }else{
+
+        unset($_POST['password']);
+
+    }
+
+    //new users
 	if($submitType == 0){
 
-        $newPage = new $objectType($_POST);
+        if(users::verifyRegInfo($_POST)){
 
-        if($newPage->save())
-            $_SESSION['result'] = "Successfully added new $objectType";
-        else
-            $_SESSION['result'] = "Unable to add new $objectType";
+            $_POST['username'] = explode("@", $_POST['email'])[0];
+            $_POST['security_key'] = Cipher::getRandomKey(16);
+            $_POST['auth_key'] = Cipher::getRandomKey(16);
+
+            $newPage = new $objectType($_POST);
+
+            if($newPage->save())
+                $_SESSION['result'] = "Successfully added new $objectType";
+            else
+                $_SESSION['result'] = "Unable to add new $objectType";
+
+        }else{
+
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Email/Password was invalid" : $_SESSION['result'] ;
+
+        }
 
         header("Location: ./index.php");
 

@@ -1,3 +1,17 @@
+<?php
+
+    include_once "./_header.php";
+
+    FormValidation::generate();
+
+    $user = users::returnCurrentUser();
+
+    if($user->verifyAdmin())
+        header("Location: ./admin.php");
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -138,9 +152,9 @@ input, textarea {
         <div class="error"></div>
         <br />
         
-        <input type="text" name="username" id="username" value="Username" />
+        <input type="text" name="username" no-default id="username" value="Username" />
         <br /><br />
-        <input type="text" name="pass" id="pass" value="Password" />
+        <input type="text" name="password" no-default id="password" value="Password" />
         <br /><br />
         <button id="login" class="ui-submit right">Submit</button>
         
@@ -162,7 +176,7 @@ $(document).ready(function(){
 		resize();
     });
 
-	$("#pass").focus(function() {
+	$("#password").focus(function() {
 	      if (this.value === this.defaultValue) {
 	          this.value = '';
 				this.type = 'password';
@@ -223,12 +237,12 @@ $.fn.multiline = function(text){
 function logmein(){
 	var $submitType = 0;
 	var $username = $("#username").val();
-	var $pass = $("#pass").val();
+	var $pass = $("#password").val();
 	
 	$.ajax({ url: './com/listn.adminlogin.php',
 		  type: 'post',
 		  cache: false,
-		  data: {submitType: $submitType, username: $username, pass: $pass},
+		  data: {submitType: $submitType, username: $username, password: $pass},
 		  success: function(data) {
 			  
 			  if(checkResponse(data)){

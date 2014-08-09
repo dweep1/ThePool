@@ -11,7 +11,7 @@ $red: #f12a27;
 
 BODY {
   font-family: 'Roboto', sans-serif;
-  font-weight:300;
+  font-weight:400;
   font-size: 100%;
   line-height: 1.2em;
   color: #212121;
@@ -122,7 +122,7 @@ H6{font-size:1.25em;line-height:1.2em;letter-spacing: 0px;display:inline-block;}
   right:0;
   z-index:9995;
   overflow: visible;
-  height:32px;
+  height:46px;
   padding:5px 20px;
 
   .con{
@@ -147,7 +147,7 @@ H6{font-size:1.25em;line-height:1.2em;letter-spacing: 0px;display:inline-block;}
   height:auto;
   margin:0;
   margin-left:255px;
-  margin-top:62px;
+  margin-top:72px;
   padding:0px;
   position: relative;
   width:auto;
@@ -166,7 +166,7 @@ H6{font-size:1.25em;line-height:1.2em;letter-spacing: 0px;display:inline-block;}
   color: #fff;
   position: fixed;
   z-index:1;
-  top:26px;
+  top:46px;
   left:0px;
   bottom:0px;
   height:100%;
@@ -280,61 +280,61 @@ input[type="text"], input[type="password"], .ui-date-time{
   width:auto;
 }
 
-.ui-button{
-  background:#313131;
-  color:rgba(#fff,0.7);
-  font-family: 'Quicksand', sans-serif;
+.ui-buttons{
+
+  color:#fff;
+  background: rgba(#222,0.3);
+  font-family: 'Roboto', sans-serif;
   text-transform:uppercase;
-  font-weight: 600;
-  font-size:12px;
-  letter-spacing: 3px;
-  padding: 10px 20px;
-  padding-bottom:8px;
+  font-weight:700;
+  font-size:11px;
   line-height:12px;
-  margin:0;
-  margin-top:20px;
-  border:none;
+
+  @include border-radius(3px);
+  border:2px solid rgba(255,255,255,0.7);
+
+  margin:0px 5px;
+  padding: 10px 15px;
   outline:none;
-  border-bottom:2px solid rgba(#313131, 1);
-  @include transition(all 0.2s ease);
   cursor: pointer;
 
   &:hover{
-    color:rgba(#fff,1);
-    border: none;
-    border-bottom:2px solid rgba($red, 1);
-    @include box-shadow(none !important);
+    @include box-shadow(rgba(#fff,0.6) 0px 0px 2px);
+    border:2px solid rgba(255,255,255,1);
   }
 
-  &.active{
-    color:rgba(#fff,0.8);
-    border: none;
-    border-bottom:2px solid rgba($red, 0.8);
-    @include box-shadow(none !important);
+  &:active{
+    @include box-shadow(rgba(#fff,0.6) 0px 0px 3px);
+    border:2px solid rgba(255,255,255,0.5);
+  }
+
+  &.dark{
+    color:#fff;
+    background: rgba(#222,0.9);
+    border:2px solid rgba(#444,0.7);
+
+    &:hover{
+      @include box-shadow(rgba(#000,0.9) 0px 0px 5px);
+      border-bottom:2px solid rgba(#000,1);
+    }
+
+    &:active{
+      @include box-shadow(rgba(#000,0.9) 0px 0px 2px);
+      border-bottom:2px solid rgba(#222,1);
+    }
   }
 }
 
 .fluid-row{
   margin:0;
   position: relative;
-  padding:22px 33px;
+  padding:22px 1%;
   display:block;
   width:auto;
   z-index: 10;
 
-  &.dark{
-    color:#fff;
-    background: #212121;
-  }
-
   &.no-padding{
     padding:0px;
-  }
-
-  &.width-90{
-    @include calc(width, "80%");
-    display:inline-block;
-    vertical-align: top;
   }
 
   &.width-40{
@@ -379,24 +379,101 @@ input[type="text"], input[type="password"], .ui-date-time{
     }
   }
 
+  &.error{
+    background:#F33;
+    color:#fff;
+    font-weight:700;
+  }
+
+  &.slim{
+    padding:11px 1%;
+  }
+
+  &.dark{
+    color:#fff;
+    background: #212121;
+  }
+
+  &.secondary{
+
+    &.fixed{
+      position: fixed;
+      right:0;
+      top:0;
+
+      @include respondTo(smallScreen) {
+        display:none;
+      }
+
+      @include respondTo(tablet) {
+        display:none;
+      }
+
+      @include respondTo(smartphone) {
+        display:none;
+      }
+    }
+
+  }
+
+  &.width-90{
+    @include calc(width, "80%");
+    display:inline-block;
+    vertical-align: top;
+
+    &.full{
+      width:auto;
+      @include calc(min-width, "85%");
+    }
+  }
+
+  &.width-30{
+    width: 30%;
+    display:inline-block;
+    vertical-align: top;
+  }
+
   &.width-50{
-    @include calc(width, "49.5% - 30px - 66px");
+    @include calc(width, "47.5%");
     display:inline-block;
     vertical-align: top;
 
     @include respondTo(smallScreen) {
       width:auto;
       display:block;
+      float:none;
     }
 
     @include respondTo(tablet) {
       width:auto;
       display:block;
+      float:none;
     }
 
     @include respondTo(smartphone) {
       width:auto;
       display:block;
+      float:none;
+    }
+  }
+
+  &.over-90{
+    @include respondTo(smallScreen) {
+      width:auto;
+      display:block;
+      float:none;
+    }
+
+    @include respondTo(tablet) {
+      width:auto;
+      display:block;
+      float:none;
+    }
+
+    @include respondTo(smartphone) {
+      width:auto;
+      display:block;
+      float:none;
     }
   }
 }
@@ -511,7 +588,7 @@ ul.pages-list{
   position:absolute;
 
   left:240px;
-  top:40px;
+  top:54px;
   z-index:100;
   height:auto;
   width:auto;

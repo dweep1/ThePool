@@ -39,7 +39,7 @@ function doLogin($POST){
 
     $user = users::returnCurrentUser();
 
-    return (!$user->doAuth($POST['password'], -1)) ? false : $user;
+    return (!$user->doAuth($POST['password'], 0)) ? false : $user;
 
 }
 

@@ -203,9 +203,9 @@ abstract class DatabaseObject{
         $executeArray = array();
 
         $dataArray = $this->toArray();
-        foreach ($keyChain as $val) {
+        foreach ($keyChain as $val){
 
-            if (strpos($val,'date') !== false)
+            if (strpos($val,'date') !== false && $this->{$val} !== null)
                 $executeArray[':'.$val] =  Core::unixToMySQL($dataArray[$val]);
             else if($this->{$val} !== null)
                 $executeArray[':'.$val] = $dataArray[$val];

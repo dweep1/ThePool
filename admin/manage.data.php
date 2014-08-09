@@ -1,4 +1,3 @@
-
 <?php
 
 global $ROOT_DB_PATH;

@@ -20,12 +20,12 @@
 
             <ul class="pages-list">
 
-                <li data-link="../apply/index.php">Create New User<i class='fa right fa-desktop'></i></li>
+                <li data-object='users' data-user-id='-1'>New User <i class="float-right fa fa-user"></i></li>
 
                 <hr />
 
-                <li class="animate-left-left" data-ng-repeat="item in (filtered = (data | filter:search | orderBy:'-id')) | limitTo: 20" data-object='users' data-id='{{ item.id }}' >
-                    {{ item.username }}<i data-object='users' data-id='{{ item.id }}' data-custom-edit='{{ item.id }}' class='fa right fa-pencil-square-o'></i>
+                <li class="animate-left-left" data-ng-repeat="item in (filtered = (data | filter:search | orderBy:'-id')) | limitTo: 20" data-object='users' data-user-id='{{ item.id }}' >
+                    {{ item.username }}
                 </li>
 
             </ul>
@@ -47,4 +47,13 @@
         getObjects($scope, $http);
 
     }
+
+    $(document).on("mousedown", "[data-user-id]", function (e) {
+
+        disabledEventPropagation(e);
+
+        displayData($(this).attr('data-user-id'), "manage.users.data.php", $(this).attr('data-object'));
+
+    });
+
 </script>

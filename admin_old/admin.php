@@ -1,14 +1,13 @@
-<?php 
+<?php
 
-global $user;
-$user = true;
-global $require_login;
-$require_login = true;
-global $require_admin;
-$require_admin = true;
+include_once "./_header.php";
 
-include "_header.php";
-include "./com/admin.funk.php";
+FormValidation::generate();
+
+$user = users::returnCurrentUser();
+
+if($user === false || !$user->verifyAdmin())
+    header("Location: ../logout.php");
 
 ?>
 <!DOCTYPE html>
@@ -28,10 +27,6 @@ include "./com/admin.funk.php";
         <a href="javascript:void(0)"><img src="./images/pool-logo.png" style="height:32px; vertical-align:middle;width:auto;" /><h3>The Pool Admin</h3></a>
         
         <div class="right con">
-			<a href="javascript:resetStats()" style="padding-right:20px; font-size:20px; line-height:18px; vertical-align:middle;" title="Reset Current Season Statistics"><i class="icon-beaker"></i></a>
-
-            <a href="javascript:resetCookies()" style="padding-right:20px; font-size:20px; line-height:18px; vertical-align:middle;" title="Reset This Sites Cookies"><i class="icon-hdd"></i></a>
-
 			<a href="../logout.php"><i class="icon-signout"></i> Logout</a>
         </div>
     </header>

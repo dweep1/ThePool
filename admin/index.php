@@ -43,7 +43,7 @@ global $si;
         <?php
 
             if(isset($_SESSION['result'])){
-                echo "displayFieldMessage('{$_SESSION['result']}', 10000);";
+                echo "setTimeout(function(){displayFieldMessage(\"{$_SESSION['result']}\", 10000);},400);";
 
                 unset($_SESSION['result']);
             }
@@ -60,12 +60,13 @@ global $si;
 
     <?php if($user->verifyAdmin() === false): ?>
 
-        <div class="ui-message-background hidden"></div>
-        <div class="ui-message-box aligncenter" data-type="hidden">
+        <div class="ui-message-background hidden" data-background-id="1"></div>
+        <div class="ui-message-box aligncenter" data-type="result" data-message-id="1">
+            <i class="fa fa-times-circle float-right ui-message-close" style="display:none" data-close-id="1"></i>
             <h6>Admin Login</h6>
             <form action="./admin.login.php" method="post">
                 <input type="hidden" name="submitType" value="0" />
-                <div class="faux-row"><input type="text" name="password" value="Password" data-password /></div>
+                <div class="faux-row"><input type="text" autocomplete="off" name="password" value="Password" data-password /></div>
                 <div class="faux-row"><input type="submit" class="ui-button float-right" value="Submit"></div>
             </form>
         </div>
@@ -86,6 +87,31 @@ global $si;
 
         <h3>Sidekick Admin</h3>
         <div class="right con">
+
+            <div style="display: inline-block; padding: 0px 20px;" data-ng-controller="TopController">
+
+                <form action="listn.timeSelect.php" id="timeSelect" method="post">
+
+                    <div style="display: inline-block; padding: 0px 5px;">
+                        Season:
+                        <select ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season" ng-init="search.season_id=3">
+                            <option data-ng-repeat="item in season | orderBy:'-id'" value="{{ item.id }}" ng-selected="item.id == options.selected_season">{{ item.text_id }}</option>
+                        </select>
+                    </div>
+
+                    <div style="display: inline-block; padding: 0px 5px;">
+                        Week:
+                        <select ng-model="options.selected_week" name="selected_week" ng-init="options.selected_week=28">
+                            <option data-ng-repeat="item in week | filter:search | orderBy:'id'" value="{{ item.id }}" ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
+                        </select>
+                    </div>
+
+                    <button class="ui-buttons">Go</button>
+
+                </form>
+
+            </div>
+
             <a href="../logout.php"><i class="fa fa-sign-out"></i> Logout</a>
         </div>
 
@@ -111,6 +137,94 @@ global $si;
     <script>
 
         angular.module('myAdmin', ['angular-velocity']);
+
+        function TopController($scope, $http) {
+
+            $scope.url = "admin.json.php";
+
+            $http.post($scope.url, { "data" : "week"}).
+                success(function(data, status) {
+
+                    $scope.status = status;
+                    $scope.week = data;
+
+                })
+                .
+                error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                });
+
+            $http.post($scope.url, { "data" : "options"}).
+                success(function(data, status) {
+
+                    $scope.status = status;
+
+                    $scope.options = {};
+
+                    data.forEach(function(entity){
+
+                        pushToAry(entity.name, entity.value);
+
+                    });
+
+                    function pushToAry(name, val) {
+                        $scope.options[name] = val;
+                    }
+
+                    if(checkSet(localStorage['selected_season']) !== false){
+                        $scope.options.selected_season = localStorage['selected_season'];
+                    }else{
+                        $scope.options.selected_season =  $scope.options.current_season;
+                        localStorage['selected_season'] = $scope.options.selected_season;
+                    }
+
+                    if(checkSet(localStorage['selected_week']) !== false){
+                        $scope.options.selected_week = localStorage['selected_week'];
+                    }else{
+                        $scope.options.selected_week = "0";
+                        localStorage['selected_week'] =  $scope.options.selected_week;
+                    }
+
+                })
+                .
+                error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                });
+
+            $http.post($scope.url, { "data" : "season"}).
+                success(function(data, status) {
+
+                    $scope.status = status;
+                    $scope.season = data;
+
+                })
+                .
+                error(function(data, status) {
+                    $scope.data = data || "Request failed";
+                    $scope.status = status;
+                });
+
+            setTimeout(function(){
+
+                $scope.$watch('options.selected_season', function() {
+
+                    if(parseInt(localStorage["selected_season"]) != parseInt($scope.options.selected_season))
+                        localStorage["selected_season"] = $scope.options.selected_season;
+
+                });
+
+                $scope.$watch('options.selected_week', function() {
+
+                    if(parseInt(localStorage["selected_week"]) != parseInt($scope.options.selected_week))
+                        localStorage["selected_week"] = $scope.options.selected_week;
+
+                });
+
+            },1000);
+
+        }
 
     </script>
 

@@ -13,11 +13,11 @@ class users extends DatabaseObject{
     public $last_name;
     public $last_ip;
     public $last_login_date;
-    public $user_level; //if user is admin, user level = -1
+    public $user_level = null; //if user is admin, user level = 0
     public $security_key; //key associated with lost passwords
     public $favorite_team_id;
     public $login_count;
-    public $access_level; //if the user wants to be seen or not
+    public $access_level; //if the user wants to be seen or not, -1 is invisible
     public $credits;
 
     protected function classDataSetup(){ }
@@ -125,9 +125,12 @@ class users extends DatabaseObject{
         if($this->verifyLogin($password) === false)
             return false;
 
+        if($this->user_level === -1 && $level === 0)
+            return false;
+
         $_SESSION['auth_key'] = $this->auth_key = Cipher::getRandomKey();
 
-        if((int) $level === 0)
+        if($level === 0)
             $_SESSION['admin_key'] = $this->auth_key;
 
         $this->last_login_date = Core::unixToMySQL("now");
@@ -516,6 +519,7 @@ class admin_pages extends DatabaseObject{
     public $template_file;
     public $permission_level;
     public $parent_id;
+    public $order_weight;
 
 }
 
