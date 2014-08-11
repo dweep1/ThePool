@@ -48,6 +48,14 @@
 
     }
 
+    function formatData($scope){
+
+        $scope.data.forEach(function(entity){
+            entity.id = parseInt(entity.id);
+        });
+
+    }
+
     $(document).on("mousedown", "[data-user-id]", function (e) {
 
         disabledEventPropagation(e);

@@ -82,6 +82,29 @@ FormValidation::generate();
 
 <script>
 
+
+    $("input[type='text']:not([no-default]), input[type='hidden']:not([no-default])").focus(function() {
+        if (this.value === this.defaultValue) {
+            this.value = '';
+
+            var attr = $(this).attr('data-password');
+
+            if (typeof attr !== typeof undefined && attr !== false) {
+                this.type = 'password';
+            }
+        }
+    }).blur(function() {
+        if (this.value === '') {
+            this.value = this.defaultValue;
+
+            var attr = $(this).attr('data-password');
+
+            if (typeof attr !== typeof undefined && attr !== false) {
+                this.type = 'text';
+            }
+        }
+    });
+
     dateTimeFormat();
 
 </script>

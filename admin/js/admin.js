@@ -1,4 +1,4 @@
-var $dateTimeCheck = true;
+$dateTimeCheck = true;
 
 $(document).ready(function(){
 
@@ -23,7 +23,7 @@ function modernizrCheck(){
 
 function dateTimeFormat(){
 
-    if($dateTimeCheck === false){
+    if($dateTimeCheck == false){
         var $dateTime = $( "input[type='date']" );
         $dateTime.addClass('ui-date-time');
         $dateTime.datepicker({ dateFormat: 'yy-mm-dd'});

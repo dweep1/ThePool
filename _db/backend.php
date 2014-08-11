@@ -98,7 +98,9 @@ abstract class DatabaseObject{
         $prepareStatement = "INSERT INTO ".get_class($this)." (";
 
         foreach($keyChain as $val){
-            if($val !== "id")//since this is a new object, we don't want to save the ID, rather letting the DB generate an ID
+            if($val !== "id" && $this->{$val} !== null) //since this is a new object, we don't want to save the ID, rather letting the DB generate an ID
+                $prepareStatement .= "$val, ";
+            else if($val !== "id" && $fillNull === true)
                 $prepareStatement .= "$val, ";
 
         }
@@ -107,7 +109,9 @@ abstract class DatabaseObject{
         $prepareStatement .= ") VALUES (";
 
         foreach($keyChain as $val){
-            if($val != "id")
+            if($val !== "id" && $this->{$val} !== null) //since this is a new object, we don't want to save the ID, rather letting the DB generate an ID
+                $prepareStatement .= ":$val, ";
+            else if($val !== "id" && $fillNull === true)
                 $prepareStatement .= ":$val, ";
 
         }
@@ -128,10 +132,12 @@ abstract class DatabaseObject{
 
         foreach ($keyChain as $val) {
             if($val !== "id"){
-                if((strpos($val,'date') !== false))
+                if (strpos($val,'date') !== false && $this->{$val} !== null)
+                    $executeArray[':'.$val] =  Core::unixToMySQL($dataArray[$val]);
+                else if($this->{$val} !== null)
                     $executeArray[':'.$val] = $dataArray[$val];
-                else
-                    $executeArray[':'.$val] = ($dataArray[$val] === null && $fillNull === true ? "" : $dataArray[$val]);
+                else if($fillNull === true)
+                    $executeArray[':'.$val] = "";
             }
         }
 

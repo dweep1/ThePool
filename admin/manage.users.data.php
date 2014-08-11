@@ -18,7 +18,7 @@ $teams = teams::getTeamsList();
     <form action="listn.users.php" id="subForm" method="post">
         <input type='hidden' name='className' value='<?php echo $objectType; ?>' />
         <input type='hidden' id='submitType' name='submitType' value='1' />
-        <input type='hidden' name='id' value='<?php echo $user->id; ?>' />
+        <input type='hidden' id='id' name='id' value='<?php echo $user->id; ?>' />
 
         <div class="fluid-row slim">
             <button type="button" class="ui-buttons dark" id="submitButton">Save Changes</button>
@@ -78,9 +78,10 @@ $teams = teams::getTeamsList();
 <script>
     $(document).on("mousedown", "#submitButton", function (e) {
 
-        if (parseInt($("#id").val()) < 0){
+        $value = parseInt($("#id").val()) || 0;
+
+        if ($value <= 0)
             $("#submitType").val("0");
-        }
 
         $("#subForm").submit();
 
