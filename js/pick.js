@@ -21,19 +21,49 @@ function RowController($scope, $http) {
         localStorage.clear();
 
         getLiveData($scope, $http);
+
+        setTimeout(function(){
+            localStorage["changed"] = "false";
+
+            if($("#changeBox").is(":visible"))
+                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 200});
+        },300);
     };
 
     $scope.doSave = function() {
         savePicks($scope, $http);
+
+        setTimeout(function(){
+            localStorage["changed"] = "false";
+
+            if($("#changeBox").is(":visible"))
+                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 200});
+        },300);
+
     };
 
-    $scope.$watch('games', function() {
+    $scope.$watch('games', function(entity) {
+
+        if(checkSet(entity))
+            checkGameDataIntegrity($scope);
+
         refreshStoreLocal($scope);
         getRemaining($scope);
     }, true);
 
     getRemaining($scope);
 
+}
+
+function checkGameDataIntegrity($scope){
+
+    if(checkSet(localStorage["game_data"]) && JSON.parse(localStorage["game_data"]) != $scope.games
+        && localStorage["game_data"] != JSON.stringify($scope.games)
+        && checkSet($scope.games) && $scope.games.length > 0
+        && $scope.force == false && checkSet(localStorage["changed"])){
+
+        localStorage["changed"] = "true";
+    }
 }
 
 function getRemaining($scope){

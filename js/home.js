@@ -1,20 +1,29 @@
 var myApp = angular.module('myHome', ['angular-velocity']);
 
-function RowController($scope, $http) {
+function RowController($scope, $http, $timeout) {
+
+    $(document).ready(function() {
+
+        $timeout(function(){
+
+            if(!checkSet(localStorage["changed"])){
+                localStorage["changed"] = "false";
+            }
+
+            if(localStorage["changed"] != "false"){
+                if($("#changeBox").is(":hidden"))
+                    $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
+
+            }
+
+        }, 200);
+
+    });
 
     $scope.force = false;
 
     getLiveData($scope, $http, getRemaining($scope));
     getOldData($scope,$http);
-
-    if(!checkSet(localStorage["changed"]))
-        localStorage["changed"] = "false";
-
-    if(localStorage["changed"] != "false"){
-        if($("#changeBox").is(":hidden"))
-            $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
-
-    }
 
     $scope.doRefresh = function() {
         $scope.force = true;
@@ -43,16 +52,27 @@ function RowController($scope, $http) {
         },300);
     };
 
-    $scope.$watch('games', function() {
+    $scope.$watch('games', function(entity) {
 
-        if(localStorage["game_data"] != JSON.stringify($scope.games) && checkSet($scope.games) && $scope.games.length > 0)
-            localStorage["changed"] = "true";
+        if(checkSet(entity))
+            checkGameDataIntegrity($scope);
 
         refreshStoreLocal($scope);
         getRemaining($scope);
 
     }, true);
 
+}
+
+function checkGameDataIntegrity($scope){
+
+    if(checkSet(localStorage["game_data"]) && JSON.parse(localStorage["game_data"]) != $scope.games
+        && localStorage["game_data"] != JSON.stringify($scope.games)
+        && checkSet($scope.games) && $scope.games.length > 0
+        && $scope.force == false && checkSet(localStorage["changed"])){
+
+        localStorage["changed"] = "true";
+    }
 }
 
 function getRemaining($scope){
@@ -193,6 +213,7 @@ function getLiveData($scope, $http, $callback){
 
     $scope.force = false;
 
+
     return $http.post( "./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.week_id}).
         success(function(data, status) {
 
@@ -312,6 +333,7 @@ function refreshStoreLocal($scope){
 
 function storeLocalGames($scope, data, $callback){
 
+
     if(checkSet(localStorage["week_data"]) === false || $scope.force === true){
 
         $scope.week = data;
@@ -329,10 +351,11 @@ function storeLocalGames($scope, data, $callback){
     if(checkSet($callback))
         $callback();
 
-
 }
 
 function getGamesPicked($scope){
+
+    $scope.force = true;
 
     var $games = $scope.games;
 
@@ -362,6 +385,8 @@ function getGamesPicked($scope){
         }
 
     });
+
+    $scope.force = false;
 
     return $dupes;
 

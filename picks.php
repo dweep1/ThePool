@@ -64,6 +64,10 @@
             <button class="ui-button dark float-right" ng-click="doRefresh()">Discard Changes</button>
         </div>
 
+        <div class="fluid-row slim float-right">
+            <div id="changeBox">You have unsaved picks.</div>
+        </div>
+
         <div class="fluid-row slim alignleft">
 
             <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>

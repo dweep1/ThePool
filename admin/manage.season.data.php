@@ -25,32 +25,32 @@ $obj = new $objectType($id);
         </div>
 
         <div class="fluid-row slim">
-            <label for="username">Name: </label> <input type="text" class="float-right" no-default id="text_id" name="text_id" value="<?php echo $obj->text_id; ?>" />
+            <label for="text_id">Name: </label> <input type="text" class="float-right" no-default id="text_id" name="text_id" value="<?php echo $obj->text_id; ?>" />
             <div class="clear-fix"></div>
         </div>
 
         <div class="fluid-row slim">
-            <label for="username">Year: </label> <input type="text" class="float-right" no-default id="year" name="year" value="<?php echo $obj->year; ?>" />
+            <label for="year">Year: </label> <input type="text" class="float-right" no-default id="year" name="year" value="<?php echo $obj->year; ?>" />
             <div class="clear-fix"></div>
         </div>
 
         <div class="fluid-row slim">
-            <label for="email">Week Count: </label> <input type="text" class="float-right" no-default id="week_count" name="week_count" value="<?php echo $obj->week_count; ?>" />
+            <label for="week_count">Week Count: </label> <input type="text" class="float-right" no-default id="week_count" name="week_count" value="<?php echo $obj->week_count; ?>" />
             <div class="clear-fix"></div>
         </div>
 
         <div class="fluid-row slim">
-            <label for="paypal">Game Count: </label> <input type="text" class="float-right" no-default id="game_count" name="game_count" value="<?php echo $obj->game_count; ?>" />
+            <label for="game_count">Game Count: </label> <input type="text" class="float-right" no-default id="game_count" name="game_count" value="<?php echo $obj->game_count; ?>" />
             <div class="clear-fix"></div>
         </div>
 
         <div class="fluid-row slim">
-            <label for="password">Date Start: </label> <input type="date" class="float-right" no-default id="date_start" name="date_start" value="<?php echo $obj->date_start; ?>" />
+            <label for="date_start">Date Start: </label> <input type="date" class="float-right" no-default id="date_start" name="date_start" value="<?php echo $obj->date_start; ?>" />
             <div class="clear-fix"></div>
         </div>
 
         <div class="fluid-row slim">
-            <label for="password">Date End: </label> <input type="date" class="float-right" no-default id="date_end" name="date_end" value="<?php echo $obj->date_end; ?>" />
+            <label for="date_end">Date End: </label> <input type="date" class="float-right" no-default id="date_end" name="date_end" value="<?php echo $obj->date_end; ?>" />
             <div class="clear-fix"></div>
         </div>
 
@@ -61,7 +61,9 @@ $obj = new $objectType($id);
 
 <script>
 
-    dateTimeFormat();
+    $(document).ready(function() {
+        dateTimeFormat();
+    });
 
     $(document).on("mousedown", "#submitButton", function (e) {
 

@@ -77,8 +77,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="velocity-opposites-transition-slideUpIn"
-                        data-ng-repeat="item in games | filter:search | orderBy:'id'"
+                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
                         data-ng-if="item.pick.team_id <= 0" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-ng-click="item.pick.team_id = item.away_team.id;"
@@ -135,8 +134,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="velocity-opposites-transition-slideUpIn"
-                        data-ng-repeat="item in games | filter:search | orderBy:'id'"
+                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
                         data-ng-if="item.pick.team_id > 0" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-ng-click="item.pick.team_id = item.away_team.id;" data-team-id="{{ item.away_team.id }}"
@@ -212,8 +210,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="velocity-opposites-transition-slideUpIn"
-                        data-ng-repeat="item in gamesOld | filter:search | orderBy:'id'"
+                    <li data-ng-repeat="item in gamesOld | filter:search | orderBy:'id'"
                         data-picked-id="{{ item.pick.team_id }}">
 
                         <div data-team-id="{{ item.away_team.id }}"style="background-image: url('{{ item.away_team.image_url }}')"

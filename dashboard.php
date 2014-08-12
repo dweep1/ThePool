@@ -93,47 +93,8 @@ if($user === false || !$user->verifyAuth())
 
                 </div>
 
-                <div class="fluid-row"></div>
-
-                <div class="fluid-row slim width-50 alignleft">
-                    <h5>Rank by Points</h5>
-                    <div class="fluid-row slim"></div>
-                    <ul class="ui-rank-list">
-                        <li class="title alignleft">
-                            <div class="width-40">Name</div>
-                            <div class="width-25">Rank</div>
-                            <div class="width-25">Points</div>
-                        </li>
-                        <li data-ng-repeat="item in rankList | orderBy:'-total'"
-                            data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
-                            <div class="width-40">{{ item.username }}</div>
-                            <div class="width-25">{{ $index + 1 }}</div>
-                            <div class="width-25">{{ item.total }}</div>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="fluid-row slim width-50 alignleft">
-                    <h5>Rank by Percentage</h5>
-                    <div class="fluid-row slim"></div>
-                    <ul class="ui-rank-list">
-                        <li class="title">
-                            <div class="width-40">Name</div>
-                            <div class="width-25">Rank</div>
-                            <div class="width-25">Percent</div>
-                        </li>
-                        <li data-ng-repeat="item in rankList | orderBy:'-percent'"
-                            data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
-                            <div class="width-40">{{ item.username }}</div>
-                            <div class="width-25">{{ $index + 1 }}</div>
-                            <div class="width-25">{{ item.percent }}%</div>
-                        </li>
-                    </ul>
-
-                </div>
-
             </div>
+
 
         </div>
 
@@ -141,7 +102,43 @@ if($user === false || !$user->verifyAuth())
 
     <div class="fluid-row width-50 dark height-100 float-right secondary">
 
+        <div class="fluid-row width-50 alignleft">
+            <h5>Rank by Points</h5>
+            <div class="fluid-row slim"></div>
+            <ul class="ui-rank-list">
+                <li class="title alignleft">
+                    <div class="width-40">Name</div>
+                    <div class="width-25">Rank</div>
+                    <div class="width-25">Points</div>
+                </li>
+                <li data-ng-repeat="item in rankList | orderBy:'-total'"
+                    data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
+                    <div class="width-40">{{ item.username }}</div>
+                    <div class="width-25">{{ $index + 1 }}</div>
+                    <div class="width-25">{{ item.total }}</div>
+                </li>
+            </ul>
 
+        </div>
+
+        <div class="fluid-row width-50 alignleft">
+            <h5>Rank by Percentage</h5>
+            <div class="fluid-row slim"></div>
+            <ul class="ui-rank-list">
+                <li class="title">
+                    <div class="width-40">Name</div>
+                    <div class="width-25">Rank</div>
+                    <div class="width-25">Percent</div>
+                </li>
+                <li data-ng-repeat="item in rankList | orderBy:'-percent'"
+                    data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
+                    <div class="width-40">{{ item.username }}</div>
+                    <div class="width-25">{{ $index + 1 }}</div>
+                    <div class="width-25">{{ item.percent }}%</div>
+                </li>
+            </ul>
+
+        </div>
 
     </div>
 

@@ -628,6 +628,32 @@ class game extends DatabaseObject{
     public $season_id;
     public $week_id;
 
+    public function updateGame(){
+
+        $winner = $this->getWinner();
+
+        if($winner !== null){
+            $picks = new pick;
+            $picks = $picks->getList(null, array("game_id" => $this->id));
+
+            if(!is_bool($picks)){
+                foreach($picks as $value){
+
+                    if((int) $value->team_id === (int) $winner){
+                        $value->result = 1;
+
+                        if($value->update() === false)
+                            return false;
+
+                    }
+                }
+            }
+        }
+
+        return $this->update();
+
+    }
+
     public function played($id = null){
 
         if($id !== null)
@@ -993,7 +1019,7 @@ class teams extends DatabaseObject{
 
         $instance = new self();
 
-        $teams = $instance->getList();
+        $teams = $instance->getList("city ASC");
 
         if(!is_bool($teams)){
             foreach($teams as $value){

@@ -17,6 +17,7 @@ global $si;
 
     $si = $_SESSION['si'];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -94,15 +95,17 @@ global $si;
 
                     <div style="display: inline-block; padding: 0px 5px;">
                         Season:
-                        <select ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season" ng-init="search.season_id=3">
+                        <select class="top" ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season"
+                                ng-init="search.season_id = <?php echo season::selected()->id; ?>">
                             <option data-ng-repeat="item in season | orderBy:'-id'" value="{{ item.id }}" ng-selected="item.id == options.selected_season">{{ item.text_id }}</option>
                         </select>
                     </div>
 
                     <div style="display: inline-block; padding: 0px 5px;">
                         Week:
-                        <select ng-model="options.selected_week" name="selected_week" ng-init="options.selected_week=28">
-                            <option data-ng-repeat="item in week | filter:search | orderBy:'id'" value="{{ item.id }}" ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
+                        <select class="top" ng-model="options.selected_week" name="selected_week"
+                                ng-init="options.selected_week = <?php echo week::selected()->id; ?>">
+                            <option data-ng-repeat="item in week | orderBy:'id'" value="{{ item.id }}" ng-if="item.season_id == options.selected_season" ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
                         </select>
                     </div>
 
@@ -148,6 +151,10 @@ global $si;
                     $scope.status = status;
                     $scope.week = data;
 
+                    $scope.week.forEach(function(entity){
+                        entity.id = parseInt(entity.id);
+                    });
+
                 })
                 .
                 error(function(data, status) {
@@ -173,16 +180,16 @@ global $si;
                     }
 
                     if(checkSet(localStorage['selected_season']) !== false){
-                        $scope.options.selected_season = localStorage['selected_season'];
+                        $scope.options.selected_season = parseInt(localStorage['selected_season']);
                     }else{
-                        $scope.options.selected_season =  $scope.options.current_season;
+                        $scope.options.selected_season =  parseInt($scope.options.current_season);
                         localStorage['selected_season'] = $scope.options.selected_season;
                     }
 
                     if(checkSet(localStorage['selected_week']) !== false){
-                        $scope.options.selected_week = localStorage['selected_week'];
+                        $scope.options.selected_week = parseInt(localStorage['selected_week']);
                     }else{
-                        $scope.options.selected_week = "0";
+                        $scope.options.selected_week = parseInt("0");
                         localStorage['selected_week'] =  $scope.options.selected_week;
                     }
 
@@ -198,6 +205,10 @@ global $si;
 
                     $scope.status = status;
                     $scope.season = data;
+
+                    $scope.season.forEach(function(entity){
+                        entity.id = parseInt(entity.id);
+                    });
 
                 })
                 .
