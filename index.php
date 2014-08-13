@@ -31,6 +31,8 @@
     <script src="./js/velocity.ui.min.js"></script>
     <script src="./js/modernizr.min.js"></script>
     <script src="./js/general.js"></script>
+    <script src="./js/jquery.tinytimer.js"></script>
+    <script src="./js/pickClock.js"></script>
 
 </head>
 <body class="height-100" data-ng-app>
@@ -72,6 +74,8 @@
             <li><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></li>
         </ul>
 
+        <div id="pick-clock" class="index"><div id="lockHold" title="N Days, Hours:Minuets:Seconds"><span id="day"></span> Picks Lock: <span id="lockClock"></span></div></div>
+
         <div id="login-area" class="aligncenter hidden" data-menu="" data-menu-id="1">
             <h5>Login</h5>
             <form action="./_listeners/listn.login.php" method="post">
@@ -94,6 +98,7 @@
         </div>
 
     </nav>
+
 
     <div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center;">
         <div class="width-50 height-100 fluid-row">
@@ -137,6 +142,9 @@
     </div>
 
     <script>
+
+        lockTimer();
+
         setTimeout(function(){
             var $mi = $("[data-menu-id='1']");
 

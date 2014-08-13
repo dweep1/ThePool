@@ -225,32 +225,6 @@ class users extends DatabaseObject{
         return false;
 
     }
-    /*
-     * Returns the player's ranks in a list for a given season
-     */
-    public static function getPlayerRankData($user_id = -1, $season_id = -1){
-
-        $user_id = ($user_id == -1) ? users::returnCurrentUser()->id : $user_id;
-        $season_id = ($season_id == -1) ? season::getCurrent()->id : $season_id;
-
-        $query = DB::sql("SELECT * FROM stat_log WHERE stat_id = 6 AND season_id = '$season_id' AND user_id = '$user_id' ORDER BY week_id ASC");
-
-        if(DB::sql_row_count($query) > 0){
-
-            $array = array();
-
-            while($result = DB::sql_fetch($query)){
-
-                $array[$result['week_id']] = $result;
-
-            }
-
-            return $array;
-        }
-
-        return false;
-
-    }
 
     public static function getFilteredUserList(){
 
@@ -294,12 +268,12 @@ class event extends DatabaseObject{
 
             $object = new $className($_SESSION['current_'.$className]);
 
-            $object->date_end = new DateTime($object->date_end, Core::getTimezone());
+            $dateEnd = new DateTime($object->date_end, Core::getTimezone());
 
             if($className == "season")
-                $object->date_end->add(new DateInterval("P14D"));
+                $dateEnd->add(new DateInterval("P14D"));
 
-            if($object->date_end >= $now)
+            if($dateEnd >= $now)
                 return $object;
 
         }
@@ -311,7 +285,7 @@ class event extends DatabaseObject{
 
             $query->execute(array(":today" => $now->format("Y-m-d")));
 
-            $object = $query->fetchAll(PDO::FETCH_CLASS, $className);
+            $object = $query->fetchObject($className);
 
         }catch(PDOException $pe) {
 
@@ -406,11 +380,6 @@ class season extends event{
 
     }
 
-    public static function getCurrent(){
-        $instance = new season(3);
-        return $instance;
-    }
-
 }
 
 class week extends event{
@@ -418,12 +387,41 @@ class week extends event{
     public $season_id;
     public $week_number;
 
-    public static function getCurrent(){
-        $instance = new week();
+    public function getGameCount(){
 
-        
+        $games = $this->getGames(true);
 
-        return $instance;
+        return count($games);
+
+    }
+
+    public static function getNextLock($offset){
+
+        $game = game::nextGame();
+        $gameLock = $game->getLockTime();
+
+        return self::getTimezoneLockTime($gameLock, $offset);
+
+    }
+
+    public static function getTimezoneLockTime($gameDate, $offset){
+
+        $newOffset = (240 - $offset)/60;
+
+        $EST = Core::getTimezone();
+
+        $game = new DateTime($gameDate, $EST);
+
+        if($newOffset >= 0){
+            $game->add(new DateInterval("PT{$newOffset}H"));
+        }else{
+            $newOffset = $newOffset*(-1);
+            $game->sub(new DateInterval("PT{$newOffset}H"));
+
+        }
+
+        return $game->format('Y-m-d H:i:s');
+
     }
 
     public function getStructured($user_id = null, $noIndex = false){
@@ -690,6 +688,60 @@ class game extends DatabaseObject{
         else
             return false;
 
+    }
+
+    public function getLockTime(){
+
+        $tempDate = new DateTime($this->date, Core::getTimezone());
+        $tempDate->setTime(0,0,0);
+        $dayCheck = $tempDate->format('D');
+
+        if(strpos($dayCheck,'Thu') !== false){
+
+            $tempDate->add(new DateInterval('PT21H')); //should be 8pm EST on that given game date
+
+        }else if(strpos($dayCheck,'Sun') !== false){
+
+            $tempDate->add(new DateInterval('PT14H')); //should be 1pm EST on that given game date
+
+        }else if(strpos($dayCheck,'Mon') !== false){
+
+            $tempDate->sub(new DateInterval('PT11H')); //should be 1pm EST on the day before (sunday)
+
+        }else{
+
+            $tempDate->add(new DateInterval('PT14H')); //should be 1pm EST on that given game date
+
+        }
+
+        return $tempDate->format('Y-m-d H:i:s');
+
+    }
+
+    public static function nextGame(){
+
+        $className = get_called_class();
+
+        $now = new DateTime("now", Core::getTimezone());
+
+        try {
+
+            $pdo = Core::getInstance();
+            $query = $pdo->dbh->prepare("SELECT * FROM $className WHERE date >= :today AND season_id = :season ORDER BY date ASC LIMIT 1");
+
+            $query->execute(array(":today" => $now->format("Y-m-d"), ":season" => season::getCurrent()->id));
+
+            $object = $query->fetchObject($className);
+
+            return $object;
+
+        }catch(PDOException $pe) {
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+        }
+
+        return false;
     }
 
 }

@@ -1,6 +1,9 @@
 <nav id="main-nav">
 
+    <div id="pick-clock" class="index"><div id="lockHold" title="N Days, Hours:Minuets:Seconds"><span id="day"></span> Picks Lock: <span id="lockClock"></span></div></div>
+
     <div id="logo"><h3>TP</h3></div>
+
     <ul>
         <li id="expand-menu"><h2><i class="fa fa-bars"style="padding-left:1px;"></i></h2></li>
         <li data-link="./home.php"><h2><i class="fa fa-home" style="padding-left:2px;"></i> Home</h2></li>

@@ -214,6 +214,24 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   }
 }
 
+#pick-clock{
+  padding:15px;
+  position: absolute;
+  right: -440px;
+  width:400px;
+  background:#222;
+  color:#fff;
+  top:0px;
+  height:auto;
+  z-index:1000;
+  text-align: center;
+
+  &.index{
+    width:300px;
+    right: -340px;
+  }
+}
+
 .ui-spacer-item{
   display:inline-block;
   padding:0.5% 1.5%;
