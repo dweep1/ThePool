@@ -35,8 +35,8 @@ global $si;
     <script src="../js/velocity.ui.min.js"></script>
     <script src="../js/angular-velocity.min.js"></script>
     <script src="../js/modernizr.min.js"></script>
-    <script defer src="./js/redactor.min.js"></script>
-    <script defer src="../js/bug_report.js"></script>
+    <script src="./js/redactor.min.js"></script>
+    <script src="../js/bug_report.js"></script>
     <script src="../js/general.js"></script>
     <script src="./js/admin.js"></script>
     <script>

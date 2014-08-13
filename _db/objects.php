@@ -19,6 +19,7 @@ class users extends DatabaseObject{
     public $login_count;
     public $access_level; //if the user wants to be seen or not, -1 is invisible
     public $credits;
+    public $disable_notes;
 
     protected function classDataSetup(){ }
 
@@ -418,7 +419,10 @@ class week extends event{
     public $week_number;
 
     public static function getCurrent(){
-        $instance = new week(29);
+        $instance = new week();
+
+        
+
         return $instance;
     }
 

@@ -43,6 +43,20 @@ function checkSet($obj){
 
 }
 
+function displayGame($projectID, $url, $className){
+
+    if(checkSet($projectID) !== true){
+        $projectID = 0;
+    }
+
+    if(checkSet($className) !== true){
+        $("#game-list").load( $url+"?id="+$projectID );
+    }else{
+        $("#game-list").load( $url+"?id="+$projectID+"&className="+$className  );
+    }
+
+}
+
 function displayData($projectID, $url, $className){
 
     if(checkSet($projectID) !== true){
@@ -252,7 +266,7 @@ $(document).on("mousedown", "#closePopup", function (e) {
 
 });
 
-function getObjects($scope, $http) {
+function getObjects($scope, $http, $callback) {
 
     $scope.url = "admin.json.php";
 

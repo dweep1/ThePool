@@ -704,13 +704,25 @@ ul.pages-list li .width-25 {
   vertical-align: top;
 }
 /* line 561, scss/admin.scss */
+ul.pages-list li .width-30 {
+  width: 30%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 567, scss/admin.scss */
+ul.pages-list li .width-50 {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 573, scss/admin.scss */
 ul.pages-list li .width-70 {
   width: 68%;
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 571, scss/admin.scss */
+/* line 583, scss/admin.scss */
 .ui-a-box {
   position: absolute;
   top: 10%;
@@ -721,7 +733,7 @@ ul.pages-list li .width-70 {
   border: 5px solid #7ec8ee;
 }
 
-/* line 581, scss/admin.scss */
+/* line 593, scss/admin.scss */
 #closePopup {
   margin-right: -40px;
   margin-top: -40px;
@@ -743,7 +755,7 @@ ul.pages-list li .width-70 {
   cursor: pointer;
 }
 
-/* line 596, scss/admin.scss */
+/* line 608, scss/admin.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -758,12 +770,12 @@ ul.pages-list li .width-70 {
   -o-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
-/* line 607, scss/admin.scss */
+/* line 619, scss/admin.scss */
 .ui-message-background.hidden {
   display: none;
 }
 
-/* line 612, scss/admin.scss */
+/* line 624, scss/admin.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -785,14 +797,14 @@ ul.pages-list li .width-70 {
   transition: all 1.3s ease-out;
 }
 
-/* line 625, scss/admin.scss */
+/* line 637, scss/admin.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 631, scss/admin.scss */
+/* line 643, scss/admin.scss */
 #fieldbody {
   position: absolute;
   left: 240px;
@@ -803,7 +815,7 @@ ul.pages-list li .width-70 {
   overflow: hidden;
 }
 
-/* line 643, scss/admin.scss */
+/* line 655, scss/admin.scss */
 .fieldmessage {
   position: relative;
   display: block;
@@ -830,13 +842,13 @@ ul.pages-list li .width-70 {
 /*
 NG Animate
 */
-/* line 672, scss/admin.scss */
+/* line 684, scss/admin.scss */
 .animate-left-left {
   position: relative;
   display: block;
 }
 
-/* line 679, scss/admin.scss */
+/* line 691, scss/admin.scss */
 .animate-left-left.ng-enter-stagger,
 .animate-left-left.ng-leave-stagger,
 .animate-left-left.ng-move-stagger {
@@ -857,7 +869,7 @@ NG Animate
   for the element that has the .repeated-item
   class
 */
-/* line 700, scss/admin.scss */
+/* line 712, scss/admin.scss */
 .animate-left-left.ng-enter,
 .animate-left-left.ng-move {
   -webkit-transition: 0.125s ease all;
@@ -874,7 +886,7 @@ NG Animate
  are set so that the animation knows what to
  animate.
 */
-/* line 713, scss/admin.scss */
+/* line 725, scss/admin.scss */
 .animate-left-left.ng-enter.ng-enter-active,
 .animate-left-left.ng-move.ng-move-active {
   left: 0px;
@@ -886,7 +898,7 @@ NG Animate
   the leave event is triggered for the element
   that has the .repeated-item class
 */
-/* line 723, scss/admin.scss */
+/* line 735, scss/admin.scss */
 .animate-left-left.ng-leave {
   -webkit-transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
@@ -899,76 +911,76 @@ NG Animate
 }
 
 @-webkit-keyframes to_left_destroy {
-  /* line 730, scss/admin.scss */
+  /* line 742, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 731, scss/admin.scss */
+  /* line 743, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 732, scss/admin.scss */
+  /* line 744, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @-moz-keyframes to_left_destroy {
-  /* line 730, scss/admin.scss */
+  /* line 742, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 731, scss/admin.scss */
+  /* line 743, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 732, scss/admin.scss */
+  /* line 744, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @-ms-keyframes to_left_destroy {
-  /* line 730, scss/admin.scss */
+  /* line 742, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 731, scss/admin.scss */
+  /* line 743, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 732, scss/admin.scss */
+  /* line 744, scss/admin.scss */
   85% {
     display: none;
   }
 }
 
 @keyframes to_left_destroy {
-  /* line 730, scss/admin.scss */
+  /* line 742, scss/admin.scss */
   0% {
     opacity: 1;
     margin-left: 0px;
   }
 
-  /* line 731, scss/admin.scss */
+  /* line 743, scss/admin.scss */
   50% {
     opacity: 0;
     margin-left: -300px;
   }
 
-  /* line 732, scss/admin.scss */
+  /* line 744, scss/admin.scss */
   85% {
     display: none;
   }
