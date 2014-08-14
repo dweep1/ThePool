@@ -198,7 +198,9 @@
     <div class="clear-fix"></div>
 
 </div>
-
+<script>
+    $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 0});
+</script>
 <?php
 
     include "./_footer.php";

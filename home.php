@@ -96,13 +96,13 @@
                         <div class="middle">
 
                             <i class="fa fa-minus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1; setRemaining();"></i>
+                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
 
                             <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
                                    data-ng-model="item.pick.value" data-game-id="{{ item.id }}" />
 
                             <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1; setRemaining();"></i>
+                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
 
                         </div>
 

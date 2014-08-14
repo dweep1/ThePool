@@ -339,6 +339,128 @@ select:not(.top){
   }
 }
 
+
+.ui-games-list{
+  padding:0;
+  margin:0;
+  list-style: none;
+
+  li{
+    background: #222;
+    color: #fff;
+    display:block;
+    width:auto;
+    margin: 15px 10px;
+
+    .loss{
+      text-decoration: line-through;
+    }
+
+    .team{
+      background-repeat: no-repeat;
+      background-size: 80%;
+      //@include calc(width, "36%");
+      width: 39%;
+      display:inline-block;
+      vertical-align: middle;
+      @include text-shadow(#000 0px 0px 2px);
+      cursor:pointer;
+
+      h5{
+        font-weight:400;
+      }
+
+      h6{
+        font-weight:400;
+        line-height: 1.8em;
+      }
+
+      &.alignleft{
+        background-position: center left;
+      }
+
+      &.picked{
+        @include text-shadow(#000 0px 1px 2px);
+
+        h5{
+          font-weight:400;
+
+        }
+
+        h6{
+          font-weight:700;
+          font-size: 1.8em;
+          line-height: 1em;
+        }
+
+        .gradient-left{
+          @include background-image(linear-gradient(left, rgba(#555,0.5) 0%, #222 100%));
+        }
+
+        .gradient-right{
+          @include background-image(linear-gradient(right, rgba(#555,0.5) 0%, #222 100%));
+        }
+      }
+
+      .gradient-left{
+        padding:7% 8%;
+        width:auto;
+        display:block;
+        height:80%;
+        @include background-image(linear-gradient(left, rgba(#111,0.7) 0%, #222 80%));
+        white-space: nowrap;
+
+        &:hover{
+          @include text-shadow(yellow 0px 1px 5px);
+        }
+      }
+
+      &.alignright{
+        background-position: center right;
+      }
+
+      .gradient-right{
+        padding:7% 8%;
+        width:auto;
+        display:block;
+        height:80%;
+        @include background-image(linear-gradient(right, rgba(#111,0.7) 0%, #222 80%));
+        white-space: nowrap;
+
+        &:hover{
+          @include text-shadow(yellow 0px 1px 5px);
+        }
+      }
+    }
+
+    .middle{
+      display:inline-block;
+      width:20%;
+      text-align: center;
+      vertical-align: middle;
+      white-space: nowrap;
+
+      i{
+        position: relative;
+        z-index:100;
+        font-size:1.5em;
+        line-height:1em;
+        cursor:pointer;
+        padding: 10px;
+        font-style: normal;
+      }
+
+      .small{
+        width:15%;
+        min-width:18px;
+        text-align: center;
+        margin:0px 5%;
+        display:inline-block !important;
+      }
+    }
+  }
+}
+
 .fluid-row{
   margin:0;
   position: relative;
