@@ -1,6 +1,27 @@
+
+<script src="./js/jquery.tinytimer.js"></script>
+<script src="./js/pickClock.js"></script>
+<script>
+    $(document).ready(function(){
+        lockTimer();
+        pickCount();
+    });
+</script>
+
 <nav id="main-nav">
 
-    <div id="pick-clock" class="index"><div id="lockHold" title="N Days, Hours:Minuets:Seconds"><span id="day"></span> Picks Lock: <span id="lockClock"></span></div></div>
+    <div id="pick-clock">
+        <div id="lockHold" title="N Days, Hours:Minuets:Seconds">
+            <span id="day"></span>
+            Picks Lock: <span id="lockClock"></span>
+        </div>
+
+        <div class="sep"></div>
+
+        <div id="pickHold"></div>
+
+        <div class="sep"></div>
+    </div>
 
     <div id="logo"><h3>TP</h3></div>
 

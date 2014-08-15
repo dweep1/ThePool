@@ -38,13 +38,6 @@
         $result = array("result" => "");
         $errors = 0;
 
-        if(!credit::useCredit(null,$currentWeek->id)){
-
-            $result["result"] .= "You don't have a valid credit to use currently. ";
-            $errors++;
-
-        }
-
         foreach($objData as $key => $value){
 
             if((int) $value->value > count($gamesList) || $value->value < 0){
@@ -64,17 +57,20 @@
 
                 $savePick = new pick($value);
 
-                if($savePick->id === null || $savePick->id < 0){
-                    if($savePick->save() === false){
-                        $result["result"] .= "Unable to save new pick. ";
-                        $errors++;
-                    }
-                }else{
+                if($savePick->id !== null && (int) $savePick->id > 0){
 
                     if($savePick->update() === false){
                         $result["result"] .= "Unable to update old pick. ";
                         $errors++;
                     }
+
+                }else{
+
+                    if($savePick->save() === false){
+                        $result["result"] .= "Unable to save new pick. ";
+                        $errors++;
+                    }
+
                 }
             }
         }

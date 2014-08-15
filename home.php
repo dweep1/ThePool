@@ -70,6 +70,56 @@
 
         <div class="fluid-row slim alignleft">
 
+            <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
+
+            <div class="clear-fix"></div>
+
+            <div data-trans-id="current_picks">
+
+                <ul class="ui-games-list">
+
+                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
+                        data-ng-if="item.gameLock != false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
+
+                        <div data-team-id="{{ item.away_team.id }}"
+                             data-ng-class="{true: 'team alignleft picked', false: 'team alignleft'}[item.pick.team_id == item.away_team.id]"
+                             style="background-image: url('{{ item.away_team.image_url }}')">
+
+                            <div class="gradient-left">
+                                <h5>{{ item.away_team.city }}</h5>
+                                <h6>{{ item.away_team.team_name }}</h6>
+                            </div>
+
+                        </div>
+
+
+                        <div class="middle">
+
+                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
+                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}" disabled />
+
+                        </div>
+
+
+                        <div data-team-id="{{ item.home_team.id }}"
+                             data-ng-class="{true: 'team alignright float-right picked', false: 'team alignright float-right'}[item.pick.team_id == item.home_team.id]"
+                             style="background-image: url('{{ item.home_team.image_url }}')">
+
+                            <div class="gradient-right">
+                                <h5>{{ item.home_team.city }}</h5>
+                                <h6>{{ item.home_team.team_name }}</h6>
+                            </div>
+
+                        </div>
+
+                        <div class="clear-fix"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="fluid-row slim alignleft">
+
             <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>
             <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
 
@@ -78,7 +128,7 @@
                 <ul class="ui-games-list">
 
                     <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
-                        data-ng-if="item.pick.team_id <= 0" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
+                        data-ng-if="item.gameLock == false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-ng-click="item.pick.team_id = item.away_team.id;"
                              data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.away_team.id }}"
@@ -125,62 +175,6 @@
                 </ul>
             </div>
         </div>
-
-        <div class="fluid-row slim alignleft">
-
-            <h5>Current Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
-
-            <div data-trans-id="current_picks">
-
-                <ul class="ui-games-list">
-
-                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
-                        data-ng-if="item.pick.team_id > 0" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
-
-                        <div data-ng-click="item.pick.team_id = item.away_team.id;" data-team-id="{{ item.away_team.id }}"
-                             data-ng-class="{true: 'team alignleft picked', false: 'team alignleft'}[item.pick.team_id == item.away_team.id]"
-                             style="background-image: url('{{ item.away_team.image_url }}')">
-
-                            <div class="gradient-left">
-                                <h5>{{ item.away_team.city }}</h5>
-                                <h6>{{ item.away_team.team_name }}</h6>
-                            </div>
-
-                        </div>
-
-
-                        <div class="middle">
-
-                            <i class="fa fa-minus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
-
-                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
-                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}" />
-
-                            <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
-
-                        </div>
-
-
-                        <div data-ng-click="item.pick.team_id = item.home_team.id" data-team-id="{{ item.home_team.id }}"
-                             data-ng-class="{true: 'team alignright float-right picked', false: 'team alignright float-right'}[item.pick.team_id == item.home_team.id]"
-                             style="background-image: url('{{ item.home_team.image_url }}')">
-
-                            <div class="gradient-right">
-                                <h5>{{ item.home_team.city }}</h5>
-                                <h6>{{ item.home_team.team_name }}</h6>
-                            </div>
-
-                        </div>
-
-                        <div class="clear-fix"></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
     </div>
 
     <div class="fluid-row width-50 float-right secondary">

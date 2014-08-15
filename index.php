@@ -74,7 +74,13 @@
             <li><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></li>
         </ul>
 
-        <div id="pick-clock" class="index"><div id="lockHold" title="N Days, Hours:Minuets:Seconds"><span id="day"></span> Picks Lock: <span id="lockClock"></span></div></div>
+        <div id="pick-clock" class="index">
+            <div id="lockHold" title="N Days, Hours:Minuets:Seconds">
+                <span id="day"></span> Picks Lock: <span id="lockClock"></span>
+            </div>
+
+            <div class="sep"></div>
+        </div>
 
         <div id="login-area" class="aligncenter hidden" data-menu="" data-menu-id="1">
             <h5>Login</h5>

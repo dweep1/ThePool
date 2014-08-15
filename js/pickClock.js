@@ -20,11 +20,11 @@ function lockTimer(){
         var $dayLock = 'Thurs';
 
         if(d > $today && d.getDay() == 5){
-            $dayLock = 'Thurs';
+            $dayLock = 'Fri';
         }else if(d > $today && d.getDay() == 0){
             $dayLock = 'Sun/Mon';
         }else if($today.getDay() == 6){
-            $dayLock = 'Sun/Mon';
+            $dayLock = 'Sat';
         }else if($today.getDay() <= 1){
             $dayLock = 'Sun/Mon';
         }
@@ -39,6 +39,15 @@ function lockTimer(){
         $('#lockClock').tinyTimer({ to: d, format: '%d Days, %0h:%0m:%0s',  onEnd: function(){
             $('#lockHold').empty();
             $('#lockHold').html($dayLock+'\'s Picks Locked');
+
+            setTimeout(function(){
+                if (typeof endClock == 'function') {
+                    endClock();
+                }
+            }, 300);
+
+            console.log("Clock tick");
+
         }});//end of tinytimer
 
     });

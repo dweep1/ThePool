@@ -1,13 +1,13 @@
 $(document).ready(function(){
     var $body = $('body');
 
-    var $icon = '<i style="position: fixed; bottom: 30px; right: 50px; z-index: 999;' +
-        'padding 20px; font-size:40px; color: rgba(44,44,44,0.8); text-shadow: 0px 0px 2px #fff; cursor:pointer" ' +
+    var $icon = '<i style="position: relative; z-index: 999;' +
+        'padding 0px; font-size:22px; vertical-align:middle; color: #fff; cursor:pointer" ' +
         'class="fa fa-bug bug-ui-report"></i>';
 
     var $popup = '<div id="bugReportForm" style="position: fixed; z-index: 999;' +
         '-webkit-transition: all 1.2s ease; padding:20px; -moz-transition: all 1.2s ease; -o-transition: all 1.2s ease;  transition: all 1.2s ease; ' +
-        'bottom:-400px; right: 60px; opacity:0; width:300px; text-align: center; background: #333333; color: #fff;">' +
+        'top:-400px; left: 160px; opacity:0; width:300px; text-align: center; background: #333333; color: #fff;">' +
         '<i style="position: absolute; font-size:20px; right:0px; cursor:pointer; top: 0px; padding:10px;" class="fa fa-times-circle bug-ui-close"></i>' +
         '<h4 style="color:#fff; margin-bottom:20px;">Submit A Bug!</h4>' +
         '<input class="bug-ui" style="padding:10px; width:280px; display:block; font-size: 1.0em; font-weight: 400; ' +
@@ -19,7 +19,7 @@ $(document).ready(function(){
         'font-size: 12px;  letter-spacing: 3px;  padding: 10px 20px; padding-bottom: 8px; line-height: 12px; margin: 0; margin-top: 10px; margin-left:192px; border: none;' +
         'outline: none; border-bottom: 4px solid #f12a27; cursor:pointer;"><span class="bug-ui-button-text">Submit</span></button></div>';
 
-    $body.prepend($icon);
+    $("#pick-clock").append($icon);
     $body.prepend($popup);
 
     $(document).on("mousedown", ".bug-ui-report", function (e) {
@@ -72,7 +72,7 @@ $(document).ready(function(){
 
         if($bug_form.css('opacity') > 0){
             $bug_form.css('opacity', '0');
-            $bug_form.css('bottom', '-300px');
+            $bug_form.css('top', '-400px');
 
             setTimeout(function(){
 
@@ -89,7 +89,7 @@ $(document).ready(function(){
         }else{
 
             $bug_form.css('opacity', '1');
-            $bug_form.css('bottom', '200px');
+            $bug_form.css('top', '100px');
 
             $bug_email.val('Email');
             $bug_report.val('What Went Wrong?');

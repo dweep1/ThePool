@@ -398,6 +398,11 @@ class week extends event{
     public static function getNextLock($offset){
 
         $game = game::nextGame();
+
+        while($game->isLocked() === true){
+            $game = $game->getNext();
+        }
+
         $gameLock = $game->getLockTime();
 
         return self::getTimezoneLockTime($gameLock, $offset);
@@ -439,6 +444,8 @@ class week extends event{
 
         if(!is_bool($this->games)){
             foreach($this->games as $key => $val){
+
+                $this->games[$key]->gameLock = $this->games[$key]->isLocked();
 
                 $this->games[$key]->away_team = $teams[$this->games[$key]->away_team];
                 $this->games[$key]->home_team = $teams[$this->games[$key]->home_team];
@@ -690,6 +697,17 @@ class game extends DatabaseObject{
 
     }
 
+    public function isLocked($id = null){
+
+        if($id !== null)
+            $this->load($id);
+
+        $now = new DateTime("now", Core::getTimezone());
+        $gameLock = new DateTime($this->getLockTime(), Core::getTimezone());
+
+        return ($now >= $gameLock) ? true : false;
+    }
+
     public function getLockTime(){
 
         $tempDate = new DateTime($this->date, Core::getTimezone());
@@ -767,10 +785,10 @@ class pick extends DatabaseObject{
     public static function getPickCount($week_id = null, $user_id = null, $complete = false){
 
         if($week_id === null)
-            $week_id = week::getCurrentWeek();
+            $week_id = week::getCurrent()->id;
 
         if($user_id === null)
-            $user_id = users::returnCurrentUser();
+            $user_id = users::returnCurrentUser()->id;
 
         $prepare = "SELECT COUNT(*) AS pick_count FROM pick WHERE week_id = :week_id AND user_id = :user_id";
 

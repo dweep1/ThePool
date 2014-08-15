@@ -6,6 +6,10 @@ $(document).on("mousedown", "[data-team-id]", function (e) {
 
 });
 
+function endClock(){
+    angular.element(document.getElementById('content-area')).scope().doRefresh();
+}
+
 var myApp = angular.module('myHome', ['angular-velocity']);
 
 function RowController($scope, $http) {
@@ -34,6 +38,8 @@ function RowController($scope, $http) {
         savePicks($scope, $http);
 
         setTimeout(function(){
+            pickCount();
+
             localStorage["changed"] = "false";
 
             if($("#changeBox").is(":visible"))
@@ -138,11 +144,9 @@ function savePicks($scope, $http){
                     function($messageID){toggleDisplayMessageBox($messageID);}
                 );
 
-                if(parseInt(data.errors) <= 0){
-                    $scope.force = true;
+                $scope.force = true;
 
-                    getLiveData($scope, $http);
-                }
+                getLiveData($scope, $http);
 
                 return true;
 
@@ -256,7 +260,7 @@ function buildPicks($scope, $callback){
     var $picks = [];
 
     $scope.games.forEach(function(entity){
-        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1)
+        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1 && entity.gameLock !== true)
             $picks.push(entity.pick);
     });
 

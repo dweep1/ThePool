@@ -638,8 +638,10 @@ abstract class DatabaseObject{
             else if($key !== "loaded")
                 $this->{$key} = $value;
 
-            if(strpos($key,'date') !== false)
+            if(strpos($key,'date') !== false && Core::isValidDateTimeString($this->{$key}))
                 $this->{$key} = Core::unixToMySQL($value);
+            else if(strpos($key,'date') !== false && !Core::isValidDateTimeString($this->{$key}))
+                $this->{$key} = Core::unixToMySQL("now");
 
         }
 

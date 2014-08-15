@@ -1,5 +1,9 @@
 var myApp = angular.module('myHome', ['angular-velocity']);
 
+function endClock(){
+    angular.element(document.getElementById('content-area')).scope().doRefresh();
+}
+
 function RowController($scope, $http, $timeout) {
 
     $(document).ready(function() {
@@ -45,6 +49,8 @@ function RowController($scope, $http, $timeout) {
         savePicks($scope, $http);
 
         setTimeout(function(){
+            pickCount();
+
             localStorage["changed"] = "false";
 
             if($("#changeBox").is(":visible"))
@@ -164,11 +170,9 @@ function savePicks($scope, $http){
                     function($messageID){toggleDisplayMessageBox($messageID);}
                 );
 
-                if(parseInt(data.errors) <= 0){
-                    $scope.force = true;
+                $scope.force = true;
 
-                    getLiveData($scope, $http);
-                }
+                getLiveData($scope, $http);
 
                 return true;
 
@@ -286,7 +290,10 @@ function buildPicks($scope, $callback){
     var $picks = [];
 
     $scope.games.forEach(function(entity){
-        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1)
+
+        console.log(entity.pick);
+
+        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1 && entity.gameLock == false)
             $picks.push(entity.pick);
     });
 

@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if($submitType == 0){ // display the pick count;
 
         $current_week = week::getCurrent();
-        $pickCount = pick::getPickCount($current_week->id);
+        $pickCount = pick::getPickCount();
         $gameCount = $current_week->getGameCount();
 
         echo "{$pickCount}/{$gameCount}";

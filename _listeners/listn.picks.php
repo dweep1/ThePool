@@ -61,17 +61,20 @@
 
                 $savePick = new pick($value);
 
-                if($savePick->id === null || $savePick->id < 0){
-                    if($savePick->save() === false){
-                        $result["result"] .= "Unable to save new pick. ";
-                        $errors++;
-                    }
-                }else{
+                if((int) $savePick->id > 0){
 
                     if($savePick->update() === false){
                         $result["result"] .= "Unable to update old pick. ";
                         $errors++;
                     }
+
+                }else{
+
+                    if($savePick->save() === false){
+                        $result["result"] .= "Unable to save new pick. ";
+                        $errors++;
+                    }
+
                 }
             }
         }
