@@ -638,9 +638,9 @@ abstract class DatabaseObject{
             else if($key !== "loaded")
                 $this->{$key} = $value;
 
-            if(strpos($key,'date') !== false && Core::isValidDateTimeString($this->{$key}))
+            if(strpos($key,'date') !== false && (Core::isValidDateTimeString($value) || $value instanceof DateTime))
                 $this->{$key} = Core::unixToMySQL($value);
-            else if(strpos($key,'date') !== false && !Core::isValidDateTimeString($this->{$key}))
+            else if(strpos($key,'date') !== false && !(Core::isValidDateTimeString($value) || $value instanceof DateTime))
                 $this->{$key} = Core::unixToMySQL("now");
 
         }
@@ -648,7 +648,7 @@ abstract class DatabaseObject{
         foreach($this as $key => $value) {
 
             if(isset($array[$key])){
-                if(strpos($key,'date') !== false && !Core::isValidDateTimeString($this->{$key}))
+                if(strpos($key,'date') !== false && !(Core::isValidDateTimeString($this->{$key}) || $this->{$key} instanceof DateTime))
                     return false;
                 else if($this->{$key} !== $array[$key] && $key !== "loaded" && strpos($key,'date') === false)
                     return false;
@@ -776,6 +776,9 @@ class Core{
     }
 
     public static function unixToMySQL($timestamp){
+
+        if($timestamp instanceof DateTime)
+            $timestamp = $timestamp->format('Y-m-d H:i:s');
 
         if(strtotime($timestamp) === false)
             return date('Y-m-d H:i:s', $timestamp);

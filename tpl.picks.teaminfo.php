@@ -103,10 +103,12 @@ $selected_team->getRecentGames();
     </div>
 </div>
 
-    <?php exit; ?>;
+    <!--
 	<div class="barHold">
 		<h5 style="top:33px;">
 			<?php
+
+			/**
 
 				$losses = $team['games'] - $team['wins'];
 				$wins = $team['wins'];
@@ -306,10 +308,12 @@ $selected_team->getRecentGames();
 
 				name: 'Scored',
 
-				data: [<?php echo $scored; ?>]
+				data: [<?php echo $scored; **/ ?>]
 
 			}]
 		});
 	}
 
 </script>
+
+-->

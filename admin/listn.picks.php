@@ -59,6 +59,8 @@
 
                 if($savePick->id !== null && (int) $savePick->id > 0){
 
+                    $savePick->date = new DateTime("now", Core::getTimezone());
+
                     if($savePick->update() === false){
                         $result["result"] .= "Unable to update old pick. ";
                         $errors++;

@@ -401,6 +401,10 @@ class week extends event{
 
         while($game->isLocked() === true){
             $game = $game->getNext();
+
+            if($game === false)
+                return false;
+
         }
 
         $gameLock = $game->getLockTime();
@@ -716,19 +720,27 @@ class game extends DatabaseObject{
 
         if(strpos($dayCheck,'Thu') !== false){
 
-            $tempDate->add(new DateInterval('PT21H')); //should be 8pm EST on that given game date
+            $tempDate->add(new DateInterval('PT18H')); //should be 6pm EST on that given game date
+
+        }else if(strpos($dayCheck,'Fri') !== false){
+
+            $tempDate->add(new DateInterval('PT18H')); //should be 6pm EST on that given game date
+
+        }else if(strpos($dayCheck,'Sat') !== false){
+
+            $tempDate->add(new DateInterval('PT13H')); //should be 1pm EST on that given game date
 
         }else if(strpos($dayCheck,'Sun') !== false){
 
-            $tempDate->add(new DateInterval('PT14H')); //should be 1pm EST on that given game date
+            $tempDate->add(new DateInterval('PT13H')); //should be 1pm EST on that given game date
 
         }else if(strpos($dayCheck,'Mon') !== false){
 
-            $tempDate->sub(new DateInterval('PT11H')); //should be 1pm EST on the day before (sunday)
+            $tempDate->add(new DateInterval('PT18H')); //should be 6pm EST on that day //$tempDate->sub();
 
         }else{
 
-            $tempDate->add(new DateInterval('PT14H')); //should be 1pm EST on that given game date
+            $tempDate->add(new DateInterval('PT12H')); //should be 1pm EST on that given game date
 
         }
 
