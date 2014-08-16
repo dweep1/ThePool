@@ -290,9 +290,6 @@ function buildPicks($scope, $callback){
     var $picks = [];
 
     $scope.games.forEach(function(entity){
-
-        console.log(entity.pick);
-
         if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1 && entity.gameLock == false)
             $picks.push(entity.pick);
     });

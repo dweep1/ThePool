@@ -78,7 +78,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
+                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'closed'"
                         data-ng-if="item.gameLock != false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-team-id="{{ item.away_team.id }}"
@@ -127,7 +127,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
+                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'open'"
                         data-ng-if="item.gameLock == false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-ng-click="item.pick.team_id = item.away_team.id;"
@@ -149,7 +149,7 @@
                                data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
 
                             <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
-                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}" />
+                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}"  data-ng-change="item.pick.value = (item.pick.value - 0)" />
 
                             <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
                                data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
@@ -204,7 +204,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li data-ng-repeat="item in gamesOld | filter:search | orderBy:'id'"
+                    <li data-ng-repeat="item in gamesOld  | orderBy:'id'"
                         data-picked-id="{{ item.pick.team_id }}">
 
                         <div data-team-id="{{ item.away_team.id }}"style="background-image: url('{{ item.away_team.image_url }}')"
