@@ -112,6 +112,8 @@
 
                         </div>
 
+                        <div class="display-date">{{ item.display_date }}</div>
+
                         <div class="clear-fix"></div>
                     </li>
                 </ul>
@@ -169,6 +171,8 @@
 
                         </div>
 
+                        <div class="display-date">{{ item.display_date }}</div>
+
                         <div class="clear-fix"></div>
 
                     </li>
@@ -186,12 +190,12 @@
 
                 <div class="current-data">
                     <h2>{{ weekOld.total_rank }}</h2>
-                    <h6>{{ weekOld.total_score.value }} points</h6>
+                    <h6>{{ weekOld.total_score }} points</h6>
                 </div>
 
                 <div class="last-data">
                     <h2>{{ weekOld.week_rank }}</h2>
-                    <h6>{{ weekOld.week_score.value }} points</h6>
+                    <h6>{{ weekOld.week_score }} points</h6>
                 </div>
             </div>
         </div>
@@ -239,6 +243,8 @@
                                 <h6>{{ item.home_team.team_name }}</h6>
                             </div>
                         </div>
+
+                        <div class="display-date">{{ item.display_date }}</div>
 
                         <div class="clear-fix"></div>
 

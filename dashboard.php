@@ -61,7 +61,7 @@ if($user === false || !$user->verifyAuth())
 ?>
 
 <div id="content-area" data-ng-controller="RowController">
-    <div class="width-50 fluid-row">
+    <div class="width-50 fluid-row first">
 
         <div class="fluid-row slim alignleft">
 

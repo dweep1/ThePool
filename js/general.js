@@ -93,6 +93,18 @@ $(document).ready(function(){
 
     });
 
+    $(document).on("mousedown", "[data-menu-close-id]", function (e) {
+
+        disabledEventPropagation(e);
+
+        var $data_id = $(this).attr('data-menu-close-id');
+
+        var $menu_item = $("[data-menu-id='"+$data_id+"']");
+
+        toggleMenuItemOverlay($menu_item);
+
+    });
+
     $(document).on("mousedown", "#forgotPass", function (e) {
 
         var $confirm = $('[name="confirm"]');

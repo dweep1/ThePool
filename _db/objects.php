@@ -440,11 +440,15 @@ class week extends event{
         $picks = $this->getPicks($user_id);
         $teams = teams::getTeamsList();
 
-        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id))[0];
-        $this->week_rank = Core::formatNumber(users::getPlayerRanking(null, $this->id));
+        $tempRanking = users::getPlayerRanking(null, $this->id);
 
-        $this->total_score = stat_log::getUserStats(6);
-        $this->total_rank = Core::formatNumber(users::getPlayerRanking());
+        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id))[0]['value'] ?: 0;
+        $this->week_rank = Core::formatNumber((((int) $tempRanking > 0) ? $tempRanking : "N/A" ));
+
+        $tempRanking = users::getPlayerRanking();
+
+        $this->total_score = stat_log::getUserStats(6)[0]['value'] ?: 0;
+        $this->total_rank = Core::formatNumber((((int) $tempRanking > 0) ? $tempRanking : "N/A" ));
 
         if(!is_bool($this->games)){
             foreach($this->games as $key => $val){
@@ -456,9 +460,9 @@ class week extends event{
 
                 $gameDate = new DateTime($this->games[$key]->date, Core::getTimezone());
                 $gameDate->setTime(0,0,0);
-                $gameDate = $gameDate->format('l');
 
-                $this->games[$key]->date_name = $gameDate;
+                $this->games[$key]->date_name = $gameDate->format('l');
+                $this->games[$key]->display_date = $gameDate->format('D, m/d');
 
                 if(isset($picks[$val->id]))
                     $this->games[$key]->pick = $picks[$val->id];
@@ -482,7 +486,7 @@ class week extends event{
         $games = new game();
         $tempStore = [];
 
-        $games = $games->getList("week_id asc", array("week_id" => $this->id));
+        $games = $games->getList("id asc", array("week_id" => $this->id));
 
         foreach($games as $value){
 
@@ -652,13 +656,10 @@ class game extends DatabaseObject{
             if(!is_bool($picks)){
                 foreach($picks as $value){
 
-                    if((int) $value->team_id === (int) $winner){
-                        $value->result = 1;
+                    $value->result = (int) $value->team_id === (int) $winner ? 1 : 0;
 
-                        if($value->update() === false)
-                            return false;
-
-                    }
+                    if($value->update() === false)
+                        return false;
                 }
             }
         }
@@ -856,22 +857,22 @@ class stat_log extends DatabaseObject{
 
     public static function getGlobalRankData($week_id = null){
 
-        $week_id = ($week_id === null) ? @week::getCurrent()->id : $week_id;
+        $week_id = ($week_id === null) ? week::getCurrent()->id : $week_id;
 
         if((int) $week_id === -1){
             $prepare = "SELECT user_id as userID, SUM(value) as total,
-            (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE result <> -1 AND user_id = userID)) as percent
-            FROM pick WHERE result = 1 GROUP BY user_id ORDER BY total DESC";
+            (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE result <> -1 AND season_id = :season_id AND user_id = userID)) as percent
+            FROM pick WHERE result = 1 AND season_id = :season_id GROUP BY user_id ORDER BY total DESC";
         }else{
             $prepare = "SELECT user_id as userID, SUM(value) as total,
-            (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE week_id = :week_id AND result <> -1 AND user_id = userID)) as percent
-            FROM pick WHERE week_id = :week_id AND result = 1 GROUP BY user_id ORDER BY total DESC";
+            (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE week_id = :week_id AND season_id = :season_id AND result <> -1 AND user_id = userID)) as percent
+            FROM pick WHERE week_id = :week_id AND season_id = :season_id AND result = 1 GROUP BY user_id ORDER BY total DESC";
         }
 
         if((int) $week_id === -1)
-            $execArray = [];
+            $execArray = array(':season_id' => season::getCurrent()->id);
         else
-            $execArray = array(':week_id' => $week_id);
+            $execArray = array(':week_id' => $week_id, ':season_id' => season::getCurrent()->id);
 
         try {
 
@@ -1069,7 +1070,7 @@ class teams extends DatabaseObject{
     public $losses;
     public $games;
 
-    public function getRecentGames($limit = 3){
+    public function getRecentGames($limit = 6){
 
         try {
 

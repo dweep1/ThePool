@@ -57,9 +57,12 @@
 
                 $savePick = new pick($value);
 
-                if($savePick->id !== null && (int) $savePick->id > 0){
+                $checkPick = new pick();
+                $checkPick->load(array($savePick->game_id, $savePick->user_id), array("type" => array("game_id", "user_id")));
 
-                    $savePick->date = new DateTime("now", Core::getTimezone());
+                if((int) $checkPick->id > 0){
+
+                    $savePick->id = $checkPick->id;
 
                     if($savePick->update() === false){
                         $result["result"] .= "Unable to update old pick. ";
@@ -74,6 +77,7 @@
                     }
 
                 }
+
             }
         }
 

@@ -83,6 +83,7 @@
         </div>
 
         <div id="login-area" class="aligncenter hidden" data-menu="" data-menu-id="1">
+            <i class="fa fa-times-circle float-right ui-message-close" data-menu-close-id="1"></i>
             <h5>Login</h5>
             <form action="./_listeners/listn.login.php" method="post">
                 <div class="faux-row"><input type="text" name="email" value="Email" /></div>
@@ -107,7 +108,9 @@
 
 
     <div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center;">
+
         <div class="width-50 height-100 fluid-row">
+
             <div class="intro-word-con">
                 <div class="intro-word">
                     Plan &#62;
@@ -127,18 +130,17 @@
             <div class="fluid-row aligncenter"><img id="logo-banner" src="./images/poolbanner.png" /></div>
 
             <div class="fluid-row aligncenter">
-                <div class="fluid-row width-90 alignleft"><i>At vero eos et accusamus et iusto odio dignissimos ducimus
-                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                        excepturi sint occaecati cupiditate non provident.</i></div>
+                <div class="fluid-row width-90 alignleft"><i>The Pool is a weekly betting game where users pick and number NFL teams based on who they think they will win each week.
+                        At the end of the week, the person who has scored the most points wins the betting pool for that week.</i></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="number">01</p><p class="desc">Quisque vel euismod risus. Cras eget dui vulputate</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="number">01</p><p class="desc">Plan your picks accordingly. Choose a strong team and try to predict upsets to gain the advantage.</p></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="number">02</p><p class="desc">Sed et lacus nibh. Ut sed felis ut nulla tincidunt faucibus vel eu mauris</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="number">02</p><p class="desc">Pick and rate teams which you think will have the upper hand going into their games.</p></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="number">03</p><p class="desc">Vivamus aliquet tellus eros, id venenatis ante venenatis tempus.</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="number">03</p><p class="desc">After the week is over the person with the most points wins the weekly pool. Will you win big?</p></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="c-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer cursus consequat nunc. Sed
-                        convallis, ipsum et commodo scelerisque, nunc risus euismod orci, eu auctor mi sapien tincidunt lacus. Mauris in pulvinar risus.</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected a per played week. This must be paid prior to submitting
+                        your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>
             </div>
 
         </div>

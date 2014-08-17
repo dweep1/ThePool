@@ -552,8 +552,9 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
     background: #222;
     color: #fff;
     display:block;
-    width:auto;
+    width:90%;
     margin: 15px 10px;
+    position: relative;
 
     .loss{
       text-decoration: line-through;
@@ -636,12 +637,23 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       }
     }
 
+    .display-date{
+      position: absolute;
+      right:-60px;
+      top:25%;
+      color:#222;
+      width:50px;
+      height:50%;
+    }
+
     .middle{
       display:inline-block;
       width:20%;
       text-align: center;
       vertical-align: middle;
       white-space: nowrap;
+      position: relative;
+
 
       i{
         position: relative;

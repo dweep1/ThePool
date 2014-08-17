@@ -843,6 +843,9 @@ class Core{
 
         $ends = array('th','st','nd','rd','th','th','th','th','th','th');
 
+        if($number == "N/A")
+            return $number;
+
         return (($number %100) >= 11 && ($number%100) <= 13) ? $number.'th' : $number.$ends[$number % 10];
 
     }
