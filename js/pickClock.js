@@ -19,8 +19,6 @@ function lockTimer(){
         var $lockHold = $('#lockHold');
         var $dayLock = 'Thurs';
 
-        console.log(d.getDay());
-
         if(d.getDay() == 5){
             $dayLock = 'Fri';
         }else if(d.getDay() == 6){

@@ -36,10 +36,11 @@
         $return['userRank'][0]['list'] = stat_log::getGlobalRankData(-1);
         $return['userRank'][0]['rankData'] = stat_log::getPlayerRank($return['userRank'][0]['list']);
 
-
         $rivals = $currentUser->getRivals();
 
         $count = 0;
+
+        $return['rivals'] = [];
 
         if(!is_bool($rivals) && count($rivals) > 0){
 
@@ -81,6 +82,8 @@
             if($value->date_end <= $currentWeek->date_start)
                 array_push($return['weeks'], $value);
         }
+
+        array_push($return['weeks'], $currentWeek);
 
         echo json_encode($return);
 
