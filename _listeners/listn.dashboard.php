@@ -36,19 +36,40 @@
         $return['userRank'][0]['list'] = stat_log::getGlobalRankData(-1);
         $return['userRank'][0]['rankData'] = stat_log::getPlayerRank($return['userRank'][0]['list']);
 
-        //gets the global pick data in terms of points per each week
-        $return['userPicks'][0]['data'] = stat_log::getGlobalPointData();
-        $return['userPicks'][0]['title'] = "Global Picks";
-        $return['userPicks'][0]['strokeColor'] = "#AAA";
-        $return['userPicks'][0]['pointColor'] = "#3366DD";
-        $return['userPicks'][0]['pointStrokeColor'] = "#AAA";
+
+        $rivals = $currentUser->getRivals();
+
+        $count = 0;
+
+        if(!is_bool($rivals) && count($rivals) > 0){
+
+            foreach($rivals as $rival){
+
+                $return['rivals'][$count] = (int) $rival->rival_id;
+
+                $return['userPicks'][$count]['data'] = stat_log::getPlayerPointData($rival->rival_id);
+                $return['userPicks'][$count]['title'] = $rival->rival_custom_name;
+                $return['userPicks'][$count]['strokeColor'] = "rgba(250,40,30,0.7)";
+                $return['userPicks'][$count]['pointColor'] = "rgba(100,40,40,0.7)";
+                $return['userPicks'][$count]['pointStrokeColor'] = "#ccc";
+
+                $count++;
+            }
+        }
+
+        $return['userPicks'][$count]['data'] = stat_log::getGlobalPointData();
+        $return['userPicks'][$count]['title'] = "Global Picks";
+        $return['userPicks'][$count]['strokeColor'] = "#AAA";
+        $return['userPicks'][$count]['pointColor'] = "#3366DD";
+        $return['userPicks'][$count]['pointStrokeColor'] = "#AAA";
+        $count++;
 
         //gets the users pick data in terms of points per each week
-        $return['userPicks'][1]['data'] = stat_log::getPlayerPointData();
-        $return['userPicks'][1]['title'] = "User Picks";
-        $return['userPicks'][1]['strokeColor'] = "#666";
-        $return['userPicks'][1]['pointColor'] = "rgba(27,206,245, 1)";
-        $return['userPicks'][1]['pointStrokeColor'] = "#222";
+        $return['userPicks'][$count]['data'] = stat_log::getPlayerPointData();
+        $return['userPicks'][$count]['title'] = "Your Picks";
+        $return['userPicks'][$count]['strokeColor'] = "#333";
+        $return['userPicks'][$count]['pointColor'] = "rgba(27,206,245, 1)";
+        $return['userPicks'][$count]['pointStrokeColor'] = "#111";
 
         $currentWeek = week::getCurrent();
 

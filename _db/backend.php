@@ -629,7 +629,7 @@ abstract class DatabaseObject{
         $keyChain = $this->toArray();
 
         if(is_object($array))//converts json to an array
-        $array = (array) $array;
+            $array = (array) $array;
 
         foreach($array as $key => $value){
 
@@ -758,20 +758,24 @@ class Core{
 
     public static function isValidDateTimeString($str_dt, $str_dateFormat = null, $str_timezone = null) {
 
+        $result = false;
+
         if(!is_string($str_dt))
             return false;
 
         if($str_timezone === null)
-            $str_timezone = new DateTimeZone('America/New_York');
+            $str_timezone = self::getTimezone();
         else if(is_string($str_timezone))
             $str_timezone = new DateTimeZone($str_timezone);
 
-        if($str_dateFormat === null)
+        if($str_dateFormat === null){
             $str_dateFormat = 'Y-m-d H:i:s';
+            $result = self::isValidDateTimeString($str_dt,'Y-m-d');
+        }
 
         $date = DateTime::createFromFormat($str_dateFormat, $str_dt, $str_timezone);
 
-        return ($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0);
+        return (($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0) || $result);
 
     }
 

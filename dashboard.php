@@ -112,7 +112,7 @@ if($user === false || !$user->verifyAuth())
                     <div class="width-25">Points</div>
                 </li>
                 <li data-ng-repeat="item in rankList | orderBy:'-total'"
-                    data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
+                    data-ng-class="{'highlight': item.userID == myUserID, 'rival': rivals.indexOf(item.userID) != -1}">
                     <div class="width-40">{{ item.username }}</div>
                     <div class="width-25">{{ $index + 1 }}</div>
                     <div class="width-25">{{ item.total }}</div>
@@ -133,7 +133,7 @@ if($user === false || !$user->verifyAuth())
                     <div class="width-25">Percent</div>
                 </li>
                 <li data-ng-repeat="item in rankList | orderBy:'-percent'"
-                    data-ng-class="{true: 'highlight', false: ''}[item.userID == myUserID]">
+                    data-ng-class="{'highlight': item.userID == myUserID, 'rival': rivals.indexOf(item.userID) != -1}">
                     <div class="width-40">{{ item.username }}</div>
                     <div class="width-25">{{ $index + 1 }}</div>
                     <div class="width-25">{{ item.percent }}%</div>

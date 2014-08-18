@@ -248,6 +248,14 @@ class users extends DatabaseObject{
 
     }
 
+    public function getRivals(){
+
+        $rivals = new rivals();
+
+        return $rivals->getList(null, array("user_id" => $this->id));
+
+    }
+
 }
 
 /**
@@ -310,6 +318,10 @@ class season extends event{
     public $game_count;
     public $text_id;
     public $week_count;
+
+    /*public static function getCurrent(){
+        return new season(3);
+    }*/
 
     public function createNew(){
 
@@ -386,6 +398,10 @@ class week extends event{
 
     public $season_id;
     public $week_number;
+
+    /*public static function getCurrent(){
+        return new week(28);
+    }*/
 
     public function getGameCount(){
 
@@ -924,9 +940,11 @@ class stat_log extends DatabaseObject{
 
     }
 
-    public static function getPlayerPointData(){
+    public static function getPlayerPointData($user_id = -1){
 
-        return self::getUserStats(5);
+        $dataArray = array("user_id" => $user_id);
+
+        return self::getUserStats(5, $dataArray);
 
     }
 

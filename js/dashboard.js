@@ -37,6 +37,8 @@ function getLiveStats($scope, $http){
 
             $scope.myUserID = parseInt(data.myUserID);
 
+            $scope.rivals = data.rivals;
+
             $scope.rankList = [];
 
             data.userRank[0].list.forEach(function(entity){
