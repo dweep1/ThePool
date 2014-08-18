@@ -112,6 +112,8 @@
 
                         </div>
 
+                        <div class="display-date">{{ item.display_date }}</div>
+
                         <div class="clear-fix"></div>
                     </li>
                 </ul>
@@ -168,6 +170,8 @@
                             </div>
 
                         </div>
+
+                        <div class="display-date">{{ item.display_date }}</div>
 
                         <div class="clear-fix"></div>
 

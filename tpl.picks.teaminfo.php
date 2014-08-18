@@ -58,6 +58,11 @@ $selected_team->getRecentGames();
                     $loss_home = "";
                 }
 
+                $gameDate = new DateTime($game->date, Core::getTimezone());
+                $gameDate->setTime(0,0,0);
+
+                $game->displayDate = $gameDate->format('D, m/d Y');
+
                 echo "    <li>
 
                             <div class='team alignleft $picked_away' style='background-image: url(\"{$teams[$game->away_team]->image_url}\")'>
@@ -90,6 +95,8 @@ $selected_team->getRecentGames();
                                     <h6>{$teams[$game->home_team]->team_name}</h6>
                                 </div>
                             </div>
+
+                            <div class='display-date' style='color:#fff; text-align: left'>{$game->displayDate}</div>
 
                             <div class='clear-fix'></div>
 

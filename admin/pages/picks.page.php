@@ -19,7 +19,7 @@
                     <div class="width-50 alignleft">Email</div>
                 </li>
 
-                <li class="alignleft" data-ng-repeat="item in users | filter:search | orderBy:'id'" ng-click="currentUser = item.id; selectUser();" data-object='users' data-user-id='{{ item.id }}' >
+                <li class="alignleft" data-ng-repeat="item in users | filter:search | orderBy:'id'" ng-click="selectUser();" data-object='users' data-user-id='{{ item.id }}' >
                     <div class="width-10 aligncenter">{{ item.id }}</div>
                     <div class="width-30 alignleft">{{ item.username }}</div>
                     <div class="width-5"></div>

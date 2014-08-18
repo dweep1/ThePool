@@ -567,6 +567,21 @@ select:not(.top){
     width: 30%;
     display:inline-block;
     vertical-align: top;
+
+    @include respondTo(smallScreen) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(tablet) {
+      width:auto;
+      display:block;
+    }
+
+    @include respondTo(smartphone) {
+      width:auto;
+      display:block;
+    }
   }
 
   &.width-50{
