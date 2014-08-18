@@ -19,7 +19,7 @@
                     <div class="width-50 alignleft">Email</div>
                 </li>
 
-                <li class="alignleft" ng-click="selectUser()" data-ng-repeat="item in users | filter:search | orderBy:'id'" data-object='users' data-user-id='{{ item.id }}' >
+                <li class="alignleft" data-ng-repeat="item in users | filter:search | orderBy:'id'" ng-click="currentUser = item.id; selectUser();" data-object='users' data-user-id='{{ item.id }}' >
                     <div class="width-10 aligncenter">{{ item.id }}</div>
                     <div class="width-30 alignleft">{{ item.username }}</div>
                     <div class="width-5"></div>
@@ -189,6 +189,10 @@
 
         $scope.picks = JSON.parse(JSON.stringify($picks));
 
+        $scope.picks.forEach(function(entity){
+            entity.user_id = localStorage["selected_user"];
+        });
+
         if(checkSet($callback))
             $callback();
 
@@ -263,11 +267,11 @@
     function getLiveData($scope, $http){
 
         if(checkSet(localStorage["selected_user"]))
-            $scope.user_id = localStorage["selected_user"];
+            $scope.user_id = parseInt(localStorage["selected_user"]);
         else
-            $scope.user_id = currentUser;
+            $scope.user_id = parseInt(currentUser);
 
-        console.log($scope.user_id);
+        localStorage["selected_user"] = $scope.user_id;
 
         return $http.post("./listn.picks.php?method=GET", {"user_id" : $scope.user_id}).
             success(function(data, status) {
