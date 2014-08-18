@@ -116,7 +116,9 @@ if($user === false || !$user->verifyAuth())
                     <div class="width-40">{{ item.username }}</div>
                     <div class="width-25">{{ $index + 1 }}</div>
                     <div class="width-25">{{ item.total }}</div>
+
                 </li>
+
             </ul>
 
         </div>

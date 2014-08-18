@@ -74,10 +74,25 @@ function checkGameDataIntegrity($scope){
 
 function getRemaining($scope){
 
+    setTimeout(function(){
+
+        if(checkSet(localStorage["changed"])){
+            if(localStorage["changed"] != "false"){
+                if($("#changeBox").is(":hidden")){
+                    $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
+                }
+            }
+        }
+
+    }, 600);
+
     var $remaining = [];
     $scope.remaining = [];
 
     var $noPick = [];
+
+    if(!checkSet($scope.games))
+        return false;
 
     $scope.games.forEach(function(entity){
         if(checkSet(entity.pick) !== false)
@@ -96,6 +111,8 @@ function getRemaining($scope){
         if(checkSet(entity) !== false)
             $scope.remaining.push({"id": entity, "value": entity});
     });
+
+    return true;
 
 }
 

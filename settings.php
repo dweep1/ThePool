@@ -52,7 +52,7 @@ include "./menu.php";
 ?>
 
 <div id="content-area">
-    <div class="width-50 fluid-row aligncenter settings">
+    <div class="width-50 fluid-row aligncenter settings first">
 
         <form action="./_listeners/listn.settings.php" id="changeUser" method="post">
             <input type="hidden" name="submitType" value="0" />

@@ -90,9 +90,7 @@
                 <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
                 <div class="faux-row">
                     <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
-                    <?php if(isset($_SESSION['login_attempts']) && (int) $_SESSION['login_attempts'] >= 2): ?>
-                        <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
-                    <?php endif; ?>
+                    <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
                 </div>
                 <input type="hidden" name="submitType" value="0" />
                 <div class="faux-row">

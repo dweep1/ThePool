@@ -985,13 +985,13 @@ option {
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
-/* line 839, scss/index.scss */
+/* line 840, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 845, scss/index.scss */
+/* line 846, scss/index.scss */
 #main-nav #login-area {
   position: absolute;
   padding: 10px;
@@ -1005,22 +1005,22 @@ option {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 0px 2px;
   color: #fff;
 }
-/* line 856, scss/index.scss */
+/* line 857, scss/index.scss */
 #main-nav #login-area h5 {
   padding: 5px 10px;
 }
-/* line 862, scss/index.scss */
+/* line 863, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 865, scss/index.scss */
+/* line 866, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 870, scss/index.scss */
+/* line 871, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -1028,7 +1028,7 @@ option {
   height: 40px;
   text-align: center;
 }
-/* line 878, scss/index.scss */
+/* line 879, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -1036,7 +1036,7 @@ option {
   list-style: none;
   overflow: hidden;
 }
-/* line 886, scss/index.scss */
+/* line 887, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -1048,11 +1048,11 @@ option {
   display: block;
   white-space: nowrap;
 }
-/* line 895, scss/index.scss */
+/* line 896, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 899, scss/index.scss */
+/* line 900, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -1065,7 +1065,7 @@ option {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 911, scss/index.scss */
+/* line 912, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -1075,7 +1075,7 @@ option {
   line-height: 30px;
   vertical-align: middle;
 }
-/* line 918, scss/index.scss */
+/* line 919, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

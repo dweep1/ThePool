@@ -104,7 +104,7 @@
 ?>
 
 <div id="content-area" class="aligncenter">
-    <div class="width-90 full fluid-row aligncenter">
+    <div class="width-90 full fluid-row aligncenter first">
 
         <div class="fluid-row alignleft">
             <h4 style="display:inline-block; padding-right:40px; vertical-align: middle;">Pick Results</h4>

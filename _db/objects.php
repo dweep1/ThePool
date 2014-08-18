@@ -1075,7 +1075,7 @@ class teams extends DatabaseObject{
         try {
 
             $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare("SELECT * FROM game WHERE (home_team = :team_id OR away_team = :team_id) AND date < CURDATE() ORDER BY id DESC LIMIT :lim");
+            $query = $pdo->dbh->prepare("SELECT * FROM game WHERE (home_team = :team_id OR away_team = :team_id) AND date < CURDATE() ORDER BY date DESC LIMIT :lim");
 
             $query->bindValue(':lim', (int) $limit, PDO::PARAM_INT);
             $query->bindValue(':team_id', (int) $this->id, PDO::PARAM_INT);
