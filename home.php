@@ -14,7 +14,7 @@
 <html>
 <head>
 
-    <title>The Pool</title>
+    <title>The Pool - Home</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
@@ -61,7 +61,7 @@
         <div class="fluid-row slim alignleft">
             <h6>Search:</h6> <input type="text" data-ng-model="search" />
             <button class="ui-button dark float-right" ng-click="doSave()">Save Picks</button>
-            <button class="ui-button dark float-right" ng-click="doRefresh()">Discard Changes</button>
+            <button class="ui-button dark float-right" ng-click="doRefresh()">Refresh Games</button>
         </div>
 
         <div class="fluid-row slim float-right">
@@ -144,7 +144,6 @@
 
                         </div>
 
-
                         <div class="middle">
 
                             <i class="fa fa-minus-circle" data-game-id="{{ item.id }}"
@@ -157,7 +156,6 @@
                                data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
 
                         </div>
-
 
                         <div data-ng-click="item.pick.team_id = item.home_team.id"
                              data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.home_team.id }}"

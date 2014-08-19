@@ -40,7 +40,7 @@
     <?php if(isset($_SESSION['result'])): ?>
 
         <div class="ui-message-background hidden" data-background-id="1"></div>
-        <div class="ui-message-box" data-type="result" data-message-id="1">
+        <div class="ui-message-box" data-type="error" data-message-id="1">
             <i class="fa fa-times-circle float-right ui-message-close" data-close-id="1"></i>
             <h5>Result</h5>
             <div class="faux-row"><?php echo $_SESSION['result']; ?></div>
@@ -71,7 +71,7 @@
         <ul>
             <li id="expand-menu"><h2><i class="fa fa-bars"style="padding-left:1px;"></i></h2></li>
             <li><h2 data-icon="" data-id="1"><i class="fa fa-user" style="padding-left:2px;"></i> Login</h2></li>
-            <li><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></li>
+            <li><h2 data-link="./rules.php"><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></li>
         </ul>
 
         <div id="pick-clock" class="index">

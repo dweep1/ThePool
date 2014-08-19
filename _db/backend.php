@@ -852,6 +852,14 @@ class Core{
 
     }
 
+    public static function getDay($dateTimeString){
+
+        $tempDate = new DateTime($dateTimeString, self::getTimezone());
+        $tempDate->setTime(0,0,0);
+        return $tempDate->format('D');
+
+    }
+
 
 
 }

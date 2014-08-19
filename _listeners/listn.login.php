@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($response === -1){//User Information Issue
             $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Some information provided was invalid" : $_SESSION['result'] ;
         }else if($response === -2)
-            $_SESSION['result'] = "User/Email already exists!";
+            $_SESSION['result'] = "ERROR: Username/Email already exists!";
         else if($response === false)//db error
             $_SESSION['result'] = "Database Error";
         else //registration successful
@@ -127,6 +127,9 @@ function doRegister($POST){
     $user = new users();
 
     if($user->load($POST['email'], 'email'))
+        return -2;
+
+    if($user->load(explode("@", $POST['email'])[0], 'username'))
         return -2;
 
     if(!users::verifyRegInfo($POST))

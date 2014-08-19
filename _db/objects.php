@@ -416,6 +416,11 @@ class week extends event{
         $game = game::nextGame();
 
         while($game->isLocked() === true){
+
+            if(strpos(Core::getDay($game->date),'Mon') !== false){
+                break;
+            }
+
             $game = $game->getNext();
 
             if($game === false)
@@ -733,7 +738,7 @@ class game extends DatabaseObject{
 
         $tempDate = new DateTime($this->date, Core::getTimezone());
         $tempDate->setTime(0,0,0);
-        $dayCheck = $tempDate->format('D');
+        $dayCheck =  $tempDate->format('D');
 
         if(strpos($dayCheck,'Thu') !== false){
 
@@ -817,13 +822,16 @@ class pick extends DatabaseObject{
             $week_id = week::getCurrent()->id;
 
         if($user_id === null)
-            $user_id = users::returnCurrentUser()->id;
+            $user_id = (users::returnCurrentUser()) ? users::returnCurrentUser()->id : false;
 
         $prepare = "SELECT COUNT(*) AS pick_count FROM pick WHERE week_id = :week_id AND user_id = :user_id";
 
         if($complete === true){
             $prepare .= " AND value > 0";
         }
+
+        if($user_id === false)
+            return 0;
 
         try {
 
@@ -840,7 +848,7 @@ class pick extends DatabaseObject{
 
         }
 
-        return (isset($object) && $object !== false) ? $object['pick_count'] : false;
+        return (isset($object['pick_count']) && $object !== false) ? $object['pick_count'] : false;
 
     }
 

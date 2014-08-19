@@ -16,7 +16,7 @@ $teams = teams::getTeamsList();
 <html>
 <head>
 
-    <title>The Pool</title>
+    <title>The Pool - Settings</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
