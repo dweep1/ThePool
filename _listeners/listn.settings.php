@@ -141,7 +141,10 @@ function doSettingsChange($POST){
         <b>If this was <i>NOT</i> you</b>, then please reset your password, as your account may have been compromised.
         This is an automated response, please do not reply!<br/>";
 
-        Core::sendEmail('The Pool - Email Address Change', $message, $user->email);
+        if(Core::sendEmail('The Pool - Email Address Change', $message, $user->email))
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "In order to complete the change to your email, you must click the link we sent to your old email address." : $_SESSION['result'];
+        else
+            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Unable to send verification email, mail server might be down. Contact an admin if this problem persists." : $_SESSION['result'];
     }
 
     unset($POST['password']);

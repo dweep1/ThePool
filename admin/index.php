@@ -8,6 +8,9 @@ include_once "./admin.header.php";
 FormValidation::generate();
 $user = users::returnCurrentUser();
 
+if(!is_object($user))
+    header("Location: ../logout.php");
+
 global $si;
 
     if(isset($_GET['si']))

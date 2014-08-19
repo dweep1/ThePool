@@ -18,9 +18,9 @@
 
                 if(users::verifyRegInfo($_GET)){
 
-                    $user->email = $_GET['email'];
+                    $keyUser->email = $_GET['email'];
 
-                    $response = $user->update();
+                    $response = $keyUser->update();
 
                 }else
                     $response = -1;

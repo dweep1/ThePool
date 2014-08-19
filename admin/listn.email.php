@@ -47,21 +47,27 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                     </td>
                 </tr>
-                <tr>
-                    <td style='padding:5px 25px; font-family: 'Open Sans', sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
+                ";
+
+    if($emailGroup === -1){
+
+        $mailTo = "matkle414@gmail.com";
+
+        $emailMessage .= "<tr>
+                    <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
                         Copyright 'The Pool', Anthony Harris,  2014<br/>
-                        <a href='#'>Remove Me From Mailing Group</a>
+                        <a href='http://www.whats-your-confidence.com/removeEmail.php?email={$mailTo}'>Remove Me From Mailing Group</a>
                     </td>
                 </tr>
             </table>
         </div>";
 
-    if($emailGroup === -1){
-
-        if(@Core::sendEmail($subject, $emailMessage, "matkle414@gmail.com"))
+        if(@Core::sendEmail($subject, $emailMessage, $mailTo))
             $_SESSION['result'] = "Email Sent";
         else
             $_SESSION['result'] = "Couldn't Connect to Email Server";
+
+
 
     }else if($emailGroup === 1){
 
