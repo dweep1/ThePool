@@ -40,8 +40,11 @@ class Cipher {
 
         if(is_bool($length)){
             $baseEncode = true;
-            $length = 22;
+            $length = ($cost == 128) ? 22 : $cost;
         }
+
+        if($length > 22)
+            $length = 22;
 
         $random = substr(str_replace('+', '.', base64_encode(openssl_random_pseudo_bytes ($cost))), 0, $length);
 

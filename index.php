@@ -14,6 +14,9 @@
     if(isset($_GET['key']))
         $keyUser->load($_GET['key'], "security_key");
 
+    if($keyUser->id === null && isset($_GET['key']))
+        $_SESSION['result'] = (!isset($_SESSION['result'])) ? "The Key was invalid" : $_SESSION['result'];
+
 ?>
 
 <!DOCTYPE html>
@@ -25,12 +28,12 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./css/index.css" rel="stylesheet" type="text/css" />
+    <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="./js/jquery.velocity.min.js"></script>
     <script src="./js/velocity.ui.min.js"></script>
     <script src="./js/modernizr.min.js"></script>
-    <script src="./js/general.js"></script>
+    <script src="./js/general.js?ver=<?php echo VERSION ?>"></script>
     <script src="./js/jquery.tinytimer.js"></script>
     <script src="./js/pickClock.js"></script>
 
@@ -50,8 +53,8 @@
 
     <?php if($keyUser->id !== null): ?>
 
-    <div class="ui-message-background hidden" data-background-id="2"></div>
-    <div class="ui-message-box aligncenter" data-type="overlay" data-message-id="2">
+    <div class="ui-message-background hidden instant" data-background-id="2"></div>
+    <div class="ui-message-box aligncenter" data-type="nopass" data-message-id="2">
         <i class="fa fa-times-circle float-right ui-message-close" data-close-id="2"></i>
         <h6>Forgot Password</h6>
         <form action="./_listeners/listn.login.php" method="post">
@@ -71,7 +74,7 @@
         <ul>
             <li id="expand-menu"><h2><i class="fa fa-bars"style="padding-left:1px;"></i></h2></li>
             <li><h2 data-icon="" data-id="1"><i class="fa fa-user" style="padding-left:2px;"></i> Login</h2></li>
-            <li><h2 data-link="./rules.php"><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></li>
+            <li><a href="./rules.php"><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></a></li>
         </ul>
 
         <div id="pick-clock" class="index">
@@ -82,8 +85,8 @@
             <div class="sep"></div>
         </div>
 
-        <div id="login-area" class="aligncenter hidden" data-menu="" data-menu-id="1">
-            <i class="fa fa-times-circle float-right ui-message-close" data-menu-close-id="1"></i>
+        <div id="login-area" class="aligncenter">
+            <i class="fa fa-times-circle float-right"></i>
             <h5>Login</h5>
             <form action="./_listeners/listn.login.php" method="post">
                 <div class="faux-row"><input type="text" name="email" value="Email" /></div>

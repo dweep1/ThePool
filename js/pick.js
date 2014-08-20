@@ -10,14 +10,43 @@ function endClock(){
     angular.element(document.getElementById('content-area')).scope().doRefresh();
 }
 
-var myApp = angular.module('myHome', ['angular-velocity']);
+var myApp = angular.module('myHome', []);
+
+myApp.directive('ngDelay', ['$timeout', function ($timeout) {
+    return {
+        restrict: 'A',
+        scope:true,
+        compile: function (element, attributes) {
+            var expression = attributes['ngChange'];
+            if (!expression)
+                return;
+
+            attributes['ngChange'] = '$$delay.execute()';
+            return {
+                pre: function (scope, element, attributes) {
+                    scope.$$delay = {
+                        expression: expression,
+                        delay: scope.$eval(attributes['ngDelay']),
+                        execute: function () {
+                            var state = scope.$$delay;
+                            state.then = Date.now();
+                            $timeout(function () {
+                                if (Date.now() - state.then >= state.delay)
+                                    scope.$eval(expression);
+                            }, state.delay);
+                        }
+                    };
+                }
+            }
+        }
+    };
+}]);
 
 function RowController($scope, $http) {
 
     $scope.force = false;
 
     getLiveData($scope, $http);
-    getOldData($scope,$http);
 
     $scope.doRefresh = function() {
         $scope.force = true;
@@ -226,52 +255,6 @@ function getLiveData($scope, $http){
 
 }
 
-function getOldData($scope, $http){
-
-    $scope.last_week_id = parseInt(week_id)-1;
-
-    if(checkSet(localStorage["week_data_old"]) && checkSet(localStorage["game_data_old"]) && parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
-
-        storeLocalGamesOld($scope, null);
-
-        if(objLength($scope.gamesOld) <= 0){
-
-            $scope.force = true;
-
-            getOldData($scope, $http);
-
-        }
-
-        return true;
-
-    }
-
-    // Create the http post request
-    // the data holds the keywords
-    // The request is a JSON request.
-
-    return $http.post("./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.last_week_id}).
-        success(function(data, status) {
-
-            $scope.status = status;
-            storeLocalGamesOld($scope, data);
-
-            return true;
-
-        })
-        .
-        error(function(data, status) {
-            $scope.data = data || "Request failed";
-            $scope.status = status;
-
-            if($scope.force === true)
-                $scope.force = false;
-
-            return false;
-        });
-
-}
-
 function buildPicks($scope, $callback){
 
     var $picks = [];
@@ -285,32 +268,6 @@ function buildPicks($scope, $callback){
 
     if(checkSet($callback))
         $callback();
-
-}
-
-function refreshStoreLocalOld($scope){
-
-    localStorage["week_data_old"] = JSON.stringify($scope.weekOld);
-    localStorage["game_data_old"] = JSON.stringify($scope.gamesOld);
-
-}
-
-
-function storeLocalGamesOld($scope, data){
-
-    if(data !== null || checkSet(localStorage["week_data"]) === false || $scope.force === true){
-
-        $scope.weekOld = data;
-        $scope.gamesOld = data.games;
-
-        refreshStoreLocalOld($scope);
-
-    }else{
-
-        $scope.weekOld = JSON.parse(localStorage["week_data_old"]);
-        $scope.gamesOld = JSON.parse(localStorage["game_data_old"]);
-
-    }
 
 }
 

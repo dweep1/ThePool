@@ -5,15 +5,13 @@ $(window).resize(function () {
     resizeCharts();
 });
 
-var myApp = angular.module('myDash', ['angular-velocity']);
+var myApp = angular.module('myDash', []);
 
 function RowController($scope, $http) {
 
     $scope.force = false;
 
     getLiveStats($scope, $http);
-
-    //$scope.$watch('games', function() {}, true);
 
 }
 
@@ -181,47 +179,5 @@ function resizeCharts($chartData){
     var performanceChart = new Chart(ctxPicksChart).Line($chartData.ctxPicks.picksData, $chartData.ctxPicks.optionData);
 
     return {ctxPicks: ctxPicksChart};
-
-}
-
-function buildPicks($scope, $callback){
-
-    var $picks = [];
-
-    $scope.games.forEach(function(entity){
-        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1)
-            $picks.push(entity.pick);
-    });
-
-    $scope.picks = JSON.parse(JSON.stringify($picks));
-
-    if(checkSet($callback))
-        $callback();
-
-}
-
-function refreshStoreLocal($scope){
-
-    localStorage["week_id"] = $scope.week_id;
-    localStorage["week_data"] = JSON.stringify($scope.week);
-    localStorage["game_data"] = JSON.stringify($scope.games);
-
-}
-
-function storeLocalStats($scope, data){
-
-    if(checkSet(localStorage["week_data"]) === false || $scope.force === true){
-
-        $scope.week = data;
-        $scope.games = data.games;
-
-        refreshStoreLocal($scope);
-
-    }else{
-
-        $scope.week = JSON.parse(localStorage["week_data"]);
-        $scope.games = JSON.parse(localStorage["game_data"]);
-
-    }
 
 }

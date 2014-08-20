@@ -41,6 +41,7 @@ H1,H2,H3,H4,H5,H6{
   font-weight:700;
   padding:0;
   margin:0;
+  behavior: url('./PIE.htc');
 }
 
 H1{font-size:2.8em;line-height:1em;letter-spacing: 4px;}
@@ -281,6 +282,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   border-radius: 3px;
   line-height:1.5em;
   border: 3px solid #fff;
+  behavior: url('./PIE.htc');
 
   i{
     font-size:1.5em;
@@ -292,44 +294,49 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
 .ui-button{
 
   color:#fff;
-  background: rgba(#222,0.3);
+  background: #222;
   font-family: 'Roboto', sans-serif;
   text-transform:uppercase;
   font-weight:700;
   font-size:11px;
   line-height:12px;
 
-  @include border-radius(3px);
+  border-radius:3px;
   border:2px solid rgba(255,255,255,0.7);
 
   margin:0px 5px;
   padding: 10px 15px;
   outline:none;
   cursor: pointer;
+  behavior: url('./PIE.htc');
 
   &:hover{
     @include box-shadow(rgba(#fff,0.6) 0px 0px 2px);
     border:2px solid rgba(255,255,255,1);
+    behavior: url('./PIE.htc');
   }
 
   &:active{
     @include box-shadow(rgba(#fff,0.6) 0px 0px 3px);
     border:2px solid rgba(255,255,255,0.5);
+    behavior: url('./PIE.htc');
   }
 
   &.dark{
     color:#fff;
-    background: rgba(#222,0.9);
-    border:2px solid rgba(#444,0.7);
+    background: #222;
+    border:2px solid rgba(#444,1);
 
     &:hover{
       @include box-shadow(rgba(#000,0.9) 0px 0px 5px);
       border-bottom:2px solid rgba(#000,1);
+      behavior: url('./PIE.htc');
     }
 
     &:active{
       @include box-shadow(rgba(#000,0.9) 0px 0px 2px);
       border-bottom:2px solid rgba(#222,1);
+      behavior: url('./PIE.htc');
     }
   }
 }
@@ -356,6 +363,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
     border-radius: 3px;
     display:inline-block;
     visibility: visible;
+    behavior: url('./PIE.htc');
   }
 
   .remaining{
@@ -546,6 +554,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   @include box-shadow(red 0px 1px 10px);
   border: 3px solid red;
   border-radius: 3px;
+  behavior: url('./PIE.htc');
 }
 
 .ui-games-list{
@@ -574,6 +583,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       vertical-align: middle;
       @include text-shadow(#000 0px 0px 2px);
       cursor:pointer;
+      behavior: url('./PIE.htc');
 
       h5{
         font-weight:400;
@@ -590,6 +600,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
 
       &.picked{
         @include text-shadow(#000 0px 1px 2px);
+        behavior: url('./PIE.htc');
 
         h5{
           font-weight:400;
@@ -604,10 +615,12 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
 
         .gradient-left{
           @include background-image(linear-gradient(left, rgba(#555,0.5) 0%, #222 100%));
+          behavior: url('./PIE.htc');
         }
 
         .gradient-right{
           @include background-image(linear-gradient(right, rgba(#555,0.5) 0%, #222 100%));
+          behavior: url('./PIE.htc');
         }
       }
 
@@ -618,9 +631,11 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
         height:80%;
         @include background-image(linear-gradient(left, rgba(#111,0.7) 0%, #222 80%));
         white-space: nowrap;
+        behavior: url('./PIE.htc');
 
         &:hover{
           @include text-shadow(yellow 0px 1px 5px);
+          behavior: url('./PIE.htc');
         }
       }
 
@@ -635,9 +650,11 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
         height:80%;
         @include background-image(linear-gradient(right, rgba(#111,0.7) 0%, #222 80%));
         white-space: nowrap;
+        behavior: url('./PIE.htc');
 
         &:hover{
           @include text-shadow(yellow 0px 1px 5px);
+          behavior: url('./PIE.htc');
         }
       }
     }
@@ -723,6 +740,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       td{
         @include box-shadow(rgba(100,255,0,0.4) 0px 0px 3px inset);
         border: 1px solid rgba(100,255,0, 0.3);
+        behavior: url('./PIE.htc');
       }
     }
 
@@ -730,6 +748,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       td{
         @include box-shadow(rgba(255,30,30,0.6) 0px 0px 3px inset);
         border: 1px solid rgba(255,30,30, 0.6);
+        behavior: url('./PIE.htc');
       }
     }
 
@@ -748,10 +767,11 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   left:0;
   width:100%;
   height:100%;
-  background:rgba(#fff, 0.7);
+  background:rgba(#fff, 1);
   z-index:9998;
   opacity:0;
   display:none;
+  behavior: url('./PIE.htc');
 }
 
 .ui-message-box{
@@ -764,6 +784,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   color:#fff;
   z-index:9999;
   @include box-shadow(rgba(#000,0.6) 0px 0px 2px);
+  behavior: url('./PIE.htc');
 }
 
 .ui-message-close{
@@ -790,6 +811,7 @@ input[type="text"], input[type="password"]{
   font-weight:400;
   border: 2px solid #222;
   border-radius: 3px;
+  behavior: url('./PIE.htc');
 }
 
 .settings{
@@ -812,6 +834,7 @@ select{
   padding:8px 15px;
   border: 2px solid #222;
   border-radius: 3px;
+  behavior: url('./PIE.htc');
 }
 
 select, option{
@@ -840,6 +863,7 @@ option{
   z-index:1000;
   @include box-shadow(rgba(#fff,0.2) 0px 0px 2px);
   @include transition(all 0.6s ease);
+  behavior: url('./PIE.htc');
 
 
   &.full{
@@ -858,6 +882,7 @@ option{
     top:128px;
     @include box-shadow(rgba(#000,0.6) 0px 0px 2px);
     color:#fff;
+    behavior: url('./PIE.htc');
 
     h5{
       padding:5px 10px;
@@ -867,6 +892,7 @@ option{
 
   [data-menu]{
     @include transition(all 0.2s ease);
+    behavior: url('./PIE.htc');
 
     &.hidden{
       oapcity:0;
@@ -897,6 +923,7 @@ option{
       margin-bottom:1px;
       display:block;
       white-space: nowrap;
+      behavior: url('./PIE.htc');
 
       &:hover:not(.spacer){
         background:#444;
@@ -919,6 +946,7 @@ option{
           font-size:30px;
           line-height:30px;
           vertical-align: middle;
+          behavior: url('./PIE.htc');
         }
 
         i:not(.fa-bars){

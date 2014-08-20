@@ -19,10 +19,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./css/index.css" rel="stylesheet" type="text/css" />
+    <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
     <script>
 
         week_id = <?php echo week::getCurrent()->id; ?>;
@@ -30,10 +29,9 @@
     </script>
     <script src="./js/jquery.velocity.min.js"></script>
     <script src="./js/velocity.ui.min.js"></script>
-    <script src="./js/angular-velocity.min.js"></script>
     <script src="./js/modernizr.min.js"></script>
-    <script src="./js/general.js"></script>
-    <script src="./js/pick.js"></script>
+    <script src="./js/general.js?ver=<?php echo VERSION ?>"></script>
+    <script src="./js/pick.js?ver=<?php echo VERSION ?>"></script>
 
 </head>
 <body class="height-100" data-ng-app="myHome">
@@ -151,7 +149,7 @@
                                data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
 
                             <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
-                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}"  data-ng-change="item.pick.value = (item.pick.value - 0)" />
+                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}"  data-ng-change="item.pick.value = (item.pick.value - 0)" ng-delay="500" />
 
                             <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
                                data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
@@ -184,8 +182,6 @@
     </div>
 
     <div id="team-info" class="fluid-row width-50 dark float-right secondary">
-
-        <h4 style="padding:2%">Recent Games</h4>
 
         <?php
 

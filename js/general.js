@@ -105,6 +105,23 @@ $(document).ready(function(){
 
     });
 
+    $(document).on("mousedown", ".ui-message-box", function (e) {
+
+        disabledEventPropagation(e);
+
+        var $data_id = $(this).attr("data-message-id");
+        var $data_type = $(this).attr("data-type");
+
+        if($data_type == "nopass")
+            return false;
+
+        toggleDisplayMessageBox($data_id, function(){
+            destroyMessageBox($data_id);
+        });
+
+    });
+
+
     $(document).on("mousedown", "#forgotPass", function (e) {
 
         var $confirm = $('[name="confirm"]');
@@ -267,20 +284,29 @@ function toggleDisplayMessageBox($id, $callback){
 
     var $top = calculateTop($box);
 
+    var $duration = 1000;
+    var $delay = 300;
+
+    if($background.hasClass("instant")){
+        $duration = 0;
+        $delay = 0;
+    }
+
+
     if($background.hasClass("hidden")){
 
         $background.removeClass("hidden");
 
         if($box.attr("data-type") === "overlay")
-            $background.velocity({ opacity: 1 },{ display: "block", duration: 1000 });
+            $background.velocity({ opacity: 1 },{ display: "block", duration: $duration });
         else if($box.attr("data-type") === "result")
-            $background.velocity({ opacity: 0, zIndex: -1 },{ display: "block", duration: 1000 });
+            $background.velocity({ opacity: 0, zIndex: -1 },{ display: "block", duration: $duration });
         else if($box.attr("data-type") === "error")
-            $background.velocity({ opacity: 0.3 },{ display: "block", duration: 1000 });
+            $background.velocity({ opacity: 0.3 },{ display: "block", duration: $duration });
         else
-            $background.velocity({ opacity: 1 },{ display: "block", duration: 1000 });
+            $background.velocity({ opacity: 1 },{ display: "block", duration: $duration });
 
-        $box.velocity({ top: $top }, { duration: 1000, delay: 300,
+        $box.velocity({ top: $top }, { duration: $duration, delay: $delay,
             complete: function(){if(checkSet($callback)){$callback();}}
         });
 
@@ -288,14 +314,14 @@ function toggleDisplayMessageBox($id, $callback){
 
         $background.addClass("hidden");
 
-        $box.velocity({ top: -400}, 1000);
+        $box.velocity({ top: -400}, $duration);
 
         if($box.attr("data-type") === "overlay"){
-            $background.velocity({ opacity: 0 },{ display: "none", delay: 300 ,
+            $background.velocity({ opacity: 0 },{ display: "none", delay: $delay ,
                 complete: function(){if(checkSet($callback)){$callback();}}
             });
         }else{
-            $background.velocity({ opacity: 0 },{ display: "none", delay: 300,
+            $background.velocity({ opacity: 0 },{ display: "none", delay: $delay,
                 complete: function(){if(checkSet($callback)){$callback();}}
             });
         }

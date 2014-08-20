@@ -157,7 +157,7 @@ function doForgotPass($POST){
     if(!$user->load($POST['email'], 'email'))
         return -1;
 
-    $user->security_key = Cipher::getRandomKey(true);
+    $user->security_key = substr(Cipher::getRandomKey(true), 0, -2);
 
     if(!$user->update())
         return -2;
@@ -168,6 +168,14 @@ function doForgotPass($POST){
         <br/>If this was not you, then you may ignore this email. Your information is safe with us.
         <br/>
         <a href='{$keyFormat}'>Click Here to update your password.</a><br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        If you cannot click on that link, copy and paste the following link into your web browser. (make sure you copy the entire link!)<br/>
+        <br/>
+        $keyFormat
+        <br/>
         <br/>
         <br/>
         This is an automated response, please do not reply!";

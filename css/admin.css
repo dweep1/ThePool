@@ -596,6 +596,7 @@ select:not(.top) {
   width: -moz-calc(39.5% - 30px - 66px);
   width: -o-calc(39.5% - 30px - 66px);
   width: calc(39.5% - 30px - 66px);
+  width: expression(39.5% - 30px - 66px);
   display: inline-block;
   vertical-align: top;
 }
@@ -626,6 +627,7 @@ select:not(.top) {
   width: -moz-calc(59.5% - 30px - 66px);
   width: -o-calc(59.5% - 30px - 66px);
   width: calc(59.5% - 30px - 66px);
+  width: expression(59.5% - 30px - 66px);
   display: inline-block;
   vertical-align: top;
 }
@@ -695,6 +697,7 @@ select:not(.top) {
   width: -moz-calc(80%);
   width: -o-calc(80%);
   width: calc(80%);
+  width: expression(80%);
   display: inline-block;
   vertical-align: top;
 }
@@ -705,6 +708,7 @@ select:not(.top) {
   min-width: -moz-calc(85%);
   min-width: -o-calc(85%);
   min-width: calc(85%);
+  min-width: expression(85%);
 }
 /* line 566, scss/admin.scss */
 .fluid-row.width-30 {
@@ -739,6 +743,7 @@ select:not(.top) {
   width: -moz-calc(47.5%);
   width: -o-calc(47.5%);
   width: calc(47.5%);
+  width: expression(47.5%);
   display: inline-block;
   vertical-align: top;
 }
@@ -942,6 +947,7 @@ ul.pages-list li .width-70 {
   left: -moz-calc(50% - 160px);
   left: -o-calc(50% - 160px);
   left: calc(50% - 160px);
+  left: expression(50% - 160px);
   background: #212121;
   color: #fff;
   z-index: 9999;

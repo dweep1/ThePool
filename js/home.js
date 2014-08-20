@@ -1,4 +1,4 @@
-var myApp = angular.module('myHome', ['angular-velocity']);
+var myApp = angular.module('myHome', []);
 
 function endClock(){
     angular.element(document.getElementById('content-area')).scope().doRefresh();

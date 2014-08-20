@@ -19,6 +19,8 @@ $selected_team->getRecentGames();
 
 ?>
 
+<h4 style="padding:2%">Recent Games</h4>
+
 <div class="aligncenter">
 	<br/>
     <div class="fluid-row slim">
