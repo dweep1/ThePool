@@ -827,11 +827,7 @@ class Core{
         $headers = "From: no-reply<noreply@whats-your-confidence.com>\r\n";
         $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        if(@mail($recipient, $subject, $message, $headers)){
-            return true;
-        }
-
-        return false;
+        return mail($recipient, $subject, $message, $headers);
 
     }
 

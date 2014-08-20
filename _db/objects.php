@@ -20,6 +20,7 @@ class users extends DatabaseObject{
     public $access_level; //if the user wants to be seen or not, -1 is invisible
     public $credits;
     public $disable_notes;
+    public $pay_key;
 
     protected function classDataSetup(){ }
 
@@ -137,6 +138,10 @@ class users extends DatabaseObject{
         $this->last_login_date = Core::unixToMySQL("now");
         $this->last_ip = $_SERVER['REMOTE_ADDR'];
         $this->login_count++;
+
+        if(strlen($this->pay_key) <= 1)
+            $this->pay_key = Cipher::getRandomKey(16);
+
 
         return ($this->update() !== false) ? true : false;
 
@@ -478,6 +483,9 @@ class week extends event{
 
                 $this->games[$key]->away_team = $teams[$this->games[$key]->away_team];
                 $this->games[$key]->home_team = $teams[$this->games[$key]->home_team];
+
+                $this->games[$key]->away_score = (int) $this->games[$key]->away_score;
+                $this->games[$key]->home_score = (int) $this->games[$key]->home_score;
 
                 $gameDate = new DateTime($this->games[$key]->date, Core::getTimezone());
                 $gameDate->setTime(0,0,0);

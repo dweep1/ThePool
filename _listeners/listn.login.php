@@ -59,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         else if($response === false)
             $_SESSION['result'] = "Unable to Mail Key";
         else
-            $_SESSION['result'] = "Successfully Submitted Password Resend Request";
+            $_SESSION['result'] = "Successfully Submitted Password Resend Request. Check your email for a link in a few minuets.";
 
 
     }else if((int)$submitType === 3){//user is resetting password
@@ -164,14 +164,10 @@ function doForgotPass($POST){
 
     $keyFormat = "{$_SERVER['HTTP_HOST']}/index.php?key={$user->security_key}";
 
-    $message = "<a href='{$keyFormat}'>Click Here</a> to update your password.<br/>
-        <br/>You Recently tried to reset your account password. This is an email notifing you of the request.
+    $message = "You Recently tried to reset your account password. This is an email notifing you of the request.
         <br/>If this was not you, then you may ignore this email. Your information is safe with us.
         <br/>
-        <br/>
-        If the link above does not work, then try and copy the following address into your web browser.<br/>
-        <br/>
-        {$keyFormat}<br/>
+        <a href='{$keyFormat}'>Click Here to update your password.</a><br/>
         <br/>
         <br/>
         This is an automated response, please do not reply!<br/>";

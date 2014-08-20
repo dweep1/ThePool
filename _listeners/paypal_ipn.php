@@ -19,6 +19,8 @@
     $raw_post_array = explode('&', $raw_post_data);
     $myPost = array();
 
+    date_default_timezone_set('America/New_York');
+
     foreach ($raw_post_array as $keyval) {
         $keyval = explode ('=', $keyval);
 
@@ -47,7 +49,7 @@
     // Post IPN data back to PayPal to validate the IPN data is genuine
     // Without this step anyone can fake IPN data
 
-    if(USE_SANDBOX === true)
+    if(USE_SANDBOX == true)
         $paypal_url = "https://www.sandbox.paypal.com/cgi-bin/webscr";
     else
         $paypal_url = "https://www.paypal.com/cgi-bin/webscr";
@@ -115,6 +117,9 @@
     // Inspect IPN validation result and act accordingly
 
     if (strcmp ($res, "VERIFIED") == 0) {
+
+        include_once "./listn.header.php";
+
         // check whether the payment_status is Completed
         // check that txn_id has not been previously processed
         // check that receiver_email is your PayPal email
@@ -131,8 +136,34 @@
         //$receiver_email = $_POST['receiver_email'];
         //$payer_email = $_POST['payer_email'];
 
-        if(DEBUG == true)
+        if(strtolower($_POST['payment_status']) == strtolower("completed")){
+            $quantity = intval($_POST['quantity']);
+
+            $user = new users;
+
+            if($user->load($_POST['item_number'], "pay_key") === false){
+                error_log(date('[Y-m-d H:i e] '). "Error loading pay_key user from DB". PHP_EOL, 3, LOG_FILE);
+            }
+
+            while($quantity > 0){
+
+                $quantity = $quantity - 1;
+
+                $data = array("user_id" => $user->id, "nid" => $_POST['txn_id'], "amount" => floatval($_POST['mc_gross']));
+
+                credit::generateCredit($data);
+
+            }
+
+        }
+
+        if(DEBUG == true){
             error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
+
+            foreach($_POST as $key => $val){
+                error_log(date('[Y-m-d H:i e] '). "'$key' => '$val'". PHP_EOL, 3, LOG_FILE);
+            }
+        }
 
 
     } else if (strcmp ($res, "INVALID") == 0) {

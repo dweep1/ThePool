@@ -10,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $dataArray = array('ip_address' => $_SERVER['REMOTE_ADDR'],
                         'browser' => $_SERVER['HTTP_USER_AGENT'],
-                        'page_header' => "{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}",
+                        'page_header' => "{$_POST['page_title']}",
                         'report' => $_POST['report'],
                         'email' => $_POST['email']);
 
