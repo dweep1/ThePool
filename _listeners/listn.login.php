@@ -170,9 +170,53 @@ function doForgotPass($POST){
         <a href='{$keyFormat}'>Click Here to update your password.</a><br/>
         <br/>
         <br/>
-        This is an automated response, please do not reply!<br/>";
+        This is an automated response, please do not reply!";
 
-    return Core::sendEmail('The Pool - Forgotten Password', $message, $POST['email']);
+    $emailMessage = "
+        <style>
+            @import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+            .email-template h1, .email-template h2, .email-template h3, .email-template h4, .email-template h5{
+                font-family: 'Open Sans', sans-serif;
+                font-weight:300;
+                color:rgb(80,80,80);
+                padding:3px 0px;
+                margin-right:3px;
+                border-bottom:1px solid rgba(120,120,255, 0.9);
+            }
+        </style>
+
+        <div class=\"email-template\" style='font-family: \"Open Sans\", sans-serif; background: #fff; width:auto; height:100%; padding:10px 20px; text-align: left;'>
+            <table cellpadding='0' cellspacing='0' style='width:800px; height:auto; margin:10px auto; border:1px solid #b9b9ba; background: #f1f1f2; padding:0px; border-radius:4px; border-bottom: 2px solid rgba(100,100,100,0.9);'>
+                <tr>
+                    <td style='background: url('http://i.imgur.com/4S4yqzW.png'); border-radius:3px 3px 0px 0px; height:100px;'>
+                        <img style='border-radius:3px 3px 0px 0px;' src='http://i.imgur.com/4S4yqzW.png'>
+                    </td>
+                </tr>
+
+                <tr>
+                   <td style='padding:0px 25px; padding-top:15px; font-size: 12px; line-height:22px; color:rgb(80,80,80);'>
+                        <h2 style='border-bottom:1px solid rgba(120,120,255, 0.9); padding:3px 0px; margin-right:3px; font-weight:300;'>
+                            Password Reset
+                        </h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td style='padding:0px 25px; padding-bottom:15px; font-size: 12px; line-height:22px; color:rgb(80,80,80);'>
+
+                        $message
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
+                        Copyright 'The Pool', Anthony Harris,  2014<br/>
+                    </td>
+                </tr>
+            </table>
+        </div>";
+
+    return Core::sendEmail('The Pool - Forgotten Password', $emailMessage, $POST['email']);
 
 }
 

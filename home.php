@@ -58,27 +58,45 @@
 <div id="content-area" data-ng-controller="RowController">
     <div class="width-50 fluid-row first">
 
-        <div class="fluid-row slim alignleft">
-            <h6>Search:</h6> <input type="text" data-ng-model="search" />
-            <button class="ui-button dark float-right" ng-click="doSave()">Save Picks</button>
-            <button class="ui-button dark float-right" ng-click="doRefresh()">Refresh Games</button>
+        <div class="fluid-row aligncenter">
+            <div class="ui-mini-screen" style="background: url('./images/mini-screen.png')">
+                <h6 class="current-title">Overall Standings</h6>
+                <h6 class="last-title">Last Week</h6>
+
+                <div class="current-data">
+                    <h2>{{ weekOld.total_rank }}</h2>
+                    <h6>{{ weekOld.total_score }} points</h6>
+                </div>
+
+                <div class="last-data">
+                    <h2>{{ weekOld.week_rank }}</h2>
+                    <h6>{{ weekOld.week_score }} points</h6>
+                </div>
+            </div>
         </div>
 
-        <div class="fluid-row slim float-right">
-            <div id="changeBox">You have unsaved picks.</div>
+        <div class="fluid-row slim aligncenter">
+            <h4>This Week's Games <button class="ui-button dark" type="button" data-link="./picks.php">Make Picks</button></h4>
         </div>
 
         <div class="fluid-row slim alignleft">
 
-            <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
+            <div class="fluid-row width-50 slim alignleft">
+                <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
+            </div>
+
+            <div class="fluid-row width-50 slim alignleft">
+                <h6>Search:</h6> <input type="text" data-ng-model="search" />
+            </div>
 
             <div class="clear-fix"></div>
 
-            <div data-trans-id="current_picks">
+            <div data-trans-id="current_picks" class="aligncenter">
 
                 <ul class="ui-games-list">
 
-                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'closed'"
+                    <li class="" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'closed'"
+
                         data-ng-if="item.gameLock != false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-team-id="{{ item.away_team.id }}"
@@ -95,8 +113,7 @@
 
                         <div class="middle">
 
-                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
-                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}" disabled />
+                            {{ item.display_date }}
 
                         </div>
 
@@ -112,8 +129,6 @@
 
                         </div>
 
-                        <div class="display-date">{{ item.display_date }}</div>
-
                         <div class="clear-fix"></div>
                     </li>
                 </ul>
@@ -122,18 +137,16 @@
 
         <div class="fluid-row slim alignleft">
 
-            <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>
             <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
 
-            <div data-trans-id="open_picks">
+            <div data-trans-id="open_picks" class="aligncenter">
 
                 <ul class="ui-games-list">
 
                     <li data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'open'"
                         data-ng-if="item.gameLock == false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
-                        <div data-ng-click="item.pick.team_id = item.away_team.id;"
-                             data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.away_team.id }}"
+                        <div data-team-id="{{ item.away_team.id }}"
                              data-ng-class="{true: 'team alignleft picked', false: 'team alignleft'}[item.pick.team_id == item.away_team.id]"
                              style="background-image: url('{{ item.away_team.image_url }}')">
 
@@ -146,19 +159,11 @@
 
                         <div class="middle">
 
-                            <i class="fa fa-minus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
-
-                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
-                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}"  data-ng-change="item.pick.value = (item.pick.value - 0)" />
-
-                            <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
+                            {{ item.display_date }}
 
                         </div>
 
-                        <div data-ng-click="item.pick.team_id = item.home_team.id"
-                             data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.home_team.id }}"
+                        <div data-team-id="{{ item.home_team.id }}"
                              data-ng-class="{true: 'team alignright float-right picked', false: 'team alignright float-right'}[item.pick.team_id == item.home_team.id]"
                              style="background-image: url('{{ item.home_team.image_url }}')">
 
@@ -168,8 +173,6 @@
                             </div>
 
                         </div>
-
-                        <div class="display-date">{{ item.display_date }}</div>
 
                         <div class="clear-fix"></div>
 
@@ -182,25 +185,8 @@
     <div class="fluid-row width-50 float-right secondary">
 
         <div class="fluid-row aligncenter">
-            <div class="ui-mini-screen" style="background: url('./images/mini-screen.png')">
-                <h6 class="current-title">Current Standings</h6>
-                <h6 class="last-title">Last Week</h6>
 
-                <div class="current-data">
-                    <h2>{{ weekOld.total_rank }}</h2>
-                    <h6>{{ weekOld.total_score }} points</h6>
-                </div>
-
-                <div class="last-data">
-                    <h2>{{ weekOld.week_rank }}</h2>
-                    <h6>{{ weekOld.week_score }} points</h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="fluid-row aligncenter">
-
-            <h4>Last Week's Results <i data-trans-for="last_week" class="fa fa-bars"></i></h4>
+            <h4>Last Week's Game Results <i data-trans-for="last_week" class="fa fa-bars"></i></h4>
 
             <div data-trans-id="last_week" class="alignleft">
 

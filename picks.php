@@ -61,7 +61,7 @@
         <div class="fluid-row slim alignleft">
             <h6>Search:</h6> <input type="text" data-ng-model="search" />
             <button class="ui-button dark float-right" ng-click="doSave()">Save Picks</button>
-            <button class="ui-button dark float-right" ng-click="doRefresh()">Refresh Games</button>
+            <button class="ui-button dark float-right" ng-click="doRefresh()">Discard Changes</button>
         </div>
 
         <div class="fluid-row slim float-right">
@@ -184,6 +184,8 @@
     </div>
 
     <div id="team-info" class="fluid-row width-50 dark float-right secondary">
+
+        <h4 style="padding:2%">Recent Games</h4>
 
         <?php
 

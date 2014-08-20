@@ -4,29 +4,11 @@ function endClock(){
     angular.element(document.getElementById('content-area')).scope().doRefresh();
 }
 
-function RowController($scope, $http, $timeout) {
+function RowController($scope, $http) {
 
-    $(document).ready(function() {
+    $scope.force = true;
 
-        $timeout(function(){
-
-            if(!checkSet(localStorage["changed"])){
-                localStorage["changed"] = "false";
-            }
-
-            if(localStorage["changed"] != "false"){
-                if($("#changeBox").is(":hidden"))
-                    $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
-
-            }
-
-        }, 200);
-
-    });
-
-    $scope.force = false;
-
-    getLiveData($scope, $http, getRemaining($scope));
+    getLiveData($scope, $http);
     getOldData($scope,$http);
 
     $scope.doRefresh = function() {
@@ -36,159 +18,7 @@ function RowController($scope, $http, $timeout) {
 
         getLiveData($scope, $http);
 
-        setTimeout(function(){
-            localStorage["changed"] = "false";
-
-            if($("#changeBox").is(":visible"))
-                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 200});
-        },300);
-
     };
-
-    $scope.doSave = function() {
-        savePicks($scope, $http);
-
-        setTimeout(function(){
-            pickCount();
-
-            localStorage["changed"] = "false";
-
-            if($("#changeBox").is(":visible"))
-                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 200});
-        },300);
-    };
-
-    $scope.$watch('games', function(entity) {
-
-        if(checkSet(entity))
-            checkGameDataIntegrity($scope);
-
-        refreshStoreLocal($scope);
-        getRemaining($scope);
-
-    }, true);
-
-}
-
-function checkGameDataIntegrity($scope){
-
-    if(checkSet(localStorage["game_data"]) && JSON.parse(localStorage["game_data"]) != $scope.games
-        && localStorage["game_data"] != JSON.stringify($scope.games)
-        && checkSet($scope.games) && $scope.games.length > 0
-        && $scope.force == false && checkSet(localStorage["changed"])){
-
-        localStorage["changed"] = "true";
-    }
-}
-
-function getRemaining($scope){
-
-    setTimeout(function(){
-
-        if(checkSet(localStorage["changed"])){
-            if(localStorage["changed"] != "false"){
-                if($("#changeBox").is(":hidden")){
-                    $("#changeBox").velocity("fadeIn", { visibility: "visible", duration: 200});
-                }
-            }
-        }
-
-    }, 600);
-
-    var $remaining = [];
-    $scope.remaining = [];
-
-    var $noPick = [];
-
-    if(!checkSet($scope.games))
-        return false;
-
-    $scope.games.forEach(function(entity){
-        if(checkSet(entity.pick) !== false)
-            $noPick.push(entity.pick.value);
-    });
-
-    for(var $i = 1; $i < ($scope.games.length+1); $i++){
-        if(indexOf.call($noPick, $i) > -1){
-
-        }else{
-            $remaining.push($i);
-        }
-    }
-
-    $remaining.forEach(function(entity){
-        if(checkSet(entity) !== false)
-            $scope.remaining.push({"id": entity, "value": entity});
-    });
-
-    return true;
-
-}
-
-
-function savePicks($scope, $http){
-
-    $scope.url = "./_listeners/listn.picks.php?method=PUT";
-
-    buildPicks($scope, function(){
-
-        var $dupes = getGamesPicked($scope);
-
-        if($dupes.length > 0){
-            createMessageBox(
-                {title: "error", message: "You have duplicate pick values. Please check your picks!"},
-                function($messageID){toggleDisplayMessageBox($messageID);}
-            );
-
-            return false;
-        }
-
-        var $pickBoundary = false;
-
-        $scope.picks.forEach(function(entity){
-            if(parseInt(entity.value) > $scope.games.length || parseInt(entity.value) < 0){
-                $pickBoundary = true;
-            }
-        });
-
-        if($pickBoundary){
-            createMessageBox(
-                {type: "error", title: "error", message: "One of your pick's values is too high or too low. Please check your picks!"},
-                function($messageID){toggleDisplayMessageBox($messageID);}
-            );
-
-            return false;
-        }
-
-        return $http.post($scope.url, $scope.picks).
-            success(function(data, status) {
-
-                $scope.status = status;
-
-                createMessageBox(
-                    {type: "result", title: "result", message: data.result},
-                    function($messageID){toggleDisplayMessageBox($messageID);}
-                );
-
-                $scope.force = true;
-
-                getLiveData($scope, $http);
-
-                return true;
-
-            })
-            .
-            error(function(data, status) {
-                $scope.data = data || "Request failed";
-                $scope.status = status;
-
-                if($scope.force === true)
-                    $scope.force = false;
-
-                return false;
-            });
-
-    });
 
 }
 
@@ -223,7 +53,6 @@ function getLiveData($scope, $http, $callback){
 
             $scope.status = status;
             storeLocalGames($scope, data, $callback);
-            getGamesPicked($scope);
 
             return true;
 
@@ -285,22 +114,6 @@ function getOldData($scope, $http){
 
 }
 
-function buildPicks($scope, $callback){
-
-    var $picks = [];
-
-    $scope.games.forEach(function(entity){
-        if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1 && entity.gameLock == false)
-            $picks.push(entity.pick);
-    });
-
-    $scope.picks = JSON.parse(JSON.stringify($picks));
-
-    if(checkSet($callback))
-        $callback();
-
-}
-
 function refreshStoreLocalOld($scope){
 
     localStorage["week_data_old"] = JSON.stringify($scope.weekOld);
@@ -357,41 +170,3 @@ function storeLocalGames($scope, data, $callback){
 
 }
 
-function getGamesPicked($scope){
-
-    $scope.force = true;
-
-    var $games = $scope.games;
-
-    var $values = [];
-    var $dupes = [];
-
-    $scope.games.forEach(function(entity){
-
-        if(parseInt(entity.pick.team_id) !== -1){
-            if(indexOf.call($values, parseInt(entity.pick.value)) == -1)
-                $values.push(parseInt(entity.pick.value));
-            else
-                $dupes.push(parseInt(entity.pick.value));
-        }
-
-    });
-
-    $scope.games.forEach(function(entity){
-
-        if(parseInt(entity.pick.team_id) !== -1){
-
-            if(indexOf.call($dupes, parseInt(entity.pick.value)) > -1)
-                entity.pick.bad = "true";
-            else
-                entity.pick.bad = "false";
-
-        }
-
-    });
-
-    $scope.force = false;
-
-    return $dupes;
-
-}

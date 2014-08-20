@@ -33,7 +33,6 @@ $selected_team->getRecentGames();
     </div>
 
     <div class="fluid-row slim">
-	<h5 class="alignleft" style="padding:2%;">Recent Games</h5>
 
         <ul class="ui-games-list">
             <?php

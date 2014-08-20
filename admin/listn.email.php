@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             }
         </style>
 
-        <div style='font-family: \"Open Sans\", sans-serif; background: #fff; width:auto; height:100%; padding:10px 20px; text-align: left;'>
+        <div class=\"email-template\" style='font-family: \"Open Sans\", sans-serif; background: #fff; width:auto; height:100%; padding:10px 20px; text-align: left;'>
             <table cellpadding='0' cellspacing='0' style='width:800px; height:auto; margin:10px auto; border:1px solid #b9b9ba; background: #f1f1f2; padding:0px; border-radius:4px; border-bottom: 2px solid rgba(100,100,100,0.9);'>
                 <tr>
                     <td style='background: url('http://i.imgur.com/4S4yqzW.png'); border-radius:3px 3px 0px 0px; height:100px;'>
@@ -37,7 +37,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
                 <tr>
                     <td style='padding:0px 25px; padding-top:15px; font-size: 12px; line-height:22px; color:rgb(80,80,80);'>
-                        <h3>$subject</h3>
+                        <h2 style='border-bottom:1px solid rgba(120,120,255, 0.9); padding:3px 0px; margin-right:3px; font-weight:300;'>
+                            $subject
+                        </h2>
                     </td>
                 </tr>
                 <tr>
@@ -66,8 +68,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['result'] = "Email Sent";
         else
             $_SESSION['result'] = "Couldn't Connect to Email Server";
-
-
 
     }else if($emailGroup === 1){
 
