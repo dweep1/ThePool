@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_header.php" afterPath="$PROJECT_DIR$/_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/admin.header.php" afterPath="$PROJECT_DIR$/admin/admin.header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bug_report.js" afterPath="$PROJECT_DIR$/js/bug_report.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +35,7 @@
     <file path="/tpl.game.table.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380009159660" ignored="false" />
     <file path="/tpl.game.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380019999440" ignored="false" />
     <file path="/tpl.picks.teaminfo.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408581574964" ignored="false" />
-    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408585255561" ignored="false" />
+    <file path="/index.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408587138482" ignored="false" />
     <file path="/login.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380417535350" ignored="false" />
     <file path="/_header.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408575313972" ignored="false" />
     <file path="/login.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1380421702757" ignored="false" />
@@ -236,10 +229,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="60" selection-start="6038" selection-end="6038" vertical-scroll-proportion="-23.153847">
+            <state line="140" column="47" selection-start="5976" selection-end="5976" vertical-scroll-proportion="0.50378376">
               <folding>
                 <element signature="e#2971#2996#0" expanded="true" />
                 <element signature="e#3079#3104#0" expanded="true" />
@@ -292,10 +285,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bug_report.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bug_report.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/bug_report.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="103" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.22925311">
+            <state line="13" column="103" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
               <folding>
                 <marker date="1408585996990" expanded="false" signature="85:118" placeholder="..." />
                 <marker date="1408585996990" expanded="false" signature="314:344" placeholder="..." />
@@ -369,10 +362,10 @@
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/admin/admin.header.php" />
         <option value="$PROJECT_DIR$/results.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/scss/index.scss" />
         <option value="$PROJECT_DIR$/_header.php" />
         <option value="$PROJECT_DIR$/js/bug_report.js" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -981,19 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="60" selection-start="6038" selection-end="6038" vertical-scroll-proportion="-23.153847">
-          <folding>
-            <element signature="e#2971#2996#0" expanded="true" />
-            <element signature="e#3079#3104#0" expanded="true" />
-            <element signature="e#3201#3226#0" expanded="true" />
-            <element signature="e#3590#3698#0" expanded="true" />
-            <element signature="e#4675#4697#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state line="554" column="12" selection-start="9114" selection-end="9114" vertical-scroll-proportion="-13.88">
@@ -1010,7 +990,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/bug_report.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="103" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.22925311">
+        <state line="13" column="103" selection-start="1070" selection-end="1070" vertical-scroll-proportion="0.0">
           <folding>
             <marker date="1408585996990" expanded="false" signature="85:118" placeholder="..." />
             <marker date="1408585996990" expanded="false" signature="314:344" placeholder="..." />
@@ -1020,6 +1000,19 @@
             <marker date="1408585996990" expanded="false" signature="1119:1200" placeholder="..." />
             <marker date="1408585996990" expanded="false" signature="1377:1510" placeholder="..." />
             <marker date="1408585996990" expanded="false" signature="5122:5172" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="47" selection-start="5976" selection-end="5976" vertical-scroll-proportion="0.50378376">
+          <folding>
+            <element signature="e#2971#2996#0" expanded="true" />
+            <element signature="e#3079#3104#0" expanded="true" />
+            <element signature="e#3201#3226#0" expanded="true" />
+            <element signature="e#3590#3698#0" expanded="true" />
+            <element signature="e#4675#4697#0" expanded="true" />
           </folding>
         </state>
       </provider>
