@@ -7,6 +7,9 @@ if(!session_id()) {
 $teams = teams::getTeamsList();
 $user = users::returnCurrentUser();
 
+if((int)$user->favorite_team_id === 0)
+    $user->favorite_team_id = 1;
+
 $favoriteTeam = new teams($user->favorite_team_id);
 
 if(isset($_GET['team_id']))

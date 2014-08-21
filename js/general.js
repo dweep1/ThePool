@@ -112,12 +112,11 @@ $(document).ready(function(){
         var $data_id = $(this).attr("data-message-id");
         var $data_type = $(this).attr("data-type");
 
-        if($data_type == "nopass")
-            return false;
-
-        toggleDisplayMessageBox($data_id, function(){
-            destroyMessageBox($data_id);
-        });
+        if($data_type !== "nopass"){
+            toggleDisplayMessageBox($data_id, function(){
+                destroyMessageBox($data_id);
+            });
+        }
 
     });
 
@@ -134,6 +133,7 @@ $(document).ready(function(){
 
         $button.attr('data-button-type', "login");
         $button.html("Login");
+        $("#text_id").html("Forgot Password");
 
         $confirm.val($confirm.prop("defaultValue"));
         $password.val($password.prop("defaultValue"));
@@ -292,7 +292,6 @@ function toggleDisplayMessageBox($id, $callback){
         $delay = 0;
     }
 
-
     if($background.hasClass("hidden")){
 
         $background.removeClass("hidden");
@@ -314,7 +313,7 @@ function toggleDisplayMessageBox($id, $callback){
 
         $background.addClass("hidden");
 
-        $box.velocity({ top: -400}, $duration);
+        $box.velocity({ top: -400 }, $duration);
 
         if($box.attr("data-type") === "overlay"){
             $background.velocity({ opacity: 0 },{ display: "none", delay: $delay ,
@@ -376,6 +375,7 @@ function toggleDataButtonType($button){
 
         $button.attr('data-button-type', "login");
         $button.html("Login");
+        $("#text_id").html("Register");
 
         if ($password.val() === $password.prop("defaultValue") || $password.val().length === 0) {
             $password.attr("type", "text");
@@ -393,6 +393,7 @@ function toggleDataButtonType($button){
 
         $button.attr('data-button-type', "register");
         $button.html("Register");
+        $("#text_id").html("Login");
 
         if ($password.val() === $password.prop("defaultValue") || $password.val().length === 0) {
             $password.attr("type", "text");

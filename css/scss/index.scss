@@ -51,13 +51,6 @@ H4{font-size:1.8em;line-height:1em;letter-spacing: 3px;}
 H5{font-size:1.3em;line-height:1em;letter-spacing: 2px;}
 H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
 
-//H1{font-size:48px;line-height:58px;letter-spacing: 4px;}
-//H2{font-size:36px;line-height:48px;letter-spacing: 4px;}
-//H3{font-size:30px;line-height:40px;letter-spacing: 3px;}
-//H4{font-size:26px;line-height:34px;letter-spacing: 3px;}
-//H5{font-size:20px;line-height:28px;letter-spacing: 2px;}
-//H6{font-size:16px;line-height:24px;letter-spacing: 0px;display:inline-block;}
-
 .clear-fix:after {
   content: ".";
   display: block;
@@ -848,6 +841,13 @@ option{
   padding:5px 10px;
 }
 
+#login-area{
+  padding: 3% 2%;
+  width:260px;
+  height:auto;
+  background:#212121;
+  color:#fff;
+}
 
 #main-nav{
   position: fixed;
@@ -870,24 +870,6 @@ option{
     width:13%;
     min-width:190px;
     max-width:320px;
-  }
-
-  #login-area{
-    position:absolute;
-    padding:10px;
-    width:260px;
-    height:auto;
-    background:#212121;
-    right:-290px;
-    top:128px;
-    @include box-shadow(rgba(#000,0.6) 0px 0px 2px);
-    color:#fff;
-    behavior: url('./PIE.htc');
-
-    h5{
-      padding:5px 10px;
-    }
-
   }
 
   [data-menu]{

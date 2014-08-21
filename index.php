@@ -84,53 +84,44 @@
 
             <div class="sep"></div>
         </div>
-
-        <div id="login-area" class="aligncenter">
-            <i class="fa fa-times-circle float-right"></i>
-            <h5>Login</h5>
-            <form action="./_listeners/listn.login.php" method="post">
-                <div class="faux-row"><input type="text" name="email" value="Email" /></div>
-                <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
-                <div class="faux-row">
-                    <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
-                    <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
-                </div>
-                <input type="hidden" name="submitType" value="0" />
-                <div class="faux-row">
-                    <button type="button" class="ui-button float-left" data-button-type="register">Register</button>
-                    <button class="ui-button float-right">Submit</button>
-                    <div class="clear-fix"></div>
-                </div>
-            </form>
-
-        </div>
-
     </nav>
-
 
     <div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center;">
 
         <div class="width-50 height-100 fluid-row">
 
             <div class="intro-word-con">
-                <div class="intro-word">
-                    Plan &#62;
-                </div> <br/>
-                <div class="intro-word">
-                    Pick &#62;
-                </div> <br/>
-                <div class="intro-word">
-                    Play &#62;
+
+                <div id="login-area" class="aligncenter">
+                    <h5 id="text_id">Login</h5>
+                    <form action="./_listeners/listn.login.php" method="post">
+                        <div class="faux-row"><input type="text" name="email" value="Email" /></div>
+                        <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
+                        <div class="faux-row">
+                            <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
+                            <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
+                        </div>
+                        <input type="hidden" name="submitType" value="0" />
+                        <div class="faux-row">
+                            <button type="button" class="ui-button float-left" data-button-type="register">Register</button>
+                            <button class="ui-button float-right">Submit</button>
+                            <div class="clear-fix"></div>
+                        </div>
+                    </form>
                 </div>
+
             </div>
 
         </div>
 
         <div class="fluid-row width-50 height-100 dark float-right secondary">
 
-            <div class="fluid-row aligncenter"><img id="logo-banner" src="./images/poolbanner.png" /></div>
-
             <div class="fluid-row aligncenter">
+                <img id="logo-banner" src="./images/poolbanner.png" />
+
+                <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected a per played week. This must be paid prior to submitting
+                        your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>
+
                 <div class="fluid-row width-90 alignleft"><i>The Pool is a weekly betting game where users pick and number NFL teams based on who they think they will win each week.
                         At the end of the week, the person who has scored the most points wins the betting pool for that week.</i></div>
 
@@ -140,8 +131,6 @@
 
                 <div class="fluid-row width-90 alignleft"><p class="number">03</p><p class="desc">After the week is over the person with the most points wins the weekly pool. Will you win big?</p></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected a per played week. This must be paid prior to submitting
-                        your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>
             </div>
 
         </div>
@@ -152,15 +141,11 @@
 
     <script>
 
-        lockTimer();
+        $(document).ready(function(){
+            lockTimer();
+        });
 
-        setTimeout(function(){
-            var $mi = $("[data-menu-id='1']");
 
-            if($mi.hasClass("hidden"))
-                toggleMenuItemOverlay($mi);
-
-        },3000);
     </script>
 
     <script>

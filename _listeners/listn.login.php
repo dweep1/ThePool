@@ -45,8 +45,67 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['result'] = "ERROR: Username/Email already exists!";
         else if($response === false)//db error
             $_SESSION['result'] = "Database Error";
-        else //registration successful
-            $_SESSION['result'] = "Registration Successful!";
+        else{
+
+            $username = explode("@", $_POST['email'])[0];
+
+            $message = "You are now a member of a premiere betting league. Your account allows you to compete against others in a weekly betting pool.
+            This is a chance for you to win big, through smart plays and persistence throughout the NFL season.
+            <br/><br/><br/>
+            You have registered for The Pool using the e-mail address: {$_POST['email']}
+            <br/><br/>
+            You may login by using either your email address listed above, or by using the following user name, along with the password you entered in when you signed up.
+            <br/><br/>
+            $username
+            <br/><br/><br/>
+            You may login and make your picks; Select a favorite team; Or change any personal information in the settings panel.
+            <br/><br/>
+            <a href='{$_SERVER['HTTP_HOST']}/rules.php'>Be sure to read over the rules before making your picks.</a>";
+
+            $emailMessage = "
+                <div class=\"email-template\" style='font-family: \"Open Sans\", sans-serif; background: #fff; width:auto; height:100%; padding:10px 20px; text-align: left;'>
+                    <table cellpadding='0' cellspacing='0' style='width:800px; height:auto; margin:10px auto; border:1px solid #b9b9ba; background: #f1f1f2; padding:0px; border-radius:4px; border-bottom: 2px solid rgba(100,100,100,0.9);'>
+                        <tr>
+                            <td style='background: url('http://i.imgur.com/4S4yqzW.png'); border-radius:3px 3px 0px 0px; height:100px;'>
+                                <img style='border-radius:3px 3px 0px 0px;' src='http://i.imgur.com/4S4yqzW.png'>
+                            </td>
+                        </tr>
+
+                        <tr>
+                           <td style='padding:0px 25px; padding-top:15px; font-size: 12px; line-height:22px; color:rgb(80,80,80);'>
+                                <h2 style='border-bottom:1px solid rgba(120,120,255, 0.9); padding:3px 0px; margin-right:3px; font-weight:300;'>
+                                    Welcome to The Pool!
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style='padding:0px 25px; padding-bottom:15px; font-size: 12px; line-height:22px; color:rgb(80,80,80);'>
+
+                                $message
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
+                                Copyright 'The Pool', Anthony Harris,  2014<br/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>";
+
+            @Core::sendEmail('Welcome to The Pool', $emailMessage, $_POST['email']);
+
+            $response = doLogin($_POST);
+
+            if($response === false || $response === -1 || $response === -2){
+                $_SESSION['result'] = "We had a problem with the auto login. Your account has been created, you may now login.";
+            }else{
+                $_SESSION['login_attempts'] = 0;
+                $_SESSION['user'] = $response->toArray();
+            }
+
+        }
+
 
     }else if((int)$submitType === 2){//forgot password
 

@@ -966,7 +966,7 @@ class stat_log extends DatabaseObject{
 
     public static function getGlobalPointData(){
 
-        $prepare = "SELECT AVG(result) as value FROM
+        $prepare = "SELECT week_id, AVG(result) as value FROM
         (SELECT week_id, SUM(value) as result FROM pick WHERE season_id = :season_id AND result = 1 GROUP BY user_id, week_id ORDER BY week_id ASC)
         AS t1 GROUP BY t1.week_id";
 
@@ -1003,7 +1003,7 @@ class stat_log extends DatabaseObject{
 
         if($stat_id == 5){//user point totals
 
-            $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1 GROUP BY week_id";
+            $prepare = "SELECT week_id, SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1 GROUP BY week_id";
             $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
 
 
@@ -1011,7 +1011,7 @@ class stat_log extends DatabaseObject{
 
             if(!isset($dataArray['week_id']) || $dataArray['week_id'] == -1){//global point total
 
-                $prepare = "SELECT SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1";
+                $prepare = "SELECT week_id, SUM(value) as value FROM pick WHERE user_id = :user_id AND season_id = :season_id AND result = 1";
                 $execArray = array(':user_id' => $dataArray['user_id'], ':season_id' => $dataArray['season_id']);
 
             }else{//weekly point total

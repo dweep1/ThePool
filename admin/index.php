@@ -20,7 +20,6 @@ global $si;
 
     $si = $_SESSION['si'];
 
-
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +28,7 @@ global $si;
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>The Pool Admin</title>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/admin.css" rel="stylesheet" type="text/css" />
+    <link href="../css/admin.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
 	<link href="./css/redactor.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
@@ -40,8 +39,8 @@ global $si;
     <script src="../js/modernizr.min.js"></script>
     <script src="./js/redactor.min.js"></script>
     <script src="../js/bug_report.js"></script>
-    <script src="../js/general.js"></script>
-    <script src="./js/admin.js"></script>
+    <script src="../js/general.js?ver=<?php echo VERSION ?>"></script>
+    <script src="./js/admin.js?ver=<?php echo VERSION ?>"></script>
     <script>
 
         <?php
@@ -65,12 +64,12 @@ global $si;
     <?php if($user->verifyAdmin() === false): ?>
 
         <div class="ui-message-background hidden" data-background-id="1"></div>
-        <div class="ui-message-box aligncenter" data-type="result" data-message-id="1">
+        <div class="ui-message-box aligncenter" data-type="nopass" data-message-id="1">
             <i class="fa fa-times-circle float-right ui-message-close" style="display:none" data-close-id="1"></i>
             <h6>Admin Login</h6>
             <form action="./admin.login.php" method="post">
                 <input type="hidden" name="submitType" value="0" />
-                <div class="faux-row"><input type="text" autocomplete="off" name="password" value="Password" data-password /></div>
+                <div class="faux-row"><input type="password" no-default autocomplete="off" name="password" /></div>
                 <div class="faux-row"><input type="submit" class="ui-button float-right" value="Submit"></div>
             </form>
         </div>
@@ -89,7 +88,7 @@ global $si;
 
     <header id="header">
 
-        <h3>Sidekick Admin</h3>
+        <a href="../index.php"><h3>Sidekick Admin</h3></a>
         <div class="right con">
 
             <div style="display: inline-block; padding: 0px 20px;" data-ng-controller="TopController">
@@ -99,16 +98,22 @@ global $si;
                     <div style="display: inline-block; padding: 0px 5px;">
                         Season:
                         <select class="top" ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season"
-                                ng-init="search.season_id = <?php echo season::selected()->id; ?>">
-                            <option data-ng-repeat="item in season | orderBy:'-id'" value="{{ item.id }}" ng-selected="item.id == options.selected_season">{{ item.text_id }}</option>
+                                data-ng-init="search.season_id = <?php echo (season::selected()->id)?: season::getCurrent()->id; ?>">
+
+                            <option data-ng-repeat="item in season | orderBy:'-id'" value="{{ item.id }}"
+                                    data-ng-selected="item.id == options.selected_season">{{ item.text_id }}</option>
+
                         </select>
                     </div>
 
                     <div style="display: inline-block; padding: 0px 5px;">
                         Week:
                         <select class="top" ng-model="options.selected_week" name="selected_week"
-                                ng-init="options.selected_week = <?php echo week::selected()->id; ?>">
-                            <option data-ng-repeat="item in week | orderBy:'id'" value="{{ item.id }}" ng-if="item.season_id == options.selected_season" ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
+                                data-ng-init="options.selected_week = <?php echo (week::selected()->id)?: week::getCurrent()->id; ?>">
+
+                            <option data-ng-repeat="item in week | orderBy:'id'" value="{{ item.id }}" data-ng-if="item.season_id == options.selected_season"
+                                    data-ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
+
                         </select>
                     </div>
 
