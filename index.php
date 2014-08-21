@@ -90,24 +90,46 @@
 
         <div class="width-50 height-100 fluid-row">
 
-            <div class="intro-word-con">
+            <div class="fluid-row aligncenter">
 
-                <div id="login-area" class="aligncenter">
-                    <h5 id="text_id">Login</h5>
-                    <form action="./_listeners/listn.login.php" method="post">
-                        <div class="faux-row"><input type="text" name="email" value="Email" /></div>
-                        <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
-                        <div class="faux-row">
-                            <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
-                            <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
+                <div class="fluid-row aligncenter">
+                    <img id="logo-banner" src="./images/poolbanner.png" />
+                </div>
+
+                <div class="fluid-row width-45 aligncenter">
+
+                    <div id="login-area">
+                        <h5 id="text_id">Login</h5>
+                        <form action="./_listeners/listn.login.php" method="post">
+                            <div class="faux-row"><input type="text" name="email" value="Email" /></div>
+                            <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
+                            <div class="faux-row">
+                                <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
+                                <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
+                            </div>
+                            <input type="hidden" name="submitType" value="0" />
+                            <div class="faux-row">
+                                <button type="button" class="ui-button float-left" data-button-type="register">Register</button>
+                                <button class="ui-button float-right">Submit</button>
+                                <div class="clear-fix"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="fluid-row width-45 aligncenter">
+                    <div class="intro-word-con">
+                        <div class="intro-word">
+                            Plan &#62;
+                        </div> <br/>
+                        <div class="intro-word">
+                            Pick &#62;
+                        </div> <br/>
+                        <div class="intro-word">
+                            Play &#62;
                         </div>
-                        <input type="hidden" name="submitType" value="0" />
-                        <div class="faux-row">
-                            <button type="button" class="ui-button float-left" data-button-type="register">Register</button>
-                            <button class="ui-button float-right">Submit</button>
-                            <div class="clear-fix"></div>
-                        </div>
-                    </form>
+                    </div>
                 </div>
 
             </div>
@@ -117,7 +139,10 @@
         <div class="fluid-row width-50 height-100 dark float-right secondary">
 
             <div class="fluid-row aligncenter">
-                <img id="logo-banner" src="./images/poolbanner.png" />
+
+                <div class="fluid-row width-90 aligncenter">
+                    <img id="logo-banner" src="./images/poolbanner.png" />
+                </div>
 
                 <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected a per played week. This must be paid prior to submitting
                         your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>

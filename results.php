@@ -126,7 +126,7 @@
 
         <div class="fluid-row slim alignleft">
             <h5 style="display:inline-block">Week #<?php echo $thisWeek->week_number; ?>'s Results</h5>
-            <h4 style="display:inline-block; cursor:pointer" data-link="./results.print.php?week=<?php echo week::selected()->id; ?>" class="float-right" title="Printer Friendly Version" ><i class="fa fa-print"></i></h4>
+            <h4 style="display:inline-block; cursor:pointer" data-link="./results.print.php?week=<?php echo $thisWeek->id; ?>" class="float-right" title="Printer Friendly Version" ><i class="fa fa-print"></i></h4>
         </div>
 
         <div class="fluid-row slim aligncenter">

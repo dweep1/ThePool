@@ -11,7 +11,7 @@ $(document).ready(function(){
         '<i style="position: absolute; font-size:20px; right:0px; cursor:pointer; top: 0px; padding:10px;" class="fa fa-times-circle bug-ui-close"></i>' +
         '<h4 style="color:#fff; margin-bottom:20px;">Submit A Bug!</h4>' +
         '<input class="bug-ui" style="padding:10px; width:280px; display:block; font-size: 1.0em; font-weight: 400; ' +
-        'font-family: \'Roboto\', sans-serif;" type="text" id="bug_email" name="bug_email" value="Email or Username" />' +
+        'font-family: \'Roboto\', sans-serif;" type="text" id="bug_email" name="bug_email" value="Email" />' +
         '<textarea class="bug-ui" style="padding:10px; width:280px; margin-top: 10px; font-size: 1.0em; font-weight: 400; ' +
         'font-family: \'Roboto\', sans-serif; display:block;" id="bug_report" name="bug_report">What Went Wrong?</textarea>' +
         '<button class="bug-ui-submit" style=" width:110px; background: #fff; color: #313131; font-family: \'Quicksand\', sans-serif; text-transform: uppercase; font-weight: 700; ' +
