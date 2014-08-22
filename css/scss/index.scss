@@ -315,6 +315,13 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
     behavior: url('./PIE.htc');
   }
 
+  &.large{
+    font-size:16px;
+    line-height:12px;
+    padding: 15px 20px;
+    font-weight:400;
+  }
+
   &.dark{
     color:#fff;
     background: #222;
@@ -555,6 +562,7 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   width:60%;
   min-width:200px;
   max-width:500px;
+  margin-top:5%;
 }
 
 [data-trans-for]{

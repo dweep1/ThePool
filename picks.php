@@ -179,6 +179,10 @@
 
         </div>
 
+        <div class="fluid-row slim aligncenter">
+            <button class="ui-button dark large" ng-click="doSave()">Save Picks</button>
+        </div>
+
     </div>
 
     <div id="team-info" class="fluid-row width-50 dark float-right secondary">

@@ -105,6 +105,7 @@
                             <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
                             <div class="faux-row">
                                 <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
+                                <input type="hidden" name="username" value="Username" autocomplete="off" />
                                 <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
                             </div>
                             <input type="hidden" name="submitType" value="0" />
@@ -143,8 +144,8 @@
                 <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected a per played week. This must be paid prior to submitting
                         your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>
 
-                <div class="fluid-row width-90 alignleft"><i>The Pool is a weekly betting game where users pick and number NFL teams based on who they think they will win each week.
-                        At the end of the week, the person who has scored the most points wins the betting pool for that week.</i></div>
+                <div class="fluid-row width-90 alignleft"><i>The Pool is a weekly game where users pick and number NFL teams based on who they think they will win each week.
+                        At the end of the week, the person who has scored the most points wins.</i></div>
 
                 <div class="fluid-row width-90 alignleft"><p class="number">/PLAN.</p><p class="desc">Plan your picks accordingly. Choose a strong team and try to predict upsets to gain the advantage.</p></div>
 
@@ -164,14 +165,12 @@
 
         $(document).ready(function(){
             lockTimer();
+            localStorage.clear();
         });
 
 
     </script>
 
-    <script>
-        localStorage.clear();
-    </script>
 
 <?php
 

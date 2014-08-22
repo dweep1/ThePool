@@ -148,6 +148,8 @@ $(document).ready(function(){
 
     $(document).on("mousedown", "[data-close-id]", function (e) {
 
+        disabledEventPropagation(e);
+
         toggleDisplayMessageBox($(this).attr("data-close-id"), function(){
            destroyMessageBox($(this).attr("data-close-id"));
         });
@@ -156,11 +158,14 @@ $(document).ready(function(){
 
     $(document).keyup(function(e) {
 
+        disabledEventPropagation(e);
+
         if (e.keyCode == 27) {
 
-            $.each($("[data-close-id]"), function(){
-                toggleDisplayMessageBox($(this).attr("data-close-id"), function(){
-                    destroyMessageBox($(this).attr("data-close-id"));
+            $.each($("[data-message-id]"), function(){
+
+                toggleDisplayMessageBox($(this).attr("data-message-id"), function(){
+                    destroyMessageBox($(this).attr("data-message-id"));
                 });
             })
 
@@ -480,10 +485,15 @@ function hideMenuItems(){
 
 function disabledEventPropagation(event){
 
-    if (event.stopPropagation){
+    if (!event)
+        event = window.event;
 
+    //IE9 & Other Browsers
+    if (event.stopPropagation) {
         event.stopPropagation();
-
+    } else {
+        event.cancelBubble = true;
     }
+
 
 }
