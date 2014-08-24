@@ -6,7 +6,7 @@
     define("DEBUG", 1);
 
     // Set to 0 once you're ready to go live
-    define("USE_SANDBOX", 1);
+    define("USE_SANDBOX", 0);
 
 
     define("LOG_FILE", "./ipn.log");
@@ -142,7 +142,7 @@
             $user = new users;
 
             if($user->load($_POST['item_number'], "pay_key") === false){
-                error_log(date('[Y-m-d H:i e] '). "Error loading pay_key user from DB". PHP_EOL, 3, LOG_FILE);
+                error_log(date('[Y-m-d H:i e] '). "Error loading pay_key user from DB: $req". PHP_EOL, 3, LOG_FILE);
             }
 
             while($quantity > 0){
@@ -155,10 +155,14 @@
 
             }
 
+        }else{
+
+            admin_log::generateLog(array( "type" => "Paypal", "subject" => "Payment status updated", "log_data" => "$req", "location" => $_SERVER['REQUEST_URI']));
+
         }
 
         if(DEBUG == true){
-            error_log(date('[Y-m-d H:i e] '). "Verified IPN: $req ". PHP_EOL, 3, LOG_FILE);
+            error_log(date('[Y-m-d H:i e] '). "Verified IPN ". PHP_EOL, 3, LOG_FILE);
 
             foreach($_POST as $key => $val){
                 error_log(date('[Y-m-d H:i e] '). "'$key' => '$val'". PHP_EOL, 3, LOG_FILE);
@@ -174,6 +178,11 @@
         if(DEBUG == true)
             error_log(date('[Y-m-d H:i e] '). "Invalid IPN: $req" . PHP_EOL, 3, LOG_FILE);
 
+        admin_log::generateLog(array( "type" => "Paypal Error", "subject" => "IPN Invalid", "log_data" => "$req", "location" => $_SERVER['REQUEST_URI']));
+
+    }else{
+
+        admin_log::generateLog(array( "type" => "Paypal Error", "subject" => "IPN Weird", "log_data" => "$req", "location" => $_SERVER['REQUEST_URI']));
 
     }
 

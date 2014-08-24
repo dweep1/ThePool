@@ -35,9 +35,9 @@ $teams = teams::getTeamsList();
                     foreach($teams as $value){
 
                         if($obj->away_team == $value->id)
-                            echo "<option value='{$value->id}' selected>{$value->city} {$value->team_name}</option>";
+                            echo "<option value='{$value->id}' selected>{$value->team_name}</option>";
                         else
-                            echo "<option value='{$value->id}'>{$value->city} {$value->team_name}</option>";
+                            echo "<option value='{$value->id}'>{$value->team_name}</option>";
                     }
                 ?>
             </select>
@@ -66,9 +66,9 @@ $teams = teams::getTeamsList();
                 foreach($teams as $value){
 
                     if($obj->home_team == $value->id)
-                        echo "<option value='{$value->id}' selected>{$value->city} {$value->team_name}</option>";
+                        echo "<option value='{$value->id}' selected>{$value->team_name}</option>";
                     else
-                        echo "<option value='{$value->id}'>{$value->city} {$value->team_name}</option>";
+                        echo "<option value='{$value->id}'>{$value->team_name}</option>";
                 }
                 ?>
             </select>

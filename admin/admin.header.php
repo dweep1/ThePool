@@ -2,7 +2,7 @@
 
     global $ROOT_DB_PATH;
 
-    define("VERSION", "3");
+    define("VERSION", "4");
 
     include_once "{$ROOT_DB_PATH}header.php";
     include_once "{$ROOT_DB_PATH}security.php";

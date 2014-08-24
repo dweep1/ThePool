@@ -83,7 +83,7 @@
                 <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
             </div>
 
-            <div class="fluid-row width-50 slim alignleft">
+            <div class="fluid-row width-50 slim alignright">
                 <h6>Search:</h6> <input type="text" data-ng-model="search" />
             </div>
 
@@ -93,12 +93,12 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'closed'"
+                    <li class="full" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'closed'"
 
                         data-ng-if="item.gameLock != false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
-                        <div data-team-id="{{ item.away_team.id }}"
-                             data-ng-class="{true: 'team alignleft picked', false: 'team alignleft'}[item.pick.team_id == item.away_team.id]"
+                        <div data-team-id="{{ item.away_team.id }}" class="team alignleft"
+                             data-ng-class="{'picked': item.pick.team_id == item.away_team.id, 'loss': item.away_score < item.home_score}"
                              style="background-image: url('{{ item.away_team.image_url }}')">
 
                             <div class="gradient-left">
@@ -108,16 +108,30 @@
 
                         </div>
 
+                        <div data-ng-if="(item.away_score + item.home_score) > 0" class="middle">
 
-                        <div class="middle">
+                            <i data-ng-class="{true: 'loss', false: ''}[item.away_score < item.home_score]">
+                                {{ item.away_score }}
+                            </i>
+
+                            <i>@</i>
+
+                            <i data-ng-class="{true: 'loss', false: ''}[item.away_score > item.home_score]">
+                                {{ item.home_score }}
+                            </i>
+
+                        </div>
+
+
+                        <div data-ng-if="(item.away_score + item.home_score) <= 0" class="middle">
 
                             {{ item.display_date }}
 
                         </div>
 
 
-                        <div data-team-id="{{ item.home_team.id }}"
-                             data-ng-class="{true: 'team alignright float-right picked', false: 'team alignright float-right'}[item.pick.team_id == item.home_team.id]"
+                        <div data-team-id="{{ item.home_team.id }}" class="team alignright"
+                             data-ng-class="{'picked': item.pick.team_id == item.home_team.id, 'loss': item.away_score > item.home_score}"
                              style="background-image: url('{{ item.home_team.image_url }}')">
 
                             <div class="gradient-right">

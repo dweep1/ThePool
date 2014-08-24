@@ -126,6 +126,7 @@ $(document).ready(function(){
         var $confirm = $('[name="confirm"]');
         var $password = $('[name="password"]');
         var $submitType = $('[name="submitType"]');
+        var $userName = $('[name="username"]');
 
         disabledEventPropagation(e);
 
@@ -140,6 +141,7 @@ $(document).ready(function(){
 
         $confirm.attr("type", "hidden");
         $password.attr("type", "hidden");
+        $userName.attr("type", "hidden");
         $submitType.val("2");
 
         $(this).hide();
@@ -372,6 +374,7 @@ function toggleDataButtonType($button){
     var $confirm = $('[name="confirm"]');
     var $password = $('[name="password"]');
     var $submitType = $('[name="submitType"]');
+    var $userName = $('[name="username"]');
 
     if($button.length == 0)
         return false;
@@ -381,6 +384,7 @@ function toggleDataButtonType($button){
         $button.attr('data-button-type', "login");
         $button.html("Login");
         $("#text_id").html("Register");
+        $userName.attr("type", "text");
 
         if ($password.val() === $password.prop("defaultValue") || $password.val().length === 0) {
             $password.attr("type", "text");
@@ -399,6 +403,7 @@ function toggleDataButtonType($button){
         $button.attr('data-button-type', "register");
         $button.html("Register");
         $("#text_id").html("Login");
+        $userName.attr("type", "hidden");
 
         if ($password.val() === $password.prop("defaultValue") || $password.val().length === 0) {
             $password.attr("type", "text");

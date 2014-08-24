@@ -101,11 +101,13 @@
                     <div id="login-area">
                         <h5 id="text_id">Login</h5>
                         <form action="./_listeners/listn.login.php" method="post">
-                            <div class="faux-row"><input type="text" name="email" value="Email" /></div>
+                            <div class="faux-row">
+                                <input type="text" name="email" value="Email" />
+                                <input type="hidden" name="username" value="Username" autocomplete="off" />
+                            </div>
                             <div class="faux-row"><input type="text" name="password" value="Password" data-password autocomplete="off" /></div>
                             <div class="faux-row">
                                 <input type="hidden" name="confirm" value="Confirm Password" data-password autocomplete="off" />
-                                <input type="hidden" name="username" value="Username" autocomplete="off" />
                                 <div id="forgotPass" style="cursor:pointer">Forgot Password?</div>
                             </div>
                             <input type="hidden" name="submitType" value="0" />

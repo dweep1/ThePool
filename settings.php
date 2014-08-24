@@ -56,7 +56,7 @@ include "./menu.php";
             <input type="hidden" name="submitType" value="0" />
             <input type="hidden" id="access_level" name="access_level" value="<?php echo $user->access_level; ?>" />
 
-            <div class="fluid-row width-90 alignleft">
+            <div class="fluid-row width-90 alignleft <?php echo (!isset($_GET['password'])) ? "" : "error"; ?>">
                 <h6>Confirm Password</h6>  <input type="password" name="confirm_password" autocomplete="off" />
                 <button class="ui-button dark float-right">Save Account Changes</button>
             </div>

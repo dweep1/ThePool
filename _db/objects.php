@@ -142,7 +142,6 @@ class users extends DatabaseObject{
         if(strlen($this->pay_key) <= 1)
             $this->pay_key = Cipher::getRandomKey(16);
 
-
         return ($this->update() !== false) ? true : false;
 
     }
@@ -420,16 +419,24 @@ class week extends event{
 
         $game = game::nextGame();
 
+        if($game === false)
+            return false;
+
         while($game->isLocked() === true){
 
-            if(strpos(Core::getDay($game->date),'Mon') !== false){
+            if(strpos(Core::getDay($game->date),'Mon') !== false)
                 break;
-            }
 
-            $game = $game->getNext();
 
-            if($game === false)
+            $next = $game->getNext();
+
+            if($next === false)
                 return false;
+
+            if((int) $next->week_id !== (int) $game->week_id)
+                break;
+            else
+                $game = $next;
 
         }
 
@@ -642,6 +649,25 @@ class bugs extends DatabaseObject{
     public $report;
     public $email;
     public $date;
+
+}
+
+class admin_log extends DatabaseObject{
+
+    public $type = "error";
+    public $subject;
+    public $log_data;
+    public $location;
+
+    //admin_log::generateLog(array( "type" => "", "subject" => "", "log_data" => "", "location" => $_SERVER['REQUEST_URI']))
+
+    public static function generateLog($data){
+
+        $newInstance = new self($data);
+
+        return $newInstance->save();
+
+    }
 
 }
 
@@ -1140,7 +1166,7 @@ class teams extends DatabaseObject{
 
         $instance = new self();
 
-        $teams = $instance->getList("city ASC");
+        $teams = $instance->getList("team_name ASC");
 
         if(!is_bool($teams)){
             foreach($teams as $value){

@@ -188,7 +188,7 @@ function doRegister($POST){
     if($user->load($POST['email'], 'email'))
         return -2;
 
-    if($user->load(explode("@", $POST['email'])[0], 'username'))
+    if($user->load($POST['username'], 'username'))
         return -2;
 
     if(!users::verifyRegInfo($POST))
@@ -196,7 +196,6 @@ function doRegister($POST){
 
     $password = new Password($POST['password']);
 
-    $POST['username'] = explode("@", $POST['email'])[0];
     $POST['password'] = $password->getKey();
     $POST['salt'] = $password->getSalt();
     $POST['security_key'] = Cipher::getRandomKey(16);

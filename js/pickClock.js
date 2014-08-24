@@ -15,38 +15,43 @@ function lockTimer(){
 
     clockAjax({submitType: 1, offset: $today.getTimezoneOffset()}, function(data){
 
-        var d = Date.createFromMysql(data);
-        var $lockHold = $('#lockHold');
-        var $dayLock = 'Thurs';
-
-        if(d.getDay() == 5){
-            $dayLock = 'Fri';
-        }else if(d.getDay() == 6){
-            $dayLock = 'Sat';
-        }else if(d.getDay() == 0){
-            $dayLock = 'Sun';
-        }else if(d.getDay() <= 1){
-            $dayLock = 'Mon';
-        }
-
-        $('#day').html($dayLock);
-
-        $lockHold.css({'width': '200px'});
-        setTimeout(function(){
-            $lockHold.css({'width': 'auto'});
-        }, 20);//end timeout
-
-        $('#lockClock').tinyTimer({ to: d, format: '%d Days, %0h:%0m:%0s',  onEnd: function(){
+        if(data == false || data == "false"){
             $('#lockHold').empty();
-            $('#lockHold').html($dayLock+'\'s Picks Locked');
+            $('#lockHold').html('End of Season');
+        }else{
+            var d = Date.createFromMysql(data);
+            var $lockHold = $('#lockHold');
+            var $dayLock = 'Thurs';
 
+            if(d.getDay() == 5){
+                $dayLock = 'Fri';
+            }else if(d.getDay() == 6){
+                $dayLock = 'Sat';
+            }else if(d.getDay() == 0){
+                $dayLock = 'Sun';
+            }else if(d.getDay() <= 1){
+                $dayLock = 'Mon';
+            }
+
+            $('#day').html($dayLock);
+
+            $lockHold.css({'width': '200px'});
             setTimeout(function(){
-                if (typeof endClock == 'function') {
-                    endClock();
-                }
-            }, 1000);
+                $lockHold.css({'width': 'auto'});
+            }, 20);//end timeout
 
-        }});//end of tinytimer
+            $('#lockClock').tinyTimer({ to: d, format: '%d Days, %0h:%0m:%0s',  onEnd: function(){
+                $('#lockHold').empty();
+                $('#lockHold').html($dayLock+'\'s Picks Locked');
+
+                setTimeout(function(){
+                    if (typeof endClock == 'function') {
+                        endClock();
+                    }
+                }, 1000);
+
+            }});//end of tinytimer
+        }
 
     });
 

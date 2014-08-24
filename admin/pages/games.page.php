@@ -18,11 +18,11 @@
                 </li>
 
                 <li data-ng-if="(item.home_team - 0) > 0" class="aligncenter" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-object='game' data-game-id='{{ item.id }}' >
-                    <div class="width-25 alignleft">{{ item.away.city }}</div>
+                    <div class="width-25 alignleft">{{ item.away.team_name }}</div>
                     <div class="width-5 aligncenter" data-ng-if="(item.away_score - 0) > 0">{{ item.away_score }}</div>
                     <div class="width-5 aligncenter">@</div>
                     <div class="width-5 aligncenter" data-ng-if="(item.home_score - 0) > 0">{{ item.home_score }}</div>
-                    <div class="width-25 alignright">{{ item.home.city }}</div>
+                    <div class="width-25 alignright">{{ item.home.team_name }}</div>
                     <div class="width-10 aligncenter">on</div>
                     <div class="width-20 alignleft">{{ item.date }}</div>
                 </li>

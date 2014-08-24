@@ -689,14 +689,15 @@ H6 {
   width: 60%;
   min-width: 200px;
   max-width: 500px;
+  margin-top: 5%;
 }
 
-/* line 567, scss/index.scss */
+/* line 568, scss/index.scss */
 [data-trans-for] {
   cursor: pointer;
 }
 
-/* line 571, scss/index.scss */
+/* line 572, scss/index.scss */
 [data-bad-value="true"] {
   -webkit-box-shadow: red 0px 1px 10px;
   -moz-box-shadow: red 0px 1px 10px;
@@ -706,13 +707,13 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 578, scss/index.scss */
+/* line 580, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 583, scss/index.scss */
+/* line 585, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -721,11 +722,15 @@ H6 {
   margin: 15px 10px;
   position: relative;
 }
-/* line 591, scss/index.scss */
+/* line 593, scss/index.scss */
 .ui-games-list li .loss {
   text-decoration: line-through;
 }
-/* line 595, scss/index.scss */
+/* line 597, scss/index.scss */
+.ui-games-list li.full {
+  width: auto;
+}
+/* line 601, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
@@ -736,35 +741,35 @@ H6 {
   cursor: pointer;
   behavior: url("./PIE.htc");
 }
-/* line 606, scss/index.scss */
+/* line 612, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 610, scss/index.scss */
+/* line 616, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 400;
   line-height: 1.8em;
 }
-/* line 615, scss/index.scss */
+/* line 621, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 619, scss/index.scss */
+/* line 625, scss/index.scss */
 .ui-games-list li .team.picked {
   text-shadow: black 0px 1px 2px;
   behavior: url("./PIE.htc");
 }
-/* line 623, scss/index.scss */
+/* line 629, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 400;
 }
-/* line 628, scss/index.scss */
+/* line 634, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
   font-size: 1.8em;
   line-height: 1em;
 }
-/* line 634, scss/index.scss */
+/* line 640, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -773,7 +778,7 @@ H6 {
   background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   behavior: url("./PIE.htc");
 }
-/* line 639, scss/index.scss */
+/* line 645, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
   background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -782,7 +787,7 @@ H6 {
   background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   behavior: url("./PIE.htc");
 }
-/* line 645, scss/index.scss */
+/* line 651, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 8% 8%;
   width: auto;
@@ -796,16 +801,16 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 654, scss/index.scss */
+/* line 660, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 660, scss/index.scss */
+/* line 666, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 664, scss/index.scss */
+/* line 670, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 8% 8%;
   width: auto;
@@ -819,12 +824,12 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 673, scss/index.scss */
+/* line 679, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 680, scss/index.scss */
+/* line 686, scss/index.scss */
 .ui-games-list li .display-date {
   position: absolute;
   right: -60px;
@@ -833,7 +838,7 @@ H6 {
   width: 50px;
   height: 50%;
 }
-/* line 689, scss/index.scss */
+/* line 695, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 30%;
@@ -842,7 +847,7 @@ H6 {
   white-space: nowrap;
   position: relative;
 }
-/* line 697, scss/index.scss */
+/* line 703, scss/index.scss */
 .ui-games-list li .middle i {
   position: relative;
   z-index: 100;
@@ -852,7 +857,7 @@ H6 {
   padding: 8%;
   font-style: normal;
 }
-/* line 707, scss/index.scss */
+/* line 713, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -860,21 +865,21 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 717, scss/index.scss */
+/* line 723, scss/index.scss */
 .ui-globalpicks {
   width: 100%;
 }
-/* line 721, scss/index.scss */
+/* line 727, scss/index.scss */
 .ui-globalpicks tr th {
   font-weight: 600;
   padding: 8px 6px;
   cursor: pointer;
 }
-/* line 726, scss/index.scss */
+/* line 732, scss/index.scss */
 .ui-globalpicks tr th i {
   color: #444;
 }
-/* line 731, scss/index.scss */
+/* line 737, scss/index.scss */
 .ui-globalpicks tr td {
   border: 1px solid rgba(180, 180, 180, 0.6);
   padding: 0.7%;
@@ -882,24 +887,24 @@ H6 {
   white-space: nowrap;
   font-size: 1.2em;
 }
-/* line 738, scss/index.scss */
+/* line 744, scss/index.scss */
 .ui-globalpicks tr td.username {
   font-weight: 500;
   table-layout: fixed;
   overflow: hidden;
 }
-/* line 744, scss/index.scss */
+/* line 750, scss/index.scss */
 .ui-globalpicks tr td small {
   font-weight: 400;
   font-size: 0.7em;
   line-height: 1em;
   color: #222;
 }
-/* line 750, scss/index.scss */
+/* line 756, scss/index.scss */
 .ui-globalpicks tr td small b {
   font-weight: 700;
 }
-/* line 757, scss/index.scss */
+/* line 763, scss/index.scss */
 .ui-globalpicks tr.selected td {
   -webkit-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   -moz-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
@@ -907,7 +912,7 @@ H6 {
   border: 1px solid rgba(100, 255, 0, 0.3);
   behavior: url("./PIE.htc");
 }
-/* line 765, scss/index.scss */
+/* line 771, scss/index.scss */
 .ui-globalpicks tr.rival td {
   -webkit-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
   -moz-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
@@ -915,12 +920,12 @@ H6 {
   border: 1px solid rgba(255, 30, 30, 0.6);
   behavior: url("./PIE.htc");
 }
-/* line 774, scss/index.scss */
+/* line 780, scss/index.scss */
 .ui-globalpicks tr.a td {
   background: rgba(51, 51, 51, 0.2);
 }
 
-/* line 781, scss/index.scss */
+/* line 787, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -934,7 +939,7 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 794, scss/index.scss */
+/* line 800, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -954,24 +959,24 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 807, scss/index.scss */
+/* line 813, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 813, scss/index.scss */
+/* line 819, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 817, scss/index.scss */
+/* line 823, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 823, scss/index.scss */
+/* line 829, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -982,15 +987,19 @@ input[type="text"], input[type="password"] {
   border-radius: 3px;
   behavior: url("./PIE.htc");
 }
+/* line 839, scss/index.scss */
+input[type="text"][name="username"], input[type="password"][name="username"] {
+  margin-top: 15px;
+}
 
-/* line 835, scss/index.scss */
+/* line 845, scss/index.scss */
 .settings label {
   position: absolute;
   top: 28%;
   left: 5%;
 }
 
-/* line 842, scss/index.scss */
+/* line 852, scss/index.scss */
 label {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -999,7 +1008,7 @@ label {
   vertical-align: top;
 }
 
-/* line 850, scss/index.scss */
+/* line 860, scss/index.scss */
 select {
   padding: 8px 15px;
   border: 2px solid #222;
@@ -1007,7 +1016,7 @@ select {
   behavior: url("./PIE.htc");
 }
 
-/* line 857, scss/index.scss */
+/* line 867, scss/index.scss */
 select, option {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1015,12 +1024,12 @@ select, option {
   font-weight: 400;
 }
 
-/* line 864, scss/index.scss */
+/* line 874, scss/index.scss */
 option {
   padding: 5px 10px;
 }
 
-/* line 868, scss/index.scss */
+/* line 878, scss/index.scss */
 #login-area {
   padding: 3% 2%;
   width: 260px;
@@ -1030,7 +1039,7 @@ option {
   display: inline-block;
 }
 
-/* line 877, scss/index.scss */
+/* line 887, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -1052,17 +1061,17 @@ option {
   transition: all 0.6s ease;
   behavior: url("./PIE.htc");
 }
-/* line 893, scss/index.scss */
+/* line 903, scss/index.scss */
 #main-nav a {
   text-decoration: none;
 }
-/* line 898, scss/index.scss */
+/* line 908, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 904, scss/index.scss */
+/* line 914, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1070,11 +1079,11 @@ option {
   transition: all 0.2s ease;
   behavior: url("./PIE.htc");
 }
-/* line 908, scss/index.scss */
+/* line 918, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 913, scss/index.scss */
+/* line 923, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -1082,7 +1091,7 @@ option {
   height: 40px;
   text-align: center;
 }
-/* line 921, scss/index.scss */
+/* line 931, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -1090,7 +1099,7 @@ option {
   list-style: none;
   overflow: hidden;
 }
-/* line 929, scss/index.scss */
+/* line 939, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -1103,11 +1112,11 @@ option {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 939, scss/index.scss */
+/* line 949, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 943, scss/index.scss */
+/* line 953, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -1120,7 +1129,7 @@ option {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 955, scss/index.scss */
+/* line 965, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -1131,7 +1140,7 @@ option {
   vertical-align: middle;
   behavior: url("./PIE.htc");
 }
-/* line 963, scss/index.scss */
+/* line 973, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

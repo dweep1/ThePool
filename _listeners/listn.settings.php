@@ -22,9 +22,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $result = doSettingsChange($_POST);
 
-        if($result === -1)//wrong password
-            $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Incorrect Password" : $_SESSION['result'];
-        else if($result === -2)//changed password was bad
+        if($result === -1){
+
+            if(strlen($POST['confirm_password']) <= 1)//no password
+                $_SESSION['result'] = (!isset($_SESSION['result'])) ? "You must enter your password in the confirm password box to save changes to your account" : $_SESSION['result'];
+            else
+                $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Incorrect Password" : $_SESSION['result'];
+
+            header("Location: ../settings.php?password=error");
+            exit;
+
+        }else if($result === -2)//changed password was bad
             $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Password was poorly formatted" : $_SESSION['result'];
         else if($result === -3)//error updating user object, most likely due to malformed array data
             $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Couldn't update user's array" : $_SESSION['result'];
@@ -39,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $result = doRivalChange($_POST);
 
-        if($result === -1)//wrong password
+        if($result === -1)
             $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Couldn't find a user with given email/username" : $_SESSION['result'];
         else if($result === false)//database error
             $_SESSION['result'] = (!isset($_SESSION['result'])) ? "Database Error" : $_SESSION['result'];

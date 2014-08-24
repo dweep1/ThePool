@@ -179,7 +179,7 @@
 
         </div>
 
-        <div class="fluid-row slim aligncenter">
+        <div class="fluid-row slim alignright">
             <button class="ui-button dark large" ng-click="doSave()">Save Picks</button>
         </div>
 
