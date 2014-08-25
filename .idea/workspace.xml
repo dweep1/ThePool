@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_header.php" afterPath="$PROJECT_DIR$/_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/admin.header.php" afterPath="$PROJECT_DIR$/admin/admin.header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/pages/games.page.php" afterPath="$PROJECT_DIR$/admin/pages/games.page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/general.js" afterPath="$PROJECT_DIR$/js/general.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/home.js" afterPath="$PROJECT_DIR$/js/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.login.php" afterPath="$PROJECT_DIR$/_listeners/listn.login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.settings.php" afterPath="$PROJECT_DIR$/_listeners/listn.settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/manage.game.data.php" afterPath="$PROJECT_DIR$/admin/manage.game.data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_db/objects.php" afterPath="$PROJECT_DIR$/_db/objects.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/paypal_ipn.php" afterPath="$PROJECT_DIR$/_listeners/paypal_ipn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pickClock.js" afterPath="$PROJECT_DIR$/js/pickClock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picks.php" afterPath="$PROJECT_DIR$/picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,6 +112,7 @@
     <file path="/bug_report.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408062448077" ignored="false" />
     <file path="/rules.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408409825561" ignored="false" />
     <file path="/removeEmail.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408416992725" ignored="false" />
+    <file path="/admin_logs.page.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408927636924" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,10 +171,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paypal_ipn.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="paypal_ipn.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/paypal_ipn.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="180" column="89" selection-start="6117" selection-end="6117" vertical-scroll-proportion="0.8550107">
+            <state line="161" column="9" selection-start="5467" selection-end="5467" vertical-scroll-proportion="-18.423077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="0" selection-start="2929" selection-end="2929" vertical-scroll-proportion="-7.1923075">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logs.page.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/pages/logs.page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="27" selection-start="51" selection-end="51" vertical-scroll-proportion="0.018123668">
               <folding />
             </state>
           </provider>
@@ -242,15 +243,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pick.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/pick.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="1867" selection-end="1867" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="manage.game.data.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/manage.game.data.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -277,15 +269,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="games.page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/pages/games.page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="137" selection-start="408" selection-end="408" vertical-scroll-proportion="-5.3461537">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -304,9 +287,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/general.js" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.settings.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/picks.php" />
@@ -320,6 +300,9 @@
         <option value="$PROJECT_DIR$/js/pickClock.js" />
         <option value="$PROJECT_DIR$/_db/objects.php" />
         <option value="$PROJECT_DIR$/_listeners/paypal_ipn.php" />
+        <option value="$PROJECT_DIR$/admin/index.php" />
+        <option value="$PROJECT_DIR$/admin/pages/admin_logs.page.php" />
+        <option value="$PROJECT_DIR$/admin/pages/logs.page.php" />
       </list>
     </option>
   </component>
@@ -759,22 +742,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="45" selection-start="7551" selection-end="7551" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="20" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1408834525787" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="176" column="18" selection-start="6961" selection-end="6961" vertical-scroll-proportion="0.0">
@@ -949,7 +916,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/paypal_ipn.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="89" selection-start="6117" selection-end="6117" vertical-scroll-proportion="0.8550107">
+        <state line="161" column="9" selection-start="5467" selection-end="5467" vertical-scroll-proportion="-18.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="0" selection-start="2929" selection-end="2929" vertical-scroll-proportion="-7.1923075">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pages/logs.page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="27" selection-start="51" selection-end="51" vertical-scroll-proportion="0.018123668">
           <folding />
         </state>
       </provider>

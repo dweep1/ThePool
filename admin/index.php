@@ -97,8 +97,7 @@ global $si;
 
                     <div style="display: inline-block; padding: 0px 5px;">
                         Season:
-                        <select class="top" ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season"
-                                data-ng-init="search.season_id = <?php echo (season::selected()->id)?: season::getCurrent()->id; ?>">
+                        <select class="top" ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season">
 
                             <option data-ng-repeat="item in season | orderBy:'-id'" value="{{ item.id }}"
                                     data-ng-selected="item.id == options.selected_season">{{ item.text_id }}</option>
@@ -108,8 +107,7 @@ global $si;
 
                     <div style="display: inline-block; padding: 0px 5px;">
                         Week:
-                        <select class="top" ng-model="options.selected_week" name="selected_week"
-                                data-ng-init="options.selected_week = <?php echo (week::selected()->id)?: week::getCurrent()->id; ?>">
+                        <select class="top" ng-model="options.selected_week" name="selected_week" >
 
                             <option data-ng-repeat="item in week | orderBy:'id'" value="{{ item.id }}" data-ng-if="item.season_id == options.selected_season"
                                     data-ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
