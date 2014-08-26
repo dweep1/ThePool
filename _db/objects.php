@@ -417,21 +417,29 @@ class week extends event{
 
     public static function getNextLock($offset){
 
-        $game = game::nextGame();
+        $thisWeek = self::getCurrent();
 
-        if($game === false)
+        $games = $thisWeek->getGames(true);
+
+        if($thisWeek === false)
             return false;
+
+        $count = 0;
+
+        $game = $games[$count];
 
         while($game->isLocked() === true){
 
             if(strpos(Core::getDay($game->date),'Mon') !== false)
                 break;
 
+            $count++;
 
-            $next = $game->getNext();
+
+            $next = isset($games[$count]) ? $games[$count] : false;
 
             if($next === false)
-                return false;
+                break;
 
             if((int) $next->week_id !== (int) $game->week_id)
                 break;

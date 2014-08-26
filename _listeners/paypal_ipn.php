@@ -114,11 +114,11 @@
 
     }
 
+    include_once "./listn.header.php";
+
     // Inspect IPN validation result and act accordingly
 
     if (strcmp ($res, "VERIFIED") == 0) {
-
-        include_once "./listn.header.php";
 
         // check whether the payment_status is Completed
         // check that txn_id has not been previously processed
@@ -136,22 +136,26 @@
         //$receiver_email = $_POST['receiver_email'];
         //$payer_email = $_POST['payer_email'];
 
-        if(strtolower($_POST['payment_status']) == strtolower("completed")){
+        if(strtolower($_POST['payment_status']) == strtolower("completed") || $_POST['payment_status'] == 'Completed'){
             $quantity = intval($_POST['quantity']);
 
             $user = new users;
 
-            if($user->load($_POST['item_number'], "pay_key") === false){
+            if($user->load($_POST['pay_key'], "pay_key") === false){
+
                 error_log(date('[Y-m-d H:i e] '). "Error loading pay_key user from DB: $req". PHP_EOL, 3, LOG_FILE);
-            }
 
-            while($quantity > 0){
+            }else{
 
-                $quantity = $quantity - 1;
+                while($quantity > 0){
 
-                $data = array("user_id" => $user->id, "nid" => $_POST['txn_id'], "amount" => floatval($_POST['mc_gross']));
+                    $data = array("user_id" => $user->id, "nid" => $_POST['txn_id'], "amount" => floatval($_POST['mc_gross']));
 
-                credit::generateCredit($data);
+                    credit::generateCredit($data);
+
+                    $quantity = $quantity - 1;
+
+                }
 
             }
 

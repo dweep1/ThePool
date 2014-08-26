@@ -23,8 +23,6 @@
         <div class="sep"></div>
     </div>
 
-    <div id="logo"><h3>TP</h3></div>
-
     <ul>
         <li id="expand-menu"><h2><i class="fa fa-bars"style="padding-left:1px;"></i></h2></li>
         <li><a href="./home.php"><h2><i class="fa fa-home" style="padding-left:2px;"></i> Home</h2></a></li>
