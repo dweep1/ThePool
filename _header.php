@@ -4,7 +4,7 @@
     global $mem;
     global $memTwo;
 
-    define("VERSION", "7");
+    define("VERSION", "8");
 
     $time = microtime(TRUE);
     $mem = memory_get_usage();

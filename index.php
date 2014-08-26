@@ -68,14 +68,7 @@
 
     <?php endif; ?>
 
-    <nav id="main-nav">
-
-        <div id="logo"><h3>TP</h3></div>
-        <ul>
-            <li id="expand-menu"><h2><i class="fa fa-bars"style="padding-left:1px;"></i></h2></li>
-            <li><h2 data-icon="" data-id="1"><i class="fa fa-user" style="padding-left:2px;"></i> Login</h2></li>
-            <li><a href="./rules.php"><h2><i class="fa fa-question-circle" style="padding-left:1px;"></i> About</h2></a></li>
-        </ul>
+    <div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center; margin-left:0px;">
 
         <div id="pick-clock" class="index">
             <div id="lockHold" title="N Days, Hours:Minuets:Seconds">
@@ -84,9 +77,6 @@
 
             <div class="sep"></div>
         </div>
-    </nav>
-
-    <div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center;">
 
         <div class="width-50 height-100 fluid-row">
 
@@ -143,7 +133,7 @@
 
             <div class="fluid-row aligncenter">
 
-                <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected a per played week. This must be paid prior to submitting
+                <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected per played week. This must be paid prior to submitting
                         your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>
 
                 <div class="fluid-row width-90 alignleft"><i>The Pool is a weekly game where users pick and number NFL teams based on who they think they will win each week.

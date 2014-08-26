@@ -30,6 +30,7 @@ $(document).ready(function(){
     });
 
     resize();
+    menuResize()
     hideMenuItems();
 
     $.each($("[data-close-id]"), function(){
@@ -38,6 +39,7 @@ $(document).ready(function(){
 
     $(window).resize(function () {
         resize();
+        menuResize()
     });
 
     $(document).on("mousedown", "[data-link]", function (e) {
@@ -464,6 +466,20 @@ function resize(){
         $(this).css({"min-height": $height});
 
     });
+}
+
+function menuResize(){
+
+    var $content = $("#main-nav");
+
+    $.each($content, function(){
+
+        var $height = $(document).height() - (parseInt($(this).css("padding-top")) + parseInt($(this).css("padding-bottom")));
+
+        $(this).css({"min-height": $height});
+
+    });
+
 }
 
 function objLength(obj){

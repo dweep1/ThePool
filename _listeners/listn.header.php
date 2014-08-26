@@ -2,8 +2,6 @@
 
     if(!session_id()) {
         session_start();
-    } else {
-
     }
 
     global $ROOT_DB_PATH;

@@ -15,7 +15,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     }else if($submitType == 1){//timezone offset
 
-        echo week::getNextLock($_POST['offset']);
+        echo week::getNextLock($_POST['offset']) ?: "false";
        
     }
 

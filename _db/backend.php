@@ -3,9 +3,7 @@
 date_default_timezone_set('America/New_York');
 
 if(!session_id()) {
-    @session_start();
-} else {
-
+    session_start();
 }
 
 //@TODO change functions to use $options array instead of long constructors
@@ -61,25 +59,29 @@ abstract class DatabaseObject{
 
     public function __construct($id = null){
 
-        if(is_array($id)){
+        if($id !== null){
+            if(is_array($id)){
 
-            if($this->updateObject($id) === false)
-                throw new Exception("Object failed to set new variables");
-            else
-                $this->loaded = true;
+                if($this->updateObject($id) === false)
+                    throw new Exception("Object failed to set new variables");
+                else
+                    $this->loaded = true;
 
-        }else if(Core::isJson($id)){
+            }else if(is_object($id)){
 
-            if($this->updateObject(json_decode($id)) === false)
-                throw new Exception("Object Wasn't JSON or failed to set new variables");
-            else
-                $this->loaded = true;
+                $this->updateObject(get_object_vars($id));
 
-        }else if(is_object($id)){
-            $this->updateObject(get_object_vars($id));
-        }else if($id !== null && is_numeric($id))
-            $this->load($id);
+            }else if(Core::isJson($id)){
 
+                if($this->updateObject(json_decode($id)) === false)
+                    throw new Exception("Object Wasn't JSON or failed to set new variables");
+                else
+                    $this->loaded = true;
+
+            }else if(is_numeric($id))
+                $this->load($id);
+
+        }
 
     }
 
@@ -633,27 +635,21 @@ abstract class DatabaseObject{
         if(is_object($array))//converts json to an array
             $array = (array) $array;
 
+        if(!is_array($array))
+            return false;
+
         foreach($array as $key => $value){
 
-            if(!array_key_exists($key, $keyChain))
-                unset($array[$key]);
-            else if($key !== "loaded")
-                $this->{$key} = $value;
+            if($key !== "loaded" && array_key_exists($key, $keyChain)){
 
-            if(strpos($key,'date') !== false && (Core::isValidDateTimeString($value) || $value instanceof DateTime))
-                $this->{$key} = Core::unixToMySQL($value);
-            else if(strpos($key,'date') !== false && !(Core::isValidDateTimeString($value) || $value instanceof DateTime))
-                $this->{$key} = Core::unixToMySQL("now");
+                if(strpos($key,'date') !== false){
+                    if($value instanceof DateTime || Core::isValidDateTimeString($value))
+                        $this->{$key} = Core::unixToMySQL($value);
+                    else
+                        $this->{$key} = Core::unixToMySQL("now");
+                }else
+                    $this->{$key} = $value;
 
-        }
-
-        foreach($this as $key => $value) {
-
-            if(isset($array[$key])){
-                if(strpos($key,'date') !== false && !(Core::isValidDateTimeString($this->{$key}) || $this->{$key} instanceof DateTime))
-                    return false;
-                else if($this->{$key} !== $array[$key] && $key !== "loaded" && strpos($key,'date') === false)
-                    return false;
             }
 
         }
@@ -756,26 +752,14 @@ class Core{
         return htmlspecialchars(mysql_real_escape_string($data));
     }
 
-    public static function isValidDateTimeString($str_dt, $str_dateFormat = null, $str_timezone = null) {
-
-        $result = false;
+    public static function isValidDateTimeString($str_dt) {
 
         if(!is_string($str_dt))
             return false;
 
-        if($str_timezone === null)
-            $str_timezone = self::getTimezone();
-        else if(is_string($str_timezone))
-            $str_timezone = new DateTimeZone($str_timezone);
+        $date = new DateTime($str_dt);
 
-        if($str_dateFormat === null){
-            $str_dateFormat = 'Y-m-d H:i:s';
-            $result = self::isValidDateTimeString($str_dt,'Y-m-d');
-        }
-
-        $date = DateTime::createFromFormat($str_dateFormat, $str_dt, $str_timezone);
-
-        return (($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0) || $result);
+        return (($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0));
 
     }
 
@@ -784,10 +768,7 @@ class Core{
         if($timestamp instanceof DateTime)
             $timestamp = $timestamp->format('Y-m-d H:i:s');
 
-        if(strtotime($timestamp) === false)
-            return date('Y-m-d H:i:s', $timestamp);
-
-        return date('Y-m-d H:i:s', strtotime($timestamp));
+        return date('Y-m-d H:i:s', strtotime($timestamp) ?: $timestamp);
 
     }
 

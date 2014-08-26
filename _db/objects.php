@@ -419,9 +419,12 @@ class week extends event{
 
         $thisWeek = self::getCurrent();
 
+        if($thisWeek === false)
+            return false;
+
         $games = $thisWeek->getGames(true);
 
-        if($thisWeek === false)
+        if(count($games) <= 0)
             return false;
 
         $count = 0;
@@ -434,7 +437,6 @@ class week extends event{
                 break;
 
             $count++;
-
 
             $next = isset($games[$count]) ? $games[$count] : false;
 
@@ -467,7 +469,6 @@ class week extends event{
         }else{
             $newOffset = $newOffset*(-1);
             $game->sub(new DateInterval("PT{$newOffset}H"));
-
         }
 
         return $game->format('Y-m-d H:i:s');
@@ -476,19 +477,21 @@ class week extends event{
 
     public function getStructured($user_id = null, $noIndex = false){
 
+        $currentUser = users::returnCurrentUser();
+
         $this->games = $this->getGames($noIndex);
 
         $picks = $this->getPicks($user_id);
         $teams = teams::getTeamsList();
 
-        $tempRanking = users::getPlayerRanking(null, $this->id);
+        $tempRanking = users::getPlayerRanking($currentUser->id, $this->id);
 
-        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id))[0]['value'] ?: 0;
+        $this->week_score = stat_log::getUserStats(6, array('week_id' => $this->id, 'user_id' => $currentUser->id))[0]['value'] ?: 0;
         $this->week_rank = Core::formatNumber((((int) $tempRanking > 0) ? $tempRanking : "N/A" ));
 
-        $tempRanking = users::getPlayerRanking();
+        $tempRanking = users::getPlayerRanking($currentUser->id);
 
-        $this->total_score = stat_log::getUserStats(6)[0]['value'] ?: 0;
+        $this->total_score = stat_log::getUserStats(6, array('user_id' => $currentUser->id))[0]['value'] ?: 0;
         $this->total_rank = Core::formatNumber((((int) $tempRanking > 0) ? $tempRanking : "N/A" ));
 
         if(!is_bool($this->games)){
@@ -502,8 +505,8 @@ class week extends event{
                 $this->games[$key]->away_score = (int) $this->games[$key]->away_score;
                 $this->games[$key]->home_score = (int) $this->games[$key]->home_score;
 
-                $gameDate = new DateTime($this->games[$key]->date, Core::getTimezone());
-                $gameDate->setTime(0,0,0);
+                $gameDate = new DateTime($this->games[$key]->date);
+                //$gameDate->setTime(0,0,0);
 
                 $this->games[$key]->date_name = $gameDate->format('l');
                 $this->games[$key]->display_date = $gameDate->format('D, m/d');
@@ -511,7 +514,7 @@ class week extends event{
                 if(isset($picks[$val->id]))
                     $this->games[$key]->pick = $picks[$val->id];
                 else{
-                    $user = users::returnCurrentUser();
+                    $user = $currentUser;
 
                     $dataArray = array("season_id" => $this->season_id, "week_id" => $this->id, "game_id" => $val->id
                                       ,"team_id" => -1, "user_id" => $user->id, "value" => 0, "result" => -1);
@@ -770,15 +773,15 @@ class game extends DatabaseObject{
         if($id !== null)
             $this->load($id);
 
-        $now = new DateTime("now", Core::getTimezone());
-        $gameLock = new DateTime($this->getLockTime(), Core::getTimezone());
+        $now = new DateTime("now");
+        $gameLock = new DateTime($this->getLockTime());
 
         return ($now >= $gameLock) ? true : false;
     }
 
     public function getLockTime(){
 
-        $tempDate = new DateTime($this->date, Core::getTimezone());
+        $tempDate = new DateTime($this->date);
         $tempDate->setTime(0,0,0);
         $dayCheck =  $tempDate->format('D');
 

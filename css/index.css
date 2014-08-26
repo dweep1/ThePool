@@ -28,31 +28,31 @@ BODY {
 @media (min-width: 1940px) {
   /* line 12, scss/index.scss */
   BODY {
-    font-size: 135%;
+    font-size: 105%;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
   /* line 12, scss/index.scss */
   BODY {
-    font-size: 70%;
+    font-size: 85%;
   }
 }
 @media (max-width: 1274px) {
   /* line 12, scss/index.scss */
   BODY {
-    font-size: 80%;
+    font-size: 90%;
   }
 }
 @media (max-width: 1440px) {
   /* line 12, scss/index.scss */
   BODY {
-    font-size: 80%;
+    font-size: 85%;
   }
 }
 @media (max-width: 480px) {
   /* line 12, scss/index.scss */
   BODY {
-    font-size: 50%;
+    font-size: 80%;
   }
 }
 
@@ -309,8 +309,9 @@ H6 {
 #pick-clock {
   padding: 15px;
   position: absolute;
-  right: -440px;
-  width: 400px;
+  left: 100px;
+  min-width: 200px;
+  width: auto;
   background: #222;
   color: #fff;
   top: 0px;
@@ -318,18 +319,20 @@ H6 {
   z-index: 1000;
   text-align: center;
   white-space: nowrap;
+  display: inline-block;
 }
-/* line 229, scss/index.scss */
+/* line 231, scss/index.scss */
 #pick-clock.index {
-  width: 300px;
-  right: -340px;
+  min-width: 200px;
+  left: 20px;
+  right: auto;
 }
-/* line 234, scss/index.scss */
+/* line 237, scss/index.scss */
 #pick-clock div {
   display: inline-block;
   white-space: nowrap;
 }
-/* line 239, scss/index.scss */
+/* line 242, scss/index.scss */
 #pick-clock .sep {
   height: 20px;
   border-right: 1px solid #fff;
@@ -338,7 +341,7 @@ H6 {
   width: 1px;
 }
 
-/* line 248, scss/index.scss */
+/* line 251, scss/index.scss */
 .ui-spacer-item {
   display: inline-block;
   padding: 0.5% 1.5%;
@@ -347,19 +350,19 @@ H6 {
   font-weight: 400;
   vertical-align: middle;
 }
-/* line 256, scss/index.scss */
+/* line 259, scss/index.scss */
 .ui-spacer-item.large {
   font-size: 1.9em;
 }
 
-/* line 261, scss/index.scss */
+/* line 264, scss/index.scss */
 .ui-super {
   vertical-align: super;
   font-size: 0.5em;
   font-weight: 400;
 }
 
-/* line 267, scss/index.scss */
+/* line 270, scss/index.scss */
 .ui-legend-item {
   display: inline-block;
   margin: 0.5% 1%;
@@ -372,13 +375,13 @@ H6 {
   border: 3px solid #fff;
   behavior: url("./PIE.htc");
 }
-/* line 280, scss/index.scss */
+/* line 283, scss/index.scss */
 .ui-legend-item i {
   font-size: 1.5em;
   line-height: 1.5em;
 }
 
-/* line 287, scss/index.scss */
+/* line 290, scss/index.scss */
 .ui-button {
   color: #fff;
   background: #222;
@@ -395,7 +398,7 @@ H6 {
   cursor: pointer;
   behavior: url("./PIE.htc");
 }
-/* line 306, scss/index.scss */
+/* line 309, scss/index.scss */
 .ui-button:hover {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
@@ -403,7 +406,7 @@ H6 {
   border: 2px solid white;
   behavior: url("./PIE.htc");
 }
-/* line 312, scss/index.scss */
+/* line 315, scss/index.scss */
 .ui-button:active {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
@@ -411,20 +414,20 @@ H6 {
   border: 2px solid rgba(255, 255, 255, 0.5);
   behavior: url("./PIE.htc");
 }
-/* line 318, scss/index.scss */
+/* line 321, scss/index.scss */
 .ui-button.large {
   font-size: 16px;
   line-height: 12px;
   padding: 15px 20px;
   font-weight: 400;
 }
-/* line 325, scss/index.scss */
+/* line 328, scss/index.scss */
 .ui-button.dark {
   color: #fff;
   background: #222;
   border: 2px solid #444444;
 }
-/* line 330, scss/index.scss */
+/* line 333, scss/index.scss */
 .ui-button.dark:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
@@ -432,7 +435,7 @@ H6 {
   border-bottom: 2px solid black;
   behavior: url("./PIE.htc");
 }
-/* line 336, scss/index.scss */
+/* line 339, scss/index.scss */
 .ui-button.dark:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
@@ -441,7 +444,7 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 344, scss/index.scss */
+/* line 347, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
@@ -451,12 +454,13 @@ H6 {
   width: auto;
   display: block;
   color: #212121;
+  min-width: 500px;
 }
-/* line 354, scss/index.scss */
+/* line 358, scss/index.scss */
 #content-area .first {
   margin-top: 40px !important;
 }
-/* line 358, scss/index.scss */
+/* line 362, scss/index.scss */
 #content-area #changeBox {
   color: #f12a27;
   padding: 3%;
@@ -467,16 +471,16 @@ H6 {
   visibility: visible;
   behavior: url("./PIE.htc");
 }
-/* line 370, scss/index.scss */
+/* line 374, scss/index.scss */
 #content-area .remaining b {
   padding: 0px 3px;
 }
-/* line 375, scss/index.scss */
+/* line 379, scss/index.scss */
 #content-area .intro-word-con {
   margin-top: 2%;
   margin-left: 2%;
 }
-/* line 380, scss/index.scss */
+/* line 384, scss/index.scss */
 #content-area .intro-word {
   padding: 20px 30px;
   font-size: 3em;
@@ -491,7 +495,7 @@ H6 {
   margin-bottom: 15%;
   white-space: nowrap;
 }
-/* line 395, scss/index.scss */
+/* line 399, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -500,46 +504,46 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 403, scss/index.scss */
+/* line 407, scss/index.scss */
 #content-area .fluid-row.error {
   background: #F33;
   color: #fff;
   font-weight: 700;
 }
-/* line 409, scss/index.scss */
+/* line 413, scss/index.scss */
 #content-area .fluid-row.slim {
   padding: 11px 1%;
 }
-/* line 413, scss/index.scss */
+/* line 417, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
   background: #212121;
 }
-/* line 420, scss/index.scss */
+/* line 424, scss/index.scss */
 #content-area .fluid-row.secondary.fixed {
   position: fixed;
   right: 0;
   top: 0;
 }
 @media (max-width: 1274px) {
-  /* line 420, scss/index.scss */
+  /* line 424, scss/index.scss */
   #content-area .fluid-row.secondary.fixed {
     display: none;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 420, scss/index.scss */
+  /* line 424, scss/index.scss */
   #content-area .fluid-row.secondary.fixed {
     display: none;
   }
 }
 @media (max-width: 480px) {
-  /* line 420, scss/index.scss */
+  /* line 424, scss/index.scss */
   #content-area .fluid-row.secondary.fixed {
     display: none;
   }
 }
-/* line 440, scss/index.scss */
+/* line 444, scss/index.scss */
 #content-area .fluid-row.width-90 {
   width: -webkit-calc(80%);
   width: -moz-calc(80%);
@@ -549,7 +553,7 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 445, scss/index.scss */
+/* line 449, scss/index.scss */
 #content-area .fluid-row.width-90.full {
   width: auto;
   min-width: -webkit-calc(85%);
@@ -558,26 +562,26 @@ H6 {
   min-width: calc(85%);
   min-width: expression(85%);
 }
-/* line 451, scss/index.scss */
+/* line 455, scss/index.scss */
 #content-area .fluid-row.width-60 {
   width: 65%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 457, scss/index.scss */
+/* line 461, scss/index.scss */
 #content-area .fluid-row.width-30 {
   width: 30%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 463, scss/index.scss */
+/* line 467, scss/index.scss */
 #content-area .fluid-row.width-45 {
   width: 45%;
   display: inline-block;
   vertical-align: top;
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 463, scss/index.scss */
+  /* line 467, scss/index.scss */
   #content-area .fluid-row.width-45 {
     width: auto;
     display: block;
@@ -585,14 +589,14 @@ H6 {
   }
 }
 @media (max-width: 480px) {
-  /* line 463, scss/index.scss */
+  /* line 467, scss/index.scss */
   #content-area .fluid-row.width-45 {
     width: auto;
     display: block;
     float: none;
   }
 }
-/* line 481, scss/index.scss */
+/* line 485, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(47.5%);
   width: -moz-calc(47.5%);
@@ -603,7 +607,7 @@ H6 {
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 481, scss/index.scss */
+  /* line 485, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -611,7 +615,7 @@ H6 {
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 481, scss/index.scss */
+  /* line 485, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -619,7 +623,7 @@ H6 {
   }
 }
 @media (max-width: 480px) {
-  /* line 481, scss/index.scss */
+  /* line 485, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -627,7 +631,7 @@ H6 {
   }
 }
 @media (max-width: 1274px) {
-  /* line 505, scss/index.scss */
+  /* line 509, scss/index.scss */
   #content-area .fluid-row.over-90 {
     width: auto;
     display: block;
@@ -635,7 +639,7 @@ H6 {
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 505, scss/index.scss */
+  /* line 509, scss/index.scss */
   #content-area .fluid-row.over-90 {
     width: auto;
     display: block;
@@ -643,14 +647,14 @@ H6 {
   }
 }
 @media (max-width: 480px) {
-  /* line 505, scss/index.scss */
+  /* line 509, scss/index.scss */
   #content-area .fluid-row.over-90 {
     width: auto;
     display: block;
     float: none;
   }
 }
-/* line 526, scss/index.scss */
+/* line 530, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -658,7 +662,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 534, scss/index.scss */
+/* line 538, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -666,7 +670,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 542, scss/index.scss */
+/* line 546, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -676,7 +680,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 553, scss/index.scss */
+/* line 557, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -684,7 +688,7 @@ H6 {
   display: inline-block;
 }
 
-/* line 561, scss/index.scss */
+/* line 565, scss/index.scss */
 #logo-banner {
   width: 60%;
   min-width: 200px;
@@ -692,12 +696,12 @@ H6 {
   margin-top: 5%;
 }
 
-/* line 568, scss/index.scss */
+/* line 572, scss/index.scss */
 [data-trans-for] {
   cursor: pointer;
 }
 
-/* line 572, scss/index.scss */
+/* line 576, scss/index.scss */
 [data-bad-value="true"] {
   -webkit-box-shadow: red 0px 1px 10px;
   -moz-box-shadow: red 0px 1px 10px;
@@ -707,13 +711,13 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 580, scss/index.scss */
+/* line 584, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 585, scss/index.scss */
+/* line 589, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -722,15 +726,15 @@ H6 {
   margin: 15px 10px;
   position: relative;
 }
-/* line 593, scss/index.scss */
+/* line 597, scss/index.scss */
 .ui-games-list li .loss {
   text-decoration: line-through;
 }
-/* line 597, scss/index.scss */
+/* line 601, scss/index.scss */
 .ui-games-list li.full {
   width: auto;
 }
-/* line 601, scss/index.scss */
+/* line 605, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
@@ -741,35 +745,35 @@ H6 {
   cursor: pointer;
   behavior: url("./PIE.htc");
 }
-/* line 612, scss/index.scss */
+/* line 616, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 616, scss/index.scss */
+/* line 620, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 400;
   line-height: 1.8em;
 }
-/* line 621, scss/index.scss */
+/* line 625, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 625, scss/index.scss */
+/* line 629, scss/index.scss */
 .ui-games-list li .team.picked {
   text-shadow: black 0px 1px 2px;
   behavior: url("./PIE.htc");
 }
-/* line 629, scss/index.scss */
+/* line 633, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 400;
 }
-/* line 634, scss/index.scss */
+/* line 638, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
   font-size: 1.8em;
   line-height: 1em;
 }
-/* line 640, scss/index.scss */
+/* line 644, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -778,7 +782,7 @@ H6 {
   background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   behavior: url("./PIE.htc");
 }
-/* line 645, scss/index.scss */
+/* line 649, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
   background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -787,7 +791,7 @@ H6 {
   background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   behavior: url("./PIE.htc");
 }
-/* line 651, scss/index.scss */
+/* line 655, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 8% 8%;
   width: auto;
@@ -801,16 +805,16 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 660, scss/index.scss */
+/* line 664, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 666, scss/index.scss */
+/* line 670, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 670, scss/index.scss */
+/* line 674, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 8% 8%;
   width: auto;
@@ -824,12 +828,12 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 679, scss/index.scss */
+/* line 683, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 686, scss/index.scss */
+/* line 690, scss/index.scss */
 .ui-games-list li .display-date {
   position: absolute;
   right: -60px;
@@ -838,7 +842,7 @@ H6 {
   width: 50px;
   height: 50%;
 }
-/* line 695, scss/index.scss */
+/* line 699, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 30%;
@@ -847,7 +851,7 @@ H6 {
   white-space: nowrap;
   position: relative;
 }
-/* line 703, scss/index.scss */
+/* line 707, scss/index.scss */
 .ui-games-list li .middle i {
   position: relative;
   z-index: 100;
@@ -857,7 +861,7 @@ H6 {
   padding: 8%;
   font-style: normal;
 }
-/* line 713, scss/index.scss */
+/* line 717, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -865,21 +869,21 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 723, scss/index.scss */
+/* line 727, scss/index.scss */
 .ui-globalpicks {
   width: 100%;
 }
-/* line 727, scss/index.scss */
+/* line 731, scss/index.scss */
 .ui-globalpicks tr th {
   font-weight: 600;
   padding: 8px 6px;
   cursor: pointer;
 }
-/* line 732, scss/index.scss */
+/* line 736, scss/index.scss */
 .ui-globalpicks tr th i {
   color: #444;
 }
-/* line 737, scss/index.scss */
+/* line 741, scss/index.scss */
 .ui-globalpicks tr td {
   border: 1px solid rgba(180, 180, 180, 0.6);
   padding: 0.7%;
@@ -887,24 +891,24 @@ H6 {
   white-space: nowrap;
   font-size: 1.2em;
 }
-/* line 744, scss/index.scss */
+/* line 748, scss/index.scss */
 .ui-globalpicks tr td.username {
   font-weight: 500;
   table-layout: fixed;
   overflow: hidden;
 }
-/* line 750, scss/index.scss */
+/* line 754, scss/index.scss */
 .ui-globalpicks tr td small {
   font-weight: 400;
   font-size: 0.7em;
   line-height: 1em;
   color: #222;
 }
-/* line 756, scss/index.scss */
+/* line 760, scss/index.scss */
 .ui-globalpicks tr td small b {
   font-weight: 700;
 }
-/* line 763, scss/index.scss */
+/* line 767, scss/index.scss */
 .ui-globalpicks tr.selected td {
   -webkit-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   -moz-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
@@ -912,7 +916,7 @@ H6 {
   border: 1px solid rgba(100, 255, 0, 0.3);
   behavior: url("./PIE.htc");
 }
-/* line 771, scss/index.scss */
+/* line 775, scss/index.scss */
 .ui-globalpicks tr.rival td {
   -webkit-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
   -moz-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
@@ -920,12 +924,12 @@ H6 {
   border: 1px solid rgba(255, 30, 30, 0.6);
   behavior: url("./PIE.htc");
 }
-/* line 780, scss/index.scss */
+/* line 784, scss/index.scss */
 .ui-globalpicks tr.a td {
   background: rgba(51, 51, 51, 0.2);
 }
 
-/* line 787, scss/index.scss */
+/* line 791, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -939,7 +943,7 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 800, scss/index.scss */
+/* line 804, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -959,24 +963,24 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 813, scss/index.scss */
+/* line 817, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 819, scss/index.scss */
+/* line 823, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 823, scss/index.scss */
+/* line 827, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 829, scss/index.scss */
+/* line 833, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -987,19 +991,19 @@ input[type="text"], input[type="password"] {
   border-radius: 3px;
   behavior: url("./PIE.htc");
 }
-/* line 839, scss/index.scss */
+/* line 843, scss/index.scss */
 input[type="text"][name="username"], input[type="password"][name="username"] {
   margin-top: 15px;
 }
 
-/* line 845, scss/index.scss */
+/* line 849, scss/index.scss */
 .settings label {
   position: absolute;
   top: 28%;
   left: 5%;
 }
 
-/* line 852, scss/index.scss */
+/* line 856, scss/index.scss */
 label {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1008,7 +1012,7 @@ label {
   vertical-align: top;
 }
 
-/* line 860, scss/index.scss */
+/* line 864, scss/index.scss */
 select {
   padding: 8px 15px;
   border: 2px solid #222;
@@ -1016,7 +1020,7 @@ select {
   behavior: url("./PIE.htc");
 }
 
-/* line 867, scss/index.scss */
+/* line 871, scss/index.scss */
 select, option {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1024,12 +1028,12 @@ select, option {
   font-weight: 400;
 }
 
-/* line 874, scss/index.scss */
+/* line 878, scss/index.scss */
 option {
   padding: 5px 10px;
 }
 
-/* line 878, scss/index.scss */
+/* line 882, scss/index.scss */
 #login-area {
   padding: 3% 2%;
   width: 260px;
@@ -1039,7 +1043,7 @@ option {
   display: inline-block;
 }
 
-/* line 887, scss/index.scss */
+/* line 891, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -1061,17 +1065,35 @@ option {
   transition: all 0.6s ease;
   behavior: url("./PIE.htc");
 }
-/* line 903, scss/index.scss */
+@media (max-width: 1274px) {
+  /* line 891, scss/index.scss */
+  #main-nav {
+    position: absolute;
+  }
+}
+@media (min-width: 767px) and (max-width: 1024px) {
+  /* line 891, scss/index.scss */
+  #main-nav {
+    position: absolute;
+  }
+}
+@media (max-width: 480px) {
+  /* line 891, scss/index.scss */
+  #main-nav {
+    position: absolute;
+  }
+}
+/* line 919, scss/index.scss */
 #main-nav a {
   text-decoration: none;
 }
-/* line 908, scss/index.scss */
+/* line 924, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 914, scss/index.scss */
+/* line 930, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1079,11 +1101,11 @@ option {
   transition: all 0.2s ease;
   behavior: url("./PIE.htc");
 }
-/* line 918, scss/index.scss */
+/* line 934, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 923, scss/index.scss */
+/* line 939, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -1091,7 +1113,7 @@ option {
   height: 40px;
   text-align: center;
 }
-/* line 931, scss/index.scss */
+/* line 947, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -1099,7 +1121,7 @@ option {
   list-style: none;
   overflow: hidden;
 }
-/* line 939, scss/index.scss */
+/* line 955, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -1112,11 +1134,11 @@ option {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 949, scss/index.scss */
+/* line 965, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 953, scss/index.scss */
+/* line 969, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -1129,7 +1151,7 @@ option {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 965, scss/index.scss */
+/* line 981, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -1140,7 +1162,7 @@ option {
   vertical-align: middle;
   behavior: url("./PIE.htc");
 }
-/* line 973, scss/index.scss */
+/* line 989, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }
