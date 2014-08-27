@@ -120,28 +120,18 @@
 
     if (strcmp ($res, "VERIFIED") == 0) {
 
-        // check whether the payment_status is Completed
-        // check that txn_id has not been previously processed
-        // check that receiver_email is your PayPal email
-        // check that payment_amount/payment_currency are correct
-        // process payment and mark item as paid.
-
-        // assign posted variables to local variables
-        //$item_name = $_POST['item_name'];
-        //$item_number = $_POST['item_number'];
-        //$payment_status = $_POST['payment_status'];
-        //$payment_amount = $_POST['mc_gross'];
-        //$payment_currency = $_POST['mc_currency'];
-        //$txn_id = $_POST['txn_id'];
-        //$receiver_email = $_POST['receiver_email'];
-        //$payer_email = $_POST['payer_email'];
-
         if(strtolower($_POST['payment_status']) == strtolower("completed") || $_POST['payment_status'] == 'Completed'){
             $quantity = intval($_POST['quantity']);
 
             $user = new users;
 
-            if($user->load($_POST['pay_key'], "pay_key") === false){
+            if($_POST['receiver_email'] != "harr8142@bellsouth.net"){
+                error_log(date('[Y-m-d H:i e] '). "Error loading email, incorrect seller email specified". PHP_EOL, 3, LOG_FILE);
+                admin_log::generateLog(array( "type" => "Paypal Error", "subject" => "Possible Malicious User", "log_data" => "$req", "location" => $_SERVER['REQUEST_URI']));
+                exit;
+            }
+
+            if($user->load($_POST['custom'], "pay_key") === false){
 
                 error_log(date('[Y-m-d H:i e] '). "Error loading pay_key user from DB: $req". PHP_EOL, 3, LOG_FILE);
 

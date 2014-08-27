@@ -8,9 +8,8 @@
 
     $teams = teams::getTeamsList();
 
-    $thisWeek = (isset($_GET['week'])) ? week::selected($_GET['week']) : ((week::selected() !== false) ? week::selected() :  week::getCurrent());
-    //$games->getList("week_id asc", array("week_id" => $this->id));
-    $weeks = $thisWeek->getList("week_id asc", array("season_id" => $thisWeek->season_id));
+    $thisWeek = (isset($_GET['week'])) ? new week($_GET['week']) : week::getCurrent();
+    $weeks = $thisWeek->getList("week_id asc", array("season_id" => season::getCurrent()->id));
 
     $games = $thisWeek->getGames();
 

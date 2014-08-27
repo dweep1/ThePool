@@ -209,10 +209,18 @@ include "./menu.php";
             </div>
 
             <div class="fluid-row width-60 slim over-90">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick">
-                    <input type="hidden" name="pay_key" value="<?php echo $user->pay_key; ?>">
-                    <input type="hidden" name="hosted_button_id" value="4EFZYXXDWVFUA">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="harr8142@bellsouth.net">
+                    <input type="hidden" name="amount" value="0.01">
+                    <input type="hidden" name="undefined_quantity" value="1">
+                    <input type="hidden" name="item_name" value="Credit Week - The Pool">
+                    <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">
+                    <input type="hidden" name="custom" value="<?php echo $user->pay_key; ?>">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="cancel_return" value="http://www.whats-your-confidence.com/settings.php?success=false">
+                    <input type="hidden" name="return" value="http://www.whats-your-confidence.com/settings.php?success=true">
+                    <input type="hidden" name="notify_url" value="http://www.whats-your-confidence.com/_listeners/paypal_ipn.php">
                     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                 </form>

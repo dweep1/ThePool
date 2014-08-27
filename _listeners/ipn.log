@@ -371,3 +371,97 @@ VERIFIED
 [2014-08-25 20:22 America/New_York] 'payment_gross' => '0.01'
 [2014-08-25 20:22 America/New_York] 'shipping' => '0.00'
 [2014-08-25 20:22 America/New_York] 'ipn_track_id' => '6c68e33cd3e6a'
+[2014-08-26 21:46 America/New_York] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 801
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.01&protection_eligibility=Ineligible&payer_id=JGWVMCNTK79B4&tax=0.00&payment_date=18%3A46%3A31+Aug+26%2C+2014+PDT&payment_status=Completed&charset=windows-1252&first_name=Anthony&mc_fee=0.01&notify_version=3.8&custom=&payer_status=unverified&business=matkle414%40gmail.com&quantity=1&verify_sign=AAFb.D1blSGUoqe5njLmGVlzWcCPA.J63vY3I2X7S361ryBF0NB3sQmg&payer_email=antwood1971%40gmail.com&txn_id=1D16174192273843B&payment_type=instant&last_name=Harris&receiver_email=matkle414%40gmail.com&payment_fee=0.01&receiver_id=TVMLJTCS4TGFW&txn_type=web_accept&item_name=1+Credit+Week+-+The+Pool&mc_currency=USD&item_number=&residence_country=US&receipt_id=0685-6836-6755-5374&handling_amount=0.00&transaction_subject=&payment_gross=0.01&shipping=0.00&ipn_track_id=381ff4963841b
+[2014-08-26 21:46 America/New_York] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=14400
+Strict-Transport-Security: max-age=14400
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-1.paypal.com
+Date: Wed, 27 Aug 2014 01:46:46 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=RwRqXFzChc1yuNbR1nH1SB-xJ1DZTW4yH0OvBwHI3VJEigug-FRxSxPTvcxnzPb_tM1QJl9oua3A29CmUoLFD55scoveEk4oF0aaIm8x8Q4Z5JGWnnj4YxmtFjEOcUXn_WcQ7tq0oeq1YafPsN2RSHeZuPHvoUgefg2UcADhsgdH24waihIoodTRPTIrZFuW8HYqj-IknTvoxlev9DXkCI1EGy0TfOakwkwqenqN5AXa6rk-zbWw7OnHogzlGC6xaB2GN0gXLRI_ys2_zxUFFNYXe-5jgIRdn7Ks1ooFQxSipBWF1ANiBNJ5MH7iwstE0VwmU9kN_5Yr89dpMeEiB22IQUjy3QCfkCWk9WIUDFG_YRkguBY3qkoaWoNMppeK_94_gxoEiCbXiUjdIf3pDbN3HciSjOJy2zJYQZ98ib2MGB5leHyySHv1DVS; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 24-Aug-2024 01:46:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 26-Aug-2016 01:46:46 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.134.1409104006087915; path=/; expires=Fri, 19-Aug-44 01:46:46 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D2251881811; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.35.1409104006077248; path=/; expires=Fri, 19-Aug-44 01:46:46 GMT
+Set-Cookie: AKDC=slc-a-origin-www-1.paypal.com; expires=Wed, 27-Aug-2014 02:16:46 GMT; path=/; secure
+
+VERIFIED
+[2014-08-26 21:46 America/New_York] Error loading pay_key user from DB: cmd=_notify-validate&mc_gross=0.01&protection_eligibility=Ineligible&payer_id=JGWVMCNTK79B4&tax=0.00&payment_date=18%3A46%3A31+Aug+26%2C+2014+PDT&payment_status=Completed&charset=windows-1252&first_name=Anthony&mc_fee=0.01&notify_version=3.8&custom=&payer_status=unverified&business=matkle414%40gmail.com&quantity=1&verify_sign=AAFb.D1blSGUoqe5njLmGVlzWcCPA.J63vY3I2X7S361ryBF0NB3sQmg&payer_email=antwood1971%40gmail.com&txn_id=1D16174192273843B&payment_type=instant&last_name=Harris&receiver_email=matkle414%40gmail.com&payment_fee=0.01&receiver_id=TVMLJTCS4TGFW&txn_type=web_accept&item_name=1+Credit+Week+-+The+Pool&mc_currency=USD&item_number=&residence_country=US&receipt_id=0685-6836-6755-5374&handling_amount=0.00&transaction_subject=&payment_gross=0.01&shipping=0.00&ipn_track_id=381ff4963841b
+[2014-08-26 21:46 America/New_York] Verified IPN 
+[2014-08-26 21:46 America/New_York] 'mc_gross' => '0.01'
+[2014-08-26 21:46 America/New_York] 'protection_eligibility' => 'Ineligible'
+[2014-08-26 21:46 America/New_York] 'payer_id' => 'JGWVMCNTK79B4'
+[2014-08-26 21:46 America/New_York] 'tax' => '0.00'
+[2014-08-26 21:46 America/New_York] 'payment_date' => '18:46:31 Aug 26, 2014 PDT'
+[2014-08-26 21:46 America/New_York] 'payment_status' => 'Completed'
+[2014-08-26 21:46 America/New_York] 'charset' => 'windows-1252'
+[2014-08-26 21:46 America/New_York] 'first_name' => 'Anthony'
+[2014-08-26 21:46 America/New_York] 'mc_fee' => '0.01'
+[2014-08-26 21:46 America/New_York] 'notify_version' => '3.8'
+[2014-08-26 21:46 America/New_York] 'custom' => ''
+[2014-08-26 21:46 America/New_York] 'payer_status' => 'unverified'
+[2014-08-26 21:46 America/New_York] 'business' => 'matkle414@gmail.com'
+[2014-08-26 21:46 America/New_York] 'quantity' => '1'
+[2014-08-26 21:46 America/New_York] 'verify_sign' => 'AAFb.D1blSGUoqe5njLmGVlzWcCPA.J63vY3I2X7S361ryBF0NB3sQmg'
+[2014-08-26 21:46 America/New_York] 'payer_email' => 'antwood1971@gmail.com'
+[2014-08-26 21:46 America/New_York] 'txn_id' => '1D16174192273843B'
+[2014-08-26 21:46 America/New_York] 'payment_type' => 'instant'
+[2014-08-26 21:46 America/New_York] 'last_name' => 'Harris'
+[2014-08-26 21:46 America/New_York] 'receiver_email' => 'matkle414@gmail.com'
+[2014-08-26 21:46 America/New_York] 'payment_fee' => '0.01'
+[2014-08-26 21:46 America/New_York] 'receiver_id' => 'TVMLJTCS4TGFW'
+[2014-08-26 21:46 America/New_York] 'txn_type' => 'web_accept'
+[2014-08-26 21:46 America/New_York] 'item_name' => '1 Credit Week - The Pool'
+[2014-08-26 21:46 America/New_York] 'mc_currency' => 'USD'
+[2014-08-26 21:46 America/New_York] 'item_number' => ''
+[2014-08-26 21:46 America/New_York] 'residence_country' => 'US'
+[2014-08-26 21:46 America/New_York] 'receipt_id' => '0685-6836-6755-5374'
+[2014-08-26 21:46 America/New_York] 'handling_amount' => '0.00'
+[2014-08-26 21:46 America/New_York] 'transaction_subject' => ''
+[2014-08-26 21:46 America/New_York] 'payment_gross' => '0.01'
+[2014-08-26 21:46 America/New_York] 'shipping' => '0.00'
+[2014-08-26 21:46 America/New_York] 'ipn_track_id' => '381ff4963841b'
+[2014-08-26 23:52 America/New_York] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 969
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&mc_gross=0.01&protection_eligibility=Eligible&address_status=confirmed&payer_id=TVMLJTCS4TGFW&tax=0.00&address_street=2716A+E+Holmes+Ave&payment_date=20%3A52%3A43+Aug+26%2C+2014+PDT&payment_status=Completed&charset=windows-1252&address_zip=53110-1321&first_name=Mathew&mc_fee=0.01&address_country_code=US&address_name=Mathew+Kleppin&notify_version=3.8&custom=&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Cudahy&quantity=1&verify_sign=AGs52InFHk3cJ5j80u2Udq.A26J4AoO7d2oQ-oWQ9vBWJ7oy5FQVbDjR&payer_email=matkle414%40gmail.com&txn_id=3FC5396884012650W&payment_type=instant&last_name=Kleppin&address_state=WI&receiver_email=harr8142%40bellsouth.net&payment_fee=0.01&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=&residence_country=US&handling_amount=0.00&transaction_subject=&payment_gross=0.01&shipping=0.00&ipn_track_id=6f08bebd5d6b3
+[2014-08-26 23:52 America/New_York] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=14400
+Strict-Transport-Security: max-age=14400
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Wed, 27 Aug 2014 03:52:55 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=BI2mVHwVmfB9QPQfUTb3xWGcHwUQ00z-ncvMUiGLXqu3TMF3DG0ktThD7RMThpB6318KTpUjLzfL564n6SbuA4Y4u6wf_5EDRHtSQzE2tAk6qBS6f23pIoSJB8FH7EL5s7hbZhFIkX-LcXq4Y7oDS5sfmoLe1ZhT0wSrf5n4GkSpcCn2opGes-TkHPA0ntBjk2q_VXqTJgd3kreYewpXG7Nc5mF9grhEGUb7F4eKOyUcyGsZFaUD0zmXBCALhhngRwcuLmTZJ1-t2KobCLifYydMu0_jIt5dS00DwWezv1eLksv1aRmFVVrl_fDimccZ2Dqjn7A-xl2nJS_llV_rDXHSvqGth8Z9Zq2zE_wlJNcdWZ8xG62WEFBa3kOQI_8ccSIs7R3fbFSwHw1_hTScn5Rnc0KjJ2SGiHhUKzz5-UUFscSE0vzsuMeAwcC; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Sat, 24-Aug-2024 03:52:55 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Fri, 26-Aug-2016 03:52:55 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1409111575355185; path=/; expires=Fri, 19-Aug-44 03:52:55 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D391576915; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.63.1409111575345291; path=/; expires=Fri, 19-Aug-44 03:52:55 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Wed, 27-Aug-2014 04:22:55 GMT; path=/; secure
+
+VERIFIED
+[2014-08-26 23:52 America/New_York] Error loading email, incorrect seller email specified

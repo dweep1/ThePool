@@ -73,17 +73,17 @@
             </div>
         </div>
 
-        <div class="fluid-row slim aligncenter">
-            <h4>This Week's Games <button class="ui-button dark" type="button" data-link="./picks.php">Make Picks</button></h4>
+        <div class="fluid-row slim aligncenter" >
+            <h4>This Week's Games <button style="vertical-align: middle;" class="ui-button dark" type="button" data-link="./picks.php">Make Picks</button></h4>
         </div>
 
         <div class="fluid-row slim alignleft">
 
-            <div class="fluid-row width-50 slim alignleft">
+            <div class="fluid-row width-50 slim alignleft" style="vertical-align: middle;">
                 <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
             </div>
 
-            <div class="fluid-row width-50 slim alignright">
+            <div class="fluid-row width-50 slim alignright" style="vertical-align: middle;">
                 <h6>Search:</h6> <input type="text" data-ng-model="search" />
             </div>
 
@@ -149,13 +149,15 @@
 
         <div class="fluid-row slim alignleft">
 
-            <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
+            <div class="fluid-row width-50 slim alignleft">
+                <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
+            </div>
 
             <div data-trans-id="open_picks" class="aligncenter">
 
                 <ul class="ui-games-list">
 
-                    <li data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'open'"
+                    <li class="full" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'open'"
                         data-ng-if="item.gameLock == false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-team-id="{{ item.away_team.id }}"
