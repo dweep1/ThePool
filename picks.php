@@ -68,6 +68,7 @@
 
         <div class="fluid-row slim alignleft">
 
+            <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>
             <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
 
             <div class="clear-fix"></div>

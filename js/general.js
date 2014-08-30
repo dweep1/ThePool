@@ -136,6 +136,7 @@ $(document).ready(function(){
 
         $button.attr('data-button-type', "login");
         $button.html("Login");
+        $button.show();
         $("#text_id").html("Forgot Password");
 
         $confirm.val($confirm.prop("defaultValue"));
@@ -381,29 +382,11 @@ function toggleDataButtonType($button){
     if($button.length == 0)
         return false;
 
-    if($button.attr('data-button-type') === "register"){
-
-        $button.attr('data-button-type', "login");
-        $button.html("Login");
-        $("#text_id").html("Register");
-        $userName.attr("type", "text");
-
-        if ($password.val() === $password.prop("defaultValue") || $password.val().length === 0) {
-            $password.attr("type", "text");
-        }
-
-        if ($confirm.val() === $confirm.prop("defaultValue") || $confirm.val().length === 0) {
-            $confirm.attr("type", "text");
-        }else{
-            $confirm.attr("type", "password");
-        }
-
-        $submitType.val("1");
-
-    }else if($button.attr('data-button-type') === "login"){
+   if($button.attr('data-button-type') === "login"){
 
         $button.attr('data-button-type', "register");
-        $button.html("Register");
+        $button.html("");
+        $button.hide();
         $("#text_id").html("Login");
         $userName.attr("type", "hidden");
 

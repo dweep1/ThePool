@@ -58,8 +58,8 @@
 
         <div class="fluid-row aligncenter">
             <div class="ui-mini-screen" style="background: url('./images/mini-screen.png')">
-                <h6 class="current-title">Overall Standings</h6>
-                <h6 class="last-title">Last Week</h6>
+                <h5 class="current-title">Overall Standings</h5>
+                <h5 class="last-title">Last Week</h5>
 
                 <div class="current-data">
                     <h2>{{ weekOld.total_rank }}</h2>
@@ -130,7 +130,7 @@
                         </div>
 
 
-                        <div data-team-id="{{ item.home_team.id }}" class="team alignright"
+                        <div data-team-id="{{ item.home_team.id }}" class="team alignright float-right"
                              data-ng-class="{'picked': item.pick.team_id == item.home_team.id, 'loss': item.away_score > item.home_score}"
                              style="background-image: url('{{ item.home_team.image_url }}')">
 

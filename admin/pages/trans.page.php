@@ -1,7 +1,7 @@
 <div class="fluid-row">
-    <div data-ng-controller="GameController">
+    <div id="angularDiv" data-ng-controller="UserController">
 
-        <h3>Picks Management</h3>
+        <h3>Transaction Management</h3>
 
         <div class="fluid-row width-30">
 
@@ -32,71 +32,31 @@
 
         <div class="fluid-row width-60">
 
-            <div class="fluid-row alignleft">
-                <h6>Search Games:</h6>
-                <div class="clear-fix"></div>
-                <div class="float-left">
-                    <input type="text" data-ng-model="gameSearch" />
-                </div>
-                <div class="float-right">
-                    <button class="ui-buttons dark" ng-click="doRefresh()">Discard Changes</button>
-                    <button class="ui-buttons dark" ng-click="doSave()">Save Picks</button>
-                </div>
-                <div class="clear-fix"></div>
-            </div>
+            <ul class="pages-list">
 
-            <div class="fluid-row no-padding alignleft">
+                <li data-object='credit' data-credit-id="-1">Add New Credit<i class='fa right fa-desktop'></i></li>
 
-                <ul class="ui-games-list">
+                <hr />
 
-                    <li data-ng-repeat="item in games | filter:gameSearch | orderBy:'id'"
-                        data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
+                <li class="alignleft">
+                    <div class="width-10 aligncenter">Week ID</div>
+                    <div class="width-30 alignleft">Date</div>
+                    <div class="width-5"></div>
+                    <div class="width-30 alignleft">Transaction ID</div>
+                    <div class="width-10"></div>
+                    <div class="width-10 alignright">Delete?</div>
+                </li>
 
-                        <div data-ng-click="item.pick.team_id = item.away_team.id;"
-                             data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.away_team.id }}"
-                             data-ng-class="{true: 'team alignleft picked', false: 'team alignleft'}[item.pick.team_id == item.away_team.id]"
-                             style="background-image: url('{{ item.away_team.image_url }}')">
+                <li class="alignleft" data-ng-repeat="item in credits | orderBy:'-id'" >
+                    <div class="width-10 aligncenter">{{ item.week_id }}</div>
+                    <div class="width-30 alignleft">{{ item.date }}</div>
+                    <div class="width-5"></div>
+                    <div class="width-30 alignleft">{{ item.nid }}</div>
+                    <div class="width-10"></div>
+                    <div class="width-10 alignright" data-delete-id="{{ item.id }}"><i class='fa fa-times'></i></div>
+                </li>
 
-                            <div class="gradient-left">
-                                <h5>{{ item.away_team.city }}</h5>
-                                <h6>{{ item.away_team.team_name }}</h6>
-                            </div>
-
-                        </div>
-
-
-                        <div class="middle">
-
-                            <i class="fa fa-minus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) - 1;"></i>
-
-                            <input type="text" class="small" data-bad-value="{{ item.pick.bad }}" value="{{ item.pick.value }}"
-                                   data-ng-model="item.pick.value" data-game-id="{{ item.id }}" />
-
-                            <i class="fa fa-plus-circle" data-game-id="{{ item.id }}"
-                               data-ng-click="item.pick.value = (item.pick.value - 0) + 1;"></i>
-
-                        </div>
-
-
-                        <div data-ng-click="item.pick.team_id = item.home_team.id"
-                             data-pick-id="{{ item.pick.id }}" data-team-id="{{ item.home_team.id }}"
-                             data-ng-class="{true: 'team alignright float-right picked', false: 'team alignright float-right'}[item.pick.team_id == item.home_team.id]"
-                             style="background-image: url('{{ item.home_team.image_url }}')">
-
-                            <div class="gradient-right">
-                                <h5>{{ item.home_team.city }}</h5>
-                                <h6>{{ item.home_team.team_name }}</h6>
-                            </div>
-
-                        </div>
-
-                        <div class="clear-fix"></div>
-
-                    </li>
-                </ul>
-
-            </div>
+            </ul>
 
         </div>
 
@@ -107,9 +67,7 @@
 
     currentUser = <?php echo users::returnCurrentUser()->id; ?>;
 
-    function GameController($scope, $http) {
-
-        getLiveData($scope, $http);
+    function UserController($scope, $http) {
 
         $http.post("admin.json.php", { "data" : "users"}).
             success(function(data, status) {
@@ -120,6 +78,8 @@
                 $scope.users.forEach(function(entity){
                     entity.id = parseInt(entity.id);
                 });
+
+                getLiveData($scope, $http);
             })
             .
             error(function(data, status) {
@@ -133,135 +93,6 @@
             },200);
         };
 
-        $scope.doRefresh = function() {
-            getLiveData($scope, $http);
-        };
-
-        $scope.doSave = function() {
-            savePicks($scope, $http);
-        };
-
-    }
-
-    function getGamesPicked($scope){
-
-        var $games = $scope.games;
-
-        var $values = [];
-        var $dupes = [];
-
-        $scope.games.forEach(function(entity){
-
-            if(parseInt(entity.pick.team_id) !== -1){
-                if(indexOf.call($values, parseInt(entity.pick.value)) == -1)
-                    $values.push(parseInt(entity.pick.value));
-                else
-                    $dupes.push(parseInt(entity.pick.value));
-            }
-
-        });
-
-        $scope.games.forEach(function(entity){
-
-            if(parseInt(entity.pick.team_id) !== -1){
-
-                if(indexOf.call($dupes, parseInt(entity.pick.value)) > -1)
-                    entity.pick.bad = "true";
-                else
-                    entity.pick.bad = "false";
-
-            }
-
-        });
-
-        return $dupes;
-
-    }
-
-    function buildPicks($scope, $callback){
-
-        var $picks = [];
-
-        $scope.games.forEach(function(entity){
-            if(checkSet(entity.pick) !== false && parseInt(entity.pick.team_id) !== -1)
-                $picks.push(entity.pick);
-        });
-
-        $scope.picks = JSON.parse(JSON.stringify($picks));
-
-        $scope.picks.forEach(function(entity){
-            entity.user_id = localStorage["selected_user"];
-        });
-
-        if(checkSet($callback))
-            $callback();
-
-    }
-
-    function savePicks($scope, $http){
-
-        buildPicks($scope, function(){
-
-            var $dupes = getGamesPicked($scope);
-
-            if($dupes.length > 0){
-                createMessageBox(
-                    {title: "error", message: "You have duplicate pick values. Please check your picks!"},
-                    function($messageID){toggleDisplayMessageBox($messageID);}
-                );
-
-                return false;
-            }
-
-            var $pickBoundary = false;
-
-            $scope.picks.forEach(function(entity){
-                if(parseInt(entity.value) > $scope.games.length || parseInt(entity.value) < 0){
-                    $pickBoundary = true;
-                }
-            });
-
-            if($pickBoundary){
-                createMessageBox(
-                    {type: "error", title: "error", message: "One of your pick's values is too high or too low. Please check your picks!"},
-                    function($messageID){toggleDisplayMessageBox($messageID);}
-                );
-
-                return false;
-            }
-
-            return $http.post("./listn.picks.php?method=PUT", $scope.picks).
-                success(function(data, status) {
-
-                    $scope.status = status;
-
-                    createMessageBox(
-                        {type: "result", title: "result", message: data.result},
-                        function($messageID){toggleDisplayMessageBox($messageID);}
-                    );
-
-                    if(parseInt(data.errors) <= 0){
-                        $scope.force = true;
-
-                        getLiveData($scope, $http);
-                    }
-
-                    return true;
-
-                })
-                .
-                error(function(data, status) {
-                    $scope.data = data || "Request failed";
-                    $scope.status = status;
-
-                    if($scope.force === true)
-                        $scope.force = false;
-
-                    return false;
-                });
-
-        });
-
     }
 
     function getLiveData($scope, $http){
@@ -271,14 +102,11 @@
         else
             $scope.user_id = parseInt(currentUser);
 
-        localStorage["selected_user"] = $scope.user_id;
-
-        return $http.post("./listn.picks.php?method=GET", {"user_id" : $scope.user_id}).
+        return $http.post("./listn.credits.php?method=GET", {"user_id" : $scope.user_id}).
             success(function(data, status) {
 
                 $scope.status = status;
-                $scope.week = data;
-                $scope.games = data.games;
+                $scope.credits = data;
 
                 return true;
 
@@ -292,9 +120,41 @@
     }
 
 
+
+    $(document).on("mousedown", "[data-delete-id]", function (e) {
+
+        var $confirm = confirm("Are you sure you want to delete this credit?");
+
+        if ($confirm == true){
+
+            $.ajax({
+                url: './admin.credit.php',
+                type: 'post',
+                data: {submitType: 2, className: "credit", id: parseInt($(this).attr('data-delete-id'))},
+                success: function(data) {
+
+                    angular.element(document.getElementById('angularDiv')).scope().selectUser();
+
+                    displayFieldMessage(data);
+
+                }
+            });
+
+        }
+
+    });
+
     $(document).on("mousedown", "[data-user-id]", function (e) {
 
         localStorage["selected_user"] = $(this).attr('data-user-id');
+
+    });
+
+    $(document).on("mousedown", "[data-credit-id]", function (e) {
+
+        disabledEventPropagation(e);
+
+        displayPopup(localStorage["selected_user"], "manage.credit.php", $(this).attr('data-object'));
 
     });
 

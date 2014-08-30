@@ -62,11 +62,6 @@ include "./menu.php";
             </div>
 
             <div class="fluid-row width-90 slim alignleft">
-                Private Mode Enabled?: <b><?php echo ((int) $user->access_level === -1) ? "YES" : "NO"; ?></b>
-                <button type="button" id="togglePrivate" title="Don't show up on any of the lists or weekly results for anyone but yourself" class="ui-button dark float-right">Toggle Private Mode</button>
-            </div>
-
-            <div class="fluid-row width-90 slim alignleft">
 
                 <div class="fluid-row"><h4>Change Login Info</h4></div>
 

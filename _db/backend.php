@@ -752,26 +752,6 @@ class Core{
         return htmlspecialchars(mysql_real_escape_string($data));
     }
 
-    public static function isValidDateTimeString($str_dt) {
-
-        if(!is_string($str_dt))
-            return false;
-
-        $date = new DateTime($str_dt);
-
-        return (($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0));
-
-    }
-
-    public static function unixToMySQL($timestamp){
-
-        if($timestamp instanceof DateTime)
-            $timestamp = $timestamp->format('Y-m-d H:i:s');
-
-        return date('Y-m-d H:i:s', strtotime($timestamp) ?: $timestamp);
-
-    }
-
     public static function isJson($string){
         // make sure provided input is of type string
         if (!is_string($string))
@@ -812,10 +792,6 @@ class Core{
 
     }
 
-    public static function getTimezone(){
-        return new DateTimeZone('America/New_York');
-    }
-
     public static function base64_url_encode($input){
         return strtr(base64_encode($input), '+/=', '-_,');
     }
@@ -831,15 +807,46 @@ class Core{
 
     }
 
+
+    public static function getTimezone(){
+        return new DateTimeZone('America/New_York');
+    }
+
+    public static function isValidDateTimeString($str_dt) {
+
+        if(!is_string($str_dt))
+            return false;
+
+        try{
+
+            $date = new DateTime($str_dt);
+
+        }catch(Exception $e){
+
+            return false;
+
+        }
+
+        return (($date && DateTime::getLastErrors()["warning_count"] == 0 && DateTime::getLastErrors()["error_count"] == 0));
+
+    }
+
+    public static function unixToMySQL($timestamp){
+
+        if($timestamp instanceof DateTime)
+            $timestamp = $timestamp->format('Y-m-d H:i:s');
+
+        return date('Y-m-d H:i:s', strtotime($timestamp) ?: $timestamp);
+
+    }
+
     public static function getDay($dateTimeString){
 
-        $tempDate = new DateTime($dateTimeString, self::getTimezone());
+        $tempDate = new DateTime($dateTimeString);
         $tempDate->setTime(0,0,0);
         return $tempDate->format('D');
 
     }
-
-
 
 }
 

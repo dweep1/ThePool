@@ -173,7 +173,7 @@
 
                             foreach($games as $game){
 
-                                if(isset($tempUser->picks[$game->id])){
+                                if(isset($tempUser->picks[$game->id]) && $game->isLocked()){
 
                                     if($game->getWinner() == $tempUser->picks[$game->id]->team_id){
                                         $total += $tempUser->picks[$game->id]->value;

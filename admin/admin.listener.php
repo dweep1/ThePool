@@ -31,7 +31,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $objectType = $_POST['className'];
 
-
     //new admin_pages
 	if($submitType == 0){
 

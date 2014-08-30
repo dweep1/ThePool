@@ -21,16 +21,16 @@ function lockTimer(){
         }else{
             var d = Date.createFromMysql(data);
             var $lockHold = $('#lockHold');
-            var $dayLock = 'Thurs';
+            var $dayLock = 'Thursday';
 
             if(d.getDay() == 5){
-                $dayLock = 'Fri';
+                $dayLock = 'Friday';
             }else if(d.getDay() == 6){
-                $dayLock = 'Sat';
+                $dayLock = 'Saturday';
             }else if(d.getDay() == 0){
-                $dayLock = 'Sun';
+                $dayLock = 'Sunday';
             }else if(d.getDay() <= 1){
-                $dayLock = 'Mon';
+                $dayLock = 'Monday';
             }
 
             $('#day').html($dayLock);

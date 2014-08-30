@@ -35,6 +35,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['user'] = $response->toArray();
         }
 
+        header("Location: ../login.php");
+
     }else if((int)$submitType === 1){//register
 
         $response = doRegister($_POST);
@@ -46,8 +48,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         else if($response === false)//db error
             $_SESSION['result'] = "Database Error";
         else{
-
-            $username = explode("@", $_POST['email'])[0];
 
             $message = "You are now a member of a premiere betting league. Your account allows you to compete against others in a weekly betting pool.
             This is a chance for you to win big, through smart plays and persistence throughout the NFL season.
@@ -106,6 +106,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         }
 
+        header("Location: ../register.php");
+
 
     }else if((int)$submitType === 2){//forgot password
 
@@ -119,6 +121,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['result'] = "Unable to Mail Key";
         else
             $_SESSION['result'] = "Successfully Submitted Password Resend Request. Check your email for a link in a few minuets.";
+
+        header("Location: ../login.php");
 
 
     }else if((int)$submitType === 3){//user is resetting password
@@ -137,9 +141,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         else
             $_SESSION['result'] = "Database Error";
 
+        header("Location: ../login.php");
+
     }
 
-    header("Location: ../index.php");
 
 }
 

@@ -171,7 +171,7 @@ function popupBGResize($time){
     }
 }
 
-function ajaxSubmit($data){
+function ajaxSubmit($data, $callback){
 
     return $.ajax({
         url: './admin.listener.php',
@@ -180,6 +180,9 @@ function ajaxSubmit($data){
         data: $data,
         async: false,
         success: function(data) {
+
+            if (typeof $callback == 'function')
+                $callback();
 
             return data;
 

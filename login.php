@@ -1,57 +1,57 @@
 <?php
 
-    include_once "./_header.php";
+include_once "./_header.php";
 
-    FormValidation::generate();
+FormValidation::generate();
 
-    $currentUser = users::returnCurrentUser();
+$currentUser = users::returnCurrentUser();
 
-    $keyUser = new users();
+$keyUser = new users();
 
-    if($currentUser !== false && $currentUser->verifyAuth())
-        header("Location: ./home.php");
+if($currentUser !== false && $currentUser->verifyAuth())
+    header("Location: ./home.php");
 
-    if(isset($_GET['key']))
-        $keyUser->load($_GET['key'], "security_key");
+if(isset($_GET['key']))
+    $keyUser->load($_GET['key'], "security_key");
 
-    if($keyUser->id === null && isset($_GET['key']))
-        $_SESSION['result'] = (!isset($_SESSION['result'])) ? "The Key was invalid" : $_SESSION['result'];
+if($keyUser->id === null && isset($_GET['key']))
+    $_SESSION['result'] = (!isset($_SESSION['result'])) ? "The Key was invalid" : $_SESSION['result'];
 
 ?>
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
-<head>
+    <head>
 
-    <title>The Pool</title>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="./js/jquery.velocity.min.js"></script>
-    <script src="./js/velocity.ui.min.js"></script>
-    <script src="./js/modernizr.min.js"></script>
-    <script src="./js/general.js?ver=<?php echo VERSION ?>"></script>
-    <script src="./js/jquery.tinytimer.js"></script>
-    <script src="./js/pickClock.js"></script>
+        <title>The Pool</title>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="./js/jquery.velocity.min.js"></script>
+        <script src="./js/velocity.ui.min.js"></script>
+        <script src="./js/modernizr.min.js"></script>
+        <script src="./js/general.js?ver=<?php echo VERSION ?>"></script>
+        <script src="./js/jquery.tinytimer.js"></script>
+        <script src="./js/pickClock.js"></script>
 
-</head>
+    </head>
 <body class="height-100" data-ng-app>
 
-    <?php if(isset($_SESSION['result'])): ?>
+<?php if(isset($_SESSION['result'])): ?>
 
-        <div class="ui-message-background hidden" data-background-id="1"></div>
-        <div class="ui-message-box" data-type="error" data-message-id="1">
-            <i class="fa fa-times-circle float-right ui-message-close" data-close-id="1"></i>
-            <h5>Result</h5>
-            <div class="faux-row"><?php echo $_SESSION['result']; ?></div>
-        </div>
+    <div class="ui-message-background hidden" data-background-id="1"></div>
+    <div class="ui-message-box" data-type="error" data-message-id="1">
+        <i class="fa fa-times-circle float-right ui-message-close" data-close-id="1"></i>
+        <h5>Result</h5>
+        <div class="faux-row"><?php echo $_SESSION['result']; ?></div>
+    </div>
 
-    <?php endif; ?>
+<?php endif; ?>
 
-    <?php if($keyUser->id !== null): ?>
+<?php if($keyUser->id !== null): ?>
 
     <div class="ui-message-background hidden instant" data-background-id="2"></div>
     <div class="ui-message-box aligncenter" data-type="nopass" data-message-id="2">
@@ -66,7 +66,7 @@
         </form>
     </div>
 
-    <?php endif; ?>
+<?php endif; ?>
 
     <div id="content-area" class="height-100" style="background-image: url('./images/bg1.jpg'); background-size: cover; background-position: left center; margin-left:0px;">
 
@@ -86,34 +86,29 @@
                     <img id="logo-banner" src="./images/poolbanner.png" />
                 </div>
 
-                <div class="fluid-row width-45 aligncenter">
+                <div class="fluid-row width-90 aligncenter">
 
-                    <div class="intro-word-con">
-                        <div class="intro-word-small" data-link="./login.php">
-                            <a href="./login.php">Already have an account? <b>Returning User Login</b></a>
-                        </div> <br/>
-                        <div class="intro-word-small" data-link="./register.php">
-                            <a href="./register.php">New users should <b>Click Here</b> to create an account</a>
-                        </div> <br/>
-                        <div class="intro-word-small">
-                            Note: Returning users from last year should register a new account if they haven't already.
-                        </div>
+                    <div id="login-area">
+                        <h5 id="text_id">Login</h5>
+                        <form action="./_listeners/listn.login.php" method="post">
+                            <div class="faux-row">
+                                <input type="text" name="email" value="Email" />
+                            </div>
+                            <div class="faux-row">
+                                <input type="text" name="password" value="Password" data-password autocomplete="off" />
+                            </div>
+                            <div class="faux-row">
+                                <div id="forgotPass" style="cursor:pointer; padding:2%;"><h6>Forgot Password?</h6></div>
+                            </div>
+                            <div class="faux-row"></div>
+                            <input type="hidden" name="submitType" value="0" />
+                            <div class="faux-row aligncenter">
+                                <button type="button" class="ui-button large" data-button-type="register"></button>
+                                <button class="ui-button large">Submit</button>
+                            </div>
+                        </form>
                     </div>
 
-                </div>
-
-                <div class="fluid-row width-45 aligncenter">
-                    <div class="intro-word-con">
-                        <div class="intro-word">
-                            Plan &#62;
-                        </div> <br/>
-                        <div class="intro-word">
-                            Pick &#62;
-                        </div> <br/>
-                        <div class="intro-word">
-                            Play &#62;
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -147,6 +142,7 @@
     <script>
 
         $(document).ready(function(){
+            $('[data-button-type="register"]').hide();
             lockTimer();
             localStorage.clear();
         });
@@ -157,6 +153,6 @@
 
 <?php
 
-    include "./_footer.php";
+include "./_footer.php";
 
 ?>

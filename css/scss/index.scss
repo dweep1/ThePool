@@ -20,9 +20,9 @@ BODY {
   @include respondTo(desktop) { font-size: 100%; }
   @include respondTo(retina) { font-size: 105%; }
   @include respondTo(tablet) { font-size: 85%; }
-  @include respondTo(smallScreen) { font-size: 90%; }
-  @include respondTo(laptop) { font-size: 85%; }
-  @include respondTo(smartphone) { font-size: 80%; }
+  @include respondTo(smallScreen) { font-size: 95%; }
+  @include respondTo(laptop) { font-size: 90%; }
+  @include respondTo(smartphone) { font-size: 85%; }
 
 }
 
@@ -213,6 +213,10 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
   }
 }
 
+[data-link]{
+  cursor: pointer;
+}
+
 #pick-clock{
   padding:15px;
   position: absolute;
@@ -394,6 +398,31 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
     letter-spacing: 4px;
     margin-bottom:15%;
     white-space: nowrap;
+    //@include box-shadow(rgba(#000,0.9) 0px 0px 2px);
+    @include text-shadow(#000 0px 0px 2px);
+    behavior: url('./PIE.htc');
+  }
+
+  .intro-word-small{
+    padding:20px 30px;
+    font-size:1.2em;
+    line-height:1em;
+    background:#212121;
+    color:#fff;
+    display:inline-block;
+    font-family: 'Quicksand', sans-serif;
+
+    font-weight:400;
+    letter-spacing: 0px;
+    margin-bottom:10%;
+    width:80%;
+    //@include box-shadow(rgba(#000,0.9) 0px 0px 2px);
+    @include text-shadow(#000 0px 0px 2px);
+    behavior: url('./PIE.htc');
+
+    a{
+      text-decoration: none;
+    }
   }
 
   .fluid-row{
@@ -468,12 +497,6 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
       width: 45%;
       display:inline-block;
       vertical-align: top;
-
-      @include respondTo(tablet) {
-        width:auto;
-        display:block;
-        float:none;
-      }
 
       @include respondTo(smartphone) {
         width:auto;

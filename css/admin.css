@@ -37,7 +37,7 @@ BODY {
     font-size: 70%;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 12, scss/admin.scss */
   BODY {
     font-size: 50%;
@@ -614,7 +614,7 @@ select:not(.top) {
     display: block;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 476, scss/admin.scss */
   .fluid-row.width-40 {
     width: auto;
@@ -645,7 +645,7 @@ select:not(.top) {
     display: block;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 497, scss/admin.scss */
   .fluid-row.width-60 {
     width: auto;
@@ -685,7 +685,7 @@ select:not(.top) {
     display: none;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 535, scss/admin.scss */
   .fluid-row.secondary.fixed {
     display: none;
@@ -730,7 +730,7 @@ select:not(.top) {
     display: block;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 566, scss/admin.scss */
   .fluid-row.width-30 {
     width: auto;
@@ -763,7 +763,7 @@ select:not(.top) {
     float: none;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 587, scss/admin.scss */
   .fluid-row.width-50 {
     width: auto;
@@ -787,7 +787,7 @@ select:not(.top) {
     float: none;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   /* line 611, scss/admin.scss */
   .fluid-row.over-90 {
     width: auto;

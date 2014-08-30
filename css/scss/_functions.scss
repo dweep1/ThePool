@@ -29,12 +29,12 @@
 *
 */
 
-$smartphone: 480px;
+$smartphone: 600px;
 $tabletPortrait: 767px;
 $tabletLandscape: 1024px;
 $desktop: 1274px;
 $largeScreen: 1940px;
-$laptop: 1440px;
+$laptop: 1640px;
 
 @mixin respondTo($media) {
   @if $media == smartphone {
