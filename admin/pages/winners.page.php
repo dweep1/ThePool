@@ -10,7 +10,8 @@ $winners = [];
 $prizeValues = [];
 
 $currentWeek = week::getCurrent();
-$userList = users::getFilteredUserList();
+$userList = new users;
+$userList = $userList->getList();
 
 $tempList = [];
 foreach($userList as $value){
