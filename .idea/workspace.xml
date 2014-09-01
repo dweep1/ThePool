@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/general.js" afterPath="$PROJECT_DIR$/js/general.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.picks.php" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +73,7 @@
     <file path="/admin_pages.page.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405646217523" ignored="false" />
     <file path="/users.page.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1407523797392" ignored="false" />
     <file path="/listn.rest.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405874802805" ignored="false" />
-    <file path="/listn.picks.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408342959215" ignored="false" />
+    <file path="/listn.picks.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1409556843307" ignored="false" />
     <file path="/testing.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1406074512852" ignored="false" />
     <file path="/listn.teams.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405888091751" ignored="false" />
     <file path="/home.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408513893224" ignored="false" />
@@ -197,15 +196,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="326" column="38" selection-start="14275" selection-end="14275" vertical-scroll-proportion="1.1268656">
+            <state line="297" column="0" selection-start="13444" selection-end="13444" vertical-scroll-proportion="-2.0769231">
               <folding>
                 <element signature="e#8549#8578#0" expanded="true" />
                 <marker date="1409556578584" expanded="true" signature="10017:10272" placeholder="..." />
                 <marker date="1409556578584" expanded="true" signature="13043:13305" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listn.picks.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="8" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.09381663">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -223,15 +231,6 @@
         <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="35" column="59" selection-start="971" selection-end="1003" vertical-scroll-proportion="-11.115385">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/admin.header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="41" selection-start="245" selection-end="245" vertical-scroll-proportion="-5.8846154">
               <folding />
             </state>
           </provider>
@@ -300,7 +299,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/admin/pages/trans.page.php" />
         <option value="$PROJECT_DIR$/_db/backend.php" />
         <option value="$PROJECT_DIR$/js/dashboard.js" />
         <option value="$PROJECT_DIR$/results.php" />
@@ -316,6 +314,7 @@
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
         <option value="$PROJECT_DIR$/js/general.js" />
         <option value="$PROJECT_DIR$/settings.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
       </list>
     </option>
   </component>
@@ -773,13 +772,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="9" selection-start="6235" selection-end="6235" vertical-scroll-proportion="0.34221748">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/listn.users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="5" selection-start="7" selection-end="396" vertical-scroll-proportion="-13.076923">
@@ -959,12 +951,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="38" selection-start="14275" selection-end="14275" vertical-scroll-proportion="1.1268656">
+        <state line="297" column="0" selection-start="13444" selection-end="13444" vertical-scroll-proportion="-2.0769231">
           <folding>
             <element signature="e#8549#8578#0" expanded="true" />
             <marker date="1409556578584" expanded="true" signature="10017:10272" placeholder="..." />
             <marker date="1409556578584" expanded="true" signature="13043:13305" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="8" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.09381663">
+          <folding />
         </state>
       </provider>
     </entry>

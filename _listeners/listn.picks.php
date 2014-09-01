@@ -35,13 +35,6 @@
         $result = array("result" => "");
         $errors = 0;
 
-        if(!credit::useCredit(null,$currentWeek->id)){
-
-            $result["result"] .= "You don't have a valid credit to use currently. ";
-            $errors++;
-
-        }
-
         foreach($objData as $key => $value){
 
             if((int) $value->value > count($gamesList) || $value->value < 0){
@@ -54,41 +47,50 @@
             }
 
         }
+        
+        if(count($objData) > 0){
+            if(!credit::useCredit(null,$currentWeek->id)){
 
-        if($errors === 0){
+                $result["result"] .= "You don't have a valid credit to use currently. ";
+                $errors++;
 
-            foreach($objData as $value){
+            }
 
-                $savePick = new pick($value);
+            if($errors === 0){
 
-                $game = new game($savePick->game_id);
+                foreach($objData as $value){
 
-                if($game->isLocked()){
+                    $savePick = new pick($value);
 
-                    $result["result"] .= "Current Game Is Locked";
-                    $errors++;
+                    $game = new game($savePick->game_id);
 
-                }else{
+                    if($game->isLocked()){
 
-                    $checkPick = new pick();
-                    $checkPick->load(array($savePick->game_id, $savePick->user_id), array("type" => array("game_id", "user_id")));
-
-                    if((int) $checkPick->id > 0){
-
-                        $savePick->id = $checkPick->id;
-
-                        if($savePick->update() === false){
-                            $result["result"] .= "Unable to update old pick. ";
-                            $errors++;
-                        }
+                        $result["result"] .= "Current Game Is Locked";
+                        $errors++;
 
                     }else{
 
-                        if($savePick->save() === false){
-                            $result["result"] .= "Unable to save new pick. ";
-                            $errors++;
-                        }
+                        $checkPick = new pick();
+                        $checkPick->load(array($savePick->game_id, $savePick->user_id), array("type" => array("game_id", "user_id")));
 
+                        if((int) $checkPick->id > 0){
+
+                            $savePick->id = $checkPick->id;
+
+                            if($savePick->update() === false){
+                                $result["result"] .= "Unable to update old pick. ";
+                                $errors++;
+                            }
+
+                        }else{
+
+                            if($savePick->save() === false){
+                                $result["result"] .= "Unable to save new pick. ";
+                                $errors++;
+                            }
+
+                        }
                     }
                 }
             }
