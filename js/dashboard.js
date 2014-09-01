@@ -70,15 +70,33 @@ function getLiveStats($scope, $http){
 
             });
 
-            var tempRank = "<div class='ui-spacer-item large'>"+ordinal_suffix_of(data.userRank[0].rankData.rank)+" <small class='ui-super'>rank</small></div>";
+            var $rank = data.userRank[0].rankData.rank;
 
-            tempRank += "<div class='ui-spacer-item large'>"+data.userRank[0].rankData.total+" <small class='ui-super'>total</small></div>";
+            if(checkSet($rank) == false)
+                $rank = "N/A";
+            else
+                $rank = ordinal_suffix_of($rank);
+
+            var tempRank = "<div class='ui-spacer-item large'>"+$rank+" <small class='ui-super'>rank</small></div>";
+
+            var $total = data.userRank[0].rankData.total;
+
+            if(checkSet($total) == false || isNaN($total))
+                $total = "0";
+
+            tempRank += "<div class='ui-spacer-item large'>"+$total+" <small class='ui-super'>total</small></div>";
 
             var $average = data.userRank[0].rankData.total/data.weeks.length;
+
+            if(checkSet($average) == false || isNaN($average))
+                $average = 0;
 
             tempRank += "<div class='ui-spacer-item large'>"+$average.toFixed(2)+" <small class='ui-super'>avg weekly</small></div>";
 
             var $percent =  data.userRank[0].rankData.percent*100;
+
+            if(checkSet($percent) == false || isNaN($percent))
+                $percent = 0;
 
             tempRank += "<div class='ui-spacer-item large'>"+$percent.toFixed(2)+"% <small class='ui-super'>pick</small></div>";
 

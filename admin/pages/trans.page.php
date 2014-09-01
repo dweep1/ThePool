@@ -108,6 +108,10 @@
                 $scope.status = status;
                 $scope.credits = data;
 
+                $scope.credits.forEach(function(entity){
+                    entity.id = parseInt(entity.id);
+                });
+
                 return true;
 
             })

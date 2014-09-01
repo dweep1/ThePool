@@ -75,6 +75,8 @@
 
         <div class="fluid-row slim aligncenter" >
             <h4>This Week's Games <button style="vertical-align: middle;" class="ui-button dark" type="button" data-link="./picks.php">Make Picks</button></h4>
+            <br/>
+            <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
         </div>
 
         <div class="fluid-row slim alignleft">

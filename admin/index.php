@@ -63,7 +63,7 @@ global $si;
 
     <?php if($user->verifyAdmin() === false): ?>
 
-        <div class="ui-message-background hidden" data-background-id="1"></div>
+        <div class="ui-message-background hidden instant" data-background-id="1"></div>
         <div class="ui-message-box aligncenter" data-type="nopass" data-message-id="1">
             <i class="fa fa-times-circle float-right ui-message-close" style="display:none" data-close-id="1"></i>
             <h6>Admin Login</h6>

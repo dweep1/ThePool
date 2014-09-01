@@ -126,6 +126,7 @@
 
         <div class="fluid-row slim alignleft">
             <h5 style="display:inline-block">Week #<?php echo $thisWeek->week_number; ?>'s Results</h5>
+            <h5>Pool Size: ~$<?php echo week::getPoolAmount($thisWeek->id); ?></h5>
             <h4 style="display:inline-block; cursor:pointer" data-link="./results.print.php?week=<?php echo $thisWeek->id; ?>" class="float-right" title="Printer Friendly Version" ><i class="fa fa-print"></i></h4>
         </div>
 

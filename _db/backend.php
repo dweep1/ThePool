@@ -632,7 +632,7 @@ abstract class DatabaseObject{
     public function updateObject($array){
         $keyChain = $this->toArray();
 
-        if(is_object($array))//converts json to an array
+        if(is_object($array))//converts (json) stdClass Object to an array
             $array = (array) $array;
 
         if(!is_array($array))
@@ -734,9 +734,10 @@ class Core{
 			';dbname='    . Config::read('db.base') .
 			';connect_timeout=15';
 
-		$this->dbh = new PDO($dsn, Config::read('db.user'), Config::read('db.password'), array(PDO::ATTR_PERSISTENT => true));
-		$this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDO::ERRMODE_SILENT
-		$this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
+        $this->dbh = @new PDO($dsn, Config::read('db.user'), Config::read('db.password'), array(PDO::ATTR_PERSISTENT => true));
+        $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDO::ERRMODE_SILENT
+        $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
+
 	}
 
 	public static function getInstance(){

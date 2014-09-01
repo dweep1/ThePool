@@ -62,8 +62,6 @@
                 if($game->getWinner() !== false)
                     $savePick->result = ((int) $savePick->team_id === (int) $game->getWinner()) ? 1 : 0;
 
-                //var_dump($game->getWinner());
-
                 $checkPick = new pick();
                 $checkPick->load(array($savePick->game_id, $savePick->user_id), array("type" => array("game_id", "user_id")));
 

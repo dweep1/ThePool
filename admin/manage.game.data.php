@@ -45,7 +45,7 @@ $teams = teams::getTeamsList();
         </div>
 
         <div class="fluid-row slim">
-            <label for="username">Away Score: </label> <input type="text" class="float-right" no-default id="away_score" name="away_score" value="<?php echo $obj->away_score; ?>" />
+            <label for="username">Away Score: </label> <input type="text" class="float-right" id="away_score" name="away_score" value="<?php echo $obj->away_score; ?>" />
             <div class="clear-fix"></div>
         </div>
 
@@ -54,7 +54,7 @@ $teams = teams::getTeamsList();
         </div>
 
         <div class="fluid-row slim">
-            <label for="paypal">Home Score: </label> <input type="text" class="float-right" no-default id="home_score" name="home_score" value="<?php echo $obj->home_score; ?>" />
+            <label for="paypal">Home Score: </label> <input type="text" class="float-right" id="home_score" name="home_score" value="<?php echo $obj->home_score; ?>" />
             <div class="clear-fix"></div>
         </div>
 

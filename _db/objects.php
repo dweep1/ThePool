@@ -407,6 +407,61 @@ class week extends event{
         return new week(28);
     }*/
 
+    public static function getPoolAmount($week_id = false, $countSeason = false){
+
+        $pickNumber = 0;
+        $multiple = new options();
+
+        if($countSeason === false){
+            $week_id = ($week_id) ?: week::getCurrent()->id;
+
+            $prepare = "SELECT user_id FROM pick WHERE week_id = :week_id GROUP BY user_id";
+
+            try {
+
+                $pdo = Core::getInstance();
+                $query = $pdo->dbh->prepare($prepare);
+
+                $query->execute(array(":week_id" => $week_id));
+
+                $pickNumber = count($query->fetchAll());
+
+            }catch(PDOException $pe) {
+
+                trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+            }
+
+            $multiple->load("credit_weekly_value", "name");
+
+        }else{
+
+            $countSeason = ($countSeason === true) ? season::getCurrent()->id : $countSeason;
+
+            $prepare = "SELECT user_id FROM pick WHERE season_id = :season_id GROUP BY user_id";
+
+            try {
+
+                $pdo = Core::getInstance();
+                $query = $pdo->dbh->prepare($prepare);
+
+                $query->execute(array(":season_id" => $countSeason));
+
+                $pickNumber = count($query->fetchAll());
+
+            }catch(PDOException $pe) {
+
+                trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
+            }
+
+            $multiple->load("credit_season_value", "name");
+        }
+
+        return ($pickNumber*10)*($multiple->value/100);
+
+    }
+
     public function getGameCount(){
 
         $games = $this->getGames(true);
@@ -586,24 +641,22 @@ class credit extends DatabaseObject{
         if($week_id === null)
             $week_id = week::getCurrent()->id;
 
-        $credit = self::validCredit($user_id, $week_id);
+        $credits = self::validCredit($user_id, $week_id);
 
-        if($credit !== false){
+        if($credits !== false){
             return true;
         }else{
 
-            $credit = self::validCredit($user_id, -1);
+            $credits = new credit;
+            $credits = $credits->getList("id asc", array("user_id" => $user_id, "week_id" => -1));
 
-            if($credit !== false){
+            if($credits !== false){
 
-                $elem = false;
-
-                foreach($credit as $value){
-                    $elem = $value;
-                }
+                $elem = $credits[0];
 
                 $elem->week_id = $week_id;
-                return $credit->update();
+
+                return $elem->update();
             }
 
         }

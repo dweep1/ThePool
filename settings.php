@@ -52,6 +52,27 @@ include "./menu.php";
 <div id="content-area">
     <div class="width-50 fluid-row aligncenter settings first">
 
+        <div class="fluid-row aligncenter">
+            <div class="fluid-row slim">
+                <h6>Purchase Credit</h6><br/><br/>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="business" value="harr8142@bellsouth.net">
+                    <input type="hidden" name="amount" value="10.00">
+                    <input type="hidden" name="undefined_quantity" value="1">
+                    <input type="hidden" name="item_name" value="Credit Week - The Pool">
+                    <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">
+                    <input type="hidden" name="custom" value="<?php echo $user->pay_key; ?>">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="cancel_return" value="http://www.whats-your-confidence.com/settings.php?success=false">
+                    <input type="hidden" name="return" value="http://www.whats-your-confidence.com/settings.php?success=true">
+                    <input type="hidden" name="notify_url" value="http://www.whats-your-confidence.com/_listeners/paypal_ipn.php">
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+        </div>
+
         <form action="./_listeners/listn.settings.php" id="changeUser" method="post">
             <input type="hidden" name="submitType" value="0" />
             <input type="hidden" id="access_level" name="access_level" value="<?php echo $user->access_level; ?>" />
@@ -61,56 +82,33 @@ include "./menu.php";
                 <button class="ui-button dark float-right">Save Account Changes</button>
             </div>
 
-            <div class="fluid-row width-90 slim alignleft">
-
-                <div class="fluid-row"><h4>Change Login Info</h4></div>
-
-                <div class="fluid-row width-60 slim over-90">
-                    <label for="email">Email: </label> <input type="text" class="float-right" no-default id="email" name="email" value="<?php echo $user->email; ?>" />
-                    <div class="clear-fix"></div>
-                </div>
-
-                <div class="fluid-row slim"></div>
-
-                <div class="fluid-row width-60 slim over-90">
-                    <label for="password">New Password: </label> <input class="float-right" type="password" id="password" name="password" />
-                    <div class="clear-fix"></div>
-                </div>
-
-                <div class="fluid-row width-60 slim over-90">
-                    <label for="confirm">Confirm Password: </label> <input class="float-right" type="password" id="confirm" name="confirm" />
-                    <div class="clear-fix"></div>
-                </div>
-
-            </div>
-
-            <div class="fluid-row width-90 slim alignleft">
+            <div class="fluid-row width-90 slim aligncenter">
 
                 <div class="fluid-row"><h4>Add/Edit Account Info</h4></div>
 
-                <div class="fluid-row width-60 slim over-90">
+                <div class="fluid-row slim over-90">
                     <label for="username">Username: </label> <input class="float-right" type="text" no-default id="username" name="username" value="<?php echo $user->username; ?>" />
                     <div class="clear-fix"></div>
                 </div>
 
-                <div class="fluid-row width-60 slim over-90">
+                <div class="fluid-row slim over-90">
                     <label for="first_name">First Name: </label> <input class="float-right" type="text" no-default id="first_name" name="first_name" value="<?php echo $user->first_name; ?>" />
                     <div class="clear-fix"></div>
                 </div>
 
-                <div class="fluid-row width-60 slim over-90">
+                <div class="fluid-row slim over-90">
                     <label for="last_name">Last Name: </label> <input class="float-right" type="text" no-default id="last_name" name="last_name" value="<?php echo $user->last_name; ?>" />
                     <div class="clear-fix"></div>
                 </div>
 
-                <div class="fluid-row width-60 slim over-90 <?php echo (strlen($user->paypal) > 3) ? "" : "error"; ?>">
+                <div class="fluid-row slim over-90 <?php echo (strlen($user->paypal) > 3) ? "" : "error"; ?>">
                     <label for="username">Paypal Email: </label> <input class="float-right" type="text" no-default id="paypal" name="paypal" value="<?php echo $user->paypal; ?>" />
                     <div class="clear-fix"></div>
                 </div>
 
                 <div class="fluid-row slim"></div>
 
-                <div class="fluid-row width-60 slim over-90">
+                <div class="fluid-row slim over-90">
                     <label for="favorite_team_id">Favorite Team: </label>
                     <select id="favorite_team_id" name="favorite_team_id" class="float-right">
                         <option value="0" >Favorite Team</option>
@@ -125,6 +123,37 @@ include "./menu.php";
                         ?>
                     </select>
                     <div class="clear-fix"></div>
+                </div>
+
+            </div>
+
+            <div class="fluid-row width-90 slim aligncenter">
+
+                <div class="fluid-row"><h4>Change Login Info</h4></div>
+
+                <div class="fluid-row slim over-90">
+                    <label for="email">Email: </label> <input type="text" class="float-right" no-default id="email" name="email" value="<?php echo $user->email; ?>" />
+                    <div class="clear-fix"></div>
+                </div>
+
+                <div class="fluid-row slim"></div>
+
+                <div class="fluid-row slim over-90">
+                    <label for="password">New Password: </label> <input class="float-right" type="password" id="password" name="password" />
+                    <div class="clear-fix"></div>
+                </div>
+
+                <div class="fluid-row slim over-90">
+                    <label for="confirm">Confirm Password: </label> <input class="float-right" type="password" id="confirm" name="confirm" />
+                    <div class="clear-fix"></div>
+                </div>
+
+            </div>
+
+            <div class="fluid-row width-90 slim alignleft">
+
+                <div class="fluid-row alignleft">
+                    <button class="ui-button dark float-right">Save Account Changes</button>
                 </div>
 
             </div>
@@ -207,7 +236,7 @@ include "./menu.php";
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                     <input type="hidden" name="cmd" value="_xclick">
                     <input type="hidden" name="business" value="harr8142@bellsouth.net">
-                    <input type="hidden" name="amount" value="0.01">
+                    <input type="hidden" name="amount" value="10.00">
                     <input type="hidden" name="undefined_quantity" value="1">
                     <input type="hidden" name="item_name" value="Credit Week - The Pool">
                     <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">
