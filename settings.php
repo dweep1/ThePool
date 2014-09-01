@@ -83,9 +83,9 @@ include "./menu.php";
             <input type="hidden" name="submitType" value="0" />
             <input type="hidden" id="access_level" name="access_level" value="<?php echo $user->access_level; ?>" />
 
-            <div class="fluid-row width-90 alignleft <?php echo (!isset($_GET['password'])) ? "" : "error"; ?>">
-                <h6>Confirm Password</h6>  <input type="password" name="confirm_password" autocomplete="off" />
-                <button class="ui-button dark float-right">Save Account Changes</button>
+            <div id="errorMe" class="fluid-row width-90 alignleft <?php echo (!isset($_GET['password'])) ? "" : "error"; ?>">
+                <h6>Confirm Password</h6>  <input id="confirm_password" type="password" name="confirm_password" autocomplete="off" />
+                <button type="button" class="ui-button dark save-button float-right">Save Account Changes</button>
             </div>
 
             <div class="fluid-row width-90 slim aligncenter">
@@ -159,7 +159,7 @@ include "./menu.php";
             <div class="fluid-row width-90 slim alignleft">
 
                 <div class="fluid-row alignleft">
-                    <button class="ui-button dark float-right">Save Account Changes</button>
+                    <button type="button" class="ui-button save-button dark float-right">Save Account Changes</button>
                 </div>
 
             </div>
@@ -305,6 +305,30 @@ include "./menu.php";
         $("#rivalForm").submit();
 
     });
+
+    $(document).on("mousedown", ".save-button", function (e) {
+
+        var $confirmPW = $("#confirm_password").val();
+
+        if($confirmPW.length <= 3){
+
+            var $error = $("#errorMe");
+            $error.addClass("result");
+
+            $('html, body').animate({
+                scrollTop: $error.offset().top
+            }, 1000);
+
+            createMessageBox(
+                {type: "error", title: "error", message: "In order to your account info, you must first confirm your password."},
+                function($messageID){ toggleDisplayMessageBox($messageID);}
+            );
+        }else{
+            $("#changeUser").submit();
+        }
+
+    });
+
 
     $(document).on("mousedown", "#togglePrivate", function (e) {
 

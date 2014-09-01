@@ -313,7 +313,7 @@ function toggleDisplayMessageBox($id, $callback){
         else if($box.attr("data-type") === "error")
             $background.velocity({ opacity: 0.3 },{ display: "block", duration: $duration });
         else
-            $background.velocity({ opacity: 1 },{ display: "block", duration: $duration });
+            $background.velocity({ opacity: 0.3 },{ display: "block", duration: $duration });
 
         $box.velocity({ top: $top }, { duration: $duration, delay: $delay,
             complete: function(){if(checkSet($callback)){$callback();}}
