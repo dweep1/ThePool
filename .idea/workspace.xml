@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/pages/winners.page.php" afterPath="$PROJECT_DIR$/admin/pages/winners.page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,7 +78,7 @@
     <file path="/listn.teams.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1405888091751" ignored="false" />
     <file path="/home.js" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1408513893224" ignored="false" />
     <file path="/listn.credit.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1406071692773" ignored="false" />
-    <file path="/settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1409533712962" ignored="false" />
+    <file path="/settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1409537217622" ignored="false" />
     <file path="/listn.settings.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1409534801744" ignored="false" />
     <file path="/results.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1409531512225" ignored="false" />
     <file path="/error.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1406494559235" ignored="false" />
@@ -174,10 +174,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="winners.page.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="winners.page.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/pages/winners.page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="22" selection-start="186" selection-end="186" vertical-scroll-proportion="0.19936034">
+            <state line="12" column="22" selection-start="186" selection-end="186" vertical-scroll-proportion="-7.1923075">
               <folding>
                 <marker date="1409536915270" expanded="true" signature="2036:2068" placeholder="..." />
                 <marker date="1409536915270" expanded="true" signature="2036:2078" placeholder="..." />
@@ -191,6 +191,18 @@
                 <marker date="1409536915270" expanded="true" signature="2780:3230" placeholder="..." />
                 <marker date="1409536915270" expanded="true" signature="2780:2859" placeholder="..." />
                 <marker date="1409536915270" expanded="true" signature="2903:2944" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="542" selection-end="542" vertical-scroll-proportion="0.28997868">
+              <folding>
+                <marker date="1409537395318" expanded="true" signature="9930:10185" placeholder="..." />
+                <marker date="1409537395318" expanded="true" signature="12956:13218" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -307,15 +319,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.users.data.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/manage.users.data.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="171" selection-start="2865" selection-end="3075" vertical-scroll-proportion="-25.5">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -343,13 +346,13 @@
         <option value="$PROJECT_DIR$/admin/listn.picks.php" />
         <option value="$PROJECT_DIR$/picks.php" />
         <option value="$PROJECT_DIR$/_db/objects.php" />
-        <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/admin/listn.users.php" />
         <option value="$PROJECT_DIR$/admin/pages/settings.page.php" />
         <option value="$PROJECT_DIR$/admin/listn.settings.php" />
         <option value="$PROJECT_DIR$/_header.php" />
         <option value="$PROJECT_DIR$/admin/admin.header.php" />
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
+        <option value="$PROJECT_DIR$/settings.php" />
       </list>
     </option>
   </component>
@@ -807,13 +810,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/pages/users.page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="9.807693">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.92430705">
@@ -980,7 +976,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/winners.page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="22" selection-start="186" selection-end="186" vertical-scroll-proportion="0.19936034">
+        <state line="12" column="22" selection-start="186" selection-end="186" vertical-scroll-proportion="-7.1923075">
           <folding>
             <marker date="1409536915270" expanded="true" signature="2036:2068" placeholder="..." />
             <marker date="1409536915270" expanded="true" signature="2036:2078" placeholder="..." />
@@ -994,6 +990,16 @@
             <marker date="1409536915270" expanded="true" signature="2780:3230" placeholder="..." />
             <marker date="1409536915270" expanded="true" signature="2780:2859" placeholder="..." />
             <marker date="1409536915270" expanded="true" signature="2903:2944" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="542" selection-end="542" vertical-scroll-proportion="0.28997868">
+          <folding>
+            <marker date="1409537395318" expanded="true" signature="9930:10185" placeholder="..." />
+            <marker date="1409537395318" expanded="true" signature="12956:13218" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -11,6 +11,12 @@ if($user === false || !$user->verifyAuth())
 
 $teams = teams::getTeamsList();
 
+if(isset($_GET["success"])){
+    $_SESSION["result"] = ($_GET["success"] == "true" || $_GET["success"] == true) ? "Successfully Submitted Purchase of The Pool credits.<br/><br/>
+    Once the transaction has completed, the credits will be added to your account." : "You have canceled your Purchase of The Pool credits";
+}
+
+
 ?>
 <!DOCTYPE html>
 <html>
