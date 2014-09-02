@@ -1,6 +1,9 @@
 <?php
 
-require_once "backend.php";
+if(!class_exists('Core')){
+    require "backend.php";
+}
+
 
 Config::write('db.host', 'localhost');
 Config::write('db.base', 'thepool');//whatsyo1_thepool - thepool

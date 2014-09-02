@@ -29,7 +29,7 @@ class users extends DatabaseObject{
 
         if(!class_exists('Password')){
             global $ROOT_DB_PATH;
-            @include_once "{$ROOT_DB_PATH}security.php";
+            @include "{$ROOT_DB_PATH}security.php";
         }
 
         $passwordCheck = new Password($this->password, array('salt' => $this->salt, 'hashed' => true));

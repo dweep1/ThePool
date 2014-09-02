@@ -16,9 +16,9 @@
 
     $ROOT_DB_PATH = "./_db/";
 
-    include_once "{$ROOT_DB_PATH}header.php";
-    include_once "{$ROOT_DB_PATH}security.php";
-    include_once "{$ROOT_DB_PATH}objects.php";
+    include "{$ROOT_DB_PATH}header.php";
+    include "{$ROOT_DB_PATH}security.php";
+    include "{$ROOT_DB_PATH}objects.php";
 
     $memTwo = memory_get_usage();
 

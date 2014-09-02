@@ -3,8 +3,8 @@
 global $ROOT_DB_PATH;
 $ROOT_DB_PATH = "./";
 
-include_once "{$ROOT_DB_PATH}header.php";
-include_once "{$ROOT_DB_PATH}objects.php";
+include "{$ROOT_DB_PATH}header.php";
+include "{$ROOT_DB_PATH}objects.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
