@@ -66,7 +66,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="./css/index.css?ver=0.3" rel="stylesheet" type="text/css" />
+    <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
 
 </head>
 <body class="height-100">
@@ -115,7 +115,7 @@
 
                     foreach($games as $game){
 
-                        if(isset($tempUser->picks[$game->id]) $game->isLocked()){
+                        if(isset($tempUser->picks[$game->id]) && $game->isLocked()){
 
                             if($game->getWinner() == $tempUser->picks[$game->id]->team_id){
                                 $total += $tempUser->picks[$game->id]->value;

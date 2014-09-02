@@ -1,4 +1,3 @@
-<script src="./js/bug_report.js"></script>
 
 <?php
 

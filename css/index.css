@@ -1,6 +1,53 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
-@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700);
 /* _functions.scss */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Roboto Light"), local("Roboto-Light"), url(http://fonts.gstatic.com/s/roboto/v13/Hgo13k-tfSpn0qi1SFdUfT8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Regular"), local("Roboto-Regular"), url(http://fonts.gstatic.com/s/roboto/v13/2UX7WLTfW3W8TclTUvlFyQ.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local("Roboto Medium"), local("Roboto-Medium"), url(http://fonts.gstatic.com/s/roboto/v13/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url(http://fonts.gstatic.com/s/roboto/v13/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 300;
+  src: local("Quicksand Light"), local("Quicksand-Light"), url(http://fonts.gstatic.com/s/quicksand/v5/qhfoJiLu10kFjChCCTvGlHhCUOGz7vYGh680lGh-uXM.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Quicksand Regular"), local("Quicksand-Regular"), url(http://fonts.gstatic.com/s/quicksand/v5/sKd0EMYPAh5PYCRKSryvWz8E0i7KZn-EPnyo3HZu7kw.woff) format("woff");
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Quicksand Bold"), local("Quicksand-Bold"), url(http://fonts.gstatic.com/s/quicksand/v5/32nyIRHyCu6iqEka_hbKsnhCUOGz7vYGh680lGh-uXM.woff) format("woff");
+}
+
 /*
 * Respond To
 * Copied from UtilityBelt- https://github.com/dmtintner/UtilityBelt
@@ -9,7 +56,7 @@
 * @include respondTo(smartphone){ display: none; }
 *
 */
-/* line 12, scss/index.scss */
+/* line 9, scss/index.scss */
 BODY {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -20,54 +67,54 @@ BODY {
   padding: 0;
 }
 @media (min-width: 1274px) {
-  /* line 12, scss/index.scss */
+  /* line 9, scss/index.scss */
   BODY {
     font-size: 100%;
   }
 }
 @media (min-width: 1940px) {
-  /* line 12, scss/index.scss */
+  /* line 9, scss/index.scss */
   BODY {
     font-size: 105%;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 12, scss/index.scss */
+  /* line 9, scss/index.scss */
   BODY {
     font-size: 85%;
   }
 }
 @media (max-width: 1274px) {
-  /* line 12, scss/index.scss */
+  /* line 9, scss/index.scss */
   BODY {
     font-size: 95%;
   }
 }
 @media (max-width: 1640px) {
-  /* line 12, scss/index.scss */
+  /* line 9, scss/index.scss */
   BODY {
     font-size: 90%;
   }
 }
 @media (max-width: 600px) {
-  /* line 12, scss/index.scss */
+  /* line 9, scss/index.scss */
   BODY {
     font-size: 85%;
   }
 }
 
-/* line 29, scss/index.scss */
+/* line 26, scss/index.scss */
 DIV {
   margin: 0;
   padding: 0;
 }
 
-/* line 33, scss/index.scss */
+/* line 30, scss/index.scss */
 A {
   color: inherit;
 }
 
-/* line 38, scss/index.scss */
+/* line 35, scss/index.scss */
 H1, H2, H3, H4, H5, H6 {
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
@@ -77,42 +124,42 @@ H1, H2, H3, H4, H5, H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 47, scss/index.scss */
+/* line 44, scss/index.scss */
 H1 {
   font-size: 2.8em;
   line-height: 1em;
   letter-spacing: 4px;
 }
 
-/* line 48, scss/index.scss */
+/* line 45, scss/index.scss */
 H2 {
   font-size: 2.4em;
   line-height: 1em;
   letter-spacing: 4px;
 }
 
-/* line 49, scss/index.scss */
+/* line 46, scss/index.scss */
 H3 {
   font-size: 2.0em;
   line-height: 1em;
   letter-spacing: 3px;
 }
 
-/* line 50, scss/index.scss */
+/* line 47, scss/index.scss */
 H4 {
   font-size: 1.8em;
   line-height: 1em;
   letter-spacing: 3px;
 }
 
-/* line 51, scss/index.scss */
+/* line 48, scss/index.scss */
 H5 {
   font-size: 1.3em;
   line-height: 1em;
   letter-spacing: 2px;
 }
 
-/* line 52, scss/index.scss */
+/* line 49, scss/index.scss */
 H6 {
   font-size: 1.0em;
   line-height: 1em;
@@ -120,7 +167,7 @@ H6 {
   display: inline-block;
 }
 
-/* line 54, scss/index.scss */
+/* line 51, scss/index.scss */
 .clear-fix:after {
   content: ".";
   display: block;
@@ -131,56 +178,56 @@ H6 {
 }
 
 /* IE Mac/Win fixes below */
-/* line 63, scss/index.scss */
+/* line 60, scss/index.scss */
 .clear-fix {
   display: inline-block;
   /* For IE/Mac */
 }
 
 /* Hides from IE/Mac \*/
-/* line 67, scss/index.scss */
+/* line 64, scss/index.scss */
 * html .clear-fix {
   height: 1%;
 }
 
-/* line 68, scss/index.scss */
+/* line 65, scss/index.scss */
 .clear-fix {
   display: block;
 }
 
 /* End hide from IE/Mac */
-/* line 71, scss/index.scss */
+/* line 68, scss/index.scss */
 .float-right {
   float: right;
 }
 
-/* line 75, scss/index.scss */
+/* line 72, scss/index.scss */
 .float-left {
   float: left;
 }
 
-/* line 79, scss/index.scss */
+/* line 76, scss/index.scss */
 .aligncenter {
   text-align: center;
 }
 
-/* line 83, scss/index.scss */
+/* line 80, scss/index.scss */
 .alignright {
   text-align: right;
 }
 
-/* line 87, scss/index.scss */
+/* line 84, scss/index.scss */
 .alignleft {
   text-align: left;
 }
 
-/* line 91, scss/index.scss */
+/* line 88, scss/index.scss */
 .hidden {
   opacity: 0;
   display: none;
 }
 
-/* line 96, scss/index.scss */
+/* line 93, scss/index.scss */
 .ui-mini-screen {
   width: 80%;
   background: #222;
@@ -189,31 +236,31 @@ H6 {
   display: inline-block;
   white-space: nowrap;
 }
-/* line 104, scss/index.scss */
+/* line 101, scss/index.scss */
 .ui-mini-screen .current-title {
   position: absolute;
   top: 2%;
   left: 2%;
 }
-/* line 110, scss/index.scss */
+/* line 107, scss/index.scss */
 .ui-mini-screen .last-title {
   position: absolute;
   top: 2%;
   right: 2%;
 }
-/* line 116, scss/index.scss */
+/* line 113, scss/index.scss */
 .ui-mini-screen .current-data {
   display: inline-block;
   padding: 20% 16%;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
-/* line 122, scss/index.scss */
+/* line 119, scss/index.scss */
 .ui-mini-screen .last-data {
   display: inline-block;
   padding: 20% 16%;
 }
 
-/* line 128, scss/index.scss */
+/* line 125, scss/index.scss */
 #debug {
   position: fixed;
   top: 0px;
@@ -228,89 +275,89 @@ H6 {
   display: inline-block;
 }
 
-/* line 142, scss/index.scss */
+/* line 139, scss/index.scss */
 #perChart {
   min-height: 400px;
 }
 
-/* line 146, scss/index.scss */
+/* line 143, scss/index.scss */
 [data-rival-id] {
   cursor: pointer;
   padding: 5px;
   vertical-align: middle;
 }
 
-/* line 152, scss/index.scss */
+/* line 149, scss/index.scss */
 .ui-rank-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-/* line 157, scss/index.scss */
+/* line 154, scss/index.scss */
 .ui-rank-list .title {
   font-weight: 700;
 }
-/* line 161, scss/index.scss */
+/* line 158, scss/index.scss */
 .ui-rank-list .highlight {
   background: #fff;
   color: #222;
 }
-/* line 166, scss/index.scss */
+/* line 163, scss/index.scss */
 .ui-rank-list .rival {
   background: rgba(250, 40, 40, 0.7);
   color: #fff;
 }
-/* line 171, scss/index.scss */
+/* line 168, scss/index.scss */
 .ui-rank-list li {
   display: block;
   margin: 0;
   padding: 1.7%;
   white-space: nowrap;
 }
-/* line 177, scss/index.scss */
+/* line 174, scss/index.scss */
 .ui-rank-list li .width-40 {
   width: 45%;
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
 }
-/* line 184, scss/index.scss */
+/* line 181, scss/index.scss */
 .ui-rank-list li .width-5 {
   width: 5%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 190, scss/index.scss */
+/* line 187, scss/index.scss */
 .ui-rank-list li .width-20 {
   width: 19%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 196, scss/index.scss */
+/* line 193, scss/index.scss */
 .ui-rank-list li .width-25 {
   width: 25%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 202, scss/index.scss */
+/* line 199, scss/index.scss */
 .ui-rank-list li .width-50 {
   width: 50%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 208, scss/index.scss */
+/* line 205, scss/index.scss */
 .ui-rank-list li .width-70 {
   width: 68%;
   display: inline-block;
   vertical-align: top;
 }
 
-/* line 216, scss/index.scss */
+/* line 213, scss/index.scss */
 [data-link] {
   cursor: pointer;
 }
 
-/* line 220, scss/index.scss */
+/* line 217, scss/index.scss */
 #pick-clock {
   padding: 15px;
   position: absolute;
@@ -326,18 +373,18 @@ H6 {
   white-space: nowrap;
   display: inline-block;
 }
-/* line 235, scss/index.scss */
+/* line 232, scss/index.scss */
 #pick-clock.index {
   min-width: 200px;
   left: 20px;
   right: auto;
 }
-/* line 241, scss/index.scss */
+/* line 238, scss/index.scss */
 #pick-clock div {
   display: inline-block;
   white-space: nowrap;
 }
-/* line 246, scss/index.scss */
+/* line 243, scss/index.scss */
 #pick-clock .sep {
   height: 20px;
   border-right: 1px solid #fff;
@@ -346,7 +393,7 @@ H6 {
   width: 1px;
 }
 
-/* line 255, scss/index.scss */
+/* line 252, scss/index.scss */
 .ui-spacer-item {
   display: inline-block;
   padding: 0.5% 1.5%;
@@ -355,19 +402,19 @@ H6 {
   font-weight: 400;
   vertical-align: middle;
 }
-/* line 263, scss/index.scss */
+/* line 260, scss/index.scss */
 .ui-spacer-item.large {
   font-size: 1.9em;
 }
 
-/* line 268, scss/index.scss */
+/* line 265, scss/index.scss */
 .ui-super {
   vertical-align: super;
   font-size: 0.5em;
   font-weight: 400;
 }
 
-/* line 274, scss/index.scss */
+/* line 271, scss/index.scss */
 .ui-legend-item {
   display: inline-block;
   margin: 0.5% 1%;
@@ -380,13 +427,13 @@ H6 {
   border: 3px solid #fff;
   behavior: url("./PIE.htc");
 }
-/* line 287, scss/index.scss */
+/* line 284, scss/index.scss */
 .ui-legend-item i {
   font-size: 1.5em;
   line-height: 1.5em;
 }
 
-/* line 294, scss/index.scss */
+/* line 291, scss/index.scss */
 .ui-button {
   color: #fff;
   background: #222;
@@ -403,7 +450,7 @@ H6 {
   cursor: pointer;
   behavior: url("./PIE.htc");
 }
-/* line 313, scss/index.scss */
+/* line 310, scss/index.scss */
 .ui-button:hover {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 2px;
@@ -411,7 +458,7 @@ H6 {
   border: 2px solid white;
   behavior: url("./PIE.htc");
 }
-/* line 319, scss/index.scss */
+/* line 316, scss/index.scss */
 .ui-button:active {
   -webkit-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
   -moz-box-shadow: rgba(255, 255, 255, 0.6) 0px 0px 3px;
@@ -419,20 +466,20 @@ H6 {
   border: 2px solid rgba(255, 255, 255, 0.5);
   behavior: url("./PIE.htc");
 }
-/* line 325, scss/index.scss */
+/* line 322, scss/index.scss */
 .ui-button.large {
   font-size: 16px;
   line-height: 12px;
   padding: 15px 20px;
   font-weight: 400;
 }
-/* line 332, scss/index.scss */
+/* line 329, scss/index.scss */
 .ui-button.dark {
   color: #fff;
   background: #222;
   border: 2px solid #444444;
 }
-/* line 337, scss/index.scss */
+/* line 334, scss/index.scss */
 .ui-button.dark:hover {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 5px;
@@ -440,7 +487,7 @@ H6 {
   border-bottom: 2px solid black;
   behavior: url("./PIE.htc");
 }
-/* line 343, scss/index.scss */
+/* line 340, scss/index.scss */
 .ui-button.dark:active {
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
   -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 0px 2px;
@@ -449,7 +496,7 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 351, scss/index.scss */
+/* line 348, scss/index.scss */
 #content-area {
   height: auto;
   margin: 0;
@@ -461,11 +508,11 @@ H6 {
   color: #212121;
   min-width: 500px;
 }
-/* line 362, scss/index.scss */
+/* line 359, scss/index.scss */
 #content-area .first {
   margin-top: 40px !important;
 }
-/* line 366, scss/index.scss */
+/* line 363, scss/index.scss */
 #content-area #changeBox {
   color: #f12a27;
   padding: 3%;
@@ -476,16 +523,16 @@ H6 {
   visibility: visible;
   behavior: url("./PIE.htc");
 }
-/* line 378, scss/index.scss */
+/* line 375, scss/index.scss */
 #content-area .remaining b {
   padding: 0px 3px;
 }
-/* line 383, scss/index.scss */
+/* line 380, scss/index.scss */
 #content-area .intro-word-con {
   margin-top: 2%;
   margin-left: 2%;
 }
-/* line 388, scss/index.scss */
+/* line 385, scss/index.scss */
 #content-area .intro-word {
   padding: 20px 30px;
   font-size: 3em;
@@ -502,7 +549,7 @@ H6 {
   text-shadow: black 0px 0px 2px;
   behavior: url("./PIE.htc");
 }
-/* line 406, scss/index.scss */
+/* line 403, scss/index.scss */
 #content-area .intro-word-small {
   padding: 20px 30px;
   font-size: 1.2em;
@@ -518,11 +565,11 @@ H6 {
   text-shadow: black 0px 0px 2px;
   behavior: url("./PIE.htc");
 }
-/* line 423, scss/index.scss */
+/* line 420, scss/index.scss */
 #content-area .intro-word-small a {
   text-decoration: none;
 }
-/* line 428, scss/index.scss */
+/* line 425, scss/index.scss */
 #content-area .fluid-row {
   margin: 0;
   position: relative;
@@ -531,46 +578,46 @@ H6 {
   width: auto;
   z-index: 10;
 }
-/* line 436, scss/index.scss */
+/* line 433, scss/index.scss */
 #content-area .fluid-row.error {
   background: #F33;
   color: #fff;
   font-weight: 700;
 }
-/* line 442, scss/index.scss */
+/* line 439, scss/index.scss */
 #content-area .fluid-row.slim {
   padding: 11px 1%;
 }
-/* line 446, scss/index.scss */
+/* line 443, scss/index.scss */
 #content-area .fluid-row.dark {
   color: #fff;
   background: #212121;
 }
-/* line 453, scss/index.scss */
+/* line 450, scss/index.scss */
 #content-area .fluid-row.secondary.fixed {
   position: fixed;
   right: 0;
   top: 0;
 }
 @media (max-width: 1274px) {
-  /* line 453, scss/index.scss */
+  /* line 450, scss/index.scss */
   #content-area .fluid-row.secondary.fixed {
     display: none;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 453, scss/index.scss */
+  /* line 450, scss/index.scss */
   #content-area .fluid-row.secondary.fixed {
     display: none;
   }
 }
 @media (max-width: 600px) {
-  /* line 453, scss/index.scss */
+  /* line 450, scss/index.scss */
   #content-area .fluid-row.secondary.fixed {
     display: none;
   }
 }
-/* line 473, scss/index.scss */
+/* line 470, scss/index.scss */
 #content-area .fluid-row.width-90 {
   width: -webkit-calc(80%);
   width: -moz-calc(80%);
@@ -580,7 +627,7 @@ H6 {
   display: inline-block;
   vertical-align: top;
 }
-/* line 478, scss/index.scss */
+/* line 475, scss/index.scss */
 #content-area .fluid-row.width-90.full {
   width: auto;
   min-width: -webkit-calc(85%);
@@ -589,33 +636,33 @@ H6 {
   min-width: calc(85%);
   min-width: expression(85%);
 }
-/* line 484, scss/index.scss */
+/* line 481, scss/index.scss */
 #content-area .fluid-row.width-60 {
   width: 65%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 490, scss/index.scss */
+/* line 487, scss/index.scss */
 #content-area .fluid-row.width-30 {
   width: 30%;
   display: inline-block;
   vertical-align: top;
 }
-/* line 496, scss/index.scss */
+/* line 493, scss/index.scss */
 #content-area .fluid-row.width-45 {
   width: 45%;
   display: inline-block;
   vertical-align: top;
 }
 @media (max-width: 600px) {
-  /* line 496, scss/index.scss */
+  /* line 493, scss/index.scss */
   #content-area .fluid-row.width-45 {
     width: auto;
     display: block;
     float: none;
   }
 }
-/* line 508, scss/index.scss */
+/* line 505, scss/index.scss */
 #content-area .fluid-row.width-50 {
   width: -webkit-calc(47.5%);
   width: -moz-calc(47.5%);
@@ -626,7 +673,7 @@ H6 {
   vertical-align: top;
 }
 @media (max-width: 1274px) {
-  /* line 508, scss/index.scss */
+  /* line 505, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -634,7 +681,7 @@ H6 {
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 508, scss/index.scss */
+  /* line 505, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -642,7 +689,7 @@ H6 {
   }
 }
 @media (max-width: 600px) {
-  /* line 508, scss/index.scss */
+  /* line 505, scss/index.scss */
   #content-area .fluid-row.width-50 {
     width: auto;
     display: block;
@@ -650,7 +697,7 @@ H6 {
   }
 }
 @media (max-width: 1274px) {
-  /* line 532, scss/index.scss */
+  /* line 529, scss/index.scss */
   #content-area .fluid-row.over-90 {
     width: auto;
     display: block;
@@ -658,7 +705,7 @@ H6 {
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 532, scss/index.scss */
+  /* line 529, scss/index.scss */
   #content-area .fluid-row.over-90 {
     width: auto;
     display: block;
@@ -666,14 +713,14 @@ H6 {
   }
 }
 @media (max-width: 600px) {
-  /* line 532, scss/index.scss */
+  /* line 529, scss/index.scss */
   #content-area .fluid-row.over-90 {
     width: auto;
     display: block;
     float: none;
   }
 }
-/* line 553, scss/index.scss */
+/* line 550, scss/index.scss */
 #content-area p.number {
   font-size: 2.5em;
   line-height: 1em;
@@ -681,7 +728,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 561, scss/index.scss */
+/* line 558, scss/index.scss */
 #content-area p.desc {
   font-size: 1.6em;
   line-height: 1em;
@@ -689,7 +736,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 569, scss/index.scss */
+/* line 566, scss/index.scss */
 #content-area p.c-right {
   font-size: 0.75em;
   line-height: 1.3em;
@@ -699,7 +746,7 @@ H6 {
   padding: 0;
   margin: 5px 0px;
 }
-/* line 580, scss/index.scss */
+/* line 577, scss/index.scss */
 #content-area .scale-img {
   max-width: 90%;
   height: auto;
@@ -707,7 +754,7 @@ H6 {
   display: inline-block;
 }
 
-/* line 588, scss/index.scss */
+/* line 585, scss/index.scss */
 #logo-banner {
   width: 60%;
   min-width: 200px;
@@ -715,12 +762,12 @@ H6 {
   margin-top: 5%;
 }
 
-/* line 595, scss/index.scss */
+/* line 592, scss/index.scss */
 [data-trans-for] {
   cursor: pointer;
 }
 
-/* line 599, scss/index.scss */
+/* line 596, scss/index.scss */
 [data-bad-value="true"] {
   -webkit-box-shadow: red 0px 1px 10px;
   -moz-box-shadow: red 0px 1px 10px;
@@ -730,13 +777,13 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 607, scss/index.scss */
+/* line 604, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 612, scss/index.scss */
+/* line 609, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -746,15 +793,15 @@ H6 {
   position: relative;
   text-align: left;
 }
-/* line 621, scss/index.scss */
+/* line 618, scss/index.scss */
 .ui-games-list li .loss {
   text-decoration: line-through;
 }
-/* line 625, scss/index.scss */
+/* line 622, scss/index.scss */
 .ui-games-list li.full {
   width: auto;
 }
-/* line 629, scss/index.scss */
+/* line 626, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
@@ -765,35 +812,35 @@ H6 {
   cursor: pointer;
   behavior: url("./PIE.htc");
 }
-/* line 640, scss/index.scss */
+/* line 637, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 644, scss/index.scss */
+/* line 641, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 400;
   line-height: 1.8em;
 }
-/* line 649, scss/index.scss */
+/* line 646, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 653, scss/index.scss */
+/* line 650, scss/index.scss */
 .ui-games-list li .team.picked {
   text-shadow: black 0px 1px 2px;
   behavior: url("./PIE.htc");
 }
-/* line 657, scss/index.scss */
+/* line 654, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 400;
 }
-/* line 662, scss/index.scss */
+/* line 659, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
   font-size: 1.8em;
   line-height: 1em;
 }
-/* line 668, scss/index.scss */
+/* line 665, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -802,7 +849,7 @@ H6 {
   background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   behavior: url("./PIE.htc");
 }
-/* line 673, scss/index.scss */
+/* line 670, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
   background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
   background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
@@ -811,7 +858,7 @@ H6 {
   background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
   behavior: url("./PIE.htc");
 }
-/* line 679, scss/index.scss */
+/* line 676, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 8% 8%;
   width: auto;
@@ -825,16 +872,16 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 688, scss/index.scss */
+/* line 685, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 694, scss/index.scss */
+/* line 691, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 698, scss/index.scss */
+/* line 695, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 8% 8%;
   width: auto;
@@ -848,12 +895,12 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 707, scss/index.scss */
+/* line 704, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 714, scss/index.scss */
+/* line 711, scss/index.scss */
 .ui-games-list li .display-date {
   position: absolute;
   right: -60px;
@@ -862,7 +909,7 @@ H6 {
   width: 50px;
   height: 50%;
 }
-/* line 723, scss/index.scss */
+/* line 720, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 30%;
@@ -871,7 +918,7 @@ H6 {
   white-space: nowrap;
   position: relative;
 }
-/* line 731, scss/index.scss */
+/* line 728, scss/index.scss */
 .ui-games-list li .middle i {
   position: relative;
   z-index: 100;
@@ -881,7 +928,7 @@ H6 {
   padding: 8%;
   font-style: normal;
 }
-/* line 741, scss/index.scss */
+/* line 738, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -889,21 +936,21 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 751, scss/index.scss */
+/* line 748, scss/index.scss */
 .ui-globalpicks {
   width: 100%;
 }
-/* line 755, scss/index.scss */
+/* line 752, scss/index.scss */
 .ui-globalpicks tr th {
   font-weight: 600;
   padding: 8px 6px;
   cursor: pointer;
 }
-/* line 760, scss/index.scss */
+/* line 757, scss/index.scss */
 .ui-globalpicks tr th i {
   color: #444;
 }
-/* line 765, scss/index.scss */
+/* line 762, scss/index.scss */
 .ui-globalpicks tr td {
   border: 1px solid rgba(180, 180, 180, 0.6);
   padding: 0.7%;
@@ -911,24 +958,24 @@ H6 {
   white-space: nowrap;
   font-size: 1.2em;
 }
-/* line 772, scss/index.scss */
+/* line 769, scss/index.scss */
 .ui-globalpicks tr td.username {
   font-weight: 500;
   table-layout: fixed;
   overflow: hidden;
 }
-/* line 778, scss/index.scss */
+/* line 775, scss/index.scss */
 .ui-globalpicks tr td small {
   font-weight: 400;
   font-size: 0.7em;
   line-height: 1em;
   color: #222;
 }
-/* line 784, scss/index.scss */
+/* line 781, scss/index.scss */
 .ui-globalpicks tr td small b {
   font-weight: 700;
 }
-/* line 791, scss/index.scss */
+/* line 788, scss/index.scss */
 .ui-globalpicks tr.selected td {
   -webkit-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   -moz-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
@@ -936,7 +983,7 @@ H6 {
   border: 1px solid rgba(100, 255, 0, 0.3);
   behavior: url("./PIE.htc");
 }
-/* line 799, scss/index.scss */
+/* line 796, scss/index.scss */
 .ui-globalpicks tr.rival td {
   -webkit-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
   -moz-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
@@ -944,12 +991,12 @@ H6 {
   border: 1px solid rgba(255, 30, 30, 0.6);
   behavior: url("./PIE.htc");
 }
-/* line 808, scss/index.scss */
+/* line 805, scss/index.scss */
 .ui-globalpicks tr.a td {
   background: rgba(51, 51, 51, 0.2);
 }
 
-/* line 815, scss/index.scss */
+/* line 812, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -963,7 +1010,7 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 828, scss/index.scss */
+/* line 825, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -983,24 +1030,24 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 841, scss/index.scss */
+/* line 838, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 847, scss/index.scss */
+/* line 844, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 851, scss/index.scss */
+/* line 848, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 857, scss/index.scss */
+/* line 854, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -1011,19 +1058,19 @@ input[type="text"], input[type="password"] {
   border-radius: 3px;
   behavior: url("./PIE.htc");
 }
-/* line 867, scss/index.scss */
+/* line 864, scss/index.scss */
 input[type="text"][name="username"], input[type="password"][name="username"] {
   margin-top: 15px;
 }
 
-/* line 873, scss/index.scss */
+/* line 870, scss/index.scss */
 .settings label {
   position: absolute;
   top: 28%;
   left: 5%;
 }
 
-/* line 880, scss/index.scss */
+/* line 877, scss/index.scss */
 label {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1032,7 +1079,7 @@ label {
   vertical-align: top;
 }
 
-/* line 888, scss/index.scss */
+/* line 885, scss/index.scss */
 select {
   padding: 8px 15px;
   border: 2px solid #222;
@@ -1040,7 +1087,7 @@ select {
   behavior: url("./PIE.htc");
 }
 
-/* line 895, scss/index.scss */
+/* line 892, scss/index.scss */
 select, option {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1048,12 +1095,12 @@ select, option {
   font-weight: 400;
 }
 
-/* line 902, scss/index.scss */
+/* line 899, scss/index.scss */
 option {
   padding: 5px 10px;
 }
 
-/* line 906, scss/index.scss */
+/* line 903, scss/index.scss */
 #login-area {
   padding: 3% 2%;
   width: 260px;
@@ -1063,7 +1110,7 @@ option {
   display: inline-block;
 }
 
-/* line 915, scss/index.scss */
+/* line 912, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -1086,34 +1133,34 @@ option {
   behavior: url("./PIE.htc");
 }
 @media (max-width: 1274px) {
-  /* line 915, scss/index.scss */
+  /* line 912, scss/index.scss */
   #main-nav {
     position: absolute;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 915, scss/index.scss */
+  /* line 912, scss/index.scss */
   #main-nav {
     position: absolute;
   }
 }
 @media (max-width: 600px) {
-  /* line 915, scss/index.scss */
+  /* line 912, scss/index.scss */
   #main-nav {
     position: absolute;
   }
 }
-/* line 943, scss/index.scss */
+/* line 940, scss/index.scss */
 #main-nav a {
   text-decoration: none;
 }
-/* line 948, scss/index.scss */
+/* line 945, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 954, scss/index.scss */
+/* line 951, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1121,11 +1168,11 @@ option {
   transition: all 0.2s ease;
   behavior: url("./PIE.htc");
 }
-/* line 958, scss/index.scss */
+/* line 955, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 963, scss/index.scss */
+/* line 960, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -1133,7 +1180,7 @@ option {
   height: 40px;
   text-align: center;
 }
-/* line 971, scss/index.scss */
+/* line 968, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -1141,7 +1188,7 @@ option {
   list-style: none;
   overflow: hidden;
 }
-/* line 979, scss/index.scss */
+/* line 976, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -1154,11 +1201,11 @@ option {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 989, scss/index.scss */
+/* line 986, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 993, scss/index.scss */
+/* line 990, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -1171,7 +1218,7 @@ option {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 1005, scss/index.scss */
+/* line 1002, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -1182,7 +1229,7 @@ option {
   vertical-align: middle;
   behavior: url("./PIE.htc");
 }
-/* line 1013, scss/index.scss */
+/* line 1010, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

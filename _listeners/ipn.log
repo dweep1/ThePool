@@ -674,3 +674,144 @@ VERIFIED
 [2014-08-28 09:19 America/New_York] 'payment_gross' => '0.01'
 [2014-08-28 09:19 America/New_York] 'shipping' => '0.00'
 [2014-08-28 09:19 America/New_York] 'ipn_track_id' => '8c8be13c835fd'
+[2014-09-01 15:18 America/New_York] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1022
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&mc_gross=50.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=XM79MCA5PRAZ8&tax=0.00&address_street=6072+Sage+Willow+Way&payment_date=12%3A17%3A49+Sep+01%2C+2014+PDT&payment_status=Completed&charset=windows-1252&address_zip=32244&first_name=Malcolm&mc_fee=1.75&address_country_code=US&address_name=Malcolm+Burke&notify_version=3.8&custom=xWtJWNIpUN4Kn4fc&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Jacksonville&quantity=5&verify_sign=Ao2B3gS5uFp4hvqk962JEkRkTaWrAaGC-DVkvBJ8sOUiHptHwbbkc4C1&payer_email=sugargoody1%40yahoo.com&txn_id=6CG51055NK2716522&payment_type=instant&last_name=Burke&address_state=FL&receiver_email=harr8142%40bellsouth.net&payment_fee=1.75&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=xWtJWNIpUN4Kn4fc&residence_country=US&handling_amount=0.00&transaction_subject=xWtJWNIpUN4Kn4fc&payment_gross=50.00&shipping=0.00&ipn_track_id=69fe40c8c6e2c
+[2014-09-01 15:18 America/New_York] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=14400
+Strict-Transport-Security: max-age=14400
+Content-Type: text/html; charset=UTF-8
+DC: slc-a-origin-www-1.paypal.com
+Date: Mon, 01 Sep 2014 19:18:02 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=mxtVGhGYcC4UZFDSnSjVaCaYKAEaVcTKGyzojnhXFClWIHffxSLIl1FNGCgf4NSW1zUxoiH0ENN1BBvWhqiFHHYEw8y704uSS3omBQu-RES4fBtfsztsixCMjkNQSPntgNaAB_5fFW8hX29kYKykJ5H2XJ9thzOc3sur00gFQ3gTJ-OvS3r_SEkTRxNRD9BBMYMtnUnAj_tl1deZP6IumtVFoFGRZMpPKMXUOFvclz4lUifqt-mylPcgj9YXGJfvxTJDWhsUPbl7Z8w0U_qucPYyuFFiEY0RWqC-ALaNx8Tum9WzRPd2kb8qywgiiVjYX_KlHv5G6sPDajEcnaF0wS7iusl7aurWiCp0oSyYsG0yUeACPobcBU4jlEMTbuydInREXab45oZ43-0F8lANfvCnXZHlZ2P9dnnqRov4mJH-T3KmASdUhyGB4Mq; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 29-Aug-2024 19:18:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 31-Aug-2016 19:18:02 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.73.8.137.1409599082078913; path=/; expires=Wed, 24-Aug-44 19:18:02 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE5.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D1791362132; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.73.8.32.1409599082069094; path=/; expires=Wed, 24-Aug-44 19:18:02 GMT
+Set-Cookie: AKDC=slc-a-origin-www-1.paypal.com; expires=Mon, 01-Sep-2014 19:48:02 GMT; path=/; secure
+
+VERIFIED
+[2014-09-01 15:18 America/New_York] Verified IPN 
+[2014-09-01 15:18 America/New_York] 'mc_gross' => '50.00'
+[2014-09-01 15:18 America/New_York] 'protection_eligibility' => 'Eligible'
+[2014-09-01 15:18 America/New_York] 'address_status' => 'confirmed'
+[2014-09-01 15:18 America/New_York] 'payer_id' => 'XM79MCA5PRAZ8'
+[2014-09-01 15:18 America/New_York] 'tax' => '0.00'
+[2014-09-01 15:18 America/New_York] 'address_street' => '6072 Sage Willow Way'
+[2014-09-01 15:18 America/New_York] 'payment_date' => '12:17:49 Sep 01, 2014 PDT'
+[2014-09-01 15:18 America/New_York] 'payment_status' => 'Completed'
+[2014-09-01 15:18 America/New_York] 'charset' => 'windows-1252'
+[2014-09-01 15:18 America/New_York] 'address_zip' => '32244'
+[2014-09-01 15:18 America/New_York] 'first_name' => 'Malcolm'
+[2014-09-01 15:18 America/New_York] 'mc_fee' => '1.75'
+[2014-09-01 15:18 America/New_York] 'address_country_code' => 'US'
+[2014-09-01 15:18 America/New_York] 'address_name' => 'Malcolm Burke'
+[2014-09-01 15:18 America/New_York] 'notify_version' => '3.8'
+[2014-09-01 15:18 America/New_York] 'custom' => 'xWtJWNIpUN4Kn4fc'
+[2014-09-01 15:18 America/New_York] 'payer_status' => 'verified'
+[2014-09-01 15:18 America/New_York] 'business' => 'harr8142@bellsouth.net'
+[2014-09-01 15:18 America/New_York] 'address_country' => 'United States'
+[2014-09-01 15:18 America/New_York] 'address_city' => 'Jacksonville'
+[2014-09-01 15:18 America/New_York] 'quantity' => '5'
+[2014-09-01 15:18 America/New_York] 'verify_sign' => 'Ao2B3gS5uFp4hvqk962JEkRkTaWrAaGC-DVkvBJ8sOUiHptHwbbkc4C1'
+[2014-09-01 15:18 America/New_York] 'payer_email' => 'sugargoody1@yahoo.com'
+[2014-09-01 15:18 America/New_York] 'txn_id' => '6CG51055NK2716522'
+[2014-09-01 15:18 America/New_York] 'payment_type' => 'instant'
+[2014-09-01 15:18 America/New_York] 'last_name' => 'Burke'
+[2014-09-01 15:18 America/New_York] 'address_state' => 'FL'
+[2014-09-01 15:18 America/New_York] 'receiver_email' => 'harr8142@bellsouth.net'
+[2014-09-01 15:18 America/New_York] 'payment_fee' => '1.75'
+[2014-09-01 15:18 America/New_York] 'receiver_id' => '3QN6WVX42Y8VN'
+[2014-09-01 15:18 America/New_York] 'txn_type' => 'web_accept'
+[2014-09-01 15:18 America/New_York] 'item_name' => 'Credit Week - The Pool'
+[2014-09-01 15:18 America/New_York] 'mc_currency' => 'USD'
+[2014-09-01 15:18 America/New_York] 'item_number' => 'xWtJWNIpUN4Kn4fc'
+[2014-09-01 15:18 America/New_York] 'residence_country' => 'US'
+[2014-09-01 15:18 America/New_York] 'handling_amount' => '0.00'
+[2014-09-01 15:18 America/New_York] 'transaction_subject' => 'xWtJWNIpUN4Kn4fc'
+[2014-09-01 15:18 America/New_York] 'payment_gross' => '50.00'
+[2014-09-01 15:18 America/New_York] 'shipping' => '0.00'
+[2014-09-01 15:18 America/New_York] 'ipn_track_id' => '69fe40c8c6e2c'
+[2014-09-01 16:39 America/New_York] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1027
+Content-Type: application/x-www-form-urlencoded
+Expect: 100-continue
+
+ for IPN payload: cmd=_notify-validate&mc_gross=10.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=DVENTNWNSVFFN&tax=0.00&address_street=9124+Loxford+Street&payment_date=13%3A39%3A34+Sep+01%2C+2014+PDT&payment_status=Completed&charset=windows-1252&address_zip=30122&first_name=Robert&mc_fee=0.59&address_country_code=US&address_name=Robert+J.+Dinkins&notify_version=3.8&custom=ScKz72r.mtKbhiwt&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Lithia+Springs&quantity=1&verify_sign=AH8g0BWLNYOvqz74n.BFbnStW5ycAEvX-MubpkYffMX0lPQMO.r9efW6&payer_email=rdink31%40yahoo.com&txn_id=3UH1820031288204N&payment_type=instant&last_name=J.+Dinkins&address_state=GA&receiver_email=harr8142%40bellsouth.net&payment_fee=0.59&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=ScKz72r.mtKbhiwt&residence_country=US&handling_amount=0.00&transaction_subject=ScKz72r.mtKbhiwt&payment_gross=10.00&shipping=0.00&ipn_track_id=402528fecab9f
+[2014-09-01 16:39 America/New_York] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Strict-Transport-Security: max-age=14400
+Strict-Transport-Security: max-age=14400
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Mon, 01 Sep 2014 20:39:49 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=SO69Aevlwf-EDInuDMGcby_NQN-xgBJJMUYtrW_s-yunAZoKKvih-fUZgL1Wnoa7Ut8X4Wa-RVq7DZ5Z5dWZf_Ws9rR-MSgtARZT9ovnrHZUGraWUwriEnSSofJKvGXDJt375go8hHIaEzY_PRckjT9Ipq-aX5DOmEcNMUHLS2rlzBNb8aGxz1lt_9-FdpeQloqUbNQeyAVQIH064IT212WHU1JPC7clGJSu3NhoZ-1JuuVx8ZQ2q9cWqyd4d9g36y2QcTQDVAkoQYbX90glMB3lEgV43ft-GVwQ2hzTqW2P0plg87eZMW2Szes8VQZK2fUDNlR1vfbJFkL3443eQ7PQp-w1RG7USSyB_TMTEVmEWmHbTGttXcquXMTZCmbGLSK4RUwgLUUlO_QeG8omo9y-SY69TsG4tECGBm; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Thu, 29-Aug-2024 20:39:49 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Wed, 31-Aug-2016 20:39:49 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1409603988712241; path=/; expires=Wed, 24-Aug-44 20:39:48 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D2497250388; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.54.1409603988701090; path=/; expires=Wed, 24-Aug-44 20:39:48 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Mon, 01-Sep-2014 21:09:49 GMT; path=/; secure
+
+VERIFIED
+[2014-09-01 16:39 America/New_York] Verified IPN 
+[2014-09-01 16:39 America/New_York] 'mc_gross' => '10.00'
+[2014-09-01 16:39 America/New_York] 'protection_eligibility' => 'Eligible'
+[2014-09-01 16:39 America/New_York] 'address_status' => 'confirmed'
+[2014-09-01 16:39 America/New_York] 'payer_id' => 'DVENTNWNSVFFN'
+[2014-09-01 16:39 America/New_York] 'tax' => '0.00'
+[2014-09-01 16:39 America/New_York] 'address_street' => '9124 Loxford Street'
+[2014-09-01 16:39 America/New_York] 'payment_date' => '13:39:34 Sep 01, 2014 PDT'
+[2014-09-01 16:39 America/New_York] 'payment_status' => 'Completed'
+[2014-09-01 16:39 America/New_York] 'charset' => 'windows-1252'
+[2014-09-01 16:39 America/New_York] 'address_zip' => '30122'
+[2014-09-01 16:39 America/New_York] 'first_name' => 'Robert'
+[2014-09-01 16:39 America/New_York] 'mc_fee' => '0.59'
+[2014-09-01 16:39 America/New_York] 'address_country_code' => 'US'
+[2014-09-01 16:39 America/New_York] 'address_name' => 'Robert J. Dinkins'
+[2014-09-01 16:39 America/New_York] 'notify_version' => '3.8'
+[2014-09-01 16:39 America/New_York] 'custom' => 'ScKz72r.mtKbhiwt'
+[2014-09-01 16:39 America/New_York] 'payer_status' => 'verified'
+[2014-09-01 16:39 America/New_York] 'business' => 'harr8142@bellsouth.net'
+[2014-09-01 16:39 America/New_York] 'address_country' => 'United States'
+[2014-09-01 16:39 America/New_York] 'address_city' => 'Lithia Springs'
+[2014-09-01 16:39 America/New_York] 'quantity' => '1'
+[2014-09-01 16:39 America/New_York] 'verify_sign' => 'AH8g0BWLNYOvqz74n.BFbnStW5ycAEvX-MubpkYffMX0lPQMO.r9efW6'
+[2014-09-01 16:39 America/New_York] 'payer_email' => 'rdink31@yahoo.com'
+[2014-09-01 16:39 America/New_York] 'txn_id' => '3UH1820031288204N'
+[2014-09-01 16:39 America/New_York] 'payment_type' => 'instant'
+[2014-09-01 16:39 America/New_York] 'last_name' => 'J. Dinkins'
+[2014-09-01 16:39 America/New_York] 'address_state' => 'GA'
+[2014-09-01 16:39 America/New_York] 'receiver_email' => 'harr8142@bellsouth.net'
+[2014-09-01 16:39 America/New_York] 'payment_fee' => '0.59'
+[2014-09-01 16:39 America/New_York] 'receiver_id' => '3QN6WVX42Y8VN'
+[2014-09-01 16:39 America/New_York] 'txn_type' => 'web_accept'
+[2014-09-01 16:39 America/New_York] 'item_name' => 'Credit Week - The Pool'
+[2014-09-01 16:39 America/New_York] 'mc_currency' => 'USD'
+[2014-09-01 16:39 America/New_York] 'item_number' => 'ScKz72r.mtKbhiwt'
+[2014-09-01 16:39 America/New_York] 'residence_country' => 'US'
+[2014-09-01 16:39 America/New_York] 'handling_amount' => '0.00'
+[2014-09-01 16:39 America/New_York] 'transaction_subject' => 'ScKz72r.mtKbhiwt'
+[2014-09-01 16:39 America/New_York] 'payment_gross' => '10.00'
+[2014-09-01 16:39 America/New_York] 'shipping' => '0.00'
+[2014-09-01 16:39 America/New_York] 'ipn_track_id' => '402528fecab9f'

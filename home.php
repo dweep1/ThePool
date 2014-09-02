@@ -22,16 +22,7 @@
     <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
-    <script>
 
-        week_id = <?php echo week::getCurrent()->id; ?>;
-
-    </script>
-    <script src="./js/jquery.velocity.min.js"></script>
-    <script src="./js/velocity.ui.min.js"></script>
-    <script src="./js/modernizr.min.js"></script>
-    <script src="./js/general.js?ver=<?php echo VERSION ?>"></script>
-    <script src="./js/home.js?ver=<?php echo VERSION ?>"></script>
 
 </head>
 <body class="height-100" data-ng-app="myHome">
@@ -260,6 +251,14 @@
 
 </div>
 
+<script>
+
+    week_id = <?php echo week::getCurrent()->id; ?>;
+
+</script>
+
+<script src="./js/combiner.php?ver=<?php echo VERSION ?>"></script>
+<script src="./js/home.js?ver=<?php echo VERSION ?>"></script>
 <script>
     $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 0});
 </script>

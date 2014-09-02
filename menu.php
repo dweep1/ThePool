@@ -1,6 +1,5 @@
 
-<script src="./js/jquery.tinytimer.js"></script>
-<script src="./js/pickClock.js?ver=<?php echo VERSION ?>"></script>
+
 <script>
     $(document).ready(function(){
         lockTimer();
