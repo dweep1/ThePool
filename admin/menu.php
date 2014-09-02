@@ -2,7 +2,7 @@
 
     global $si;
 
-    @include_once "./admin.header.php";
+    @include "./admin.header.php";
 
     $menu_items = new admin_pages();
 

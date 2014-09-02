@@ -1,17 +1,17 @@
 <?php
 
-include_once "./_header.php";
+    include "./_header.php";
 
-FormValidation::generate();
+    FormValidation::generate();
 
-$currentUser = users::returnCurrentUser();
+    $currentUser = users::returnCurrentUser();
 
-$keyUser = new users();
+    $keyUser = new users();
 
-if($currentUser !== false && $currentUser->verifyAuth())
-    header("Location: ./home.php");
+    if($currentUser !== false && $currentUser->verifyAuth())
+        header("Location: ./home.php");
 
-$teams = teams::getTeamsList();
+    $teams = teams::getTeamsList();
 
 ?>
 

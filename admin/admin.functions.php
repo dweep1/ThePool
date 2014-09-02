@@ -1,6 +1,6 @@
 <?php
 
-    include_once "./admin.header.php";
+    include "./admin.header.php";
 
     function getAdminContent($si){
 

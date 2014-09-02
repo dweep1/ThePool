@@ -1,20 +1,20 @@
 <?php
 
-include_once "./_header.php";
+    include "./_header.php";
 
-FormValidation::generate();
+    FormValidation::generate();
 
-$user = users::returnCurrentUser();
+    $user = users::returnCurrentUser();
 
-if($user === false || !$user->verifyAuth())
-    header("Location: ./logout.php");
+    if($user === false || !$user->verifyAuth())
+        header("Location: ./logout.php");
 
-$teams = teams::getTeamsList();
+    $teams = teams::getTeamsList();
 
-if(isset($_GET["success"])){
-    $_SESSION["result"] = ($_GET["success"] == "true" || $_GET["success"] == true) ? "Successfully Submitted Purchase of The Pool credits.<br/><br/>
-    Once the transaction has completed, the credits will be added to your account." : "You have canceled your Purchase of The Pool credits";
-}
+    if(isset($_GET["success"])){
+        $_SESSION["result"] = ($_GET["success"] == "true" || $_GET["success"] == true) ? "Successfully Submitted Purchase of The Pool credits.<br/><br/>
+        Once the transaction has completed, the credits will be added to your account." : "You have canceled your Purchase of The Pool credits";
+    }
 
 
 ?>

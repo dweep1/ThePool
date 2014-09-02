@@ -114,7 +114,7 @@
 
     }
 
-    include_once "./listn.header.php";
+    include "./listn.header.php";
 
     // Inspect IPN validation result and act accordingly
 

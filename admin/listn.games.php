@@ -3,7 +3,7 @@
 global $ROOT_DB_PATH;
 $ROOT_DB_PATH = "../_db/";
 
-include_once "./admin.header.php";
+include "./admin.header.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 

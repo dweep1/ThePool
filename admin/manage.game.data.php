@@ -4,7 +4,7 @@ global $ROOT_DB_PATH;
 
 $ROOT_DB_PATH = "../_db/";
 
-include_once "./admin.header.php";
+include "./admin.header.php";
 
 $id = (int)$_GET['id'];
 $objectType = $_GET['className'];

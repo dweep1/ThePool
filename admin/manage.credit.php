@@ -5,7 +5,7 @@ global $ROOT_DB_PATH;
 
 $ROOT_DB_PATH = "../_db/";
 
-include_once "./admin.header.php";
+include "./admin.header.php";
 
 $user_id = (int)$_GET['id'];
 $user = new users($user_id);

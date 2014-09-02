@@ -1,6 +1,6 @@
 <?php
 
-    include_once "./_header.php";
+    include "./_header.php";
 
     FormValidation::generate();
 

@@ -12,6 +12,8 @@
     if(!session_id())
         session_start();
 
+    session_write_close();
+
     global $ROOT_DB_PATH;
 
     $ROOT_DB_PATH = "./_db/";

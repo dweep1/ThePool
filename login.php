@@ -1,21 +1,21 @@
 <?php
 
-include_once "./_header.php";
+    include "./_header.php";
 
-FormValidation::generate();
+    FormValidation::generate();
 
-$currentUser = users::returnCurrentUser();
+    $currentUser = users::returnCurrentUser();
 
-$keyUser = new users();
+    $keyUser = new users();
 
-if($currentUser !== false && $currentUser->verifyAuth())
-    header("Location: ./home.php");
+    if($currentUser !== false && $currentUser->verifyAuth())
+        header("Location: ./home.php");
 
-if(isset($_GET['key']))
-    $keyUser->load($_GET['key'], "security_key");
+    if(isset($_GET['key']))
+        $keyUser->load($_GET['key'], "security_key");
 
-if($keyUser->id === null && isset($_GET['key']))
-    $_SESSION['result'] = (!isset($_SESSION['result'])) ? "The Key was invalid" : $_SESSION['result'];
+    if($keyUser->id === null && isset($_GET['key']))
+        $_SESSION['result'] = (!isset($_SESSION['result'])) ? "The Key was invalid" : $_SESSION['result'];
 
 ?>
 

@@ -1,24 +1,24 @@
 <?php
 
-if(!session_id()) {
-    include "_header.php";
-}
+    if(!session_id()) {
+        include "_header.php";
+    }
 
-$teams = teams::getTeamsList();
-$user = users::returnCurrentUser();
+    $teams = teams::getTeamsList();
+    $user = users::returnCurrentUser();
 
-if((int)$user->favorite_team_id === 0)
-    $user->favorite_team_id = 1;
+    if((int)$user->favorite_team_id === 0)
+        $user->favorite_team_id = 1;
 
-$favoriteTeam = new teams($user->favorite_team_id);
+    $favoriteTeam = new teams($user->favorite_team_id);
 
-if(isset($_GET['team_id']))
-    $selected_team = teams::selected((int) $_GET['team_id']);
-else
-    $selected_team = teams::selected(null, $favoriteTeam);
+    if(isset($_GET['team_id']))
+        $selected_team = teams::selected((int) $_GET['team_id']);
+    else
+        $selected_team = teams::selected(null, $favoriteTeam);
 
-$selected_team->getTeamStats();
-$selected_team->getRecentGames();
+    $selected_team->getTeamStats();
+    $selected_team->getRecentGames();
 
 ?>
 
