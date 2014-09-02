@@ -19,7 +19,7 @@
                     <div class="width-50 alignleft">Email</div>
                 </li>
 
-                <li class="alignleft" data-object='users' data-user-id='-1'>
+                <li class="alignleft" ng-click="selectUser();" data-object='users' data-user-id='-1'>
                     <div class="width-10 aligncenter">-1</div>
                     <div class="width-30 alignleft">All Users</div>
                     <div class="width-5"></div>

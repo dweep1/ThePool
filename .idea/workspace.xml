@@ -151,6 +151,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="trans.page.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/pages/trans.page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="63" selection-start="740" selection-end="740" vertical-scroll-proportion="0.32622603">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="combiner.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/combiner.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -160,10 +169,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="0.36567163">
+            <state line="19" column="62" selection-start="481" selection-end="481" vertical-scroll-proportion="-9.923077">
               <folding>
                 <element signature="e#1549#1600#0" expanded="true" />
                 <element signature="e#2209#2240#0" expanded="true" />
@@ -176,15 +185,6 @@
                 <element signature="e#7960#8023#0" expanded="true" />
                 <element signature="e#9091#9154#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="9" selection-start="4317" selection-end="4317" vertical-scroll-proportion="-25.615385">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -281,7 +281,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/_footer.php" />
         <option value="$PROJECT_DIR$/results.print.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/home.php" />
@@ -297,6 +296,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/admin/pages/trans.page.php" />
       </list>
     </option>
   </component>
@@ -754,13 +754,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/results.print.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="117" column="64" selection-start="3414" selection-end="3414" vertical-scroll-proportion="-12.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="332" column="0" selection-start="14269" selection-end="14269" vertical-scroll-proportion="-21.038462">
@@ -877,7 +870,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="862" selection-end="862" vertical-scroll-proportion="0.36567163">
+        <state line="19" column="62" selection-start="481" selection-end="481" vertical-scroll-proportion="-9.923077">
           <folding>
             <element signature="e#1549#1600#0" expanded="true" />
             <element signature="e#2209#2240#0" expanded="true" />
@@ -890,6 +883,13 @@
             <element signature="e#7960#8023#0" expanded="true" />
             <element signature="e#9091#9154#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pages/trans.page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="63" selection-start="740" selection-end="740" vertical-scroll-proportion="0.32622603">
+          <folding />
         </state>
       </provider>
     </entry>
