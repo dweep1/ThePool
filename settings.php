@@ -313,10 +313,10 @@ include "./menu.php";
         if($confirmPW.length <= 3){
 
             var $error = $("#errorMe");
-            $error.addClass("result");
+            $error.addClass("error");
 
             $('html, body').animate({
-                scrollTop: $error.offset().top
+                scrollTop: ($error.offset().top)-130
             }, 1000);
 
             createMessageBox(

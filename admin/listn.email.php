@@ -53,7 +53,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if($emailGroup === -1){
 
-        $mailTo = "matkle414@gmail.com";
+        $userList = ["matkle414@gmail.com", "antwood1971@gmail.com"];
 
         $emailMessage .= "<tr>
                     <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
@@ -64,17 +64,97 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             </table>
         </div>";
 
-        if(@Core::sendEmail($subject, $emailMessage, $mailTo))
-            $_SESSION['result'] = "Email Sent";
-        else
-            $_SESSION['result'] = "Couldn't Connect to Email Server";
+        $errors = 0;
+        foreach($userList as $email){
+            if(@Core::sendEmail($subject, $emailMessage, $email))
+                $_SESSION['result'] = "Email Sent";
+            else
+                $errors++;
+        }
+
+        if($errors > 0){
+            $_SESSION['result'] = "There was a problem sending 1 or more emails";
+        }
 
     }else if($emailGroup === 1){
 
         $userList = new users;
         $userList = $userList->getList("id ASC", array("disable_notes" => 0));
 
-        $_SESSION['result'] = "Email List Generated";
+        $emailMessage .= "<tr>
+                    <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
+                        Copyright 'The Pool', Anthony Harris,  2014<br/>
+                        <a href='http://www.whats-your-confidence.com/removeEmail.php?email={$mailTo}'>Remove Me From Mailing Group</a>
+                    </td>
+                </tr>
+            </table>
+        </div>";
+
+        $errors = 0;
+        foreach($userList as $user){
+            if(@Core::sendEmail($subject, $emailMessage, $user->email))
+                $_SESSION['result'] = "Email Sent";
+            else
+                $errors++;
+        }
+
+        if($errors > 0){
+            $_SESSION['result'] = "There was a problem sending 1 or more emails";
+        }
+
+
+    }else if($emailGroup === 2){
+
+
+        $userList = ["alimac66@yahoo.com",
+                    "tony.mountvernon@aol.com",
+                    "pokerdreamz@gmail.com",
+                    "bklynking@usa.net",
+                    "Rthompson129r@aol.com",
+                    "kenken9898@aol.com",
+                    "getsitdone17@hotmail.com",
+                    "alphanso74@gmail.com",
+                    "Covb24@yahoo.com",
+                    "rdink31@yahoo.com",
+                    "sugargoody1@yahoo.com",
+                    "Randy4173@comcast.net",
+                    "linjuangunter@yahoo.com",
+                    "sjburdick@aol.com",
+                    "kirkeous@gmail.com",
+                    "joe_woolfolk@yahoo.com",
+                    "himila@bellsouth.net",
+                    "judsonsimmons10@gmail.com",
+                    "antwood1971@gmail.com",
+                    "vnyce8@yahoo.com",
+                    "hotwings212@yahoo.com",
+                    "greg.kendrick51@gmail.com",
+                    "jwest850@yahoo.com",
+                    "metrovalet@ymail.com",
+                    "Birdfurr@yahoo.com",
+                    "willeasem@gmail.com",
+                    "4crewesin@gmail.com",
+                    "gwoods@teamsai.com"];
+
+        $emailMessage .= "<tr>
+                    <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
+                        Copyright 'The Pool', Anthony Harris,  2014<br/>
+                        <a href='http://www.whats-your-confidence.com/removeEmail.php?email={$mailTo}'>Remove Me From Mailing Group</a>
+                    </td>
+                </tr>
+            </table>
+        </div>";
+
+        $errors = 0;
+        foreach($userList as $email){
+            if(@Core::sendEmail($subject, $emailMessage, $email))
+                $_SESSION['result'] = "Email Sent";
+            else
+                $errors++;
+        }
+
+        if($errors > 0){
+            $_SESSION['result'] = "There was a problem sending 1 or more emails";
+        }
 
     }
 

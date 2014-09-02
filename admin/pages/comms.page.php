@@ -21,7 +21,8 @@
                 <select id="email-group" name="email-group">
                     <option value="0">Select Recipients</option>
                     <option value="-1">Testing</option>
-                    <option value="1">All Users</option>
+                    <option value="1">All Current Users</option>
+                    <option value="2">Last Years Users</option>
                 </select>
             </div>
 

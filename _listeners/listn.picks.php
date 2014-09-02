@@ -47,7 +47,7 @@
             }
 
         }
-        
+
         if(count($objData) > 0){
             if(!credit::useCredit(null,$currentWeek->id)){
 
