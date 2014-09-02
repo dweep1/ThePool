@@ -1,25 +1,28 @@
 <?php
-include "./listn.header.php";
+    include "./listn.header.php";
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-    $submitType = intval($_POST['submitType']);
+        $submitType = intval($_POST['submitType']);
 
-    if($submitType == 0){ // display the pick count;
+        if($submitType == 0){ // display the pick count;
 
-        $current_week = week::getCurrent();
-        $pickCount = pick::getPickCount();
-        $gameCount = $current_week->getGameCount();
+            $current_week = week::getCurrent();
+            $pickCount = pick::getPickCount();
 
-        echo "{$pickCount}/{$gameCount}";
+            session_write_close();
 
-    }else if($submitType == 1){//timezone offset
+            $gameCount = $current_week->getGameCount();
 
-        echo week::getNextLock($_POST['offset']) ?: "false";
-       
-    }
+            echo "{$pickCount}/{$gameCount}";
 
-    exit;
+        }else if($submitType == 1){//timezone offset
+
+            echo week::getNextLock($_POST['offset']) ?: "false";
+
+        }
+
+        exit;
 
 }
 
