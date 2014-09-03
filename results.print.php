@@ -141,7 +141,10 @@
 
                     $alt = ($alt == "a") ? "" : "a";
 
-                    $percentage = number_format((($percentage["correct"]/$percentage["total"])*100), 1);
+                    if($percentage["total"] > 0)
+                        $percentage = number_format((($percentage["correct"]/$percentage["total"])*100), 1);
+                    else
+                        $percentage = number_format(0, 1);
 
                     echo "<td>{$total} <small title='Pick Percentage'>({$percentage})</small></td>";
 

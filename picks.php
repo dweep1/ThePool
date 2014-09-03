@@ -70,6 +70,7 @@
                     You have no valid credits to spend on this week.<br/>
                     In order to place your picks, please buy a credit first.</div>
                 <div class="fluid-row slim">
+                    <b>Click the below button to buy a credit</b><br/>
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="harr8142@bellsouth.net">

@@ -2,11 +2,12 @@
 
     global $ROOT_DB_PATH;
 
-    define("VERSION", "5");
+    if(!defined("VERSION"))
+        define("VERSION", "5");
 
-    include "{$ROOT_DB_PATH}header.php";
-    include "{$ROOT_DB_PATH}security.php";
-    include "{$ROOT_DB_PATH}objects.php";
-    include "./admin.functions.php";
+    include_once "{$ROOT_DB_PATH}header.php";
+    include_once "{$ROOT_DB_PATH}security.php";
+    include_once "{$ROOT_DB_PATH}objects.php";
+    include_once "./admin.functions.php";
 
 ?>

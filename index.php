@@ -119,17 +119,21 @@
 
             <div class="fluid-row aligncenter">
 
-                <div class="fluid-row width-90 alignleft"><p class="c-right">A fee of $10 is to be collected per played week. This must be paid prior to submitting
-                        your picks for that week. If notification of a pending payment has not been received you will not be able to enter your picks for that week.</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="desc" style="font-size:1.1em; line-height: 1.35em;">The Pool is a weekly game where users pick and number NFL teams based on who they think they will win each week.
+                    At the end of the week, the person who has scored the most points wins.</p></div>
 
-                <div class="fluid-row width-90 alignleft"><i>The Pool is a weekly game where users pick and number NFL teams based on who they think they will win each week.
-                        At the end of the week, the person who has scored the most points wins.</i></div>
+                <div class="fluid-row width-90 aligncenter"><h3>The Pool General Rules</h3></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="number">/PLAN.</p><p class="desc">Plan your picks accordingly. Choose a strong team and try to predict upsets to gain the advantage.</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="number">PLAN</p><p class="desc">Plan your picks accordingly. Choose a strong team and try to predict upsets to gain the advantage.</p></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="number">/PICK.</p><p class="desc">Pick and rate teams which you think will have the upper hand going into their games.</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="number">PICK</p><p class="desc">Pick and rate teams which you think will have the upper hand going into their games.</p></div>
 
-                <div class="fluid-row width-90 alignleft"><p class="number">/PLAY.</p><p class="desc">After the week is over the person with the most points wins the weekly pool. Will you win big?</p></div>
+                <div class="fluid-row width-90 alignleft"><p class="number">PLAY</p><p class="desc">After the week is over the person with the most points wins the weekly pool. Will you win big?</p></div>
+
+                <div class="fluid-row width-90 alignleft"><p class="desc" style="font-size:1.0em; text-transform: uppercase; line-height: 1.35em;">A fee of $10 is to be collected per played week. This must be paid prior to submitting your picks for that week.
+                        If notification of pending payment has not been received you wil not be able to enter your picks for that week.</p></div>
+
+                <div class="fluid-row width-90 alignleft"><a href="./rules.php">If you want to know more about The Pool click here.</a></div>
 
             </div>
 

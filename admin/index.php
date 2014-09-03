@@ -1,24 +1,24 @@
 <?php
 
-global $ROOT_DB_PATH;
-$ROOT_DB_PATH = "../_db/";
+    global $ROOT_DB_PATH;
+    $ROOT_DB_PATH = "../_db/";
 
-include "./admin.header.php";
+    include_once "./admin.header.php";
 
-FormValidation::generate();
-$user = users::returnCurrentUser();
+    FormValidation::generate();
+    $user = users::returnCurrentUser();
 
-if(!is_object($user))
-    header("Location: ../logout.php");
+    if(!is_object($user))
+        header("Location: ../logout.php");
 
-global $si;
+    global $si;
 
-    if(isset($_GET['si']))
-        $_SESSION['si'] = $_GET['si'];
-    else if(!isset($_SESSION['si']))
-        $_SESSION['si'] = 1;
+        if(isset($_GET['si']))
+            $_SESSION['si'] = $_GET['si'];
+        else if(!isset($_SESSION['si']))
+            $_SESSION['si'] = 1;
 
-    $si = $_SESSION['si'];
+        $si = $_SESSION['si'];
 
 ?>
 

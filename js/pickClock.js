@@ -28,9 +28,9 @@ function lockTimer(){
             }else if(d.getDay() == 6){
                 $dayLock = 'Saturday';
             }else if(d.getDay() == 0){
-                $dayLock = 'Sunday';
+                $dayLock = 'Sunday/Monday';
             }else if(d.getDay() <= 1){
-                $dayLock = 'Monday';
+                $dayLock = 'Sunday/Monday';
             }
 
             $('#day').html($dayLock);

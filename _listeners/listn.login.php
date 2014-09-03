@@ -67,7 +67,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
                     <table cellpadding='0' cellspacing='0' style='width:800px; height:auto; margin:10px auto; border:1px solid #b9b9ba; background: #f1f1f2; padding:0px; border-radius:4px; border-bottom: 2px solid rgba(100,100,100,0.9);'>
                         <tr>
                             <td style='background: url('http://i.imgur.com/4S4yqzW.png'); border-radius:3px 3px 0px 0px; height:100px;'>
-                                <img style='border-radius:3px 3px 0px 0px;' src='http://i.imgur.com/4S4yqzW.png'>
+                                <img style='border-radius:3px 3px 0px 0px;' src='http://i.imgur.com/rMfcpC8.png'>
                             </td>
                         </tr>
 
@@ -261,7 +261,7 @@ function doForgotPass($POST){
             <table cellpadding='0' cellspacing='0' style='width:800px; height:auto; margin:10px auto; border:1px solid #b9b9ba; background: #f1f1f2; padding:0px; border-radius:4px; border-bottom: 2px solid rgba(100,100,100,0.9);'>
                 <tr>
                     <td style='background: url('http://i.imgur.com/4S4yqzW.png'); border-radius:3px 3px 0px 0px; height:100px;'>
-                        <img style='border-radius:3px 3px 0px 0px;' src='http://i.imgur.com/4S4yqzW.png'>
+                        <img style='border-radius:3px 3px 0px 0px;' src='http://i.imgur.com/rMfcpC8.png'>
                     </td>
                 </tr>
 

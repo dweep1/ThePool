@@ -4,15 +4,13 @@
     global $mem;
     global $memTwo;
 
-    define("VERSION", "11");
+    define("VERSION", "12");
 
     $time = microtime(TRUE);
     $mem = memory_get_usage();
 
     if(!session_id())
         session_start();
-
-    session_write_close();
 
     global $ROOT_DB_PATH;
 

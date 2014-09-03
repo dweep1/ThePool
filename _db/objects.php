@@ -856,7 +856,7 @@ class game extends DatabaseObject{
 
         }else if(strpos($dayCheck,'Mon') !== false){
 
-            $tempDate->add(new DateInterval('PT18H')); //should be 6pm EST on that day //$tempDate->sub();
+            $tempDate->sub(new DateInterval('PT11H')); //should be 1pm EST on the sunday before //$tempDate->sub();
 
         }else{
 
