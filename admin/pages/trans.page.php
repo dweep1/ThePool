@@ -46,21 +46,21 @@
                 <hr />
 
                 <li class="alignleft">
-                    <div class="width-10 aligncenter">Week ID</div>
+                    <div class="width-10 aligncenter">Week #</div>
                     <div class="width-30 alignleft">Date</div>
+                    <div class="width-20 alignleft">Transaction ID</div>
                     <div class="width-5"></div>
-                    <div class="width-30 alignleft">Transaction ID</div>
-                    <div class="width-10"></div>
-                    <div class="width-10 alignright">Delete?</div>
+                    <div class="width-20 aligncenter">Username</div>
+                    <div class="width-10 aligncenter">Delete?</div>
                 </li>
 
                 <li class="alignleft" data-ng-repeat="item in credits | orderBy:'-id'" >
-                    <div class="width-10 aligncenter">{{ item.week_id }}</div>
+                    <div class="width-10 aligncenter">{{ item.week_number }}</div>
                     <div class="width-30 alignleft">{{ item.date }}</div>
+                    <div class="width-20 alignleft">{{ item.nid }}</div>
                     <div class="width-5"></div>
-                    <div class="width-30 alignleft">{{ item.nid }}</div>
-                    <div class="width-10"></div>
-                    <div class="width-10 alignright" data-delete-id="{{ item.id }}"><i class='fa fa-times'></i></div>
+                    <div class="width-20 aligncenter">{{ item.username }}</div>
+                    <div class="width-10 aligncenter" data-delete-id="{{ item.id }}"><i class='fa fa-times'></i></div>
                 </li>
 
             </ul>

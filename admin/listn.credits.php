@@ -34,6 +34,11 @@
             foreach($obj as $key => $value){
 
                 $value->date = displayDate($value->date);
+
+                $value->week_number = ((int) $value->week_id > 0) ? week::returnInstance($value->week_id)->week_number : "N/A";
+
+                $value->username = users::returnInstance($value->user_id)->username;
+
                 $obj[$key] = $value;
             }
         }

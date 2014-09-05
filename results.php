@@ -140,7 +140,7 @@
 
                             foreach($games as $game){
 
-                                echo "<th>{$count}</th>";
+                                echo "<th class='aligncenter'>{$count}</th>";
 
                                 $count++;
                             }
