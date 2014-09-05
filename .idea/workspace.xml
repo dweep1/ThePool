@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/_db/objects.php" line="656" mnemonic="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/listn.picks.php" afterPath="$PROJECT_DIR$/admin/listn.picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_db/objects.php" afterPath="$PROJECT_DIR$/_db/objects.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/pages/picks.page.php" afterPath="$PROJECT_DIR$/admin/pages/picks.page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="" />
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/a.php" changelist="5b4ee294-659f-4175-9ebb-557c111f7044" time="1378879353173" ignored="false" />
@@ -194,10 +189,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listn.picks.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="listn.picks.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/listn.picks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="9" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.36567163">
+            <state line="51" column="9" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-13.192307">
               <folding />
             </state>
           </provider>
@@ -269,10 +264,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listn.credits.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="listn.credits.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/listn.credits.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="84" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-25.5">
+            <state line="39" column="84" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.70682305">
               <folding />
             </state>
           </provider>
@@ -894,9 +889,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/listn.credits.php">
+    <entry file="file://$PROJECT_DIR$/admin/listn.picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="84" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-25.5">
+        <state line="51" column="9" selection-start="1159" selection-end="1159" vertical-scroll-proportion="-13.192307">
           <folding />
         </state>
       </provider>
@@ -915,9 +910,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/listn.picks.php">
+    <entry file="file://$PROJECT_DIR$/admin/listn.credits.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="9" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.36567163">
+        <state line="39" column="84" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.70682305">
           <folding />
         </state>
       </provider>
