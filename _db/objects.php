@@ -650,13 +650,14 @@ class credit extends DatabaseObject{
             $credits = new credit;
             $credits = $credits->getList("id asc", array("user_id" => $user_id, "week_id" => -1));
 
-            if($credits !== false){
+            if(count($credits) > 0){
 
                 $elem = $credits[0];
 
                 $elem->week_id = $week_id;
 
                 return $elem->update();
+
             }
 
         }

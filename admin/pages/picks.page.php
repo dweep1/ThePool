@@ -19,7 +19,8 @@
                     <div class="width-50 alignleft">Email</div>
                 </li>
 
-                <li class="alignleft" data-ng-repeat="item in users | filter:search | orderBy:'id'" ng-click="selectUser();" data-object='users' data-user-id='{{ item.id }}' >
+                <li class="alignleft" data-ng-repeat="item in users | filter:search | orderBy:'id'"  data-object='users' data-user-id='{{ item.id }}'
+                    data-ng-click="$parent.selectedUsername = item.username; selectUser();">
                     <div class="width-10 aligncenter">{{ item.id }}</div>
                     <div class="width-30 alignleft">{{ item.username }}</div>
                     <div class="width-5"></div>
@@ -39,10 +40,14 @@
                     <input type="text" data-ng-model="gameSearch" />
                 </div>
                 <div class="float-right">
-                    <button class="ui-buttons dark" ng-click="doRefresh()">Discard Changes</button>
-                    <button class="ui-buttons dark" ng-click="doSave()">Save Picks</button>
+                    <button class="ui-buttons dark" data-ng-click="doRefresh()">Discard Changes</button>
+                    <button class="ui-buttons dark" data-ng-click="doSave()">Save Picks</button>
                 </div>
                 <div class="clear-fix"></div>
+            </div>
+
+            <div class="fluid-row slim alignleft">
+            <h5>Selected User: {{ selectedUsername }}</h5>
             </div>
 
             <div class="fluid-row no-padding alignleft">
@@ -109,6 +114,11 @@
 
     function GameController($scope, $http) {
 
+        if(checkSet(localStorage["selected_username"]))
+            $scope.selectedUsername = localStorage["selected_username"];
+        else
+            $scope.selectedUsername = "Current User";
+
         getLiveData($scope, $http);
 
         $http.post("admin.json.php", { "data" : "users"}).
@@ -129,6 +139,8 @@
 
         $scope.selectUser = function() {
             setTimeout(function(){
+                localStorage["selected_username"] = $scope.selectedUsername;
+
                 getLiveData($scope, $http);
             },200);
         };
