@@ -59,6 +59,7 @@
 
         <div class="fluid-row aligncenter">
             <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
+            Remaining Credits: <?php echo credit::getCreditCount(null, -1); ?><b><?php if($validCredit !== false): ?><a href="./settings.php" style="padding:10px;">Buy Credits</a></b><?php endif; ?>
         </div>
 
         <?php

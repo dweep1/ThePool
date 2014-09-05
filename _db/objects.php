@@ -691,6 +691,20 @@ class credit extends DatabaseObject{
 
     }
 
+    public static function getCreditCount($user_id, $week_id = null){
+
+        if($user_id === null)
+            $user_id = users::returnCurrentUser()->id;
+
+        $credits = new credit();
+
+        if($week_id === null)
+            return count($credits->getList(null, ["user_id" => $user_id]));
+        else
+            return count($credits->getList(null, ["user_id" => $user_id, "week_id" => $week_id]));
+
+    }
+
 
 }
 
@@ -840,11 +854,11 @@ class game extends DatabaseObject{
 
         if(strpos($dayCheck,'Thu') !== false){
 
-            $tempDate->add(new DateInterval('PT18H')); //should be 6pm EST on that given game date
+            $tempDate->add(new DateInterval('PT20H')); //should be 6pm EST on that given game date
 
         }else if(strpos($dayCheck,'Fri') !== false){
 
-            $tempDate->add(new DateInterval('PT18H')); //should be 6pm EST on that given game date
+            $tempDate->add(new DateInterval('PT20H')); //should be 6pm EST on that given game date
 
         }else if(strpos($dayCheck,'Sat') !== false){
 
@@ -860,7 +874,7 @@ class game extends DatabaseObject{
 
         }else{
 
-            $tempDate->add(new DateInterval('PT12H')); //should be 1pm EST on that given game date
+            $tempDate->add(new DateInterval('PT13H')); //should be 1pm EST on that given game date
 
         }
 

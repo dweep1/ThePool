@@ -56,6 +56,8 @@ include "./menu.php";
     <div class="width-50 fluid-row aligncenter settings first">
 
         <div class="fluid-row aligncenter">
+            Remaining Credits: <?php echo credit::getCreditCount(null, -1); ?><br/>
+
             <div class="fluid-row slim">
                 <h6>Purchase Credit</h6><br/><br/>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
@@ -233,6 +235,8 @@ include "./menu.php";
 
             <div class="fluid-row width-60 slim over-90">
                 Paypal Email: <?php echo (strlen($user->paypal) > 3) ? $user->paypal : "NONE"; ?>
+                <br/>
+                Remaining Credits: <?php echo credit::getCreditCount(null, -1); ?><br/>
             </div>
 
             <div class="fluid-row width-60 slim over-90">

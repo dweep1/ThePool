@@ -119,10 +119,13 @@
             </div>
         </div>
 
-        <div class="fluid-row slim alignleft">
+        <div class="fluid-row alignleft">
             <h5 style="display:inline-block">Week #<?php echo $thisWeek->week_number; ?>'s Results</h5>
             <h5>Pool Size: ~$<?php echo week::getPoolAmount($thisWeek->id); ?></h5>
             <h4 style="display:inline-block; cursor:pointer" data-link="./results.print.php?week=<?php echo $thisWeek->id; ?>" class="float-right" title="Printer Friendly Version" ><i class="fa fa-print"></i></h4>
+            <br/>
+            Remaining Credits: <?php echo credit::getCreditCount(null, -1); ?><b><a href="./settings.php" style="padding:10px;">Buy Credits</a></b>
+
         </div>
 
         <div class="fluid-row slim aligncenter">
@@ -130,7 +133,7 @@
             <table id="stupid" class="ui-globalpicks alignleft" cellpadding="0" cellspacing="0">
                 <thead>
                     <tr>
-                        <th class="name" style="width:11%;">
+                        <th class="name" style="width:130px;">
                            User <i class="fa fa-info-sign"></i></th>
                         <?php
                             $count = 1;

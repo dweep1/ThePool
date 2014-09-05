@@ -827,12 +827,13 @@ H6 {
 }
 /* line 650, scss/index.scss */
 .ui-games-list li .team.picked {
-  text-shadow: black 0px 1px 2px;
+  text-shadow: black 0px 1px 14px;
   behavior: url("./PIE.htc");
 }
 /* line 654, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 400;
+  font-size: 1.4em;
 }
 /* line 659, scss/index.scss */
 .ui-games-list li .team.picked h6 {
@@ -842,20 +843,20 @@ H6 {
 }
 /* line 665, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
-  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
-  background-image: -webkit-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
-  background-image: -moz-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
-  background-image: -o-linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
-  background-image: linear-gradient(left, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(119, 119, 119, 0.4)), color-stop(100%, rgba(34, 34, 34, 0.6)));
+  background-image: -webkit-linear-gradient(left, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
+  background-image: -moz-linear-gradient(left, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
+  background-image: -o-linear-gradient(left, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
+  background-image: linear-gradient(left, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
   behavior: url("./PIE.htc");
 }
 /* line 670, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
-  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(85, 85, 85, 0.5)), color-stop(100%, #222222));
-  background-image: -webkit-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
-  background-image: -moz-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
-  background-image: -o-linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
-  background-image: linear-gradient(right, rgba(85, 85, 85, 0.5) 0%, #222222 100%);
+  background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(119, 119, 119, 0.4)), color-stop(100%, rgba(34, 34, 34, 0.6)));
+  background-image: -webkit-linear-gradient(right, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
+  background-image: -moz-linear-gradient(right, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
+  background-image: -o-linear-gradient(right, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
+  background-image: linear-gradient(right, rgba(119, 119, 119, 0.4) 0%, rgba(34, 34, 34, 0.6) 100%);
   behavior: url("./PIE.htc");
 }
 /* line 676, scss/index.scss */

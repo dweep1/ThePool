@@ -16,6 +16,9 @@
     $picks = new pick();
     $picks = $picks->getList("user_id asc", array("week_id" => $thisWeek->id));
 
+    $rivals = new rivals();
+    $rivals = $rivals->getList("rival_id asc", array("user_id" => $user->id));
+
     $usersList = $user->getList();
     $usersKeys = [];
 
@@ -81,7 +84,7 @@
             <table class="ui-globalpicks alignleft" cellpadding="0" cellspacing="0">
                 <thead>
                 <tr>
-                    <th class="name" style="width:80px;">
+                    <th class="name" style="width:130px;">
                         User <i class="fa fa-info-sign"></i></th>
                     <?php
                     $count = 1;
@@ -107,8 +110,13 @@
                     $total = 0;
                     $percentage = ["correct" => 0, "total" => 0];
 
+                    $rival = rivals::findRival($tempUser->id, $rivals);
+
                     if($tempUser->id == $user->id){
                         echo "<tr class='$alt selected'><td class='username'>{$tempUser->username}</td>";
+                    }else if($rival !== false){
+                        $tempUser->username = (strlen($rival->rival_custom_name) > 2) ? $rival->rival_custom_name : $tempUser->username;
+                        echo "<tr class='$alt rival'><td class='username'>{$tempUser->username}</td>";
                     }else{
                         echo "<tr class='$alt'><td class='username'>{$tempUser->username}</td>";
                     }
