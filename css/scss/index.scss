@@ -617,6 +617,14 @@ H6{font-size:1.0em;line-height:1em;letter-spacing: 0px;display:inline-block;}
 
     .loss{
       text-decoration: line-through;
+
+      h5{
+        text-decoration: line-through;
+      }
+
+      h6{
+        text-decoration: line-through !important;
+      }
     }
 
     &.full{

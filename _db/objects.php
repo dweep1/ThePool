@@ -790,7 +790,7 @@ class game extends DatabaseObject{
             if(!is_bool($picks)){
                 foreach($picks as $value){
 
-                    $value->result = (int) $value->team_id === (int) $winner ? 1 : 0;
+                    $value->result = ($value->team_id == $winner) ? 1 : 0;
 
                     if($value->update() === false)
                         return false;
@@ -807,9 +807,9 @@ class game extends DatabaseObject{
         if($id !== null)
             $this->load($id);
 
-        $now = new DateTime("now", Core::getTimezone());
-        $gameDate = new DateTime($this->date, Core::getTimezone());
-        $gameDate->add(new DateInterval("P1D"));
+        $now = new DateTime("now");
+        $gameDate = new DateTime($this->date);
+        $gameDate->setTime(0,0,0);
 
         return ($now >= $gameDate) ? true : false;
 
