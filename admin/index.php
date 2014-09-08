@@ -31,6 +31,8 @@
     <link href="../css/admin.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
 	<link href="./css/redactor.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
     <script src="../js/jquery.velocity.min.js"></script>
@@ -41,6 +43,7 @@
     <script src="../js/bug_report.js"></script>
     <script src="../js/general.js?ver=<?php echo VERSION ?>"></script>
     <script src="./js/admin.js?ver=<?php echo VERSION ?>"></script>
+
     <script>
 
         <?php
@@ -97,7 +100,8 @@
 
                     <div style="display: inline-block; padding: 0px 5px;">
                         Season:
-                        <select class="top" ng-model="search.season_id" ng-change="options.selected_season = search.season_id" name="selected_season">
+                        <select class="top" data-ng-model="search.season_id" data-ng-change="options.selected_season = search.season_id"
+                                name="selected_season" data-ng-init="search.season_id = 18">
 
                             <option data-ng-repeat="item in season | orderBy:'-id'" value="{{ item.id }}"
                                     data-ng-selected="item.id == options.selected_season">{{ item.text_id }}</option>
@@ -110,6 +114,7 @@
                         <select class="top" ng-model="options.selected_week" name="selected_week" >
 
                             <option data-ng-repeat="item in week | orderBy:'id'" value="{{ item.id }}" data-ng-if="item.season_id == options.selected_season"
+
                                     data-ng-selected="item.id == options.selected_week">Week {{ item.week_number }}</option>
 
                         </select>

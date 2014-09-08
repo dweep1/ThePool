@@ -95,6 +95,9 @@
                                 <input type="text" name="confirm" value="Confirm Password" data-password autocomplete="off" />
                             </div>
                             <div class="faux-row">
+                                Passwords are case sensitive
+                            </div>
+                            <div class="faux-row">
                                 <input type="text" name="paypal" value="Paypal Email" />
                             </div>
                             <div class="faux-row">

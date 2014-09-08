@@ -10,6 +10,8 @@ $id = (int)$_GET['id'];
 $objectType = $_GET['className'];
 
 $obj = new $objectType($id);
+$obj->date = new DateTime($obj->date);
+$obj->date = $obj->date->format('Y-m-d');
 $teams = teams::getTeamsList();
 
 ?>

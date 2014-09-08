@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_header.php" afterPath="$PROJECT_DIR$/_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/email_template.html" afterPath="$PROJECT_DIR$/admin/email_template.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_db/objects.php" afterPath="$PROJECT_DIR$/_db/objects.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/manage.game.data.php" afterPath="$PROJECT_DIR$/admin/manage.game.data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/js/modernizr.js" afterPath="$PROJECT_DIR$/admin/js/modernizr.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/pages/winners.page.php" afterPath="$PROJECT_DIR$/admin/pages/winners.page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,56 +44,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_header.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_header.php">
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="28" selection-start="91" selection-end="91" vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="964">
+            <state line="96" column="34" selection-start="3911" selection-end="4029" vertical-scroll-proportion="-21.576923" vertical-offset="1071" max-vertical-offset="2805">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listn.picks.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/listn.picks.php">
+      <file leaf-file-name="register.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="9" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1938">
+            <state line="79" column="60" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.3575184" vertical-offset="1003" max-vertical-offset="3060">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="objects.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_db/objects.php">
+      <file leaf-file-name="winners.page.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/pages/winners.page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="811" column="34" selection-start="20785" selection-end="20785" vertical-scroll-proportion="-33.26923" vertical-offset="12922" max-vertical-offset="21590">
+            <state line="62" column="0" selection-start="1382" selection-end="1382" vertical-scroll-proportion="-15.038462" vertical-offset="663" max-vertical-offset="2210">
               <folding>
-                <marker date="1410132070211" expanded="true" signature="5165:5239" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1410132070211" expanded="true" signature="7881:7993" placeholder="SELECT * FRO..$className..." />
-                <marker date="1410132070211" expanded="true" signature="10812:10878" placeholder="SELECT user_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="11483:11553" placeholder="SELECT user_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="22958:23053" placeholder="SELECT * FRO..$className..." />
-                <marker date="1410132070211" expanded="true" signature="24045:24132" placeholder="SELECT COUNT..pick..." />
-                <marker date="1410132070211" expanded="true" signature="25767:26047" placeholder="SELECT user_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="25839:25931" placeholder="SELECT COUNT..pick..." />
-                <marker date="1410132070211" expanded="true" signature="26089:26415" placeholder="SELECT user_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="26161:26276" placeholder="SELECT COUNT..pick..." />
-                <marker date="1410132070211" expanded="true" signature="27965:28188" placeholder="SELECT week_..week_id..." />
-                <marker date="1410132070211" expanded="true" signature="28016:28153" placeholder="SELECT week_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="29254:29383" placeholder="SELECT week_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="29678:29790" placeholder="SELECT week_..pick..." />
-                <marker date="1410132070211" expanded="true" signature="29976:30102" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1410132070211" expanded="true" signature="30350:30476" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1410132070211" expanded="true" signature="30708:30819" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1410132070211" expanded="true" signature="31128:31333" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1410132070211" expanded="true" signature="31137:31229" placeholder="SELECT COUNT..pick..." />
-                <marker date="1410132070211" expanded="true" signature="31500:31751" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1410132070211" expanded="true" signature="31509:31624" placeholder="SELECT COUNT..pick..." />
-                <marker date="1410132070211" expanded="true" signature="32082:32291" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1410132070211" expanded="true" signature="32091:32185" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1410132070211" expanded="true" signature="32458:32713" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1410132070211" expanded="true" signature="32467:32584" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1410132070211" expanded="true" signature="33660:33782" placeholder="SELECT * FRO..game..." />
+                <marker date="1410137287535" expanded="true" signature="2036:2724" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/js/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="34" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5644">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="103" column="92" selection-start="3746" selection-end="3746" vertical-scroll-proportion="-13.730769" vertical-offset="1394" max-vertical-offset="4403">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manage.game.data.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/manage.game.data.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="31" selection-start="289" selection-end="289" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="2040">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,34 +103,7 @@
       <file leaf-file-name="index.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="611" column="18" selection-start="10025" selection-end="10025" vertical-scroll-proportion="-8.5" vertical-offset="10166" max-vertical-offset="17510">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="picks.page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/pages/picks.page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="51" selection-start="4846" selection-end="4846" vertical-scroll-proportion="0.0" vertical-offset="2023" max-vertical-offset="5406">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listn.picks.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="799" max-vertical-offset="1972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/scss/admin.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="560" column="3" selection-start="9831" selection-end="9831" vertical-scroll-proportion="0.0" vertical-offset="9520" max-vertical-offset="15045">
+            <state line="663" column="27" selection-start="10974" selection-end="10974" vertical-scroll-proportion="-17.0" vertical-offset="10829" max-vertical-offset="17510">
               <folding />
             </state>
           </provider>
@@ -185,8 +168,13 @@
         <option value="$PROJECT_DIR$/admin/pages/picks.page.php" />
         <option value="$PROJECT_DIR$/admin/listn.picks.php" />
         <option value="$PROJECT_DIR$/_db/objects.php" />
+        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/css/scss/index.scss" />
         <option value="$PROJECT_DIR$/_header.php" />
+        <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
+        <option value="$PROJECT_DIR$/admin/index.php" />
+        <option value="$PROJECT_DIR$/admin/manage.game.data.php" />
+        <option value="$PROJECT_DIR$/register.php" />
       </list>
     </option>
   </component>
@@ -345,6 +333,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nfl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThePool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -611,32 +617,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="659" column="0" selection-start="17600" selection-end="17600" vertical-scroll-proportion="0.0" vertical-offset="11203" max-vertical-offset="21590">
           <folding>
-            <marker date="1410132070211" expanded="true" signature="5165:5239" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="7881:7993" placeholder="SELECT * FRO..$className..." />
-            <marker date="1410132070211" expanded="true" signature="10812:10878" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="11483:11553" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="22958:23053" placeholder="SELECT * FRO..$className..." />
-            <marker date="1410132070211" expanded="true" signature="24045:24132" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="25767:26047" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="25839:25931" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="26089:26415" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="26161:26276" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="27965:28188" placeholder="SELECT week_..week_id..." />
-            <marker date="1410132070211" expanded="true" signature="28016:28153" placeholder="SELECT week_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="29254:29383" placeholder="SELECT week_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="29678:29790" placeholder="SELECT week_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="29976:30102" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="30350:30476" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="30708:30819" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31128:31333" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31137:31229" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31500:31751" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31509:31624" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32082:32291" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32091:32185" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32458:32713" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32467:32584" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="33660:33782" placeholder="SELECT * FRO..game..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..week_id..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..game..." />
           </folding>
         </state>
       </provider>
@@ -698,7 +704,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="915" column="17" selection-start="20860" selection-end="20860" vertical-scroll-proportion="0.33298755" vertical-offset="0" max-vertical-offset="0" />
+        <state line="915" column="17" selection-start="20860" selection-end="20860" vertical-scroll-proportion="0.33298755" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/trans.page.php">
@@ -743,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.results.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="62" selection-start="988" selection-end="988" vertical-scroll-proportion="-13.076923" vertical-offset="255" max-vertical-offset="2397">
@@ -768,46 +769,97 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="811" column="34" selection-start="20785" selection-end="20785" vertical-scroll-proportion="-33.26923" vertical-offset="12922" max-vertical-offset="21590">
           <folding>
-            <marker date="1410132070211" expanded="true" signature="5165:5239" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="7881:7993" placeholder="SELECT * FRO..$className..." />
-            <marker date="1410132070211" expanded="true" signature="10812:10878" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="11483:11553" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="22958:23053" placeholder="SELECT * FRO..$className..." />
-            <marker date="1410132070211" expanded="true" signature="24045:24132" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="25767:26047" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="25839:25931" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="26089:26415" placeholder="SELECT user_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="26161:26276" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="27965:28188" placeholder="SELECT week_..week_id..." />
-            <marker date="1410132070211" expanded="true" signature="28016:28153" placeholder="SELECT week_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="29254:29383" placeholder="SELECT week_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="29678:29790" placeholder="SELECT week_..pick..." />
-            <marker date="1410132070211" expanded="true" signature="29976:30102" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="30350:30476" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="30708:30819" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31128:31333" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31137:31229" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31500:31751" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="31509:31624" placeholder="SELECT COUNT..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32082:32291" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32091:32185" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32458:32713" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1410132070211" expanded="true" signature="32467:32584" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1410132070211" expanded="true" signature="33660:33782" placeholder="SELECT * FRO..game..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT user_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..week_id..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT week_..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410132070211" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..game..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="611" column="18" selection-start="10025" selection-end="10025" vertical-scroll-proportion="-8.5" vertical-offset="10166" max-vertical-offset="17510">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="28" selection-start="91" selection-end="91" vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="964">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/pages/winners.page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="0" selection-start="1382" selection-end="1382" vertical-scroll-proportion="-15.038462" vertical-offset="663" max-vertical-offset="2210">
+          <folding>
+            <marker date="1410137287535" expanded="true" signature="2036:2724" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="663" column="27" selection-start="10974" selection-end="10974" vertical-scroll-proportion="-17.0" vertical-offset="10829" max-vertical-offset="17510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.results.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/js/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="34" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5644">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="92" selection-start="3746" selection-end="3746" vertical-scroll-proportion="-13.730769" vertical-offset="1394" max-vertical-offset="4403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/manage.game.data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="31" selection-start="289" selection-end="289" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="34" selection-start="3911" selection-end="4029" vertical-scroll-proportion="-21.576923" vertical-offset="1071" max-vertical-offset="2805">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="60" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.3575184" vertical-offset="1003" max-vertical-offset="3060">
           <folding />
         </state>
       </provider>

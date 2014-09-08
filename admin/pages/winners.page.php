@@ -70,9 +70,9 @@ function renderWeekData($weekDataArray, $currentWeek){
             <div class="width-5"></div>
             <div class="width-10 aligncenter">Username</div>
             <div class="width-5"></div>
-            <div class="width-30 aligncenter">User Email</div>
+            <div class="width-20 aligncenter">User Email</div>
             <div class="width-5"></div>
-            <div class="width-10 aligncenter">Paypal</div>
+            <div class="width-20 aligncenter">Paypal</div>
         </li>
 
         <?php
@@ -86,9 +86,9 @@ function renderWeekData($weekDataArray, $currentWeek){
                     <div class='width-5'></div>
                     <div class='width-10 aligncenter'>{$userList[$value["userID"]]->username}</div>
                     <div class='width-5'></div>
-                    <div class='width-30 aligncenter'>{$userList[$value["userID"]]->email}</div>
+                    <div class='width-20 aligncenter'>{$userList[$value["userID"]]->email}</div>
                     <div class='width-5'></div>
-                    <div class='width-10 aligncenter'>{$userList[$value["userID"]]->paypal}</div>
+                    <div class='width-20 aligncenter'>{$userList[$value["userID"]]->paypal}</div>
                 </li>";
         }
         ?>

@@ -93,6 +93,9 @@
                                 <input type="text" name="password" value="Password" data-password autocomplete="off" />
                             </div>
                             <div class="faux-row">
+                                Passwords are case sensitive
+                            </div>
+                            <div class="faux-row">
                                 <div id="forgotPass" style="cursor:pointer; padding:2%;"><h6>Forgot Password?</h6></div>
                             </div>
                             <div class="faux-row"></div>
