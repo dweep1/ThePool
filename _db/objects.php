@@ -999,17 +999,17 @@ class stat_log extends DatabaseObject{
         if((int) $week_id === -1){
             $prepare = "SELECT user_id as userID, SUM(value) as total,
             (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE result <> -1 AND season_id = :season_id AND user_id = userID)) as percent
-            FROM pick WHERE result = 1 AND season_id = :season_id GROUP BY user_id ORDER BY total DESC";
+            FROM pick WHERE result = 1 AND season_id = :season_id GROUP BY user_id ORDER BY total DESC, percent DESC";
         }else{
             $prepare = "SELECT user_id as userID, SUM(value) as total,
-            (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE week_id = :week_id AND season_id = :season_id AND result <> -1 AND user_id = userID)) as percent
-            FROM pick WHERE week_id = :week_id AND season_id = :season_id AND result = 1 GROUP BY user_id ORDER BY total DESC";
+            (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE week_id = :week_id AND result <> -1 AND user_id = userID)) as percent
+            FROM pick WHERE week_id = :week_id AND result = 1 GROUP BY user_id ORDER BY total DESC, percent DESC";
         }
 
         if((int) $week_id === -1)
             $execArray = array(':season_id' => season::getCurrent()->id);
         else
-            $execArray = array(':week_id' => $week_id, ':season_id' => season::getCurrent()->id);
+            $execArray = array(':week_id' => $week_id);
 
         try {
 
