@@ -182,48 +182,23 @@ class users extends DatabaseObject{
      */
     public static function getPlayerRanking($user_id = null, $week_id = -1, $season_id = -1){
 
-        $season_id = (!isset($season_id) || (int) $season_id == -1) ? season::getCurrent()->id : $season_id;
-        $user_id = (!isset($user_id) || $user_id === null) ? users::returnCurrentUser()->id : $user_id;
+        if($user_id === null)
+            $user_id = users::returnCurrentUser()->id;
 
-        $prepare = "SELECT SUM(value) as value, user_id FROM pick WHERE season_id = :season_id";
+        $object = stat_log::getGlobalRankData($week_id);
 
-        if($week_id !== -1){
-            $prepare .= " AND week_id = :week_id";
-            $execArray[":week_id"] = $week_id;
-        }
+        if($object !== false){
 
-        $prepare .= " AND result = 1 GROUP BY user_id ORDER BY value DESC";
+            $rankCount = 0;
 
-        $execArray[":season_id"] = $season_id;
+            forEach($object as $value){
+                $rankCount++;
 
-        try {
-
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare($prepare);
-
-            $query->execute($execArray);
-
-            $object = $query->fetchAll(PDO::FETCH_ASSOC);
-
-
-            if($object !== false){
-
-                $rankCount = 0;
-
-                forEach($object as $value){
-                    $rankCount++;
-
-                    if($value['user_id'] == $user_id){
-                          return $rankCount;
-                    }
-
+                if($value['userID'] == $user_id){
+                    return $rankCount;
                 }
+
             }
-
-        }catch(PDOException $pe){
-
-            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
-
         }
 
         return false;
@@ -999,11 +974,11 @@ class stat_log extends DatabaseObject{
         if((int) $week_id === -1){
             $prepare = "SELECT user_id as userID, SUM(value) as total,
             (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE result <> -1 AND season_id = :season_id AND user_id = userID)) as percent
-            FROM pick WHERE result = 1 AND season_id = :season_id GROUP BY user_id ORDER BY total DESC, percent DESC";
+            FROM pick WHERE result = 1 AND season_id = :season_id GROUP BY user_id ORDER BY total DESC, percent DESC, user_id DESC";
         }else{
             $prepare = "SELECT user_id as userID, SUM(value) as total,
             (COUNT(*) / (SELECT COUNT(*) FROM pick WHERE week_id = :week_id AND result <> -1 AND user_id = userID)) as percent
-            FROM pick WHERE week_id = :week_id AND result = 1 GROUP BY user_id ORDER BY total DESC, percent DESC";
+            FROM pick WHERE week_id = :week_id AND result = 1 GROUP BY user_id ORDER BY total DESC, percent DESC, user_id DESC";
         }
 
         if((int) $week_id === -1)
