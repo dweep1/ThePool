@@ -182,7 +182,7 @@ include "./menu.php";
                 </div>
 
                 <div class="fluid-row width-60 slim over-90">
-                    <label for="username">Username/Email: </label> <input class="float-right" type="text" no-default name="username" value="" />
+                    <label for="username">Username or Email: </label> <input class="float-right" type="text" no-default name="username" value="" />
                     <div class="clear-fix"></div>
                 </div>
 

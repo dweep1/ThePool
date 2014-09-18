@@ -109,7 +109,7 @@ function getLiveStats($scope, $http){
             });
 
             var options_two = {
-                scaleShowLabels : false,
+                scaleShowLabels : true,
                 scaleOverlay : false,
                 scaleShowGridLines : false,
                 animation : true,
@@ -141,7 +141,7 @@ function getLiveStats($scope, $http){
 
                 var tempLegend = "<div style='border-color: "+entity.strokeColor+"' class='ui-legend-item'>"+entity.title+" <i class='fa fa-user' style='color: "+entity.pointColor+"'></i></div>";
 
-                $legend.append(tempLegend)
+                $legend.append(tempLegend);
 
             });
 
