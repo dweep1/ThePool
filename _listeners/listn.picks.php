@@ -98,8 +98,13 @@
 
         $result["errors"] = $errors;
 
+        $pickCount = pick::getPickCount();
+        $gameCount = $current_week->getGameCount();
+
+        $pickLeft = $gameCount - $pickCount;
+
         if($errors === 0){
-            $result["result"] .= "Successfully Update Picks!";
+            $result["result"] .= "Successfully Update Picks! <br/>You have $pickLeft picks remaining.";
         }
 
         echo json_encode($result);

@@ -10,8 +10,6 @@
             $current_week = week::getCurrent();
             $pickCount = pick::getPickCount();
 
-            session_write_close();
-
             $gameCount = $current_week->getGameCount();
 
             echo "{$pickCount}/{$gameCount}";
