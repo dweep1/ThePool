@@ -99,7 +99,7 @@
         $result["errors"] = $errors;
 
         $pickCount = pick::getPickCount();
-        $gameCount = $current_week->getGameCount();
+        $gameCount = $currentWeek->getGameCount();
 
         $pickLeft = $gameCount - $pickCount;
 

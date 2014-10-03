@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.clock.php" afterPath="$PROJECT_DIR$/_listeners/listn.clock.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,7 +36,7 @@
       <file leaf-file-name="combiner.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/combiner.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="2" selection-start="247" selection-end="247" vertical-scroll-proportion="-0.0" vertical-offset="187" max-vertical-offset="289">
+            <state line="11" column="2" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -56,7 +54,7 @@
       <file leaf-file-name="settings.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="195" column="22" selection-start="9336" selection-end="9336" vertical-scroll-proportion="-18.115385" vertical-offset="2844" max-vertical-offset="6103">
+            <state line="195" column="22" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.0" vertical-offset="2844" max-vertical-offset="6103">
               <folding>
                 <marker date="1411005588623" expanded="true" signature="9984:10239" placeholder="..." />
                 <marker date="1411005588623" expanded="true" signature="13120:13382" placeholder="..." />
@@ -104,19 +102,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listn.picks.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="listn.picks.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="106" column="66" selection-start="2828" selection-end="2828" vertical-scroll-proportion="-31.192308" vertical-offset="991" max-vertical-offset="2057">
+            <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.6473029" vertical-offset="1093" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listn.clock.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="listn.clock.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="452" selection-end="452" vertical-scroll-proportion="0.29979253" vertical-offset="0" max-vertical-offset="964">
+            <state line="14" column="45" selection-start="397" selection-end="397" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -239,6 +237,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -383,7 +382,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,7 +390,7 @@
     <property name="options.lastSelected" value="Configurable.PHP.Servers" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../nfl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../praxus/Praxus" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -415,10 +413,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -639,9 +637,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="28" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="527">
-          <folding />
-        </state>
+        <state line="6" column="28" selection-start="91" selection-end="91" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="527" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/trans.page.php">
@@ -728,9 +724,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="28" selection-start="91" selection-end="91" vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="964">
-          <folding />
-        </state>
+        <state line="6" column="28" selection-start="91" selection-end="91" vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
@@ -844,7 +838,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="22" selection-start="9336" selection-end="9336" vertical-scroll-proportion="-18.115385" vertical-offset="2844" max-vertical-offset="6103">
+        <state line="195" column="22" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.0" vertical-offset="2844" max-vertical-offset="6103">
           <folding>
             <marker date="1411005588623" expanded="true" signature="9984:10239" placeholder="..." />
             <marker date="1411005588623" expanded="true" signature="13120:13382" placeholder="..." />
@@ -852,16 +846,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="66" selection-start="2828" selection-end="2828" vertical-scroll-proportion="-31.192308" vertical-offset="991" max-vertical-offset="2057">
+        <state line="14" column="45" selection-start="397" selection-end="397" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="452" selection-end="452" vertical-scroll-proportion="0.29979253" vertical-offset="0" max-vertical-offset="964">
+        <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.6473029" vertical-offset="1093" max-vertical-offset="2057">
           <folding />
         </state>
       </provider>
