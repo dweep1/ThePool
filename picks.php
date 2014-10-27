@@ -166,7 +166,7 @@
 
                     <ul class="ui-games-list">
 
-                        <li data-ng-repeat="item in games | filter:search | orderBy:'id'"
+                        <li data-ng-repeat="item in games | filter:search | orderBy:'date'"
                             data-ng-if="item.gameLock == false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                             <div data-ng-click="item.pick.team_id = item.away_team.id;"

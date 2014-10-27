@@ -104,9 +104,7 @@ if($user === false || !$user->verifyAuth())
                     <div class="width-25">{{ item.total }}</div>
 
                 </li>
-
             </ul>
-
         </div>
 
         <div class="fluid-row width-50 alignleft">

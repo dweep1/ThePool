@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.picks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picks.php" afterPath="$PROJECT_DIR$/picks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,34 +81,51 @@
       <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2703">
+            <state line="93" column="37" selection-start="2555" selection-end="2555" vertical-scroll-proportion="-7.1923075" vertical-offset="1394" max-vertical-offset="2669">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/home.php">
+      <file leaf-file-name="objects.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_db/objects.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="53" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="4658">
-              <folding />
+            <state line="847" column="0" selection-start="21591" selection-end="21591" vertical-scroll-proportion="0.6226013" vertical-offset="13815" max-vertical-offset="21165">
+              <folding>
+                <marker date="1410315920243" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
+                <marker date="1410315920243" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="22129:22224" placeholder="SELECT * FRO..$className..." />
+                <marker date="1410315920243" expanded="true" signature="23216:23303" placeholder="SELECT COUNT..pick..." />
+                <marker date="1410315920243" expanded="true" signature="24938:25246" placeholder="SELECT user_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="25010:25102" placeholder="SELECT COUNT..pick..." />
+                <marker date="1410315920243" expanded="true" signature="25288:25588" placeholder="SELECT user_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="25360:25448" placeholder="SELECT COUNT..pick..." />
+                <marker date="1410315920243" expanded="true" signature="27096:27319" placeholder="SELECT week_..week_id..." />
+                <marker date="1410315920243" expanded="true" signature="27147:27284" placeholder="SELECT week_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="28385:28514" placeholder="SELECT week_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="28809:28921" placeholder="SELECT week_..pick..." />
+                <marker date="1410315920243" expanded="true" signature="29107:29233" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1410315920243" expanded="true" signature="29481:29607" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1410315920243" expanded="true" signature="29839:29950" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1410315920243" expanded="true" signature="30259:30464" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1410315920243" expanded="true" signature="30268:30360" placeholder="SELECT COUNT..pick..." />
+                <marker date="1410315920243" expanded="true" signature="30631:30882" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1410315920243" expanded="true" signature="30640:30755" placeholder="SELECT COUNT..pick..." />
+                <marker date="1410315920243" expanded="true" signature="31213:31422" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1410315920243" expanded="true" signature="31222:31316" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1410315920243" expanded="true" signature="31589:31844" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1410315920243" expanded="true" signature="31598:31715" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1410315920243" expanded="true" signature="32791:32913" placeholder="SELECT * FRO..game..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="picks.page.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/pages/picks.page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="51" selection-start="4846" selection-end="4846" vertical-scroll-proportion="0.0" vertical-offset="1615" max-vertical-offset="5406">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listn.picks.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="listn.picks.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.6473029" vertical-offset="1093" max-vertical-offset="2057">
+            <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -114,7 +134,7 @@
       <file leaf-file-name="listn.clock.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="45" selection-start="397" selection-end="397" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="544">
+            <state line="14" column="45" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="544">
               <folding />
             </state>
           </provider>
@@ -150,9 +170,7 @@
         <option value="$PROJECT_DIR$/admin/listn.email.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.settings.php" />
-        <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/results.print.php" />
-        <option value="$PROJECT_DIR$/picks.php" />
         <option value="$PROJECT_DIR$/results.php" />
         <option value="$PROJECT_DIR$/admin/listn.credits.php" />
         <option value="$PROJECT_DIR$/css/scss/admin.scss" />
@@ -172,6 +190,9 @@
         <option value="$PROJECT_DIR$/js/dashboard.js" />
         <option value="$PROJECT_DIR$/_listeners/listn.clock.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
+        <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/picks.php" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
       </list>
     </option>
   </component>
@@ -237,7 +258,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -382,6 +402,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,7 +411,7 @@
     <property name="options.lastSelected" value="Configurable.PHP.Servers" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../praxus/Praxus" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -413,10 +434,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -511,6 +532,7 @@
     <frame x="-8" y="32" width="1936" height="1122" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="132" width="1736" height="922" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -658,7 +680,33 @@
     <entry file="file://$PROJECT_DIR$/_db/objects.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="659" column="0" selection-start="17600" selection-end="17600" vertical-scroll-proportion="0.0" vertical-offset="11203" max-vertical-offset="21590">
-          <folding />
+          <folding>
+            <marker date="1410315920243" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410315920243" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="22129:22224" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410315920243" expanded="true" signature="23216:23303" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="24938:25246" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="25010:25102" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="25288:25588" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="25360:25448" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="27096:27319" placeholder="SELECT week_..week_id..." />
+            <marker date="1410315920243" expanded="true" signature="27147:27284" placeholder="SELECT week_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="28385:28514" placeholder="SELECT week_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="28809:28921" placeholder="SELECT week_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="29107:29233" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="29481:29607" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="29839:29950" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30259:30464" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30268:30360" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30631:30882" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30640:30755" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31213:31422" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31222:31316" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31589:31844" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31598:31715" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="32791:32913" placeholder="SELECT * FRO..game..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -685,11 +733,6 @@
     <entry file="file://$PROJECT_DIR$/results.print.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="86" column="56" selection-start="2459" selection-end="2471" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="117" selection-start="1840" selection-end="1840" vertical-scroll-proportion="37.923077" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/admin.css">
@@ -784,25 +827,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="53" selection-start="1682" selection-end="1682" vertical-scroll-proportion="0.0" vertical-offset="430" max-vertical-offset="4658">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/picks.page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="51" selection-start="4846" selection-end="4846" vertical-scroll-proportion="0.0" vertical-offset="1615" max-vertical-offset="5406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_db/objects.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="988" column="13" selection-start="25793" selection-end="25793" vertical-scroll-proportion="0.0" vertical-offset="16254" max-vertical-offset="21165">
-          <folding />
-        </state>
+        <state line="119" column="51" selection-start="4846" selection-end="4846" vertical-scroll-proportion="0.0" vertical-offset="1615" max-vertical-offset="5406" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/combiner.php">
@@ -815,13 +842,6 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="79" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="2907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2703">
           <folding />
         </state>
       </provider>
@@ -848,15 +868,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="45" selection-start="397" selection-end="397" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="544">
+        <state line="14" column="45" selection-start="397" selection-end="397" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="544">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.6473029" vertical-offset="1093" max-vertical-offset="2057">
+        <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="2057">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/picks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="89" selection-start="7599" selection-end="7599" vertical-scroll-proportion="0.7095436" vertical-offset="2172" max-vertical-offset="4505" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="204" column="142" selection-start="8285" selection-end="8285" vertical-scroll-proportion="1.4585062" vertical-offset="2062" max-vertical-offset="4658" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="37" selection-start="2555" selection-end="2555" vertical-scroll-proportion="-7.1923075" vertical-offset="1394" max-vertical-offset="2669">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_db/objects.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="847" column="0" selection-start="21591" selection-end="21591" vertical-scroll-proportion="0.6226013" vertical-offset="13815" max-vertical-offset="21165">
+          <folding>
+            <marker date="1410315920243" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410315920243" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="22129:22224" placeholder="SELECT * FRO..$className..." />
+            <marker date="1410315920243" expanded="true" signature="23216:23303" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="24938:25246" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="25010:25102" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="25288:25588" placeholder="SELECT user_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="25360:25448" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="27096:27319" placeholder="SELECT week_..week_id..." />
+            <marker date="1410315920243" expanded="true" signature="27147:27284" placeholder="SELECT week_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="28385:28514" placeholder="SELECT week_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="28809:28921" placeholder="SELECT week_..pick..." />
+            <marker date="1410315920243" expanded="true" signature="29107:29233" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="29481:29607" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="29839:29950" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30259:30464" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30268:30360" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30631:30882" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="30640:30755" placeholder="SELECT COUNT..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31213:31422" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31222:31316" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31589:31844" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1410315920243" expanded="true" signature="31598:31715" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1410315920243" expanded="true" signature="32791:32913" placeholder="SELECT * FRO..game..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -85,7 +85,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="full" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'closed'"
+                    <li class="full" data-ng-repeat="item in games | filter:search | orderBy:'date'" data-ng-init="item.status = 'closed'"
 
                         data-ng-if="item.gameLock != false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
@@ -149,7 +149,7 @@
 
                 <ul class="ui-games-list">
 
-                    <li class="full" data-ng-repeat="item in games | filter:search | orderBy:'id'" data-ng-init="item.status = 'open'"
+                    <li class="full" data-ng-repeat="item in games | filter:search | orderBy:'date'" data-ng-init="item.status = 'open'"
                         data-ng-if="item.gameLock == false" data-picked-id="{{ item.pick.team_id }}" data-bad-value="{{ item.pick.bad }}" >
 
                         <div data-team-id="{{ item.away_team.id }}"
