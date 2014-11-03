@@ -854,7 +854,15 @@ class game extends DatabaseObject{
 
         }
 
+        $tempDate->add(new DateInterval(self::getDSTOffset()));
+
         return $tempDate->format('Y-m-d H:i:s');
+
+    }
+
+    public static function getDSTOffset(){
+
+        return date('I', time()) ? "PT0H" : "PT1H";
 
     }
 
