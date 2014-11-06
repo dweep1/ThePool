@@ -37,52 +37,34 @@
       <file leaf-file-name="objects.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_db/objects.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="864" column="51" selection-start="22053" selection-end="22053" vertical-scroll-proportion="0.723029" vertical-offset="13991" max-vertical-offset="21301">
+            <state line="858" column="48" selection-start="21949" selection-end="21949" vertical-scroll-proportion="0.5819502" vertical-offset="14025" max-vertical-offset="21301">
               <folding>
-                <marker date="1414997441095" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
-                <marker date="1414997441095" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="22298:22393" placeholder="SELECT * FRO..$className..." />
-                <marker date="1414997441095" expanded="true" signature="23385:23472" placeholder="SELECT COUNT..pick..." />
-                <marker date="1414997441095" expanded="true" signature="25107:25415" placeholder="SELECT user_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="25179:25271" placeholder="SELECT COUNT..pick..." />
-                <marker date="1414997441095" expanded="true" signature="25457:25757" placeholder="SELECT user_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="25529:25617" placeholder="SELECT COUNT..pick..." />
-                <marker date="1414997441095" expanded="true" signature="27265:27488" placeholder="SELECT week_..week_id..." />
-                <marker date="1414997441095" expanded="true" signature="27316:27453" placeholder="SELECT week_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="28554:28683" placeholder="SELECT week_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="28978:29090" placeholder="SELECT week_..pick..." />
-                <marker date="1414997441095" expanded="true" signature="29276:29402" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1414997441095" expanded="true" signature="29650:29776" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1414997441095" expanded="true" signature="30008:30119" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1414997441095" expanded="true" signature="30428:30633" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1414997441095" expanded="true" signature="30437:30529" placeholder="SELECT COUNT..pick..." />
-                <marker date="1414997441095" expanded="true" signature="30800:31051" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1414997441095" expanded="true" signature="30809:30924" placeholder="SELECT COUNT..pick..." />
-                <marker date="1414997441095" expanded="true" signature="31382:31591" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1414997441095" expanded="true" signature="31391:31485" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1414997441095" expanded="true" signature="31758:32013" placeholder="SELECT ((SEL..pick..." />
-                <marker date="1414997441095" expanded="true" signature="31767:31884" placeholder="SELECT SUM(v..pick..." />
-                <marker date="1414997441095" expanded="true" signature="32960:33082" placeholder="SELECT * FRO..game..." />
+                <marker date="1415229723678" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
+                <marker date="1415229723678" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="22298:22393" placeholder="SELECT * FRO..$className..." />
+                <marker date="1415229723678" expanded="true" signature="23385:23472" placeholder="SELECT COUNT..pick..." />
+                <marker date="1415229723678" expanded="true" signature="25107:25415" placeholder="SELECT user_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="25179:25271" placeholder="SELECT COUNT..pick..." />
+                <marker date="1415229723678" expanded="true" signature="25457:25757" placeholder="SELECT user_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="25529:25617" placeholder="SELECT COUNT..pick..." />
+                <marker date="1415229723678" expanded="true" signature="27265:27488" placeholder="SELECT week_..week_id..." />
+                <marker date="1415229723678" expanded="true" signature="27316:27453" placeholder="SELECT week_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="28554:28683" placeholder="SELECT week_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="28978:29090" placeholder="SELECT week_..pick..." />
+                <marker date="1415229723678" expanded="true" signature="29276:29402" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1415229723678" expanded="true" signature="29650:29776" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1415229723678" expanded="true" signature="30008:30119" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1415229723678" expanded="true" signature="30428:30633" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1415229723678" expanded="true" signature="30437:30529" placeholder="SELECT COUNT..pick..." />
+                <marker date="1415229723678" expanded="true" signature="30800:31051" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1415229723678" expanded="true" signature="30809:30924" placeholder="SELECT COUNT..pick..." />
+                <marker date="1415229723678" expanded="true" signature="31382:31591" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1415229723678" expanded="true" signature="31391:31485" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1415229723678" expanded="true" signature="31758:32013" placeholder="SELECT ((SEL..pick..." />
+                <marker date="1415229723678" expanded="true" signature="31767:31884" placeholder="SELECT SUM(v..pick..." />
+                <marker date="1415229723678" expanded="true" signature="32960:33082" placeholder="SELECT * FRO..game..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testing.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="25" selection-start="67" selection-end="84" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="238">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backend.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_db/backend.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="7" selection-end="53" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="14603">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -197,7 +179,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -342,6 +323,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,10 +355,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -485,11 +467,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32828283" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -595,31 +577,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="659" column="0" selection-start="17600" selection-end="17600" vertical-scroll-proportion="0.0" vertical-offset="11203" max-vertical-offset="21590">
           <folding>
-            <marker date="1414997441095" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
-            <marker date="1414997441095" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="22298:22393" placeholder="SELECT * FRO..$className..." />
-            <marker date="1414997441095" expanded="true" signature="23385:23472" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25107:25415" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25179:25271" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25457:25757" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25529:25617" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="27265:27488" placeholder="SELECT week_..week_id..." />
-            <marker date="1414997441095" expanded="true" signature="27316:27453" placeholder="SELECT week_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="28554:28683" placeholder="SELECT week_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="28978:29090" placeholder="SELECT week_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="29276:29402" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="29650:29776" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30008:30119" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30428:30633" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30437:30529" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30800:31051" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30809:30924" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31382:31591" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31391:31485" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31758:32013" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31767:31884" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="32960:33082" placeholder="SELECT * FRO..game..." />
+            <marker date="1415229723678" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
+            <marker date="1415229723678" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="22298:22393" placeholder="SELECT * FRO..$className..." />
+            <marker date="1415229723678" expanded="true" signature="23385:23472" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25107:25415" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25179:25271" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25457:25757" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25529:25617" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="27265:27488" placeholder="SELECT week_..week_id..." />
+            <marker date="1415229723678" expanded="true" signature="27316:27453" placeholder="SELECT week_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="28554:28683" placeholder="SELECT week_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="28978:29090" placeholder="SELECT week_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="29276:29402" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="29650:29776" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30008:30119" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30428:30633" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30437:30529" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30800:31051" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30809:30924" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31382:31591" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31391:31485" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31758:32013" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31767:31884" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="32960:33082" placeholder="SELECT * FRO..game..." />
           </folding>
         </state>
       </provider>
@@ -786,9 +768,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_db/listn.bug.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_header.php">
@@ -800,23 +780,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_db/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_db/backend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="53" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="14603">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testing.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="25" selection-start="67" selection-end="84" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="238">
-          <folding />
-        </state>
+        <state line="4" column="25" selection-start="67" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="238" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/date_c.php">
@@ -826,35 +795,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_db/backend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="7" selection-end="53" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="14603">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_db/objects.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="864" column="51" selection-start="22053" selection-end="22053" vertical-scroll-proportion="0.723029" vertical-offset="13991" max-vertical-offset="21301">
+        <state line="858" column="48" selection-start="21949" selection-end="21949" vertical-scroll-proportion="0.5819502" vertical-offset="14025" max-vertical-offset="21301">
           <folding>
-            <marker date="1414997441095" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
-            <marker date="1414997441095" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="22298:22393" placeholder="SELECT * FRO..$className..." />
-            <marker date="1414997441095" expanded="true" signature="23385:23472" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25107:25415" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25179:25271" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25457:25757" placeholder="SELECT user_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="25529:25617" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="27265:27488" placeholder="SELECT week_..week_id..." />
-            <marker date="1414997441095" expanded="true" signature="27316:27453" placeholder="SELECT week_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="28554:28683" placeholder="SELECT week_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="28978:29090" placeholder="SELECT week_..pick..." />
-            <marker date="1414997441095" expanded="true" signature="29276:29402" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="29650:29776" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30008:30119" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30428:30633" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30437:30529" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30800:31051" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="30809:30924" placeholder="SELECT COUNT..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31382:31591" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31391:31485" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31758:32013" placeholder="SELECT ((SEL..pick..." />
-            <marker date="1414997441095" expanded="true" signature="31767:31884" placeholder="SELECT SUM(v..pick..." />
-            <marker date="1414997441095" expanded="true" signature="32960:33082" placeholder="SELECT * FRO..game..." />
+            <marker date="1415229723678" expanded="true" signature="7052:7164" placeholder="SELECT * FRO..$className..." />
+            <marker date="1415229723678" expanded="true" signature="9983:10049" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="10654:10724" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="22298:22393" placeholder="SELECT * FRO..$className..." />
+            <marker date="1415229723678" expanded="true" signature="23385:23472" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25107:25415" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25179:25271" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25457:25757" placeholder="SELECT user_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="25529:25617" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="27265:27488" placeholder="SELECT week_..week_id..." />
+            <marker date="1415229723678" expanded="true" signature="27316:27453" placeholder="SELECT week_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="28554:28683" placeholder="SELECT week_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="28978:29090" placeholder="SELECT week_..pick..." />
+            <marker date="1415229723678" expanded="true" signature="29276:29402" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="29650:29776" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30008:30119" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30428:30633" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30437:30529" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30800:31051" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="30809:30924" placeholder="SELECT COUNT..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31382:31591" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31391:31485" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31758:32013" placeholder="SELECT ((SEL..pick..." />
+            <marker date="1415229723678" expanded="true" signature="31767:31884" placeholder="SELECT SUM(v..pick..." />
+            <marker date="1415229723678" expanded="true" signature="32960:33082" placeholder="SELECT * FRO..game..." />
           </folding>
         </state>
       </provider>
