@@ -2,8 +2,6 @@
 
 include_once "./_header.php";
 
-FormValidation::generate();
-
 $user = users::returnCurrentUser();
 
 if($user === false || !$user->verifyAuth())

@@ -2,8 +2,6 @@
 
     include "./_header.php";
 
-    FormValidation::generate();
-
     $currentUser = users::returnCurrentUser();
 
     $keyUser = new users();

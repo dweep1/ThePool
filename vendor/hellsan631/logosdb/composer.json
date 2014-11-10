@@ -1,0 +1,30 @@
+{
+	"name": "hellsan631/logosdb",
+	"description": "Logos DB Object Handlers",
+	"type": "library",
+	"keywords": ["framework"],
+	"homepage": "http://mathew-kleppin.com/blog/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mathew Kleppin",
+			"homepage": "http://mathew-kleppin.com/blog/"
+		}
+	],
+	"require": {
+		"php": ">=5.5",
+		"ext-mcrypt": "*"
+	},
+    "autoload": {
+        "classmap":[
+            "lib"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/hellsan631/LogosDB",
+            "comment": "Several large changes in how composer autoloads package"
+        }
+    ]
+}

@@ -2,18 +2,16 @@
 
 abstract class User_Test extends Generic_DB_Test{
 
-    public static $db_table_name;
-
-    public function getDataSet(){
-        return $this->createXMLDataSet('logos_unit.xml');
-    }
-
     public function testCheckObjectCreation(){
         $this->assertObjectHasAttribute('id', $this->user);
     }
 
     public function testDatabaseRowInitCount(){
-        $this->assertEquals($this->TableCount, $this->getConnection()->getRowCount(self::$db_table_name), "Pre-Condition");
+        $this->assertEquals(
+            $this->TableCount,
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "Pre-Condition"
+        );
     }
 
     //------------Test Object Creation
@@ -24,8 +22,18 @@ abstract class User_Test extends Generic_DB_Test{
 
         $this->user = new $object(['username' => 'HellsAn631', 'email'=> 'hellsan631@email.com']);
         $this->assertTrue($this->user->id === null, "User has no ID when not in database");
-        $this->assertTrue(is_object($this->user->createNew()), "Object returned on DB creation");
-        $this->assertEquals(($this->TableCount+1), $this->getConnection()->getRowCount(self::$db_table_name), "User Created In Database");
+
+        $this->assertTrue(
+            is_object($this->user->createNew()),
+            "Object returned on DB creation"
+        );
+
+        $this->assertEquals(
+            ($this->TableCount+1),
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "User Created In Database"
+        );
+
         $this->assertTrue($this->user->id !== null, "User ID loaded properly");
 
     }
@@ -34,9 +42,21 @@ abstract class User_Test extends Generic_DB_Test{
 
         $object = self::$db_table_name;
 
-        $this->user->id = $object::createSingle(['username' => 'HellsAn631', 'email'=> 'hellsan631@email.com']);
-        $this->assertTrue($this->user->id !== null && $this->user->id !== false, "User ID was gotten from creation");
-        $this->assertEquals(($this->TableCount+1), $this->getConnection()->getRowCount(self::$db_table_name), "User Created In Database");
+        $this->user->id = $object::createSingle([
+            'username' => 'HellsAn631',
+            'email'=> 'hellsan631@email.com'
+        ]);
+
+        $this->assertTrue(
+            $this->user->id !== null && $this->user->id !== false,
+            "User ID was gotten from creation"
+        );
+
+        $this->assertEquals(
+            $this->TableCount+1,
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "User Created In Database"
+        );
 
     }
 
@@ -52,7 +72,12 @@ abstract class User_Test extends Generic_DB_Test{
 
         $this->users = $object::createMultiple($objects);
         $this->assertTrue($this->users !== false, "Create Multiple Worked and returned correctly");
-        $this->assertEquals(($this->TableCount+3), $this->getConnection()->getRowCount(self::$db_table_name), "Users were created in database");
+
+        $this->assertEquals(
+            $this->TableCount+3,
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "Users were created in database"
+        );
     }
 
     //------------Test Object Loading
@@ -60,7 +85,7 @@ abstract class User_Test extends Generic_DB_Test{
     public function testDatabaseCanLoadObject(){
         $object = self::$db_table_name;
 
-        $this->user = $object::load(['username' => 'HellsAn631']);
+        $this->user = $object::loadSingle(['username' => 'HellsAn631']);
         $this->assertTrue($this->user->id !== null);
     }
 
@@ -69,10 +94,15 @@ abstract class User_Test extends Generic_DB_Test{
         $object = self::$db_table_name;
 
         $savedID = $object::createSingle(['username' => 'HellsAn631', 'email'=> 'hellsan631@email.com']);
-        $this->assertEquals(($this->TableCount+1), $this->getConnection()->getRowCount(self::$db_table_name), "User Created In Database");
+
+        $this->assertEquals(
+            $this->TableCount+1,
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "User Created In Database"
+        );
 
         $this->user = new $object();
-        $this->user->loadInto($savedID);
+        $this->user->load($savedID);
         $this->assertTrue($this->user->id !== null);
 
         $this->user = new $object($savedID);
@@ -123,7 +153,7 @@ abstract class User_Test extends Generic_DB_Test{
         $this->user = $object::firstOrCreate(['username' => "$random"]);
         $this->assertTrue($this->user->id !== null);
 
-        $this->user = $object::load(['username' => $random]);
+        $this->user = $object::loadSingle(['username' => $random]);
         $this->assertTrue($this->user->id !== null);
 
     }
@@ -137,13 +167,17 @@ abstract class User_Test extends Generic_DB_Test{
         $max = 10000;
         $random = mt_rand(0,$max*$max);
 
-        $this->user = $object::load(['email' => 'hellsan631@email.com']);
+        $this->user = $object::loadSingle(['email' => 'hellsan631@email.com']);
         $this->assertTrue($this->user->id !== null);
 
-        $this->assertTrue($this->user->save(['email' => "$random@email.com"])->email !== 'hellsan631@email.com', 'Check to see that save returns the updated user');
+        $this->assertTrue(
+            $this->user->save(['email' => "$random@email.com"])->email !== 'hellsan631@email.com',
+            'Check to see that save returns the updated user'
+        );
+
         $this->assertTrue($this->user->email !== 'hellsan631@email.com');
 
-        $this->user = $object::load(['email' => "$random@email.com"]);
+        $this->user = $object::loadSingle(['email' => "$random@email.com"]);
         $this->assertTrue($this->user->id !== null);
 
     }
@@ -188,7 +222,7 @@ abstract class User_Test extends Generic_DB_Test{
 
         $object = self::$db_table_name;
 
-        $this->user = $object::load(['username' => 'HellsAn631']);
+        $this->user = $object::loadSingle(['username' => 'HellsAn631']);
         $this->assertTrue($this->user->id !== null);
 
         $savedID = $this->user->id;
@@ -209,7 +243,7 @@ abstract class User_Test extends Generic_DB_Test{
 
         $object = self::$db_table_name;
 
-        $this->user = $object::load(['username' => 'HellsAn631']);
+        $this->user = $object::loadSingle(['username' => 'HellsAn631']);
         $this->assertTrue($this->user->id !== null);
 
         $savedID = $this->user->id;
@@ -238,11 +272,19 @@ abstract class User_Test extends Generic_DB_Test{
 
         $this->users = $object::createMultiple($objects);
         $this->assertTrue($this->users !== false, "Create Multiple Worked and returned correctly");
-        $this->assertEquals(($this->TableCount+3), $this->getConnection()->getRowCount(self::$db_table_name), "Users were created in database");
+        $this->assertEquals(
+            $this->TableCount+3,
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "Users were created in database"
+        );
 
         $object::removeMultiple(['email'=> 'todelete@email.com']);
 
-        $this->assertEquals(($this->TableCount), $this->getConnection()->getRowCount(self::$db_table_name), "Users were deleted from database");
+        $this->assertEquals(
+            $this->TableCount,
+            $this->getConnection()->getRowCount(self::$db_table_name),
+            "Users were deleted from database"
+        );
 
     }
 

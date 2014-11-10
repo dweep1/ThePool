@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "e5b6e1b5f6043e0019490f2cb1bc60e4",
+    "packages": [
+        {
+            "name": "hellsan631/logosdb",
+            "version": "v1.4.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hellsan631/LogosDB.git",
+                "reference": "1dd77217cdda5708a4ee4511e6b55781b12c228f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/1dd77217cdda5708a4ee4511e6b55781b12c228f",
+                "reference": "1dd77217cdda5708a4ee4511e6b55781b12c228f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mcrypt": "*",
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "lib"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mathew Kleppin",
+                    "homepage": "http://mathew-kleppin.com/blog/"
+                }
+            ],
+            "description": "Logos DB Object Handlers",
+            "homepage": "http://mathew-kleppin.com/blog/",
+            "keywords": [
+                "framework"
+            ],
+            "time": "2014-11-10 02:53:37"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
+}

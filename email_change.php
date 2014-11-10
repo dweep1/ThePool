@@ -2,8 +2,6 @@
 
     include_once "./_header.php";
 
-    FormValidation::generate();
-
     $keyUser = new users();
 
     $response = false;

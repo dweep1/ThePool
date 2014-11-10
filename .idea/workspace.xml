@@ -2,10 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\objects.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\tpl.debug.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-config.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-core.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-interface.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-object.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\handlers\db-handler-mongo.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\handlers\db-handler-mysql.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\security.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\testing\Generic_DB_Test.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\testing\User_Test.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_header.php" afterPath="$PROJECT_DIR$/_header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/pickClock.js" afterPath="$PROJECT_DIR$/js/pickClock.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/credit.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/email_change.php" afterPath="$PROJECT_DIR$/email_change.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picks.php" afterPath="$PROJECT_DIR$/picks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.print.php" afterPath="$PROJECT_DIR$/results.print.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -34,32 +54,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="security.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_db/security.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="14" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-14.384615" vertical-offset="561" max-vertical-offset="2618">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_header.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="28" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="340">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2873">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="credit.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="67" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1411">
+            <state line="67" column="36" selection-start="1646" selection-end="1646" vertical-scroll-proportion="-30.076923" vertical-offset="357" max-vertical-offset="1377">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listn.clock.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
+      <file leaf-file-name="db-handler-mysql.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.26452282" vertical-offset="0" max-vertical-offset="964">
+            <state line="438" column="10" selection-start="14425" selection-end="14425" vertical-scroll-proportion="0.7479253" vertical-offset="6725" max-vertical-offset="12869">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="week.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
+      <file leaf-file-name="autoload.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="42" selection-start="2186" selection-end="2186" vertical-scroll-proportion="0.0" vertical-offset="1387" max-vertical-offset="3961">
-              <folding>
-                <marker date="1415299612221" expanded="true" signature="430:496" placeholder="SELECT user_..pick..." />
-                <marker date="1415299612221" expanded="true" signature="1101:1171" placeholder="SELECT user_..pick..." />
-              </folding>
+            <state line="6" column="75" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,27 +129,19 @@
         <option value="$PROJECT_DIR$/admin/listn.email.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.settings.php" />
-        <option value="$PROJECT_DIR$/results.print.php" />
-        <option value="$PROJECT_DIR$/results.php" />
         <option value="$PROJECT_DIR$/admin/listn.credits.php" />
         <option value="$PROJECT_DIR$/css/scss/admin.scss" />
         <option value="$PROJECT_DIR$/admin/pages/trans.page.php" />
         <option value="$PROJECT_DIR$/admin/pages/picks.page.php" />
         <option value="$PROJECT_DIR$/admin/listn.picks.php" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/css/scss/index.scss" />
         <option value="$PROJECT_DIR$/admin/index.php" />
         <option value="$PROJECT_DIR$/admin/manage.game.data.php" />
-        <option value="$PROJECT_DIR$/register.php" />
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/js/dashboard.js" />
         <option value="$PROJECT_DIR$/_listeners/listn.clock.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
         <option value="$PROJECT_DIR$/home.php" />
-        <option value="$PROJECT_DIR$/picks.php" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/testing.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/users.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/Event.php" />
@@ -122,11 +158,24 @@
         <option value="$PROJECT_DIR$/_db/objects.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
         <option value="$PROJECT_DIR$/libs/security.php" />
-        <option value="$PROJECT_DIR$/_header.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/admin_log.php" />
         <option value="$PROJECT_DIR$/libs/db/handlers/db-handler-mysql.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
         <option value="$PROJECT_DIR$/js/pickClock.js" />
+        <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/email_change.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/picks.php" />
+        <option value="$PROJECT_DIR$/register.php" />
+        <option value="$PROJECT_DIR$/results.php" />
+        <option value="$PROJECT_DIR$/results.print.php" />
+        <option value="$PROJECT_DIR$/settings.php" />
+        <option value="$PROJECT_DIR$/vendor/autoload.php" />
+        <option value="$PROJECT_DIR$/_header.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
+        <option value="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" />
       </list>
     </option>
   </component>
@@ -220,7 +269,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
+              <option name="myItemId" value="vendor" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -243,46 +292,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mysql" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThePool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nfl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ThePool" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="handlers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -461,7 +470,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1122" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -469,7 +478,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.209375" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.209375" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25959596" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19251336" sideWeight="0.40290758" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1015873" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
@@ -480,8 +489,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277559" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -528,56 +537,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/pages/trans.page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="40" selection-start="2440" selection-end="2440" vertical-scroll-proportion="0.0" vertical-offset="986" max-vertical-offset="3009" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/listn.picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="9" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1938" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/scss/admin.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="560" column="3" selection-start="9831" selection-end="9831" vertical-scroll-proportion="0.0" vertical-offset="9520" max-vertical-offset="15045" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/listn.credits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="84" selection-start="1029" selection-end="1029" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1054" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/listn.games.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="26" selection-start="679" selection-end="679" vertical-scroll-proportion="-12.884615" vertical-offset="294" max-vertical-offset="1258" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="663" column="27" selection-start="10974" selection-end="10974" vertical-scroll-proportion="0.0" vertical-offset="10829" max-vertical-offset="17510" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/js/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="34" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5644" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/manage.game.data.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="31" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="2040" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="34" selection-start="3911" selection-end="4029" vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2805" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="60" selection-start="3124" selection-end="3124" vertical-scroll-proportion="0.0" vertical-offset="1003" max-vertical-offset="3060" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/winners.page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="34" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="2210" />
@@ -586,11 +545,6 @@
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="103" column="92" selection-start="3746" selection-end="3746" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="4403" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="180" column="112" selection-start="6569" selection-end="6570" vertical-scroll-proportion="0.0" vertical-offset="2346" max-vertical-offset="4046" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
@@ -618,34 +572,14 @@
         <state line="11" column="2" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="79" selection-start="1380" selection-end="1380" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="2907" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="149" column="100" selection-start="4670" selection-end="4670" vertical-scroll-proportion="0.0" vertical-offset="1683" max-vertical-offset="3519" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="22" selection-start="9336" selection-end="9336" vertical-scroll-proportion="0.0" vertical-offset="2844" max-vertical-offset="6103" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="89" selection-start="7599" selection-end="7599" vertical-scroll-proportion="0.7095436" vertical-offset="2172" max-vertical-offset="4505" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="204" column="142" selection-start="8285" selection-end="8285" vertical-scroll-proportion="1.4585062" vertical-offset="2062" max-vertical-offset="4658" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="37" selection-start="2555" selection-end="2555" vertical-scroll-proportion="-7.1923075" vertical-offset="1394" max-vertical-offset="2669" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_db/listn.bug.php">
@@ -708,49 +642,9 @@
         <state line="7" column="0" selection-start="65" selection-end="391" vertical-scroll-proportion="0.12344398" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/admin_pages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="44" selection-start="51" selection-end="51" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/admin_log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="41" selection-start="361" selection-end="361" vertical-scroll-proportion="0.22925311" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/bugs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="37" selection-start="44" selection-end="44" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="54" selection-end="54" vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="221" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/db/db-interface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1156" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/security.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="1.3076923" vertical-offset="51" max-vertical-offset="1530" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/db/db-config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="17" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/db/handlers/db-handler-mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="376" column="5" selection-start="12733" selection-end="12733" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12478" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/options.php">
@@ -763,21 +657,9 @@
         <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="1.6794605" vertical-offset="98" max-vertical-offset="2057" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="67" selection-start="966" selection-end="966" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="42" selection-start="2186" selection-end="2186" vertical-scroll-proportion="0.0" vertical-offset="1387" max-vertical-offset="3961">
-          <folding>
-            <marker date="1415299612221" expanded="true" signature="430:496" placeholder="SELECT user_..pick..." />
-            <marker date="1415299612221" expanded="true" signature="1101:1171" placeholder="SELECT user_..pick..." />
-          </folding>
-        </state>
+        <state line="90" column="42" selection-start="2186" selection-end="2186" vertical-scroll-proportion="0.0" vertical-offset="1387" max-vertical-offset="3961" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/pickClock.js">
@@ -787,7 +669,144 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.26452282" vertical-offset="0" max-vertical-offset="964">
+        <state line="15" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.26452282" vertical-offset="0" max-vertical-offset="964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/admin_log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="145" selection-end="145" vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="391" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="24" selection-start="151" selection-end="151" vertical-scroll-proportion="0.1587137" vertical-offset="0" max-vertical-offset="964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08082409" vertical-offset="0" max-vertical-offset="6069" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results.print.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08082409" vertical-offset="0" max-vertical-offset="2941" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08082409" vertical-offset="0" max-vertical-offset="4012" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08252427" vertical-offset="0" max-vertical-offset="3026" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/picks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="28" selection-start="35" selection-end="35" vertical-scroll-proportion="0.053882726" vertical-offset="0" max-vertical-offset="4471" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.08252427" vertical-offset="0" max-vertical-offset="2771" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email_change.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="41" selection-end="41" vertical-scroll-proportion="0.08082409" vertical-offset="0" max-vertical-offset="765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="37" selection-start="156" selection-end="156" vertical-scroll-proportion="0.18858954" vertical-offset="0" max-vertical-offset="2635" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_db/security.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="14" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-14.384615" vertical-offset="561" max-vertical-offset="2618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="75" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="7" selection-end="248" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="28" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.lock">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="81" selection-end="81" vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="964" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/bugs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="37" selection-start="44" selection-end="44" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/admin_pages.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="44" selection-start="51" selection-end="51" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2873">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="36" selection-start="1646" selection-end="1646" vertical-scroll-proportion="-30.076923" vertical-offset="357" max-vertical-offset="1377">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="438" column="10" selection-start="14425" selection-end="14425" vertical-scroll-proportion="0.7479253" vertical-offset="6725" max-vertical-offset="12869">
           <folding />
         </state>
       </provider>

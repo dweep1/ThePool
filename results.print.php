@@ -2,8 +2,6 @@
 
     include "./_header.php";
 
-    FormValidation::generate();
-
     $user = users::returnCurrentUser();
 
     $teams = teams::getTeamsList();

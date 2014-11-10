@@ -47,15 +47,13 @@ class credit extends Logos_MySQL_Object{
         if($week_id === null)
             $week_id = week::getCurrent()->id;
 
-        return self::returnInstance([$user_id, $week_id], array("type" => ["user_id", "week_id"]));
+        return self::loadSingle(["user_id" => $user_id, "week_id" => $week_id]);
 
     }
 
     public static function generateCredit($data){
 
-        $newInstance = new self($data);
-
-        return $newInstance->save();
+        return self::createSingle($data);
 
     }
 
@@ -67,9 +65,9 @@ class credit extends Logos_MySQL_Object{
         $credits = new credit();
 
         if($week_id === null)
-            return count($credits->getList(null, ["user_id" => $user_id]));
+            return count(self::loadMultiple(["user_id" => $user_id]));
         else
-            return count($credits->getList(null, ["user_id" => $user_id, "week_id" => $week_id]));
+            return count(self::loadMultiple(["user_id" => $user_id]));
 
     }
 
