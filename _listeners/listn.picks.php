@@ -71,21 +71,20 @@
 
                     }else{
 
-                        $checkPick = new pick();
-                        $checkPick->load(array($savePick->game_id, $savePick->user_id), array("type" => array("game_id", "user_id")));
+                        $checkPick = pick::loadSingle(["game_id" => $savePick->game_id, "user_id" => $savePick->user_id]);
 
                         if((int) $checkPick->id > 0){
 
                             $savePick->id = $checkPick->id;
 
-                            if($savePick->update() === false){
+                            if($savePick->save() === false){
                                 $result["result"] .= "Unable to update old pick. ";
                                 $errors++;
                             }
 
                         }else{
 
-                            if($savePick->save() === false){
+                            if($savePick->createNew() === false){
                                 $result["result"] .= "Unable to save new pick. ";
                                 $errors++;
                             }

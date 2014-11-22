@@ -1,17 +1,17 @@
 <?php
 
-    if(!session_id()) {
+    date_default_timezone_set('America/New_York');
+
+    if(!session_id())
         session_start();
-    }
 
-    global $ROOT_DB_PATH;
+    include "../vendor/autoload.php";
 
-    $ROOT_DB_PATH = "../_db/";
+    Config::write('db.host', 'localhost');
+    Config::write('db.name', 'thepool');//whatsyo1_thepool - thepool
+    Config::write('db.user', 'dimlitl_prax');//whatsyo1_thepool - dimlitl_prax
+    Config::write('db.password', 'Radegast123/*');//P*OuT51Nq_T3 - Radegast123/*
 
-    include "{$ROOT_DB_PATH}header.php";
-    include "{$ROOT_DB_PATH}security.php";
-    include "{$ROOT_DB_PATH}objects.php";
-
-
+    define("VERSION", "18");
 
 ?>

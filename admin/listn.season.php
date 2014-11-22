@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $newSeason = new season($_POST);
 
-        if($newSeason->createNew())
+        if($newSeason->createNewSeason())
             $_SESSION['result'] = "Successfully added new $objectType";
         else
             $_SESSION['result'] = "Unable to add new $objectType";

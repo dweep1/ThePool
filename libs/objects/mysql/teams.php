@@ -37,17 +37,9 @@ class teams extends Logos_MySQL_Object{
 
     }
 
-    public function getTeamStats(){
-
-        $this->stats = true;
-
-    }
-
     public static function getTeamsList(){
 
-        $instance = new self();
-
-        $teams = $instance->getList("team_name ASC");
+        $teams = self::query(["orderBy" => "team_name ASC"])->getList();
 
         if(!is_bool($teams)){
             foreach($teams as $value){
@@ -57,7 +49,7 @@ class teams extends Logos_MySQL_Object{
             }
         }
 
-        return ((isset($tempStore)) ? $tempStore : false );
+        return isset($tempStore) ? $tempStore : false;
 
     }
 

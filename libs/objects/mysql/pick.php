@@ -19,21 +19,18 @@ class pick extends Logos_MySQL_Object{
         if($user_id === null)
             $user_id = (users::returnCurrentUser()) ? users::returnCurrentUser()->id : false;
 
+        if($user_id === false)
+            return 0;
+
         $prepare = "SELECT COUNT(*) AS pick_count FROM pick WHERE week_id = :week_id AND user_id = :user_id";
 
         if($complete === true){
             $prepare .= " AND value > 0";
         }
 
-        if($user_id === false)
-            return 0;
+        $query = MySQL_Core::fetchQuery($prepare,[":week_id" => $week_id, ":user_id" => $user_id]);
 
         try {
-
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare($prepare);
-
-            $query->execute(array(":week_id" => $week_id, ":user_id" => $user_id));
 
             $object = $query->fetch(PDO::FETCH_ASSOC);
 

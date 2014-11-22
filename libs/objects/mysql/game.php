@@ -16,21 +16,20 @@ class game extends Logos_MySQL_Object{
         $winner = $this->getWinner();
 
         if($winner !== null){
-            $picks = new pick;
-            $picks = $picks->getList(null, array("game_id" => $this->id));
+            $picks = pick::loadMultiple(array("game_id" => $this->id));
 
             if(!is_bool($picks)){
                 foreach($picks as $value){
 
                     $value->result = ($value->team_id == $winner) ? 1 : 0;
 
-                    if($value->update() === false)
+                    if($value->save() === false)
                         return false;
                 }
             }
         }
 
-        return $this->update();
+        return $this->save();
 
     }
 
@@ -111,15 +110,7 @@ class game extends Logos_MySQL_Object{
 
         }
 
-        $tempDate->sub(new DateInterval(self::getDSTOffset()));
-
         return $tempDate->format('Y-m-d H:i:s');
-
-    }
-
-    public static function getDSTOffset(){
-
-        return date('I', time()) ? "PT0H" : "PT1H";
 
     }
 
@@ -127,18 +118,16 @@ class game extends Logos_MySQL_Object{
 
         $className = get_called_class();
 
-        $now = new DateTime("now", Core::getTimezone());
+        $now = new DateTime("now");
+
+        $query = MySQL_Core::fetchQuery(
+            "SELECT * FROM $className WHERE date >= :today AND season_id = :season ORDER BY date ASC LIMIT 1",
+            [":today" => $now->format("Y-m-d"), ":season" => season::getCurrent()->id]
+        );
 
         try {
 
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare("SELECT * FROM $className WHERE date >= :today AND season_id = :season ORDER BY date ASC LIMIT 1");
-
-            $query->execute(array(":today" => $now->format("Y-m-d"), ":season" => season::getCurrent()->id));
-
-            $object = $query->fetchObject($className);
-
-            return $object;
+            return $query->fetchObject($className);
 
         }catch(PDOException $pe) {
 

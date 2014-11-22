@@ -24,11 +24,6 @@ class users extends Logos_MySQL_Object{
     //checks to see if a given password is legit
     public function verifyLogin($password){
 
-        if(!class_exists('Password')){
-            global $ROOT_DB_PATH;
-            @include "{$ROOT_DB_PATH}security.php";
-        }
-
         $passwordCheck = new Password($this->password, array('salt' => $this->salt, 'hashed' => true));
 
         return $passwordCheck->checkPassword($password);
@@ -139,7 +134,7 @@ class users extends Logos_MySQL_Object{
         if(strlen($this->pay_key) <= 1)
             $this->pay_key = Cipher::getRandomKey(16);
 
-        return ($this->update() !== false) ? true : false;
+        return $this->save() !== false ? true : false;
 
     }
 
@@ -161,9 +156,9 @@ class users extends Logos_MySQL_Object{
         $expireDate = new DateTime($this->last_login_date, Core::getTimezone());
         $expireDate->add(new DateInterval("P{$days}D"));
 
-        $today = new Datetime("now", Core::getTimezone());
+        $today = new Datetime("now");
 
-        return ($today >= $expireDate) ? self::deAuth() : false;
+        return $today >= $expireDate ? self::deAuth() : false;
 
     }
 
@@ -204,9 +199,7 @@ class users extends Logos_MySQL_Object{
 
     public static function getFilteredUserList(){
 
-        $users = new users;
-
-        $users = $users->getList();
+        $users = users::newInstance()->getList();
 
         foreach($users as $key => $value){
 
@@ -226,9 +219,7 @@ class users extends Logos_MySQL_Object{
 
     public function getRivals(){
 
-        $rivals = new rivals();
-
-        return $rivals->getList(null, array("user_id" => $this->id));
+        return rivals::loadMultiple(["user_id" => $this->id]);
 
     }
 

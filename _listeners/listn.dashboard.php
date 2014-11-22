@@ -5,16 +5,6 @@
 
     include "./listn.header.php";
 
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ../index.php");
-
-        exit;
-
-    }
-
     if(!isset($_GET['method']))
         exit;
 
@@ -26,7 +16,7 @@
 
         $currentWeek = week::getCurrent();
 
-        $return['weeks'] = renderWeekData($currentWeek->getList("week_number asc", array("season_id" => season::getCurrent()->id)), $currentWeek);
+        $return['weeks'] = renderWeekData(week::query(["orderBy" => "week_number ASC"])->getList(["season_id" => season::getCurrent()->id]), $currentWeek);
 
         $return['users'] = renderUserData(users::getFilteredUserList());
 
@@ -122,7 +112,7 @@
             }
 
             if($count <= 0){
-                $pointDataObject = array("week_id" => (int)$week->id, "value" => 0);
+                $pointDataObject = ["week_id" => (int)$week->id, "value" => 0];
                 array_push($pointDataTemp, $pointDataObject);
             }
 

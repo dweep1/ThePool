@@ -2,30 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-config.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-core.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-interface.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\db-object.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\handlers\db-handler-mongo.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\db\handlers\db-handler-mysql.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\security.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\testing\Generic_DB_Test.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\libs\testing\User_Test.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\backend.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\header.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\listn.bug.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\security.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\session.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitattributes" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitattributes" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitignore" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/CoreTest.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/CoreTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/Event.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/Event.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/Generic_DB_Test.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/Generic_DB_Test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/MySQLUserTest.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/MySQLUserTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/README.md" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/User.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/User.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/User_Test.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/User_Test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_header.php" afterPath="$PROJECT_DIR$/_header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/credit.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/email_change.php" afterPath="$PROJECT_DIR$/email_change.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picks.php" afterPath="$PROJECT_DIR$/picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.print.php" afterPath="$PROJECT_DIR$/results.print.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-config.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mongo.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mongo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-interface.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-interface.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/event.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/game.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/game.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.dashboard.php" afterPath="$PROJECT_DIR$/_listeners/listn.dashboard.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.header.php" afterPath="$PROJECT_DIR$/_listeners/listn.header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.login.php" afterPath="$PROJECT_DIR$/_listeners/listn.login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.picks.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/listn.season.php" afterPath="$PROJECT_DIR$/admin/listn.season.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.settings.php" afterPath="$PROJECT_DIR$/_listeners/listn.settings.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/logos_unit.xml" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/logos_unit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/phpunit.xml" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/phpunit.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/pick.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/pick.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/season.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/season.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/helpers/security.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/helpers/security.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/teams.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/users.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/week.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/week.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -54,56 +75,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="security.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_db/security.php">
+      <file leaf-file-name="event.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="14" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-14.384615" vertical-offset="561" max-vertical-offset="2618">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="28" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="340">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2873">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="credit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="36" selection-start="1646" selection-end="1646" vertical-scroll-proportion="-30.076923" vertical-offset="357" max-vertical-offset="1377">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db-handler-mysql.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="438" column="10" selection-start="14425" selection-end="14425" vertical-scroll-proportion="0.7479253" vertical-offset="6725" max-vertical-offset="12869">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autoload.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="75" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221">
-              <folding />
+            <state line="35" column="10" selection-start="919" selection-end="919" vertical-scroll-proportion="0.5238589" vertical-offset="90" max-vertical-offset="1054">
+              <folding>
+                <marker date="1416678823632" expanded="true" signature="755:869" placeholder="SELECT * FRO..{$className}..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,11 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/admin/listn.email.php" />
-        <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
-        <option value="$PROJECT_DIR$/_listeners/listn.settings.php" />
-        <option value="$PROJECT_DIR$/admin/listn.credits.php" />
-        <option value="$PROJECT_DIR$/css/scss/admin.scss" />
         <option value="$PROJECT_DIR$/admin/pages/trans.page.php" />
         <option value="$PROJECT_DIR$/admin/pages/picks.page.php" />
         <option value="$PROJECT_DIR$/admin/listn.picks.php" />
@@ -140,23 +113,15 @@
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
         <option value="$PROJECT_DIR$/js/dashboard.js" />
         <option value="$PROJECT_DIR$/_listeners/listn.clock.php" />
-        <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
         <option value="$PROJECT_DIR$/home.php" />
         <option value="$PROJECT_DIR$/testing.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/users.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/Event.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/event.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/season.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/week.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/bugs.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/admin_pages.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/rivals.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/game.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/options.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/pick.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/stat_log.php" />
         <option value="$PROJECT_DIR$/_db/objects.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
         <option value="$PROJECT_DIR$/libs/security.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/admin_log.php" />
         <option value="$PROJECT_DIR$/libs/db/handlers/db-handler-mysql.php" />
@@ -172,10 +137,24 @@
         <option value="$PROJECT_DIR$/results.print.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
-        <option value="$PROJECT_DIR$/_header.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/game.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/pick.php" />
+        <option value="$PROJECT_DIR$/admin/listn.season.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/season.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/users.php" />
+        <option value="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/week.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.dashboard.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.settings.php" />
         <option value="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.header.php" />
+        <option value="$PROJECT_DIR$/_header.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/event.php" />
       </list>
     </option>
   </component>
@@ -241,6 +220,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,6 +250,130 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nfl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThePool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hellsan631" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logosdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nfl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThePool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hellsan631" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logosdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogosDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nfl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThePool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hellsan631" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logosdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogosDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nfl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThePool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hellsan631" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logosdb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LogosDB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handlers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -333,13 +437,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_db" />
+              <option name="myItemId" value="_dbOld" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -470,20 +573,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1122" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.209375" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.209375" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25959596" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19251336" sideWeight="0.40290758" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1015873" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -537,39 +641,11 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/pages/winners.page.php">
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="34" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="2210" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="92" selection-start="3746" selection-end="3746" vertical-scroll-proportion="0.0" vertical-offset="1394" max-vertical-offset="4403" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="62" selection-start="988" selection-end="988" vertical-scroll-proportion="0.3526971" vertical-offset="255" max-vertical-offset="2397" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.results.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1581" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/pages/picks.page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="51" selection-start="4846" selection-end="4846" vertical-scroll-proportion="0.0" vertical-offset="1615" max-vertical-offset="5406" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/combiner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="2" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289" />
+        <state line="209" column="21" selection-start="8060" selection-end="8060" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dashboard.js">
@@ -582,11 +658,6 @@
         <state line="204" column="142" selection-start="8285" selection-end="8285" vertical-scroll-proportion="1.4585062" vertical-offset="2062" max-vertical-offset="4658" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_db/listn.bug.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testing.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="25" selection-start="67" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="238" />
@@ -597,79 +668,9 @@
         <state line="339" column="20" selection-start="12761" selection-end="12813" vertical-scroll-proportion="0.34232366" vertical-offset="5433" max-vertical-offset="10948" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="0" selection-start="3776" selection-end="3776" vertical-scroll-proportion="2.680498" vertical-offset="0" max-vertical-offset="2686" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/rivals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="1" selection-start="381" selection-end="381" vertical-scroll-proportion="0.33506224" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/season.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.03526971" vertical-offset="51" max-vertical-offset="1513" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="38" selection-start="100" selection-end="118" vertical-scroll-proportion="0.088174276" vertical-offset="0" max-vertical-offset="1020" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="38" selection-start="27" selection-end="45" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="4080" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/pick.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="0" selection-start="1278" selection-end="1278" vertical-scroll-proportion="-33.346153" vertical-offset="0" max-vertical-offset="969" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/stat_log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="42" selection-start="607" selection-end="607" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="4012" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_db/backend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="53" vertical-scroll-proportion="-5.1721992" vertical-offset="5020" max-vertical-offset="14603" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_db/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="65" selection-end="391" vertical-scroll-proportion="0.12344398" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/options.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.017634856" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="50" selection-start="2686" selection-end="2686" vertical-scroll-proportion="1.6794605" vertical-offset="98" max-vertical-offset="2057" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="42" selection-start="2186" selection-end="2186" vertical-scroll-proportion="0.0" vertical-offset="1387" max-vertical-offset="3961" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/pickClock.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="47" selection-start="636" selection-end="636" vertical-scroll-proportion="0.36464646" vertical-offset="13" max-vertical-offset="1649" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.26452282" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/admin_log.php">
@@ -722,30 +723,9 @@
         <state line="7" column="37" selection-start="156" selection-end="156" vertical-scroll-proportion="0.18858954" vertical-offset="0" max-vertical-offset="2635" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_db/security.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="14" selection-start="1351" selection-end="1351" vertical-scroll-proportion="-14.384615" vertical-offset="561" max-vertical-offset="2618">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="75" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="7" selection-end="248" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="28" selection-start="394" selection-end="394" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="340">
-          <folding />
-        </state>
+        <state line="6" column="75" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="221" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
@@ -754,11 +734,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json">
@@ -771,43 +751,151 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="81" selection-end="81" vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="964" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/bugs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="37" selection-start="44" selection-end="44" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964">
-          <folding />
-        </state>
+        <state line="2" column="37" selection-start="44" selection-end="44" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/admin_pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="44" selection-start="51" selection-end="51" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964">
-          <folding />
-        </state>
+        <state line="2" column="44" selection-start="51" selection-end="51" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2873">
-          <folding />
-        </state>
+        <state line="24" column="70" selection-start="593" selection-end="593" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="2873" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3174274" vertical-offset="306" max-vertical-offset="2465" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="36" selection-start="1646" selection-end="1646" vertical-scroll-proportion="-30.076923" vertical-offset="357" max-vertical-offset="1377">
+        <state line="67" column="36" selection-start="1646" selection-end="1646" vertical-scroll-proportion="1.1815352" vertical-offset="0" max-vertical-offset="1377" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="9" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/options.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="10" selection-start="2980" selection-end="3223" vertical-scroll-proportion="-23.692308" vertical-offset="1509" max-vertical-offset="2499" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/pick.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="13" selection-start="883" selection-end="883" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="918" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/rivals.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="1" selection-start="381" selection-end="381" vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="425" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/listn.season.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="38" selection-start="689" selection-end="704" vertical-scroll-proportion="-8.423077" vertical-offset="410" max-vertical-offset="1411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/season.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="33" selection-start="1517" selection-end="1517" vertical-scroll-proportion="0.8817427" vertical-offset="204" max-vertical-offset="1496" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/stat_log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="933" selection-end="933" vertical-scroll-proportion="-2.650415" vertical-offset="3048" max-vertical-offset="4012" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="216" column="52" selection-start="6184" selection-end="6184" vertical-scroll-proportion="3.8091285" vertical-offset="0" max-vertical-offset="3927" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="219" column="32" selection-start="5943" selection-end="5943" vertical-scroll-proportion="0.78838176" vertical-offset="2963" max-vertical-offset="3927" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="11" selection-start="51" selection-end="51" vertical-scroll-proportion="0.07053942" vertical-offset="0" max-vertical-offset="2771" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="5" selection-start="950" selection-end="950" vertical-scroll-proportion="0.5767635" vertical-offset="73" max-vertical-offset="1037" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="30" selection-start="3765" selection-end="3765" vertical-scroll-proportion="-78.46154" vertical-offset="0" max-vertical-offset="2227" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="79" selection-start="7812" selection-end="7812" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5627" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.results.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="1692" selection-end="1692" vertical-scroll-proportion="-6.5384617" vertical-offset="1054" max-vertical-offset="2040" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="209" column="21" selection-start="8060" selection-end="8060" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="544" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_dbOld/backend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="7" selection-end="53" vertical-scroll-proportion="0.03526971" vertical-offset="0" max-vertical-offset="14603" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="50" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="374" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="50" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="374" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="438" column="10" selection-start="14425" selection-end="14425" vertical-scroll-proportion="0.7479253" vertical-offset="6725" max-vertical-offset="12869">
+        <state line="749" column="66" selection-start="22906" selection-end="22911" vertical-scroll-proportion="0.31224066" vertical-offset="12432" max-vertical-offset="14008">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="10" selection-start="919" selection-end="919" vertical-scroll-proportion="0.5238589" vertical-offset="90" max-vertical-offset="1054">
+          <folding>
+            <marker date="1416678823632" expanded="true" signature="755:869" placeholder="SELECT * FRO..{$className}..." />
+          </folding>
         </state>
       </provider>
     </entry>

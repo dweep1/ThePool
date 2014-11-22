@@ -1,26 +1,26 @@
 [
     {
         "name": "hellsan631/logosdb",
-        "version": "v1.4.3.2",
-        "version_normalized": "1.4.3.2",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/hellsan631/LogosDB.git",
-            "reference": "1dd77217cdda5708a4ee4511e6b55781b12c228f"
+            "reference": "3250f7afd7fd8c57f014b1d1379091c44d5d83e9"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/1dd77217cdda5708a4ee4511e6b55781b12c228f",
-            "reference": "1dd77217cdda5708a4ee4511e6b55781b12c228f",
+            "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/3250f7afd7fd8c57f014b1d1379091c44d5d83e9",
+            "reference": "3250f7afd7fd8c57f014b1d1379091c44d5d83e9",
             "shasum": ""
         },
         "require": {
             "ext-mcrypt": "*",
             "php": ">=5.5"
         },
-        "time": "2014-11-10 02:53:37",
+        "time": "2014-11-22 17:51:23",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "classmap": [
                 "lib"

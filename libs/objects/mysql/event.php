@@ -3,7 +3,7 @@
 /**
  * The Class basis of a dated object, with a start and end date.
  */
-class event extends Logos_MySQL_Object{
+abstract class event extends Logos_MySQL_Object{
 
     public $date_start;
     public $date_end;
@@ -12,13 +12,13 @@ class event extends Logos_MySQL_Object{
 
         $className = get_called_class();
 
-        $now = new DateTime("now", Core::getTimezone());
+        $now = new DateTime("now");
 
         if(isset($_SESSION['current_'.$className])){
 
             $object = new $className($_SESSION['current_'.$className]);
 
-            $dateEnd = new DateTime($object->date_end, Core::getTimezone());
+            $dateEnd = new DateTime($object->date_end);
 
             if($className == "season")
                 $dateEnd->add(new DateInterval("P14D"));
@@ -28,12 +28,14 @@ class event extends Logos_MySQL_Object{
 
         }
 
+        $todayDate = $now->format("Y-m-d");
+
+        $query = MySQL_Core::fetchQuery(
+            "SELECT * FROM {$className} WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1",
+            [":today" => $todayDate]
+        );
+
         try {
-
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare("SELECT * FROM $className WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1");
-
-            $query->execute(array(":today" => $now->format("Y-m-d")));
 
             $object = $query->fetchObject($className);
 

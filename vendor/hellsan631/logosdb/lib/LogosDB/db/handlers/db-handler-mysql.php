@@ -56,6 +56,8 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         $this->id = MySQL_Core::fetchQuery($prepareStatement, $dataArray, false) ?
             MySQL_Core::getInstance()->dbh->lastInsertId() : null;
 
+        if($this->id === null)
+            return false;
 
         return $this;
     }
@@ -217,6 +219,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
     //-------------DB Object Update
 
     /**
+     * @TODO Should this throw exception on failure, or return false?
      * Updates/saves changes to an object in the database, with an optional param $changedData.
      * If changedData is null, then it will just use what data is in the class. If you however want to just change
      * a few things and already have an object, then use the changed data param
@@ -261,20 +264,41 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         //UPDATE fruit SET color = :color, count = :count WHERE id = :id
 
         if(!MySQL_Core::fetchQuery($prepareStatement, $changedData, false))
-            throw new Exception("Object couldn't be saved");
+            return false;
 
         return $this;
     }
 
     /**
-    * 100 Queries Run
-    * <p>Average Time: 1ms per 100/0.44kb</p>
-    */
-
-    //alias for saveMultiple
+     * Saves a single object inside a DB.
+     * Alias for saveMultiple
+     *
+     * @param $changedData
+     * An array of data to be changed
+     *
+     * @param $conditionArray
+     * Where the data is supposed to be changed
+     *
+     * @return bool
+     */
     public static function saveSingle($changedData, $conditionArray){
         return self::saveMultiple($changedData, $conditionArray);
     }
+
+    /**
+     * Saves multiple objects inside a DB.
+     *
+     * 100 Queries Run
+     * <p>Average Time: 1ms per 100/0.44kb</p>
+     *
+     * @param $changedData
+     * An array of data to be changed
+     *
+     * @param $conditionArray
+     * Where the data is supposed to be changed
+     *
+     * @return bool
+     */
 
     public static function saveMultiple($changedData, $conditionArray){
 
@@ -289,14 +313,18 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
         $prepareStatement .= " WHERE ";
 
+        //This cannot be _buildWhereSet because we use two different data sets for the fetch query,
+        //changedData and the conditionArray. We add the where clauses to the condition array
+        //@TODO rewrite this so it uses the $conditionArray instead of $changedData, so we can use _buildQueryWhere
+
         foreach($conditionArray as $key => $value){
             if(array_key_exists($key, $keyChain)){
-                $prepareStatement .= "{$key} = :w{$key}, ";
+                $prepareStatement .= "{$key} = :w{$key} AND ";
                 $changedData["w".$key] = $value;
             }
         }
 
-        $prepareStatement = rtrim($prepareStatement, ", ");
+        $prepareStatement = rtrim($prepareStatement, " AND ");
 
         foreach($changedData as $key => $val){
             $changedData[':'.$key] = (mb_strpos($key,'date') !== false) ?
@@ -316,24 +344,40 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
     //-------------DB Load Objects
 
     /**
+     * Loads data into an existing object
+     *
      * 100 Queries Run
      * <p>Average Time: 39ms per 100/1.844kb</p>
+     *
+     * @param $id
+     * ID of object to load
+     *
+     * @return Object $this
      */
 
     public function load($id){
 
-        return MySQL_Core::fetchQueryObj(
-                "SELECT * FROM ".self::name()." WHERE id = :id LIMIT 1",
-                [":id" => $id],
-                PDO::FETCH_INTO,
-                $this
-            );
+        MySQL_Core::fetchQueryObj(
+            "SELECT * FROM ".self::name()." WHERE id = :id LIMIT 1",
+            [":id" => $id],
+            PDO::FETCH_INTO,
+            $this
+        );
+
+        return ($this->id !== null) ? $this : false;
 
     }
 
     /**
+     * Gets a list of items from a Query
+     *
      * 100 Queries Run
      * <p>Average Time: 4ms per 100/0.422kb</p>
+     *
+     * @param null $conditionArray
+     * Matching conditions for the list
+     *
+     * @return Array
      */
 
     public function getList($conditionArray = null){
@@ -353,8 +397,15 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
     }
 
     /**
+     * Loads a single object from the database
+     *
      * 100 Queries Run
      * <p>Average Time: 47ms per 100/0.355kb</p>
+     *
+     * @param $conditionArray
+     * Matching Conditions for the object to be loaded
+     *
+     * @return Object
      */
 
     public static function loadSingle($conditionArray){
@@ -375,11 +426,19 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
     }
 
-    //Static version of getList
     /**
+     * Loads Multiple Objects from the database
+     *
+     * 100 Queries Run
+     * <p>Average Time: 4ms per 100/0.422kb</p>
+     *
      * @param null $conditionArray
+     * Matching conditions for the list
+     *
      * @return Array
      */
+
+    //Static version of getList
     public static function loadMultiple($conditionArray = null){
 
         self::dataToArray($conditionArray);
@@ -399,8 +458,12 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
     //-------------DB Delete Objects
 
     /**
+     * Removes a object, non-static alias for destroy($id)
+     *
      * 100 Queries Run
-     * <p>Average Time: 2ms per 100/1.265kb</p>
+     * <p>Average Time: 38ms per 100/0.325kb</p>
+     *
+     * @return bool
      */
 
     public function remove(){
@@ -408,7 +471,13 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
     }
 
     /**
+     * Removes multiple objects based on a condition array
+     *
+     * 100 Queries Run
+     * <p>Average Time: 2ms per 100/1.265kb</p>
+     *
      * @param $conditionArray
+     *
      * @return bool
      */
 
@@ -422,12 +491,15 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
     }
 
-
     /**
+     * Statically removes an object with a given ID from a database
+     *
      * 100 Queries Run
      * <p>Average Time: 38ms per 100/0.325kb</p>
      *
      * @param $id
+     * ID of object to be removed
+     *
      * @return bool
      */
 
@@ -443,23 +515,28 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
     //-------------Object Related
 
-    //gets the first object occurrence or creates a new one in the database
+    /**
+     * Gets the first object occurrence of an object in the database, or creates a new object
+     * if one doesn't exist
+     *
+     * @param $dataArray
+     *
+     * @return Database_Object
+     */
     public static function firstOrCreate($dataArray){
 
         $obj = self::firstOrNew($dataArray);
 
-        if(is_object($obj)){
-            if(!is_numeric($obj->id))
-                $obj->createNew();
-        }
-
-        return $obj;
+        return !is_numeric($obj->id) ? $obj->createNew() : $obj;
 
     }
 
-    //gets the first object occurrence or returns a new instance of that object
-    /*
-     * @return DatabaseObject $dataArray
+    /**
+     * Gets the first object occurrence or returns a new instance of that object
+     *
+     * @param $dataArray
+     *
+     * @return Database_Object
      */
     public static function firstOrNew($dataArray){
 
@@ -470,6 +547,8 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
     }
 
     /**
+     * Adds to a mysql query for grouping/ordering/limiting results
+     *
      * @param $functionCall
      * What is added (orderBy, limit, groupBy) can be array or string
      *
@@ -649,12 +728,10 @@ class QueryHandler{
 //would otherwise create many more objects then if we didn't have a singleton as a core.
 //Also, creating a singleton means we can save data to the query using our query handler
 //between instance calls.
-class MySQL_Core implements Database_Core{
+class MySQL_Core extends Database_Core{
 
     public $dbh;
     public $query;
-    private static $instance;
-    //Core is a singleton
 
     public function __construct(){
 
@@ -670,20 +747,10 @@ class MySQL_Core implements Database_Core{
         );
 
         $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDO::ERRMODE_SILENT
-        $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+        $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
 
         $this->query = new QueryHandler();
 
-    }
-
-    //Singleton get class
-    public static function getInstance(){
-        if (!isset(self::$instance)){
-            $object = __CLASS__;
-            self::$instance = new $object;
-        }
-
-        return self::$instance;
     }
 
     public static function fetchQuery($prepare, $execute, $returnQuery = true){
@@ -728,7 +795,7 @@ class MySQL_Core implements Database_Core{
 
                 $fetchParam = $query->fetchObject($fetchParam);
 
-                if(!is_object($fetchParam) && !is_array($fetchParam))
+                if(!is_object($fetchParam) && (!is_array($fetchParam) or count($fetchParam) == 0))
                     return false;
 
             }else if($fetchMode === PDO::FETCH_INTO)

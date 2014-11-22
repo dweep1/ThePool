@@ -24,7 +24,7 @@ class week extends event{
                 $pdo = Core::getInstance();
                 $query = $pdo->dbh->prepare($prepare);
 
-                $query->execute(array(":week_id" => $week_id));
+                $query->execute([":week_id" => $week_id]);
 
                 $pickNumber = count($query->fetchAll());
 
@@ -34,11 +34,11 @@ class week extends event{
 
             }
 
-            $multiple->load("credit_weekly_value", "name");
+            $multiple->load(["name" => "credit_weekly_value"]);
 
         }else{
 
-            $countSeason = ($countSeason === true) ? season::getCurrent()->id : $countSeason;
+            $countSeason = $countSeason === true ? season::getCurrent()->id : $countSeason;
 
             $prepare = "SELECT user_id FROM pick WHERE season_id = :season_id GROUP BY user_id";
 
@@ -47,7 +47,7 @@ class week extends event{
                 $pdo = Core::getInstance();
                 $query = $pdo->dbh->prepare($prepare);
 
-                $query->execute(array(":season_id" => $countSeason));
+                $query->execute([":season_id" => $countSeason]);
 
                 $pickNumber = count($query->fetchAll());
 
@@ -57,7 +57,7 @@ class week extends event{
 
             }
 
-            $multiple->load("credit_season_value", "name");
+            $multiple->load(["name" => "credit_weekly_value"]);
         }
 
         return ($pickNumber*10)*($multiple->value/100);
@@ -187,10 +187,9 @@ class week extends event{
 
     public function getGames($noIndex = false){
 
-        $games = new game();
         $tempStore = [];
 
-        $games = $games->getList("id asc", array("week_id" => $this->id));
+        $games = game::query(["orderBy" => "id asc"])->getList(["week_id" => $this->id]);
 
         foreach($games as $value){
 
@@ -211,8 +210,7 @@ class week extends event{
         if($user_id === null)
             $user_id = users::returnCurrentUser()->id;
 
-        $picks = new pick;
-        $picks = $picks->getList("game_id asc", array("week_id" => $this->id, "user_id" => $user_id));
+        $picks = pick::query(["orderBy" => "game_id ASC"])->getList(["week_id" => $this->id, "user_id" => $user_id]);
 
         if(!is_bool($picks)){
             foreach($picks as $value){

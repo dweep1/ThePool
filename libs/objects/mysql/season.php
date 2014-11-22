@@ -8,16 +8,18 @@ class season extends event{
     public $text_id;
     public $week_count;
 
-    /*public static function getCurrent(){
-        return new season(3);
-    }*/
+    /**
+     * Creates a new NFL season based on $this seasons game/week count.
+     * @return bool
+     */
+    public function createNewSeason(){
 
-    public function createNew(){
-
-        if($this->save() === false)
+        if($this->createNew() === false)
             return false;
 
         $date = new DateTime($this->date_start);
+
+        $tempGames = [];
 
         for($i = 0; $i < $this->week_count; $i++){
 
@@ -26,9 +28,9 @@ class season extends event{
             $end = $date->format('Y-m-d H:i:s');
             $number = $i + 1;
 
-            $tempWeek = new week(array("date_start" => $start, "date_end" => $end, "week_number" => $number, "season_id" => $this->id));
+            $tempWeek = new week(["date_start" => $start, "date_end" => $end, "week_number" => $number, "season_id" => $this->id]);
 
-            if($tempWeek->save() === false)
+            if($tempWeek->createNew() === false)
                 return false;
 
             $gameDate = new DateTime($end);
@@ -37,14 +39,13 @@ class season extends event{
 
             for($k = 0; $k < ($this->game_count/$this->week_count); $k++){
 
-                $tempGame = new game(array("week_id" => $tempWeek->id, "season_id" => $this->id, "date" => $gameDate));
-
-                if($tempGame->save() === false)
-                    return false;
+                array_push($tempGames, ["week_id" => $tempWeek->id, "season_id" => $this->id, "date" => $gameDate]);
 
             }
 
         }
+
+        game::createMultiple($tempGames);
 
         return true;
 
@@ -52,32 +53,30 @@ class season extends event{
 
     public function deleteSeason(){
 
-        $weeks = new week();
-        $weeks = $weeks->getList(null, array("season_id" => $this->id));
+        $weeks = week::loadMultiple(["season_id" => $this->id]);
 
         if(is_bool($weeks))
             return false;
 
         foreach($weeks as $week){
 
-            $games = new game();
-            $games = $games->getList(null, array("week_id" => $week->id));
+            $games = game::loadMultiple(["week_id" => $week->id]);
 
             if(is_bool($games))
                 return false;
 
             foreach($games as $game){
-                if($game->erase() === false)
+                if($game->remove() === false)
                     return false;
 
             }
 
-            if($week->erase() === false)
+            if($week->remove() === false)
                 return false;
 
         }
 
-        return $this->erase();
+        return $this->remove();
 
     }
 

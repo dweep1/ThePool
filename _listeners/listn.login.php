@@ -6,16 +6,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $submitType = intval($_POST['submitType']);
 
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ../index.php");
-
-        exit;
-
-    }
-
     if(!isset($_SESSION['login_attempts']))
         $_SESSION['login_attempts'] = 0;
 
@@ -155,13 +145,13 @@ function doPasswordReset($POST){
     if(!users::verifyRegInfo($POST))
         return -1;
 
-    if($keyUser->load($POST['security_key'], "security_key")){
+    if($keyUser->load(["security_key" => $POST['security_key']])){
         $password = new Password($POST['password']);
 
         $keyUser->password = $password->getKey();
         $keyUser->salt = $password->getSalt();
 
-        if(!$keyUser->update())
+        if(!$keyUser->save())
             return false;
 
     }else
@@ -209,7 +199,7 @@ function doRegister($POST){
 
     $user = new users($POST);
 
-    return ($user->save(true)) ? true : false;
+    return $user->createNew() !== false ? true : false;
 
 }
 
@@ -222,7 +212,7 @@ function doForgotPass($POST){
 
     $user->security_key = substr(Cipher::getRandomKey(true), 0, -2);
 
-    if(!$user->update())
+    if(!$user->save())
         return -2;
 
     $keyFormat = "{$_SERVER['HTTP_HOST']}/index.php?key={$user->security_key}";

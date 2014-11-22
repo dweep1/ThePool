@@ -76,7 +76,7 @@ function doRivalChange($POST){
 
         $rival = new rivals($POST['hiddenID']);
 
-        if($rival->erase()){
+        if($rival->remove()){
             return -3;
         }
 
@@ -88,8 +88,8 @@ function doRivalChange($POST){
 
     $user = new users;
 
-    if(!$user->load($identifier, 'email')){
-        if(!$user->load($identifier, 'username'))
+    if(!$user->load(['username' => $identifier])){
+        if(!$user->load(['email' => $identifier]))
             return -1;//no user found
     }
 
@@ -202,7 +202,7 @@ function doSettingsChange($POST){
     unset($POST['password']);
     unset($POST['email']);
 
-    $response = ($user->updateObject($POST)) ? $user->update() : -3;
+    $response = $user->save($POST) !== false ? true : -3;
 
     if($response === true)
         $_SESSION['user'] = $user->toArray();
