@@ -164,8 +164,8 @@ function doLogin($POST){
 
     $user = new users();
 
-    if(!$user->load($POST['email'], 'email')){
-        if(!$user->load($POST['email'], 'username'))
+    if(!$user->load(['email' => $POST['email']])){
+        if(!$user->load(['username' => $POST['email']]))
             return false;
     }
 
@@ -180,10 +180,10 @@ function doRegister($POST){
 
     $user = new users();
 
-    if($user->load($POST['email'], 'email'))
+    if($user->load(['email' => $POST['email']]) !== false)
         return -2;
 
-    if($user->load($POST['username'], 'username'))
+    if($user->load(['username'=> $POST['username']]) !== false)
         return -2;
 
     if(!users::verifyRegInfo($POST))
@@ -207,7 +207,7 @@ function doForgotPass($POST){
 
     $user = new users();
 
-    if(!$user->load($POST['email'], 'email'))
+    if(!$user->load(['email' => $POST['email']]))
         return -1;
 
     $user->security_key = substr(Cipher::getRandomKey(true), 0, -2);
@@ -319,7 +319,7 @@ function verifyRegInfo($POST){
         }
     }
 
-    return ($errors > 0) ? false : true;
+    return $errors <= 0;
 
 }
 

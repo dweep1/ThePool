@@ -2,51 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\backend.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\header.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\listn.bug.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\security.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_db\session.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitattributes" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitattributes" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitignore" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/CoreTest.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/CoreTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/Event.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/Event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/Event.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/Event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/Generic_DB_Test.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/Generic_DB_Test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/MySQLUserTest.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/MySQLUserTest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/README.md" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/User.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mongo/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/User.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/objects/mysql/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/User_Test.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/testing/User_Test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_header.php" afterPath="$PROJECT_DIR$/_header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-config.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mongo.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mongo.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-interface.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-interface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/event.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/game.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/game.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.dashboard.php" afterPath="$PROJECT_DIR$/_listeners/listn.dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.header.php" afterPath="$PROJECT_DIR$/_listeners/listn.header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.login.php" afterPath="$PROJECT_DIR$/_listeners/listn.login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/listn.season.php" afterPath="$PROJECT_DIR$/admin/listn.season.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.settings.php" afterPath="$PROJECT_DIR$/_listeners/listn.settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/logos_unit.xml" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/logos_unit.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/phpunit.xml" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/phpunit.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/pick.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/pick.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/season.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/season.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/helpers/security.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/helpers/security.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/teams.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/users.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/week.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/week.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -74,19 +37,7 @@
     <favorites_list name="nfl" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="event.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="10" selection-start="919" selection-end="919" vertical-scroll-proportion="0.5238589" vertical-offset="90" max-vertical-offset="1054">
-              <folding>
-                <marker date="1416678823632" expanded="true" signature="755:869" placeholder="SELECT * FRO..{$className}..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -138,7 +89,6 @@
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/vendor/autoload.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/game.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/pick.php" />
         <option value="$PROJECT_DIR$/admin/listn.season.php" />
@@ -148,13 +98,14 @@
         <option value="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-object.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/week.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.dashboard.php" />
-        <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.settings.php" />
         <option value="$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.header.php" />
         <option value="$PROJECT_DIR$/_header.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/event.php" />
+        <option value="$PROJECT_DIR$/_listeners/listn.login.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -474,10 +425,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -641,11 +592,19 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="10" selection-start="919" selection-end="919" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1054" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="21" selection-start="8060" selection-end="8060" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740">
-          <folding />
-        </state>
+        <state line="209" column="21" selection-start="8060" selection-end="8060" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dashboard.js">
@@ -734,11 +693,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088" />
-      </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json">
@@ -774,11 +733,6 @@
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="36" selection-start="1646" selection-end="1646" vertical-scroll-proportion="1.1815352" vertical-offset="0" max-vertical-offset="1377" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="9" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/options.php">
@@ -841,11 +795,6 @@
         <state line="120" column="30" selection-start="3765" selection-end="3765" vertical-scroll-proportion="-78.46154" vertical-offset="0" max-vertical-offset="2227" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="217" column="79" selection-start="7812" selection-end="7812" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5627" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.results.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
@@ -858,9 +807,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="21" selection-start="8060" selection-end="8060" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740">
-          <folding />
-        </state>
+        <state line="209" column="21" selection-start="8060" selection-end="8060" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3740" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
@@ -885,16 +832,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="749" column="66" selection-start="22906" selection-end="22911" vertical-scroll-proportion="0.31224066" vertical-offset="12432" max-vertical-offset="14008">
-          <folding />
-        </state>
+        <state line="749" column="66" selection-start="22906" selection-end="22911" vertical-scroll-proportion="0.31224066" vertical-offset="12432" max-vertical-offset="14008" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="148" column="52" selection-start="6410" selection-end="6410" vertical-scroll-proportion="0.1787592" vertical-offset="2346" max-vertical-offset="5627" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="20" selection-start="102" selection-end="102" vertical-scroll-proportion="0.088174276" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="10" selection-start="919" selection-end="919" vertical-scroll-proportion="0.5238589" vertical-offset="90" max-vertical-offset="1054">
+        <state line="9" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.1587137" vertical-offset="0" max-vertical-offset="1054">
           <folding>
-            <marker date="1416678823632" expanded="true" signature="755:869" placeholder="SELECT * FRO..{$className}..." />
+            <marker date="1416678823632" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..{$className}..." />
           </folding>
         </state>
       </provider>

@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f6cabf1838b86307ab37b32134efd835",
+    "hash": "e5b6e1b5f6043e0019490f2cb1bc60e4",
     "packages": [
         {
             "name": "hellsan631/logosdb",
-            "version": "dev-master",
+            "version": "v1.4.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hellsan631/LogosDB.git",
-                "reference": "3250f7afd7fd8c57f014b1d1379091c44d5d83e9"
+                "reference": "959410b654cff95876e1e806f91af422fda59911"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/3250f7afd7fd8c57f014b1d1379091c44d5d83e9",
-                "reference": "3250f7afd7fd8c57f014b1d1379091c44d5d83e9",
+                "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/959410b654cff95876e1e806f91af422fda59911",
+                "reference": "959410b654cff95876e1e806f91af422fda59911",
                 "shasum": ""
             },
             "require": {
@@ -45,15 +45,13 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2014-11-22 17:51:23"
+            "time": "2014-11-26 20:37:22"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "hellsan631/logosdb": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "platform": [],
     "platform-dev": []

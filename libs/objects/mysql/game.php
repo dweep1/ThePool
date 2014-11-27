@@ -86,7 +86,7 @@ class game extends Logos_MySQL_Object{
 
         if(strpos($dayCheck,'Thu') !== false){
 
-            $tempDate->add(new DateInterval('PT20H')); //should be 6pm EST on that given game date
+            $tempDate->add(new DateInterval('PT12H')); //should be 6pm EST on that given game date
 
         }else if(strpos($dayCheck,'Fri') !== false){
 

@@ -1,6 +1,6 @@
 {
     "require": {
-        "hellsan631/logosdb": "dev-master"
+        "hellsan631/logosdb": "1.4.*"
     },
     "autoload": {
         "classmap":[

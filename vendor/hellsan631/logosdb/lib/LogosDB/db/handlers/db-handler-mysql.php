@@ -1,7 +1,6 @@
 <?php
 
 //@TODO: create Schema syntax for object database creation
-//@TODO: commenting
 //@TODO: re-do querying to better follow php code conventions
 
 abstract class Logos_MySQL_Object extends Database_Object implements Database_Handler{
@@ -14,7 +13,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * 100 Queries Run
      * <p>Average Time: 48ms per 100/1.23kb</p>
      *
-     * @return Object $this
+     * @return Logos_MySQL_Object $this
      */
     public function createNew(){
 
@@ -24,7 +23,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         $keyChain = self::getKeyChain();
         $dataArray = [];
 
-        $prepareStatement = "INSERT INTO ".self::name()." (";
+        $prepareStatement = "INSERT INTO `".self::name()."` (";
 
         foreach($keyChain as $key => $val){
             //since this is a new object, we don't want to save the ID, rather letting the DB generate an ID
@@ -88,7 +87,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         self::dataToArray($data);
         $keyChain = self::getKeyChain();
 
-        $prepareStatement = "INSERT INTO ".self::name()." (";
+        $prepareStatement = "INSERT INTO `".self::name()."` (";
 
         foreach($data as $key => $val){
             //Here we check to see if the key meets our criteria. If it doesn't we want to unset the key so
@@ -148,7 +147,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         $keyChain = self::getKeyChain();
         $goodKeys = $dataArray = [];
 
-        $prepareStatement = "INSERT INTO ".self::name()." (";
+        $prepareStatement = "INSERT INTO `".self::name()."` (";
 
         //We can trigger an error here but we can try and treat it as a single query
         if($count === null && !isset($data[0]))
@@ -231,7 +230,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * <p>An optional array/object/json string of data that is to be saved into the database relating to the
      * referenced object</p>
      *
-     * @return boolean
+     * @return Logos_MySQL_Object
      * <p>Returns the result of query execute. If the execute was successful, then returns true. False on fail</p>
      *
      * @throws Exception
@@ -249,7 +248,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         else
             $changedData = $this->toArray(true);
 
-        $prepareStatement = "UPDATE ".self::name()." SET ";
+        $prepareStatement = "UPDATE `".self::name()."` SET ";
         self::_buildQuerySet($prepareStatement, $changedData, $keyChain);
         $prepareStatement .= " WHERE id = :id";
 
@@ -307,7 +306,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         self::dataToArray($changedData);
         self::dataToArray($conditionArray);
 
-        $prepareStatement = "UPDATE ".self::name()." SET ";
+        $prepareStatement = "UPDATE `".self::name()."` SET ";
 
         self::_buildQuerySet($prepareStatement, $changedData, $keyChain);
 
@@ -350,19 +349,33 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * <p>Average Time: 39ms per 100/1.844kb</p>
      *
      * @param $id
-     * ID of object to load
+     * ID of object to load, (this can also be an array of conditions)
      *
-     * @return Object $this
+     * @return Logos_MySQL_Object $this
      */
 
     public function load($id){
 
-        MySQL_Core::fetchQueryObj(
-            "SELECT * FROM ".self::name()." WHERE id = :id LIMIT 1",
-            [":id" => $id],
-            PDO::FETCH_INTO,
-            $this
-        );
+        if(is_numeric($id)){
+
+            MySQL_Core::fetchQueryObj(
+                "SELECT * FROM `".self::name()."` WHERE id = :id LIMIT 1",
+                [":id" => $id],
+                PDO::FETCH_INTO,
+                $this
+            );
+
+        }else{
+
+            self::dataToArray($id);
+
+            $prepareStatement = "SELECT * FROM `".self::name()."` WHERE ";
+            self::_buildQueryWhere($prepareStatement, $id);
+            $prepareStatement .= " LIMIT 1";
+
+            MySQL_Core::fetchQueryObj($prepareStatement, $id, PDO::FETCH_INTO, $this);
+
+        }
 
         return ($this->id !== null) ? $this : false;
 
@@ -385,7 +398,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         self::dataToArray($conditionArray);
         $name = self::name();
 
-        $prepareStatement = "SELECT * FROM ".$name;
+        $prepareStatement = "SELECT * FROM `".$name."`";
 
         if($conditionArray !== null){
             $prepareStatement .= " WHERE ";
@@ -405,7 +418,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * @param $conditionArray
      * Matching Conditions for the object to be loaded
      *
-     * @return Object
+     * @return Logos_MySQL_Object
      */
 
     public static function loadSingle($conditionArray){
@@ -444,7 +457,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         self::dataToArray($conditionArray);
         $name = self::name();
 
-        $prepareStatement = "SELECT * FROM ".$name;
+        $prepareStatement = "SELECT * FROM `".$name."`";
 
         if($conditionArray !== null){
             $prepareStatement .= " WHERE ";
@@ -483,7 +496,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
     public static function removeMultiple($conditionArray){
 
-        $prepareStatement = "DELETE FROM ".self::name()." WHERE ";
+        $prepareStatement = "DELETE FROM `".self::name()."` WHERE ";
 
         self::_buildQueryWhere($prepareStatement, $conditionArray);
 
@@ -521,7 +534,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      *
      * @param $dataArray
      *
-     * @return Database_Object
+     * @return Logos_MySQL_Object
      */
     public static function firstOrCreate($dataArray){
 
@@ -536,7 +549,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      *
      * @param $dataArray
      *
-     * @return Database_Object
+     * @return Logos_MySQL_Object
      */
     public static function firstOrNew($dataArray){
 
@@ -555,7 +568,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * @param null $params
      * The parameters of the query ('10', 'id ADC') can be array or string
      *
-     * @return mixed - returns new instance of self
+     * @return Logos_MySQL_Object - returns new instance of self
      *
      * Examples:
      * Object::query('limit', 10)->getList();
@@ -574,21 +587,34 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
     public static function query($functionCall, $params = null){
 
+        $callable = new QueryHandler();
+
         if($params === null){
             if(!is_array($functionCall))
                 trigger_error("Invalid Use of Query. No Params Given, and invalid Key/Value pairs");
 
             foreach($functionCall as $key => $value){
-                if($key == 'groupBy' or $key == 'orderBy' or $key == 'limit')
-                    MySQL_Core::getInstance()->query->$key($value);
+                $tempKey = strtolower($key);
+
+                if(is_callable([$callable, $tempKey], true))
+                    MySQL_Core::getInstance()->query->$tempKey($value);
+
             }
 
         }else{
-            if(!is_array($functionCall))
-                MySQL_Core::getInstance()->query->$functionCall($params);
-            else{
+            if(!is_array($functionCall)){
+                $functionCall = strtolower($functionCall);
+
+                if(is_callable([$callable, $functionCall], true))
+                    MySQL_Core::getInstance()->query->$functionCall($params);
+
+            }else{
                 foreach($functionCall as $key => $value){
-                    MySQL_Core::getInstance()->query->$value($params[$key]);
+                    $value = strtolower($value);
+
+                    if(is_callable([$callable, $value], true))
+                        MySQL_Core::getInstance()->query->$value($params[$key]);
+
                 }
             }
         }
@@ -652,34 +678,34 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
 class QueryHandler{
 
-    private $groupBy = "";
-    private $orderBy = "";
-    private $limit = "";
+    private $_groupby = "";
+    private $_orderby = "";
+    private $_limit = "";
 
     //Any time a query is executed, we want to make sure to clear the query so that it doesn't show up again.
     public function getQuery(){
 
-        $query = " {$this->groupBy} {$this->orderBy} {$this->limit} ";
+        $query = " {$this->_groupby} {$this->_orderby} {$this->_limit} ";
 
-        $this->groupBy = "";
-        $this->orderBy = "";
-        $this->limit = "";
+        $this->_groupby = "";
+        $this->_orderby = "";
+        $this->_limit = "";
 
         return $query;
 
     }
 
-    public function groupBy($grouping){
+    public function groupby($grouping){
 
-        $this->$groupBy = "GROUP BY $grouping";
+        $this->_groupby = "GROUP BY $grouping";
 
         return $this;
 
     }
 
-    public function orderBy($order){
+    public function orderby($order){
 
-        $this->orderBy = "ORDER BY $order";
+        $this->_orderby = "ORDER BY $order";
 
         return $this;
 
@@ -711,12 +737,12 @@ class QueryHandler{
         if($min === null)
             return $this;
 
-        $this->limit = "LIMIT $min, ";
+        $this->_limit = "LIMIT $min, ";
 
         if($max !== null)
-            $this->limit .= "$max, ";
+            $this->_limit .= "$max, ";
 
-        $this->limit = rtrim($this->limit, ", ");
+        $this->_limit = rtrim($this->_limit, ", ");
 
         return $this;
 
