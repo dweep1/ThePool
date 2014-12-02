@@ -12,52 +12,19 @@ class week extends event{
     public static function getPoolAmount($week_id = false, $countSeason = false){
 
         $pickNumber = 0;
-        $multiple = new options();
+        $multiple = options::loadSingle(["name" => "credit_weekly_value"]);
 
         if($countSeason === false){
             $week_id = ($week_id) ?: week::getCurrent()->id;
 
-            $prepare = "SELECT user_id FROM pick WHERE week_id = :week_id GROUP BY user_id";
-
-            try {
-
-                $pdo = Core::getInstance();
-                $query = $pdo->dbh->prepare($prepare);
-
-                $query->execute([":week_id" => $week_id]);
-
-                $pickNumber = count($query->fetchAll());
-
-            }catch(PDOException $pe) {
-
-                trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
-
-            }
-
-            $multiple->load(["name" => "credit_weekly_value"]);
+            $pickNumber = count(pick::query(["groupBy" => "user_id"])->getList(["week_id" => $week_id]));
 
         }else{
 
             $countSeason = $countSeason === true ? season::getCurrent()->id : $countSeason;
 
-            $prepare = "SELECT user_id FROM pick WHERE season_id = :season_id GROUP BY user_id";
+            $pickNumber = count(pick::query(["groupBy" => "user_id"])->getList(["season_id" => $countSeason]));
 
-            try {
-
-                $pdo = Core::getInstance();
-                $query = $pdo->dbh->prepare($prepare);
-
-                $query->execute([":season_id" => $countSeason]);
-
-                $pickNumber = count($query->fetchAll());
-
-            }catch(PDOException $pe) {
-
-                trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
-
-            }
-
-            $multiple->load(["name" => "credit_weekly_value"]);
         }
 
         return ($pickNumber*10)*($multiple->value/100);

@@ -39,6 +39,12 @@ foreach($settings as $key => $value){
         </div>
 
         <div class="fluid-row slim">
+            <label for="credit_season_value">Credit Cost: </label>
+            <input type="text" no-default name="credit_cost" value="<?php echo $settings["credit_cost"]->value; ?>" />
+            <div class="clear-fix"></div>
+        </div>
+
+        <div class="fluid-row slim">
             <label for="use_credit">Use Credits:</label>
             <input type="checkbox" name="use_credit" value="1" <?php if(intval($settings["use_credit"]->value) === 1) echo "checked"; ?>>
             <div class="clear-fix"></div>

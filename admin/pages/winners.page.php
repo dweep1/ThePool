@@ -1,9 +1,5 @@
 <?php
 
-global $ROOT_DB_PATH;
-
-$ROOT_DB_PATH = "../_db/";
-
 include_once "./admin.header.php";
 
 $winners = [];
@@ -20,14 +16,16 @@ foreach($userList as $value){
 $userList = $tempList;
 unset($tempList);
 
-$userList[0] = new users(array("username" => "No Winner", "email" => "N/A", "paypal"=> "N/A"));
+$userList[0] = new users(["username" => "No Winner", "email" => "N/A", "paypal"=> "N/A"]);
 
-$weeks = renderWeekData($currentWeek->getList("week_number asc", array("season_id" => season::getCurrent()->id)), $currentWeek);
+$weeks = renderWeekData(week::query(["orderBy" => "week_number asc"])->getList(["season_id" => season::getCurrent()->id]), $currentWeek);
 
 $tempList = [];
+
 foreach($weeks as $value){
     $tempList[$value->id] = $value;
 }
+
 $weeks = $tempList;
 unset($tempList);
 

@@ -1,20 +1,10 @@
 <?php
 
-global $ROOT_DB_PATH;
-$ROOT_DB_PATH = "../_db/";
-
 include "./admin.header.php";
-
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$submitType = intval($_POST['submitType']);
-
-    if(FormValidation::validate() === false){
-        echo 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-        exit;
-
-    }
 
     if(!isset($_POST['className'])){
 
@@ -29,7 +19,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $newPage = new $objectType($_POST);
 
-        if($newPage->erase())
+        if($newPage->remove())
             $result = "Successfully deleted $objectType";
         else
             $result = "Unable to deleted $objectType";

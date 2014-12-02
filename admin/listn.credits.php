@@ -3,41 +3,44 @@
     $data = file_get_contents("php://input");
     $objData = json_decode($data);
 
-    global $ROOT_DB_PATH;
-    $ROOT_DB_PATH = "../_db/";
-
     include "./admin.header.php";
-
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ../index.php");
-
-        exit;
-
-    }
 
     if(!isset($_GET['method']))
         exit;
 
     if($_GET['method'] === 'GET'){
 
+        $weeks = week::loadMultiple();
+
+        foreach($weeks as $key => $value){
+            $weeks[$value->id] = $value;
+            unset($weeks[$key]);
+        }
+
         $obj = new credit();
 
-        if((int) $objData->user_id === -1)
+        if((int) $objData->user_id === -1){
             $obj = $obj->getList();
-        else
-            $obj = $obj->getList(null, array("user_id" => $objData->user_id));
+            $users = users::loadMultiple();
+
+            foreach($users as $key => $value){
+                $users[$value->id] = $value;
+                unset($users[$key]);
+            }
+
+        }else{
+            $user =  users::loadSingle(["id" => $objData->user_id]);
+            $obj = $obj->getList(["user_id" => $user->id]);
+        }
 
         if(is_array($obj)){
             foreach($obj as $key => $value){
 
                 $value->date = displayDate($value->date);
 
-                $value->week_number = ((int) $value->week_id > 0) ? week::returnInstance($value->week_id)->week_number : "N/A";
+                $value->week_number = ((int) $value->week_id > 0) ? $weeks[$value->week_id]->week_number : "N/A";
 
-                $value->username = users::returnInstance($value->user_id)->username;
+                $value->username = ((int) $objData->user_id === -1) ? $users[$value->user_id]->username : $user->username;
 
                 $obj[$key] = $value;
             }

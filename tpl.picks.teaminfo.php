@@ -1,7 +1,7 @@
 <?php
 
     if(!session_id()) {
-        include "_header.php";
+        include "./bootstrap.php";
     }
 
     $teams = teams::getTeamsList();

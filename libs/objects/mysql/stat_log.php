@@ -43,16 +43,11 @@ class stat_log extends Logos_MySQL_Object{
         else
             $execArray = array(':week_id' => $week_id);
 
+        $query = MySQL_Core::fetchQuery($prepare, $execArray);
+
         try {
 
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare($prepare);
-
-            $query->execute($execArray);
-
-            $object = $query->fetchAll(PDO::FETCH_ASSOC);
-
-            return $object;
+            return $query->fetchAll(PDO::FETCH_ASSOC);
 
         }catch(PDOException $pe){
 
@@ -207,16 +202,11 @@ class stat_log extends Logos_MySQL_Object{
 
         }
 
+        $query = MySQL_Core::fetchQuery($prepare, $execArray);
+
         try {
 
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare($prepare);
-
-            $query->execute($execArray);
-
-            $object = $query->fetchAll(PDO::FETCH_ASSOC);
-
-            return $object;
+            return $query->fetchAll(PDO::FETCH_ASSOC);
 
         }catch(PDOException $pe){
 

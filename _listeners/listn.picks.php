@@ -5,16 +5,6 @@
 
     include "./listn.header.php";
 
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ../index.php");
-
-        exit;
-
-    }
-
     if(!isset($_GET['method']))
         exit;
 

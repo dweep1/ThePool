@@ -1,23 +1,10 @@
 <?php
 
-global $ROOT_DB_PATH;
-$ROOT_DB_PATH = "../_db/";
-
 include "./admin.header.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 	$submitType = intval($_POST['submitType']);
-
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ./index.php");
-
-        exit;
-
-    }
 
     if(!isset($_POST['className'])){
         $_SESSION['result'] = 'Class Name Error';
@@ -35,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $newPage = new $objectType($_POST);
 
-        if($newPage->save())
+        if($newPage->createNew())
             $_SESSION['result'] = "Successfully added new $objectType";
         else
             $_SESSION['result'] = "Unable to add new $objectType";
@@ -48,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $newPage = new $objectType($_POST);
 
-        if($newPage->update())
+        if($newPage->save())
             $_SESSION['result'] = "Successfully saved $objectType";
         else
             $_SESSION['result'] = "Unable to update $objectType";
@@ -61,7 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $newPage = new $objectType($_POST);
 
-        if($newPage->erase())
+        if($newPage->remove())
             $_SESSION['result'] = "Successfully deleted $objectType";
         else
             $_SESSION['result'] = "Unable to deleted $objectType";

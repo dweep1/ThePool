@@ -1,6 +1,6 @@
 <?php
 
-include_once "./_header.php";
+include_once "./bootstrap.php";
 
 $user = users::returnCurrentUser();
 

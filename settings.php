@@ -1,6 +1,6 @@
 <?php
 
-    include "./_header.php";
+    include "./bootstrap.php";
 
     $user = users::returnCurrentUser();
 
@@ -8,6 +8,7 @@
         header("Location: ./logout.php");
 
     $teams = teams::getTeamsList();
+    $creditCost = options::loadSingle(["name" => "credit_cost"]);
 
     if(isset($_GET["success"])){
         $_SESSION["result"] = ($_GET["success"] == "true" || $_GET["success"] == true) ? "Successfully Submitted Purchase of The Pool credits.<br/><br/>
@@ -61,7 +62,7 @@ include "./menu.php";
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                     <input type="hidden" name="cmd" value="_xclick">
                     <input type="hidden" name="business" value="harr8142@bellsouth.net">
-                    <input type="hidden" name="amount" value="10.00">
+                    <input type="hidden" name="amount" value="<?php echo $creditCost; ?>">
                     <input type="hidden" name="undefined_quantity" value="1">
                     <input type="hidden" name="item_name" value="Credit Week - The Pool">
                     <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">
@@ -241,7 +242,7 @@ include "./menu.php";
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                     <input type="hidden" name="cmd" value="_xclick">
                     <input type="hidden" name="business" value="harr8142@bellsouth.net">
-                    <input type="hidden" name="amount" value="10.00">
+                    <input type="hidden" name="amount" value="<?php echo $creditCost; ?>">
                     <input type="hidden" name="undefined_quantity" value="1">
                     <input type="hidden" name="item_name" value="Credit Week - The Pool">
                     <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">

@@ -1,8 +1,5 @@
 <?php
 
-global $ROOT_DB_PATH;
-$ROOT_DB_PATH = "../_db/";
-
 include "./admin.header.php";
 
 global $si;

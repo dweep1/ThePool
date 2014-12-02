@@ -1,9 +1,4 @@
-
 <?php
-
-global $ROOT_DB_PATH;
-
-$ROOT_DB_PATH = "../_db/";
 
 include "./admin.header.php";
 
@@ -11,10 +6,6 @@ $user_id = (int)$_GET['id'];
 $user = new users($user_id);
 
 $objectType = $_GET['className'];
-
-$item = new $objectType($id);
-
-FormValidation::generate();
 
 ?>
 

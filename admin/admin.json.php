@@ -7,9 +7,6 @@ $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
 
-global $ROOT_DB_PATH;
-
-$ROOT_DB_PATH = "../_db/";
 
 include "./admin.header.php";
 

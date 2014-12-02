@@ -2,11 +2,9 @@
 
     global $si;
 
-    @include "./admin.header.php";
+    include "./admin.header.php";
 
-    $menu_items = new admin_pages();
-
-    $menu_items = $menu_items->getList('order_weight ASC');
+    $menu_items = admin_pages::query(["orderBy" => "order_weight ASC"])->getList();
 
     if(!checkPermissions(users::returnCurrentUser()))
         exit;

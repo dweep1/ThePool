@@ -1,11 +1,13 @@
 <?php
 
-    include "./_header.php";
+    include "./bootstrap.php";
 
     $user = users::returnCurrentUser();
 
     if($user === false || !$user->verifyAuth())
         header("Location: ./logout.php");
+
+    $creditCost = options::loadSingle(["name" => "credit_cost"]);
 
 ?>
 <!DOCTYPE html>
@@ -73,7 +75,7 @@
                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                         <input type="hidden" name="cmd" value="_xclick">
                         <input type="hidden" name="business" value="harr8142@bellsouth.net">
-                        <input type="hidden" name="amount" value="10.00">
+                        <input type="hidden" name="amount" value="<?php echo $creditCost; ?>">
                         <input type="hidden" name="undefined_quantity" value="1">
                         <input type="hidden" name="item_name" value="Credit Week - The Pool">
                         <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">

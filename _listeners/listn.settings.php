@@ -6,16 +6,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $submitType = intval($_POST['submitType']);
 
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ../index.php");
-
-        exit;
-
-    }
-
     if(isset($_SESSION['result'])) unset($_SESSION['result']);
 
     if((int)$submitType === 0){

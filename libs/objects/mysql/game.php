@@ -60,10 +60,12 @@ class game extends Logos_MySQL_Object{
 
     public function getWinner(){
 
-        if($this->played())
-            return ($this->home_score > $this->away_score) ? $this->home_team : (($this->home_score < $this->away_score) ? $this->away_team : null);
-        else
-            return false;
+        if($this->played()){
+            return ($this->home_score > $this->away_score) ? $this->home_team :
+                (($this->home_score < $this->away_score) ? $this->away_team : null);
+        }
+
+        return false;
 
     }
 

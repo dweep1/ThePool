@@ -3,20 +3,7 @@
     $data = file_get_contents("php://input");
     $objData = json_decode($data);
 
-    global $ROOT_DB_PATH;
-    $ROOT_DB_PATH = "../_db/";
-
     include "./admin.header.php";
-
-    if(FormValidation::validate() === false){
-
-        $_SESSION['result'] = 'The Form Could not be validated.<br/>Please enable javascript/cookies';
-
-        header("Location: ../index.php");
-
-        exit;
-
-    }
 
     if(!isset($_GET['method']))
         exit;
@@ -31,11 +18,11 @@
 
     }else if($_GET['method'] === 'PUT'){
 
-        $currentWeek = week::getCurrent();
+        $currentWeek = week::selected();
 
         $gamesList = $currentWeek->getGames();
 
-        $result = array("result" => "");
+        $result = ["result" => ""];
         $errors = 0;
 
         foreach($objData as $key => $value){
@@ -53,12 +40,12 @@
 
         if(count($objData) > 0){
 
-            if(credit::useCredit($objData[0]->user_id,$currentWeek->id) !== true){
+            if(credit::useCredit($objData[0]->user_id, $currentWeek->id) !== true){
                 $result["result"] .= "Unable to spend credit. There are no valid credits for this user. ";
                 $errors++;
             }
 
-            if($errors === 0){
+            if($errors < 1){
 
                 foreach($objData as $value){
 
@@ -69,21 +56,20 @@
                     if($game->getWinner() !== false)
                         $savePick->result = ((int) $savePick->team_id === (int) $game->getWinner()) ? 1 : 0;
 
-                    $checkPick = new pick();
-                    $checkPick->load(array($savePick->game_id, $savePick->user_id), array("type" => array("game_id", "user_id")));
+                    $checkPick = pick::loadSingle(["game_id" => $savePick->game_id, "user_id" => $savePick->user_id]);
 
                     if((int) $checkPick->id > 0){
 
                         $savePick->id = $checkPick->id;
 
-                        if($savePick->update() === false){
+                        if($savePick->save() === false){
                             $result["result"] .= "Unable to update old pick. ";
                             $errors++;
                         }
 
                     }else{
 
-                        if($savePick->save() === false){
+                        if($savePick->createNew() === false){
                             $result["result"] .= "Unable to save new pick. ";
                             $errors++;
                         }
