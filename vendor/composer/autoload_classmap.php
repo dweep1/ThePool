@@ -23,6 +23,7 @@ return array(
     'MySQL_User' => $vendorDir . '/hellsan631/logosdb/lib/LogosDB/objects/mysql/User.php',
     'Password' => $vendorDir . '/hellsan631/logosdb/lib/LogosDB/helpers/security.php',
     'QueryHandler' => $vendorDir . '/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php',
+    'Selectable' => $baseDir . '/libs/objects/mysql/selectable.php',
     'User_Test' => $vendorDir . '/hellsan631/logosdb/lib/LogosDB/testing/User_Test.php',
     'admin_log' => $baseDir . '/libs/objects/mysql/admin_log.php',
     'admin_pages' => $baseDir . '/libs/objects/mysql/admin_pages.php',

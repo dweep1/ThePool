@@ -202,8 +202,7 @@ include "./menu.php";
 
                     <?php
 
-                    $rivals = new rivals;
-                    $rivals = $rivals->getList("id desc", array("user_id" => $user->id));
+                    $rivals = rivals::query(["orderBy" => "id desc"])->getList(["user_id" => $user->id]);
 
                     if(!is_bool($rivals)){
                         foreach($rivals as $value){
@@ -265,8 +264,7 @@ include "./menu.php";
 
                 <?php
 
-                    $credits = new credit;
-                    $credits = $credits->getList("id desc", array("user_id" => $user->id));
+                    $credits = credit::query(["orderBy" => "id desc"])->getList(["user_id" => $user->id]);
 
                     foreach($credits as $value){
 

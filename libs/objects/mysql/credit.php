@@ -67,7 +67,7 @@ class credit extends Logos_MySQL_Object{
         if($week_id === null)
             return count(self::loadMultiple(["user_id" => $user_id]));
         else
-            return count(self::loadMultiple(["user_id" => $user_id]));
+            return count(self::loadMultiple(["user_id" => $user_id, "week_id" => $week_id]));
 
     }
 

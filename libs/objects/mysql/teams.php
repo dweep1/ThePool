@@ -1,6 +1,6 @@
 <?php
 
-class teams extends Logos_MySQL_Object{
+class teams extends Selectable{
 
     public $team_name;
     public $city;
@@ -15,7 +15,7 @@ class teams extends Logos_MySQL_Object{
 
         try {
 
-            $pdo = Core::getInstance();
+            $pdo = MySQL_Core::getInstance();
             $query = $pdo->dbh->prepare("SELECT * FROM game WHERE (home_team = :team_id OR away_team = :team_id) AND date < CURDATE() ORDER BY date DESC LIMIT :lim");
 
             $query->bindValue(':lim', (int) $limit, PDO::PARAM_INT);
@@ -35,6 +35,10 @@ class teams extends Logos_MySQL_Object{
 
         return $objects;
 
+    }
+
+    public function getTeamStats(){
+        $this->stats = true;
     }
 
     public static function getTeamsList(){

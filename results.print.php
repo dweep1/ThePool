@@ -7,15 +7,15 @@
     $teams = teams::getTeamsList();
 
     $thisWeek = (isset($_GET['week'])) ? new week($_GET['week']) : week::getCurrent();
-    $weeks = $thisWeek->getList("week_id asc", array("season_id" => season::getCurrent()->id));
+    $weeks = week::query(["orderBy" => "week_number ASC"])->getList(["season_id" => season::getCurrent()->id]);
 
     $games = $thisWeek->getGames();
 
     $picks = new pick();
-    $picks = $picks->getList("user_id asc", array("week_id" => $thisWeek->id));
+    $picks = pick::query(["orderBy" => "user_id ASC"])->getList(["week_id" => $thisWeek->id]);
 
     $rivals = new rivals();
-    $rivals = $rivals->getList("rival_id asc", array("user_id" => $user->id));
+    $rivals = rivals::query(["orderBy" => "rival_id ASC"])->getList(["user_id" => $user->id]);
 
     $usersList = $user->getList();
     $usersKeys = [];

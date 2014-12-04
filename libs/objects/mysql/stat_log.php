@@ -98,22 +98,18 @@ class stat_log extends Logos_MySQL_Object{
 
     public static function getGlobalPointData(){
 
-        $prepare = "SELECT week_id, AVG(result) as value FROM
-        (SELECT week_id, SUM(value) as result FROM pick WHERE season_id = :season_id AND result = 1 GROUP BY user_id, week_id ORDER BY week_id ASC)
-        AS t1 GROUP BY t1.week_id";
-
-        $execArray = array(':season_id' => @season::getCurrent()->id);
+        $query = MySQL_Core::fetchQuery(
+            "SELECT week_id, AVG(result) as value FROM
+              (SELECT week_id, SUM(value) as result FROM pick
+                WHERE season_id = :season_id AND result = 1
+                GROUP BY user_id, week_id ORDER BY week_id ASC)
+            AS t1 GROUP BY t1.week_id",
+            [':season_id' => @season::getCurrent()->id]
+        );
 
         try {
 
-            $pdo = Core::getInstance();
-            $query = $pdo->dbh->prepare($prepare);
-
-            $query->execute($execArray);
-
-            $object = $query->fetchAll(PDO::FETCH_ASSOC);
-
-            return $object;
+            return $query->fetchAll(PDO::FETCH_ASSOC);
 
         }catch(PDOException $pe){
 
