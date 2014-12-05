@@ -1,8 +1,5 @@
 <?php
 
-global $ROOT_DB_PATH;
-$ROOT_DB_PATH = "../_db/";
-
 include "./admin.header.php";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -36,7 +33,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     }else if($submitType == 1){
 
-        $newPage = new $objectType($_POST);
+        $newPage = new season($_POST);
 
         if($newPage->save())
             $_SESSION['result'] = "Successfully saved $objectType";

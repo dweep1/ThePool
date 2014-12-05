@@ -7,6 +7,7 @@ class season extends event{
     public $game_count;
     public $text_id;
     public $week_count;
+    public $type; // enum - regular, preseason, playoff
 
     /**
      * Creates a new NFL season based on $this seasons game/week count.

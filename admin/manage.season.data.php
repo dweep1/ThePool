@@ -50,6 +50,16 @@ $obj = new $objectType($id);
             <div class="clear-fix"></div>
         </div>
 
+        <div class="fluid-row slim">
+            <label for="type">Season Type: </label>
+            <select id="type" name="type" class="float-right">
+                <option value="regular" <?php if($obj->type == "regular"){ echo "selected"; } ?>>Regular Season</option>
+                <option value="preseason" <?php if($obj->type == "preseason"){ echo "selected"; } ?>>Pre-Season</option>
+                <option value="playoff" <?php if($obj->type == "playoff"){ echo "selected"; } ?>>Playoffs</option>
+            </select>
+            <div class="clear-fix"></div>
+        </div>
+
         <div class="fluid-row"></div>
 
     </form>
