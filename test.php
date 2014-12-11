@@ -1,10 +1,7 @@
 <?php
 
-    if(!session_id())
-        session_start();
+    include "bootstrap.php";
 
-    include "./vendor/autoload.php";
+    $season = season::getCurrent();
 
-    $instance = new admin_log();
-
-    var_dump($instance);
+    var_dump($season);

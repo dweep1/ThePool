@@ -21,8 +21,7 @@ function getLiveData($scope, $http, $callback){
 
     $scope.week_id = week_id;
 
-
-    return $http.post( "./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.week_id}).
+    return $http.post("./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.week_id}).
         success(function(data, status) {
 
             $scope.status = status;
@@ -37,8 +36,6 @@ function getLiveData($scope, $http, $callback){
 
             return false;
         });
-
-
 
 }
 

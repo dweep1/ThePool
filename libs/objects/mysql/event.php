@@ -8,6 +8,10 @@ abstract class event extends Selectable{
     public $date_start;
     public $date_end;
 
+    /**
+     * @return $this
+     */
+
     public static function getCurrent(){
 
         $className = get_called_class();
