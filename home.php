@@ -260,50 +260,23 @@
             <h4>Last Season's Results <i data-trans-for="last_season" class="fa fa-bars"></i></h4>
 
             <div data-trans-id="last_season" class="alignleft" data-ng-controller="LastSeasonController">
-                <ul class="ui-games-list">
 
-                    <li data-ng-repeat="item in oldResults | orderBy:'id'"
-                        data-picked-id="{{ item.pick.team_id }}">
+                <div data-ng-repeat="item in oldResults | orderBy:'id'" class="team-small" style="background-image: url('{{ item.image_url }}')">
 
-                        <div data-team-id="{{ item.away_team.id }}" style="background-image: url('{{ item.away_team.image_url }}')"
-                             data-ng-class="{true: 'team alignleft picked', false: 'team alignleft'}[item.pick.team_id == item.away_team.id]">
-
-                            <div data-ng-class="{true: 'loss gradient-left', false: 'gradient-left'}[item.away_score < item.home_score]">
-                                <h5>{{ item.away_team.city }}</h5>
-                                <h6>{{ item.away_team.team_name }}</h6>
-                            </div>
-
+                    <div class="gradient-left" >
+                        <div class="team alignleft">
+                            <h5>{{ item.city }}</h5>
+                            <h6>{{ item.team_name }}</h6>
                         </div>
 
-                        <div class="middle">
-
-                            <i data-ng-class="{true: 'loss', false: ''}[item.away_score < item.home_score]">
-                                {{ item.away_score }}
-                            </i>
-
-                            <i>@</i>
-
-                            <i data-ng-class="{true: 'loss', false: ''}[item.away_score > item.home_score]">
-                                {{ item.home_score }}
-                            </i>
-
+                        <div class="team-stats alignright">
+                            <h6>Wins: {{ item.wins }}</h6>
+                            <h6>Losses: {{ item.games - item.wins }}</h6>
                         </div>
+                    </div>
 
-                        <div data-team-id="{{ item.home_team.id }}" style="background-image: url('{{ item.home_team.image_url }}')"
-                             data-ng-class="{true: 'team alignright float-right picked', false: 'team alignright float-right'}[item.pick.team_id == item.home_team.id]">
+                </div>
 
-                            <div data-ng-class="{true: 'loss gradient-right', false: 'gradient-right'}[item.away_score > item.home_score]">
-                                <h5>{{ item.home_team.city }}</h5>
-                                <h6>{{ item.home_team.team_name }}</h6>
-                            </div>
-                        </div>
-
-                        <div class="display-date">{{ item.display_date }}</div>
-
-                        <div class="clear-fix"></div>
-
-                    </li>
-                </ul>
             </div>
 
             <?php
@@ -323,6 +296,7 @@
 <script>
 
     week_id = <?php echo week::getCurrent()->id; ?>;
+    season_id = <?php echo season::getCurrent()->id; ?>;
 
 </script>
 
@@ -342,9 +316,9 @@
 
     function getPreviousSeason($scope, $http){
 
-        $scope.week_id = week_id;
+        $scope.season_id = season_id;
 
-        return $http.post("./_listeners/listn.picks.php?method=GET", { "week_id" : $scope.week_id}).
+        return $http.post("./_listeners/listn.playoff.stats.php", { "season_id" : $scope.season_id}).
             success(function(data, status) {
 
                 $scope.oldResults = data;

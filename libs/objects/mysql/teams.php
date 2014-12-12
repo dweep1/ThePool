@@ -41,9 +41,14 @@ class teams extends Selectable{
         $this->stats = true;
     }
 
+    /**
+     * @return array
+     */
+
     public static function getTeamsList(){
 
         $teams = self::query(["orderBy" => "team_name ASC"])->getList();
+        $tempStore = [];
 
         if(!is_bool($teams)){
             foreach($teams as $value){
@@ -53,7 +58,7 @@ class teams extends Selectable{
             }
         }
 
-        return isset($tempStore) ? $tempStore : false;
+        return $tempStore;
 
     }
 

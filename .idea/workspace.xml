@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_dbOld\backend.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_dbOld\header.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_dbOld\listn.bug.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_dbOld\objects.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_dbOld\security.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\_dbOld\session.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/event.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/home.js" afterPath="$PROJECT_DIR$/js/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/teams.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
     </list>
     <ignored path="nfl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,44 +38,41 @@
       <file leaf-file-name="season.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/objects/mysql/season.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="16" selection-start="135" selection-end="140" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1513">
+            <state line="9" column="35" selection-start="152" selection-end="159" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1513">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.season.data.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/manage.season.data.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="14" selection-start="728" selection-end="728" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1904">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="28" selection-start="35" selection-end="35" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="204">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="338" column="41" selection-start="13218" selection-end="13218" vertical-scroll-proportion="0.4885892" vertical-offset="5275" max-vertical-offset="6392">
+            <state line="272" column="58" selection-start="11022" selection-end="11022" vertical-scroll-proportion="-26.615385" vertical-offset="3932" max-vertical-offset="5950">
               <folding>
-                <element signature="e#8331#8394#0" expanded="true" />
-                <element signature="e#9462#9525#0" expanded="true" />
-                <element signature="e#10765#10828#0" expanded="true" />
-                <element signature="e#11896#11959#0" expanded="true" />
-                <marker date="1418249053890" expanded="true" signature="8076:8189" placeholder="..." />
-                <marker date="1418249053890" expanded="true" signature="8120:8189" placeholder="..." />
-                <marker date="1418249053890" expanded="true" signature="8927:8982" placeholder="..." />
-                <marker date="1418249053890" expanded="false" signature="9469:9491" placeholder="..." />
+                <element signature="e#1513#1564#0" expanded="true" />
+                <element signature="e#2173#2204#0" expanded="true" />
+                <element signature="e#2491#2512#0" expanded="true" />
+                <element signature="e#2656#2687#0" expanded="true" />
+                <element signature="e#2865#2896#0" expanded="true" />
+                <element signature="e#3692#3755#0" expanded="true" />
+                <element signature="e#5043#5106#0" expanded="true" />
+                <element signature="e#6356#6419#0" expanded="true" />
+                <element signature="e#7081#7144#0" expanded="true" />
+                <element signature="e#10603#10656#0" expanded="true" />
+                <marker date="1418329899623" expanded="true" signature="8076:8189" placeholder="..." />
+                <marker date="1418329899623" expanded="true" signature="8120:8189" placeholder="..." />
+                <marker date="1418329899623" expanded="true" signature="8927:8982" placeholder="..." />
+                <marker date="1418329899623" expanded="false" signature="9469:9491" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.scss" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="609" column="13" selection-start="10047" selection-end="10047" vertical-scroll-proportion="-20.0" vertical-offset="9313" max-vertical-offset="18547">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,7 +89,47 @@
       <file leaf-file-name="listn.picks.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1109" selection-end="1109" vertical-scroll-proportion="-28.76923" vertical-offset="51" max-vertical-offset="1870">
+            <state line="98" column="34" selection-start="2610" selection-end="2636" vertical-scroll-proportion="-42.96154" vertical-offset="549" max-vertical-offset="1870">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listn.playoff.stats.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_listeners/listn.playoff.stats.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="1" selection-start="292" selection-end="292" vertical-scroll-proportion="0.15352698" vertical-offset="39" max-vertical-offset="1139">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="teams.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="43" column="7" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-23.692308" vertical-offset="115" max-vertical-offset="1190">
+              <folding>
+                <marker date="1418328719712" expanded="true" signature="354:476" placeholder="SELECT * FRO..game..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="60" column="31" selection-start="1238" selection-end="1249" vertical-scroll-proportion="-15.692307" vertical-offset="612" max-vertical-offset="2533">
+              <folding>
+                <marker date="1417538990318" expanded="true" signature="3039:3134" placeholder="SELECT * FRO..$className..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="db-core.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="98" column="46" selection-start="2216" selection-end="2224" vertical-scroll-proportion="-12.692307" vertical-offset="1336" max-vertical-offset="3859">
               <folding />
             </state>
           </provider>
@@ -130,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/email_change.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/register.php" />
@@ -167,7 +197,6 @@
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
         <option value="$PROJECT_DIR$/admin/listn.picks.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/selectable.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/stat_log.php" />
         <option value="$PROJECT_DIR$/results.php" />
@@ -180,7 +209,10 @@
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/js/home.js" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/event.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/teams.php" />
         <option value="$PROJECT_DIR$/home.php" />
+        <option value="$PROJECT_DIR$/css/scss/index.scss" />
+        <option value="$PROJECT_DIR$/_listeners/listn.playoff.stats.php" />
       </list>
     </option>
   </component>
@@ -246,6 +278,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -310,7 +343,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nfl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ThePool" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -362,7 +413,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,10 +444,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -513,8 +563,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277559" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -561,26 +611,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/admin/admin.listener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="43" selection-start="1042" selection-end="1042" vertical-scroll-proportion="-31.384615" vertical-offset="0" max-vertical-offset="1190" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="36" selection-start="494" selection-end="494" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="646" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="30" selection-start="146" selection-end="146" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="323" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/games.json.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="25" selection-start="546" selection-end="546" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="527" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="14" selection-start="2867" selection-end="2867" vertical-scroll-proportion="-45.76923" vertical-offset="51" max-vertical-offset="4335" />
@@ -602,11 +632,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/listn.settings.php">
@@ -704,11 +734,6 @@
         <state line="49" column="44" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.12344398" vertical-offset="714" max-vertical-offset="1700" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="865" selection-end="865" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="1105" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/selectable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="612" />
@@ -761,67 +786,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/settings.page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="14" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.67427385" vertical-offset="200" max-vertical-offset="1445">
-          <folding />
-        </state>
+        <state line="50" column="14" selection-start="1768" selection-end="1768" vertical-scroll-proportion="0.67427385" vertical-offset="200" max-vertical-offset="1445" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/pages/comms.page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="759" selection-end="1080" vertical-scroll-proportion="0.44087136" vertical-offset="0" max-vertical-offset="2091">
-          <folding />
-        </state>
+        <state line="25" column="25" selection-start="759" selection-end="1080" vertical-scroll-proportion="0.44087136" vertical-offset="0" max-vertical-offset="2091" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/manage.season.data.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="14" selection-start="728" selection-end="728" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="1904">
+        <state line="20" column="14" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1904">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="35" selection-end="35" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="204">
+        <state line="2" column="28" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="204">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.6275934" vertical-offset="1569" max-vertical-offset="2533">
-          <folding>
-            <marker date="1417538990318" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..$className..." />
-          </folding>
-        </state>
+        <state line="1021" column="3" selection-start="15574" selection-end="15574" vertical-scroll-proportion="0.7626263" vertical-offset="16602" max-vertical-offset="64821" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/season.php">
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="135" selection-end="140" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1513">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/listn.season.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="40" selection-start="943" selection-end="943" vertical-scroll-proportion="-21.576923" vertical-offset="153" max-vertical-offset="1190">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1109" selection-end="1109" vertical-scroll-proportion="-28.76923" vertical-offset="51" max-vertical-offset="1870">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="71" selection-start="453" selection-end="453" vertical-scroll-proportion="0.3879668" vertical-offset="0" max-vertical-offset="1156">
+        <state line="8" column="21" selection-start="167" selection-end="167" vertical-scroll-proportion="0.14107884" vertical-offset="0" max-vertical-offset="1139">
           <folding>
-            <marker date="1418248112520" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..{$className}..." />
+            <marker date="1418326918867" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..{$className}..." />
           </folding>
         </state>
       </provider>
@@ -833,26 +836,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
+    <entry file="file://$PROJECT_DIR$/admin/listn.season.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1021" column="3" selection-start="15574" selection-end="15574" vertical-scroll-proportion="0.7626263" vertical-offset="16602" max-vertical-offset="64821">
+        <state line="42" column="40" selection-start="943" selection-end="943" vertical-scroll-proportion="-21.576923" vertical-offset="153" max-vertical-offset="1190">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/db-core.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="46" selection-start="2216" selection-end="2224" vertical-scroll-proportion="-12.692307" vertical-offset="1336" max-vertical-offset="3859">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="31" selection-start="1238" selection-end="1249" vertical-scroll-proportion="-15.692307" vertical-offset="612" max-vertical-offset="2533">
+          <folding>
+            <marker date="1417538990318" expanded="true" signature="3039:3134" placeholder="SELECT * FRO..$className..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="98" column="34" selection-start="2610" selection-end="2636" vertical-scroll-proportion="-42.96154" vertical-offset="549" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="7" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-23.692308" vertical-offset="115" max-vertical-offset="1190">
+          <folding>
+            <marker date="1418328719712" expanded="true" signature="354:476" placeholder="SELECT * FRO..game..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="338" column="41" selection-start="13218" selection-end="13218" vertical-scroll-proportion="0.4885892" vertical-offset="5275" max-vertical-offset="6392">
+        <state line="272" column="58" selection-start="11022" selection-end="11022" vertical-scroll-proportion="-26.615385" vertical-offset="3932" max-vertical-offset="5950">
           <folding>
-            <element signature="e#8331#8394#0" expanded="true" />
-            <element signature="e#9462#9525#0" expanded="true" />
-            <element signature="e#10765#10828#0" expanded="true" />
-            <element signature="e#11896#11959#0" expanded="true" />
-            <marker date="1418249053890" expanded="true" signature="8076:8189" placeholder="..." />
-            <marker date="1418249053890" expanded="true" signature="8120:8189" placeholder="..." />
-            <marker date="1418249053890" expanded="true" signature="8927:8982" placeholder="..." />
-            <marker date="1418249053890" expanded="false" signature="9469:9491" placeholder="..." />
+            <element signature="e#1513#1564#0" expanded="true" />
+            <element signature="e#2173#2204#0" expanded="true" />
+            <element signature="e#2491#2512#0" expanded="true" />
+            <element signature="e#2656#2687#0" expanded="true" />
+            <element signature="e#2865#2896#0" expanded="true" />
+            <element signature="e#3692#3755#0" expanded="true" />
+            <element signature="e#5043#5106#0" expanded="true" />
+            <element signature="e#6356#6419#0" expanded="true" />
+            <element signature="e#7081#7144#0" expanded="true" />
+            <element signature="e#10603#10656#0" expanded="true" />
+            <marker date="1418329899623" expanded="true" signature="8076:8189" placeholder="..." />
+            <marker date="1418329899623" expanded="true" signature="8120:8189" placeholder="..." />
+            <marker date="1418329899623" expanded="true" signature="8927:8982" placeholder="..." />
+            <marker date="1418329899623" expanded="false" signature="9469:9491" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="609" column="13" selection-start="10047" selection-end="10047" vertical-scroll-proportion="-20.0" vertical-offset="9313" max-vertical-offset="18547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/season.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="35" selection-start="152" selection-end="159" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="1513">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_listeners/listn.playoff.stats.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="1" selection-start="292" selection-end="292" vertical-scroll-proportion="0.15352698" vertical-offset="39" max-vertical-offset="1139">
+          <folding />
         </state>
       </provider>
     </entry>
