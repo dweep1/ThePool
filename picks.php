@@ -94,6 +94,12 @@
             elseif($validCredit !== false):
         ?>
 
+            <?php
+
+                if(season::getCurrent()->type !== "playoff" ):
+
+            ?>
+
             <div class="fluid-row slim alignleft">
                 <h6>Search:</h6> <input type="text" data-ng-model="search" />
                 <button class="ui-button dark float-right" ng-click="doSave()">Save Picks</button>
@@ -222,6 +228,59 @@
                 <button class="ui-button dark large" ng-click="doSave()">Save Picks</button>
             </div>
 
+            <script src="./js/pick.js?ver=<?php echo VERSION ?>"></script>
+            <script>
+                $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 0});
+            </script>
+
+            <?php
+
+                else:
+
+                    //playoff interface
+            ?>
+
+            <div class="fluid-row slim alignleft">
+                <div class="fluid-row slim width-50">
+                    <div class="btn-droppable"
+                         ng-repeat="item in picks"
+                         data-drop="true"
+                         ng-model='item.team'
+                         data-jqyoui-options="optionsList1"
+                         jqyoui-droppable="{multiple:false}">
+                        {{ item.points }}
+                        &
+                        <div class="btn-draggable"
+                             ng-show="item.team"
+                             data-drag="{{item.team.drag}}"
+                             data-jqyoui-options="{revert: 'invalid'}"
+                             ng-model="item.team"
+                             jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
+                            {{ item.team.name }}
+                        </div>
+                    </div>
+                </div>
+                <div class="fluid-row slim width-50">
+                    <div class="btn-draggable"
+                         ng-repeat="item in teams"
+                         data-drag="true"
+                         ng-model="item"
+                         data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index: {{$index}}, placeholder:true, animate:true}">
+                        {{ item.name }}
+                    </div>
+                </div>
+            </div>
+
+            <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+
+            <script src="./js/angular-dragdrop.min.js"></script>
+            <script src="./js/playoffPick.js?ver=<?php echo VERSION ?>"></script>
+
+            <?php
+                endif;
+            ?>
+
         <?php
             endif;
         ?>
@@ -248,10 +307,7 @@
 
 </script>
 <script src="./js/combiner.php?ver=<?php echo VERSION ?>"></script>
-<script src="./js/pick.js?ver=<?php echo VERSION ?>"></script>
-<script>
-    $("#changeBox").velocity("fadeOut", { visibility: "hidden", duration: 0});
-</script>
+
 
 <?php
 

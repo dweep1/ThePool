@@ -2,6 +2,6 @@
 
     include "bootstrap.php";
 
-    $season = season::getCurrent();
+    $credits = credit::loadMultiple(["user_id" => users::returnCurrentUser()]);
 
-    var_dump($season);
+    var_dump($credits);
