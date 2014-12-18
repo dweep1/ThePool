@@ -22,7 +22,11 @@
     <link href="./css/index.css?ver=<?php echo VERSION ?>" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+    <script>
 
+        week_id = <?php echo week::getCurrent()->id; ?>;
+
+    </script>
 
 </head>
 <body class="height-100" data-ng-app="myHome">
@@ -110,7 +114,7 @@
                 <div id="changeBox">You have unsaved picks.</div>
             </div>
 
-            <div class="fluid-row slim alignleft">
+            <div class="fluid-row slim alignleft" ng-cloak>
 
                 <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>
                 <h5>Closed Picks <i data-trans-for="current_picks" class="fa fa-bars"></i></h5>
@@ -163,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="fluid-row slim alignleft">
+            <div class="fluid-row slim alignleft" ng-cloak>
 
                 <h6 class="remaining">Remaining Numbers: <b data-ng-if="remaining.length <= 0">NONE</b> <b data-ng-repeat="item in remaining | orderBy:'value'">{{ item.value }},</b></h6>
                 <h5>Open Picks <i data-trans-for="open_picks" class="fa fa-bars"></i></h5>
@@ -240,41 +244,107 @@
                     //playoff interface
             ?>
 
+
             <div class="fluid-row slim alignleft">
-                <div class="fluid-row slim width-50">
-                    <div class="btn-droppable"
-                         ng-repeat="item in picks"
-                         data-drop="true"
+                <h6 style="padding-left:10%;">Drag and Drop Picks</h6>
+                <button class="ui-button dark float-right" ng-click="doSave()">Save Picks</button>
+                <button class="ui-button dark float-right" ng-click="doRefresh()">Discard Changes</button>
+            </div>
+
+            <div class="clear-fix"></div>
+
+            <div class="fluid-row slim alignleft" ng-cloak>
+                <div class="playoff-row" ng-class="teams.length > 0 ? 'width-50' : ''">
+                    <div class="btn-droppable team-large"
+                         ng-show="item.drag"
+                         ng-repeat="item in points | orderBy: '-value'"
+                         data-drop="{{ item.drag }}"
                          ng-model='item.team'
-                         data-jqyoui-options="optionsList1"
                          jqyoui-droppable="{multiple:false}">
-                        {{ item.points }}
-                        &
-                        <div class="btn-draggable"
+
+                        <div class="gradient-left" >
+                            <div class="team alignleft">
+                                <h6>Pick</h6>
+                                <h6>&nbsp;</h6>
+                                <h6>&nbsp;</h6>
+                            </div>
+                            <div class="team-stats alignright">
+                                <h1>{{ item.value }}</h1>
+                            </div>
+                        </div>
+
+                        <div class="btn-draggable team-assign"
                              ng-show="item.team"
-                             data-drag="{{item.team.drag}}"
+                             data-drag="{{ item.drag }}"
                              data-jqyoui-options="{revert: 'invalid'}"
                              ng-model="item.team"
-                             jqyoui-draggable="{index: {{$index}},placeholder:true,animate:true}">
-                            {{ item.team.name }}
+                             jqyoui-draggable="{index: {{$index}}, animate:true}"
+                             style="background-image: url('{{ item.team.image_url }}')">
+
+                            <div class="gradient-left" >
+                                <div class="team alignleft">
+                                    <h5>{{ item.team.city }}</h5>
+                                    <h6>{{ item.team.team_name }}</h6>
+                                </div>
+
+                                <div class="team-stats alignright">
+                                    <h1>{{ item.value }}</h1>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
+
+                    <h5 class="aligncenter">Closed Picks</h5>
+
+                    <div class="team-large disabled"
+                         ng-show="item.drag == false"
+                         ng-repeat="item in points | orderBy: '-value'">
+
+                        <div class="gradient-left" >
+                            <div class="team alignleft">
+                                <h2>{{ item.value }}</h2>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="fluid-row slim width-50">
-                    <div class="btn-draggable"
+
+                <div class="width-50 playoff-row">
+
+                    <div class="btn-draggable team-large"
                          ng-repeat="item in teams"
                          data-drag="true"
                          ng-model="item"
+                         ng-show="item"
                          data-jqyoui-options="{revert: 'invalid'}"
-                         jqyoui-draggable="{index: {{$index}}, placeholder:true, animate:true}">
-                        {{ item.name }}
+                         jqyoui-draggable="{index: {{$index}}, animate:true}"
+                         style="background-image: url('{{ item.image_url }}')">
+
+                        <div class="gradient-left" >
+                            <div class="team alignleft">
+                                <h5>{{ item.city }}</h5>
+                                <h6>{{ item.team_name }}</h6>
+                            </div>
+
+                            <div class="team-stats alignright">
+                                <h6>vs</h6>
+                                <h6>{{ item.vs.city }}</h6>
+                                <h6>{{ item.vs.team_name }}</h6>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
             </div>
 
+
             <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+            <script src="./js/jquery.ui.touch-punch.min.js"></script>
 
             <script src="./js/angular-dragdrop.min.js"></script>
+
             <script src="./js/playoffPick.js?ver=<?php echo VERSION ?>"></script>
 
             <?php
@@ -301,11 +371,6 @@
 
 </div>
 
-<script>
-
-    week_id = <?php echo week::getCurrent()->id; ?>;
-
-</script>
 <script src="./js/combiner.php?ver=<?php echo VERSION ?>"></script>
 
 

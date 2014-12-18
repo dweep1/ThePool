@@ -225,23 +225,6 @@
                 return false;
             }
 
-            var $pickBoundary = false;
-
-            $scope.picks.forEach(function(entity){
-                if(parseInt(entity.value) > $scope.games.length || parseInt(entity.value) < 0){
-                    $pickBoundary = true;
-                }
-            });
-
-            if($pickBoundary){
-                createMessageBox(
-                    {type: "error", title: "error", message: "One of your pick's values is too high or too low. Please check your picks!"},
-                    function($messageID){toggleDisplayMessageBox($messageID);}
-                );
-
-                return false;
-            }
-
             return $http.post("./listn.picks.php?method=PUT", $scope.picks).
                 success(function(data, status) {
 

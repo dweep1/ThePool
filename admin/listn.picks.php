@@ -19,23 +19,26 @@
     }else if($_GET['method'] === 'PUT'){
 
         $currentWeek = week::selected();
+        $season = season::selected();
 
         $gamesList = $currentWeek->getGames();
 
         $result = ["result" => ""];
         $errors = 0;
 
-        foreach($objData as $key => $value){
+        if($season->type == "regular"){
+            foreach($objData as $key => $value){
 
-            if((int) $value->value > count($gamesList) || $value->value < 0){
-                $result["result"] .= "The value of a pick was either too high or too low. ";
-                $errors++;
+                if((int) $value->value > count($gamesList) || $value->value < 0){
+                    $result["result"] .= "The value of a pick was either too high or too low. ";
+                    $errors++;
+                }
+
+                if($value->team_id <= 0){
+                    unset($objData[$key]);
+                }
+
             }
-
-            if($value->team_id <= 0){
-               unset($objData[$key]);
-            }
-
         }
 
         if(count($objData) > 0){

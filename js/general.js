@@ -274,6 +274,9 @@ function createMessageBox($data, $callback){
 
     if(checkSet($callback))
         $callback($randomID);
+    else{
+        toggleDisplayMessageBox($randomID);
+    }
 
 }
 

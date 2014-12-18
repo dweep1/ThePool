@@ -38,6 +38,8 @@ class credit extends Logos_MySQL_Object{
 
         $useCredit = options::loadSingle(["name" => "use_credit"]);
 
+        $creditCost = options::loadSingle(["name" => "credit_cost"]);
+
         if((int) $useCredit->value <= 0)
             return true;
 
@@ -47,7 +49,7 @@ class credit extends Logos_MySQL_Object{
         if($week_id === null)
             $week_id = week::getCurrent()->id;
 
-        return self::loadSingle(["user_id" => $user_id, "week_id" => $week_id]);
+        return self::loadSingle(["user_id" => $user_id, "week_id" => $week_id, "amount" => $creditCost->value]);
 
     }
 
@@ -62,12 +64,12 @@ class credit extends Logos_MySQL_Object{
         if($user_id === null)
             $user_id = users::returnCurrentUser()->id;
 
-        $credits = new credit();
+        $creditCost = options::loadSingle(["name" => "credit_cost"]);
 
         if($week_id === null)
-            return count(self::loadMultiple(["user_id" => $user_id]));
+            return count(self::loadMultiple(["user_id" => $user_id, "amount" => $creditCost->value]));
         else
-            return count(self::loadMultiple(["user_id" => $user_id, "week_id" => $week_id]));
+            return count(self::loadMultiple(["user_id" => $user_id, "week_id" => $week_id, "amount" => $creditCost->value]));
 
     }
 

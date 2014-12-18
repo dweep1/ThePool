@@ -216,7 +216,11 @@ function getLiveData($scope, $http){
 
     $scope.week_id = week_id;
 
-    if(checkSet(localStorage["week_data"]) && checkSet(localStorage["game_data"]) && checkSet(localStorage["week_id"]) && parseInt(localStorage["week_id"]) === parseInt($scope.week_id) && $scope.force === false){
+    if(checkSet(localStorage["week_data"]) &&
+        checkSet(localStorage["game_data"]) &&
+        checkSet(localStorage["week_id"]) &&
+        parseInt(localStorage["week_id"]) === parseInt($scope.week_id) &&
+        $scope.force === false){
 
         storeLocalGames($scope, null);
 

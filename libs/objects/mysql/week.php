@@ -156,7 +156,7 @@ class week extends event{
 
         $tempStore = [];
 
-        $games = game::query(["orderBy" => "id asc"])->getList(["week_id" => $this->id]);
+        $games = game::query(["orderBy" => "date asc"])->getList(["week_id" => $this->id]);
 
         foreach($games as $value){
 
