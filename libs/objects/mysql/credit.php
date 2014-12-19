@@ -16,13 +16,16 @@ class credit extends Logos_MySQL_Object{
         if($week_id === null)
             $week_id = week::getCurrent()->id;
 
+        $creditCost = options::loadSingle(["name" => "credit_cost"]);
+
         $credits = self::validCredit($user_id, $week_id);
 
-        if($credits !== false){
+        if($credits !== false && count($credits) > 0){
             return true;
         }else{
 
-            $credits = credit::query(["orderBy" => "id ASC"])->getList(["user_id" => $user_id, "week_id" => -1]);
+            $credits = credit::query(["orderBy" => "id ASC"])
+                ->getList(["user_id" => $user_id, "week_id" => -1, "amount" => $creditCost->value]);
 
             if(count($credits) > 0){
                 return credit::saveSingle(["week_id" => $week_id], ["id" => $credits[0]->id]);

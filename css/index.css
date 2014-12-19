@@ -341,7 +341,7 @@ H6 {
 }
 /* line 199, scss/index.scss */
 .ui-rank-list li .width-50 {
-  width: 50%;
+  width: 48%;
   display: inline-block;
   vertical-align: top;
 }
@@ -664,11 +664,11 @@ H6 {
 }
 /* line 505, scss/index.scss */
 #content-area .fluid-row.width-50 {
-  width: -webkit-calc(47.5%);
-  width: -moz-calc(47.5%);
-  width: -o-calc(47.5%);
-  width: calc(47.5%);
-  width: expression(47.5%);
+  width: -webkit-calc(47.3%);
+  width: -moz-calc(47.3%);
+  width: -o-calc(47.3%);
+  width: calc(47.3%);
+  width: expression(47.3%);
   display: inline-block;
   vertical-align: top;
 }
@@ -847,25 +847,28 @@ H6 {
 .team-large {
   display: block;
   width: auto;
+}
+/* line 671, scss/index.scss */
+.team-large:not(.btn-droppable) {
   cursor: move;
 }
-/* line 672, scss/index.scss */
+/* line 675, scss/index.scss */
 .team-large.disabled {
   color: #555;
 }
-/* line 675, scss/index.scss */
+/* line 678, scss/index.scss */
 .team-large.disabled h3 {
   text-decoration: line-through;
 }
-/* line 678, scss/index.scss */
+/* line 681, scss/index.scss */
 .team-large.disabled h2 {
   text-decoration: line-through;
 }
-/* line 681, scss/index.scss */
+/* line 684, scss/index.scss */
 .team-large.disabled h1 {
   text-decoration: line-through;
 }
-/* line 687, scss/index.scss */
+/* line 690, scss/index.scss */
 .team-large .team-stats h6 {
   font-weight: 400;
   font-size: 0.8em;
@@ -873,8 +876,9 @@ H6 {
   display: block;
 }
 
-/* line 696, scss/index.scss */
+/* line 699, scss/index.scss */
 .team-assign {
+  cursor: move;
   display: block;
   width: 100%;
   position: absolute !important;
@@ -882,9 +886,10 @@ H6 {
   left: 0;
   z-index: 1000;
   margin: 0;
+  max-height: 200px;
 }
 
-/* line 708, scss/index.scss */
+/* line 713, scss/index.scss */
 .playoff-row {
   margin: 0;
   position: relative;
@@ -892,21 +897,27 @@ H6 {
   display: block;
   width: auto;
   z-index: 1;
+  min-height: 1000px;
 }
-/* line 716, scss/index.scss */
+/* line 722, scss/index.scss */
 .playoff-row.width-50 {
   width: 47.5%;
   display: inline-block;
   vertical-align: top;
 }
+/* line 728, scss/index.scss */
+.playoff-row.width-65 {
+  width: 65%;
+  display: inline-block;
+}
 
-/* line 723, scss/index.scss */
+/* line 734, scss/index.scss */
 .ui-games-list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
-/* line 728, scss/index.scss */
+/* line 739, scss/index.scss */
 .ui-games-list li {
   background: #222;
   color: #fff;
@@ -916,23 +927,23 @@ H6 {
   position: relative;
   text-align: left;
 }
-/* line 737, scss/index.scss */
+/* line 748, scss/index.scss */
 .ui-games-list li .loss {
   text-decoration: line-through;
 }
-/* line 740, scss/index.scss */
+/* line 751, scss/index.scss */
 .ui-games-list li .loss h5 {
   text-decoration: line-through;
 }
-/* line 744, scss/index.scss */
+/* line 755, scss/index.scss */
 .ui-games-list li .loss h6 {
   text-decoration: line-through !important;
 }
-/* line 749, scss/index.scss */
+/* line 760, scss/index.scss */
 .ui-games-list li.full {
   width: auto;
 }
-/* line 753, scss/index.scss */
+/* line 764, scss/index.scss */
 .ui-games-list li .team {
   background-repeat: no-repeat;
   background-size: 80%;
@@ -943,36 +954,36 @@ H6 {
   cursor: pointer;
   behavior: url("./PIE.htc");
 }
-/* line 763, scss/index.scss */
+/* line 774, scss/index.scss */
 .ui-games-list li .team h5 {
   font-weight: 400;
 }
-/* line 767, scss/index.scss */
+/* line 778, scss/index.scss */
 .ui-games-list li .team h6 {
   font-weight: 400;
   line-height: 1.8em;
 }
-/* line 772, scss/index.scss */
+/* line 783, scss/index.scss */
 .ui-games-list li .team.alignleft {
   background-position: center left;
 }
-/* line 776, scss/index.scss */
+/* line 787, scss/index.scss */
 .ui-games-list li .team.picked {
   text-shadow: black 0px 0px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 780, scss/index.scss */
+/* line 791, scss/index.scss */
 .ui-games-list li .team.picked h5 {
   font-weight: 400;
   font-size: 1.5em;
 }
-/* line 785, scss/index.scss */
+/* line 796, scss/index.scss */
 .ui-games-list li .team.picked h6 {
   font-weight: 700;
   font-size: 1.8em;
   line-height: 1em;
 }
-/* line 791, scss/index.scss */
+/* line 802, scss/index.scss */
 .ui-games-list li .team.picked .gradient-left {
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(68, 68, 68, 0.6)), color-stop(100%, rgba(34, 34, 34, 0.7)));
   background-image: -webkit-linear-gradient(left, rgba(68, 68, 68, 0.6) 0%, rgba(34, 34, 34, 0.7) 100%);
@@ -981,7 +992,7 @@ H6 {
   background-image: linear-gradient(left, rgba(68, 68, 68, 0.6) 0%, rgba(34, 34, 34, 0.7) 100%);
   behavior: url("./PIE.htc");
 }
-/* line 796, scss/index.scss */
+/* line 807, scss/index.scss */
 .ui-games-list li .team.picked .gradient-right {
   background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(0%, rgba(68, 68, 68, 0.6)), color-stop(100%, rgba(34, 34, 34, 0.7)));
   background-image: -webkit-linear-gradient(right, rgba(68, 68, 68, 0.6) 0%, rgba(34, 34, 34, 0.7) 100%);
@@ -990,7 +1001,7 @@ H6 {
   background-image: linear-gradient(right, rgba(68, 68, 68, 0.6) 0%, rgba(34, 34, 34, 0.7) 100%);
   behavior: url("./PIE.htc");
 }
-/* line 802, scss/index.scss */
+/* line 813, scss/index.scss */
 .ui-games-list li .team .gradient-left {
   padding: 8% 8%;
   width: auto;
@@ -1004,16 +1015,16 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 811, scss/index.scss */
+/* line 822, scss/index.scss */
 .ui-games-list li .team .gradient-left:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 817, scss/index.scss */
+/* line 828, scss/index.scss */
 .ui-games-list li .team.alignright {
   background-position: center right;
 }
-/* line 821, scss/index.scss */
+/* line 832, scss/index.scss */
 .ui-games-list li .team .gradient-right {
   padding: 8% 8%;
   width: auto;
@@ -1027,12 +1038,12 @@ H6 {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 830, scss/index.scss */
+/* line 841, scss/index.scss */
 .ui-games-list li .team .gradient-right:hover {
   text-shadow: yellow 0px 1px 5px;
   behavior: url("./PIE.htc");
 }
-/* line 837, scss/index.scss */
+/* line 848, scss/index.scss */
 .ui-games-list li .display-date {
   position: absolute;
   right: -60px;
@@ -1041,7 +1052,7 @@ H6 {
   width: 50px;
   height: 50%;
 }
-/* line 846, scss/index.scss */
+/* line 857, scss/index.scss */
 .ui-games-list li .middle {
   display: inline-block;
   width: 30%;
@@ -1050,7 +1061,7 @@ H6 {
   white-space: nowrap;
   position: relative;
 }
-/* line 854, scss/index.scss */
+/* line 865, scss/index.scss */
 .ui-games-list li .middle i {
   position: relative;
   z-index: 100;
@@ -1060,7 +1071,7 @@ H6 {
   padding: 8%;
   font-style: normal;
 }
-/* line 864, scss/index.scss */
+/* line 875, scss/index.scss */
 .ui-games-list li .middle .small {
   width: 15%;
   min-width: 18px;
@@ -1068,21 +1079,21 @@ H6 {
   margin: 0px 5%;
 }
 
-/* line 874, scss/index.scss */
+/* line 885, scss/index.scss */
 .ui-globalpicks {
   width: 100%;
 }
-/* line 878, scss/index.scss */
+/* line 889, scss/index.scss */
 .ui-globalpicks tr th {
   font-weight: 600;
   padding: 8px 6px;
   cursor: pointer;
 }
-/* line 883, scss/index.scss */
+/* line 894, scss/index.scss */
 .ui-globalpicks tr th i {
   color: #444;
 }
-/* line 888, scss/index.scss */
+/* line 899, scss/index.scss */
 .ui-globalpicks tr td {
   border: 1px solid rgba(180, 180, 180, 0.6);
   padding: 0.7%;
@@ -1090,24 +1101,24 @@ H6 {
   white-space: nowrap;
   font-size: 1.2em;
 }
-/* line 895, scss/index.scss */
+/* line 906, scss/index.scss */
 .ui-globalpicks tr td.username {
   font-weight: 500;
   table-layout: fixed;
   overflow: hidden;
 }
-/* line 901, scss/index.scss */
+/* line 912, scss/index.scss */
 .ui-globalpicks tr td small {
   font-weight: 400;
   font-size: 0.7em;
   line-height: 1em;
   color: #222;
 }
-/* line 907, scss/index.scss */
+/* line 918, scss/index.scss */
 .ui-globalpicks tr td small b {
   font-weight: 700;
 }
-/* line 914, scss/index.scss */
+/* line 925, scss/index.scss */
 .ui-globalpicks tr.selected td {
   -webkit-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
   -moz-box-shadow: rgba(100, 255, 0, 0.4) 0px 0px 3px inset;
@@ -1115,7 +1126,7 @@ H6 {
   border: 1px solid rgba(100, 255, 0, 0.3);
   behavior: url("./PIE.htc");
 }
-/* line 922, scss/index.scss */
+/* line 933, scss/index.scss */
 .ui-globalpicks tr.rival td {
   -webkit-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
   -moz-box-shadow: rgba(255, 30, 30, 0.6) 0px 0px 3px inset;
@@ -1123,12 +1134,12 @@ H6 {
   border: 1px solid rgba(255, 30, 30, 0.6);
   behavior: url("./PIE.htc");
 }
-/* line 931, scss/index.scss */
+/* line 942, scss/index.scss */
 .ui-globalpicks tr.a td {
   background: rgba(51, 51, 51, 0.2);
 }
 
-/* line 938, scss/index.scss */
+/* line 949, scss/index.scss */
 .ui-message-background {
   position: fixed;
   top: 0;
@@ -1142,7 +1153,7 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 951, scss/index.scss */
+/* line 962, scss/index.scss */
 .ui-message-box {
   position: fixed;
   top: -400px;
@@ -1162,24 +1173,24 @@ H6 {
   behavior: url("./PIE.htc");
 }
 
-/* line 964, scss/index.scss */
+/* line 975, scss/index.scss */
 .ui-message-close {
   font-size: 20px;
   line-height: 20px;
   cursor: pointer;
 }
 
-/* line 970, scss/index.scss */
+/* line 981, scss/index.scss */
 .faux-row {
   padding: 5px;
   display: block;
 }
-/* line 974, scss/index.scss */
+/* line 985, scss/index.scss */
 .faux-row input[type="text"], .faux-row input[type="password"] {
   margin: 5px 15px;
 }
 
-/* line 980, scss/index.scss */
+/* line 991, scss/index.scss */
 input[type="text"], input[type="password"] {
   padding: 10px 15px;
   font-family: 'Roboto', sans-serif;
@@ -1190,19 +1201,19 @@ input[type="text"], input[type="password"] {
   border-radius: 3px;
   behavior: url("./PIE.htc");
 }
-/* line 990, scss/index.scss */
+/* line 1001, scss/index.scss */
 input[type="text"][name="username"], input[type="password"][name="username"] {
   margin-top: 15px;
 }
 
-/* line 996, scss/index.scss */
+/* line 1007, scss/index.scss */
 .settings label {
   position: absolute;
   top: 28%;
   left: 5%;
 }
 
-/* line 1003, scss/index.scss */
+/* line 1014, scss/index.scss */
 label {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1211,7 +1222,7 @@ label {
   vertical-align: top;
 }
 
-/* line 1011, scss/index.scss */
+/* line 1022, scss/index.scss */
 select {
   padding: 8px 15px;
   border: 2px solid #222;
@@ -1219,7 +1230,7 @@ select {
   behavior: url("./PIE.htc");
 }
 
-/* line 1018, scss/index.scss */
+/* line 1029, scss/index.scss */
 select, option {
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
@@ -1227,12 +1238,12 @@ select, option {
   font-weight: 400;
 }
 
-/* line 1025, scss/index.scss */
+/* line 1036, scss/index.scss */
 option {
   padding: 5px 10px;
 }
 
-/* line 1029, scss/index.scss */
+/* line 1040, scss/index.scss */
 #login-area {
   padding: 3% 2%;
   width: 260px;
@@ -1242,7 +1253,7 @@ option {
   display: inline-block;
 }
 
-/* line 1038, scss/index.scss */
+/* line 1049, scss/index.scss */
 #main-nav {
   position: fixed;
   left: 0;
@@ -1265,34 +1276,34 @@ option {
   behavior: url("./PIE.htc");
 }
 @media (max-width: 1274px) {
-  /* line 1038, scss/index.scss */
+  /* line 1049, scss/index.scss */
   #main-nav {
     position: absolute;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
-  /* line 1038, scss/index.scss */
+  /* line 1049, scss/index.scss */
   #main-nav {
     position: absolute;
   }
 }
 @media (max-width: 600px) {
-  /* line 1038, scss/index.scss */
+  /* line 1049, scss/index.scss */
   #main-nav {
     position: absolute;
   }
 }
-/* line 1066, scss/index.scss */
+/* line 1077, scss/index.scss */
 #main-nav a {
   text-decoration: none;
 }
-/* line 1071, scss/index.scss */
+/* line 1082, scss/index.scss */
 #main-nav.full {
   width: 13%;
   min-width: 190px;
   max-width: 320px;
 }
-/* line 1077, scss/index.scss */
+/* line 1088, scss/index.scss */
 #main-nav [data-menu] {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1300,11 +1311,11 @@ option {
   transition: all 0.2s ease;
   behavior: url("./PIE.htc");
 }
-/* line 1081, scss/index.scss */
+/* line 1092, scss/index.scss */
 #main-nav [data-menu].hidden {
   oapcity: 0;
 }
-/* line 1086, scss/index.scss */
+/* line 1097, scss/index.scss */
 #main-nav #logo {
   position: relative;
   padding: 10px;
@@ -1312,7 +1323,7 @@ option {
   height: 40px;
   text-align: center;
 }
-/* line 1094, scss/index.scss */
+/* line 1105, scss/index.scss */
 #main-nav ul {
   position: relative;
   margin: 0px;
@@ -1320,7 +1331,7 @@ option {
   list-style: none;
   overflow: hidden;
 }
-/* line 1102, scss/index.scss */
+/* line 1113, scss/index.scss */
 #main-nav ul li {
   margin: 0px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 1px 0px;
@@ -1333,11 +1344,11 @@ option {
   white-space: nowrap;
   behavior: url("./PIE.htc");
 }
-/* line 1112, scss/index.scss */
+/* line 1123, scss/index.scss */
 #main-nav ul li:hover:not(.spacer) {
   background: #444;
 }
-/* line 1116, scss/index.scss */
+/* line 1127, scss/index.scss */
 #main-nav ul li h2 {
   font-family: "Roboto", sans-serif;
   margin: 0px;
@@ -1350,7 +1361,7 @@ option {
   cursor: pointer;
   font-weight: 300;
 }
-/* line 1128, scss/index.scss */
+/* line 1139, scss/index.scss */
 #main-nav ul li h2 i {
   -webkit-transition: all, 0.6s ease;
   -moz-transition: all, 0.6s ease;
@@ -1361,7 +1372,7 @@ option {
   vertical-align: middle;
   behavior: url("./PIE.htc");
 }
-/* line 1136, scss/index.scss */
+/* line 1147, scss/index.scss */
 #main-nav ul li h2 i:not(.fa-bars) {
   padding-right: 20px;
 }

@@ -9,8 +9,12 @@
 
             $current_week = week::getCurrent();
             $pickCount = pick::getPickCount();
+            $season = season::getCurrent();
 
             $gameCount = $current_week->getGameCount();
+
+            if($season->type == "playoff")
+                $gameCount = $gameCount*2;
 
             echo "{$pickCount}/{$gameCount}";
 

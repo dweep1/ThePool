@@ -253,8 +253,8 @@
 
             <div class="clear-fix"></div>
 
-            <div class="fluid-row slim alignleft" ng-cloak>
-                <div class="playoff-row" ng-class="teams.length > 0 ? 'width-50' : ''">
+            <div class="fluid-row slim aligncenter" ng-cloak>
+                <div class="playoff-row" ng-class="teamCount >= teams.length ? 'width-65' : 'width-50'">
                     <div class="btn-droppable team-large"
                          ng-show="item.drag"
                          ng-repeat="item in points | orderBy: '-value'"
@@ -275,7 +275,7 @@
 
                         <div class="btn-draggable team-assign"
                              ng-show="item.team"
-                             data-drag="{{ item.drag }}"
+                             data-drag="{{ !item.team.locked }}"
                              data-jqyoui-options="{revert: 'invalid'}"
                              ng-model="item.team"
                              jqyoui-draggable="{index: {{$index}}, animate:true}"
@@ -314,8 +314,8 @@
                 <div class="width-50 playoff-row">
 
                     <div class="btn-draggable team-large"
-                         ng-repeat="item in teams"
-                         data-drag="true"
+                         ng-repeat="item in teams track by $index"
+                         data-drag="{{ !item.locked }}"
                          ng-model="item"
                          ng-show="item"
                          data-jqyoui-options="{revert: 'invalid'}"

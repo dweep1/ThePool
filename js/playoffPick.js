@@ -71,8 +71,13 @@ function savePicks($scope, $http){
 
     $scope.points.forEach(function(point){
 
-        if(checkSet(point.team)){
-            $scope.savedPicks.push({"value": point.value, "team": parseInt(point.team.id)});
+        if(checkSet(point.team) && point.team.locked !== true){
+            $scope.savedPicks.push({
+                "value": point.value,
+                "team_id": parseInt(point.team.id),
+                "game_id": parseInt(point.team.game_id),
+                "week_id": week_id
+            });
             teamCount++;
         }
 
@@ -234,6 +239,8 @@ function getGamesPicked($scope){
 
     }
 
+    $scope.teamCount = 0;
+
     $scope.picks.forEach(function(pick){
 
         findLikePick($scope, pick);
@@ -257,8 +264,11 @@ function findLikePick($scope, $pick){
                     "pick": $pick
                 };
 
-                if(parseInt($pick.week_id) === week_id)
+                if(parseInt($pick.week_id) === week_id){
                     theArray[index].team = findTeamByID($scope, $pick.team_id);
+                    $scope.teamCount++;
+                }
+
 
             }else{
 
@@ -270,7 +280,14 @@ function findLikePick($scope, $pick){
                         "team": false,
                         "pick": $pick
                     };
+
+                    if(parseInt($pick.week_id) === week_id){
+                        theArray[index].team = findTeamByID($scope, $pick.team_id);
+                        $scope.teamCount++;
+                    }
+
                 }
+
             }
 
             return true;

@@ -63,7 +63,7 @@
 
                         $checkPick = pick::loadSingle(["game_id" => $savePick->game_id, "user_id" => $savePick->user_id]);
 
-                        if((int) $checkPick->id > 0){
+                        if(is_object($checkPick) && (int) $checkPick->id > 0){
 
                             $savePick->id = $checkPick->id;
 
