@@ -13,6 +13,7 @@ class week extends event{
 
         $pickNumber = 0;
         $multiple = options::loadSingle(["name" => "credit_weekly_value"]);
+        $pickValue = options::loadSingle(["name" => "credit_cost"]);
 
         if($countSeason === false){
             $week_id = ($week_id) ?: week::getCurrent()->id;
@@ -27,7 +28,7 @@ class week extends event{
 
         }
 
-        return ($pickNumber*10)*($multiple->value/100);
+        return ($pickNumber*$pickValue->value)*($multiple->value/100);
 
     }
 

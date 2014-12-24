@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" afterPath="$PROJECT_DIR$/.sass-cache/73ba2844d32b867182c8f775d297f927cde9b1e2/index.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/credit.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index.css" afterPath="$PROJECT_DIR$/css/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/index.scss" afterPath="$PROJECT_DIR$/css/scss/index.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.clock.php" afterPath="$PROJECT_DIR$/_listeners/listn.clock.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.playoff.picks.php" afterPath="$PROJECT_DIR$/_listeners/listn.playoff.picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picks.php" afterPath="$PROJECT_DIR$/picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/playoffPick.js" afterPath="$PROJECT_DIR$/js/playoffPick.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.php" afterPath="$PROJECT_DIR$/results.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.print.php" afterPath="$PROJECT_DIR$/results.print.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/week.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/week.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -42,18 +39,43 @@
       <file leaf-file-name="picks.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/picks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="256" column="84" selection-start="11513" selection-end="11513" vertical-scroll-proportion="-14.384615" vertical-offset="3978" max-vertical-offset="6562">
+            <state line="256" column="84" selection-start="11513" selection-end="11513" vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="6562">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="results.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/results.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="229" column="4" selection-start="7822" selection-end="9909" vertical-scroll-proportion="0.0" vertical-offset="3758" max-vertical-offset="8483">
               <folding>
-                <element signature="e#14391#14444#0" expanded="true" />
+                <marker date="1419360697548" expanded="true" signature="9947:10023" placeholder="..." />
+                <marker date="1419360697548" expanded="true" signature="9958:10023" placeholder="..." />
+                <marker date="1419360697548" expanded="true" signature="15284:15313" placeholder="..." />
+                <marker date="1419360697548" expanded="true" signature="15862:16339" placeholder="..." />
+                <marker date="1419360697548" expanded="true" signature="15914:16339" placeholder="..." />
+                <marker date="1419360697548" expanded="true" signature="16257:16299" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="results.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/results.php">
+      <file leaf-file-name="results.print.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/results.print.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="35" selection-start="206" selection-end="206" vertical-scroll-proportion="0.1587137" vertical-offset="0" max-vertical-offset="4012">
+            <state line="262" column="5" selection-start="7411" selection-end="7411" vertical-scroll-proportion="1.1410788" vertical-offset="3354" max-vertical-offset="6579">
+              <folding>
+                <marker date="1419360949868" expanded="false" signature="10535:10564" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="week.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="0" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="3383">
               <folding />
             </state>
           </provider>
@@ -62,7 +84,7 @@
       <file leaf-file-name="listn.playoff.picks.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.playoff.picks.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="-3.7307692" vertical-offset="447" max-vertical-offset="2227">
+            <state line="32" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="2227">
               <folding />
             </state>
           </provider>
@@ -71,7 +93,7 @@
       <file leaf-file-name="index.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="727" column="13" selection-start="11854" selection-end="11854" vertical-scroll-proportion="-11.230769" vertical-offset="11775" max-vertical-offset="19703">
+            <state line="680" column="35" selection-start="11219" selection-end="11231" vertical-scroll-proportion="0.0" vertical-offset="11061" max-vertical-offset="19805">
               <folding />
             </state>
           </provider>
@@ -80,7 +102,7 @@
       <file leaf-file-name="listn.clock.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="42" selection-start="481" selection-end="481" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="612">
+            <state line="16" column="42" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="612">
               <folding />
             </state>
           </provider>
@@ -98,16 +120,7 @@
       <file leaf-file-name="credit.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="36" selection-start="815" selection-end="815" vertical-scroll-proportion="-17.0" vertical-offset="51" max-vertical-offset="1462">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="game.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="29" selection-start="1507" selection-end="1516" vertical-scroll-proportion="-22.884615" vertical-offset="612" max-vertical-offset="2533">
+            <state line="29" column="36" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1462">
               <folding />
             </state>
           </provider>
@@ -157,8 +170,6 @@
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/selectable.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/stat_log.php" />
-        <option value="$PROJECT_DIR$/results.php" />
-        <option value="$PROJECT_DIR$/results.print.php" />
         <option value="$PROJECT_DIR$/rules.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/season.php" />
@@ -173,15 +184,17 @@
         <option value="$PROJECT_DIR$/admin/pages/picks.page.php" />
         <option value="$PROJECT_DIR$/admin/listn.picks.php" />
         <option value="$PROJECT_DIR$/js/pick.js" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/week.php" />
         <option value="$PROJECT_DIR$/js/general.js" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.picks.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.playoff.picks.php" />
         <option value="$PROJECT_DIR$/js/playoffPick.js" />
         <option value="$PROJECT_DIR$/_listeners/listn.clock.php" />
-        <option value="$PROJECT_DIR$/css/scss/index.scss" />
         <option value="$PROJECT_DIR$/picks.php" />
+        <option value="$PROJECT_DIR$/css/scss/index.scss" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/week.php" />
+        <option value="$PROJECT_DIR$/results.php" />
+        <option value="$PROJECT_DIR$/results.print.php" />
       </list>
     </option>
   </component>
@@ -247,6 +260,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -349,7 +363,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,10 +394,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -480,28 +493,28 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1122" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1125" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2109375" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2109375" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25959596" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19251336" sideWeight="0.40290758" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1015873" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277559" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -628,11 +641,6 @@
         <state line="120" column="0" selection-start="3662" selection-end="3662" vertical-scroll-proportion="0.0" vertical-offset="2720" max-vertical-offset="3774" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results.print.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="24" selection-start="378" selection-end="378" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="2941" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/rules.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="5" selection-start="1053" selection-end="1053" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1904" />
@@ -703,16 +711,6 @@
         <state line="6" column="23" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="204" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="7" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-28.115385" vertical-offset="0" max-vertical-offset="1190" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="174" column="46" selection-start="4992" selection-end="4992" vertical-scroll-proportion="0.5819502" vertical-offset="2397" max-vertical-offset="3366" />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="996" column="0" selection-start="15304" selection-end="15304" vertical-scroll-proportion="0.33333334" vertical-offset="16602" max-vertical-offset="64821" />
@@ -740,16 +738,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.playoff.stats.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="26" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.75829875" vertical-offset="0" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="29" selection-start="1507" selection-end="1516" vertical-scroll-proportion="-22.884615" vertical-offset="612" max-vertical-offset="2533">
-          <folding />
-        </state>
+        <state line="43" column="26" selection-start="1099" selection-end="1099" vertical-scroll-proportion="0.75829875" vertical-offset="0" max-vertical-offset="1139" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/LogosDB/db/handlers/db-handler-mysql.php">
@@ -761,23 +750,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/pick.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="206" selection-end="213" vertical-scroll-proportion="0.1939834" vertical-offset="0" max-vertical-offset="964">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="36" selection-start="815" selection-end="815" vertical-scroll-proportion="-17.0" vertical-offset="51" max-vertical-offset="1462">
-          <folding />
-        </state>
+        <state line="11" column="18" selection-start="206" selection-end="213" vertical-scroll-proportion="0.1939834" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="9" selection-start="2491" selection-end="2625" vertical-scroll-proportion="0.753112" vertical-offset="906" max-vertical-offset="1870">
-          <folding />
-        </state>
+        <state line="96" column="9" selection-start="2491" selection-end="2625" vertical-scroll-proportion="0.753112" vertical-offset="906" max-vertical-offset="1870" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/playoffPick.js">
@@ -789,45 +767,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.clock.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="42" selection-start="481" selection-end="481" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="612">
+        <state line="16" column="42" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.playoff.picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="-3.7307692" vertical-offset="447" max-vertical-offset="2227">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="727" column="13" selection-start="11854" selection-end="11854" vertical-scroll-proportion="-11.230769" vertical-offset="11775" max-vertical-offset="19703">
+        <state line="32" column="0" selection-start="717" selection-end="717" vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="2227">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="266" column="52" selection-start="10760" selection-end="10760" vertical-scroll-proportion="1.4989626" vertical-offset="3077" max-vertical-offset="5950">
+        <state line="266" column="52" selection-start="10760" selection-end="10760" vertical-scroll-proportion="1.4989626" vertical-offset="3077" max-vertical-offset="5950" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/week.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="515" selection-end="515" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="3383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="29" selection-start="1507" selection-end="1516" vertical-scroll-proportion="1.2520747" vertical-offset="0" max-vertical-offset="2533" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/credit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="36" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/teams.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="27" selection-start="1087" selection-end="1087" vertical-scroll-proportion="0.6213693" vertical-offset="200" max-vertical-offset="1190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/scss/index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="680" column="35" selection-start="11219" selection-end="11231" vertical-scroll-proportion="0.0" vertical-offset="11061" max-vertical-offset="19805">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="256" column="84" selection-start="11513" selection-end="11513" vertical-scroll-proportion="-14.384615" vertical-offset="3978" max-vertical-offset="6562">
-          <folding>
-            <element signature="e#14391#14444#0" expanded="true" />
-          </folding>
+        <state line="256" column="84" selection-start="11513" selection-end="11513" vertical-scroll-proportion="0.0" vertical-offset="3978" max-vertical-offset="6562">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/results.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="35" selection-start="206" selection-end="206" vertical-scroll-proportion="0.1587137" vertical-offset="0" max-vertical-offset="4012">
-          <folding />
+        <state line="229" column="4" selection-start="7822" selection-end="9909" vertical-scroll-proportion="0.0" vertical-offset="3758" max-vertical-offset="8483">
+          <folding>
+            <marker date="1419360697548" expanded="true" signature="9947:10023" placeholder="..." />
+            <marker date="1419360697548" expanded="true" signature="9958:10023" placeholder="..." />
+            <marker date="1419360697548" expanded="true" signature="15284:15313" placeholder="..." />
+            <marker date="1419360697548" expanded="true" signature="15862:16339" placeholder="..." />
+            <marker date="1419360697548" expanded="true" signature="15914:16339" placeholder="..." />
+            <marker date="1419360697548" expanded="true" signature="16257:16299" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results.print.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="262" column="5" selection-start="7411" selection-end="7411" vertical-scroll-proportion="1.1410788" vertical-offset="3354" max-vertical-offset="6579">
+          <folding>
+            <marker date="1419360949868" expanded="false" signature="10535:10564" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
