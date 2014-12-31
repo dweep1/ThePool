@@ -11,15 +11,41 @@ function RowController($scope, $http) {
 
     $scope.force = false;
 
+    $scope.week_id = week_id;
+    $scope.season_id = week_id;
+    $scope.selectedSeason = selectedSeason;
+
     getLiveStats($scope, $http);
+
+    getSeasons($scope, $http);
+
+    $scope.updateSeason = function(){
+
+        if(checkSet($scope.selectedSeason))
+            $scope.season_id = $scope.selectedSeason.id;
+
+        console.log($scope.season_id);
+
+        getLiveStats($scope, $http);
+
+    }
+
+}
+
+function getSeasons($scope, $http){
+
+    return $http.post( "./_listeners/listn.dashboard.php?method=SEASON").
+        success(function(data, status) {
+
+            $scope.seasons = data;
+
+        });
 
 }
 
 function getLiveStats($scope, $http){
 
-    $scope.week_id = week_id;
-
-    return $http.post( "./_listeners/listn.dashboard.php?method=GET", { "week_id" : $scope.week_id}).
+    return $http.post( "./_listeners/listn.dashboard.php?method=GET", { "week_id" : $scope.week_id, "season_id": $scope.season_id}).
         success(function(data, status) {
 
             $scope.status = status;
@@ -30,6 +56,9 @@ function getLiveStats($scope, $http){
             var $formatedLabels = [];
             var $legend = $("#performanceLegend");
             var $seasonRank = $("#rankInfo");
+
+            $legend.html("");
+            $seasonRank.html("");
 
             //.sort(function(a,b) { return parseFloat(a.price) - parseFloat(b.price) } );
 
@@ -187,9 +216,12 @@ function resizeCharts($chartData){
     if(checkSet($chartData.ctxPicks))
         $chartData['ctxPicks'] = $chartData.ctxPicks;
 
-    var ctxPicksChart = document.getElementById("performanceChart").getContext("2d");
-
     var container =  $("#perChart");
+
+    container.empty();
+    container.append('<canvas id="performanceChart"></canvas>');
+
+    var ctxPicksChart = document.getElementById("performanceChart").getContext("2d");
 
     ctxPicksChart.canvas.width  = container.innerWidth()*0.9;
     ctxPicksChart.canvas.height = container.innerHeight()*0.9;

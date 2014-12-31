@@ -5,13 +5,9 @@ $objData = json_decode($data);
 
 include "./listn.header.php";
 
-$prevSeason = season::loadSingle(["id" => $objData->season_id - 1]);
+$prevSeason = season::getCurrent()->getPrevious();
 
-while($prevSeason->type !== "regular"){
-    $prevSeason = season::loadSingle(["id" => $prevSeason->id - 1]);
-}
-
-$currentWeek = week::loadSingle(["season_id" => $objData->season_id, "week_number" => "1"]);
+$currentWeek = week::loadSingle(["season_id" => $objData->season_id, "week_number" => 1]);
 $games = game::loadMultiple(["season_id" => $prevSeason->id]);
 
 $teamGames = game::loadMultiple(["week_id" => $currentWeek->id]);

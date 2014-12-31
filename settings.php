@@ -62,7 +62,7 @@ include "./menu.php";
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                     <input type="hidden" name="cmd" value="_xclick">
                     <input type="hidden" name="business" value="harr8142@bellsouth.net">
-                    <input type="hidden" name="amount" value="<?php echo $creditCost; ?>">
+                    <input type="hidden" name="amount" value="<?php echo $creditCost->value; ?>">
                     <input type="hidden" name="undefined_quantity" value="1">
                     <input type="hidden" name="item_name" value="Credit Week - The Pool">
                     <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">
@@ -241,7 +241,7 @@ include "./menu.php";
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="PayPalForm" name="PayPalForm"  target="_top">
                     <input type="hidden" name="cmd" value="_xclick">
                     <input type="hidden" name="business" value="harr8142@bellsouth.net">
-                    <input type="hidden" name="amount" value="<?php echo $creditCost; ?>">
+                    <input type="hidden" name="amount" value="<?php echo $creditCost->value; ?>">
                     <input type="hidden" name="undefined_quantity" value="1">
                     <input type="hidden" name="item_name" value="Credit Week - The Pool">
                     <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">

@@ -8,22 +8,37 @@
     if(!isset($_GET['method']))
         exit;
 
+    if($_GET['method'] === 'SEASON'){
+
+        echo json_encode(season::query(["orderBy" => "id DESC"])->getList());
+
+    }
+
     if($_GET['method'] === 'GET'){
 
         $currentUser = users::returnCurrentUser();
+        $currentSeason = season::getCurrent();
+        $currentWeek = week::getCurrent();
 
         //returns a list of users that has sensitive information filtered out
 
-        $currentWeek = week::getCurrent();
+        $selectedSeason = season::loadSingle(["id" => $objData->season_id]);
 
-        $return['weeks'] = renderWeekData(week::query(["orderBy" => "week_number ASC"])->getList(["season_id" => season::getCurrent()->id]), $currentWeek);
+        if($selectedSeason !== false and $selectedSeason->id < $currentSeason->id)
+            $selectedWeek = week::query(["orderBy" => "id DESC"])->load(["season_id" => $currentSeason->id]);
+        else{
+            $selectedWeek = $currentWeek;
+            $selectedSeason = $currentSeason;
+        }
+
+        $return['weeks'] = renderWeekData(week::query(["orderBy" => "week_number ASC"])->getList(["season_id" => $selectedSeason->id]), $selectedWeek);
 
         $return['users'] = renderUserData(users::getFilteredUserList());
 
         $return['myUserID'] = $currentUser->id;
 
         //returns a list of player ranks for global list
-        $return['userRank'][0]['list'] = stat_log::getGlobalRankData(-1);
+        $return['userRank'][0]['list'] = stat_log::getGlobalRankData(-1, $selectedSeason->id);
         $return['userRank'][0]['rankData'] = stat_log::getPlayerRank($return['userRank'][0]['list']);
 
         $rivals = $currentUser->getRivals();
@@ -38,7 +53,10 @@
 
                 $return['rivals'][$count] = (int) $rival->rival_id;
 
-                $return['userPicks'][$count]['data'] = renderPointData(stat_log::getPlayerPointData($rival->rival_id), $return['weeks']);
+                if(strlen($rival->rival_custom_name) == 0)
+                    $rival->rival_custom_name = $rival->rival_name;
+
+                $return['userPicks'][$count]['data'] = renderPointData(stat_log::getPlayerPointData($rival->rival_id, $selectedSeason->id), $return['weeks']);
                 $return['userPicks'][$count]['title'] = $rival->rival_custom_name;
                 $return['userPicks'][$count]['strokeColor'] = "rgba(250,40,30,0.7)";
                 $return['userPicks'][$count]['pointColor'] = "rgba(100,40,40,0.7)";
@@ -48,7 +66,7 @@
             }
         }
 
-        $return['userPicks'][$count]['data'] = renderPointData(stat_log::getGlobalPointData(), $return['weeks']);
+        $return['userPicks'][$count]['data'] = renderPointData(stat_log::getGlobalPointData($selectedSeason->id), $return['weeks']);
         $return['userPicks'][$count]['title'] = "Global Picks";
         $return['userPicks'][$count]['strokeColor'] = "#AAA";
         $return['userPicks'][$count]['pointColor'] = "#3366DD";
@@ -56,7 +74,7 @@
         $count++;
 
         //gets the users pick data in terms of points per each week
-        $return['userPicks'][$count]['data'] =  renderPointData(stat_log::getPlayerPointData(), $return['weeks']);
+        $return['userPicks'][$count]['data'] =  renderPointData(stat_log::getPlayerPointData(-1, $selectedSeason->id), $return['weeks']);
         $return['userPicks'][$count]['title'] = "Your Picks";
         $return['userPicks'][$count]['strokeColor'] = "#333";
         $return['userPicks'][$count]['pointColor'] = "rgba(27,206,245, 1)";
@@ -71,12 +89,17 @@
 
         $weekDataTemp = [];
 
+        $season_id = null;
+
         foreach($weekDataArray as $value){
             if($value->date_end <= $currentWeek->date_start)
                 array_push($weekDataTemp, $value);
+
+            $season_id = $value->season_id;
         }
 
-        array_push($weekDataTemp, $currentWeek);
+        if($currentWeek->season_id == $season_id)
+            array_push($weekDataTemp, $currentWeek);
 
         return $weekDataTemp;
 

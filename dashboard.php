@@ -48,16 +48,28 @@ if($user === false || !$user->verifyAuth())
     <div class="width-50 fluid-row first">
 
         <div class="fluid-row slim alignleft">
+            <h4>Season Select:</h4>
+            <select data-ng-cloak
+                    data-ng-options="season.text_id for season in seasons track by season.id"
+                    data-ng-change="updateSeason()"
+                    data-ng-model="selectedSeason"></select>
+        </div>
+
+        <div class="fluid-row slim alignleft">
+
+
 
             <h4>Pick Performance <i data-trans-for="pick_performance" class="fa fa-bars"></i></h4>
 
             <div data-trans-id="pick_performance">
 
-                <div id="perChart" class="fluid-row slim aligncenter">
+                <div class="fluid-row slim aligncenter">
 
                     <div class="fluid-row slim alignleft" id="performanceLegend"></div>
 
-                    <canvas id="performanceChart"></canvas>
+                    <div id="perChart">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
 
                 </div>
 
@@ -136,6 +148,8 @@ if($user === false || !$user->verifyAuth())
 <script>
 
     week_id = <?php echo week::getCurrent()->id; ?>;
+    season_id = <?php echo season::getCurrent()->id; ?>;
+    selectedSeason =  <?php echo json_encode(season::getCurrent()); ?>;
 
 </script>
 

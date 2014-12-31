@@ -52,6 +52,31 @@ class credit extends Logos_MySQL_Object{
         if($week_id === null)
             $week_id = week::getCurrent()->id;
 
+        $season = season::getCurrent();
+
+        //if playoff is in effect, then we can skip the need for a week_id in our credit check
+        if($season->type == "playoff"){
+
+            $week = new week($week_id);
+
+            if($week->season_id === $season->id){
+
+                $weeks = week::loadMultiple(["season_id" => $season->id]);
+
+                $credits = self::loadMultiple(["user_id" => $user_id, "amount" => $creditCost->value]);
+
+                foreach($credits as $value){
+                    foreach($weeks as $weekCheck){
+                        if($weekCheck->id == $value->week_id)
+                            return $value;
+                    }
+                }
+
+                return false;
+            }
+
+        }
+
         return self::loadSingle(["user_id" => $user_id, "week_id" => $week_id, "amount" => $creditCost->value]);
 
     }

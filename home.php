@@ -194,9 +194,11 @@
 
             <?php
 
-                $games = game::loadMultiple(["week_id" => (week::getCurrent()->id)-1, "season_id" => season::getCurrent()->id]);
+            $previousWeek = week::getCurrent()->getPrevious();
 
-                if(count($games) > 0 || season::getCurrent()->type !== "playoff" ):
+            $games = game::loadMultiple(["week_id" => $previousWeek->id, "season_id" => season::getCurrent()->id]);
+
+            if(count($games) > 0 || season::getCurrent()->type !== "playoff" ):
 
             ?>
 

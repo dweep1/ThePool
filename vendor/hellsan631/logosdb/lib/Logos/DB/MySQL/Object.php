@@ -13,7 +13,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * 100 Queries Run
      * <p>Average Time: 48ms per 100/1.23kb</p>
      *
-     * @return Logos_MySQL_Object $this
+     * @return $this
      */
     public function createNew(){
 
@@ -52,8 +52,8 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         //INSERT INTO fruit (color, count) VALUES (:color, :count)
 
         //checks to see if there was an object that was inserted into the database
-        $this->id = MySQL_Core::fetchQuery($prepareStatement, $dataArray, false) ?
-            MySQL_Core::getInstance()->dbh->lastInsertId() : null;
+        $this->id = MySQL_Adapter::fetchQuery($prepareStatement, $dataArray, false) ?
+            MySQL_Adapter::getInstance()->dbh->lastInsertId() : null;
 
         if($this->id === null)
             return false;
@@ -111,8 +111,8 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
         $prepareStatement = rtrim($prepareStatement, ", ").")";
 
-        if(MySQL_Core::fetchQuery($prepareStatement, $data, false))
-            return MySQL_Core::getInstance()->dbh->lastInsertId();
+        if(MySQL_Adapter::fetchQuery($prepareStatement, $data, false))
+            return MySQL_Adapter::getInstance()->dbh->lastInsertId();
 
         return false;
 
@@ -211,7 +211,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
         $prepareStatement = rtrim($prepareStatement, ", ");
 
-        return MySQL_Core::fetchQuery($prepareStatement, $dataArray, false);
+        return MySQL_Adapter::fetchQuery($prepareStatement, $dataArray, false);
 
     }
 
@@ -230,7 +230,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * <p>An optional array/object/json string of data that is to be saved into the database relating to the
      * referenced object</p>
      *
-     * @return Logos_MySQL_Object
+     * @return $this
      * <p>Returns the result of query execute. If the execute was successful, then returns true. False on fail</p>
      *
      * @throws Exception
@@ -262,7 +262,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         //string should look like this:
         //UPDATE fruit SET color = :color, count = :count WHERE id = :id
 
-        if(!MySQL_Core::fetchQuery($prepareStatement, $changedData, false))
+        if(!MySQL_Adapter::fetchQuery($prepareStatement, $changedData, false))
             return false;
 
         return $this;
@@ -335,7 +335,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
         //string should look like this:
         //UPDATE fruit SET color = :color, count = :count WHERE id = :id
 
-        return MySQL_Core::fetchQuery($prepareStatement, $changedData, false);
+        return MySQL_Adapter::fetchQuery($prepareStatement, $changedData, false);
 
     }
 
@@ -351,15 +351,17 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * @param $id
      * ID of object to load, (this can also be an array of conditions)
      *
-     * @return Logos_MySQL_Object $this
+     * @return $this
      */
 
     public function load($id){
 
         if(is_numeric($id)){
 
-            MySQL_Core::fetchQueryObj(
-                "SELECT * FROM `".self::name()."` WHERE id = :id LIMIT 1",
+            self::query(["limit" => 1]);
+
+            MySQL_Adapter::fetchQueryObj(
+                "SELECT * FROM `".self::name()."` WHERE id = :id",
                 [":id" => $id],
                 PDO::FETCH_INTO,
                 $this
@@ -371,9 +373,10 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
             $prepareStatement = "SELECT * FROM `".self::name()."` WHERE ";
             self::_buildQueryWhere($prepareStatement, $id);
-            $prepareStatement .= " LIMIT 1";
 
-            MySQL_Core::fetchQueryObj($prepareStatement, $id, PDO::FETCH_INTO, $this);
+            self::query(["limit" => 1]);
+
+            MySQL_Adapter::fetchQueryObj($prepareStatement, $id, PDO::FETCH_INTO, $this);
 
         }
 
@@ -405,7 +408,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
             self::_buildQueryWhere($prepareStatement, $conditionArray);
         }
 
-        return MySQL_Core::fetchQueryObj($prepareStatement, $conditionArray, PDO::FETCH_CLASS, $name);
+        return MySQL_Adapter::fetchQueryObj($prepareStatement, $conditionArray, PDO::FETCH_CLASS, $name);
 
     }
 
@@ -418,7 +421,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * @param $conditionArray
      * Matching Conditions for the object to be loaded
      *
-     * @return Logos_MySQL_Object
+     * @return $this
      */
 
     public static function loadSingle($conditionArray){
@@ -435,7 +438,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
         $prepareStatement .= " LIMIT 1";
 
-        return MySQL_Core::fetchQueryObj($prepareStatement, $conditionArray, PDO::FETCH_OBJ, $name);
+        return MySQL_Adapter::fetchQueryObj($prepareStatement, $conditionArray, PDO::FETCH_OBJ, $name);
 
     }
 
@@ -464,7 +467,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
             self::_buildQueryWhere($prepareStatement, $conditionArray);
         }
 
-        return MySQL_Core::fetchQueryObj($prepareStatement, $conditionArray, PDO::FETCH_CLASS, $name);
+        return MySQL_Adapter::fetchQueryObj($prepareStatement, $conditionArray, PDO::FETCH_CLASS, $name);
 
     }
 
@@ -500,7 +503,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
         self::_buildQueryWhere($prepareStatement, $conditionArray);
 
-        return MySQL_Core::fetchQuery($prepareStatement, $conditionArray);
+        return MySQL_Adapter::fetchQuery($prepareStatement, $conditionArray);
 
     }
 
@@ -518,7 +521,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
     public static function destroy($id){
 
-        return MySQL_Core::fetchQuery(
+        return MySQL_Adapter::fetchQuery(
             "DELETE FROM ".self::name()." WHERE id = :id",
             [':id' => $id]
         );
@@ -534,7 +537,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      *
      * @param $dataArray
      *
-     * @return Logos_MySQL_Object
+     * @return $this
      */
     public static function firstOrCreate($dataArray){
 
@@ -549,7 +552,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      *
      * @param $dataArray
      *
-     * @return Logos_MySQL_Object
+     * @return $this
      */
     public static function firstOrNew($dataArray){
 
@@ -568,7 +571,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
      * @param null $params
      * The parameters of the query ('10', 'id ADC') can be array or string
      *
-     * @return Logos_MySQL_Object - returns new instance of self
+     * @return $this - returns new instance of self
      *
      * Examples:
      * Object::query('limit', 10)->getList();
@@ -597,7 +600,7 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
                 $tempKey = strtolower($key);
 
                 if(is_callable([$callable, $tempKey], true))
-                    MySQL_Core::getInstance()->query->$tempKey($value);
+                    MySQL_Adapter::getInstance()->query->$tempKey($value);
 
             }
 
@@ -606,14 +609,14 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
                 $functionCall = strtolower($functionCall);
 
                 if(is_callable([$callable, $functionCall], true))
-                    MySQL_Core::getInstance()->query->$functionCall($params);
+                    MySQL_Adapter::getInstance()->query->$functionCall($params);
 
             }else{
                 foreach($functionCall as $key => $value){
                     $value = strtolower($value);
 
                     if(is_callable([$callable, $value], true))
-                        MySQL_Core::getInstance()->query->$value($params[$key]);
+                        MySQL_Adapter::getInstance()->query->$value($params[$key]);
 
                 }
             }
@@ -676,169 +679,6 @@ abstract class Logos_MySQL_Object extends Database_Object implements Database_Ha
 
 }
 
-class QueryHandler{
-
-    private $_groupby = "";
-    private $_orderby = "";
-    private $_limit = "";
-
-    //Any time a query is executed, we want to make sure to clear the query so that it doesn't show up again.
-    public function getQuery(){
-
-        $query = " {$this->_groupby} {$this->_orderby} {$this->_limit} ";
-
-        $this->_groupby = "";
-        $this->_orderby = "";
-        $this->_limit = "";
-
-        return $query;
-
-    }
-
-    public function groupby($grouping){
-
-        $this->_groupby = "GROUP BY $grouping";
-
-        return $this;
-
-    }
-
-    public function orderby($order){
-
-        $this->_orderby = "ORDER BY $order";
-
-        return $this;
-
-    }
-
-    public function limit($limit){
-
-        $min = null;
-        $max = null;
-
-        if(is_array($limit)){
-
-            //if array has named keys
-            if(array_key_exists('min', $limit))
-                $min = $limit['min'];
-            if(array_key_exists('max', $limit))
-                $max = $limit['max'];
-
-            //if array uses integers instead
-            if(array_key_exists(0, $limit))
-                $min = $limit[0];
-            if(array_key_exists(1, $limit))
-                $max = $limit[1];
-
-        }else{
-            $min = intval($limit);
-        }
-
-        if($min === null)
-            return $this;
-
-        $this->_limit = "LIMIT $min, ";
-
-        if($max !== null)
-            $this->_limit .= "$max, ";
-
-        $this->_limit = rtrim($this->_limit, ", ");
-
-        return $this;
-
-    }
-
-}
-
-//Core is a singleton because it implements the database connection class. Calling core multiple times
-//would otherwise create many more objects then if we didn't have a singleton as a core.
-//Also, creating a singleton means we can save data to the query using our query handler
-//between instance calls.
-class MySQL_Core extends Database_Core{
-
-    public $dbh;
-    public $query;
-
-    public function __construct(){
-
-        $dsn = 'mysql:host=' . Config::read('db.host') .
-            ';dbname='    . Config::read('db.name') .
-            ';connect_timeout=15';
-
-        //We use the @ symbol to suppress errors because otherwise we would get the "mysql server has gone away"
-        $this->dbh = @new PDO($dsn,
-            Config::read('db.user'),
-            Config::read('db.password'),
-            array(PDO::ATTR_PERSISTENT => true)
-        );
-
-        $this->dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //PDO::ERRMODE_SILENT
-        $this->dbh->setAttribute(PDO::ATTR_EMULATE_PREPARES, true);
-
-        $this->query = new QueryHandler();
-
-    }
-
-    public static function fetchQuery($prepare, $execute, $returnQuery = true){
-
-        try {
-
-            $newInstance = self::getInstance();
-
-            $query = $newInstance->dbh->prepare($prepare.$newInstance->query->getQuery());
-
-            if(!$returnQuery)
-                return $query->execute($execute);
-            else
-                $query->execute($execute);
-
-            return $query;
-
-        }catch(PDOException $pe) {
-            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
-        }
-
-        return false;
-
-    }
-
-    public static function fetchQueryObj($prepare, $execute, $fetchMode, &$fetchParam){
-
-        try {
-
-            $newInstance = self::getInstance();
-
-            $query = $newInstance->dbh->prepare($prepare.$newInstance->query->getQuery());
-
-            if($fetchMode === PDO::FETCH_OBJ)
-                $query->setFetchMode($fetchMode);
-            else
-                $query->setFetchMode($fetchMode, $fetchParam);
-
-            $query->execute($execute);
-
-            if($fetchMode === PDO::FETCH_OBJ){
-
-                $fetchParam = $query->fetchObject($fetchParam);
-
-                if(!is_object($fetchParam) && (!is_array($fetchParam) or count($fetchParam) == 0))
-                    return false;
-
-            }else if($fetchMode === PDO::FETCH_INTO)
-                $query->fetch();
-            else if($fetchMode === PDO::FETCH_CLASS)
-                return $query->fetchAll($fetchMode, $fetchParam);
 
 
-            return $fetchParam;
-
-        }catch(PDOException $pe) {
-            trigger_error('Error fetching Object. ' . $pe->getMessage() , E_USER_ERROR);
-        }
-
-        return false;
-
-    }
-
-}
 

@@ -1,24 +1,24 @@
 [
     {
         "name": "hellsan631/logosdb",
-        "version": "v1.4.8.2",
-        "version_normalized": "1.4.8.2",
+        "version": "v1.4.13",
+        "version_normalized": "1.4.13.0",
         "source": {
             "type": "git",
             "url": "https://github.com/hellsan631/LogosDB.git",
-            "reference": "959410b654cff95876e1e806f91af422fda59911"
+            "reference": "cca31cc5980fb19c9e756a1002afc1a7013b30d4"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/959410b654cff95876e1e806f91af422fda59911",
-            "reference": "959410b654cff95876e1e806f91af422fda59911",
+            "url": "https://api.github.com/repos/hellsan631/LogosDB/zipball/cca31cc5980fb19c9e756a1002afc1a7013b30d4",
+            "reference": "cca31cc5980fb19c9e756a1002afc1a7013b30d4",
             "shasum": ""
         },
         "require": {
             "ext-mcrypt": "*",
             "php": ">=5.5"
         },
-        "time": "2014-11-26 20:37:22",
+        "time": "2014-12-30 23:22:41",
         "type": "library",
         "installation-source": "source",
         "autoload": {
@@ -36,7 +36,7 @@
                 "homepage": "http://mathew-kleppin.com/blog/"
             }
         ],
-        "description": "Logos DB Object Handlers",
+        "description": "A database micro-framework for creating simple DB interaction without the need for a full framework",
         "homepage": "http://mathew-kleppin.com/blog/",
         "keywords": [
             "framework"

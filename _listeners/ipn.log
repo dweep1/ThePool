@@ -1,0 +1,140 @@
+[2014-12-30 14:41 America/New_York] Error loading pay_key user from DB: cmd=_notify-validate&mc_gross=1.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=TVMLJTCS4TGFW&tax=0.00&address_street=2716A+E+Holmes+Ave&payment_date=11%3A41%3A36+Dec+30%2C+2014+PST&payment_status=Completed&charset=windows-1252&address_zip=53110-1321&first_name=Mathew&mc_fee=0.33&address_country_code=US&address_name=Mathew+Kleppin&notify_version=3.8&custom=JEgjjByTaM7cRHbv&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Cudahy&quantity=1&verify_sign=AVYynCWJHLyToQ8d1x0PQChXZ.CMA.8F8S85i.zfvoljKqVk7biyvm4Y&payer_email=matkle414%40gmail.com&txn_id=4PH99458A1941105M&payment_type=instant&last_name=Kleppin&address_state=WI&receiver_email=harr8142%40bellsouth.net&payment_fee=0.33&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=JEgjjByTaM7cRHbv&residence_country=US&handling_amount=0.00&transaction_subject=JEgjjByTaM7cRHbv&payment_gross=1.00&shipping=0.00&ipn_track_id=89d7498b893c
+[2014-12-30 14:49 America/New_York] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1017
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&mc_gross=1.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=TVMLJTCS4TGFW&tax=0.00&address_street=2716A+E+Holmes+Ave&payment_date=11%3A48%3A57+Dec+30%2C+2014+PST&payment_status=Completed&charset=windows-1252&address_zip=53110-1321&first_name=Mathew&mc_fee=0.33&address_country_code=US&address_name=Mathew+Kleppin&notify_version=3.8&custom=JEgjjByTaM7cRHbv&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Cudahy&quantity=1&verify_sign=AXOdEKNaKB34xXs1J9eIeoZ2zZOEAfDvOLE-C4VwfTO69FO6zK7yQWnI&payer_email=matkle414%40gmail.com&txn_id=19P469878J132583B&payment_type=instant&last_name=Kleppin&address_state=WI&receiver_email=harr8142%40bellsouth.net&payment_fee=0.33&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=JEgjjByTaM7cRHbv&residence_country=US&handling_amount=0.00&transaction_subject=JEgjjByTaM7cRHbv&payment_gross=1.00&shipping=0.00&ipn_track_id=45f55b15679eb
+[2014-12-30 14:49 America/New_York] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html; charset=UTF-8
+DC: slc-origin-www.paypal.com
+Date: Tue, 30 Dec 2014 19:49:10 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=zbI4mrXmxHeobRArfz8WTXKGq6PnwvKTHOmGY44kIKbKywQEuPFNAXWbOO7EvnkeOtcIs_XE_qgH2oK7IIvNkt8GdQx5CfS3tot_ZaqCaI2chI-EyWBalF9ybFPVxHyA_f4yEW6__suSJqWTIbS4l_6fNsRcQ9CvAgknnt2snIjiB2ZrQYSyROptWQ07zC3Ln8Tnfp4CAPIO6DNl3DREo7PeXrUNjl0AH-hdbbwvO7i2w-L7QvMZUfIiX7AFtuDl7DTu5NdqZH_E5fnae3fGlCmHphBlnn8sRVzGXfDBsLlXnkrr1taHJHNcWey2Q-MD4DSN_mbxLj8YAdNHyxMSbk5y1VUPJXVr3D_s4gIfJS1hs9webO_evLmq18iUoFMabcxb6C-hWhIBbwOTYTbIeNeWQZ380jCkTy5-w2BP3hMGwE1ZGji5-H5KZaa; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 27-Dec-2024 19:49:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 29-Dec-2016 19:49:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.16.0.14.1419968949756053; path=/; expires=Thu, 22-Dec-44 19:49:09 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE9.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D3036783444; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.16.0.11.1419968949748645; path=/; expires=Thu, 22-Dec-44 19:49:09 GMT
+Set-Cookie: AKDC=slc-origin-www.paypal.com; expires=Tue, 30-Dec-2014 20:19:10 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2014-12-30 14:49 America/New_York] Error loading pay_key user from DB: cmd=_notify-validate&mc_gross=1.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=TVMLJTCS4TGFW&tax=0.00&address_street=2716A+E+Holmes+Ave&payment_date=11%3A48%3A57+Dec+30%2C+2014+PST&payment_status=Completed&charset=windows-1252&address_zip=53110-1321&first_name=Mathew&mc_fee=0.33&address_country_code=US&address_name=Mathew+Kleppin&notify_version=3.8&custom=JEgjjByTaM7cRHbv&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Cudahy&quantity=1&verify_sign=AXOdEKNaKB34xXs1J9eIeoZ2zZOEAfDvOLE-C4VwfTO69FO6zK7yQWnI&payer_email=matkle414%40gmail.com&txn_id=19P469878J132583B&payment_type=instant&last_name=Kleppin&address_state=WI&receiver_email=harr8142%40bellsouth.net&payment_fee=0.33&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=JEgjjByTaM7cRHbv&residence_country=US&handling_amount=0.00&transaction_subject=JEgjjByTaM7cRHbv&payment_gross=1.00&shipping=0.00&ipn_track_id=45f55b15679eb
+[2014-12-30 14:49 America/New_York] Verified IPN 
+[2014-12-30 14:49 America/New_York] 'mc_gross' => '1.00'
+[2014-12-30 14:49 America/New_York] 'protection_eligibility' => 'Eligible'
+[2014-12-30 14:49 America/New_York] 'address_status' => 'confirmed'
+[2014-12-30 14:49 America/New_York] 'payer_id' => 'TVMLJTCS4TGFW'
+[2014-12-30 14:49 America/New_York] 'tax' => '0.00'
+[2014-12-30 14:49 America/New_York] 'address_street' => '2716A E Holmes Ave'
+[2014-12-30 14:49 America/New_York] 'payment_date' => '11:48:57 Dec 30, 2014 PST'
+[2014-12-30 14:49 America/New_York] 'payment_status' => 'Completed'
+[2014-12-30 14:49 America/New_York] 'charset' => 'windows-1252'
+[2014-12-30 14:49 America/New_York] 'address_zip' => '53110-1321'
+[2014-12-30 14:49 America/New_York] 'first_name' => 'Mathew'
+[2014-12-30 14:49 America/New_York] 'mc_fee' => '0.33'
+[2014-12-30 14:49 America/New_York] 'address_country_code' => 'US'
+[2014-12-30 14:49 America/New_York] 'address_name' => 'Mathew Kleppin'
+[2014-12-30 14:49 America/New_York] 'notify_version' => '3.8'
+[2014-12-30 14:49 America/New_York] 'custom' => 'JEgjjByTaM7cRHbv'
+[2014-12-30 14:49 America/New_York] 'payer_status' => 'verified'
+[2014-12-30 14:49 America/New_York] 'business' => 'harr8142@bellsouth.net'
+[2014-12-30 14:49 America/New_York] 'address_country' => 'United States'
+[2014-12-30 14:49 America/New_York] 'address_city' => 'Cudahy'
+[2014-12-30 14:49 America/New_York] 'quantity' => '1'
+[2014-12-30 14:49 America/New_York] 'verify_sign' => 'AXOdEKNaKB34xXs1J9eIeoZ2zZOEAfDvOLE-C4VwfTO69FO6zK7yQWnI'
+[2014-12-30 14:49 America/New_York] 'payer_email' => 'matkle414@gmail.com'
+[2014-12-30 14:49 America/New_York] 'txn_id' => '19P469878J132583B'
+[2014-12-30 14:49 America/New_York] 'payment_type' => 'instant'
+[2014-12-30 14:49 America/New_York] 'last_name' => 'Kleppin'
+[2014-12-30 14:49 America/New_York] 'address_state' => 'WI'
+[2014-12-30 14:49 America/New_York] 'receiver_email' => 'harr8142@bellsouth.net'
+[2014-12-30 14:49 America/New_York] 'payment_fee' => '0.33'
+[2014-12-30 14:49 America/New_York] 'receiver_id' => '3QN6WVX42Y8VN'
+[2014-12-30 14:49 America/New_York] 'txn_type' => 'web_accept'
+[2014-12-30 14:49 America/New_York] 'item_name' => 'Credit Week - The Pool'
+[2014-12-30 14:49 America/New_York] 'mc_currency' => 'USD'
+[2014-12-30 14:49 America/New_York] 'item_number' => 'JEgjjByTaM7cRHbv'
+[2014-12-30 14:49 America/New_York] 'residence_country' => 'US'
+[2014-12-30 14:49 America/New_York] 'handling_amount' => '0.00'
+[2014-12-30 14:49 America/New_York] 'transaction_subject' => 'JEgjjByTaM7cRHbv'
+[2014-12-30 14:49 America/New_York] 'payment_gross' => '1.00'
+[2014-12-30 14:49 America/New_York] 'shipping' => '0.00'
+[2014-12-30 14:49 America/New_York] 'ipn_track_id' => '45f55b15679eb'
+[2014-12-30 14:52 America/New_York] HTTP request of validation request:POST /cgi-bin/webscr HTTP/1.1
+Host: www.paypal.com
+Accept: */*
+Connection: Close
+Content-Length: 1017
+Content-Type: application/x-www-form-urlencoded
+
+ for IPN payload: cmd=_notify-validate&mc_gross=1.00&protection_eligibility=Eligible&address_status=confirmed&payer_id=TVMLJTCS4TGFW&tax=0.00&address_street=2716A+E+Holmes+Ave&payment_date=11%3A51%3A57+Dec+30%2C+2014+PST&payment_status=Completed&charset=windows-1252&address_zip=53110-1321&first_name=Mathew&mc_fee=0.33&address_country_code=US&address_name=Mathew+Kleppin&notify_version=3.8&custom=JEgjjByTaM7cRHbv&payer_status=verified&business=harr8142%40bellsouth.net&address_country=United+States&address_city=Cudahy&quantity=1&verify_sign=AFSj6TtDWU3HQ95PDRWuDHKXw6UNAgOe48.T7PaqfYiDyGemm3yq.KdI&payer_email=matkle414%40gmail.com&txn_id=78Y24441GB464042H&payment_type=instant&last_name=Kleppin&address_state=WI&receiver_email=harr8142%40bellsouth.net&payment_fee=0.33&receiver_id=3QN6WVX42Y8VN&txn_type=web_accept&item_name=Credit+Week+-+The+Pool&mc_currency=USD&item_number=JEgjjByTaM7cRHbv&residence_country=US&handling_amount=0.00&transaction_subject=JEgjjByTaM7cRHbv&payment_gross=1.00&shipping=0.00&ipn_track_id=d7b7e813e44f0
+[2014-12-30 14:52 America/New_York] HTTP response of validation request: HTTP/1.1 200 OK
+Server: Apache
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/html; charset=UTF-8
+DC: slc-b-origin-www-2.paypal.com
+Date: Tue, 30 Dec 2014 19:52:10 GMT
+Content-Length: 8
+Connection: close
+Set-Cookie: cwrClyrK4LoCV1fydGbAxiNL6iG=askXHu9NjQd0zICpAOJ1PCdaL1HAciHASRWAWGIYJqFylIFkUkBBxR17lk4pEztDZlgmyGTABRDVRhCJEPkJ11TcKOLJ4kK8OU128Z6Bsu9E89bSrQRg0R5x0d5vVfKwEkj9NATc-qLLdIkLl8XjwZxDLCFEUghMKleUC5wUn3Pnm6Rv_-mVexPAaN5B4DaBw68dqooXAlUZ2bl5EeRwXJnyMMmQKweX7rVLPC8NWrlwD6g--l_eMzCUfI3FSVavx76Vm3Xlft-RM3z9--t7xNS-Ga5s_uQUlCEjUGQkgFOcE4oDeQdtsJjbEwLBZY9fKLWV_DwNpE3aKtExouD8TXQc3pACOXr4qdGvTEc1Zic5gB9t3u_F0ZreoBBKStm_dNEobLyoEswxr0dHV6rWUYUXbJmWAcVclyO3jksOKr5BIv62mZWGF9ORUPO; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: cookie_check=yes; expires=Fri, 27-Dec-2024 19:52:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navcmd=_notify-validate; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: navlns=0.0; expires=Thu, 29-Dec-2016 19:52:10 GMT; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: Apache=10.74.8.137.1419969130225810; path=/; expires=Thu, 22-Dec-44 19:52:10 GMT
+Set-Cookie: X-PP-SILOVER=name%3DLIVE6.WEB.1%26silo_version%3D880%26app%3Dslingshot%26TIME%3D1778557780; domain=.paypal.com; path=/; Secure; HttpOnly
+Set-Cookie: X-PP-SILOVER=; Expires=Thu, 01 Jan 1970 00:00:01 GMT
+Set-Cookie: Apache=10.74.8.61.1419969130214234; path=/; expires=Thu, 22-Dec-44 19:52:10 GMT
+Set-Cookie: AKDC=slc-b-origin-www-2.paypal.com; expires=Tue, 30-Dec-2014 20:22:10 GMT; path=/; secure
+Strict-Transport-Security: max-age=63072000
+
+VERIFIED
+[2014-12-30 14:52 America/New_York] Verified IPN 
+[2014-12-30 14:52 America/New_York] 'mc_gross' => '1.00'
+[2014-12-30 14:52 America/New_York] 'protection_eligibility' => 'Eligible'
+[2014-12-30 14:52 America/New_York] 'address_status' => 'confirmed'
+[2014-12-30 14:52 America/New_York] 'payer_id' => 'TVMLJTCS4TGFW'
+[2014-12-30 14:52 America/New_York] 'tax' => '0.00'
+[2014-12-30 14:52 America/New_York] 'address_street' => '2716A E Holmes Ave'
+[2014-12-30 14:52 America/New_York] 'payment_date' => '11:51:57 Dec 30, 2014 PST'
+[2014-12-30 14:52 America/New_York] 'payment_status' => 'Completed'
+[2014-12-30 14:52 America/New_York] 'charset' => 'windows-1252'
+[2014-12-30 14:52 America/New_York] 'address_zip' => '53110-1321'
+[2014-12-30 14:52 America/New_York] 'first_name' => 'Mathew'
+[2014-12-30 14:52 America/New_York] 'mc_fee' => '0.33'
+[2014-12-30 14:52 America/New_York] 'address_country_code' => 'US'
+[2014-12-30 14:52 America/New_York] 'address_name' => 'Mathew Kleppin'
+[2014-12-30 14:52 America/New_York] 'notify_version' => '3.8'
+[2014-12-30 14:52 America/New_York] 'custom' => 'JEgjjByTaM7cRHbv'
+[2014-12-30 14:52 America/New_York] 'payer_status' => 'verified'
+[2014-12-30 14:52 America/New_York] 'business' => 'harr8142@bellsouth.net'
+[2014-12-30 14:52 America/New_York] 'address_country' => 'United States'
+[2014-12-30 14:52 America/New_York] 'address_city' => 'Cudahy'
+[2014-12-30 14:52 America/New_York] 'quantity' => '1'
+[2014-12-30 14:52 America/New_York] 'verify_sign' => 'AFSj6TtDWU3HQ95PDRWuDHKXw6UNAgOe48.T7PaqfYiDyGemm3yq.KdI'
+[2014-12-30 14:52 America/New_York] 'payer_email' => 'matkle414@gmail.com'
+[2014-12-30 14:52 America/New_York] 'txn_id' => '78Y24441GB464042H'
+[2014-12-30 14:52 America/New_York] 'payment_type' => 'instant'
+[2014-12-30 14:52 America/New_York] 'last_name' => 'Kleppin'
+[2014-12-30 14:52 America/New_York] 'address_state' => 'WI'
+[2014-12-30 14:52 America/New_York] 'receiver_email' => 'harr8142@bellsouth.net'
+[2014-12-30 14:52 America/New_York] 'payment_fee' => '0.33'
+[2014-12-30 14:52 America/New_York] 'receiver_id' => '3QN6WVX42Y8VN'
+[2014-12-30 14:52 America/New_York] 'txn_type' => 'web_accept'
+[2014-12-30 14:52 America/New_York] 'item_name' => 'Credit Week - The Pool'
+[2014-12-30 14:52 America/New_York] 'mc_currency' => 'USD'
+[2014-12-30 14:52 America/New_York] 'item_number' => 'JEgjjByTaM7cRHbv'
+[2014-12-30 14:52 America/New_York] 'residence_country' => 'US'
+[2014-12-30 14:52 America/New_York] 'handling_amount' => '0.00'
+[2014-12-30 14:52 America/New_York] 'transaction_subject' => 'JEgjjByTaM7cRHbv'
+[2014-12-30 14:52 America/New_York] 'payment_gross' => '1.00'
+[2014-12-30 14:52 America/New_York] 'shipping' => '0.00'
+[2014-12-30 14:52 America/New_York] 'ipn_track_id' => 'd7b7e813e44f0'

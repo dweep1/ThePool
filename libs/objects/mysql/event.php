@@ -35,7 +35,7 @@ abstract class event extends Selectable{
         $todayDate = $now->format("Y-m-d");
 
         $query = MySQL_Core::fetchQuery(
-            "SELECT * FROM {$className} WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1",
+            "SELECT * FROM `{$className}` WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1",
             [":today" => $todayDate]
         );
 
@@ -52,6 +52,29 @@ abstract class event extends Selectable{
         if(isset($object) && is_object($object)){
             $_SESSION['current_'.$className] = $object->toArray();
             return $object;
+        }
+
+        return false;
+
+    }
+
+    public function getPrevious(){
+
+        $className = get_called_class();
+
+        $query = MySQL_Core::fetchQuery(
+            "SELECT * FROM `{$className}` WHERE id = (SELECT MAX(id) FROM `{$className}` WHERE id < :last_id)",
+            [":last_id" => $this->id]
+        );
+
+        try {
+
+            return $query->fetchObject($className);
+
+        }catch(PDOException $pe) {
+
+            trigger_error('Could not connect to MySQL database. ' . $pe->getMessage() , E_USER_ERROR);
+
         }
 
         return false;

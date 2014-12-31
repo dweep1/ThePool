@@ -24,7 +24,7 @@ class stat_log extends Logos_MySQL_Object{
         * w/o week_id get the season stats
      */
 
-    public static function getGlobalRankData($week_id = null){
+    public static function getGlobalRankData($week_id = null, $season_id = null){
 
         $week_id = ($week_id === null) ? week::getCurrent()->id : $week_id;
 
@@ -38,8 +38,12 @@ class stat_log extends Logos_MySQL_Object{
             FROM pick WHERE week_id = :week_id AND result = 1 GROUP BY user_id ORDER BY total DESC, percent DESC, user_id DESC";
         }
 
+        if($season_id === null){
+            $season_id =  season::getCurrent()->id;
+        }
+
         if((int) $week_id === -1)
-            $execArray = array(':season_id' => season::getCurrent()->id);
+            $execArray = array(':season_id' => $season_id);
         else
             $execArray = array(':week_id' => $week_id);
 
@@ -88,15 +92,18 @@ class stat_log extends Logos_MySQL_Object{
 
     }
 
-    public static function getPlayerPointData($user_id = -1){
+    public static function getPlayerPointData($user_id = -1, $season_id = -1){
 
-        $dataArray = array("user_id" => $user_id);
+        $dataArray = array("user_id" => $user_id, "season_id" => $season_id);
 
         return self::getUserStats(5, $dataArray);
 
     }
 
-    public static function getGlobalPointData(){
+    public static function getGlobalPointData($season_id = null){
+
+        if($season_id === null)
+            season::getCurrent()->id;
 
         $query = MySQL_Core::fetchQuery(
             "SELECT week_id, AVG(result) as value FROM
@@ -104,7 +111,7 @@ class stat_log extends Logos_MySQL_Object{
                 WHERE season_id = :season_id AND result = 1
                 GROUP BY user_id, week_id ORDER BY week_id ASC)
             AS t1 GROUP BY t1.week_id",
-            [':season_id' => @season::getCurrent()->id]
+            [':season_id' => $season_id]
         );
 
         try {

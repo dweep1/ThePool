@@ -229,6 +229,243 @@ $user->save();
 //UPDATE user SET username = :username, email = :email WHERE id = :id
 ```
 
+## Security
+
+There are 3 added security classes that help with php development. The goal is to enhance existing
+PHP 5.5 functionality with industry standard practices, and make them easy to use.
+
+### The Cipher Class
+
+The Cipher class allows you to encrypt/decrypt text and generate safe random numbers. It does this using
+MCrypt, a built in PHP extension. Currently, keys are one way, but soon that will change.
+
+Use of the Cipher Class is easy. To encrypt something:
+
+```php
+//Send a secure key to the cipher class.
+$cipher = new Cipher("s3cur3k3y");
+
+echo $cipher->encrypt("Hello World!");
+
+//outputs "kRTIR6qDGYNumkoAMfwWMGNVPIUoODr0kvFMCmPDynM="
+```
+
+If you want to then decrypt
+
+```php
+echo $cipher->decrypt("kRTIR6qDGYNumkoAMfwWMGNVPIUoODr0kvFMCmPDynM=");
+
+//outputs "Hello World!"
+```
+
+You can also get a random key from Cipher. Its highly recommended that you use cipher in place of any other
+random key/number generators for security, as Cipher uses "openssl_random_pseudo_bytes()", which is the most
+secure way in php to get a random string of data.
+
+```php
+//You can send in a length of key into the getRandomKey method, or just leave it blank for a default length of 22.
+$randomKey = Cipher::getRandomKey();
+```
+
+### The Password Class
+
+The password class helps secure user passwords using PHP 5.5 built in BCrypt implementation. Its by far the most
+secure way of storing passwords, and all passwords should be stored this way.
+
+For an implementation of this, I recommend looking at one of my other projects, and the way it handles user creation.
+
+To Create A New User and save his password correctly:
+
+newUser.php
+```php
+$newUser = new User($_POST);
+
+if($newUser->createNew())
+    $_SESSION['result'] = "Successfully added new User";
+else
+    $_SESSION['result'] = "Unable to add new User";
+
+header("Location: ./index.php");
+```
+
+To Login with a user
+
+auth.php
+```php
+$user = User::loadSingle(["username" => $_POST['username']]);
+
+if(!$user && strlen($_POST['username']) > 6)
+    $user = User::loadSingle(["email" => $_POST['username']]);
+
+if(!$user){
+    $_SESSION['result'] = "Couldn't find a user with that username/email";
+}else{
+    if($user->doAuth($_POST['password'])){
+
+        $_SESSION['result'] = "Login Successful";
+        $_SESSION['user'] = $user->toArray();
+
+    }else{
+
+        $_SESSION['result'] = "Incorrect Password";
+
+    }
+}
+
+header("Location: ../login.php");
+```
+
+And then the user class that handles it all
+
+class.user.php
+```php
+
+class User extends Logos_MySQL_Object{
+
+    public $username;
+    public $email;
+    public $password;
+    public $salt;
+    public $admin;
+    public $auth_key;
+    public $company_id;
+
+    public function createNew(){
+
+        $password = new Password($this->password);
+
+        $this->password = $password->getKey();
+        $this->salt = $password->getSalt();
+
+        return parent::createNew();
+
+    }
+
+    public function verifyLogin($password){
+        $passwordCheck = new Password($this->password, array('salt' => $this->salt, 'hashed' => true));
+
+        return $passwordCheck->checkPassword($password);
+    }
+
+    public function verifyAuth(){
+        if(!isset($_SESSION['auth_key']))
+            return false;
+
+        if($this->auth_key !== $_SESSION['auth_key'])
+            return false;
+
+        return true;
+    }
+
+    public function verifyAdmin(){
+        if($this->admin === 0)
+            return false;
+
+        return true;
+    }
+
+    public static function deAuth(){
+        foreach($_SESSION as $key => $value){
+            if($key !== "result" || $key !== "Result" || $key !== "RESULT")
+                unset($_SESSION[$key]);
+        }
+
+        return true;
+    }
+
+    public function doAuth($password, $level = 0){
+        if($this->verifyLogin($password) === false)
+            return false;
+
+        if((int) $level === 1){
+            if($this->verifyAdmin())
+                return true;
+        }else{
+            if($this->verifyAuth())
+                return true;
+        }
+
+        if($this->admin === 0 && $level === 1)
+            return false;
+
+        $_SESSION['auth_key'] = $this->auth_key = Cipher::getRandomKey();
+
+        if($level === 1)
+            $_SESSION['admin_key'] = $this->auth_key;
+
+        return ($this->save() !== false) ? true : false;
+    }
+}
+
+```
+
+### The Iron Class
+
+Iron Class helps protect against Cross Site Request Forgery attacks. Doing this can be a bit complicated, but
+with this class, the implementation is pretty straight forward.
+
+For Post Requests (example login form)
+
+login.php
+```php
+<?php
+
+    $iron = Iron::getInstance();
+
+?>
+
+<form id="login" action="auth.php" method="post">
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder="Password" />
+    <?php
+       echo $iron->generate_post_token(); //echos a post input with a new random key
+    ?>
+</form>
+
+```
+
+auth.php
+```php
+$iron = Iron::getInstance();
+
+if($iron->check_token() !== false){
+
+    //its safe, you can do user authentication in here
+
+}else{
+
+    //warning, auth isn't safe. You should log the IP and lock down the system.
+
+}
+```
+
+If you wanted to protect your GET requests as well
+
+Info.php
+```php
+    $iron = Iron::getInstance();
+
+    $requestURL = "www.example.com/user.php?id=100123".$iron->generate_get_token();
+
+    getUserData($requestURL);
+```
+
+user.php
+```php
+
+$iron = Iron::getInstance();
+
+if($iron->check_token() !== false){
+
+    //its safe, you can do user authentication in here
+
+}else{
+
+    //warning, auth isn't safe. You should log the IP and lock down the system.
+
+}
+```
+
 ## Contributing
 
 Please feel free to fork, push, pull and all that other good Git stuff!
