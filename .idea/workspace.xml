@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b4ee294-659f-4175-9ebb-557c111f7044" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\db\db-config.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\db\db-core.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\db\db-interface.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\db\db-object.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\db\handlers\db-handler-mongo.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\db\handlers\db-handler-mysql.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\helpers\security.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\objects\mongo\Event.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\objects\mongo\User.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\objects\mysql\Event.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\objects\mysql\User.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\testing\Generic_DB_Test.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\HellsAn631\Zend\workspaces\thepool\ThePool\vendor\hellsan631\logosdb\lib\LogosDB\testing\User_Test.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/README.md" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/autoload_real.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json" afterPath="$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/credit.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/credit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/dashboard.js" afterPath="$PROJECT_DIR$/js/dashboard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard.php" afterPath="$PROJECT_DIR$/dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/event.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/event.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/game.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home.php" afterPath="$PROJECT_DIR$/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/ipn.log" afterPath="$PROJECT_DIR$/_listeners/ipn.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.dashboard.php" afterPath="$PROJECT_DIR$/_listeners/listn.dashboard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/listn.playoff.stats.php" afterPath="$PROJECT_DIR$/_listeners/listn.playoff.stats.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_listeners/paypal_ipn.php" afterPath="$PROJECT_DIR$/_listeners/paypal_ipn.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/picks.php" afterPath="$PROJECT_DIR$/picks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.php" afterPath="$PROJECT_DIR$/settings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/objects/mysql/stat_log.php" afterPath="$PROJECT_DIR$/libs/objects/mysql/stat_log.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="nfl.iws" />
@@ -70,7 +34,7 @@
       <file leaf-file-name="settings.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1421" selection-end="1421" vertical-scroll-proportion="-2.6153846" vertical-offset="561" max-vertical-offset="6052">
+            <state line="37" column="0" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="6052">
               <folding />
             </state>
           </provider>
@@ -103,10 +67,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dashboard.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="21" selection-start="1976" selection-end="1976" vertical-scroll-proportion="0.17116183" vertical-offset="940" max-vertical-offset="2873">
+            <state line="65" column="21" selection-start="1976" selection-end="1976" vertical-scroll-proportion="-6.3461537" vertical-offset="940" max-vertical-offset="2873">
               <folding />
             </state>
           </provider>
@@ -115,7 +79,7 @@
       <file leaf-file-name="dashboard.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/dashboard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="64" selection-start="6105" selection-end="6105" vertical-scroll-proportion="-27.26923" vertical-offset="3048" max-vertical-offset="4063">
+            <state line="221" column="64" selection-start="6105" selection-end="6105" vertical-scroll-proportion="0.0" vertical-offset="3048" max-vertical-offset="4063">
               <folding>
                 <marker date="1419992462206" expanded="false" signature="4990:5004" placeholder="..." />
                 <marker date="1419992462206" expanded="false" signature="5097:5104" placeholder="..." />
@@ -127,7 +91,7 @@
       <file leaf-file-name="listn.dashboard.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="67" selection-start="1858" selection-end="1858" vertical-scroll-proportion="-16.26923" vertical-offset="529" max-vertical-offset="2618">
+            <state line="56" column="67" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="2618">
               <folding />
             </state>
           </provider>
@@ -136,7 +100,7 @@
       <file leaf-file-name="stat_log.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/objects/mysql/stat_log.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="151" column="38" selection-start="5153" selection-end="5153" vertical-scroll-proportion="-50.807693" vertical-offset="1246" max-vertical-offset="3893">
+            <state line="151" column="38" selection-start="5153" selection-end="5153" vertical-scroll-proportion="0.0" vertical-offset="1246" max-vertical-offset="3893">
               <folding>
                 <marker date="1419988192740" expanded="true" signature="1012:1320" placeholder="SELECT user_..pick..." />
                 <marker date="1419988192740" expanded="true" signature="1084:1176" placeholder="SELECT COUNT..pick..." />
@@ -165,18 +129,18 @@
       <file leaf-file-name="bootstrap.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="166" selection-end="166" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="391">
+            <state line="9" column="23" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="391">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="game.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="game.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="52" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="2533">
+            <state line="111" column="0" selection-start="2794" selection-end="2794" vertical-scroll-proportion="0.5414938" vertical-offset="1365" max-vertical-offset="2533">
               <folding>
-                <marker date="1419969934150" expanded="true" signature="3036:3131" placeholder="SELECT * FRO..$className..." />
+                <marker date="1420158114051" expanded="true" signature="3036:3131" placeholder="SELECT * FRO..$className..." />
               </folding>
             </state>
           </provider>
@@ -244,13 +208,13 @@
         <option value="$PROJECT_DIR$/picks.php" />
         <option value="$PROJECT_DIR$/settings.php" />
         <option value="$PROJECT_DIR$/_listeners/paypal_ipn.php" />
-        <option value="$PROJECT_DIR$/libs/objects/mysql/game.php" />
         <option value="$PROJECT_DIR$/admin/pages/winners.page.php" />
         <option value="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
         <option value="$PROJECT_DIR$/libs/objects/mysql/stat_log.php" />
         <option value="$PROJECT_DIR$/_listeners/listn.dashboard.php" />
         <option value="$PROJECT_DIR$/js/dashboard.js" />
         <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/libs/objects/mysql/game.php" />
       </list>
     </option>
   </component>
@@ -316,7 +280,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,12 +308,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mysql" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,10 +354,10 @@
     <configuration default="true" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="FIREFOX" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
+    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
       <method />
     </configuration>
-    <configuration default="true" type="PhpHttpRequestRunConfigurationType" factoryName="PHP HTTP Request" server_name="EasyPHP">
+    <configuration default="true" type="PhpRemoteDebugRunConfigurationType" factoryName="PHP Remote Debug" server_name="EasyPHP" session_id="hellsan631">
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
@@ -483,7 +455,6 @@
     <frame x="-8" y="32" width="1936" height="1122" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -496,13 +467,14 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297244" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="1485" y="134" width="387" height="231" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3277559" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -523,9 +495,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16354166" sideWeight="0.67171717" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917964" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32929292" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -714,38 +686,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.playoff.stats.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="50" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1071">
-          <folding />
-        </state>
+        <state line="7" column="50" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="1071" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="0" selection-start="7683" selection-end="7683" vertical-scroll-proportion="0.0" vertical-offset="3009" max-vertical-offset="5984">
-          <folding />
-        </state>
+        <state line="195" column="0" selection-start="7683" selection-end="7683" vertical-scroll-proportion="0.0" vertical-offset="3009" max-vertical-offset="5984" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/picks.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="18" selection-start="4143" selection-end="4143" vertical-scroll-proportion="-18.307692" vertical-offset="1122" max-vertical-offset="6596">
-          <folding />
-        </state>
+        <state line="94" column="18" selection-start="4143" selection-end="4143" vertical-scroll-proportion="-18.307692" vertical-offset="1122" max-vertical-offset="6596" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1421" selection-end="1421" vertical-scroll-proportion="-2.6153846" vertical-offset="561" max-vertical-offset="6052">
+        <state line="37" column="0" selection-start="1421" selection-end="1421" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="6052">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="52" selection-start="2563" selection-end="2563" vertical-scroll-proportion="0.0" vertical-offset="1768" max-vertical-offset="2533">
-          <folding>
-            <marker date="1419969934150" expanded="true" signature="3036:3131" placeholder="SELECT * FRO..$className..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -779,70 +736,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="964">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/lib/Logos/DB/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/composer/autoload_classmap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/hellsan631/logosdb/tests/IronTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="990" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="166" selection-end="166" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="391">
+        <state line="9" column="23" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="391">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/stat_log.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="151" column="38" selection-start="5153" selection-end="5153" vertical-scroll-proportion="-50.807693" vertical-offset="1246" max-vertical-offset="3893">
+        <state line="151" column="38" selection-start="5153" selection-end="5153" vertical-scroll-proportion="0.0" vertical-offset="1246" max-vertical-offset="3893">
           <folding>
             <marker date="1419988192740" expanded="true" signature="1012:1320" placeholder="SELECT user_..pick..." />
             <marker date="1419988192740" expanded="true" signature="1084:1176" placeholder="SELECT COUNT..pick..." />
@@ -869,30 +810,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/objects/mysql/rivals.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="22" selection-start="103" selection-end="114" vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="964">
-          <folding />
-        </state>
+        <state line="6" column="22" selection-start="103" selection-end="114" vertical-scroll-proportion="0.10580913" vertical-offset="0" max-vertical-offset="964" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/Chart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="56542">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="56542" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_listeners/listn.dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="67" selection-start="1858" selection-end="1858" vertical-scroll-proportion="-16.26923" vertical-offset="529" max-vertical-offset="2618">
+        <state line="56" column="67" selection-start="1858" selection-end="1858" vertical-scroll-proportion="0.0" vertical-offset="529" max-vertical-offset="2618">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="64" selection-start="6105" selection-end="6105" vertical-scroll-proportion="-27.26923" vertical-offset="3048" max-vertical-offset="4063">
+        <state line="221" column="64" selection-start="6105" selection-end="6105" vertical-scroll-proportion="0.0" vertical-offset="3048" max-vertical-offset="4063">
           <folding>
             <marker date="1419992462206" expanded="false" signature="4990:5004" placeholder="..." />
             <marker date="1419992462206" expanded="false" signature="5097:5104" placeholder="..." />
@@ -902,8 +837,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="21" selection-start="1976" selection-end="1976" vertical-scroll-proportion="0.17116183" vertical-offset="940" max-vertical-offset="2873">
+        <state line="65" column="21" selection-start="1976" selection-end="1976" vertical-scroll-proportion="-6.3461537" vertical-offset="940" max-vertical-offset="2873">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/objects/mysql/game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="0" selection-start="2794" selection-end="2794" vertical-scroll-proportion="0.5414938" vertical-offset="1365" max-vertical-offset="2533">
+          <folding>
+            <marker date="1420158114051" expanded="true" signature="3036:3131" placeholder="SELECT * FRO..$className..." />
+          </folding>
         </state>
       </provider>
     </entry>
