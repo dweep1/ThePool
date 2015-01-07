@@ -11,7 +11,6 @@ class week extends event{
 
     public static function getPoolAmount($week_id = false, $countSeason = false){
 
-        $pickNumber = 0;
         $multiple = options::loadSingle(["name" => "credit_weekly_value"]);
         $pickValue = options::loadSingle(["name" => "credit_cost"]);
 

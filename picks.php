@@ -62,7 +62,11 @@
     <div class="width-50 fluid-row first">
 
         <div class="fluid-row aligncenter">
-            <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
+            <?php if(season::getCurrent()->type !== "playoff"){ ?>
+                <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
+            <?php }else{ ?>
+                <h5>Pool Size: ~$<?php echo week::getPoolAmount(false, true); ?></h5>
+            <?php } ?>
             Remaining Credits: <?php echo credit::getCreditCount(null, -1); ?><?php if($validCredit !== false): ?><b><a href="./settings.php" style="padding:10px;">Buy Credits</a></b><?php endif; ?>
         </div>
 

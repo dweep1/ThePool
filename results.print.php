@@ -337,7 +337,7 @@ else:
 
                                 }else{
 
-                                    echo "<td class='aligncenter' style='text-decoration: line-through'>{$tempUser->picks[$team->id]->value}</td>";
+                                    echo "<td class='aligncenter'>{$tempUser->picks[$team->id]->value}</td>";
 
                                 }
 

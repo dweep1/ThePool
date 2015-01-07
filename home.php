@@ -65,7 +65,13 @@
         <div class="fluid-row slim aligncenter" >
             <h4>This Week's Games <button style="vertical-align: middle;" class="ui-button dark" type="button" data-link="./picks.php">Make Picks</button></h4>
             <br/>
-            <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5><br/>
+
+            <?php if(season::getCurrent()->type !== "playoff"){ ?>
+                <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
+            <?php }else{ ?>
+                <h5>Pool Size: ~$<?php echo week::getPoolAmount(false, true); ?></h5>
+            <?php } ?>
+
             Remaining Credits: <?php echo credit::getCreditCount(null, -1); ?><b><a href="./settings.php" style="padding:10px;">Buy Credits</a></b>
         </div>
 
