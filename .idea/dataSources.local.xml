@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Data Source" uuid="46ef1851-8822-4603-b94b-f77638c71922">
+      <user-name>hellsan631</user-name>
+      <user-password>dfc2dfcfdfc6dfc6dfcbdfc4df9cdf99df9b</user-password>
+      <schema-pattern>logos.*</schema-pattern>
+    </data-source>
+  </component>
+</project>
+

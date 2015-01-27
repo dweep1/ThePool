@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1041661068">
+  <component name="DataSourceManagerImpl" format="xml" hash="623686300">
     <data-source source="LOCAL" name="Data Source" uuid="46ef1851-8822-4603-b94b-f77638c71922">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/logos</jdbc-url>
-      <user-name>hellsan631</user-name>
-      <user-password>dfc2dfcfdfc6dfc6dfcbdfc4df9cdf99df9b</user-password>
-      <schema-pattern>logos.*</schema-pattern>
       <default-dialect>MySQL</default-dialect>
       <libraries>
         <library>

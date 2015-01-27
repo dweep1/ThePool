@@ -96,11 +96,11 @@ class game extends Logos_MySQL_Object{
 
         }else if(strpos($dayCheck,'Sat') !== false){
 
-            $tempDate->add(new DateInterval('PT16H')); //should be 4pm EST on that given game date
+            $tempDate->add(new DateInterval('PT14H')); //should be 4pm EST on that given game date
 
         }else if(strpos($dayCheck,'Sun') !== false){
 
-            $tempDate->sub(new DateInterval('PT08H')); //should be 4pm EST on that given game date
+            $tempDate->add(new DateInterval('PT16H')); //should be 2pm EST on that given game date
 
         }else if(strpos($dayCheck,'Mon') !== false){
 

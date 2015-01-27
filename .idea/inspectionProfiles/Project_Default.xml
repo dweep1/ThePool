@@ -9,12 +9,5 @@
     <inspection_tool class="PhpMissingDocCommentInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedCallbackInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpUsageOfSilenceOperatorInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
-    <inspection_tool class="TaskInspection" enabled="true" level="INFO" enabled_by_default="true">
-      <option name="suppressedTasks">
-        <set>
-          <option value="SCSS" />
-        </set>
-      </option>
-    </inspection_tool>
   </profile>
 </component>
