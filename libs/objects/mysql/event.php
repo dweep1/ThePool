@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL);
+
 /**
  * The Class basis of a dated object, with a start and end date.
  */
@@ -18,24 +20,10 @@ abstract class event extends Selectable{
 
         $now = new DateTime("now");
 
-        if(isset($_SESSION['current_'.$className])){
-
-            $object = new $className($_SESSION['current_'.$className]);
-
-            $dateEnd = new DateTime($object->date_end);
-
-            if($className == "season")
-                $dateEnd->add(new DateInterval("P14D"));
-
-            if($dateEnd >= $now)
-                return $object;
-
-        }
-
         $todayDate = $now->format("Y-m-d");
 
         $query = MySQL_Core::fetchQuery(
-            "SELECT * FROM `{$className}` WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end LIMIT 1",
+            "SELECT * FROM `{$className}` WHERE DATE(date_end) >= :today AND DATE(date_start) <= :today ORDER BY date_end ASC LIMIT 1",
             [":today" => $todayDate]
         );
 
@@ -62,10 +50,16 @@ abstract class event extends Selectable{
 
         $className = get_called_class();
 
-        $query = MySQL_Core::fetchQuery(
-            "SELECT * FROM `{$className}` WHERE id = (SELECT MAX(id) FROM `{$className}` WHERE id < :last_id)",
-            [":last_id" => $this->id]
-        );
+        if ($this->id) {
+          $query = MySQL_Core::fetchQuery(
+              "SELECT * FROM `{$className}` WHERE id = (SELECT MAX(id) FROM `{$className}` WHERE id < :last_id)",
+              [":last_id" => $this->id]
+          );
+        } else {
+          $query = MySQL_Core::fetchQuery(
+              "SELECT * FROM `{$className}` WHERE id = (SELECT MAX(id) FROM `{$className}` ORDER BY id DESC LIMIT 1)"
+          );
+        }
 
         try {
 

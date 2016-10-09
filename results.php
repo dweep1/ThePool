@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('error_reporting', E_ALL);
+
 include "./bootstrap.php";
 
 $user = users::returnCurrentUser();
@@ -14,7 +17,7 @@ if($season->type !== "playoff"):
     $teams = teams::getTeamsList();
 
     $thisWeek = (isset($_GET['week'])) ? new week($_GET['week']) : week::getCurrent();
-    $weeks = week::query(["orderBy" => "week_number ASC"])->getList(["season_id" => season::getCurrent()->id]);
+    $weeks = week::loadMultiple(["season_id" => season::getCurrent()->id]);
 
     $games = $thisWeek->getGames();
 
@@ -230,7 +233,8 @@ else:
     $teams = teams::getTeamsList();
 
     $thisWeek = (isset($_GET['week'])) ? new week($_GET['week']) : week::getCurrent();
-    $weeks = week::query(["orderBy" => "week_number ASC"])->getList(["season_id" => season::getCurrent()->id]);
+
+    $weeks = week::query()->getList(["season_id" => season::getCurrent()->id]);
 
     $games = game::query(["orderBy" => "date ASC"])->getList(["week_id" => $thisWeek->id]);
 

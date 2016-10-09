@@ -7,6 +7,8 @@
     if($user === false || !$user->verifyAuth())
         header("Location: ./logout.php");
 
+    $thisWeek = week::getCurrent();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +69,7 @@
             <br/>
 
             <?php if(season::getCurrent()->type !== "playoff"){ ?>
-                <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
+                <h5>Pool Size: ~$<?php echo week::getPoolAmount($thisWeek->id); ?></h5>
             <?php }else{ ?>
                 <h5>Pool Size: ~$<?php echo week::getPoolAmount(false, true); ?></h5>
             <?php } ?>
@@ -200,9 +202,19 @@
 
             <?php
 
-            $previousWeek = week::getCurrent()->getPrevious();
+            $currentWeek = week::getCurrent();
 
-            $games = game::loadMultiple(["week_id" => $previousWeek->id, "season_id" => season::getCurrent()->id]);
+            if ($currentWeek !== false) {
+              $previousWeek = $currentWeek->getPrevious();
+            } else {
+              $previousWeek = false;
+            }
+
+            if($previousWeek !== false ){
+              $games = game::loadMultiple(["week_id" => $previousWeek->id, "season_id" => season::getCurrent()->id]);
+            } else {
+              $games = [];
+            }
 
             if(count($games) > 0 || season::getCurrent()->type !== "playoff" ):
 

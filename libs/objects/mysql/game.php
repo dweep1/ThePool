@@ -77,36 +77,36 @@ class game extends Logos_MySQL_Object{
         $now = new DateTime("now");
         $gameLock = new DateTime($this->getLockTime());
 
-        return ($now >= $gameLock) ? true : false;
+        return ($now->format('U') > $gameLock->format('U'));
     }
 
-    public function getLockTime(){
+    public function getLockTime() {
 
         $tempDate = new DateTime($this->date);
         $tempDate->setTime(0,0,0);
         $dayCheck =  $tempDate->format('D');
 
-        if(strpos($dayCheck,'Thu') !== false){
+        if (strpos($dayCheck,'Thu') !== false) {
 
-            $tempDate->add(new DateInterval('PT12H')); //should be 6pm EST on that given game date
+            $tempDate->add(new DateInterval('PT20H')); //should be 8:15pm EST on that given game date
 
-        }else if(strpos($dayCheck,'Fri') !== false){
+        } else if (strpos($dayCheck,'Fri') !== false) {
 
-            $tempDate->add(new DateInterval('PT20H')); //should be 6pm EST on that given game date
+            $tempDate->add(new DateInterval('PT20H')); //should be 8pm EST on that given game date
 
-        }else if(strpos($dayCheck,'Sat') !== false){
+        } else if (strpos($dayCheck,'Sat') !== false) {
 
-            $tempDate->add(new DateInterval('PT14H')); //should be 4pm EST on that given game date
+            $tempDate->add(new DateInterval('PT14H')); //should be 2pm EST on that given game date
 
-        }else if(strpos($dayCheck,'Sun') !== false){
+        } else if (strpos($dayCheck,'Sun') !== false) {
 
-            $tempDate->add(new DateInterval('PT16H')); //should be 2pm EST on that given game date
+            $tempDate->add(new DateInterval('PT13H')); //should be 1pm EST on that given game date
 
-        }else if(strpos($dayCheck,'Mon') !== false){
+        } else if (strpos($dayCheck,'Mon') !== false) {
 
-            $tempDate->sub(new DateInterval('PT35H')); //should be 1pm EST on the sat before //$tempDate->sub();
+            $tempDate->sub(new DateInterval('PT11H')); //should be 1pm EST on the sat before //$tempDate->sub();
 
-        }else{
+        } else {
 
             $tempDate->add(new DateInterval('PT13H')); //should be 1pm EST on that given game date
 

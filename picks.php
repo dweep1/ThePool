@@ -9,6 +9,8 @@
 
     $creditCost = options::loadSingle(["name" => "credit_cost"]);
 
+    $thisWeek = week::getCurrent();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -24,7 +26,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script>
 
-        week_id = <?php echo week::getCurrent()->id; ?>;
+        week_id = <?php echo $thisWeek->id; ?>;
 
     </script>
 
@@ -63,7 +65,7 @@
 
         <div class="fluid-row aligncenter">
             <?php if(season::getCurrent()->type !== "playoff"){ ?>
-                <h5>Pool Size: ~$<?php echo week::getPoolAmount(); ?></h5>
+                <h5>Pool Size: ~$<?php echo week::getPoolAmount($thisWeek->id); ?></h5>
             <?php }else{ ?>
                 <h5>Pool Size: ~$<?php echo week::getPoolAmount(false, true); ?></h5>
             <?php } ?>
@@ -89,9 +91,9 @@
                         <input type="hidden" name="item_number" value="<?php echo $user->pay_key; ?>">
                         <input type="hidden" name="custom" value="<?php echo $user->pay_key; ?>">
                         <input type="hidden" name="currency_code" value="USD">
-                        <input type="hidden" name="cancel_return" value="http://www.whats-your-confidence.com/settings.php?success=false">
-                        <input type="hidden" name="return" value="http://www.whats-your-confidence.com/settings.php?success=true">
-                        <input type="hidden" name="notify_url" value="http://www.whats-your-confidence.com/_listeners/paypal_ipn.php">
+                        <input type="hidden" name="cancel_return" value="http://<?php echo $_SERVER['HTTP_HOST'] ?>/settings.php?success=false">
+                        <input type="hidden" name="return" value="http://<?php echo $_SERVER['HTTP_HOST'] ?>/settings.php?success=true">
+                        <input type="hidden" name="notify_url" value="http://<?php echo $_SERVER['HTTP_HOST'] ?>/_listeners/paypal_ipn.php">
                         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                     </form>

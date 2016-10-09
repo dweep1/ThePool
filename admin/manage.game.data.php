@@ -52,7 +52,7 @@ $teams = teams::getTeamsList();
         </div>
 
         <div class="fluid-row slim">
-            <label for="paypal">Home Score: </label> <input type="text" class="float-right" id="home_score" name="home_score" value="<?php echo $obj->home_score; ?>" />
+            <label for="home_score">Home Score: </label> <input type="text" class="float-right" id="home_score" name="home_score" value="<?php echo $obj->home_score; ?>" />
             <div class="clear-fix"></div>
         </div>
 

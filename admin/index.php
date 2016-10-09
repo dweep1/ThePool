@@ -31,6 +31,10 @@
     <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-animate.min.js"></script>
+
+    <script src="./js/jquery.ui.touch-punch.min.js"></script>
+    <script src="./js/angular-dragdrop.min.js"></script>
+
     <script src="../js/jquery.velocity.min.js"></script>
     <script src="../js/velocity.ui.min.js"></script>
     <script src="../js/angular-velocity.min.js"></script>
@@ -144,9 +148,40 @@
 
 	</section>
 
+
     <script>
 
-        angular.module('myAdmin', ['angular-velocity']);
+        angular
+          .module('myAdmin', ['angular-velocity', 'ngDragDrop'])
+          .directive('ngDelay', ['$timeout', function ($timeout) {
+              return {
+                  restrict: 'A',
+                  scope:true,
+                  compile: function (element, attributes) {
+                      var expression = attributes['ngChange'];
+                      if (!expression)
+                          return;
+
+                      attributes['ngChange'] = '$$delay.execute()';
+                      return {
+                          pre: function (scope, element, attributes) {
+                              scope.$$delay = {
+                                  expression: expression,
+                                  delay: scope.$eval(attributes['ngDelay']),
+                                  execute: function () {
+                                      var state = scope.$$delay;
+                                      state.then = Date.now();
+                                      $timeout(function () {
+                                          if (Date.now() - state.then >= state.delay)
+                                              scope.$eval(expression);
+                                      }, state.delay);
+                                  }
+                              };
+                          }
+                      }
+                  }
+              };
+          }]);
 
         function TopController($scope, $http) {
 

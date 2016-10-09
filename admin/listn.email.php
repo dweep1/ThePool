@@ -5,6 +5,9 @@ $ROOT_DB_PATH = "../_db/";
 
 include "./admin.header.php";
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $subject = $_POST['subject'];
@@ -57,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $emailMessage .= "<tr>
                     <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
                         Copyright 'The Pool', Anthony Harris,  2014<br/>
-                        <a href='http://www.whats-your-confidence.com/removeEmail.php?email={$mailTo}'>Remove Me From Mailing Group</a>
+                        <a href='http://www.whats-your-confidence.com/removeEmail.php'>Remove Me From Mailing Group</a>
                     </td>
                 </tr>
             </table>
@@ -65,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $errors = 0;
         foreach($userList as $email){
-            if(@Core::sendEmail($subject, $emailMessage, $email))
+            if(@Core::sendEmail($subject, $emailMessage, $email, 'no-reply <noreply@the-league.net>'))
                 $_SESSION['result'] = "Email Sent";
             else
                 $errors++;
@@ -78,12 +81,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }else if($emailGroup === 1){
 
         $userList = new users;
-        $userList = $userList->getList("id ASC", array("disable_notes" => 0));
+        $userList = $userList->getList(["disable_notes" => 0]);
 
         $emailMessage .= "<tr>
                     <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
                         Copyright 'The Pool', Anthony Harris,  2014<br/>
-                        <a href='http://www.whats-your-confidence.com/removeEmail.php?email={$mailTo}'>Remove Me From Mailing Group</a>
+                        <a href='http://www.whats-your-confidence.com/removeEmail.php'>Remove Me From Mailing Group</a>
                     </td>
                 </tr>
             </table>
@@ -91,7 +94,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $errors = 0;
         foreach($userList as $user){
-            if(@Core::sendEmail($subject, $emailMessage, $user->email))
+            if(@Core::sendEmail($subject, $emailMessage, $user->email, 'no-reply <noreply@the-league.net>'))
                 $_SESSION['result'] = "Email Sent";
             else
                 $errors++;
@@ -137,7 +140,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $emailMessage .= "<tr>
                     <td style='padding:5px 25px; font-family: \"Open Sans\", sans-serif; font-size: 10px; line-height:18px; text-align:center; border-top:1px solid #b9b9ba; background: #eaeaeb;'>
                         Copyright 'The Pool', Anthony Harris,  2014<br/>
-                        <a href='http://www.whats-your-confidence.com/removeEmail.php?email={$mailTo}'>Remove Me From Mailing Group</a>
+                        <a href='http://www.whats-your-confidence.com/removeEmail.php'>Remove Me From Mailing Group</a>
                     </td>
                 </tr>
             </table>
@@ -145,7 +148,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $errors = 0;
         foreach($userList as $email){
-            if(@Core::sendEmail($subject, $emailMessage, $email))
+            if(@Core::sendEmail($subject, $emailMessage, $email, 'no-reply <noreply@the-league.net>'))
                 $_SESSION['result'] = "Email Sent";
             else
                 $errors++;

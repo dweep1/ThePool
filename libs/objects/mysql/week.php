@@ -13,21 +13,31 @@ class week extends event{
 
         $multiple = options::loadSingle(["name" => "credit_weekly_value"]);
         $pickValue = options::loadSingle(["name" => "credit_cost"]);
+        $currentWeek = self::getCurrent();
 
         if($countSeason === false){
-            $week_id = ($week_id) ?: week::getCurrent()->id;
+
+            if(!$currentWeek) return 0;
+
+            $week_id = ($week_id) ?: $currentWeek;
 
             $pickNumber = count(pick::query(["groupBy" => "user_id"])->getList(["week_id" => $week_id]));
 
         }else{
 
             $countSeason = $countSeason === true ? season::getCurrent()->id : $countSeason;
-
-            $pickNumber = count(pick::query(["groupBy" => "user_id"])->getList(["season_id" => $countSeason]));
+            $multiple = options::loadSingle(["name" => "credit_season_value"]);
+            $pickNumber  = count(pick::query(["groupBy" => "user_id"])->getList(["season_id" => $countSeason]));
 
         }
 
-        return ($pickNumber*$pickValue->value)*($multiple->value/100);
+        $totalValue = ($pickNumber*$pickValue->value)*($multiple->value/100);
+
+        if((int) options::loadSingle(["name" => "use_credit"]) === 1){
+          return $totalValue;
+        }
+
+        return 0;
 
     }
 

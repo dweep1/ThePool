@@ -5,9 +5,21 @@ $objData = json_decode($data);
 
 include "./listn.header.php";
 
-$prevSeason = season::getCurrent()->getPrevious();
+$currSeason = season::getCurrent();
 
-$currentWeek = week::loadSingle(["season_id" => $objData->season_id, "week_number" => 1]);
+if ($currSeason !== false) {
+  $prevSeason = $currSeason->getPrevious();
+} else {
+  $prevSeason = season::getPrevious();
+}
+
+$currentSeasonId = $objData->season_id;
+
+if(!is_int($currentSeasonId)) {
+  $currentSeasonId = $prevSeason->id;
+}
+
+$currentWeek = week::loadSingle(["season_id" => $currentSeasonId, "week_number" => 1]);
 $games = game::loadMultiple(["season_id" => $prevSeason->id]);
 
 $teamGames = game::loadMultiple(["week_id" => $currentWeek->id]);
@@ -54,4 +66,3 @@ foreach($games as $value){
 }
 
 echo json_encode($playoffTeams);
-

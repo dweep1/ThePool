@@ -18,7 +18,9 @@ unset($tempList);
 
 $userList[0] = new users(["username" => "No Winner", "email" => "N/A", "paypal"=> "N/A"]);
 
-$weeks = renderWeekData(week::query(["orderBy" => "week_number asc"])->getList(["season_id" => season::getCurrent()->id]), $currentWeek);
+$weeks = renderWeekData(week::query()->getList(["season_id" => season::getCurrent()->id]), $currentWeek);
+
+ksort($weeks);
 
 $tempList = [];
 

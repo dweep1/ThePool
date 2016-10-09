@@ -73,7 +73,7 @@ include "./menu.php";
                         <i>Jackpot is rolling!!</i> Money will be added to the jackpot from entry fees each week
                     </li>
                     <li>
-                        Payout will be as follows: 1st Place Winner will receive 60%, the 2nd Place Winner will receive 25% and 15% will be go towards fees associated with pool.
+                        Payout will be as follows: 1st Place Winner will receive 55%, the 2nd Place Winner will receive 15% and 20% will be go towards fees associated with pool.
                     </li>
                 </ul>
             </div>

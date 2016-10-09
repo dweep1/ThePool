@@ -50,6 +50,12 @@
             <h5>Selected User: {{ selectedUsername }}</h5>
             </div>
 
+            <?php
+
+                if(season::getCurrent()->type !== "playoff" ):
+
+            ?>
+
             <div class="fluid-row no-padding alignleft">
 
                 <ul class="ui-games-list">
@@ -66,9 +72,7 @@
                                 <h5>{{ item.away_team.city }}</h5>
                                 <h6>{{ item.away_team.team_name }}</h6>
                             </div>
-
                         </div>
-
 
                         <div class="middle">
 
@@ -103,6 +107,91 @@
 
             </div>
 
+            <?php
+
+                else:
+
+                    //playoff interface
+            ?>
+
+            <div class="fluid-row slim aligncenter" ng-cloak>
+                <div class="playoff-row" ng-class="teamCount >= teams.length ? 'width-65' : 'width-50'">
+                    <div class="btn-droppable team-large"
+                         ng-repeat="item in points | orderBy: '-value'"
+                         data-drop="{{ item.drag }}"
+                         ng-model="item.team"
+                         jqyoui-droppable="{multiple:false}">
+
+                        <div class="gradient-left" >
+                            <div class="team alignleft">
+                                <h6>Pick</h6>
+                                <h6>&nbsp;</h6>
+                                <h6>&nbsp;</h6>
+                            </div>
+                            <div class="team-stats alignright">
+                                <h1>{{ item.value }}</h1>
+                            </div>
+                        </div>
+
+                        <div class="btn-draggable team-assign"
+                             ng-show="item.team"
+                             data-drag="true"
+                             data-jqyoui-options="{revert: 'invalid'}"
+                             ng-model="item.team"
+                             jqyoui-draggable="{index: {{$index}}, animate:true}"
+                             style="background-image: url('{{ item.team.image_url }}')">
+
+                            <div class="gradient-left" >
+                                <div class="team alignleft">
+                                    <h5>{{ item.team.city }}</h5>
+                                    <h6>{{ item.team.team_name }}</h6>
+                                </div>
+
+                                <div class="team-stats alignright">
+                                    <h1>{{ item.value }}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="width-50 playoff-row">
+
+                    <div class="btn-draggable team-large"
+                         ng-repeat="item in teams track by $index"
+                         data-drag="true"
+                         ng-model="item"
+                         ng-show="item"
+                         data-jqyoui-options="{revert: 'invalid'}"
+                         jqyoui-draggable="{index: {{$index}}, animate:true}"
+                         style="background-image: url('{{ item.image_url }}')">
+
+                        <div class="gradient-left" >
+                            <div class="team alignleft">
+                                <h5>{{ item.city }}</h5>
+                                <h6>{{ item.team_name }}</h6>
+                            </div>
+
+                            <div class="team-stats alignright">
+                                <h6>vs</h6>
+                                <h6>{{ item.vs.city }}</h6>
+                                <h6>{{ item.vs.team_name }}</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <?php
+                endif;
+            ?>
+
+
+
         </div>
 
     </div>
@@ -111,6 +200,8 @@
 <script>
 
     currentUser = <?php echo users::returnCurrentUser()->id; ?>;
+    seasonType = '<?php echo season::selected()->type; ?>';
+    weekId = <?php echo week::selected()->id; ?>;
 
     function GameController($scope, $http) {
 
@@ -138,11 +229,11 @@
             });
 
         $scope.selectUser = function() {
-            setTimeout(function(){
-                localStorage["selected_username"] = $scope.selectedUsername;
+          setTimeout(function(){
+            localStorage["selected_username"] = $scope.selectedUsername;
 
-                getLiveData($scope, $http);
-            },200);
+            getLiveData($scope, $http);
+          },200);
         };
 
         $scope.doRefresh = function() {
@@ -162,28 +253,22 @@
         var $values = [];
         var $dupes = [];
 
-        $scope.games.forEach(function(entity){
-
-            if(parseInt(entity.pick.team_id) !== -1){
-                if(indexOf.call($values, parseInt(entity.pick.value)) == -1)
-                    $values.push(parseInt(entity.pick.value));
-                else
-                    $dupes.push(parseInt(entity.pick.value));
-            }
-
+        $scope.games.forEach(function(entity) {
+          if (parseInt(entity.pick.team_id) !== -1) {
+            if (indexOf.call($values, parseInt(entity.pick.value)) == -1)
+              $values.push(parseInt(entity.pick.value));
+            else
+              $dupes.push(parseInt(entity.pick.value));
+          }
         });
 
         $scope.games.forEach(function(entity){
-
-            if(parseInt(entity.pick.team_id) !== -1){
-
-                if(indexOf.call($dupes, parseInt(entity.pick.value)) > -1)
-                    entity.pick.bad = "true";
-                else
-                    entity.pick.bad = "false";
-
-            }
-
+          if(parseInt(entity.pick.team_id) !== -1){
+            if(indexOf.call($dupes, parseInt(entity.pick.value)) > -1)
+              entity.pick.bad = "true";
+            else
+              entity.pick.bad = "false";
+          }
         });
 
         return $dupes;
@@ -210,7 +295,148 @@
 
     }
 
+    function getPlayoffData($scope, $http) {
+      if(checkSet(localStorage["selected_user"]))
+          $scope.user_id = parseInt(localStorage["selected_user"]);
+      else
+          $scope.user_id = parseInt(currentUser);
+
+      localStorage["selected_user"] = $scope.user_id;
+
+      return $http.post( "./listn.playoff.picks.php?method=GET", {"user_id" : $scope.user_id}).
+          success(function(data, status) {
+
+              $scope.status = status;
+              $scope.picks = data.picks;
+              $scope.teams = data.teams;
+
+              $scope.points = [];
+
+              for(var $i = 1; $i <= 12; $i++){
+                  $scope.points.push({"value": $i, "drag": true, "team": false, "pick": false});
+              }
+
+              $scope.teamCount = 0;
+
+              $scope.picks.forEach(function(pick){
+
+                  findLikePick($scope, pick);
+
+              });
+
+              console.log($scope.points);
+              console.log($scope.picks);
+
+          })
+          .error(function(data, status) {
+              $scope.data = data || "Request failed";
+              $scope.status = status;
+
+              return false;
+          });
+    }
+
+    function findLikePick($scope, $pick){
+
+        $scope.points.forEach(function(entity, index, theArray){
+
+            if(entity.value === parseInt($pick.value)){
+
+                if(entity.pick === false){
+
+                    theArray[index] = {
+                        "value": parseInt($pick.value),
+                        "drag": true,
+                        "team": false,
+                        "pick": $pick
+                    };
+
+                    if(parseInt($pick.week_id) === weekId){
+                        theArray[index].team = findTeamByID($scope, $pick.team_id);
+                        $scope.teamCount++;
+                    }
+
+
+                }else{
+
+                    if(entity.pick.week_id !== weekId){
+
+                        theArray[index] = {
+                            "value": parseInt($pick.value),
+                            "drag": true,
+                            "team": false,
+                            "pick": $pick
+                        };
+
+                        if(parseInt($pick.week_id) === weekId){
+                            theArray[index].team = findTeamByID($scope, $pick.team_id);
+                            $scope.teamCount++;
+                        }
+
+                    }
+
+                }
+
+                return true;
+
+            }
+        });
+    }
+
+    function findTeamByID($scope, $team_id){
+      var ret = false;
+
+      $scope.teams.forEach(function(entity, index, theArray){
+        if(entity.id == $team_id){
+          ret = entity;
+          delete theArray[index];
+          return ret;
+        }
+      });
+
+      return ret;
+    }
+
     function savePicks($scope, $http){
+
+      if(seasonType === 'playoff') {
+        $scope.savedPicks = [];
+        var teamCount = 0;
+
+        $scope.points.forEach(function(point){
+
+          if(checkSet(point.team)){
+            $scope.savedPicks.push({
+                "value": point.value,
+                "team_id": parseInt(point.team.id),
+                "game_id": parseInt(point.team.game_id),
+                "week_id": weekId,
+                "user_id": $scope.user_id
+            });
+          }
+        });
+
+        return $http.post("./listn.playoff.picks.php?method=PUT", $scope.savedPicks).
+            success(function(data, status) {
+
+                $scope.status = status;
+
+                createMessageBox({type: "result", title: "result", message: data.result});
+
+                return true;
+
+            })
+            .
+            error(function(data, status) {
+                $scope.data = data || "Request failed";
+                $scope.status = status;
+
+                if($scope.force === true)
+                    $scope.force = false;
+
+                return false;
+            });
+      } else {
 
         buildPicks($scope, function(){
 
@@ -256,11 +482,15 @@
                 });
 
         });
+      }
 
     }
 
     function getLiveData($scope, $http){
 
+      if(seasonType === 'playoff') {
+        return getPlayoffData($scope, $http);
+      } else {
         if(checkSet(localStorage["selected_user"]))
             $scope.user_id = parseInt(localStorage["selected_user"]);
         else
@@ -284,8 +514,8 @@
 
                 return false;
             });
+      }
     }
-
 
     $(document).on("mousedown", "[data-user-id]", function (e) {
 
